@@ -1,0 +1,43 @@
+.news-list when (@widget-news-list = true){
+    .news-list-item{ }
+
+    .page-teaser-image{
+
+        img{ }
+    }
+
+    .page-title{ }
+
+    .newslog-admin-actions{
+        text-align : right;
+        a{ }
+    }
+
+    .news-item-date{
+        color         : lighten(@text-color, 15%);
+
+        &:before{
+            top       : 2px;
+            font-size : 16px;
+            color     : @primary-bg;
+        }
+    }
+
+    .news-item-description{ }
+
+    .news-item-tags{
+
+        a{
+            .link-color(@gray);
+
+            &+a{
+                margin-left : 0.5em;
+            }
+
+            &:before{
+                color        : @gray;
+                margin-right : 0.5em;
+            }
+        }
+    }
+}

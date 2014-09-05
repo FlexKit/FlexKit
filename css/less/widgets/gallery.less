@@ -1,0 +1,29 @@
+.img_gallery when (@widget-gallery = true){
+    margin : 10px 0;
+    .inline-block-wrap(middle; li);
+
+    li{
+        position   : relative;
+        margin     : 5px;
+        text-align : center;
+        .thumbnail-state();
+    }
+
+    a{
+
+        img{ }
+    }
+
+    .image_caption{
+        position : absolute;
+        bottom   : 0;
+        left     : 0;
+        right    : 0;
+        z-index  : 10;
+        margin   : 0;
+        .text-overflow;
+    }
+}
+
+// TODO add new gallery style  http://demosthenes.info/blog/844/Easy-Masonry-Layout-With-Flexbox
+// Easy Masonry Layout With Flexbox

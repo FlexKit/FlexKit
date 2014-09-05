@@ -1,0 +1,4 @@
+// Document ready
+$(function(){
+
+});

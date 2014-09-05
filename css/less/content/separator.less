@@ -1,0 +1,64 @@
+hr{
+    clear       : both;
+    border      : none;
+    border-top  : @hr-size solid @hr-color;
+    line-height : 0;
+    margin      : 1em 0;
+
+    &.small when (unit(@hr-size) > 1){
+        border-top-width : 1px;
+    }
+
+    &.large{
+        border-top-width : @hr-size * 2;
+    }
+
+    &.larger{
+        border-top-width : @hr-size * 3;
+    }
+
+    // With text
+    &:before{
+        content     : attr(title);
+        top         : -0.55em;
+        position    : relative;
+        line-height : 1.1em;
+        color       : @hr-color;
+        max-width   : 94%;
+        margin      : -(@hr-size / 2) 3% 0;
+        padding     : 0px .75em;
+        .text-overflow();
+        .inline-block();
+        & when (@content-bg = transparent){
+            background : @body-bg;
+        }
+        & when not (@content-bg = transparent){
+            background : @content-bg;
+        }
+    }
+
+    &.left when (@separator-left = true) and (@separator-style = true) { text-align : left; }
+    &.right when (@separator-right = true) and (@separator-style = true){ text-align : right; }
+    &.center when (@separator-center = true) and (@separator-style = true){ text-align : center; }
+
+    // Separator circle
+    &.circle when (@separator-circle = true) and (@separator-style = true){
+        zoom : 1;
+
+        &:before{
+            padding    : .35em .75em;
+            background : @hr-color;
+            color      : #fff;
+            top        : -0.9em;
+            .border-radius(2em);
+        }
+    }
+
+    &.dashed{
+        border-top-style : dashed;
+    }
+
+    &.dotted{
+        border-top-style : dotted;
+    }
+}

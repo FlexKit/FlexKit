@@ -1,0 +1,61 @@
+// Message styles
+// -------------------------
+.message when (@messages = true){
+    display          : block;
+    padding          : @padding-base-vertical @padding-base-horizontal;
+    background-color : @state-primary-bg;
+    color            : @state-primary-color;
+    border-left      : 3px solid @state-primary-border;
+    .border-radius(@state-border-radius);
+
+    a{
+        .opacity(0.75);
+
+        &:hover{
+            .opacity(1);
+        }
+    }
+
+    hr{
+        border-color : inherit;
+    }
+
+    // Alternate styles
+    // -------------------------
+    &.success when (@message-color-success = true) and (@message-colors = true){
+        color            : @state-success-color;
+        border-color     : @state-success-border;
+        background-color : @state-success-bg;
+    }
+    &.warning when (@message-color-warning = true) and (@message-colors = true){
+        color            : @state-warning-color;
+        border-color     : @state-warning-border;
+        background-color : @state-warning-bg;
+    }
+    &.error when (@message-color-error = true) and (@message-colors = true){
+        color            : @state-error-color;
+        border-color     : @state-error-border;
+        background-color : @state-error-bg;
+    }
+    &.info when (@message-color-info = true) and (@message-colors = true){
+        color            : @state-info-color;
+        border-color     : @state-info-border;
+        background-color : @state-info-bg;
+    }
+    &.gray when (@message-color-gray = true) and (@message-colors = true){
+        color            : @gray-darker;
+        border-color     : @gray-light;
+        background-color : @gray-lighter;
+    }
+
+    &[class*=icon-]{
+        padding-left : 24px + @padding-base-horizontal * 2;
+
+        &:before{
+            position  : absolute;
+            top       : @padding-base-vertical;
+            left      : @padding-base-horizontal;
+            font-size : 24px;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+.button(@color : @button-primary-color; @background : @button-primary-bg; @border : @button-primary-border; @border-width : @button-border-width; @radius : @button-border-radius) {
+    margin-bottom   : 0; // For input.btn
+    text-align      : center;
+    cursor          : pointer;
+    position        : relative;
+    text-decoration : none;
+    line-height     : unit(@button-line-height * 2, em);
+    padding         : 0 1em;
+    .inline-block();
+    .button-color(@color; @background; @border);
+    .border-radius(@radius);
+    & when (@border-width > 0){
+        border-width : @border-width;
+        border-style : solid;
+    }
+    & when (@border-width = 0), (@border-width = none){
+        border : none;
+    }
+    & when (@button-transition = true){
+        .transition(background; 0.3s);
+    }
+    & when (@button-transition = false){
+        .transition(none);
+    }
+//    & when not (@border-width = @button-border-width){
+//        margin-top: @button-border-width - @border-width;
+//    }
+}
+
+// Button size
+//==================================================
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+.link-color(@color : @link-color; @color-hover : darken(@color, 30%)) {
+    color : @color;
+
+    &:hover{
+        color : @color-hover;
+    }
+}
+
+.button-color(@color; @background; @border; @color2 : extract(@color, 1); @background2 : darken(extract(@background, 1), 10%); @border2 : darken(extract(@border, 1), 10%)) {
+    color            : extract(@color, 1);
+    border-color     : extract(@border, 1);
+    background-color : extract(@background, 1);
+
+    &:hover, &:active, &.active{
+        & when (length(@color) = 1){
+            color : @color2;
+        }
+        & when (length(@color) = 2){
+            color : extract(@color, 2);
+        }
+        & when (length(@border) = 1){
+            border-color : @border2;
+        }
+        & when (length(@border) = 2){
+            border-color : extract(@border, 2);
+        }
+        & when (length(@background) = 1){
+            background-color : @background2;
+        }
+        & when (length(@background) = 2){
+            background-color : extract(@background, 2);
+        }
+    }
+}
+
+// 3D-Button
+//==================================================
+.button-3d(@border) {
+    margin-top : -0.55em;
+    @border2 : darken(@border, 7%);
+    .box-shadow(~'0 0.3em 0 0 @{border}, 0 0.3em 0 0.15em @{border2}');
+
+    &:active{
+        top : 0.25em;
+        .box-shadow(0 0 0 0.15em @border2);
+    }
+}
+
+// Button height
+//==================================================
+@button-height-larger : unit(@font-size-larger * @font-size-base * 2.5, px);
+@button-height-large  : unit(@font-size-large * @font-size-base * 2.5, px);
+@button-height-base   : unit(@font-size-base * 2.5, px);
+@button-height-small  : unit(@font-size-small * @font-size-base * 2.5, px);

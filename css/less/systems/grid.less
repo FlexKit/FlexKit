@@ -1,0 +1,78 @@
+.container{
+    position : relative;
+
+    & when not (@grid-container-width = 100%){
+        margin-left  : auto;
+        margin-right : auto;
+    }
+    & when (@responsive = false) and not (@grid-container-width = 100%){
+        width : @grid-container-width;
+    }
+    & when (@responsive = true) and not (@grid-container-width = 100%){
+        width     : 95%;
+        max-width : @grid-container-width;
+    }
+    .clearfix();
+}
+
+// GRID CSS
+//==================================================
+[class*=" grid_"], [class^="grid_"], [class*="-grid_"]{
+    display      : inline;
+    float        : left;
+    position     : relative;
+    width        : 100% - @grid-margin-width;
+    margin-left  : (@grid-margin-width / 2) !important;
+    margin-right : (@grid-margin-width / 2) !important;
+}
+.grid();
+
+// COLUMN LIST CSS
+//==================================================
+[class*=" column_"], [class^="column_"], [class*="-column_"]{
+    display : table;
+    width   : 100%;
+
+    & > *:not(.column-none){
+        float          : none !important;
+        display        : inline-block;
+        vertical-align : top;
+        width          : 100% - @column-margin-width;
+        margin-left    : (@column-margin-width / 2) !important;
+        margin-right   : (@column-margin-width / 2) !important;
+        margin-bottom  : (@column-margin-width / 2);
+    }
+
+    &.bottom{
+        & > *{
+            vertical-align : bottom;
+        }
+    }
+
+    &.middle{
+        & > *{
+            vertical-align : middle;
+        }
+    }
+
+    &.full-width{
+        & > *:not(.column-none){
+            margin-left  : @column-margin-width !important;
+            margin-right : 0 !important;
+        }
+    }
+
+    &.margin-none{
+        & > *{
+            margin-left  : 0 !important;
+            margin-right : 0 !important;
+        }
+    }
+
+    & > br{ display : none; }
+}
+.column();
+
+.clearfix{
+    .clearfix();
+}

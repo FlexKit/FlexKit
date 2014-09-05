@@ -1,0 +1,92 @@
+// Default color
+.primary when (@colors = true){
+    color : @primary-bg;
+
+    a&:hover{
+        color : darken(@primary-bg, 15%);
+    }
+}
+.success when (@color-success = true) and (@colors = true){
+    color : @brand-success;
+
+    a&:hover{
+        color : darken(@brand-success, 15%);
+    }
+}
+.warning when (@color-warning = true) and (@colors = true){
+    color : @brand-warning;
+
+    a&:hover{
+        color : darken(@brand-warning, 15%);
+    }
+}
+.error when (@color-error = true) and (@colors = true){
+    color : @brand-error;
+
+    a&:hover{
+        color : darken(@brand-error, 15%);
+    }
+}
+.info when (@color-info = true) and (@colors = true){
+    color : @brand-info;
+
+    a&:hover{
+        color : darken(@brand-info, 15%);
+    }
+}
+.seosamba-color{
+    color : @brand-seosamba;
+
+    a&:hover{
+        color : darken(@brand-seosamba, 15%);
+    }
+}
+.seotoaster-color{
+    color : @brand-seotoaster;
+
+    a&:hover{
+        color : darken(@brand-seotoaster, 15%);
+    }
+}
+.seosamba-bg{
+    color            : #fff;
+    background-color : @brand-seosamba;
+}
+.seotoaster-bg{
+    color            : #fff;
+    background-color : @brand-seotoaster;
+}
+
+// Default backgound color
+.primary-bg when (@colors = true){
+    background-color : @primary-bg;
+    color            : @primary-color;
+}
+.success-bg when (@color-success = true) and (@colors = true){
+    background-color : @brand-success;
+    color            : #fff;
+}
+.warning-bg when (@color-warning = true) and (@colors = true){
+    background-color : @brand-warning;
+    color            : #fff;
+}
+.error-bg when (@color-error = true) and (@colors = true){
+    background-color : @brand-error;
+    color            : #fff;
+}
+.info-bg when (@color-info = true) and (@colors = true){
+    background-color : @brand-info;
+    color            : #fff;
+}
+
+.larger when (@size-larger = true) and (@sizes = true){ font-size : @font-size-larger; }
+.large when (@size-large = true) and (@sizes = true){ font-size : @font-size-large; }
+.small when (@size-small = true) and (@sizes = true){ font-size : @font-size-small; }
+.mini when (@size-small = true) and (@sizes = true){ font-size : @font-size-mini; }
+
+code{
+    padding    : 1px 5px;
+    background : #f7f7f7;
+    border     : 1px solid #ddd;
+    color      : @brand-error;
+}

@@ -1,0 +1,10 @@
+<li class="news-list-item clearfix">
+    {$news:actions}
+    <time class="news-item-date icon-calendar2 small block mb10px" datetime="{$news:date:Y-m-d}">{$news:date: M d, Y}</time>
+    <a class="page-teaser-image text-center grid_3 alpha" href="{$news:url}">
+        <img src="{$news:preview}" alt="{$news:title}"/>
+    </a>
+    <a class="page-title large grid_9 omega" href="{$news:url}">{$news:title}</a>
+    <p class="news-item-description grid_9 omega small mb10px">{$news:teaser}</p>
+    <p class="news-item-tags small cl-both text-right">{$news:tags}</p>
+</li>

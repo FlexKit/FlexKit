@@ -1,0 +1,170 @@
+.ui-tabs when (@componentsJS-tabs = true){
+    position : relative; // position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed")
+    .clearfix();
+
+    //    &.ui-widget-content{
+    //        border : none;
+    //    }
+    //
+    //    &.ui-tabs-collapsible .ui-tabs-active a{
+    //        cursor : pointer;
+    //    }
+
+    .ui-tabs-nav{
+        background : @tabs-nav-bg;
+        margin     : 0;
+        padding    : 0;
+
+        // Style li
+        li{
+            float        : left;
+            margin       : 2px -1px 0 0;
+            background   : @tabs-nav-li-bg;
+            white-space  : nowrap;
+            list-style   : none;
+            border       : 1px solid @tabs-nav-li-border;
+            border-width : 1px 1px 0;
+
+            &.ui-tabs-active, &:hover{
+                margin-top       : 0;
+                border-top-width : 3px;
+            }
+
+            &:hover{
+                background   : @tabs-nav-li-bg-hover;
+                border-color : @tabs-nav-li-border-hover;
+
+                a{
+                    color : @tabs-nav-li-color-hover;
+                }
+            }
+
+            &.ui-tabs-active{
+                background     : @tabs-nav-li-bg-active;
+                position       : relative;
+                padding-bottom : 1px;
+                margin-bottom  : -1px;
+                border-color   : @tabs-nav-li-border-active;
+
+                a{
+                    cursor : default;
+                    color  : @tabs-nav-li-color-active;
+                }
+            }
+
+            &.ui-tabs-loading, &.ui-state-disabled{
+
+                a{
+                }
+            }
+        }
+
+        // Style a in li
+        .ui-tabs-anchor{
+            display         : block;
+            padding         : @padding-large-vertical @padding-large-horizontal;
+            text-decoration : none;
+            color           : @tabs-nav-li-color;
+        }
+    }
+
+    .ui-tabs-panel{
+        display    : block;
+        border     : 1px solid @tabs-nav-li-border-active;
+        overflow   : hidden;
+        background : @tabs-container-bg;
+        padding    : @padding-base-vertical @padding-base-horizontal;
+    }
+
+    &.vertical{
+        .ui-tabs-nav{
+            float : left;
+            width : 25%;
+
+            li{
+                float        : none;
+                display      : block;
+                margin       : 0 -1px -1px 2px;
+                border-width : 1px 0 1px 1px;
+
+                &.ui-tabs-active, &:hover{
+                    margin-left       : 0px;
+                    border-left-width : 3px;
+                }
+            }
+        }
+
+        .ui-tabs-panel{
+            clear : none;
+        }
+    }
+
+
+    // Tabs => Blocks
+    @tabs-bg : @brand-primary;
+    @tabs-color : @brand-primary;
+    @tabs-border-color : @tabs-nav-li-border-active;
+
+    &.blocks when (@tabs-type-blocks = true) and (@tabs-type = true){
+        border : 3px solid @tabs-border-color;
+
+        .ui-tabs-nav{
+            border-bottom : 3px solid @brand-primary;
+
+            li{
+                margin  : 0;
+                padding : 0;
+                border  : none;
+
+                & + li{
+                    border-left : 3px solid @brand-primary;
+                }
+
+                &:hover{
+                    a{
+                        background : lighten(@tabs-bg, 7%);
+                        color      : #fff;
+                    }
+                }
+            }
+
+            .ui-tabs-active{
+                .ui-tabs-anchor{
+                    background : @tabs-bg;
+                    color      : #fff;
+                }
+            }
+
+            .ui-tabs-anchor{
+                color : @tabs-color;
+            }
+        }
+
+        .ui-tabs-panel{
+            border : none;
+        }
+
+        &.vertical{
+            .ui-tabs-nav{
+                margin-right : -3px;
+                border       : none;
+                border-right : inherit;
+
+                li{
+                    border : none;
+
+                    & + li{
+                        border-top : 3px solid @brand-primary;
+                    }
+
+                    &.ui-tabs-active, &:hover{
+                    }
+                }
+            }
+
+            .ui-tabs-panel{
+                border-left : 3px solid @brand-primary;
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+// Nav lists style
+//==================================================
+.listpages, .listcategories, .featureditem, .relatedpages, .related-products{
+    .inline-block-wrap(top; li);
+}
+
+// Main Menu
+//==================================================
+@import "../widgets/menu_main";
+
+// Static\Flat Menu
+//==================================================
+@import "../widgets/menu_static";
+
+// List pages by tags and Related pages
+//==================================================
+@import "../widgets/list_pages_by_tags-related_pages";
+
+// List Pages & List Categories
+//==================================================
+@import "../widgets/list_pages-list_categories";
+
+// Style for all navigation items in sidebar
+//==================================================
+.sidebar when (@widget-lists-sidebar = true){
+
+    .listpages, .listcategories, .featureditem, .featureapage, .relatedpages{ }
+
+    .listpages li, .listcategories li, .featureditem li, .featureapage, .relatedpages li{
+        &{
+            width  : 100%;
+            margin : 0 0 2em;
+
+            .page-teaser-image{
+                width  : 100%;
+                float  : none;
+                margin : 0 0 0.5em;
+
+                img{ }
+            }
+            .page-title{ }
+
+            span, p{
+                font-size   : @font-size-small;
+                line-height : 1.25;
+            }
+        }
+
+        &:hover{
+            a{ }
+
+            .page-teaser-image{
+                img{ }
+            }
+
+            .page-title{ }
+
+            span{ }
+        }
+    }
+}
+
+// SiteMap
+//==================================================
+@import "../widgets/sitemap";
+
+// RSS feed
+//==================================================
+@import "../widgets/rss";
+
+// News List
+//==================================================
+@import "../widgets/news_list";
+
+// Search Results
+//==================================================
+@import "../widgets/search_results";
+
+// Breadcrumbs
+//==================================================
+@import "../widgets/breadcrumbs";
+
+// Mobile Menu styles
+//==================================================
+& when (@responsive = true){
+    @import '../mobile/mobile-menu';
+}

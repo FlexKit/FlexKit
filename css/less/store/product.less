@@ -1,0 +1,142 @@
+// Product Style
+.product{
+
+    .edit-product-btn{
+        position         : absolute;
+        left             : 0;
+        top              : 0;
+        background-color : @primary-bg;
+        color            : @primary-color;
+        padding          : 5px;
+    }
+
+    .product-name{
+        margin : 0 0 15px;
+    }
+
+    .product-image{
+        border  : 3px solid #EBEBEB;
+        display : block;
+
+        img{
+            width : 100%;
+        }
+    }
+
+    .main-info{
+        font-size : 14px;
+
+        span{
+            text-shadow : 1px 0 1px #ccc;
+            color       : #444;
+            font-weight : bold;
+        }
+    }
+
+    .more-info{
+        color     : #aaa;
+        font-size : 11px;
+
+        span{
+            color : #222;
+        }
+    }
+
+    .product-sku{ }
+
+    .product-mpn{ }
+
+    .product-brand{ }
+
+    .product-weight{ }
+
+    .product-description-short{
+        border-bottom : 1px solid #EEEEEE;
+        border-top    : 1px solid #EEEEEE;
+        margin        : 10px 0 0;
+        padding       : 15px 0;
+    }
+
+    .product-description-full{ }
+
+    .product-options-listing{
+        margin-bottom : 25px;
+        padding       : 25px 0;
+
+        .product-option{
+            overflow : hidden;
+
+            &:first-child{
+                margin-top : 0;
+            }
+
+            &>label{
+                font-weight : bold;
+                width       : auto;
+            }
+
+            &>div label{
+                cursor       : pointer;
+                float        : left;
+                font-size    : 12px;
+                margin-right : 1%;
+                width        : 27%;
+            }
+
+            select{
+                padding : 2px;
+                width   : auto;
+            }
+        }
+    }
+    .product-tags{
+        font-size   : @font-size-small;
+        color       : #aaa;
+        font-weight : normal;
+        margin      : 5px 0 0;
+
+        span{
+            border-left : 1px solid #DDDDDD;
+            padding     : 0 3px 0 5px;
+
+            &:first-child{
+                border : none;
+            }
+        }
+    }
+
+    .tcart-add{
+        .button-color(@primary-color, @primary-bg, @primary-bg);
+        padding             : 8px 8px 8px 33px;
+        background-image    : url("../images/cart.gif");
+        background-position : 5px 50%;
+        background-repeat   : no-repeat;
+        .border-radius(10px);
+
+        &:hover{
+        }
+    }
+
+    .starrating{
+        float : right;
+
+        p{ display : none; }
+    }
+}
+
+.line-or{
+    text-align : center;
+    border-top : 1px solid @gray-lighter !important;
+    margin     : 60px 0 50px;
+    height     : 0;
+
+    span{
+        .inline-block();
+        top                   : -23px;
+        background            : @gray-light !important;
+        color                 : #fff;
+        padding               : 5px 10px;
+        font-size             : @font-size-larger;
+        .border-radius(50px) !important;
+    }
+}

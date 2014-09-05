@@ -1,0 +1,121 @@
+.tooltip{
+    cursor : help;
+}
+.ui-tooltip when (@componentsJS-tooltips = true){
+    position   : absolute;
+    z-index    : 9999;
+    padding    : @padding-small-vertical @padding-small-horizontal;
+    max-width  : @tooltip-width;
+    background : @tooltip-bg;
+    color      : @tooltip-color;
+    & when (@tooltip-border-width > 0){
+        border : @tooltip-border-width solid @tooltip-border-color;
+    }
+
+    .ui-tooltip-content{
+        font-size  : .85em;
+    }
+
+    .arrow{
+        position     : absolute;
+        width        : 0;
+        height       : 0;
+        border-width : @tooltip-arrow-width;
+        border-style : solid;
+        border-color : transparent;
+        margin       : auto;
+
+        &.top{
+            left                : 0;
+            right               : 0;
+            bottom              : 100%;
+            border-top-width    : 0;
+            border-bottom-color : @tooltip-border-color;
+        }
+
+        &.bottom{
+            left                : 0;
+            right               : 0;
+            top                 : 100%;
+            border-bottom-width : 0;
+            border-top-color    : @tooltip-border-color;
+        }
+
+        &.left{
+            top                : 0;
+            bottom             : 0;
+            right              : 100%;
+            border-left-width  : 0;
+            border-right-color : @tooltip-border-color;
+        }
+
+        &.right{
+            top                : 0;
+            bottom             : 0;
+            left               : 100%;
+            border-right-width : 0;
+            border-left-color  : @tooltip-border-color;
+        }
+    }
+
+    &.success when (@tooltip-color-success = true) and (@tooltip-colors = true){
+        background : @state-success-bg;
+        color      : @state-success-color;
+        & when (@tooltip-border-width > 0){
+            border-color : @state-success-border;
+        }
+
+        .arrow{
+            &.left{ border-right-color : @state-success-bg; }
+            &.right{ border-left-color : @state-success-bg; }
+            &.top{ border-bottom-color : @state-success-bg; }
+            &.bottom{ border-top-color : @state-success-bg; }
+        }
+    }
+    &.warning when (@tooltip-color-warning = true) and (@tooltip-colors = true){
+        background : @state-warning-bg;
+        color      : @state-warning-color;
+        & when (@tooltip-border-width > 0){
+            border-color : @state-warning-border;
+        }
+
+        .arrow{
+            &.left{ border-right-color : @state-warning-bg; }
+            &.right{ border-left-color : @state-warning-bg; }
+            &.top{ border-bottom-color : @state-warning-bg; }
+            &.bottom{ border-top-color : @state-warning-bg; }
+        }
+    }
+    &.error when (@tooltip-color-error = true) and (@tooltip-colors = true){
+        background : @state-error-bg;
+        color      : @state-error-color;
+        & when (@tooltip-border-width > 0){
+            border-color : @state-error-border;
+        }
+
+        .arrow{
+            &.left{ border-right-color : @state-error-bg; }
+            &.right{ border-left-color : @state-error-bg; }
+            &.top{ border-bottom-color : @state-error-bg; }
+            &.bottom{ border-top-color : @state-error-bg; }
+        }
+    }
+    &.info when (@tooltip-color-info = true) and (@tooltip-colors = true){
+        background : @state-info-bg;
+        color      : @state-info-color;
+        & when (@tooltip-border-width > 0){
+            border-color : @state-info-border;
+        }
+
+        .arrow{
+            &.left{ border-right-color : @state-info-bg; }
+            &.right{ border-left-color : @state-info-bg; }
+            &.top{ border-bottom-color : @state-info-bg; }
+            &.bottom{ border-top-color : @state-info-bg; }
+        }
+    }
+
+    & when (@componentsJS-tooltips = false){
+        display : none;
+    }
+}

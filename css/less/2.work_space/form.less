@@ -1,0 +1,266 @@
+// Table of Content
+//==================================================
+//	Custom style
+//	Search form
+//==================================================
+
+// [type="text"], [type="password"], [type="email"], [type="search"], [type="tel"], [type="url"], [type="date"], [type="datetime"], [type="datetime-local"], [type="time"], [type="month"], [type="week"], [type="number"]
+
+//	Custom style
+//==================================================
+form{
+    .clearfix();
+
+    p{
+        margin : 0
+    }
+
+    &, fieldset{
+        & > p, & > div{
+            margin-bottom : 15px;
+            .clearfix();
+        }
+    }
+
+    fieldset{
+        padding : @padding-base-vertical @padding-base-horizontal;
+
+        &.unstyled{
+            padding : 0;
+            border  : 0;
+
+            legend{
+                width         : 100%;
+                padding       : 0;
+                margin-bottom : 1em;
+                font-weight   : @heading-weight;
+            }
+        }
+
+        legend{
+            font-size : @font-size-large;
+        }
+    }
+
+    // -- Recaptcha & Captcha style
+    .captcha{
+
+        .captcha_image{
+            width      : 65% !important;
+            height     : auto !important;
+            float      : left;
+            text-align : center;
+
+            .sidebar &{
+                width : 100% !important;
+            }
+        }
+
+        label, input{
+            float       : left;
+            width       : 35%;
+            font-weight : normal;
+            font-size   : @font-size-small;
+
+            .sidebar &{
+                width : 100%;
+            }
+        }
+
+        .recaptcha_links{
+            clear       : both;
+            font-size   : @font-size-small;
+            padding-top : 1em;
+
+            a + a{
+                border-left  : 1px solid @gray;
+                padding-left : 1em;
+                margin-left  : 1em;
+            }
+        }
+    }
+
+    // -- Buttons
+    [type="submit"]{
+        float : right;
+
+        &:hover{
+        }
+    }
+}
+
+label{
+    display       : block;
+    margin-bottom : 0.25em;
+}
+
+.required:after{
+    color   : @brand-error;
+    content : ' *';
+}
+.notvalid{
+    color : @brand-error !important;
+    &:before{
+        font-family  : 'toaster-icons';
+        content      : "\f06a";
+        margin-right : 5px;
+    }
+}
+
+select, textarea, input{
+    padding          : .5em;
+    border-width     : @input-border-width;
+    border-style     : solid;
+    border-color     : @input-border-color;
+    background-color : @input-bg;
+    color            : @input-color;
+    .border-radius(@input-border-radius);
+    & when (@button-transition = true){
+        .transition(all; 0.3s);
+    }
+
+    //&:focus:not([type="submit"]):not([type="button"]){
+    &:focus{
+        border-color : @input-border-color-focus;
+        .box-shadow(0 0 @input-shadow-size @input-border-color-focus; @input-shadow-focus);
+    }
+
+    &.success, &.warning, &.error{
+        & when (@colors = true){
+            color : @input-color;
+        }
+    }
+    &.success when (@color-success = true) and (@colors = true){
+        border-color : @brand-success;
+        &:focus{
+            .box-shadow(0 0 @input-shadow-size @brand-success; @input-shadow-focus);
+        }
+    }
+    &.warning when (@color-warning = true) and (@colors = true){
+        border-color : @brand-warning;
+        &:focus{
+            .box-shadow(0 0 @input-shadow-size @brand-warning; @input-shadow-focus);
+        }
+    }
+    &.error, &.notvalid{
+        & when (@color-error = true) and (@colors = true){
+            border-color : @brand-error;
+            &:focus{
+                .box-shadow(0 0 @input-shadow-size @brand-error; @input-shadow-focus);
+            }
+        }
+    }
+
+    &[disabled], [disabled] &, &[disabled]:focus, &.noedit, &.noedit:focus{
+        border-color : darken(@input-bg-disabled, 10%) !important;
+        background   : @input-bg-disabled !important;
+        color        : darken(@input-bg-disabled, 30%) !important;
+        .box-shadow(none) !important;
+    }
+}
+
+input, select{
+    height      : unit(@button-line-height * 2, em);
+    line-height : unit(@button-line-height * 2, em) - 1;
+}
+
+//select{
+//    option{
+//        color : @text-color;
+//    }
+//}
+
+textarea{
+    min-height : 5em;
+}
+
+.labeled when (@form-labeled = true){
+    display  : block;
+    position : relative;
+    .clearfix();
+
+    label, .label{
+        margin-top    : 0;
+        margin-bottom : 0;
+        height        : unit(@button-line-height * 2, em);
+        line-height   : unit(@button-line-height * 2, em);
+        background    : @input-border-color;
+        text-align    : center;
+        color         : #fff;
+        .transition(all; 0.3s);
+    }
+
+    input:focus, select:focus{
+        .box-shadow(none; @input-shadow-focus) !important;
+
+        & ~ label, & ~ .label{
+            background : @input-border-color-focus;
+        }
+    }
+
+    &.icon when (@form-labeled-icon = true){
+        input, select, textarea{
+
+            &:focus ~ [class*="icon-"]{
+                .opacity(1);
+            }
+        }
+
+        [class*="icon-"]{
+            position  : absolute;
+            margin    : auto;
+            top       : 0;
+            bottom    : 0;
+            z-index   : 2;
+            height    : 1em;
+            font-size : 1.25em;
+            .opacity();
+
+            &:before{
+                vertical-align : top;
+            }
+        }
+
+        &.right{
+            [class*="icon-"]{
+                right : .375em;
+            }
+
+            input, textarea{
+                padding-right : 2em;
+            }
+        }
+
+        &.left{
+            [class*="icon-"]{
+                left : .375em
+            }
+            input, textarea{
+                padding-left : 2em;
+            }
+        }
+
+        &.top{
+            [class*="icon-"]{
+                margin : 0;
+                top    : .375em;
+            }
+        }
+    }
+}
+
+.forgot-password, #remember-password{
+    float      : left;
+    margin-top : -(@button-height-base - @padding-base-vertical);
+}
+
+// -- Checkbox & Radio field style
+.checkboxRadioStyle();
+
+// Search Form Styles
+//==================================================
+@import "../widgets/search_form";
+
+// Form builder elements Styles
+//==================================================
+@import "../widgets/form_builder";

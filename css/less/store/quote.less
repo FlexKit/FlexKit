@@ -1,0 +1,366 @@
+.toaster-quote{
+    fieldset{
+        background    : none;
+        float         : left;
+        width         : 48.5%;
+        padding       : 3%;
+        margin-bottom : 1.5em;
+        height        : auto;
+
+        &:first-child{
+            margin-right : 3%;
+        }
+    }
+
+    label{
+        margin    : 0;
+        float     : left;
+        width     : 33%;
+        font-size : 12px;
+    }
+
+    input, select{
+        float  : left;
+        width  : 65%;
+        margin : 0 0 5px;
+    }
+
+    input{
+        &[type="submit"]{
+            width : auto;
+            float : right;
+        }
+    }
+
+    [type="checkbox"], [type="radio"]{
+        margin-left : 5px;
+    }
+
+    .product-note{ width : 200px; }
+}
+
+// Quote
+//==================================================
+#quote-search{
+    padding : 7px;
+    width   : 700px;
+    display : block;
+    margin  : 0 auto;
+}
+
+.ui-menu{
+    z-index : 55 !important;
+}
+
+#storeinfo{
+    text-align : right;
+    font-size  : 12px;
+
+    h1{
+        font-size   : 35px;
+        font-weight : bold;
+        margin      : 0;
+    }
+
+    p{
+        margin : 0;
+    }
+}
+
+#quote-summary{
+    float : right;
+    width : 25%;
+}
+
+#quote-details{
+    clear      : both;
+    text-align : right;
+    color      : #999;
+
+    span{
+        color : #000;
+    }
+}
+
+// Quote admin-panel
+//==================================================
+#quoteControlls{
+    height : 70px;
+
+    .quote-controlls{
+        .rgba(rgb(170, 170, 170), 0.8);
+        border-top : 5px solid #888;
+        bottom     : 0;
+        left       : 0;
+        padding    : 10px 0;
+        position   : fixed;
+        width      : 100%;
+        z-index    : 10;
+        text-align : center;
+    }
+
+    .quote-search{
+        width     : 500px;
+        padding   : 5px;
+        font-size : 18px;
+        color     : #666;
+        border    : 1px solid #ddd;
+    }
+}
+
+#quote-details{
+    input{
+        width : auto;
+    }
+}
+
+.quote-title{
+    border-bottom : 1px dashed #CCCCCC;
+    color         : #444444;
+    font-size     : 19px;
+    font-weight   : bold;
+    margin        : 0 0 20px;
+    padding       : 0 0 5px;
+}
+
+//#quote-summary
+//==================================================
+#cart-summary{
+    & > div{
+
+        input, select{
+            width : 45%;
+        }
+
+        select{
+            margin-left : -25%;
+        }
+
+        #quote-discount{
+            float : right;
+            width : 23%;
+        }
+    }
+}
+
+ul.errors{
+    margin  : 10px 0;
+    padding : 0;
+
+    li{
+        color      : #FFFFFF;
+        font-size  : 12px;
+        list-style : none outside none;
+        padding    : 5px;
+        text-align : center;
+    }
+}
+
+// Table checkout cart
+//==================================================
+#toaster-quote{
+    border        : none;
+    margin-bottom : 5px;
+    width         : 100%;
+
+    td{
+        .quote-qty{
+            width      : 50px;
+            padding    : 2px;
+            text-align : center;
+        }
+    }
+
+    .quote-info{
+
+        .title{
+            border-bottom : 1px dashed #CCCCCC;
+            color         : #444444;
+            font-size     : 19px;
+            font-weight   : bold;
+            margin        : 0 0 20px;
+            padding       : 0 0 5px;
+            background    : none;
+        }
+    }
+
+    .quote-info{
+        float   : left;
+        width   : 44%;
+        padding : 0 3%;
+
+        &:first-child{
+            margin-left  : -1px;
+            border-right : 1px dashed #CCCCCC;
+        }
+    }
+}
+
+// [Admin]
+
+// Toaster-checkout form
+//==================================================
+.quote-info{
+
+    #billing-user-address, .quote-info #shipping-user-address{
+        float     : none;
+        display   : block;
+        max-width : none;
+        width     : auto;
+    }
+
+    form{
+        fieldset{
+            & > div{
+                input, select{
+                    float   : left;
+                    width   : 65%;
+                }
+
+                select{
+                }
+            }
+        }
+
+    }
+}
+
+.quote-info form fieldset > div, #checkout-widget .toaster-quote div{
+    margin   : 0;
+    overflow : hidden;
+
+    label{
+        margin    : 0;
+        float     : left;
+        width     : 33%;
+        font-size : 12px;
+    }
+}
+// Checkout summary block
+//==================================================
+.quote-widget-title{
+    background     : #eee;
+    margin         : 15px 0 10px;
+    padding        : 5px;
+    font-size      : 14px;
+    font-weight    : bold;
+    text-transform : uppercase;
+}
+
+// Quote
+//==================================================
+#quote-search{
+    padding : 7px;
+    width   : 700px;
+    display : block;
+    margin  : 0 auto;
+}
+
+.ui-menu{ z-index : 55 !important; }
+
+#storeinfo{
+    text-align : right;
+    font-size  : 12px;
+
+    h1{
+        font-size   : 35px;
+        font-weight : bold;
+        margin      : 0;
+    }
+
+    p{ margin : 0; }
+}
+
+#quote-summary{
+    float : right;
+    width : 25%;
+}
+
+.quote-info{
+    margin : 20px 0 50px;
+
+    form, & > p{
+        margin : 0 15px;
+    }
+
+    form{
+
+        fieldset{
+            &:first-child{
+                margin-bottom : 20px;
+            }
+        }
+
+        label[for="same-for-shipping"]{
+            width : auto;
+        }
+
+        #same-for-shipping{
+            margin : 2px 0 0 5px;
+        }
+    }
+}
+
+#quote-details{
+    clear      : both;
+    text-align : right;
+    color      : #999;
+
+    span{
+        color : #000;
+    }
+
+    input{
+        width : auto;
+    }
+}
+
+// Quote admin-panel
+//==================================================
+#quoteControlls{
+    height : 70px;
+
+    .quote-controlls{
+        background      : rgba(170, 170, 170, 0.8);
+        -pie-background : rgba(170, 170, 170, 0.8);
+        border-top      : 5px solid #888;
+        bottom          : 0;
+        left            : 0;
+        padding         : 10px 0;
+        position        : fixed;
+        width           : 100%;
+        z-index         : 10;
+        text-align      : center;
+    }
+    .quote-search{
+        width     : 500px;
+        padding   : 5px;
+        font-size : 18px;
+        color     : #666;
+        border    : 1px solid #ddd;
+    }
+}
+
+.quote-title{
+    border-bottom : 1px dashed #CCCCCC;
+    color         : #444444;
+    font-size     : 19px;
+    font-weight   : bold;
+    margin        : 0 0 20px;
+    padding       : 0 0 5px;
+}
+
+#quote-summary{
+    #cart-summary{
+        & > div{
+            input, select{ width : 45%; }
+
+            select{ margin-left : -25%; }
+
+            #quote-discount{
+                float : right;
+                width : 23%;
+            }
+        }
+    }
+}

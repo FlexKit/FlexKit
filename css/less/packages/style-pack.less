@@ -1,0 +1,31 @@
+// Basic Styles
+//==================================================
+@import "../1.getting_started/basic";
+
+// Form Styles
+//==================================================
+@import "../2.work_space/form";
+
+// Gallery Styles
+//==================================================
+@import "../widgets/gallery";
+
+// Image Rotator
+//==================================================
+@import "../widgets/rotator";
+
+// Directupload
+//==================================================
+@import "../widgets/directupload";
+
+//Style for responsive
+//==================================================
+& when (@responsive = true){
+    @import "../2.work_space/mediaqueries/responsive";
+}
+
+//Style for responsive
+//==================================================
+& when (@print = true){
+    @import "../2.work_space/mediaqueries/print";
+}

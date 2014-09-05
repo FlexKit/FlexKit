@@ -1,0 +1,60 @@
+form when (@widget-form-builder = true){
+    .phone{
+        float       : left;
+        width       : 32.333%;
+        margin      : 0 0 0 1%;
+        white-space : nowrap;
+
+        label + &{
+            clear  : both;
+            margin : 0;
+            width  : 33.333%;
+
+            & + .phone + .phone input{
+                width : 100%;
+            }
+        }
+
+        input{
+            width : 90%;
+        }
+        span{
+            margin-left : 3%;
+        }
+        label{
+            display   : block;
+            color     : @input-color-placeholder;
+            font-size : @font-size-small;
+        }
+    }
+
+    .address{
+        width  : 49%;
+        float  : left;
+        margin : 1% 1% 0 0;
+
+        &:first-child{
+            width : 100%;
+            clear : both;
+
+            & + .address + .address, & + .address + .address + .address + .address{
+                margin-right : 0;
+                margin-left  : 1%;
+            }
+        }
+
+        input{
+        }
+        label{
+            display   : block;
+            color     : @input-color-placeholder;
+            font-size : @font-size-small;
+        }
+    }
+
+    .checkbox, .radio{
+        span + span{
+            margin-left : 5%;
+        }
+    }
+}

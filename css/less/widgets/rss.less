@@ -1,0 +1,39 @@
+.listxrss when (@widget-rss = true){
+
+    li{
+        margin-bottom : 20px;
+    }
+
+    a{
+        display       : block;
+        margin-bottom : 1em;
+
+        &.page-title{ }
+
+        &~a{
+            float        : left;
+            margin-right : 2%;
+
+            #left &, #right &{
+                float : none;
+                .inline-block();
+            }
+
+            img{ }
+        }
+    }
+
+    span{
+        display       : block;
+        font-size     : @font-size-mini;
+        color         : lighten(@text-color, 15%);
+        margin-bottom : 1em;
+    }
+
+    p{
+
+        #left &, #right &{
+            font-size : @font-size-small;
+        }
+    }
+}

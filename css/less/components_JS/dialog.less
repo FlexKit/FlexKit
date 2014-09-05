@@ -1,0 +1,190 @@
+.ui-dialog when (@componentsJS-dialog = true){
+    position         : absolute;
+    padding          : 0;
+    border-width     : @dialog-border-width;
+    border-style     : solid;
+    border-color     : @dialog-border-color;
+    background-color : @dialog-bg;
+    max-width        : 90%;
+    color            : inherit;
+    .box-shadow(4px 4px 4px @gray-dark);
+
+    .ui-effects-wrapper &{
+        max-width : none;
+    }
+
+    // Title bar
+    .ui-dialog-titlebar{
+        font-size   : @font-size-large;
+        background  : @dialog-header-bg;
+        color       : @dialog-header-color;
+        padding     : @padding-large-vertical @padding-large-horizontal;
+        position    : relative;
+        line-height : @line-height;
+    }
+
+    &.ui-draggable{
+        .ui-dialog-titlebar{
+            cursor : move;
+        }
+    }
+
+    .ui-dialog-title{
+        display      : block;
+        margin-right : 10px;
+    }
+
+    .ui-dialog-titlebar-close{
+        position   : absolute;
+        top        : 0;
+        bottom     : 0;
+        right      : @padding-large-vertical;
+        margin     : auto;
+        padding    : 0;
+        background : transparent;
+        .link-color(@dialog-header-color; @brand-error);
+        .box-sizing(content-box);
+        .icon-size(@icon-size-base; true);
+
+        .ui-icon-closethick{
+        }
+
+        .ui-button-text{
+            display : none;
+        }
+    }
+
+    // Content
+    .ui-dialog-content{
+        position   : relative;
+        border     : 0;
+        padding    : @padding-large-vertical @padding-large-horizontal;
+        background : @dialog-content-bg;
+        overflow   : auto;
+    }
+
+    // Buttons
+    .ui-dialog-buttonpane{
+        overflow         : hidden;
+        text-align       : left;
+        border-width     : 1px 0 0 0;
+        background-image : none;
+        padding          : @padding-base-vertical @padding-large-horizontal;
+
+        .ui-dialog-buttonset{
+            float : right;
+        }
+
+        .ui-dialog-buttonpane button{
+            margin : .5em .4em .5em 0;
+            cursor : pointer;
+        }
+    }
+
+    //For resizable style
+    .ui-resizable-handle{
+        position  : absolute;
+        font-size : 0.1px;
+        display   : block;
+    }
+    .ui-resizable-n{
+        cursor : n-resize;
+        height : 7px;
+        width  : 100%;
+        top    : -5px;
+        left   : 0;
+    }
+    .ui-resizable-e{
+        cursor : e-resize;
+        width  : 7px;
+        right  : -5px;
+        top    : 0;
+        height : 100%;
+    }
+    .ui-resizable-s{
+        cursor : s-resize;
+        height : 7px;
+        width  : 100%;
+        bottom : -5px;
+        left   : 0;
+    }
+    .ui-resizable-w{
+        cursor : w-resize;
+        width  : 7px;
+        left   : -5px;
+        top    : 0;
+        height : 100%;
+    }
+    .ui-resizable-se{
+        cursor : se-resize;;
+        width  : 12px;
+        height : 12px;
+        right  : -5px;
+        bottom : -5px;
+    }
+    .ui-resizable-sw{
+        cursor : sw-resize;
+        width  : 9px;
+        height : 9px;
+        left   : -5px;
+        bottom : -5px;
+    }
+    .ui-resizable-ne{
+        cursor : ne-resize;
+        width  : 9px;
+        height : 9px;
+        right  : -5px;
+        top    : -5px;
+    }
+    .ui-resizable-nw{
+        cursor : nw-resize;
+        width  : 9px;
+        height : 9px;
+        left   : -5px;
+        top    : -5px;
+    }
+
+    // Alternate colors
+    // -------------------------
+    &.success, &.warning, &.error, &.info{
+        & when (@dialog-colors = true){
+            .ui-dialog-titlebar{
+                color : #fff;
+            }
+        }
+    }
+    &.success when (@dialog-color-success = true) and (@dialog-colors = true){
+        border-color : @brand-success;
+
+        .ui-dialog-titlebar{
+            background : @brand-success;
+        }
+    }
+    &.warning when (@dialog-color-warning = true) and (@dialog-colors = true){
+        border-color : @brand-warning;
+
+        .ui-dialog-titlebar{
+            background : @brand-warning;
+        }
+    }
+    &.error when (@dialog-color-error = true) and (@dialog-colors = true){
+        border-color : @brand-error;
+
+        .ui-dialog-titlebar{
+            background : @brand-error;
+
+            .ui-dialog-titlebar-close{
+                &:hover{
+                    color : darken(@brand-error, 15%)
+                }
+            }
+        }
+    }
+    &.info when (@dialog-color-info = true) and (@dialog-colors = true){
+        border-color : @brand-info;
+
+        .ui-dialog-titlebar{
+            background : @brand-info;
+        }
+    }
+}

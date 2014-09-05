@@ -1,0 +1,102 @@
+.smoke-base when (@componentsJS-alert = true){
+
+    .smokebg{
+        position : fixed;
+        left     : 0;
+        right    : 0;
+        top      : 0;
+        bottom   : 0;
+        z-index  : 1000;
+        .rgba(#fff, 0.5);
+    }
+
+    .dialog{
+        overflow         : auto;
+        position         : fixed;
+        z-index          : 1001;
+        width            : 100%;
+        max-width        : @grid-container-width * 0.75;
+        max-height       : 100%;
+        top              : 25%;
+        left             : 0;
+        right            : 0;
+        margin           : 0 auto;
+        text-align       : center;
+        padding          : @padding-base-vertical @padding-base-horizontal;
+        border           : 1px solid;
+        color            : @state-primary-color;
+        border-color     : @state-primary-border;
+        background-color : @state-primary-bg;
+        .border-radius(@state-border-radius);
+
+        // Alternate styles
+        // -------------------------
+        &.success when (@alert-color-success = true) and (@alert-colors = true){
+            color            : @state-success-color;
+            border-color     : @state-success-border;
+            background-color : @state-success-bg;
+        }
+        &.warning when (@alert-color-warning = true) and (@alert-colors = true){
+            color            : @state-warning-color;
+            border-color     : @state-warning-border;
+            background-color : @state-warning-bg;
+        }
+        &.error when (@alert-color-error = true) and (@alert-colors = true){
+            color            : @state-error-color;
+            border-color     : @state-error-border;
+            background-color : @state-error-bg;
+        }
+        &.info when (@alert-color-info = true) and (@alert-colors = true){
+            color            : @state-info-color;
+            border-color     : @state-info-border;
+            background-color : @state-info-bg;
+        }
+
+        li{
+            margin     : 0;
+            list-style : none;
+
+            & + li{
+                margin-top : 0.5em;
+            }
+        }
+    }
+
+    .dialog-inner{
+        font-size : @font-size-large;
+        padding   : @padding-larger-vertical @padding-larger-horizontal;
+    }
+
+    .dialog-buttons{
+        margin-top : 1em;
+
+        button{
+            color            : @state-success-color;
+            border-color     : @state-success-border;
+            background-color : @state-success-bg;
+            .border-radius(@button-border-radius);
+
+            &.cancel{
+                color            : @state-error-color;
+                border-color     : @state-error-border;
+                background-color : @state-error-bg;
+            }
+        }
+    }
+
+    // Alert type
+    &.smoke-alert{
+    }
+
+    &.smoke-confirm{
+    }
+
+    &.smoke-prompt{
+    }
+
+    &.smoke-quiz{
+    }
+
+    &.smoke-signal{
+    }
+}

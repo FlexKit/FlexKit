@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>{$page:title}</title>
+    </head>
+    <body>
+        <div id="main">
+            <h1><img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}"></h1>
+            <div id="address">
+                <h3>{$plugin:widcard:BizOrgName:notag}</h3>
+                <p>{$plugin:widcard:BizAddress1:notag}</p>
+                <p>
+                    <span>Phone: </span>{$plugin:widcard:BizTelephone:notag}
+                </p>
+                <p>
+                    <span>Email: </span>{$plugin:widcard:BizEmail:notag}
+                </p>
+            </div>
+            <div style="clear:both">
+                <h2>Proforma Invoice #{$plugin:invoicetopdf:InvoiceNumber}</h2>
+                {$store:postpurchasereport}
+                <p style="font-size:12px; text-align:center; clear:both; margin-top:30px;">
+                    {$plugin:widcard:BizAddress1:notag} / <strong>phone:</strong> {$plugin:widcard:BizTelephone:notag} / <strong>email:</strong> {$plugin:widcard:BizEmail:notag}
+                </p>
+            </div>
+        </div>
+        <style>
+            *{
+                margin  : 0;
+                padding : 0;
+            }
+            body{
+                background  : #ffffff;
+                font-family : Arial;
+            }
+            h1{ float : left; width : 60%; }
+            #address{ float : left; width : 40%; text-align : right; }
+            #address p{ margin : 0; font-size : 12px; }
+                /*===== Table checkout cart =====*/
+            table.cart-content{
+                border        : none;
+                margin-bottom : 5px;
+                width         : 100%;
+            }
+            table.cart-content tr, table.cart-content td{ background : none; }
+            table.cart-content th{
+                background : #eee;
+                border     : none;
+            }
+            table.cart-content td{
+                border-bottom : 1px solid #ddd;
+                font-size     : 12px;
+                padding       : 7px;
+                text-align    : center;
+            }
+            table.cart-content td img.cart-product-image{
+                border  : none;
+                padding : 0;
+                margin  : 0;
+            }
+            table.cart-content .product-info{
+                text-align     : left;
+                vertical-align : top;
+            }
+            table.cart-content td span.toastercart-item-name, table.cart-content td span.post-purchase-report-product-name{
+                font-size   : 16px;
+                font-weight : bold;
+            }
+            table.cart-content td.product-info span{ display : block; }
+                /***** Cart summary *****/
+            .post-purchase .post-purchase-report-summary div{
+                border-bottom : 1px dotted #EEEEEE;
+                margin        : 0 10px;
+                padding       : 3px 0;
+                font-size     : 12px;
+            }
+            .post-purchase .post-purchase-report-summary div.cart-total{
+                font-size   : 16px;
+                font-weight : bold;
+                border      : none;
+            }
+            .post-purchase .post-purchase-report-summary div span{
+                float : left;
+                width : 50%;
+            }
+                /*===== Post purchase OR Thank you page =====*/
+            .post-purchase{
+                font-size : 12px;
+                overflow  : hidden;
+            }
+            .post-purchase h3.post-purchase-report-customer-order-id{
+                border-bottom : 1px dashed #CCCCCC;
+                color         : #444444;
+                font-size     : 19px;
+                font-weight   : bold;
+                margin        : 0 0 20px;
+                padding       : 0;
+            }
+            .post-purchase .post-purchase-report-customer-info, .post-purchase .post-purchase-report-shipping{
+                float        : left;
+                width        : 60%;
+                margin-right : 3%;
+            }
+            .post-purchase .post-purchase-report-billing, .post-purchase .post-purchase-report-summary{ overflow : hidden; }
+            .post-purchase .post-purchase-report-customer-info h4, .post-purchase .post-purchase-report-billing h4, .post-purchase-report-shipping h4{
+                font-weight : bold;
+                margin      : 0;
+            }
+            .post-purchase .post-purchase-report{ margin : 25px 0; }
+            .post-purchase-report-summary .summary-title{
+                margin         : 0;
+                padding        : 3px 5px;
+                background     : #eee;
+                font-size      : 14px;
+                font-weight    : bold;
+                text-transform : uppercase;
+            }
+        </style>
+    </body>
+</html>

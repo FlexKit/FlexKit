@@ -1,0 +1,56 @@
+// Message styles
+// -------------------------
+.callout when (@callouts = true){
+    display           : block;
+    margin-bottom     : 20px;
+    padding           : @padding-base-vertical @padding-base-horizontal;
+    border-width      : 1px 1px 1px 4px;
+    border-style      : solid;
+    border-color      : #ddd;
+    border-left-color : @brand-primary;
+    color             : inherit;
+    .border-radius(3px);
+
+    .callout-header{
+        color         : @brand-primary;
+        margin-bottom : 5px;
+    }
+
+    // Alternate styles
+    // -------------------------
+    &.success when (@callout-color-success = true) and (@callout-colors = true){
+        border-left-color : @brand-success;
+
+        .callout-header{
+            color : @brand-success;
+        }
+    }
+    &.warning when (@callout-color-warning = true) and (@callout-colors = true){
+        border-left-color : @brand-warning;
+
+        .callout-header{
+            color : @brand-warning;
+        }
+    }
+    &.error when (@callout-color-error = true) and (@callout-colors = true){
+        border-left-color : @brand-error;
+
+        .callout-header{
+            color : @brand-error;
+        }
+    }
+    &.info when (@callout-color-info = true) and (@callout-colors = true){
+        border-left-color : @brand-info;
+
+        .callout-header{
+            color : @brand-info;
+        }
+    }
+    &.gray when (@callout-color-gray = true) and (@callout-colors = true){
+        border-left-color : @gray;
+
+        .callout-header{
+            color : @gray;
+        }
+    }
+}

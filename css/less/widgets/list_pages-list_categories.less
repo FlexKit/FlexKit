@@ -1,0 +1,99 @@
+// List Pages & List Categories
+//==================================================
+.listpages, .listcategories{
+    & when (@widget-LP-LC = true){
+
+        li{
+            margin-bottom : 30px;
+        }
+
+        a{ }
+
+        .page-teaser-image{
+            float        : left;
+            margin-right : 3%;
+            width        : 150px;
+            overflow     : hidden;
+
+            img{ }
+        }
+
+        .page-title{ }
+
+        span{ }
+
+        // Hover
+        li:hover{
+
+            a{ }
+
+            .page-teaser-image{
+                img{ }
+            }
+
+            .page-title{ }
+
+            span{ }
+        }
+    }
+}
+
+// List Pages
+//==================================================
+.listpages when (@widget-LP = true) and (@widget-LP-LC = true){
+
+    li{ }
+
+    a{ }
+
+    .page-teaser-image{
+        img{ }
+    }
+
+    .page-title{ }
+
+    span{ }
+
+    // Hover
+    li:hover{
+
+        a{ }
+
+        .page-teaser-image{
+            img{ }
+        }
+
+        .page-title{ }
+
+        span{ }
+    }
+}
+
+// List Categories
+//==================================================
+.listcategories when (@widget-LC = true) and (@widget-LP-LC = true){
+    li{ }
+
+    a{ }
+
+    .page-teaser-image{
+        img{ }
+    }
+
+    .page-title{ }
+
+    span{ }
+
+    // Hover
+    li:hover{
+        a{ }
+
+        .page-teaser-image{
+            img{ }
+        }
+
+        .page-title{ }
+
+        span{ }
+    }
+}

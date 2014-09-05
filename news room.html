@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{$page:title}</title>
+        <meta name="keywords" content="{$meta:keywords}">
+        <meta name="description" content="{$meta:description}">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="480">
+        <meta http-equiv="cleartype" content="on">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="{$page:title}">
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="144x144" href="images/touch/144x144.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/touch/114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/touch/72x72.png">
+        <link rel="apple-touch-icon" href="images/touch/57x57.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="images/touch/144x144.png">
+        <meta name="msapplication-TileColor" content="#3372DF">
+
+        <!-- Generic Icon -->
+        <link rel="icon" href="images/favicon.ico">
+        <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
+
+        <!-- CSS -->
+        {concatcss}
+        <link href="css/reset.css" rel="stylesheet" media="screen">
+        <link href="css/content.css" rel="stylesheet" media="screen">
+        <link href="css/nav.css" rel="stylesheet" media="screen">
+        <link href="css/style.css" rel="stylesheet" media="screen">
+        <!-- Shopping css -->
+        <link href="css/store.css" rel="stylesheet" media="screen">
+        <!-- Additional css -->
+        <link href="css/founder.css" rel="stylesheet" media="screen">
+        <link href="css/animation.css" rel="stylesheet" media="screen">
+        {/concatcss}
+
+        <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
+        <!--[if lt IE 9]><script src="js/system/ie-pack.min.js"></script><![endif]-->
+
+    </head>
+    <body class="{$mobile:device}">
+
+        <!-- Top bar for mobile, with button show/hide menu -->
+        <div class="top-block clearfix d-hide">
+            <label data-menu="#main-menu .main_menu" data-menu-position="left" class="menu-btn fl-left icon-list2 btn large">Menu</label>
+        </div>
+
+        <!-- Container -->
+        <div id="container" class="container">
+
+            <!-- Header -->
+            <header class="grid_12" role="banner">
+                <div class="logo h1 grid_8 alpha">
+                    <a href="{$website:url}" title="{$page:h1}">
+                        <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
+                    </a>
+                </div>
+                <div class="grid_4 alpha omega mt10px">
+                    <nav class="social-links gl-change text-center mb15px">
+                        <a class="gplus icon-gplus" target="_blank" href="{$plugin:widcard:BizGplusAccount:notag}"></a>
+                        <a class="facebook icon-facebook" target="_blank" href="{$plugin:widcard:BizFbAccount:notag}"></a>
+                        <a class="twitter icon-twitter" target="_blank" href="{$plugin:widcard:BizTwitterAccount:notag}"></a>
+                        <a class="linkedin icon-linkedin" target="_blank" href="{$plugin:widcard:BizLinkedInAccount:notag}"></a>
+                        <a class="rss icon-feed" target="_blank" href="{$plugin:widcard:BizRssChannel:notag}"></a>
+                        <a class="youtube icon-youtube" target="_blank" href="{$plugin:widcard:BizYoutubeChannel:notag}"></a>
+                    </nav>
+                    {$search:form}
+                </div>
+            </header>
+
+            <!-- Main Menu -->
+            <nav id="main-menu" class="grid_12 mt15px mb30px" role="navigation">{$menu:main:main_menu}</nav>
+
+            <h1 class="grid_12 light" role="heading">{$page:h1}</h1>
+
+            <hr class="grid_12">
+
+            <!-- Left box -->
+            <aside id="left" class="grid_3" role="complementary">
+                <div class="aside-box">
+                    <h3>{$header:left1}</h3>
+                    {$content:left1}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:left2}</h3>
+                    {$content:left2}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:left3}</h3>
+                    {$content:left3}
+                </div>
+            </aside>
+
+            <!-- Content box -->
+            <div id="content" class="grid_9" role="main">
+                <!-- news list -->
+                <ul class="news-list">
+                {newslist:NEWS-LIST_NAME}
+                    <li class="news-list-item">
+                        {$news:actions}
+                        <time class="news-item-date small block mb10px" datetime="{$news:date:Y-m-d}">
+                            <i class="icon-calendar2 icon16"></i>
+                            {$news:date: M d, Y}
+                        </time>
+                        <a class="page-teaser-image text-center grid_2 alpha" href="{$news:url}">
+                            <img src="{$news:preview}" alt="{$news:title}"/>
+                        </a>
+                        <a class="page-title large grid_10 omega" href="{$news:url}">{$news:title}</a>
+                        <p class="news-item-description grid_10 omega small mb10px">{$news:teaser}</p>
+                        <p class="news-item-tags small cl-both text-right">{$news:tags}</p>
+                    </li>
+                {/newslist}
+                </ul>
+            </div>
+
+            <!-- Right box -->
+            <aside id="right" class="grid_3" role="complementary">
+                <div class="aside-box">
+                    <h3>{$header:right1:static}</h3>
+                    {$content:right1:static}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right2:static}</h3>
+                    {$content:right2:static}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right3}</h3>
+                    {$content:right3}
+                </div>
+            </aside>
+
+        </div>
+
+         <!-- Footer -->
+        <footer class="mt30px" itemscope itemtype="http://schema.org/LocalBusiness" role="contentinfo">
+
+            <!-- Container -->
+            <div class="container">
+                <div class="footer-box grid_3 t-grid_3">
+                    <h3>{$header:footer1:static}</h3>
+                    {$header:footer11:static}<span itemprop="name">{$plugin:widcard:BizOrgName:notag}</span>
+                </div>
+                <div class="footer-box grid_3 t-grid_3" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <h3>{$header:footer2:static}</h3>
+                    <address>
+                        <span itemprop="streetAddress">{$plugin:widcard:BizAddress1:notag}</span>
+                        <span itemprop="addressLocality">{$plugin:widcard:BizCity:notag}</span>,
+                        <span itemprop="postalCode">{$plugin:widcard:BizZip:notag}</span>
+                        <span itemprop="addressRegion">{$plugin:widcard:BizState:notag}</span>
+                        <meta itemprop="addressCountry" content="EN"/>
+                    </address>
+                </div>
+                <div class="footer-box grid_3 t-grid_3">
+                    <h3>{$header:footer3:static}</h3>
+                    <nav class="social-links gl-change text-center mb15px">
+                        <a class="gplus icon-gplus" target="_blank" href="{$plugin:widcard:BizGplusAccount:notag}"></a>
+                        <a class="facebook icon-facebook" target="_blank" href="{$plugin:widcard:BizFbAccount:notag}"></a>
+                        <a class="twitter icon-twitter" target="_blank" href="{$plugin:widcard:BizTwitterAccount:notag}"></a>
+                        <a class="linkedin icon-linkedin" target="_blank" href="{$plugin:widcard:BizLinkedInAccount:notag}"></a>
+                        <a class="rss icon-feed" target="_blank" href="{$plugin:widcard:BizRssChannel:notag}"></a>
+                        <a class="youtube icon-youtube" target="_blank" href="{$plugin:widcard:BizYoutubeChannel:notag}"></a>
+                    </nav>
+                </div>
+                <div class="footer-box grid_3 t-grid_3">
+                    <h3>{$header:footer4:static}</h3>
+                    <p itemprop="telephone">{$plugin:widcard:BizTelephone:notag}</p>
+                    <a href="mailto:{$plugin:widcard:BizEmail:notag}" itemprop="email">{$plugin:widcard:BizEmail:notag}</a>.
+                    <a href="http://www.google.com" itemprop="url">{$website:url}</a>
+                </div>
+
+                <hr class="grid_12">
+
+                <!-- Footer info -->
+                <div class="grid_4 text-left">{$content:footer-info:static}</div>
+
+                <!-- Flat Menu -->
+                <nav id="flat-menu" class="grid_8 text-right">
+                    {$menu:flat}
+                </nav>
+
+            </div>
+
+        </footer>
+
+        <!-- SCRIPTS ZONE -->
+        <script src="js/scripts.min.js"></script>
+        <script src="js/system/founder.min.js"></script>
+    </body>
+</html>

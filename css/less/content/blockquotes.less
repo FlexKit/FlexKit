@@ -1,0 +1,140 @@
+blockquote{
+    margin    : 2em 0;
+    padding   : 0.25em 2.5em;
+    color     : lighten(@text-color, 10%);
+    font-size : @font-size-large;
+    position  : relative;
+
+    &:before, &:after{
+        position    : absolute;
+        color       : @gray-light;
+        font-size   : 2em;
+        & when (@toaster-icons = true){
+            font-family : 'toaster-icons';
+        }
+        line-height : 1em;
+    }
+
+    &:after{
+        right  : 0;
+        bottom : -0.25em;
+        & when (@toaster-icons = false){
+            content : "\201c";
+        }
+        & when (@toaster-icons = true){
+            content : "\e074";
+            //content : "\e076"; // variant 2
+        }
+    }
+
+    &:before{
+        left : 0;
+        top  : -0.25em;
+        & when (@toaster-icons = false){
+            content : "\201e";
+        }
+        & when (@toaster-icons = true){
+            content : "\e073";
+            //content : "\e075"; // variant 2
+        }
+    }
+
+    p{
+        margin-bottom : 0;
+
+        & + p{
+            margin-top : 15px;
+        }
+
+    }
+
+    &.noquotes when (@blockquote-noquotes = true) and (@blockquote-types = true){
+        border-left : 2px solid @gray-light;
+        padding     : .5em 1em;
+
+        &:before, &:after{
+            content : '';
+        }
+    }
+
+    &.onequote when (@blockquote-onequote = true) and (@blockquote-types = true){
+        padding-left  : 2em;
+        padding-right : 2em;
+        &:before{
+            top       : -0.45em;
+            font-size : 5em;
+            .opacity(0.2);
+        }
+        &:after{
+            content : '';
+        }
+    }
+
+    &.cloud when (@blockquote-cloud = true) and (@blockquote-types = true){
+        padding          : 1em;
+        background-color : @gray-lighter;
+        .border-radius(5px);
+        .arrow-border(top-right; center; @gray-lighter);
+
+        @indent: 100px;
+        @border-width: 1px;
+
+        &:before{
+            content : '';
+        }
+
+        &.border when (@blockquote-cloud-border = true) and (@blockquote-types = true){
+            @border-width: 1px;
+            background-color : @body-bg;
+            padding          : 1em;
+            border           : @border-width solid @gray-lighter;
+            .border-radius(@border-radius-small);
+
+            &:before{
+                z-index      : 1;
+                position     : absolute;
+                top          : 100%;
+                left         : 0;
+                right        : 0;
+                border-width : 9px;
+                border-style : solid;
+                border-color : @body-bg @body-bg transparent transparent;
+                margin       : auto;
+                width        : 0;
+                height       : 0;
+            }
+        }
+
+        &.right when (@blockquote-cloud-right = true) and (@blockquote-types = true){
+            zoom: 1;
+
+            &:after{
+                left  : auto;
+                right : @indent;
+            }
+
+            &:before{
+                left  : auto;
+                right : @indent + @border-width;
+            }
+        }
+
+        &.left when (@blockquote-cloud-left = true) and (@blockquote-types = true){
+            zoom: 1;
+
+            &:after{
+                left               : @indent;
+                right              : auto;
+                border-right-color : transparent;
+                border-left-color  : @gray-lighter;
+            }
+
+            &:before{
+                left               : @indent + @border-width;
+                right              : auto;
+                border-right-color : transparent;
+                border-left-color  : @body-bg;
+            }
+        }
+    }
+}

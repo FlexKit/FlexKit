@@ -1,0 +1,88 @@
+.panel when (@panels = true){
+    color         : inherit;
+    border        : 1px solid @state-primary-border;
+    margin-bottom : 2em;
+
+    .panel-header, .panel-content, .panel-footer{
+        margin  : 0;
+        padding : @padding-base-vertical @padding-base-horizontal;
+        .clearfix();
+    }
+
+    .panel-header{
+        display       : block;
+        background    : @state-primary-bg;
+        color         : @state-primary-color;
+        border-bottom : inherit;
+        font-size     : @font-size-large;
+    }
+
+    .panel-content{
+    }
+
+    .panel-footer{
+        background       : #fcfcfc;
+        border-top       : inherit;
+        border-top-color : #efefef;
+    }
+
+    // Alternate colors
+    &.success when (@panel-success) and (@panel-colors){
+        border-color : @state-success-border;
+
+        .panel-header{
+            background : @state-success-bg;
+            color      : @state-success-color;
+        }
+    }
+    &.warning when (@panel-warning) and (@panel-colors){
+        border-color : @state-warning-border;
+
+        .panel-header{
+            background : @state-warning-bg;
+            color      : @state-warning-color;
+        }
+    }
+    &.error when (@panel-error) and (@panel-colors){
+        border-color : @state-error-border;
+
+        .panel-header{
+            background : @state-error-bg;
+            color      : @state-error-color;
+        }
+    }
+    &.info when (@panel-info) and (@panel-colors){
+        border-color : @state-info-border;
+
+        .panel-header{
+            background : @state-info-bg;
+            color      : @state-info-color;
+        }
+    }
+
+    &.gray when (@panel-gray) and (@panel-colors){
+        border-color : @gray-light;
+
+        .panel-header{
+            background : @gray-lighter;
+            color      : @gray-darker;
+        }
+    }
+
+    &.collapse when (@panel-collapse) and (@panel-types){
+        .panel-header{
+            position      : relative;
+            padding-right : @padding-base-horizontal + @icon-size-large;
+        }
+
+        .collapse-btn{
+            position : absolute;
+            right    : @padding-base-horizontal;
+            top      : 0;
+            bottom   : 0;
+            margin   : auto;
+            cursor   : pointer;
+            .icon-size(@icon-size-large; true)
+        }
+    }
+}

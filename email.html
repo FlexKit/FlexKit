@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>{$plugin:widcard:BizOrgName:notag}</title>
+</head>
+<body style="margin:0;padding:0;">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family:Arial, Helvetica, sans-serif; color:#000; font-size:14px; text-align:left;">
+		<tr>
+			<td bgcolor="" style="" align="center">
+				<table border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="" style="margin: 0px auto; max-width:100%;">
+
+					<!-- Header, LOGO -->
+					<tr style="" bgcolor="">
+						<td style="padding:15px;border-bottom:3px solid #fff;">
+							<a target="_blank" href="{$website:url}" style="text-decoration:none; font-size:50px; color:#999;">
+								<img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}" height="75" style="vertical-align:middle;">
+							</a>
+						</td>
+					</tr>
+
+					<!-- Content -->
+					<tr style="">
+						<td style="padding:15px;" valign="top">
+                        {$header:header:static}
+							{emailmessage}
+						</td>
+					</tr>
+
+					<!-- Footer -->
+					<tr style="" bgcolor="">
+						<td style="padding:15px 0; font-size:12px;text-align:center; border-top:3px solid #fff; color:#999;">
+							<address>{$plugin:widcard:BizOrgName:notag} | {$plugin:widcard:BizAddress1:notag}, {$plugin:widcard:BizCity:notag}, {$plugin:widcard:BizState:notag} {$plugin:widcard:BizZip:notag} | Tel : {$plugin:widcard:BizTelephone:notag}</address>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

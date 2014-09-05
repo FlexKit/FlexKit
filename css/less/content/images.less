@@ -1,0 +1,45 @@
+img[src*="/media/"]{
+}
+
+img[style*="float: left"], img[style*="float:left"]{
+    margin-right : 15px;
+}
+
+img[style*="float: right"], img[style*="float:right"]{
+    margin-left : 15px;
+}
+
+.img-thumbnail when (@image-thumbnail = true) and (@images-style = true){
+    & img, img&{
+        .thumbnail-state();
+    }
+}
+.img-circle when (@image-circle = true) and (@images-style = true){
+    & img, img&{
+        .border-radius(50em);
+    }
+}
+.img-rounded when (@image-rounded = true) and (@images-style = true){
+    & img, img&{
+        .border-radius(@border-radius-base);
+    }
+}
+.img-leaflet-right when (@image-leaflet-right = true) and (@images-style = true){
+    & img, img&{
+        .border-radius(50% 0);
+    }
+}
+.img-leaflet-left when (@image-leaflet-left = true) and (@images-style = true){
+    & img, img&{
+        .border-radius(0 50%);
+    }
+}
+
+[class*="caption"]{
+    line-height : @line-height;
+    padding     : @padding-small-vertical;
+    color       : @thumbnail-caption-color;
+    text-align  : center;
+    font-size   : @font-size-small;
+    .rgba(@thumbnail-caption-bg; @thumbnail-caption-opacity);
+}

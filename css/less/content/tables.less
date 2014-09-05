@@ -1,0 +1,195 @@
+// BASELINE STYLES
+//==================================================
+table{
+    width            : 100%;
+    background-color : @table-bg;
+
+    th, td{
+        padding        : .5em .75em;
+        border-top     : 1px solid @table-border-color;
+        vertical-align : middle;
+    }
+
+    th{
+        border-top : 0;
+        text-align : left;
+    }
+
+    td{
+        &:first-child{
+            vertical-align : top;
+        }
+    }
+
+    // Account for multiple tbody instances
+    tbody + tbody{
+        border-top : 2px solid @table-border-color;
+    }
+
+    // Nesting
+    table{
+        background-color : #fff;
+    }
+
+    &.table-outline{
+        border : 1px solid @table-border-color;
+    }
+
+    // BORDERED VERSION
+    //==================================================
+    &.table-bordered when (@table-bordered = true) and (@table-styles = true){
+        border-top      : 1px solid @table-border-color;
+        border-bottom   : 1px solid @table-border-color;
+        border-collapse : separate; // Done so we can round those corners!
+
+        tr > th,
+        tr > td{
+            border-right : 1px solid @table-border-color;
+            &:first-child{
+                border-left : 1px solid @table-border-color;
+            }
+        }
+    }
+
+    // ZEBRA-STRIPING
+    //==================================================
+    // Default zebra-stripe styles (alternating gray and transparent backgrounds)
+    &.table-striped when (@table-striped = true) and (@table-styles = true){
+        zoom : 1;
+
+        tr > td{
+            border-top : 0;
+        }
+        & > tr:nth-child(even), tbody tr:nth-child(odd){
+            background-color : @table-row-bg;
+        }
+    }
+
+    // HOVER EFFECT
+    //==================================================
+    // Placed here since it has to come after the potential zebra striping
+    &.table-hover when (@table-hover = true) and (@table-styles = true){
+        zoom : 1;
+
+        thead, tfoot{
+            tr:hover{
+                background : inherit !important;
+            }
+        }
+
+        tr:hover{
+            background-color : @table-row-bg-hover !important;
+
+            &.primary when (@colors = true){
+                background-color : darken(@state-primary-bg, 5%) !important;
+                border-color     : darken(@state-primary-border, 5%) !important;
+            }
+            &.success when (@color-success = true) and (@colors = true){
+                background-color : darken(@state-success-bg, 5%) !important;
+                border-color     : darken(@state-success-border, 5%) !important;
+            }
+            &.error when (@color-error = true) and (@colors = true){
+                background-color : darken(@state-error-bg, 5%) !important;
+                border-color     : darken(@state-error-border, 5%) !important;
+            }
+            &.warning when (@color-warning = true) and (@colors = true){
+                background-color : darken(@state-warning-bg, 5%) !important;
+                border-color     : darken(@state-warning-border, 5%) !important;
+            }
+            &.info when (@color-info = true) and (@colors = true){
+                background-color : darken(@state-info-bg, 5%) !important;
+                border-color     : darken(@state-info-border, 5%) !important;
+            }
+        }
+    }
+
+    //  Table responsive
+    //==================================================
+    &.responsive when (@responsive = true){
+        zoom : 1;
+
+        .table-head{
+            display : none;
+        }
+
+        @media only screen and (max-width : @responsive-size-tablet){
+            &{
+                border : none;
+            }
+            thead, th{
+                display : none;
+            }
+            tr{
+                display : block;
+                border  : 1px solid @table-border-color;
+
+                & + tr{
+                    margin-top : 1.5em;
+                }
+            }
+            td{
+                display      : block;
+                border-width : 0 !important;
+
+                & + td{
+                    border-top-width : 1px !important;
+                }
+            }
+            .table-head{
+                font-size     : 12px;
+                display       : block;
+                border-bottom : 1px dashed;
+                margin-bottom : 0.5em;
+                .opacity(.75);
+            }
+        }
+    }
+}
+
+// TABLE BACKGROUNDS
+// -----------------
+// Exact selectors below required to override .table-striped
+tr, td{
+    &.primary when (@colors = true){
+        color            : @state-primary-color;
+        background-color : @state-primary-bg !important;
+    }
+    &.success when (@color-success = true) and (@colors = true){
+        color            : @state-success-color;
+        background-color : @state-success-bg !important;
+    }
+    &.error when (@color-error = true) and (@colors = true){
+        color            : @state-error-color;
+        background-color : @state-error-bg !important;
+    }
+    &.warning when (@color-warning = true) and (@colors = true){
+        color            : @state-warning-color;
+        background-color : @state-warning-bg !important;
+    }
+    &.info when (@color-info = true) and (@colors = true){
+        color            : @state-info-color;
+        background-color : @state-info-bg !important;
+    }
+}
+tr{
+    &.primary td when (@colors = true){
+        border-color  : @state-primary-border !important;
+        border-bottom : 1px solid @state-primary-border !important;
+    }
+    &.success td when (@color-success = true) and (@colors = true){
+        border-color  : @state-success-border !important;
+        border-bottom : 1px solid @state-success-border !important;
+    }
+    &.error td when (@color-error = true) and (@colors = true){
+        border-color  : @state-error-border !important;
+        border-bottom : 1px solid @state-error-border !important;
+    }
+    &.warning td when (@color-warning = true) and (@colors = true){
+        border-color  : @state-warning-border !important;
+        border-bottom : 1px solid @state-warning-border !important;
+    }
+    &.info td when (@color-info = true) and (@colors = true){
+        border-color  : @state-info-border !important;
+        border-bottom : 1px solid @state-info-border !important;
+    }
+}

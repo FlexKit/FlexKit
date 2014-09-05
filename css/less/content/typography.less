@@ -1,0 +1,71 @@
+// Table of Content
+//==================================================
+//	Links
+//	Heading
+//	Blockquotes
+//  Toaster icon
+//  Custom classes
+//==================================================
+
+// Links
+//==================================================
+a{
+    color           : @link-color;
+    text-decoration : none;
+}
+a:visited{
+    //color : @link-color-visited;
+}
+a:hover{
+    color : @link-color-hover
+}
+a:active{
+    color : @link-color-active;
+}
+
+// Heading
+//==================================================
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+    margin-top    : 1.5em;
+    margin-bottom : 0.25em;
+    color         : @heading-color;
+    font-weight   : @heading-weight;
+    font-family   : @font-family-headings;
+
+    &:first-child{ margin-top : 0; }
+
+    .slide .slide-description &{ color : @slider-heading-color; }
+
+    footer &{
+        color : @footer-heading-color;
+    }
+
+    &:empty{
+        display : none;
+    }
+}
+h1, .h1{ font-size : 2.25em; }
+h2, .h2{ font-size : 1.75em; }
+h3, .h3{ font-size : 1.25em; }
+h4, .h4{ font-size : 1em; }
+h5, .h5{ font-size : 0.875em; }
+h6, .h6{ font-size : 0.75em; }
+
+.subtitle{
+    color     : @subheading-color;
+    font-size : @font-size-mini;
+}
+
+p{
+    margin-top    : 0;
+    margin-bottom : 15px;
+    .clearfix();
+
+    img{ margin : 0; }
+}
+
+address{
+    margin-bottom : 20px;
+    font-style    : normal;
+}

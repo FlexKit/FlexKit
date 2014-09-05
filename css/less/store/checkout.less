@@ -1,0 +1,570 @@
+// Reset style
+#checkoutitemlist *,
+#cart-summary *,
+#checkout-widget-preview *,
+.spinner *,
+#checkout-widget *,
+.quote-info *,
+#toaster-quote *,
+#quote-details *,
+#storeinfo *,
+#quote-summary *,
+.post-purchase *{
+    clear      : none;
+    font-style : normal;
+    .border-radius(0);
+}
+
+.ui-state-error{
+    margin  : 10px 0;
+    padding : 0;
+
+    li{
+        color      : #FFFFFF;
+        font-size  : 12px;
+        list-style : none outside none;
+        padding    : 5px;
+        text-align : center;
+    }
+}
+
+.spinner{
+    text-align   : center;
+    margin-top   : 65px;
+    width        : 72%;
+    margin-right : 3%;
+}
+
+// Table checkout cart
+.cart-content{
+    border        : none;
+    margin-bottom : 5px;
+    width         : 100%;
+
+    th{
+        background : @gray-lighter;
+        border     : none;
+        text-align : center;
+        &:first-child{
+            text-align : left;
+        }
+    }
+
+    tr, td{
+        background : none;
+    }
+
+    td{
+        border-width : 0 0 1px;
+        font-size    : 12px;
+        padding      : 7px;
+        text-align   : center;
+    }
+
+    .cart-product-image{
+        border  : none;
+        padding : 0;
+        margin  : 0;
+    }
+
+    .toastercart-item-name, .post-purchase-report-product-name{
+        font-size   : 16px;
+        font-weight : bold;
+    }
+
+    .itemID, .options{
+        font-size : 11px;
+        color     : @gray-light;
+
+        span+span{
+            color : #000;
+        }
+    }
+
+    .itemID{
+        margin : 5px 0 0;
+    }
+
+    .toastercart-item-qty{
+        width      : 50px;
+        padding    : 2px;
+        text-align : center;
+    }
+}
+
+// Checkout summary block
+#checkoutsummary{
+    float : right;
+    width : 25%;
+
+    .checkout-widget-title{
+        background     : @gray-lighter;
+        margin         : 15px 0 10px;
+        padding        : 5px;
+        font-size      : @font-size-base;
+        text-transform : uppercase;
+    }
+
+    .checkout-edit{
+        color          : @brand-error;
+        float          : right;
+        font-size      : @font-size-mini;
+        font-weight    : normal;
+        margin-top     : 2px;
+        text-transform : none;
+    }
+}
+
+// Cart summary
+#cart-summary{
+
+    & > div{
+        border-bottom : 1px dotted @gray-lighter;
+        margin        : 0 10px;
+        padding       : 3px 0;
+        font-size     : @font-size-small;
+
+        span:first-child{
+            float : left;
+            width : 55%;
+        }
+    }
+
+    .cart-total{
+        font-size   : @font-size-large;
+        font-weight : 900;
+        border      : none;
+    }
+}
+
+// Checkout widget preview
+#checkout-widget-preview{
+
+    .preview-content{
+        margin : 0 10px;
+
+        span{
+            display : block;
+        }
+    }
+}
+
+// Checkout widget
+#checkout-widget{
+    float        : left;
+    width        : 73%;
+    margin-right : 2%;
+
+    //checkout button
+    .checkout-button{
+        text-align  : center;
+        margin-top  : 65px;
+        font-size   : @font-size-larger;
+        font-weight : 900;
+
+        a{
+            color          : @gray;
+            vertical-align : middle;
+            &:hover{ color : @gray-dark; }
+        }
+
+        span{
+            .inline-block();
+            .border-radius(50px);
+            background  : @gray;
+            color       : #FFF;
+            font-size   : @font-size-small;
+            width       : 30px;
+            line-height : 30px;
+            padding     : 6px;
+        }
+    }
+
+    .checkout-forms-header{
+        border-bottom : 1px dashed @gray;
+        margin        : 0 0 1em;
+        padding       : 0 0 5px;
+        background    : none;
+    }
+
+    .back-button{
+        float      : right;
+        font-size  : @font-size-small;
+        margin-top : 7px;
+    }
+
+    //base style for forms
+    .toaster-checkout, #login-form{
+        float     : none;
+        display   : block;
+        max-width : none;
+        width     : auto;
+    }
+
+    label{
+        margin    : 0;
+        float     : left;
+        width     : 35%;
+        font-size : @font-size-small;
+    }
+
+    input, textarea, select{
+        float : left;
+        width : 65%;
+        .box-sizing();
+    }
+
+    input{
+        &[type="submit"]{
+            margin-top : 0;
+            float      : right;
+            width      : auto;
+        }
+    }
+
+    fieldset{
+        background    : none;
+        float         : left;
+        .box-sizing();
+        width         : 48.5%;
+        padding       : 3%;
+        margin-bottom : 1.5em;
+        height        : auto;
+
+        &:first-child{
+            margin-right : 3%;
+        }
+    }
+
+    label[for="shippingNotes"]{
+        float       : none;
+        margin-left : 20px;
+        width       : auto;
+    }
+}
+
+// checkout landing forms, checkout pickup form
+#checkout-landing-forms, #checkout-pickup-form{
+    overflow   : hidden;
+    margin-top : 15px;
+
+    &>div{
+        float   : left;
+        .box-sizing();
+        width   : 50%;
+        padding : 0 3%;
+        &:first-child{
+            border-right : 1px dashed @gray;
+        }
+    }
+}
+
+//checkout pickup form
+#checkout-pickup-form{
+    img{
+        clear       : both;
+        display     : block;
+        margin      : 0 auto;
+        padding-top : 15px;
+    }
+}
+
+//checkout shipping form, Payment zone
+#checkout-shipping-form, #payment-zone{
+    overflow   : hidden;
+    margin-top : 15px;
+    padding    : 0 3%;
+}
+
+//Payment zone
+#payment-zone{
+    h4{
+        border-bottom : 1px dashed @gray;
+        padding       : 0 0 5px;
+        background    : none;
+
+        & + fieldset{
+            margin-right : 3%;
+        }
+    }
+
+    fieldset{
+        margin : 0 0 1.5em 0;
+    }
+
+    legend{
+        padding     : 10px;
+        background  : none;
+        font-size   : @font-size-large;
+        font-weight : normal;
+        color       : @gray-dark;
+    }
+
+    label, input{
+        font-weight : normal;
+    }
+
+    input[type="checkbox"], input[type="radio"]{
+        width        : auto;
+        margin-right : -5px;
+    }
+
+    .pointer{
+        width : auto;
+    }
+
+    .shipping-to-billing-label{
+        width         : auto;
+        margin-bottom : 13px;
+    }
+
+    .card-verification-label{
+        width        : 50%;
+        margin-right : 1.5%;
+    }
+
+    .card-verification-payment{
+        width : 48%;
+        float : none;
+    }
+
+    .card-expiration{
+        margin-right : 3%;
+        width        : 25%;
+    }
+
+    .card-expiration-year{
+        width : 37%;
+    }
+
+    //Payment button
+    .payment-button{
+        float : none;
+
+        legend{
+        }
+
+        form{
+            div{
+                margin : 0;
+            }
+        }
+
+        img{
+            margin    : 2% 0 0 3%;
+            max-width : 57%;
+        }
+
+        .seo-tip{
+            background : none;
+            padding    : 0;
+            border     : none;
+        }
+    }
+}
+
+#paypal-creditcard{
+    fieldset{ height : 393px; }
+}
+
+// Shipping methods
+ul.shipping-methods{
+    overflow : hidden;
+    margin   : 0;
+
+    li{
+        list-style : none;
+        background : darken(@gray-lighter, 10%);
+        .inline-block();
+        .border-radius(5px);
+        margin     : 1%;
+        width      : 31%;
+        overflow   : hidden;
+
+        &:hover{
+            background : @gray-lighter;
+            .box-shadow(0px 0px 2px #aaa);
+        }
+
+        label{
+            width      : 90%;
+            padding    : 5%;
+            min-height : 60px;
+        }
+
+        input{ margin-top : 5px;}
+
+        .shipping-price{
+            font-size   : 16px;
+            font-weight : bold;
+        }
+
+        .shipping-method-title{ display : block; }
+
+        p{
+            border-top  : 1px dashed #FFFFFF;
+            clear       : both;
+            color       : #000000;
+            font-size   : 11px;
+            line-height : 15px;
+            padding     : 7px;
+            text-align  : justify;
+        }
+    }
+}
+
+// Post purchase OR Thank you page
+.post-purchase{
+    font-size : 12px;
+    overflow  : hidden;
+
+    .post-purchase-report-customer-order-id{
+        border-bottom : 1px dashed #CCCCCC;
+        color         : #444444;
+        font-size     : 19px;
+        font-weight   : bold;
+        margin        : 0 0 20px;
+        padding       : 0;
+    }
+
+    .post-purchase-report-customer-info{
+        float        : left;
+        width        : 73%;
+        margin-right : 3%;
+    }
+
+    .post-purchase-report-billing, .post-purchase-report-shipping{
+        float : left;
+        width : 48%;
+
+        h4{
+            font-weight : bold;
+            margin      : 0;
+        }
+    }
+
+    .post-purchase-report-billing{
+        margin-right : 4%;
+    }
+
+    .post-purchase-report-summary{
+        float    : right;
+        overflow : hidden;
+        width    : 25%;
+
+        .summary-title{
+            margin  : 0;
+            padding : 3px 5px;
+        }
+    }
+
+    .post-purchase-report-customer-info h4, {
+        font-weight : bold;
+        margin      : 0;
+    }
+
+    .post-purchase-report{ margin : 25px 0; }
+
+    .cart-content .product-info span{ display : block; }
+}
+
+/////////////////////////////////////////////////////////////////////
+.quote-widget-title, .post-purchase-report-summary .summary-title{
+    background     : #eee;
+    margin         : 15px 0 10px;
+    padding        : 5px;
+    font-size      : 14px;
+    font-weight    : bold;
+    text-transform : uppercase;
+}
+
+.post-purchase-report-summary{
+    & > div{
+        border-bottom : 1px dotted #EEEEEE;
+        margin        : 0 10px;
+        padding       : 3px 0;
+        font-size     : 12px;
+
+        span:first-child{
+            float : left;
+            width : 55%;
+        }
+    }
+}
+
+.quote-info{
+    float   : left;
+    width   : 44%;
+    padding : 0 3%;
+    margin  : 20px 0 50px;
+
+    &>p{
+        margin : 0 15px;
+    }
+
+    &:first-child{
+        margin-left  : -1px;
+        border-right : 1px dashed #CCCCCC;
+    }
+
+    .title{
+        border-bottom : 1px dashed #CCCCCC;
+        color         : #444444;
+        font-size     : 19px;
+        font-weight   : bold;
+        margin        : 0 0 20px;
+        padding       : 0 0 5px;
+        background    : none;
+    }
+
+    #billing-user-address, #shipping-user-address{ }
+
+    form{
+        margin : 0 15px;
+
+        fieldset{
+
+            &:first-child{
+                margin-bottom : 20px;
+            }
+
+            &>div{
+
+                label{
+                    margin    : 0;
+                    float     : left;
+                    width     : 33%;
+                    font-size : 12px;
+                }
+
+                input, select{
+                    float   : left;
+                    width   : 65%;
+                    padding : 4px 0;
+                    margin  : 0 0 5px;
+                }
+
+                select{
+                    padding : 3px 0;
+                }
+            }
+        }
+
+        label[for="same-for-shipping"]{
+            width : auto;
+        }
+
+        #same-for-shipping{
+            margin : 2px 0 0 5px;
+        }
+    }
+}
+
+#shippingNotes{
+    margin-top  : -14px;
+    margin-left : 2px;
+}
+
+#shippingNotes.notvalid{
+    .box-shadow(0 0 1px 1px #F00);
+}

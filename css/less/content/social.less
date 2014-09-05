@@ -1,0 +1,176 @@
+.rss{ color : @rss; }
+.skype{ color : @skype; }
+.gplus{ color : @gplus; }
+.twitter{ color : @twitter; }
+.youtube{ color : @youtube; }
+.flicker{ color : @flicker; }
+.linkedin{ color : @linkedin; }
+.facebook{ color : @facebook; }
+.pinterest{ color : @pinterest; }
+.vkontakte{ color : @vkontakte; }
+.instagram{ color : @instagram; }
+
+a{
+    &.inherit{
+        color : inherit;
+    }
+
+    &:hover{
+        &.rss when (@social-rss = true){
+            color : darken(@rss, 10%);
+        }
+        &.gplus when (@social-gplus = true){
+            color : darken(@gplus, 10%);
+        }
+        &.twitter when (@social-twitter = true){
+            color : darken(@twitter, 10%);
+        }
+        &.youtube when (@social-youtube = true){
+            color : darken(@youtube, 10%);
+        }
+        &.linkedin when (@social-linkedin = true){
+            color : darken(@linkedin, 10%);
+        }
+        &.facebook when (@social-facebook = true){
+            color : darken(@facebook, 10%);
+        }
+        &.skype when (@social-skype = true){
+            color : darken(@skype, 10%);
+        }
+        &.flicker when (@social-flicker = true){
+            color : darken(@flicker, 10%);
+        }
+        &.pinterest when (@social-pinterest = true){
+            color : darken(@pinterest, 10%);
+        }
+        &.vkontakte when (@social-vkontakte = true){
+            color : darken(@vkontakte, 10%);
+        }
+        &.instagram when (@social-instagram = true){
+            color : darken(@instagram, 10%);
+        }
+    }
+}
+
+// Social Buttons
+//==================================================
+.btn when (@social-button = true){
+    &.rss when (@social-rss = true){
+        .button-color(#fff; @rss; @rss);
+    }
+    &.gplus when (@social-gplus = true){
+        .button-color(#fff; @gplus; @gplus);
+    }
+    &.twitter when (@social-twitter = true){
+        .button-color(#fff; @twitter; @twitter);
+    }
+    &.youtube when (@social-youtube = true){
+        .button-color(#fff; @youtube; @youtube);
+    }
+    &.linkedin when (@social-linkedin = true){
+        .button-color(#fff; @linkedin; @linkedin);
+    }
+    &.facebook when (@social-facebook = true){
+        .button-color(#fff; @facebook; @facebook);
+    }
+    &.skype when (@social-skype = true){
+        .button-color(#fff; @skype; @skype);
+    }
+    &.flicker when (@social-flicker = true){
+        .button-color(#fff; @flicker; @flicker);
+    }
+    &.pinterest when (@social-pinterest = true){
+        .button-color(#fff; @pinterest; @pinterest);
+    }
+    &.vkontakte when (@social-vkontakte = true){
+        .button-color(#fff; @vkontakte; @vkontakte);
+    }
+    &.instagram when (@social-instagram = true){
+        .button-color(#fff; @instagram; @instagram);
+    }
+}
+
+.labeled when (@form-labeled = true){
+
+    // Social Filed
+    &.gplus when (@form-labeled-social-gplus = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @gplus; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @gplus; }
+            & ~ [class*="icon-"]{ color : @gplus; }
+        }
+    }
+    &.twitter when (@form-labeled-social-twitter = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @twitter; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @twitter; }
+            & ~ [class*="icon-"]{ color : @twitter; }
+        }
+    }
+    &.facebook when (@form-labeled-social-facebook = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @facebook; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @facebook; }
+            & ~ [class*="icon-"]{ color : @facebook; }
+        }
+    }
+    &.linkedin when (@form-labeled-social-linkedin = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @linkedin; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @linkedin; }
+            & ~ [class*="icon-"]{ color : @linkedin; }
+        }
+    }
+    &.youtube when (@form-labeled-social-youtube = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @youtube; }
+        *:checked, *:focus{
+            & ~ [class*="icon-"]{ color : @youtube; }
+            & ~ label, & ~ .label{ background : @youtube; }
+        }
+    }
+    &.rss when (@form-labeled-social-rss = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @rss; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @rss; }
+            & ~ [class*="icon-"]{ color : @rss; }
+        }
+    }
+    &.skype when (@form-labeled-social-skype = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @skype; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @skype; }
+            & ~ [class*="icon-"]{ color : @skype; }
+        }
+    }
+    &.flicker when (@form-labeled-social-flicker = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @flicker; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @flicker; }
+            & ~ [class*="icon-"]{ color : @flicker; }
+        }
+    }
+    &.pinterest when (@form-labeled-social-pinterest = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @pinterest; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @pinterest; }
+            & ~ [class*="icon-"]{ color : @pinterest; }
+        }
+    }
+    &.vkontakte when (@form-labeled-social-vkontakte = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @vkontakte; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @vkontakte; }
+            & ~ [class*="icon-"]{ color : @vkontakte; }
+        }
+    }
+    &.instagram when (@form-labeled-social-instagram = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @instagram; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @instagram; }
+            & ~ [class*="icon-"]{ color : @instagram; }
+        }
+    }
+}
+
+// -- Social field style
+.social-field(@width : 250px);

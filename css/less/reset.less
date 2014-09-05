@@ -1,0 +1,295 @@
+@import "1.getting_started/2-variables";
+
+// Table of Content
+//==================================================
+//	Reset & Basics
+//	Reset Form
+//	Grid system
+//  Reset for all navigation items, related-products
+//==================================================
+
+@import "systems/normalize";
+
+// Reset & Basics
+//==================================================
+*{
+    -webkit-touch-callout       : none; //если надо, то запрещаем выделение текста
+    -webkit-tap-highlight-color : rgba(0, 0, 0, 0); //убираем фон подсветки ссылок и кнопок
+    -webkit-text-size-adjust    : none; //фиксим баг в IOS cо шкалированием в landscape
+
+    &, &:before, &:after{
+        .box-sizing();
+    }
+}
+::-moz-selection{
+    background : @text-select-bg;
+    color      : @text-select-color;
+}
+::selection{
+    background : @text-select-bg;
+    color      : @text-select-color;
+}
+
+body{
+    //-webkit-font-smoothing      : antialiased; // Fix for webkit rendering
+    -webkit-font-smoothing      : subpixel-antialiased !important;
+    -webkit-backface-visibility : hidden;
+    -moz-backface-visibility    : visible;
+    -ms-backface-visibility     : hidden;
+    -ms-touch-action            : manipulation;
+    touch-action                : manipulation;
+}
+blockquote, q{
+    quotes : none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after{
+    content : '';
+    content : none;
+}
+em{ font-style : italic; }
+table{
+    border-spacing  : 0;
+    border-collapse : collapse;
+    //    word-break      : break-all
+}
+a:focus, [type="checkbox"]:focus, [type="radio"]:focus, *:focus{
+    outline : none;
+}
+a, [type="submit"], [type="button"], button, [type="checkbox"], [type="radio"]{ cursor : pointer; }
+img, [type="checkbox"], [type="radio"]{ vertical-align : middle; }
+img{
+    max-width : 100%;
+    height    : auto;
+}
+
+.fb-like-box{
+    & > span, iframe{
+        position : relative !important;
+        width    : 100% !important;
+        //        height   : auto !important;
+    }
+}
+.mobile iframe{
+    width : 100%;
+}
+.gall{
+    .inline-block;
+}
+.gmaps{
+    max-width : 100%;
+    img{ max-width : none; }
+}
+
+.ltr{
+    direction    : ltr;
+    unicode-bidi : bidi-override;
+}
+
+.rtl{
+    direction    : rtl;
+    unicode-bidi : bidi-override;
+}
+
+[contenteditable="true"]{
+    .inline-block();
+    background : @input-bg;
+    border     : @input-border-width solid @input-border-color;
+    cursor     : text;
+    padding    : @padding-mini-vertical @padding-mini-horizontal;
+}
+
+//// Reset Form
+////==================================================
+input, select, textarea, button{
+    max-width   : 100%;
+    width       : 100%;
+    font-family : inherit;
+    .placeholder();
+}
+//
+//// Reset width of input images, buttons, radios, checkboxes
+button,
+[type="file"],
+[type="image"],
+[type="submit"],
+[type="reset"],
+[type="button"],
+[type="radio"],
+[type="checkbox"]{
+    width : auto; // Override of generic input selector
+}
+[type="file"]{
+    border  : none;
+    padding : 0;
+}
+[type="color"]{
+    padding : 0;
+}
+
+textarea{
+    vertical-align : top;
+    line-height    : normal;
+    .resize();
+}
+
+[type="checkbox"], [type="radio"]{
+    padding : 0;
+    border  : none;
+    height  : auto;
+
+    &:focus{
+        .box-shadow(none; @input-shadow-focus) !important;
+    }
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size]{
+    height : auto;
+}
+
+// Fix optgroup Firefox bug per https://github.com/twitter/bootstrap/issues/7611
+select optgroup{
+    font-style  : inherit;
+    font-size   : inherit;
+    font-family : inherit;
+}
+
+button, [type="button"], [type="reset"], [type="submit"]{
+    -webkit-appearance : button;
+
+    &:focus{
+        .box-shadow(none; @input-shadow-focus);
+    }
+}
+
+[disabled]{
+    cursor : default;
+}
+
+// Reset for all navigation items, related-products
+//==================================================
+.main_menu, .listpages, .listcategories, .featureditem, .featureapage, .search-results, .relatedpages, .listxrss, .related-products{
+    .clearfix();
+
+    & + .generator-links:before{
+        content    : "";
+        clear      : both;
+        display    : block;
+        overflow   : hidden;
+        visibility : hidden;
+        height     : 0;
+    }
+}
+
+//fix for Safari 3
+& when (@webkit = true){
+    ::i-block-chrome, .main_menu,
+    ::i-block-chrome, .listpages,
+    ::i-block-chrome, .listcategories,
+    ::i-block-chrome, .featureditem,
+    ::i-block-chrome, .search-results,
+    ::i-block-chrome, .relatedpages,
+    ::i-block-chrome, .listxrss,
+    ::i-block-chrome, .related-products{
+        display : table;
+    }
+}
+
+//fix for Opera
+& when (@opera = true){
+    noindex:-o-prefocus, .main_menu,
+    noindex:-o-prefocus, .listpages,
+    noindex:-o-prefocus, .listcategories,
+    noindex:-o-prefocus, .featureditem,
+    noindex:-o-prefocus, .search-results,
+    noindex:-o-prefocus, .relatedpages,
+    noindex:-o-prefocus, .listxrss,
+    noindex:-o-prefocus, .related-products{
+        word-spacing : -0.3em;
+        li{
+            word-spacing : normal;
+        }
+    }
+}
+
+.static_menu, .static_menu li,
+.main_menu, .main_menu li, .main_menu ul, .main_menu ul li,
+.sitemap, .sitemap li,
+.listpages, .listpages li,
+.listcategories, .listcategories li,
+.featureditem, .featureditem li,
+.featureapage,
+.relatedpages, .relatedpages li,
+.listxrss, .listxrss li,
+.search-results, .search-results li,
+.img_gallery, .img_gallery li,
+.related-products, .related-products li{
+    margin          : 0;
+    padding         : 0;
+    list-style-type : none;
+}
+.listpages,
+.listcategories,
+.featureditem,
+.featureapage,
+.search-results,
+.relatedpages,
+.listxrss,
+.related-products{
+    li{
+        position : relative;
+    }
+
+    a{
+        display : block;
+    }
+
+    .page-teaser-image{
+    }
+
+    img{
+        width : 100%;
+    }
+
+    .page-title{
+        margin      : 0 0 0.25em;
+        font-size   : @font-size-large;
+        font-family : @font-family-headings;
+    }
+}
+.listpages span,
+.listcategories span,
+.featureditem span,
+.featureapage p,
+.search-results span,
+.relatedpages span,
+.listxrss p,
+.related-products .product-description{
+    display  : block;
+    overflow : hidden;
+    margin   : 0;
+
+    &:empty{
+        display : none;
+    }
+}
+
+.reset-style{
+    .reset-style;
+}
+
+.disable-hover{
+    pointer-events : none;
+}
+
+//  Fonts
+//==================================================
+@import "content/fonts";
+
+//  Toaster ICON
+//==================================================
+& when (@toaster-icons = true){
+    @import "content/toaster-icons";
+}

@@ -1,0 +1,24 @@
+.directupload-wrapper when (@widget-directupload = true){
+    .inline-block(top);
+
+    .direct-upload-images{
+        position : relative;
+
+        img{
+            border : none;
+            cursor : pointer;
+            margin : 0;
+        }
+
+        .progressbar{
+        }
+    }
+
+    .directupdelete{
+        color : @brand-error;
+    }
+}
+
+.direct-upload when (@widget-directupload = true){
+    .uploaded-image{ }
+}
