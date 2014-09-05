@@ -753,9 +753,9 @@ button:focus,
   pointer-events: none;
 }
 @font-face {
-  font-family: "toaster-icons";
-  src: url("../fonts/icons/toaster-icons.eot");
-  src: url("../fonts/icons/toaster-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/toaster-icons.svg#toaster-icons") format("svg"), url("../fonts/icons/toaster-icons.woff") format("woff"), url("../fonts/icons/toaster-icons.ttf") format("truetype");
+  font-family: "founder";
+  src: url("../fonts/icons/founder.eot");
+  src: url("../fonts/icons/founder.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/founder.svg#founder") format("svg"), url("../fonts/icons/founder.woff") format("woff"), url("../fonts/icons/founder.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
