@@ -9,7 +9,7 @@ blockquote{
         position    : absolute;
         color       : @gray-light;
         font-size   : 2em;
-        & when (@toaster-icons = true){
+        & when (@founder-icons = true){
             font-family : 'founder-icons';
         }
         line-height : 1em;
@@ -18,10 +18,10 @@ blockquote{
     &:after{
         right  : 0;
         bottom : -0.25em;
-        & when (@toaster-icons = false){
+        & when (@founder-icons = false){
             content : "\201c";
         }
-        & when (@toaster-icons = true){
+        & when (@founder-icons = true){
             content : "\e074";
             //content : "\e076"; // variant 2
         }
@@ -30,10 +30,10 @@ blockquote{
     &:before{
         left : 0;
         top  : -0.25em;
-        & when (@toaster-icons = false){
+        & when (@founder-icons = false){
             content : "\201e";
         }
-        & when (@toaster-icons = true){
+        & when (@founder-icons = true){
             content : "\e073";
             //content : "\e075"; // variant 2
         }
