@@ -753,9 +753,9 @@ button:focus,
   pointer-events: none;
 }
 @font-face {
-  font-family: "founder";
-  src: url("../fonts/icons/founder.eot");
-  src: url("../fonts/icons/founder.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/founder.svg#founder") format("svg"), url("../fonts/icons/founder.woff") format("woff"), url("../fonts/icons/founder.ttf") format("truetype");
+  font-family: "founder-icons";
+  src: url("../fonts/icons/founder-icons.eot");
+  src: url("../fonts/icons/founder-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/founder-icons.svg#founder-icons") format("svg"), url("../fonts/icons/founder-icons.woff") format("woff"), url("../fonts/icons/founder-icons.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -848,7 +848,7 @@ button:focus,
 .ui-datepicker-prev:before,
 .ui-datepicker-next:before,
 .newslog-tag-filter:before {
-  font-family: 'toaster-icons';
+  font-family: 'founder-icons';
   speak: none;
   font-style: normal;
   font-weight: normal;

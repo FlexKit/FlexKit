@@ -153,7 +153,7 @@ label {
   color: #f65314 !important;
 }
 .notvalid:before {
-  font-family: 'toaster-icons';
+  font-family: 'founder-icons';
   content: "\f06a";
   margin-right: 5px;
 }
@@ -671,7 +671,7 @@ a .img_gallery li:hover {
   color: #ffffff;
 }
 .rotator.cycle-slideshow .action-button:before {
-  font-family: 'toaster-icons';
+  font-family: 'founder-icons';
 }
 .rotator.cycle-slideshow .action-button.cycle-prev {
   left: -54px;
@@ -773,7 +773,7 @@ a .img_gallery li:hover {
   content: "Loading...";
 }
 .loading-page:before {
-  font-family: 'toaster-icons';
+  font-family: 'founder-icons';
   content: "\e0f3";
   font-size: 10em;
   height: 1em;
