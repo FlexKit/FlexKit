@@ -1,50 +1,19 @@
-//console.log(device.type);
-//console.log(device.tablet());
-//console.log(device.mobile());
-
 // Call functions for touch devices
 if(device.type){
-    replaceSelector(':hover', ':active', false);    // Replace :hover => .touch for touch devices
+    replaceSelector(':hover|:active', '.touch', false);    // Replace :hover => .touch for touch devices
+    $('body')
+        .on('touchstart', function(e){
+            $(e.target).addClass('touch')
+        })
+        .on('touchend touchmove', function(e){
+            $('*').removeClass('touch')
+        });
 }
 tableResponsive();    // Responsive table
-
-// Add device class
-//if(!device.type){
-//    $('[data-desktop]').each(function(){
-//        $(this).addClass(' ' + $(this).data('desktop'));
-//    });
-//}else if(device.tablet()){
-//    $('[data-tablet]').each(function(){
-//        $(this).addClass(' ' + $(this).data('tablet'));
-//    });
-//}else if(device.mobile()){
-//    $('[data-mobile]').each(function(){
-//        $(this).addClass(' ' + $(this).data('mobile'));
-//    });
-//}
-//window.onresize = _resizeClass();
-//function _resizeClass(){
-//    if(!device.type){
-//        if($(window).width()>=800){
-//            $('[data-desktop]').each(function(){
-//                $(this).addClass(' '+$(this).data('desktop'));
-//            });
-//        }else if($(window).width()<800 && $(window).width()>=480){
-//            $('[data-tablet]').each(function(){
-//                $(this).addClass(' '+$(this).data('tablet'));
-//            });
-//        }else if($(window).width()<480){
-//            $('[data-mobile]').each(function(){
-//                $(this).addClass(' '+$(this).data('mobile'));
-//            });
-//        }
-//    }
-//}
 
 // Function calls
 //======================================================
 
-// TODO rewrite on native javascript
 ///////// Responsive table /////////
 function tableResponsive(){
     $('table.responsive').each(function(){
@@ -95,7 +64,7 @@ function replaceSelector(oldSelector, newSelector, removeSelector){
 function changeRule(rule, pattern, newSelector, oldSelector, type, patternRemove){
     selectors = rule.selectorText;
 
-    if(/.btn|button|[type="button"]|[type="submit"]|a\b/.test(rule.selectorText) && rule.style.getPropertyValue("transition")){
+    if(/\.btn|button|[type="button"]|[type="submit"]|a\b/.test(rule.selectorText) && rule.style.getPropertyValue("transition")){
         rule.style.removeProperty("transition")
     }
 
@@ -182,6 +151,7 @@ $('.menu-btn, .dropdown-btn')
         }
     })
     .hammer().on('tap', function(){
+        event.preventDefault();
         var menu = $(this).data('menu');
         $('.mobile-overlay').removeClass('open');
         if(!$(this).hasClass('active')){
@@ -199,11 +169,13 @@ $('.menu-btn, .dropdown-btn')
 
 $('.sub-menu-btn')
     .hammer().on('tap', function(){
+        event.preventDefault();
         $(this).toggleClass('active').nextAll('ul').toggleClass('open');
     });
 
 $('.mobile-overlay')
     .on('touchstart', function(){
+        event.preventDefault();
         $('.menu-btn, .dropdown-btn').removeClass('active');
         $('.mobile-menu, .dropdown-menu, .mobile-overlay').removeClass('open');
     });
