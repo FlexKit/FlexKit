@@ -1,6 +1,3 @@
-/* ==========================================================================
-   Created by Ilya Pestov - @ilya_pestov https://github.com/Pestov/Shade
-   ========================================================================== */
 .container {
   position: relative;
   margin-left: auto;
@@ -2330,8 +2327,8 @@ img.img-thumbnail {
   transition: all 0.3s ease;
   border: 1px solid #bbbbbb;
 }
-a .img-thumbnail img:hover,
-a img.img-thumbnail:hover {
+.img-thumbnail img:hover,
+img.img-thumbnail:hover {
   border-color: #61b3de;
 }
 .img-circle img,

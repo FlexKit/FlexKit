@@ -1,6 +1,3 @@
-/* ==========================================================================
-   Created by Ilya Pestov - @ilya_pestov https://github.com/Pestov/Shade
-   ========================================================================== */
 body {
   background: #ffffff;
   color: #555555;
@@ -545,7 +542,11 @@ form .radio span + span {
   vertical-align: middle;
 }
 .img_gallery li {
+  position: relative;
   margin: 5px;
+  text-align: center;
+}
+.img_gallery a img {
   position: relative;
   cursor: pointer;
   overflow: hidden;
@@ -557,7 +558,7 @@ form .radio span + span {
   transition: all 0.3s ease;
   border: 1px solid #bbbbbb;
 }
-a .img_gallery li:hover {
+.img_gallery a img:hover {
   border-color: #61b3de;
 }
 .img_gallery .image_caption {
