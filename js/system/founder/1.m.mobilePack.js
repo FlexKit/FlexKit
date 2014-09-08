@@ -1,11 +1,9 @@
 // Call functions for touch devices
 if(device.type){
     replaceSelector(':hover|:active', '.touch', false);    // Replace :hover => .touch for touch devices
-    $('body')
-        .on('touchstart', function(e){
+    $('body').on('touchstart', function(e){
             $(e.target).addClass('touch')
-        })
-        .on('touchend touchmove', function(e){
+        }).on('touchend touchmove', function(e){
             $('*').removeClass('touch')
         });
 }
@@ -35,8 +33,7 @@ function tableResponsive(){
 // Replace 'Selector' on 'New Selector'
 var sheet, rule, selectors, newSelectorRule, newRule, j, f;
 function replaceSelector(oldSelector, newSelector, removeSelector){
-    var pattern = new RegExp(oldSelector+'\\b'),
-        patternRemove = removeSelector ? new RegExp(removeSelector+'\\b') : removeSelector;
+    var pattern = new RegExp(oldSelector+'\\b'), patternRemove = removeSelector ? new RegExp(removeSelector+'\\b') : removeSelector;
     try{
 
         for(var i = 0; i<document.styleSheets.length; i++){
@@ -139,43 +136,51 @@ if(document.getElementsByClassName('dropdown-btn').length){
     document.body.appendChild(dropdownOverlay);
 }
 
-$('.menu-btn, .dropdown-btn')
-    .each(function(){
-        var menu = $(this).data('menu'),
-            position = $(this).data('menu-position'),
-            height = $(this).data('menu-height');
-        if($(this).hasClass('menu-btn')){
-            $(menu).addClass('mobile-menu '+position);
-        }else if($(this).hasClass('dropdown-btn')){
-            $(menu).addClass('dropdown-menu '+position).height(height);
-        }
-    })
-    .hammer().on('tap', function(){
-        event.preventDefault();
-        var menu = $(this).data('menu');
-        $('.mobile-overlay').removeClass('open');
-        if(!$(this).hasClass('active')){
-            $('.menu-btn, .dropdown-btn').removeClass('active');
-            $('.mobile-menu, .dropdown-menu, .menu-overlay').removeClass('open');
-            if($(this).hasClass('menu-btn')){
-                $('.menu-overlay').addClass('open');
-            }else if($(this).hasClass('dropdown-btn')){
-                $('.dropdown-overlay').addClass('open');
-            }
-        }
-        $(this).toggleClass('active');
-        $(menu).toggleClass('open');
-    });
+var $mobileButton = $('.menu-btn, .dropdown-btn');
+$mobileButton.each(function(){
+    var menu = $(this).data('menu'),
+        position = $(this).data('menu-position'),
+        height = $(this).data('menu-height');
+    if($(this).hasClass('menu-btn')){
+        $(menu).addClass('mobile-menu '+position);
+    }else if($(this).hasClass('dropdown-btn')){
+        $(menu).addClass('dropdown-menu '+position).height(height);
+    }
+});
 
-$('.sub-menu-btn')
-    .hammer().on('tap', function(){
-        event.preventDefault();
+$('.mobile-overlay').on('touchstart', function(){
+    $('.menu-btn, .dropdown-btn').removeClass('active');
+    $('.mobile-menu, .dropdown-menu, .mobile-overlay').removeClass('open');
+});
+
+if(!jQuery().hammer){
+    $mobileButton.on('click', function(){
+        showHideMenu($(this))
+    });
+    $('.sub-menu-btn').on('click', function(){
         $(this).toggleClass('active').nextAll('ul').toggleClass('open');
     });
-
-$('.mobile-overlay')
-    .on('touchstart', function(){
-        event.preventDefault();
-        $('.menu-btn, .dropdown-btn').removeClass('active');
-        $('.mobile-menu, .dropdown-menu, .mobile-overlay').removeClass('open');
+}else{
+    $mobileButton.hammer().on('tap', function(){
+        showHideMenu($(this))
     });
+    $('.sub-menu-btn').hammer().on('tap', function(){
+        $(this).toggleClass('active').nextAll('ul').toggleClass('open');
+    });
+}
+
+function showHideMenu($this){
+    var menu = $this.data('menu');
+    $('.mobile-overlay').removeClass('open');
+    if(!$this.hasClass('active')){
+        $('.menu-btn, .dropdown-btn').removeClass('active');
+        $('.mobile-menu, .dropdown-menu, .menu-overlay').removeClass('open');
+        if($this.hasClass('menu-btn')){
+            $('.menu-overlay').addClass('open');
+        }else if($this.hasClass('dropdown-btn')){
+            $('.dropdown-overlay').addClass('open');
+        }
+    }
+    $this.toggleClass('active');
+    $(menu).toggleClass('open');
+}

@@ -14,3 +14,9 @@ if(!jQuery().chosen && $(".chosen-select").length || $(".chosen-select-deselect"
     chosen.src = websiteUrl+"/themes/"+themeName+"/js/plugin/jquery.chosen.min.js";
     document.body.appendChild(chosen);
 }
+
+if(!jQuery().hammer){
+    var hammer = document.createElement("script");
+    hammer.src = websiteUrl+"/themes/"+themeName+"/js/plugin/hammer.js";
+    document.body.appendChild(hammer);
+}
