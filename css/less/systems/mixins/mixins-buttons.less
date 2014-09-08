@@ -1,4 +1,10 @@
-.button(@color : @button-primary-color; @background : @button-primary-bg; @border : @button-primary-border; @border-width : @button-border-width; @radius : @button-border-radius) {
+.button(
+    @color        : @button-primary-color;
+    @background   : @button-primary-bg;
+    @border       : @button-primary-border;
+    @border-width : @button-border-width;
+    @radius       : @button-border-radius
+) {
     margin-bottom   : 0; // For input.btn
     text-align      : center;
     cursor          : pointer;
@@ -22,9 +28,6 @@
     & when (@button-transition = false){
         .transition(none);
     }
-//    & when not (@border-width = @button-border-width){
-//        margin-top: @button-border-width - @border-width;
-//    }
 }
 
 // Button size
@@ -39,7 +42,14 @@
     }
 }
 
-.button-color(@color; @background; @border; @color2 : extract(@color, 1); @background2 : darken(extract(@background, 1), 10%); @border2 : darken(extract(@border, 1), 10%)) {
+.button-color(
+    @color;
+    @background;
+    @border;
+    @color2      : extract(@color, 1);
+    @background2 : darken(extract(@background, 1), 10%);
+    @border2     : darken(extract(@border, 1), 10%)
+) {
     color            : extract(@color, 1);
     border-color     : extract(@border, 1);
     background-color : extract(@background, 1);

@@ -73,7 +73,7 @@
 }
 
 // Arrow
-.arrow-border(@side : false; @position; @color : @brand-primary; @size : 10px; @indent:0) {
+.arrow-border(@side : bottom; @position : center; @color : @brand-primary; @size : 10px; @indent:0) {
     position : relative;
 
     &:after{
@@ -98,28 +98,22 @@
             left               : auto;
         }
 
-        & when (@side = top), (@side = bottom-right), (@side = bottom-left){
+        & when (@side = top), (@side = top-right), (@side = top-left){
             border-bottom-color : @color;
             bottom              : 100%;
             top                 : auto;
         }
 
-        & when (@side = bottom), (@side = top-left), (@side = top-right){
+        & when (@side = bottom), (@side = bottom-left), (@side = bottom-right){
             border-top-color : @color;
             top              : 100%;
             bottom           : auto;
         }
-        & when (@side = top-left){
+        & when (@side = top-left), (@side = bottom-left){
             border-left-color : @color;
         }
-        & when (@side = top-right){
+        & when (@side = top-right), (@side = bottom-right){
             border-right-color : @color;
-        }
-        & when (@side = bottom-right){
-            border-right-color : @color;
-        }
-        & when (@side = bottom-left){
-            border-left-color : @color;
         }
 
         .position() when (@position = center) and (@side = left), (@side = right){
