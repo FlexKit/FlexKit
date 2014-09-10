@@ -89,9 +89,6 @@ form > div:after,
 form fieldset > div:after {
   clear: both;
 }
-form fieldset {
-  padding: 8px 12px;
-}
 form fieldset.unstyled {
   padding: 0;
   border: 0;
