@@ -162,9 +162,11 @@ if(!jQuery().hammer){
     });
 }else{
     $mobileButton.hammer().on('tap', function(){
+        event.preventDefault();
         showHideMenu($(this))
     });
     $('.sub-menu-btn').hammer().on('tap', function(){
+        event.preventDefault();
         $(this).toggleClass('active').nextAll('ul').toggleClass('open');
     });
 }

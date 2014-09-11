@@ -750,9 +750,9 @@ button:focus,
   pointer-events: none;
 }
 @font-face {
-  font-family: "founder-icons";
-  src: url("../fonts/icons/founder-icons.eot");
-  src: url("../fonts/icons/founder-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/founder-icons.svg#founder-icons") format("svg"), url("../fonts/icons/founder-icons.woff") format("woff"), url("../fonts/icons/founder-icons.ttf") format("truetype");
+  font-family: "flexkit-icons";
+  src: url("../fonts/icons/flexkit-icons.eot");
+  src: url("../fonts/icons/flexkit-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/flexkit-icons.svg#flexkit-icons") format("svg"), url("../fonts/icons/flexkit-icons.woff") format("woff"), url("../fonts/icons/flexkit-icons.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -845,7 +845,7 @@ button:focus,
 .ui-datepicker-prev:before,
 .ui-datepicker-next:before,
 .newslog-tag-filter:before {
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   speak: none;
   font-style: normal;
   font-weight: normal;

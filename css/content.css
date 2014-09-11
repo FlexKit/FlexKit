@@ -1229,7 +1229,7 @@ a.inherit-color:hover {
   display: none !important;
 }
 .gl-change .generator-links:before {
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   content: "\e008";
 }
 .gl-change .generator-links + .generator-links {
@@ -1746,7 +1746,7 @@ blockquote:after {
   position: absolute;
   color: #bbbbbb;
   font-size: 2em;
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   line-height: 1em;
 }
 blockquote:after {
@@ -1946,7 +1946,7 @@ ul.list-arrow > li:before {
   float: left;
   color: inherit;
   margin-left: -1em;
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   content: '\e0c3';
 }
 ul.list-arrow > li:hover:before {

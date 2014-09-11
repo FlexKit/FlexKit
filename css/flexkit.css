@@ -47,7 +47,7 @@
   font-size: 14px;
 }
 .carousel .carousel-btn:before {
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   font-size: 3em;
   line-height: 1;
   height: 1em;
@@ -1019,7 +1019,7 @@
 .chosen-container .chosen-search:after {
   color: #bbbbbb;
   vertical-align: middle;
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   content: '\e077';
   font-size: 16px;
   margin-left: -24px;
@@ -1028,7 +1028,7 @@
 .chosen-container .result-selected:before,
 .chosen-container .chosen-single:before {
   float: right;
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   font-size: 16px;
   width: 16px;
 }
@@ -1054,7 +1054,7 @@
   cursor: default;
 }
 .chosen-container .chosen-results li.group-result:before {
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   content: ' \e0c1';
 }
 .chosen-container .chosen-results li.active-result em {
@@ -1124,7 +1124,7 @@
   height: 10px;
 }
 .chosen-container .search-choice-close:before {
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   content: '\e0a2';
 }
 .chosen-container .search-choice-close:hover {
@@ -1139,7 +1139,7 @@
 .chosen-container .chosen-search:after {
   color: #bbbbbb;
   vertical-align: middle;
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   content: '\e077';
   font-size: 16px;
   margin-left: -24px;

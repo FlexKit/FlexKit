@@ -9,8 +9,8 @@ blockquote{
         position    : absolute;
         color       : @gray-light;
         font-size   : 2em;
-        & when (@founder-icons = true){
-            font-family : 'founder-icons';
+        & when (@flexkit-icons = true){
+            font-family : 'flexkit-icons';
         }
         line-height : 1em;
     }
@@ -18,10 +18,10 @@ blockquote{
     &:after{
         right  : 0;
         bottom : -0.25em;
-        & when (@founder-icons = false){
+        & when (@flexkit-icons = false){
             content : "\201c";
         }
-        & when (@founder-icons = true){
+        & when (@flexkit-icons = true){
             content : "\e074";
             //content : "\e076"; // variant 2
         }
@@ -30,10 +30,10 @@ blockquote{
     &:before{
         left : 0;
         top  : -0.25em;
-        & when (@founder-icons = false){
+        & when (@flexkit-icons = false){
             content : "\201e";
         }
-        & when (@founder-icons = true){
+        & when (@flexkit-icons = true){
             content : "\e073";
             //content : "\e075"; // variant 2
         }

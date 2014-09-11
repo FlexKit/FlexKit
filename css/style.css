@@ -147,7 +147,7 @@ label {
   color: #f65314 !important;
 }
 .notvalid:before {
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   content: "\f06a";
   margin-right: 5px;
 }
@@ -669,7 +669,7 @@ form .radio span + span {
   color: #ffffff;
 }
 .rotator.cycle-slideshow .action-button:before {
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
 }
 .rotator.cycle-slideshow .action-button.cycle-prev {
   left: -54px;
@@ -771,7 +771,7 @@ form .radio span + span {
   content: "Loading...";
 }
 .loading-page:before {
-  font-family: 'founder-icons';
+  font-family: 'flexkit-icons';
   content: "\e0f3";
   font-size: 10em;
   height: 1em;
