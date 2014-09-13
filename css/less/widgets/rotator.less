@@ -20,102 +20,102 @@
             left     : 0;
         }
     }
+}
 
-    &.cycle-slideshow{
-        .slide{
-            position   : absolute;
-            top        : 0;
-            left       : 0;
-            width      : 100%;
-            height     : 100%;
-            list-style : none;
+&.cycle-slideshow when (@widget-rotator = true){
+    .slide{
+        position   : absolute;
+        top        : 0;
+        left       : 0;
+        width      : 100%;
+        height     : 100%;
+        list-style : none;
 
-            & > a.generator-links:not(:first-child), & > a.tpopup:not(:first-child){
-                position : absolute;
-                top      : 10px;
-                left     : 10px;
-            }
+        & > a.generator-links:not(:first-child), & > a.tpopup:not(:first-child){
+            position : absolute;
+            top      : 10px;
+            left     : 10px;
         }
+    }
 
-        // -- Pager
-        .cycle-pager{
-            position    : absolute;
-            top         : 5px;
-            right       : 0;
-            z-index     : 20;
-            text-align  : center;
-            font-size   : 0;
-            line-height : 0;
+    // -- Pager
+    .cycle-pager{
+        position    : absolute;
+        top         : 5px;
+        right       : 0;
+        z-index     : 20;
+        text-align  : center;
+        font-size   : 0;
+        line-height : 0;
 
-            > *{
-                .inline-block;
-                cursor     : pointer;
-                margin     : 0 3px;
-                color      : @primary-color;
-                background : #FFF;
-                .border-radius(14px);
-                .icon-size(10px; true);
-
-                &:hover{
-                    background : darken(@primary-bg, 10%);
-                }
-
-                &.cycle-pager-active{
-                    cursor     : default;
-                    color      : @primary-color;
-                    background : @primary-bg;
-                }
-            }
-        }
-
-        .action-button{
-            background : @primary-bg;
-            color      : @primary-color;
-            position   : absolute;
-            top        : 50%;
-            z-index    : 20;
+        > *{
+            .inline-block;
             cursor     : pointer;
-            margin-top : -@slider-button-size / 2 - @padding-large-vertical;
-            padding    : @padding-large-vertical;
-            .box-sizing(content-box);
-            .icon-size(@slider-button-size; true);
-            .transition();
+            margin     : 0 3px;
+            color      : @primary-color;
+            background : #FFF;
+            .border-radius(14px);
+            .icon-size(10px; true);
 
             &:hover{
                 background : darken(@primary-bg, 10%);
-                color      : @primary-color;
             }
+
+            &.cycle-pager-active{
+                cursor     : default;
+                color      : @primary-color;
+                background : @primary-bg;
+            }
+        }
+    }
+
+    .action-button{
+        background : @primary-bg;
+        color      : @primary-color;
+        position   : absolute;
+        top        : 50%;
+        z-index    : 20;
+        cursor     : pointer;
+        margin-top : -@slider-button-size / 2 - @padding-large-vertical;
+        padding    : @padding-large-vertical;
+        .box-sizing(content-box);
+        .icon-size(@slider-button-size; true);
+        .transition();
+
+        &:hover{
+            background : darken(@primary-bg, 10%);
+            color      : @primary-color;
+        }
+
+        &:before{
+            font-family : 'flexkit-icons';
+        }
+
+        &.cycle-prev{
+            left : -@slider-button-size * 3;
 
             &:before{
-                font-family : 'flexkit-icons';
-            }
-
-            &.cycle-prev{
-                left : -@slider-button-size * 3;
-
-                &:before{
-                    content : "\e0c5";
-                }
-            }
-
-            &.cycle-next{
-                right : -@slider-button-size * 3;
-
-                &:before{
-                    content : "\e0c6";
-                }
+                content : "\e0c5";
             }
         }
 
-        &:hover .action-button{
-            &.cycle-prev{
-                left : 10px;
-            }
+        &.cycle-next{
+            right : -@slider-button-size * 3;
 
-            &.cycle-next{
-                right : 10px;
+            &:before{
+                content : "\e0c6";
             }
-
         }
+    }
+
+    &:hover .action-button{
+        &.cycle-prev{
+            left : 10px;
+        }
+
+        &.cycle-next{
+            right : 10px;
+        }
+
     }
 }
