@@ -108,7 +108,7 @@ form .captcha .captcha_image {
   float: left;
   text-align: center;
 }
-.sidebar form .captcha .captcha_image {
+aside form .captcha .captcha_image {
   width: 100% !important;
 }
 form .captcha label,
@@ -118,8 +118,8 @@ form .captcha input {
   font-weight: normal;
   font-size: 0.85em;
 }
-.sidebar form .captcha label,
-.sidebar form .captcha input {
+aside form .captcha label,
+aside form .captcha input {
   width: 100%;
 }
 form .captcha .recaptcha_links {
@@ -472,62 +472,14 @@ label[for*="chr-"] {
 #search-form p:first-child {
   width: 70%;
 }
-#search-form input[type="text"] {
+#search-form [type="text"] {
   border-color: #61b3de;
 }
-#search-form input[type="submit"] {
+#search-form [type="submit"] {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
   margin: 0;
-}
-form .phone {
-  float: left;
-  width: 32.333%;
-  margin: 0 0 0 1%;
-  white-space: nowrap;
-}
-label + form .phone {
-  clear: both;
-  margin: 0;
-  width: 33.333%;
-}
-label + form .phone + .phone + .phone input {
-  width: 100%;
-}
-form .phone input {
-  width: 90%;
-}
-form .phone span {
-  margin-left: 3%;
-}
-form .phone label {
-  display: block;
-  color: #cccccc;
-  font-size: 0.85em;
-}
-form .address {
-  width: 49%;
-  float: left;
-  margin: 1% 1% 0 0;
-}
-form .address:first-child {
-  width: 100%;
-  clear: both;
-}
-form .address:first-child + .address + .address,
-form .address:first-child + .address + .address + .address + .address {
-  margin-right: 0;
-  margin-left: 1%;
-}
-form .address label {
-  display: block;
-  color: #cccccc;
-  font-size: 0.85em;
-}
-form .checkbox span + span,
-form .radio span + span {
-  margin-left: 5%;
 }
 .img_gallery {
   margin: 10px 0;
@@ -591,7 +543,7 @@ form .radio span + span {
   bottom: 0;
   left: 0;
 }
-.rotator.cycle-slideshow .slide {
+.cycle-slideshow .slide {
   position: absolute;
   top: 0;
   left: 0;
@@ -599,13 +551,13 @@ form .radio span + span {
   height: 100%;
   list-style: none;
 }
-.rotator.cycle-slideshow .slide > a.generator-links:not(:first-child),
-.rotator.cycle-slideshow .slide > a.tpopup:not(:first-child) {
+.cycle-slideshow .slide > a.generator-links:not(:first-child),
+.cycle-slideshow .slide > a.tpopup:not(:first-child) {
   position: absolute;
   top: 10px;
   left: 10px;
 }
-.rotator.cycle-slideshow .cycle-pager {
+.cycle-slideshow .cycle-pager {
   position: absolute;
   top: 5px;
   right: 0;
@@ -614,7 +566,7 @@ form .radio span + span {
   font-size: 0;
   line-height: 0;
 }
-.rotator.cycle-slideshow .cycle-pager > * {
+.cycle-slideshow .cycle-pager > * {
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
@@ -630,18 +582,18 @@ form .radio span + span {
   line-height: 10px;
   font-size: 0;
 }
-.rotator.cycle-slideshow .cycle-pager > *:before {
+.cycle-slideshow .cycle-pager > *:before {
   font-size: 10px;
 }
-.rotator.cycle-slideshow .cycle-pager > *:hover {
+.cycle-slideshow .cycle-pager > *:hover {
   background: #379fd5;
 }
-.rotator.cycle-slideshow .cycle-pager > *.cycle-pager-active {
+.cycle-slideshow .cycle-pager > *.cycle-pager-active {
   cursor: default;
   color: #ffffff;
   background: #61b3de;
 }
-.rotator.cycle-slideshow .action-button {
+.cycle-slideshow .action-button {
   background: #61b3de;
   color: #ffffff;
   position: absolute;
@@ -661,32 +613,32 @@ form .radio span + span {
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.rotator.cycle-slideshow .action-button:before {
+.cycle-slideshow .action-button:before {
   font-size: 18px;
 }
-.rotator.cycle-slideshow .action-button:hover {
+.cycle-slideshow .action-button:hover {
   background: #379fd5;
   color: #ffffff;
 }
-.rotator.cycle-slideshow .action-button:before {
+.cycle-slideshow .action-button:before {
   font-family: 'flexkit-icons';
 }
-.rotator.cycle-slideshow .action-button.cycle-prev {
+.cycle-slideshow .action-button.cycle-prev {
   left: -54px;
 }
-.rotator.cycle-slideshow .action-button.cycle-prev:before {
+.cycle-slideshow .action-button.cycle-prev:before {
   content: "\e0c5";
 }
-.rotator.cycle-slideshow .action-button.cycle-next {
+.cycle-slideshow .action-button.cycle-next {
   right: -54px;
 }
-.rotator.cycle-slideshow .action-button.cycle-next:before {
+.cycle-slideshow .action-button.cycle-next:before {
   content: "\e0c6";
 }
-.rotator.cycle-slideshow:hover .action-button.cycle-prev {
+.cycle-slideshow:hover .action-button.cycle-prev {
   left: 10px;
 }
-.rotator.cycle-slideshow:hover .action-button.cycle-next {
+.cycle-slideshow:hover .action-button.cycle-next {
   right: 10px;
 }
 .directupload-wrapper {
