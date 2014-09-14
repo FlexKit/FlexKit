@@ -71,14 +71,14 @@
                     </a>
                 </h1>
                 <div class="grid_4 alpha omega mt10px">
-                    <nav class="text-center mb15px">
+                    <p class="text-right">
                         <a class="btn icon gplus icon-gplus" target="_blank" href="{$plugin:widcard:BizGplusAccount:notag}"></a>
                         <a class="btn icon facebook icon-facebook" target="_blank" href="{$plugin:widcard:BizFbAccount:notag}"></a>
                         <a class="btn icon twitter icon-twitter" target="_blank" href="{$plugin:widcard:BizTwitterAccount:notag}"></a>
                         <a class="btn icon linkedin icon-linkedin" target="_blank" href="{$plugin:widcard:BizLinkedInAccount:notag}"></a>
                         <a class="btn icon rss icon-feed" target="_blank" href="{$plugin:widcard:BizRssChannel:notag}"></a>
                         <a class="btn icon youtube icon-youtube" target="_blank" href="{$plugin:widcard:BizYoutubeChannel:notag}"></a>
-                    </nav>
+                    </p>
                     {$search:form}
                 </div>
             </header>
@@ -114,23 +114,17 @@
 
             <!-- Right box -->
             <aside id="right" class="grid_3" role="complementary">
+                {repeat:rightAside:key}
                 <div class="aside-box">
-                    <h3>{$header:right1:static}</h3>  
-                    {$content:right1:static}
+                    <h3>{$header:right_key}</h3>
+                    {$content:right_key}
                 </div>
-                <div class="aside-box">
-                    <h3>{$header:right2:static}</h3>
-                    {$content:right2:static}
-                </div>
-                <div class="aside-box">
-                    <h3>{$header:right3}</h3>
-                    {$content:right3}
-                </div>
+                {/repeat}
             </aside>
 
         </div>
-        
-         <!-- Footer -->
+
+        <!-- Footer -->
         <footer class="mt30px" itemscope itemtype="http://schema.org/LocalBusiness" role="contentinfo">
 
             <!-- Container -->
@@ -151,14 +145,12 @@
                 </div>
                 <div class="footer-box grid_3 t-grid_3">
                     <h3>{$header:footer3:static}</h3>
-                    <nav class="text-center mb15px">
-                        <a class="btn icon gplus icon-gplus" target="_blank" href="{$plugin:widcard:BizGplusAccount:notag}"></a>
-                        <a class="btn icon facebook icon-facebook" target="_blank" href="{$plugin:widcard:BizFbAccount:notag}"></a>
-                        <a class="btn icon twitter icon-twitter" target="_blank" href="{$plugin:widcard:BizTwitterAccount:notag}"></a>
-                        <a class="btn icon linkedin icon-linkedin" target="_blank" href="{$plugin:widcard:BizLinkedInAccount:notag}"></a>
-                        <a class="btn icon rss icon-feed" target="_blank" href="{$plugin:widcard:BizRssChannel:notag}"></a>
-                        <a class="btn icon youtube icon-youtube" target="_blank" href="{$plugin:widcard:BizYoutubeChannel:notag}"></a>
-                    </nav>
+                    <a class="btn icon gplus icon-gplus" target="_blank" href="{$plugin:widcard:BizGplusAccount:notag}"></a>
+                    <a class="btn icon facebook icon-facebook" target="_blank" href="{$plugin:widcard:BizFbAccount:notag}"></a>
+                    <a class="btn icon twitter icon-twitter" target="_blank" href="{$plugin:widcard:BizTwitterAccount:notag}"></a>
+                    <a class="btn icon linkedin icon-linkedin" target="_blank" href="{$plugin:widcard:BizLinkedInAccount:notag}"></a>
+                    <a class="btn icon rss icon-feed" target="_blank" href="{$plugin:widcard:BizRssChannel:notag}"></a>
+                    <a class="btn icon youtube icon-youtube" target="_blank" href="{$plugin:widcard:BizYoutubeChannel:notag}"></a>
                 </div>
                 <div class="footer-box grid_3 t-grid_3">
                     <h3>{$header:footer4:static}</h3>
