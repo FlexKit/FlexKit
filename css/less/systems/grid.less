@@ -18,58 +18,62 @@
 // GRID CSS
 //==================================================
 [class*=" grid_"], [class^="grid_"], [class*="-grid_"]{
-    display      : inline;
-    float        : left;
-    position     : relative;
-    width        : 100% - @grid-margin-width;
-    margin-left  : (@grid-margin-width / 2) !important;
-    margin-right : (@grid-margin-width / 2) !important;
+    & when (@grid-system = true){
+        display      : inline;
+        float        : left;
+        position     : relative;
+        width        : 100% - @grid-margin-width;
+        margin-left  : (@grid-margin-width / 2) !important;
+        margin-right : (@grid-margin-width / 2) !important;
+    }
 }
 .grid();
 
 // COLUMN LIST CSS
 //==================================================
 [class*=" column_"], [class^="column_"], [class*="-column_"]{
-    display : table;
-    width   : 100%;
+    & when (@column-system = true){
+        display : table;
+        width   : 100%;
 
-    & > *:not(.column-none){
-        float          : none !important;
-        display        : inline-block;
-        vertical-align : top;
-        width          : 100% - @column-margin-width;
-        margin-left    : (@column-margin-width / 2) !important;
-        margin-right   : (@column-margin-width / 2) !important;
-        margin-bottom  : (@column-margin-width / 2);
-    }
-
-    &.bottom{
-        & > *{
-            vertical-align : bottom;
-        }
-    }
-
-    &.middle{
-        & > *{
-            vertical-align : middle;
-        }
-    }
-
-    &.full-width{
         & > *:not(.column-none){
-            margin-left  : @column-margin-width !important;
-            margin-right : 0 !important;
+            float          : none !important;
+            display        : inline-block;
+            vertical-align : top;
+            width          : 100% - @column-margin-width;
+            margin-left    : (@column-margin-width / 2) !important;
+            margin-right   : (@column-margin-width / 2) !important;
+            margin-bottom  : (@column-margin-width / 2);
         }
-    }
 
-    &.margin-none{
-        & > *{
-            margin-left  : 0 !important;
-            margin-right : 0 !important;
+        &.bottom{
+            & > *{
+                vertical-align : bottom;
+            }
         }
-    }
 
-    & > br{ display : none; }
+        &.middle{
+            & > *{
+                vertical-align : middle;
+            }
+        }
+
+        &.full-width when (@column-system-fullWidth = true){
+            & > *:not(.column-none){
+                margin-left  : @column-margin-width !important;
+                margin-right : 0 !important;
+            }
+        }
+
+        &.margin-none when (@column-system-marginNone = true){
+            & > *{
+                margin-left  : 0 !important;
+                margin-right : 0 !important;
+            }
+        }
+
+        & > br{ display : none; }
+    }
 }
 .column();
 
