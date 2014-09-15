@@ -11,15 +11,9 @@
 form{
     .clearfix();
 
-    p{
-        margin : 0
-    }
-
-    &, fieldset{
-        & > p, & > div{
-            margin-bottom : 15px;
-            .clearfix();
-        }
+    p, div{
+        margin-bottom : 15px;
+        .clearfix();
     }
 
     fieldset{
@@ -99,6 +93,7 @@ label{
 }
 .notvalid{
     color : @brand-error !important;
+
     &:before{
         font-family  : 'flexkit-icons';
         content      : "\f06a";
@@ -262,5 +257,4 @@ textarea{
 
 // Form builder elements Styles
 //==================================================
-@import "../widgets/form_builder";
 @import "../widgets/form_builder";
