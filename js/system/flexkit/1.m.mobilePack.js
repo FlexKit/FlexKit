@@ -111,18 +111,16 @@ function changeRule(rule, pattern, newSelector, oldSelector, type, patternRemove
 }
 
 if(device.type){
-    $('body').append('<span class="loading-page"></span>');
     window.onbeforeunload = showLoading;
     window.onload = hideLoading;
-    $('.loading-page').hammer().on('tap', hideLoading);
 }
 
 function showLoading(){
-    $('.loading-page').show();
+    $('html').removeClass('loaded');
 }
 function hideLoading(){
     event.preventDefault();
-    $('.loading-page').hide();
+    $('html').addClass('loaded');
 }
 
 if(document.getElementsByClassName('menu-btn').length){
