@@ -1319,6 +1319,9 @@ a:hover.linkedin {
 a:hover.facebook {
   color: #2d4373;
 }
+a:hover.vkontakte {
+  color: #344d6c;
+}
 .btn.rss {
   color: #ffffff;
   border-color: #f26522;
@@ -1390,6 +1393,18 @@ a:hover.facebook {
   color: #ffffff;
   border-color: #2d4373;
   background-color: #2d4373;
+}
+.btn.vkontakte {
+  color: #ffffff;
+  border-color: #45668e;
+  background-color: #45668e;
+}
+.btn.vkontakte:hover,
+.btn.vkontakte:active,
+.btn.vkontakte.active {
+  color: #ffffff;
+  border-color: #344d6c;
+  background-color: #344d6c;
 }
 .labeled.gplus :checked ~ input,
 .labeled.gplus input:focus {
@@ -1474,6 +1489,20 @@ a:hover.facebook {
 .labeled.rss *:checked ~ [class*="icon-"],
 .labeled.rss *:focus ~ [class*="icon-"] {
   color: #f26522;
+}
+.labeled.vkontakte :checked ~ input,
+.labeled.vkontakte input:focus {
+  border-color: #45668e;
+}
+.labeled.vkontakte *:checked ~ label,
+.labeled.vkontakte *:focus ~ label,
+.labeled.vkontakte *:checked ~ .label,
+.labeled.vkontakte *:focus ~ .label {
+  background: #45668e;
+}
+.labeled.vkontakte *:checked ~ [class*="icon-"],
+.labeled.vkontakte *:focus ~ [class*="icon-"] {
+  color: #45668e;
 }
 .social-field .labeled {
   float: left;
