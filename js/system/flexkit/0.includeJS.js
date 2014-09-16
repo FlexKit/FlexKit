@@ -15,7 +15,7 @@ if(!jQuery().chosen && $(".chosen-select").length || $(".chosen-select-deselect"
     document.body.appendChild(chosen);
 }
 
-if(!jQuery().hammer){
+if(!jQuery().hammer && device.type){
     var hammer = document.createElement("script");
     hammer.src = websiteUrl+"/themes/"+themeName+"/js/plugin/hammer.js";
     document.body.appendChild(hammer);
