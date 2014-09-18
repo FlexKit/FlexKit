@@ -7,6 +7,9 @@
         <title>{$page:title}</title>
         <meta name="keywords" content="{$meta:keywords}">
         <meta name="description" content="{$meta:description}">
+        <!--<meta name="author" content="name">-->
+        <!--<meta name="copyright" content="(c)"> -->
+        <!--<meta http-equiv="Reply-to" content="mail@seosamba.com">-->
 
         <!-- Mobile Specific Metas -->
         <meta name="HandheldFriendly" content="True">
@@ -23,14 +26,21 @@
         <meta name="apple-mobile-web-app-title" content="{$page:title}">
 
         <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="144x144" href="images/touch/144x144.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/touch/114x114.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/touch/72x72.png">
-        <link rel="apple-touch-icon" href="images/touch/57x57.png">
+        <link rel="apple-touch-startup-image" href="images/startup.png">
+        <link rel="apple-touch-icon-precomposed" href="images/touch/57x57.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch/72x72.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch/114x114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch/144x144.png">
 
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
-        <meta name="msapplication-TileImage" content="images/touch/144x144.png">
+        <!-- Tile icon for Win8 -->
+        <meta name="application-name" content="{$page:title}"/>
+        <meta name="msapplication-tooltip" content="{$meta:description}"/>
         <meta name="msapplication-TileColor" content="#3372DF">
+        <meta name="msapplication-TileImage" content="images/touch/144x144.png">
+        <meta name="msapplication-square70x70logo" content="images/touch/win8_70x70.png"/>
+        <meta name="msapplication-square150x150logo" content="images/touch/win8_150x150.png"/>
+        <meta name="msapplication-square310x310logo" content="images/touch/win8_310x310.png"/>
+        <meta name="msapplication-wide310x150logo" content="images/touch/win8_310x150.png"/>
 
         <!-- Generic Icon -->
         <link rel="icon" href="images/favicon.ico">
@@ -57,23 +67,23 @@
         <div id="container" class="container">
 
         <!-- Start of the header -->
-          <header class="grid_12">
-              <div class='grid_8 alpha'>
-                  <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
-                  {$content:specialText}
-              </div>
-              <div id="storeinfo" class="grid_4 omega">
+        <header class="grid_12">
+            <div class='grid_8 alpha'>
+                <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
+                {$content:specialText}
+            </div>
+            <div id="storeinfo" class="grid_4 omega">
                 <h1>{$plugin:shopping:company}</h1>
                 <p>{$plugin:shopping:address1}, {$plugin:shopping:address2}</p>
                 <p>{$plugin:shopping:city} {$plugin:shopping:state} {$plugin:shopping:zip}</p>
                 <p>{$plugin:shopping:country}</p>
                 <p><a href="mailto:{$plugin:shopping:email}">{$plugin:shopping:email}</a></p>
-              </div>
-          </header>
+            </div>
+        </header>
         <!-- end of the header -->
 
         <!-- Main Column -->
-          <div id="content" class="grid_12 form">
+        <section id="content" class="grid_12 form">
 
             {$quote:address:billing}
             {$quote:address:shipping}
@@ -119,7 +129,7 @@
                         <div class="cart-total"><span>Efective tax:</span>{$quote:total:taxdiscount}</div>
                     </div>
                 </div>
-          </div>
+        </section>
 
         </div>
         {adminonly}

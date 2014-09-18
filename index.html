@@ -7,6 +7,9 @@
         <title>{$page:title}</title>
         <meta name="keywords" content="{$meta:keywords}">
         <meta name="description" content="{$meta:description}">
+        <!--<meta name="author" content="name">-->
+        <!--<meta name="copyright" content="(c)"> -->
+        <!--<meta http-equiv="Reply-to" content="mail@seosamba.com">-->
 
         <!-- Mobile Specific Metas -->
         <meta name="HandheldFriendly" content="True">
@@ -23,14 +26,21 @@
         <meta name="apple-mobile-web-app-title" content="{$page:title}">
 
         <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="144x144" href="images/touch/144x144.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/touch/114x114.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/touch/72x72.png">
-        <link rel="apple-touch-icon" href="images/touch/57x57.png">
+        <link rel="apple-touch-startup-image" href="images/startup.png">
+        <link rel="apple-touch-icon-precomposed" href="images/touch/57x57.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch/72x72.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch/114x114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch/144x144.png">
 
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
-        <meta name="msapplication-TileImage" content="images/touch/144x144.png">
+        <!-- Tile icon for Win8 -->
+        <meta name="application-name" content="{$page:title}"/>
+        <meta name="msapplication-tooltip" content="{$meta:description}"/>
         <meta name="msapplication-TileColor" content="#3372DF">
+        <meta name="msapplication-TileImage" content="images/touch/144x144.png">
+        <meta name="msapplication-square70x70logo" content="images/touch/win8_70x70.png"/>
+        <meta name="msapplication-square150x150logo" content="images/touch/win8_150x150.png"/>
+        <meta name="msapplication-square310x310logo" content="images/touch/win8_310x310.png"/>
+        <meta name="msapplication-wide310x150logo" content="images/touch/win8_310x150.png"/>
 
         <!-- Generic Icon -->
         <link rel="icon" href="images/favicon.ico">
@@ -97,10 +107,8 @@
                 {$featuredonly:top}
             </div>
 
-            <hr class="grid_12">
-
             <!-- Content box -->
-            <div id="content" class="grid_9" role="main">
+            <section id="content" class="grid_9" role="main">
                 <h2>{$header:content1}</h2>
                 <!-- news list -->
                 <ul class="news-list grid carousel list-unstyled">
@@ -109,7 +117,7 @@
                 <h2>{$header:content2}</h2>
                 {$content:content21}
                 {$content:content22}
-            </div>
+            </section>
 
             <!-- Right box -->
             <aside id="right" class="grid_3" role="complementary">
