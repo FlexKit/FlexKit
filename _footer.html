@@ -1,0 +1,45 @@
+<!-- Footer -->
+<footer class="mt30px" itemscope itemtype="http://schema.org/LocalBusiness" role="contentinfo">
+    <!-- Container -->
+    <div class="container">
+        <div class="footer-box grid_3 t-grid_3">
+            <h3>{$header:footer1:static}</h3>
+            {$header:footer11:static}<span itemprop="name">{$plugin:widcard:BizOrgName:notag}</span>
+        </div>
+        <div class="footer-box grid_3 t-grid_3">
+            <h3>{$header:footer2:static}</h3>
+            <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="streetAddress">{$plugin:widcard:BizAddress1:notag}</span>
+                <span itemprop="addressLocality">{$plugin:widcard:BizCity:notag}</span>,
+                <span itemprop="postalCode">{$plugin:widcard:BizZip:notag}</span>
+                <span itemprop="addressRegion">{$plugin:widcard:BizState:notag}</span>
+                <meta itemprop="addressCountry" content="EN"/>
+            </address>
+        </div>
+        <div class="footer-box grid_3 t-grid_3">
+            <h3>{$header:footer3:static}</h3>
+            <a class="btn icon gplus icon-gplus" target="_blank" href="{$plugin:widcard:BizGplusAccount:notag}"></a>
+            <a class="btn icon facebook icon-facebook" target="_blank" href="{$plugin:widcard:BizFbAccount:notag}"></a>
+            <a class="btn icon twitter icon-twitter" target="_blank" href="{$plugin:widcard:BizTwitterAccount:notag}"></a>
+            <a class="btn icon linkedin icon-linkedin" target="_blank" href="{$plugin:widcard:BizLinkedInAccount:notag}"></a>
+            <a class="btn icon rss icon-feed" target="_blank" href="{$plugin:widcard:BizRssChannel:notag}"></a>
+            <a class="btn icon youtube icon-youtube" target="_blank" href="{$plugin:widcard:BizYoutubeChannel:notag}"></a>
+        </div>
+        <div class="footer-box grid_3 t-grid_3">
+            <h3>{$header:footer4:static}</h3>
+            <p itemprop="telephone">{$plugin:widcard:BizTelephone:notag}</p>
+            <a href="mailto:{$plugin:widcard:BizEmail:notag}" itemprop="email">{$plugin:widcard:BizEmail:notag}</a>.
+            <a href="http://www.google.com" itemprop="url">{$website:url}</a>
+        </div>
+
+        <hr class="grid_12">
+
+        <!-- Footer info -->
+        <div class="grid_4 text-left">{$content:footer-info:static}</div>
+
+        <!-- Flat Menu -->
+        <nav id="flat-menu" class="grid_8 text-right">
+            {$menu:flat}
+        </nav>
+    </div>
+</footer>

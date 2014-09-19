@@ -1,20 +1,18 @@
-.news-list when (@widget-news-list = true){
-    .news-list-item{ }
+.news-item when (@widget-news-list = true){
 
-    .page-teaser-image{
-
+    .news-image{
         img{ }
     }
 
-    .page-title{ }
+    .news-title{ }
 
     .newslog-admin-actions{
         text-align : right;
         a{ }
     }
 
-    .news-item-date{
-        color         : lighten(@text-color, 15%);
+    .news-date{
+        color : lighten(@text-color, 15%);
 
         &:before{
             top       : 2px;
@@ -23,14 +21,14 @@
         }
     }
 
-    .news-item-description{ }
+    .news-description{ }
 
-    .news-item-tags{
+    .news-tags{
 
         a{
             .link-color(@gray);
 
-            &+a{
+            & + a{
                 margin-left : 0.5em;
             }
 

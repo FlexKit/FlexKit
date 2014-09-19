@@ -1,68 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{$page:title}</title>
-        <meta name="keywords" content="{$meta:keywords}">
-        <meta name="description" content="{$meta:description}">
-        <!--<meta name="author" content="name">-->
-        <!--<meta name="copyright" content="(c)"> -->
-        <!--<meta http-equiv="Reply-to" content="mail@seosamba.com">-->
-
-        <!-- Mobile Specific Metas -->
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="480">
-        <meta http-equiv="cleartype" content="on">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-        <!-- Add to homescreen for Chrome on Android -->
-        <meta name="mobile-web-app-capable" content="yes">
-
-        <!-- Add to homescreen for Safari on iOS -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="{$page:title}">
-
-        <!-- Favicons -->
-        <link rel="apple-touch-startup-image" href="images/startup.png">
-        <link rel="apple-touch-icon-precomposed" href="images/touch/57x57.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch/72x72.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch/114x114.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch/144x144.png">
-
-        <!-- Tile icon for Win8 -->
-        <meta name="application-name" content="{$page:title}"/>
-        <meta name="msapplication-tooltip" content="{$meta:description}"/>
-        <meta name="msapplication-TileColor" content="#3372DF">
-        <meta name="msapplication-TileImage" content="images/touch/144x144.png">
-        <meta name="msapplication-square70x70logo" content="images/touch/win8_70x70.png"/>
-        <meta name="msapplication-square150x150logo" content="images/touch/win8_150x150.png"/>
-        <meta name="msapplication-square310x310logo" content="images/touch/win8_310x310.png"/>
-        <meta name="msapplication-wide310x150logo" content="images/touch/win8_310x150.png"/>
-
-        <!-- Generic Icon -->
-        <link rel="icon" href="images/favicon.ico">
-        <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
-
-        <!-- CSS -->
-        {concatcss}
-        <link href="css/reset.css" rel="stylesheet" media="screen">
-        <link href="css/content.css" rel="stylesheet" media="screen">
-        <link href="css/nav.css" rel="stylesheet" media="screen">
-        <link href="css/style.css" rel="stylesheet" media="screen">
-        <!-- Shopping css -->
-        <link href="css/store.css" rel="stylesheet" media="screen">
-        <!-- Additional css -->
-        <link href="css/flexkit.css" rel="stylesheet" media="screen">
-        {/concatcss}
-
-        <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
-        <!--[if lt IE 9]><script src="js/system/ie-pack.min.js"></script><![endif]-->
-
+        <!-- Include head template -->
+        {$template:_head}
     </head>
-    <body class="{$mobile:device}">
+    <body>
 
         <!-- Top bar for mobile, with button show/hide menu -->
         <div class="top-block clearfix {$mobile:device:desktop=d-hide}">
@@ -81,19 +23,15 @@
                 </div>
                 <div class="grid_4 alpha omega mt10px">
                     <p class="text-right">
-                        <a class="btn icon gplus icon-gplus" target="_blank" href="{$plugin:widcard:BizGplusAccount:notag}"></a>
-                        <a class="btn icon facebook icon-facebook" target="_blank" href="{$plugin:widcard:BizFbAccount:notag}"></a>
-                        <a class="btn icon twitter icon-twitter" target="_blank" href="{$plugin:widcard:BizTwitterAccount:notag}"></a>
-                        <a class="btn icon linkedin icon-linkedin" target="_blank" href="{$plugin:widcard:BizLinkedInAccount:notag}"></a>
-                        <a class="btn icon rss icon-feed" target="_blank" href="{$plugin:widcard:BizRssChannel:notag}"></a>
-                        <a class="btn icon youtube icon-youtube" target="_blank" href="{$plugin:widcard:BizYoutubeChannel:notag}"></a>
+                        <!-- Include Social links template -->
+                        {$template:_social links}
                     </p>
                     {$search:form}
                 </div>
             </header>
 
             <!-- Main Menu -->
-            <nav id="main-menu" class="grid_12 mt15px mb20px" role="navigation">{$menu:main:main_menu}</nav>
+            <nav id="main-menu" class="grid_12 mt15px mb20px" role="navigation">{$menu:main:_main menu}</nav>
 
             <h1 class="grid_12 light" role="heading">{$page:h1}</h1>
 
@@ -124,53 +62,8 @@
         </div>
 
         <!-- Footer -->
-        <footer class="mt30px" itemscope itemtype="http://schema.org/LocalBusiness" role="contentinfo">
-
-            <!-- Container -->
-            <div class="container">
-                <div class="footer-box grid_3 t-grid_3">
-                    <h3>{$header:footer1:static}</h3>
-                    {$header:footer11:static}<span itemprop="name">{$plugin:widcard:BizOrgName:notag}</span>
-                </div>
-                <div class="footer-box grid_3 t-grid_3" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                    <h3>{$header:footer2:static}</h3>
-                    <address>
-                        <span itemprop="streetAddress">{$plugin:widcard:BizAddress1:notag}</span>
-                        <span itemprop="addressLocality">{$plugin:widcard:BizCity:notag}</span>,
-                        <span itemprop="postalCode">{$plugin:widcard:BizZip:notag}</span>
-                        <span itemprop="addressRegion">{$plugin:widcard:BizState:notag}</span>
-                        <meta itemprop="addressCountry" content="EN"/>
-                    </address>
-                </div>
-                <div class="footer-box grid_3 t-grid_3">
-                    <h3>{$header:footer3:static}</h3>
-                    <a class="btn icon gplus icon-gplus" target="_blank" href="{$plugin:widcard:BizGplusAccount:notag}"></a>
-                    <a class="btn icon facebook icon-facebook" target="_blank" href="{$plugin:widcard:BizFbAccount:notag}"></a>
-                    <a class="btn icon twitter icon-twitter" target="_blank" href="{$plugin:widcard:BizTwitterAccount:notag}"></a>
-                    <a class="btn icon linkedin icon-linkedin" target="_blank" href="{$plugin:widcard:BizLinkedInAccount:notag}"></a>
-                    <a class="btn icon rss icon-feed" target="_blank" href="{$plugin:widcard:BizRssChannel:notag}"></a>
-                    <a class="btn icon youtube icon-youtube" target="_blank" href="{$plugin:widcard:BizYoutubeChannel:notag}"></a>
-                </div>
-                <div class="footer-box grid_3 t-grid_3">
-                    <h3>{$header:footer4:static}</h3>
-                    <p itemprop="telephone">{$plugin:widcard:BizTelephone:notag}</p>
-                    <a href="mailto:{$plugin:widcard:BizEmail:notag}" itemprop="email">{$plugin:widcard:BizEmail:notag}</a>.
-                    <a href="http://www.google.com" itemprop="url">{$website:url}</a>
-                </div>
-
-                <hr class="grid_12">
-
-                <!-- Footer info -->
-                <div class="grid_4 text-left">{$content:footer-info:static}</div>
-
-                <!-- Flat Menu -->
-                <nav id="flat-menu" class="grid_8 text-right">
-                    {$menu:flat}
-                </nav>
-
-            </div>
-
-        </footer>
+        <!-- Include Footer template -->
+        {$template:_footer}
 
         <!-- SCRIPTS ZONE -->
         <script src="js/scripts.min.js"></script>
