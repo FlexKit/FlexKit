@@ -1,79 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{$page:title}</title>
-        <meta name="keywords" content="{$meta:keywords}">
-        <meta name="description" content="{$meta:description}">
-
-        <!-- Mobile Specific Metas -->
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="480">
-        <meta http-equiv="cleartype" content="on">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-        <!-- Add to homescreen for Chrome on Android -->
-        <meta name="mobile-web-app-capable" content="yes">
-
-        <!-- Add to homescreen for Safari on iOS -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="{$page:title}">
-
-        <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="144x144" href="images/touch/144x144.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/touch/114x114.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/touch/72x72.png">
-        <link rel="apple-touch-icon" href="images/touch/57x57.png">
-
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
-        <meta name="msapplication-TileImage" content="images/touch/144x144.png">
-        <meta name="msapplication-TileColor" content="#3372DF">
-
-        <!-- Generic Icon -->
-        <link rel="icon" href="images/favicon.ico">
-        <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
-
-        <!-- CSS -->
-        {concatcss}
-        <link href="css/reset.css" rel="stylesheet" media="screen">
-        <link href="css/content.css" rel="stylesheet" media="screen">
-        <link href="css/nav.css" rel="stylesheet" media="screen">
-        <link href="css/style.css" rel="stylesheet" media="screen">
-        <!-- Shopping css -->
-        <link href="css/store.css" rel="stylesheet" media="screen">
-        <!-- Additional css -->
-        <link href="css/flexkit.css" rel="stylesheet" media="screen">
-        {/concatcss}
-
-        <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
-        <!--[if lt IE 9]><script src="js/system/ie-pack.min.js"></script><![endif]-->
-
+        <!-- Include head template -->
+        {$template:_head}
     </head>
-    <body class="{$mobile:device}">
+    <body>
         {adminonly}<div class="text-center">{$quote:search}</div>{/adminonly}
         <div id="container" class="container">
 
         <!-- Start of the header -->
-          <header class="grid_12">
-              <div class='grid_8 alpha'>
-                  <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
-                  {$content:specialText}
-              </div>
-              <div id="storeinfo" class="grid_4 omega">
+        <header class="grid_12">
+            <div class='grid_8 alpha'>
+                <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
+                {$content:specialText}
+            </div>
+            <div id="storeinfo" class="grid_4 omega">
                 <h1>{$plugin:shopping:company}</h1>
                 <p>{$plugin:shopping:address1}, {$plugin:shopping:address2}</p>
                 <p>{$plugin:shopping:city} {$plugin:shopping:state} {$plugin:shopping:zip}</p>
                 <p>{$plugin:shopping:country}</p>
                 <p><a href="mailto:{$plugin:shopping:email}">{$plugin:shopping:email}</a></p>
-              </div>
-          </header>
+            </div>
+        </header>
         <!-- end of the header -->
 
         <!-- Main Column -->
-          <div id="content" class="grid_12 form">
+        <section id="content" class="grid_12 form">
 
             {$quote:address:billing}
             {$quote:address:shipping}
@@ -119,7 +71,7 @@
                         <div class="cart-total"><span>Efective tax:</span>{$quote:total:taxdiscount}</div>
                     </div>
                 </div>
-          </div>
+        </section>
 
         </div>
         {adminonly}
