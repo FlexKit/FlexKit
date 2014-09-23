@@ -6,10 +6,8 @@
     </head>
     <body>
 
-        <!-- Top bar for mobile, with button show/hide menu -->
-        <div class="top-block clearfix {$mobile:device:desktop=d-hide}">
-            <label data-menu="#main-menu .main_menu" data-menu-position="left" class="menu-btn fl-left icon-list2 btn large">Menu</label>
-        </div>
+        <!-- Include mobile bar template -->
+        {$template:_mobile bar}
 
         <!-- Container -->
         <div id="container" class="container">
@@ -59,9 +57,5 @@
         <!-- Footer -->
         <!-- Include Footer template -->
         {$template:_footer}
-
-        <!-- SCRIPTS ZONE -->
-        <script src="js/scripts.min.js"></script>
-        <script src="js/system/flexkit.min.js"></script>
     </body>
 </html>
