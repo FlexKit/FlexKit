@@ -621,12 +621,13 @@
 [class*=" column_"],
 [class^="column_"],
 [class*="-column_"] {
-  display: table;
+  font-size: 0 !important;
   width: 100%;
 }
 [class*=" column_"] > *:not(.column-none),
 [class^="column_"] > *:not(.column-none),
 [class*="-column_"] > *:not(.column-none) {
+  font-size: 14px;
   float: none !important;
   display: inline-block;
   vertical-align: top;
@@ -1405,6 +1406,16 @@ a:hover.vkontakte {
   color: #ffffff;
   border-color: #344d6c;
   background-color: #344d6c;
+}
+.btn.icon.social:before,
+.btn.rss.icon:before,
+.btn.gplus.icon:before,
+.btn.twitter.icon:before,
+.btn.youtube.icon:before,
+.btn.linkedin.icon:before,
+.btn.facebook.icon:before,
+.btn.vkontakte.icon {
+  font-size: 1.5em;
 }
 .labeled.gplus :checked ~ input,
 .labeled.gplus input:focus {
