@@ -33,10 +33,11 @@
 //==================================================
 [class*=" column_"], [class^="column_"], [class*="-column_"]{
     & when (@column-system = true){
-        display : table;
+        font-size : 0 !important;
         width   : 100%;
 
         & > *:not(.column-none){
+            font-size      : @font-size-base;
             float          : none !important;
             display        : inline-block;
             vertical-align : top;
