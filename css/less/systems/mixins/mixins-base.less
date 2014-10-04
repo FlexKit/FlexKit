@@ -365,26 +365,71 @@
 
 // Flexbox Layout http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 //==================================================
-.flexbox() {
-    display : -webkit-box;
-    display : -moz-box;
-    display : -ms-flexbox;
-    display : -webkit-flex;
+.flexbox(@direction; @wrap; @align) {
+    & when (@webkit = true){ display : -webkit-box; }
+    & when (@moz = true){ display : -moz-box; }
+    & when (@ie = true){ display : -ms-flexbox; }
+    & when (@webkit = true){ display : -webkit-flex; }
     display : flex;
+
+    .flex-direction(@direction);
+    .flex-wrap(@wrap);
+    .flex-align(@align);
 }
 
-.flex(@values) {
-    -webkit-box-flex : @values;
-    -moz-box-flex    : @values;
-    -webkit-flex     : @values;
-    -ms-flex         : @values;
-    flex             : @values;
+// @direction = row, row-reverse, column, column-reverse
+.flex-direction(@direction : column) {
+    & when (@webkit = true) and (@direction = row), (@direction = column){ -webkit-box-direction : normal; }
+    & when (@webkit = true) and not (@direction = row), not (@direction = column){ -webkit-box-direction : reverse; }
+    & when (@moz = true) and (@direction = row), (@direction = column){ -moz-box-direction : normal; }
+    & when (@moz = true) and not (@direction = row), not (@direction = column){ -moz-box-direction : reverse; }
+
+    & when (@webkit = true) and (@direction = row){ -webkit-box-orient : horizontal; }
+    & when (@webkit = true) and (@direction = column){ -webkit-box-orient : vertical; }
+    & when (@moz = true) and (@direction = row){ -moz-box-orient : horizontal; }
+    & when (@moz = true) and (@direction = column){ -moz-box-orient : vertical; }
+
+    & when (@webkit = true){ -webkit-flex-direction : @direction; }
+    & when (@ie = true){ -ms-flex-direction : @direction; }
+    flex-direction : @direction;
 }
 
-.order(@val) {
-    -webkit-box-ordinal-group : @val;
-    -moz-box-ordinal-group    : @val;
-    -ms-flex-order            : @val;
-    -webkit-order             : @val;
-    order                     : @val;
+// @wrap = nowrap, wrap, wrap-reverse
+.flex-wrap(@wrap : wrap) {
+    & when (@webkit = true){ -webkit-flex-wrap : @wrap; }
+    & when (@ie = true){ -ms-flex-wrap : @wrap; }
+    flex-wrap : @wrap;
+}
+
+// @align = flex-start, flex-end, center, baseline, stretch
+.flex-align(@align : stretch) {
+    @alignOld : replace(~'@{align}', 'flex-', '');
+    & when (@webkit = true){ -webkit-box-align : @alignOld; }
+    & when (@moz = true){ -moz-box-align : @alignOld; }
+    & when (@ie = true){ -ms-flex-align : @alignOld; }
+    & when (@webkit = true){ -webkit-align-items : @align; }
+    align-items : @align;
+}
+
+.flex-box-order(@order) {
+    & when (@webkit = true){ -webkit-box-ordinal-group : @order + 1; }
+    & when (@moz = true){ -moz-box-ordinal-group : @order + 1; }
+    & when (@webkit = true){ -webkit-order : @order; }
+    & when (@ie = true){ -ms-flex-order : @order; }
+    order : @order;
+}
+
+.flex-box-size(@size : 1) {
+    & when (@webkit = true){ -webkit-box-flex : @size; }
+    & when (@moz = true){ -moz-box-flex : @size; }
+    & when (@webkit = true){ -webkit-flex : @size 1 auto; }
+    & when (@ie = true){ -ms-flex : @size 1 auto; }
+    flex : @size 1 auto;
+}
+
+// @align = auto, flex-start, flex-end, center, baseline, stretch
+.flex-box-align(@align : auto) {
+    & when (@webkit = true){ -webkit-align-self : @align; }
+    & when (@ie = true){ -ms-flex-item-align : @align; }
+    align-self : @align;
 }
