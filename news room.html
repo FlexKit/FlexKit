@@ -6,9 +6,6 @@
     </head>
     <body>
 
-        <!-- Include mobile bar template -->
-        {$template:_mobile bar}
-
         <!-- Container -->
         <div id="container" class="container">
 
@@ -27,6 +24,9 @@
                     {$search:form}
                 </div>
             </header>
+
+            <!-- Include mobile bar template -->
+            {$template:_mobile bar}
 
             <!-- Main Menu -->
             <nav id="main-menu" class="grid_12 mt15px mb20px" role="navigation">{$menu:main:_main menu}</nav>
