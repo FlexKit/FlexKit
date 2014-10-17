@@ -36,7 +36,7 @@
         font-size : 0 !important;
         width   : 100%;
 
-        & > *:not(.column-none){
+        & > *{
             font-size      : @font-size-base;
             float          : none !important;
             display        : inline-block;
@@ -44,7 +44,7 @@
             width          : 100% - @column-margin-width;
             margin-left    : (@column-margin-width / 2) !important;
             margin-right   : (@column-margin-width / 2) !important;
-            margin-bottom  : (@column-margin-width / 2);
+            margin-bottom  : @column-margin-width;
         }
 
         &.bottom{
@@ -60,7 +60,7 @@
         }
 
         &.full-width when (@column-system-fullWidth = true){
-            & > *:not(.column-none){
+            & > *{
                 margin-left  : @column-margin-width !important;
                 margin-right : 0 !important;
             }
