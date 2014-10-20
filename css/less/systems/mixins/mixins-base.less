@@ -242,7 +242,9 @@
 // CSS3 support in ie
 //==================================================
 .pie() when (@PIE = true){
-    behavior : url('../js/system/PIE.php');
+    .ie8 &{
+        behavior : url('/themes/@{theme-name}/js/system/PIE.php');
+    }
 }
 
 // -- Grid Elements
