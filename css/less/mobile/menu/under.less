@@ -3,8 +3,7 @@
 
 // Example code for sub main menu
 //{ifpages}
-//  <input id="{$page:navName}" class="hidden sub-menu-switch" type="checkbox"> - checkbox for show/hide sub menu
-//  <label for="{$page:navName}" class="btn icon icon-list3 sub-menu-btn d-hide"></label> - button for sub menu
+//  <span class="btn icon icon-list3 sub-menu-btn d-hide"></span> - button for sub menu
 //{/ifpages}
 
 @menu-height                       : @button-height-large;
@@ -36,7 +35,7 @@
     //style menu mobile
     line-height : @menu-height;
     position    : fixed;
-    z-index     : @top-block-zindex - 1;
+    z-index     : 0;
     top         : @top-block-height;
     bottom      : 0;
     left        : 0;

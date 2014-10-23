@@ -58,15 +58,10 @@
         }
     }
 
-    .activate-menu() when (@menu-google-style = true){
-        @import "mobile_menu/google-style";
+    & when (@mobile-menu-over = true){
+        @import "menu/over";
     }
-    .activate-menu() when (@menu-dropdown-style = true){
-        .dropdown-overlay{
-            background : rgba(255, 255, 255, 0);
-        }
-
-        @import "mobile_menu/dropdown-menu";
+    & when (@mobile-dropdown = true){
+        @import "menu/dropdown";
     }
-    .activate-menu();
 }
