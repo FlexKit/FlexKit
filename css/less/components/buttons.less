@@ -65,9 +65,9 @@
 
     // Inverse button appears as gray => primary
     &.inverse when (@button-color-inverse = true) and (@button-colors = true){
-        color            : @gray-light;
-        background-color : @gray-lighter;
-        border-color     : @gray-light;
+        color            : @button-inverse-color;
+        background-color : @button-inverse-bg;
+        border-color     : @button-inverse-border;
     }
 
     // Block button
@@ -187,8 +187,8 @@
 
         //Inverse color
         &.inverse when (@button-color-inverse = true) and (@button-colors = true){
-            color        : @gray-light;
-            border-color : @gray-light;
+            color        : @button-inverse-bg;
+            border-color : @button-inverse-border;
         }
     }
 
