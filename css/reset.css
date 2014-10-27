@@ -588,22 +588,6 @@ button:focus,
 .related-products:after {
   clear: both;
 }
-.main_menu + .generator-links:before,
-.listpages + .generator-links:before,
-.listcategories + .generator-links:before,
-.featureditem + .generator-links:before,
-.featureapage + .generator-links:before,
-.search-results + .generator-links:before,
-.relatedpages + .generator-links:before,
-.listxrss + .generator-links:before,
-.related-products + .generator-links:before {
-  content: "";
-  clear: both;
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  height: 0;
-}
 ::i-block-chrome,
 .main_menu,
 ::i-block-chrome,
