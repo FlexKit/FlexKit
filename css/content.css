@@ -1161,6 +1161,9 @@ a.inherit-color:hover {
 .gray-lighter {
   color: #eeeeee;
 }
+.white {
+  color: #fff;
+}
 .gray-darker-bg {
   color: #fff;
   background-color: #222222;
@@ -1180,6 +1183,9 @@ a.inherit-color:hover {
 .gray-lighter-bg {
   color: #888888;
   background-color: #eeeeee;
+}
+.white-bg {
+  background: #fff;
 }
 .table {
   float: none;
@@ -2557,9 +2563,9 @@ button.active,
   background-color: #007fbe;
 }
 .btn.inverse {
-  color: #bbbbbb;
-  background-color: #eeeeee;
-  border-color: #bbbbbb;
+  color: #555555;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
 .btn.block {
   float: none;
@@ -2697,8 +2703,8 @@ button.active,
   background-color: #00a1f1;
 }
 .btn.outline-bg.inverse {
-  color: #bbbbbb;
-  border-color: #bbbbbb;
+  color: #ffffff;
+  border-color: #ffffff;
 }
 .btn.rounded {
   -webkit-border-radius: 0.25em;

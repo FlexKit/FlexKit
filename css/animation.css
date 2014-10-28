@@ -3,6 +3,10 @@
   -moz-animation-fill-mode: both;
   -ms-animation-fill-mode: both;
   animation-fill-mode: both;
+  -webkit-animation-duration: 50ms;
+  -moz-animation-duration: 50ms;
+  -ms-animation-duration: 50ms;
+  animation-duration: 50ms;
 }
 .animated.hinge {
   -webkit-animation-duration: 2s;

@@ -3,8 +3,7 @@
 
 // Example code for sub main menu
 //{ifpages}
-//  <input id="{$page:navName}" class="hidden sub-menu-switch" type="checkbox"> - checkbox for show/hide sub menu
-//  <label for="{$page:navName}" class="btn icon icon-list3 sub-menu-btn d-hide"></label> - button for sub menu
+//  <span class="btn icon icon-list3 sub-menu-btn d-hide"></span> - button for sub menu
 //{/ifpages}
 
 @menu-height                       : @button-height-large;
@@ -112,7 +111,7 @@
 
     &.open{
         //        opacity : 1;
-        .transform(translateY(0));
+        .transform(translateX(0));
 
         &.top, &.bottom{ .transform(translateY(0)); }
         &.right{ .transform(translateX(0)); }
@@ -120,6 +119,35 @@
 }
 
 .menu-btn{
+
+    &.left{
+        &:before{
+            margin-left  : 0px;
+            margin-right : 5px;
+        }
+
+        &.active{
+            &:before{
+                margin-left  : -8px;
+                margin-right : 13px;
+            }
+        }
+    }
+
+    &.right{
+
+        &:before{
+            margin-right : 0px;
+            margin-left  : 5px;
+        }
+
+        &.active{
+            &:before{
+                margin-right : -8px;
+                margin-left  : 13px;
+            }
+        }
+    }
 }
 
 .sub-menu-btn{
