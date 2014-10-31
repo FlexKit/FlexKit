@@ -655,6 +655,7 @@
 [class*=" column_"].margin-none > *,
 [class^="column_"].margin-none > *,
 [class*="-column_"].margin-none > * {
+  width: 100%;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
@@ -1958,6 +1959,9 @@ dl.horizontal dd {
 [class^="list-"] {
   list-style-type: none;
   padding-left: 0;
+}
+ul.list-unstyled {
+  zoom: 1;
 }
 ul.list-inline {
   zoom: 1;

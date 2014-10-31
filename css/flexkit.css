@@ -41,6 +41,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
+  z-index: 15;
   margin: auto;
   width: 3em;
   display: none;
@@ -995,4 +996,12 @@
   min-width: 100% !important;
   width: auto;
   height: auto;
+}
+.responsive-image.bottom img {
+  min-height: 0 !important;
+  top: auto;
+}
+.responsive-image.top img {
+  min-height: 0 !important;
+  bottom: auto;
 }

@@ -140,7 +140,9 @@ $mobileButton.each(function(){
         position = $(this).data('menu-position'),
         height = $(this).data('menu-height');
     if($(this).hasClass('menu-btn')){
-        $(menu).addClass('mobile-menu '+position);
+        $menu = $(menu).clone(true, true);
+        $(menu).addClass('d-visible');
+        $('body').append($menu.addClass('mobile-menu d-hide '+position));
     }else if($(this).hasClass('dropdown-btn')){
         $(menu).addClass('dropdown-menu '+position).height(height);
     }
@@ -170,7 +172,7 @@ if(!jQuery().hammer){
 }
 
 function showHideMenu($this){
-    var menu = $this.data('menu');
+    var menu = $this.data('menu') + '.mobile-menu';
     $('.mobile-overlay').removeClass('open');
     if(!$this.hasClass('active')){
         $('.menu-btn, .dropdown-btn').removeClass('active');
