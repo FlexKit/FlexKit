@@ -36,18 +36,18 @@
     }
 }
 .column-list(@column : @columns; @prefix : ~''; @num-column : 1; @type : false) when (@column >= @num-column) and (@type = false){
-    .@{prefix}column_@{num-column} > *:not(.column-none){
+    .@{prefix}column_@{num-column} > *{
         width : round((100% / @num-column) - @column-margin-width, 3);
     }
     .column-list(@column; @prefix; @num-column + 1; false);
 }
 .column-list(@column : @columns; @prefix : ~''; @num-column : 1; @type : full-width) when (@column >= @num-column) and (@type = full-width) and  (@column-system-fullWidth = true){
     .full-width{
-        &.@{prefix}column_@{num-column} > *:not(.column-none){
+        &.@{prefix}column_@{num-column} > *{
             width : round((100% / @num-column) - @column-margin-width + (@column-margin-width / @num-column), 3);
-            @num : ~'@{num-column}n + 1';
+            @num : ~'@{num-column}n';
             &:nth-child(@{num}){
-                margin-left : 0 !important;
+                margin-right : 0 !important;
             }
         }
     }
@@ -55,7 +55,7 @@
 }
 .column-list(@column : @columns; @prefix : ~''; @num-column : 1; @type : margin-none) when (@column >= @num-column) and (@type = margin-none) and (@column-system-marginNone = true){
     .margin-none{
-        &.@{prefix}column_@{num-column} > *:not(.column-none){
+        &.@{prefix}column_@{num-column} > *{
             width : round(100% / @num-column, 3);
         }
     }
