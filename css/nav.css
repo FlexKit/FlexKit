@@ -252,6 +252,9 @@
   color: #0b6097;
 }
 @media only screen and (max-width: 800px) {
+  header {
+    margin-top: 54.6875px;
+  }
   .top-block {
     position: fixed;
     left: 0;
@@ -266,10 +269,6 @@
     -moz-box-shadow: 0 0 7px #555555;
     box-shadow: 0 0 7px #555555;
   }
-  .top-block ~ header,
-  .top-block ~ * header {
-    margin-top: 54.6875px;
-  }
   .bottom-block {
     position: fixed;
     left: 0;
@@ -283,10 +282,6 @@
     -webkit-box-shadow: 0 0 7px #555555;
     -moz-box-shadow: 0 0 7px #555555;
     box-shadow: 0 0 7px #555555;
-  }
-  .bottom-block ~ header,
-  .bottom-block ~ * header {
-    margin-top: 54.6875px;
   }
   .mobile-overlay {
     position: fixed;

@@ -32,56 +32,58 @@
             <nav id="main-menu" class="grid_12 mt15px mb20px" role="navigation">{$menu:main:_main menu}</nav>
 
             <!-- Content box -->
-            <section id="content" class="grid_9 product" itemscope itemtype="http://schema.org/Product" role="main">
-                <div class="grid_4 alpha">
+            <div id="content" class="grid_12 product">
+                <div class="grid_5 alpha">
                     {$product:editproduct}
-                    <a class="_lbox product-image" href="{$product:photourl:original}"><img  itemprop="image"  src="{$product:photourl:medium}" alt="{$product:name}" /></a>
-                    <div class="product-gallery">
-                        <span>{$header:product-gallery:static}</span>
-                        {$content:product-gallery}
+                    <a class="_lbox product-image" href="{$product:photourl:original}">
+                        <img itemprop="image" src="{$product:photourl:medium}" alt="{$product:name}"/>
+                    </a>
+                    <span>{$header:product-gallery:static}</span>
+                    {$content:product-gallery}>
+                </div>
+                <div class="grid_7 omega" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <div class="grid_12 mb15px alpha omega">
+                        <p class="product-price h1 alpha grid_5 t-grid_2 mb0px" itemprop="price">{$product:price}</p>
+                        <input id="productquantity" class="grid_2 larger t-alpha m-alpha t-grid_3 m-grid_1" type="text" name="productquantity-{$product:id}" value="1"/>
+                        <div class="grid_5 t-grid_3 m-grid_3 t-omega m-omega omega text-center">{$store:addtocart:{$product:id}}</div>
+                    </div>
+                    <div class="tabs grid_12">
+                        <ul class="list-unstyled list-inline">
+                            <li class="mini"><a href="#product-tab1">{$header:product-tab1:static}</a></li>
+                            <li class="mini"><a href="#product-tab2">{$header:product-tab2:static}</a></li>
+                        </ul>
+                        <div id="product-tab1">
+                            <ul class="list-unstyled list-bordered product-info">
+                                <li><span class="title">Weight:</span> {$product:weight}</li>
+                                <li><span class="title">Brand:</span> {$product:brand}</li>
+                                <li><span class="title">SKU code:</span> {$product:sku}</li>
+                                <li><span class="title">MPN code:</span> {$product:mpn}</li>
+                                <li><span class="title">Product tags:</span> {$product:tags}</li>
+                            </ul>
+                            <p class="product-description full">{$product:description:full}</p>
+                        </div>
+                        <div id="product-tab2" class="product-options">
+                            {$product:options}
+                        </div>
+                    </div>
+                    <div class="tabs grid_12 mt30px alpha omega">
+                        <ul class="list-unstyled list-inline">
+                            <li><a href="#tabs-1">{$header:tab1:static}</a></li>
+                            <li><a href="#tabs-2">{$header:tab2:static}</a></li>
+                            <li><a href="#tabs-3">{$header:tab3:static}</a></li>
+                        </ul>
+                        <div id="tabs-1">
+                            {$product:related}
+                        </div>
+                        <div id="tabs-2">
+                            {$productlist:product list sametags:sametags}
+                        </div>
+                        <div id="tabs-3">
+                            {$content:tab3:static}
+                        </div>
                     </div>
                 </div>
-                <div class="grid_5 omega">
-                    <h1 class="product-name" itemprop="name" role="heading">{$product:name}</h1>
-                    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                        <div class="stock"><link itemprop="availability" href="http://schema.org/InStock" />In stock</div>
-                        <div class="main-info grid_3 alpha">
-                            Price: <span class="product-price" itemprop="price">{$product:price}</span><br>
-                            <p class="product-tags">{$product:tags}</p>
-                        </div>
-                        <div class="more-info grid_2 omega text-right">
-                            SKU code: <span class="product-sku">{$product:sku}</span><br>
-                            MPN code: <span class="product-mpn">{$product:mpn}</span><br>
-                            Weight: <span class="product-weight">{$product:weight}</span><br>
-                        </div>
-                        <div class="clear"></div>
-                        <div class="product-description-short">{$product:description:short}</div>
-                        {$product:options}
-                        {$store:addtocart:{$product:id}}
-                    </div>
-                </div>
-                <div class="clear"></div>
-                <div class="product-description-full" itemprop="description">
-                    <h3>{$header:description:static}</h3>
-                    {$product:description:full}
-                </div>
-                <div class="clear"></div>
-                <div>
-                    <h3>{$header:related:static}</h3>
-                    {$product:related:small:addtocart}
-                </div>
-            </section>
-
-            <!-- Right box -->
-            <aside id="right" class="grid_3" role="complementary">
-                {repeat:rightAside:key}
-                <div class="aside-box">
-                    <h3>{$header:right_key}</h3>
-                    {$content:right_key}
-                </div>
-                {/repeat}
-            </aside>
-
+            </div>
         </div>
 
         <!-- Footer -->

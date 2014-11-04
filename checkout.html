@@ -36,28 +36,32 @@
             <!-- Content box -->
             <section id="content" class="grid_12" role="main">
                 <!-- Table products to order -->
-                <table id="checkoutitemlist" class="cart-content">
-                    <tr>
-                        <th class="product-info" colspan="2">Product</th>
-                        <!--th class="description">Description</th-->
-                        <th class="product-unit-price">Unit price</th>
-                        <th class="product-qty">Qty</th>
-                        <th class="product-total">Total</th>
-                        <th class="product-remove">Remove</th>
-                    </tr>
+                <table id="checkoutitemlist" class="checkout-cart-table mb30px">
+                    <thead class="t-hide m-hide">
+                        <tr>
+                            <th class="product-info">Product</th>
+                            <th></th>
+                            <th class="product-unit-price">Unit price</th>
+                            <th class="product-qty">Qty</th>
+                            <th class="product-total">Total</th>
+                            <th class="product-remove">Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     {toastercart}
-                    <tr>
-                        <td class="product-img"> {$cartitem:photo} </td>
-                        <td class="product-info">{$cartitem:name}
-                            <p class="itemID"><span>Item ID: </span>{$cartitem:sku}</p>
-                            {$cartitem:options}
-                        </td>
-                        <td class="product-unit-price">{$cartitem:price:unit}</td>
-                        <td class="product-qty">{$cartitem:qty}</td>
-                        <td class="product-total">{$cartitem:price}</td>
-                        <td class="product-remove">{$cartitem:remove}</td>
-                    </tr>
-                {/toastercart}
+                        <tr>
+                            <td class="product-img"> {$cartitem:photo} </td>
+                            <td class="product-info">{$cartitem:name}
+                                <p class="itemID"><span>Item ID: </span>{$cartitem:sku}</p>
+                                {$cartitem:options}
+                            </td>
+                            <td class="product-unit-price">{$cartitem:price:unit}</td>
+                            <td class="product-qty">{$cartitem:qty}</td>
+                            <td class="product-total">{$cartitem:price}</td>
+                            <td class="product-remove">{$cartitem:remove}</td>
+                        </tr>
+                    {/toastercart}
+                    </tbody>
                 </table>
                 <!-- end table products to order -->
 

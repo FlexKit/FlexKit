@@ -35,6 +35,7 @@
     & when (@column-system = true){
         font-size : 0 !important;
         width   : 100%;
+        overflow  : hidden;
 
         & > *{
             font-size      : @font-size-base;
@@ -61,13 +62,15 @@
 
         &.full-width when (@column-system-fullWidth = true){
             & > *{
-                margin-left  : @column-margin-width !important;
-                margin-right : 0 !important;
+                width        : 100%;
+                margin-right : @column-margin-width !important;
+                margin-left  : 0 !important;
             }
         }
 
         &.margin-none when (@column-system-marginNone = true){
             & > *{
+                width        : 100%;
                 margin-left  : 0 !important;
                 margin-right : 0 !important;
             }
