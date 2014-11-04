@@ -123,12 +123,12 @@ function hideLoading(){
     $('html').addClass('loaded');
 }
 
-if(document.getElementsByClassName('menu-btn').length){
+if(document.querySelectorAll('.menu-btn').length){
     var menuOverlay = document.createElement("div");
     menuOverlay.className = "mobile-overlay menu-overlay";
     document.body.appendChild(menuOverlay);
 }
-if(document.getElementsByClassName('dropdown-btn').length){
+if(document.querySelectorAll('.dropdown-btn').length){
     var dropdownOverlay = document.createElement("div");
     dropdownOverlay.className = "mobile-overlay dropdown-overlay";
     document.body.appendChild(dropdownOverlay);
