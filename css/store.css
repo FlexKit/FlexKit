@@ -36,8 +36,6 @@
   -webkit-transition: background 0.3s ease;
   -moz-transition: background 0.3s ease;
   transition: background 0.3s ease;
-  font-size: 1.5em;
-  width: 100%;
 }
 .product .tcart-add:hover,
 .product .tcart-add:active,
