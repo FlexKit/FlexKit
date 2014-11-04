@@ -54,6 +54,9 @@ dl{
     }
 }
 ul{
+    &.list-unstyled when (@list-unstyled = true) and (@lists-classes = true){
+        zoom : 1;
+    }
     &.list-inline when (@list-inline = true) and (@lists-classes = true){
         zoom : 1;
 

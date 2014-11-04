@@ -123,12 +123,12 @@ function hideLoading(){
     $('html').addClass('loaded');
 }
 
-if(document.getElementsByClassName('menu-btn').length){
+if(document.querySelectorAll('.menu-btn').length){
     var menuOverlay = document.createElement("div");
     menuOverlay.className = "mobile-overlay menu-overlay";
     document.body.appendChild(menuOverlay);
 }
-if(document.getElementsByClassName('dropdown-btn').length){
+if(document.querySelectorAll('.dropdown-btn').length){
     var dropdownOverlay = document.createElement("div");
     dropdownOverlay.className = "mobile-overlay dropdown-overlay";
     document.body.appendChild(dropdownOverlay);
@@ -140,7 +140,9 @@ $mobileButton.each(function(){
         position = $(this).data('menu-position'),
         height = $(this).data('menu-height');
     if($(this).hasClass('menu-btn')){
-        $(menu).addClass('mobile-menu '+position);
+        $menu = $(menu).clone(true, true);
+        $(menu).addClass('d-visible');
+        $('body').append($menu.addClass('mobile-menu d-hide '+position));
     }else if($(this).hasClass('dropdown-btn')){
         $(menu).addClass('dropdown-menu '+position).height(height);
     }
@@ -170,7 +172,7 @@ if(!jQuery().hammer){
 }
 
 function showHideMenu($this){
-    var menu = $this.data('menu');
+    var menu = $this.data('menu') + '.mobile-menu';
     $('.mobile-overlay').removeClass('open');
     if(!$this.hasClass('active')){
         $('.menu-btn, .dropdown-btn').removeClass('active');

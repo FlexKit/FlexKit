@@ -431,6 +431,7 @@ img {
   vertical-align: middle;
 }
 .gmaps {
+  color: #000;
   max-width: 100%;
 }
 .gmaps img {
