@@ -1,6 +1,6 @@
-// Product Style
+// Product styles
+//==================================================
 .product{
-
     .edit-product-btn{
         position         : absolute;
         left             : 0;
@@ -11,132 +11,188 @@
     }
 
     .product-name{
-        margin : 0 0 15px;
     }
-
     .product-image{
-        border  : 3px solid #EBEBEB;
+        border  : 1px solid #EBEBEB;
         display : block;
-
         img{
             width : 100%;
         }
     }
-
-    .main-info{
-        font-size : 14px;
-
-        span{
-            text-shadow : 1px 0 1px #ccc;
-            color       : #444;
-            font-weight : bold;
+    .product-price{
+        margin-bottom : @padding-base-horizontal;
+    }
+    .product-description{
+        &.short{
+        }
+        &.full{
+            margin : 0 0 @padding-large-horizontal;
         }
     }
 
-    .more-info{
-        color     : #aaa;
-        font-size : 11px;
-
-        span{
-            color : #222;
-        }
+    .tcart-add{
+        .button();
+        font-size : @font-size-larger;
+        width     : 100%;
     }
 
+    // SKU, MPN, weight, brand or all information
     .product-sku{ }
-
     .product-mpn{ }
-
     .product-brand{ }
-
     .product-weight{ }
 
-    .product-description-short{
-        border-bottom : 1px solid #EEEEEE;
-        border-top    : 1px solid #EEEEEE;
-        margin        : 10px 0 0;
-        padding       : 15px 0;
-    }
-
-    .product-description-full{ }
-
-    .product-options-listing{
-        margin-bottom : 25px;
-        padding       : 25px 0;
-
-        .product-option{
-            overflow : hidden;
-
-            &:first-child{
-                margin-top : 0;
-            }
-
-            &>label{
-                font-weight : bold;
-                width       : auto;
-            }
-
-            &>div label{
-                cursor       : pointer;
-                float        : left;
-                font-size    : 12px;
-                margin-right : 1%;
-                width        : 27%;
-            }
-
-            select{
-                padding : 2px;
-                width   : auto;
-            }
-        }
-    }
     .product-tags{
-        font-size   : @font-size-small;
+        font-size   : 11px;
         color       : #aaa;
         font-weight : normal;
         margin      : 5px 0 0;
-
         span{
             border-left : 1px solid #DDDDDD;
             padding     : 0 3px 0 5px;
-
             &:first-child{
                 border : none;
             }
         }
     }
 
-    .tcart-add{
-        .button-color(@primary-color, @primary-bg, @primary-bg);
-        padding             : 8px 8px 8px 33px;
-        background-image    : url("../images/cart.gif");
-        background-position : 5px 50%;
-        background-repeat   : no-repeat;
-        .border-radius(10px);
+    .product-info{
+        .title{
+            font-weight : bold;
+            display     : block;
+            float       : left;
+            width       : 30%;
+        }
+    }
 
-        &:hover{
+    // Product options
+    .product-options-listing{
+        .inline-block-wrap(top);
+
+        .product-option{
+            margin-bottom    : @padding-large-vertical;
+            background-color : @content-bg;
+            padding          : @padding-base-horizontal;
+            .grid-elements(3, 2%, true);
+
+            > label{
+                font-weight : bold;
+            }
+        }
+
+        select{
+            width : 100%;
+        }
+    }
+
+    // Others functionnality
+    .product-gallery{
+        overflow   : hidden;
+        padding    : 0;
+        margin-top : 0;
+        list-style : none;
+        //margin-left : -2%;
+
+        .direct-upload, .directupload-wrapper{
+            border  : 1px solid #eee;
+
+            img{
+                margin  : 0;
+                padding : 0;
+                border  : none;
+            }
         }
     }
 
     .starrating{
         float : right;
-
         p{ display : none; }
     }
-}
+    .product-reviews{
+        .pagerating-list{
+            > div{
+                background-color : @content-bg;
+                padding          : @padding-base-vertical;
+                margin-bottom    : @padding-base-vertical;
+            }
+            div[itemprop="reviewRating"]{
+                width : auto !important;
+                img{
+                    vertical-align : text-bottom;
+                }
+            }
+        }
+        .review-header{
+            font-size : @font-size-larger;
+            margin    : 0 0 @padding-large-vertical;
+        }
+        .starrating{
+            margin : 0 0 @padding-large-vertical;
+            float  : right;
+        }
+        form{
+            clear : both;
+        }
+        .formreview-element{
+            margin : 0;
+            label{
+                width : 20%;
+                float : left;
+                & + *{
+                    width         : 80%;
+                    float         : left;
+                    margin-bottom : @padding-base-vertical;
+                }
+            }
+        }
 
+        .captcha{
+            .captcha_image{
+                float         : right;
+                clear         : both;
+                margin-bottom : 10px;
+                width         : 320px !important;
+            }
+            .captcha_label{
+                //float : none;
+                width        : 25%;
+                padding-left : 120px;
+            }
+        }
+    }
+
+    .main-blue{
+        font-size : 14px;
+        span{
+            text-shadow : 1px 0 1px #ccc;
+            color       : #444;
+            font-weight : bold;
+        }
+    }
+    .more-blue{
+        color     : #aaa;
+        font-size : 11px;
+        span{
+            color : #222;
+        }
+    }
+}
 .line-or{
     text-align : center;
-    border-top : 1px solid @gray-lighter !important;
+    border-top : 1px solid #eee !important;
     margin     : 60px 0 50px;
     height     : 0;
-
-    span{
-        .inline-block();
-        top                   : -23px;
-        background            : @gray-light !important;
-        color                 : #fff;
-        padding               : 5px 10px;
-        font-size             : @font-size-larger;
-        .border-radius(50px) !important;
-    }
+}
+.line-or span{
+    .inline-block();
+    top                   : -23px;
+    font-family           : 'Oswald', sans-serif !important;
+    background            : #ddd !important;
+    color                 : #fff;
+    padding               : 5px 10px;
+    -webkit-border-radius : 50px !important;
+    -moz-border-radius    : 50px !important;
+    -ms-border-radius     : 50px !important;
+    border-radius         : 50px !important;
+    font-size             : 24px;
 }
