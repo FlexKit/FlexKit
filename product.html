@@ -54,13 +54,9 @@
                     <div class="grid_12 alpha omega mt30px product-reviews">{$plugin:pagerating:review}</div>
                 </div>
                 <div class="grid_7 omega" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                    <div class="grid_12 mb15px alpha omega">
-                        <p class="product-price h1 alpha grid_6 t-grid_2 mb0px" itemprop="price">{$product:price}</p>
-                        <div class="grid_6 t-grid_4 t-alpha m-alpha t-omega m-omega mt5px">
-                            <input id="productquantity" class="grid_5 larger t-alpha m-alpha t-grid_3 m-grid_1" type="text" name="productquantity-{$product:id}" value="1"/>
-                            <div class="grid_7 t-grid_3 m-grid_3 t-omega m-omega omega text-center">{$store:addtocart:{$product:id}}</div>
-                        </div>
-                    </div>
+                    <p class="product-price h1 alpha grid_5 t-grid_2 mb15px" itemprop="price">{$product:price}</p>
+                    <input id="productquantity" class="grid_2 larger t-alpha m-alpha t-grid_3 m-grid_1 mb15px" type="text" name="productquantity-{$product:id}" value="1"/>
+                    <div class="grid_5 t-grid_3 m-grid_3 t-omega m-omega omega text-center mb15px">{$store:addtocart:{$product:id}}</div>
                     <div class="tabs grid_12">
                         <ul class="list-unstyled list-inline">
                             <li class="mini"><a href="#product-tab1">{$header:product-tab1:static}</a></li>
