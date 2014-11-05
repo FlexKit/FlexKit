@@ -125,22 +125,6 @@
   overflow: hidden;
   margin-bottom: 0.5em;
 }
-.featureapage {
-  float: left;
-  margin-left: 1%;
-  margin-right: 1%;
-  width: 31.33333333%;
-}
-@media only screen and (max-width: 800px) and (min-width: 481px) {
-  .featureapage {
-    width: 48%;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .featureapage {
-    width: 98%;
-  }
-}
 .listpages li,
 .listcategories li {
   margin-bottom: 30px;
@@ -252,9 +236,6 @@
   color: #0b6097;
 }
 @media only screen and (max-width: 800px) {
-  header {
-    margin-top: 54.6875px;
-  }
   .top-block {
     position: fixed;
     left: 0;

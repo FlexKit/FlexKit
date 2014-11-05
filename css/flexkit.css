@@ -324,9 +324,9 @@
   background-color: #ffffff;
   max-width: 90%;
   color: inherit;
-  -webkit-box-shadow: 4px 4px 4px #555555;
-  -moz-box-shadow: 4px 4px 4px #555555;
-  box-shadow: 4px 4px 4px #555555;
+  -webkit-box-shadow: 4px 4px 4px #222222;
+  -moz-box-shadow: 4px 4px 4px #222222;
+  box-shadow: 4px 4px 4px #222222;
 }
 .ui-effects-wrapper .ui-dialog {
   max-width: none;
@@ -350,9 +350,9 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 10px;
+  right: 0;
   margin: auto;
-  padding: 0;
+  padding: 10px;
   background: transparent;
   color: #ffffff;
   -webkit-box-sizing: content-box;
