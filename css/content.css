@@ -2499,7 +2499,12 @@ button:before,
 button[class*="grid_"],
 [type="submit"][class*="grid_"],
 [type="button"][class*="grid_"],
-[type="reset"][class*="grid_"] {
+[type="reset"][class*="grid_"],
+[class*="column_"] > .btn,
+[class*="column_"] > button,
+[class*="column_"] > [type="submit"],
+[class*="column_"] > [type="button"],
+[class*="column_"] > [type="reset"] {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
