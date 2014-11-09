@@ -8,41 +8,43 @@
 @bottom-block-color  : @primary-color;
 @bottom-block-zindex : 100;
 
+.mobile-bar{
+    display : none;
+}
+
 @media only screen and (max-width : @responsive-size-tablet){
 
-    .top-block{
-        position    : fixed;
-        left        : 0;
-        top         : 0;
-        right       : 0;
-        z-index     : @top-block-zindex;
-        height      : @top-block-height;
-        line-height : @top-block-height;
-        color       : @top-block-color;
-        background  : @top-block-bg;
+    .mobile-bar{
+        display  : block;
+        position : fixed;
+        left     : 0;
+        top      : 0;
+        right    : 0;
+        z-index  : 100;
         .box-shadow(0 0 7px @gray-dark);
-    }
 
-    .bottom-block{
-        position    : fixed;
-        left        : 0;
-        bottom      : 0;
-        right       : 0;
-        z-index     : @bottom-block-zindex;
-        height      : @bottom-block-height;
-        line-height : @bottom-block-height;
-        color       : @bottom-block-color;
-        background  : @bottom-block-bg;
-        .box-shadow(0 0 7px @gray-dark);
+        &.top{
+            height      : @top-block-height;
+            line-height : @top-block-height;
+            color       : @top-block-color;
+            background  : @top-block-bg;
+        }
+
+        &.bottom{
+            height      : @bottom-block-height;
+            line-height : @bottom-block-height;
+            color       : @bottom-block-color;
+            background  : @bottom-block-bg;
+        }
     }
 
     .mobile-overlay{
         position   : fixed;
-        top        : @top-block-height;
+        top        : 0;
         right      : 0;
         bottom     : 0;
         left       : 0;
-        z-index    : @top-block-zindex - 2;
+        z-index    : 98;
         margin     : 0;
         background : rgba(0, 0, 0, 0.5);
         display    : none;
