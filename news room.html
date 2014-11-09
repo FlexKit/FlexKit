@@ -9,55 +9,34 @@
         <!-- Container -->
         <div id="container" class="container">
 
-            <!-- Header -->
-            <header class="grid_12" role="banner">
-                <div class="logo h1 grid_8 alpha">
-                    <a href="{$website:url}" title="{$page:h1}">
-                        <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
-                    </a>
-                </div>
-                <div class="grid_4 alpha omega mt10px">
-                    <p class="text-right">
-                        <!-- Include Social links template -->
-                        {$template:_social links}
-                    </p>
-                    {$search:form}
-                </div>
-            </header>
-
-            <!-- Include mobile bar template -->
-            {$template:_mobile bar}
-
-            <!-- Main Menu -->
-            <nav id="main-menu" class="grid_12 mt15px mb20px" role="navigation">{$menu:main:_main menu}</nav>
+            <!-- Include header template -->
+            {$template:_header}
 
             <h1 class="grid_12 light" role="heading">{$page:h1}</h1>
 
             <!-- Content box -->
-            <section id="content" class="grid_9" role="main">
+            <main id="content" class="grid_9" role="main">
                 <!-- news list -->
-                <ul class="news-list">
-                {newslist:NEWS-LIST_NAME}
-                    <li class="news-list-item">
-                        {$news:actions}
-                        <time class="news-item-date small block mb10px" datetime="{$news:date:Y-m-d}">
-                            <i class="icon-calendar2 icon16"></i>
-                            {$news:date: M d, Y}
-                        </time>
-                        <a class="page-teaser-image text-center grid_2 alpha" href="{$news:url}">
-                            <img src="{$news:preview}" alt="{$news:title}"/>
-                        </a>
-                        <a class="page-title large grid_10 omega" href="{$news:url}">{$news:title}</a>
-                        <p class="news-item-description grid_10 omega small mb10px">{$news:teaser}</p>
-                        <p class="news-item-tags small cl-both text-right">{$news:tags}</p>
-                    </li>
-                {/newslist}
-                </ul>
-            </section>
+            {newslist:NEWS-LIST_NAME}
+                <div class="news-item">
+                    {$news:actions}
+                    <time class="news-item-date small block mb10px" datetime="{$news:date:Y-m-d}">
+                        <i class="icon-calendar2 icon16"></i>
+                        {$news:date: M d, Y}
+                    </time>
+                    <a class="page-teaser-image text-center grid_2 alpha" href="{$news:url}">
+                        <img src="{$news:preview}" alt="{$news:title}"/>
+                    </a>
+                    <a class="page-title large grid_10 omega" href="{$news:url}">{$news:title}</a>
+                    <p class="news-item-description grid_10 omega small mb10px">{$news:teaser}</p>
+                    <p class="news-item-tags small cl-both text-right">{$news:tags}</p>
+                </div>
+            {/newslist}
+            </main>
 
             <!-- Right box -->
             <aside id="right" class="grid_3" role="complementary">
-                {repeat:rightAside:key}
+                {repeat:Aside right blocks:key}
                 <div class="aside-box">
                     <h3>{$header:right_key}</h3>
                     {$content:right_key}

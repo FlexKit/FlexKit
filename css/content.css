@@ -661,10 +661,10 @@
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
-[class*=" column_"] > br,
-[class^="column_"] > br,
-[class*="-column_"] > br {
-  display: none;
+[class*=" column_"] > .generator-links,
+[class^="column_"] > .generator-links,
+[class*="-column_"] > .generator-links {
+  display: block;
 }
 @media only screen and (min-width: 801px) {
   .column_1 > * {
@@ -973,35 +973,35 @@
   vertical-align: bottom;
 }
 .ws-nowrap {
-  white-space: nowrap;
+  white-space: nowrap !important;
 }
 .ws-normal {
-  white-space: normal;
+  white-space: normal !important;
 }
 .text-light {
-  font-weight: 300;
+  font-weight: 300 !important;
 }
 .text-normal {
-  font-weight: normal;
-  font-style: normal;
+  font-weight: normal !important;
+  font-style: normal !important;
 }
 .text-medium {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 .text-bold {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 .text-italic {
-  font-style: italic;
+  font-style: italic !important;
 }
 .lh-small {
-  line-height: 1;
+  line-height: 1 !important;
 }
 .lh-medium {
-  line-height: 1.21428571;
+  line-height: 1.21428571 !important;
 }
 .lh-large {
-  line-height: 1.78571429;
+  line-height: 1.78571429 !important;
 }
 .cl-none {
   clear: none;
@@ -1082,7 +1082,7 @@
   color: inherit;
 }
 a.inherit-color:hover {
-  color: #199bef;
+  color: #61b3de;
 }
 .text-overflow {
   overflow: hidden;
@@ -1264,7 +1264,6 @@ a.inherit-color:hover {
 }
 .gl-change.color .generator-links {
   padding: 4px;
-  border: 1px dashed #fff;
   font-size: 0;
 }
 .gl-change.color .generator-links:before {
@@ -1644,14 +1643,14 @@ code {
   color: #f65314;
 }
 a {
-  color: #199bef;
+  color: #61b3de;
   text-decoration: none;
 }
 a:hover {
-  color: #0b6097;
+  color: #2583b4;
 }
 a:active {
-  color: #0b6097;
+  color: #2583b4;
 }
 h1,
 h2,
@@ -1666,7 +1665,7 @@ h6,
 .h5,
 .h6 {
   margin-top: 1.5em;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
   color: #222222;
   font-weight: bold;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
@@ -2223,6 +2222,10 @@ table table {
 table.table-outline {
   border: 1px solid #afafaf;
 }
+table.condensed th,
+table.condensed td {
+  padding: .25em .75em;
+}
 table.table-bordered {
   border-top: 1px solid #afafaf;
   border-bottom: 1px solid #afafaf;
@@ -2427,7 +2430,6 @@ button,
 [type="submit"],
 [type="button"],
 [type="reset"] {
-  margin-bottom: 0;
   text-align: center;
   cursor: pointer;
   position: relative;
@@ -2497,7 +2499,12 @@ button:before,
 button[class*="grid_"],
 [type="submit"][class*="grid_"],
 [type="button"][class*="grid_"],
-[type="reset"][class*="grid_"] {
+[type="reset"][class*="grid_"],
+[class*="column_"] > .btn,
+[class*="column_"] > button,
+[class*="column_"] > [type="submit"],
+[class*="column_"] > [type="button"],
+[class*="column_"] > [type="reset"] {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
@@ -2597,13 +2604,13 @@ button.active,
 .btn.link {
   text-decoration: underline;
   background-color: transparent !important;
-  color: #199bef;
+  color: #61b3de;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 .btn.link:hover {
-  color: #074268;
+  color: #1d6489;
 }
 .btn.link:hover {
   text-decoration: none;

@@ -615,6 +615,7 @@ label[for*="chr-"] {
   right: 10px;
 }
 .directupload-wrapper {
+  font-size: 14px;
   display: inline-block;
   vertical-align: top;
 }

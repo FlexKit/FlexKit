@@ -17,6 +17,6 @@ if(!jQuery().chosen && $(".chosen-select").length || $(".chosen-select-deselect"
 
 if(!jQuery().hammer && device.type){
     var hammer = document.createElement("script");
-    hammer.src = websiteUrl+"/themes/"+themeName+"/js/plugin/hammer.js";
+    hammer.src = websiteUrl+"/themes/"+themeName+"/js/plugin/hammer.min.js";
     document.body.appendChild(hammer);
 }

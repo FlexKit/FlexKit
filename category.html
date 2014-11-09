@@ -9,32 +9,13 @@
         <!-- Container -->
         <div id="container" class="container">
 
-            <!-- Header -->
-            <header class="grid_12" role="banner">
-                <div class="logo h1 grid_8 alpha">
-                    <a href="{$website:url}" title="{$page:h1}">
-                        <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
-                    </a>
-                </div>
-                <div class="grid_4 alpha omega mt10px">
-                    <p class="text-right">
-                        <!-- Include Social links template -->
-                        {$template:_social links}
-                    </p>
-                    {$search:form}
-                </div>
-            </header>
-
-            <!-- Include mobile bar template -->
-            {$template:_mobile bar}
-
-            <!-- Main Menu -->
-            <nav id="main-menu" class="grid_12 mt15px mb20px" role="navigation">{$menu:main:_main menu}</nav>
+            <!-- Include header template -->
+            {$template:_header}
             
             <h1 class="grid_12 light" role="heading">{$page:h1}</h1>
 
             <!-- Content box -->
-            <section id="content" class="grid_6 push_3" role="main">
+            <main id="content" class="grid_6 push_3" role="main">
                 {repeat:article:key}
                 <article>
                     <h2>{$header:content_key}</h2>
@@ -42,11 +23,11 @@
                     {$content:content_key-2}
                 </article>
                 {/repeat}
-            </section>
+            </main>
 
             <!-- Left box -->
             <aside id="left" class="grid_3 pull_6" role="complementary">
-                {repeat:leftAside:key}
+                {repeat:Aside left blocks:key}
                 <div class="aside-box">
                     <h3>{$header:left_key}</h3>
                     {$content:left_key}
@@ -56,7 +37,7 @@
 
             <!-- Right box -->
             <aside id="right" class="grid_3" role="complementary">
-                {repeat:rightAside:key}
+                {repeat:Aside right blocks:key}
                 <div class="aside-box">
                     <h3>{$header:right_key}</h3>
                     {$content:right_key}

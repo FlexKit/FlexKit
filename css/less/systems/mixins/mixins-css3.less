@@ -63,8 +63,8 @@
     & when (@ie = true) { background-image : -ms-linear-gradient(top, @backgroundW3C); }
     // ie8
     & when (@ie8 = true) and not (@PIE = true) {
-        @color-one       : e(`(function(){var a, b; a = "@{@backgroundW3C}", b = a.indexOf(' '); return a.substring(0, b);}())`);
-        @color-two       : e(`(function(){var a, b, c; a = "@{@backgroundW3C}", b = a.lastIndexOf(',') + 2, c = a.lastIndexOf(' '); return a.substring(b, c);}())`);
+        @color-one       : e(`(function(){var a, b; a = "@{backgroundW3C}", b = a.indexOf(' '); return a.substring(0, b);}())`);
+        @color-two       : e(`(function(){var a, b, c; a = "@{backgroundW3C}", b = a.lastIndexOf(',') + 2, c = a.lastIndexOf(' '); return a.substring(b, c);}())`);
         filter : e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@color-one,@color-two));
     }
     // Opera11.10+

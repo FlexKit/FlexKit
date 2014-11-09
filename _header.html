@@ -1,0 +1,22 @@
+<!-- Header -->
+<header class="grid_12" role="banner">
+    <div class="logo h1 grid_8 alpha">
+        <a href="{$website:url}" title="{$page:h1}">
+            <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}" width="75" height="85">
+            {$plugin:widcard:BizOrgName:notag}
+        </a>
+    </div>
+    <div class="grid_4 alpha omega mt10px">
+        <p class="text-right">
+            <!-- Include Social links template -->
+            {$template:_social links}
+        </p>
+        {$search:form}
+    </div>
+</header>
+
+<!-- Include mobile bar template -->
+{$template:_mobile bar}
+
+<!-- Main Menu -->
+<nav id="main-menu" class="grid_12 mt15px mb20px" role="navigation">{$menu:main:_main menu}</nav>

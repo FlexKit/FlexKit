@@ -125,22 +125,6 @@
   overflow: hidden;
   margin-bottom: 0.5em;
 }
-.featureapage {
-  float: left;
-  margin-left: 1%;
-  margin-right: 1%;
-  width: 31.33333333%;
-}
-@media only screen and (max-width: 800px) and (min-width: 481px) {
-  .featureapage {
-    width: 48%;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .featureapage {
-    width: 98%;
-  }
-}
 .listpages li,
 .listcategories li {
   margin-bottom: 30px;
@@ -246,46 +230,41 @@
   color: #555555;
 }
 .breadcrumbs a {
-  color: #199bef;
+  color: #61b3de;
 }
 .breadcrumbs a:hover {
-  color: #0b6097;
+  color: #2583b4;
+}
+.mobile-bar {
+  display: none;
 }
 @media only screen and (max-width: 800px) {
-  header {
-    margin-top: 54.6875px;
-  }
-  .top-block {
+  .mobile-bar {
+    display: block;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     z-index: 100;
-    height: 43.75px;
-    line-height: 43.75px;
-    color: #ffffff;
-    background: #61b3de;
     -webkit-box-shadow: 0 0 7px #555555;
     -moz-box-shadow: 0 0 7px #555555;
     box-shadow: 0 0 7px #555555;
   }
-  .bottom-block {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
+  .mobile-bar.top {
     height: 43.75px;
     line-height: 43.75px;
     color: #ffffff;
     background: #61b3de;
-    -webkit-box-shadow: 0 0 7px #555555;
-    -moz-box-shadow: 0 0 7px #555555;
-    box-shadow: 0 0 7px #555555;
+  }
+  .mobile-bar.bottom {
+    height: 43.75px;
+    line-height: 43.75px;
+    color: #ffffff;
+    background: #61b3de;
   }
   .mobile-overlay {
     position: fixed;
-    top: 43.75px;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -316,7 +295,7 @@
     background-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 20%, transparent 20%, transparent 40%, #ffffff 40%, #ffffff 60%, transparent 60%, transparent 80%, #ffffff 80%, #ffffff 100%);
     background-image: -moz-linear-gradient(top, #ffffff 0%, #ffffff 20%, transparent 20%, transparent 40%, #ffffff 40%, #ffffff 60%, transparent 60%, transparent 80%, #ffffff 80%, #ffffff 100%);
     background-image: -ms-linear-gradient(top, #ffffff 0%, #ffffff 20%, transparent 20%, transparent 40%, #ffffff 40%, #ffffff 60%, transparent 60%, transparent 80%, #ffffff 80%, #ffffff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='', endColorstr='@', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
     background-image: linear-gradient(top, #ffffff 0%, #ffffff 20%, transparent 20%, transparent 40%, #ffffff 40%, #ffffff 60%, transparent 60%, transparent 80%, #ffffff 80%, #ffffff 100%);
   }
   .menu-btn.left {
