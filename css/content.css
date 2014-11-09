@@ -1082,7 +1082,7 @@
   color: inherit;
 }
 a.inherit-color:hover {
-  color: #199bef;
+  color: #61b3de;
 }
 .text-overflow {
   overflow: hidden;
@@ -1643,14 +1643,14 @@ code {
   color: #f65314;
 }
 a {
-  color: #199bef;
+  color: #61b3de;
   text-decoration: none;
 }
 a:hover {
-  color: #0b6097;
+  color: #2583b4;
 }
 a:active {
-  color: #0b6097;
+  color: #2583b4;
 }
 h1,
 h2,
@@ -2604,13 +2604,13 @@ button.active,
 .btn.link {
   text-decoration: underline;
   background-color: transparent !important;
-  color: #199bef;
+  color: #61b3de;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 .btn.link:hover {
-  color: #074268;
+  color: #1d6489;
 }
 .btn.link:hover {
   text-decoration: none;

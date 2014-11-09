@@ -230,43 +230,41 @@
   color: #555555;
 }
 .breadcrumbs a {
-  color: #199bef;
+  color: #61b3de;
 }
 .breadcrumbs a:hover {
-  color: #0b6097;
+  color: #2583b4;
+}
+.mobile-bar {
+  display: none;
 }
 @media only screen and (max-width: 800px) {
-  .top-block {
+  .mobile-bar {
+    display: block;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     z-index: 100;
-    height: 43.75px;
-    line-height: 43.75px;
-    color: #ffffff;
-    background: #61b3de;
     -webkit-box-shadow: 0 0 7px #555555;
     -moz-box-shadow: 0 0 7px #555555;
     box-shadow: 0 0 7px #555555;
   }
-  .bottom-block {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
+  .mobile-bar.top {
     height: 43.75px;
     line-height: 43.75px;
     color: #ffffff;
     background: #61b3de;
-    -webkit-box-shadow: 0 0 7px #555555;
-    -moz-box-shadow: 0 0 7px #555555;
-    box-shadow: 0 0 7px #555555;
+  }
+  .mobile-bar.bottom {
+    height: 43.75px;
+    line-height: 43.75px;
+    color: #ffffff;
+    background: #61b3de;
   }
   .mobile-overlay {
     position: fixed;
-    top: 43.75px;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
