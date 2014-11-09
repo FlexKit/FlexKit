@@ -737,7 +737,7 @@ button:focus,
 @font-face {
   font-family: "flexkit-icons";
   src: url("../fonts/icons/flexkit-icons.eot");
-  src: url("../fonts/icons/flexkit-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/flexkit-icons.svg#flexkit-icons") format("svg"), url("../fonts/icons/flexkit-icons.woff") format("woff"), url("../fonts/icons/flexkit-icons.ttf") format("truetype");
+  src: url("../fonts/icons/flexkit-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/flexkit-icons.woff") format("woff"), url("../fonts/icons/flexkit-icons.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
