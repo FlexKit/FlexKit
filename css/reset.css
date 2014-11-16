@@ -362,11 +362,11 @@ th {
   box-sizing: border-box;
 }
 ::-moz-selection {
-  background: #61b3de;
+  background: #f44e34;
   color: #ffffff;
 }
 ::selection {
-  background: #61b3de;
+  background: #f44e34;
   color: #ffffff;
 }
 body {

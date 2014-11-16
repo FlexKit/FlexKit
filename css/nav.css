@@ -15,12 +15,12 @@
   vertical-align: top;
 }
 #main-menu {
-  background: #61b3de;
+  background: #f44e34;
 }
 .main_menu {
   position: relative;
   z-index: 110;
-  background: #61b3de;
+  background: #f44e34;
   color: #ffffff;
   line-height: 35px;
 }
@@ -38,10 +38,10 @@
   font-size: 1.15em;
 }
 .main_menu a:hover {
-  background: #379fd5;
+  background: #e82a0d;
 }
 .main_menu a.current {
-  background: #379fd5;
+  background: #e82a0d;
 }
 .main_menu ul {
   position: absolute;
@@ -202,7 +202,7 @@
 .news-item .news-date:before {
   top: 2px;
   font-size: 16px;
-  color: #61b3de;
+  color: #f44e34;
 }
 .news-item .news-tags a {
   color: #888888;
@@ -230,10 +230,10 @@
   color: #555555;
 }
 .breadcrumbs a {
-  color: #61b3de;
+  color: #f44e34;
 }
 .breadcrumbs a:hover {
-  color: #2583b4;
+  color: #b8220a;
 }
 .mobile-bar {
   display: none;
@@ -254,13 +254,13 @@
     height: 43.75px;
     line-height: 43.75px;
     color: #ffffff;
-    background: #61b3de;
+    background: #f44e34;
   }
   .mobile-bar.bottom {
     height: 43.75px;
     line-height: 43.75px;
     color: #ffffff;
-    background: #61b3de;
+    background: #f44e34;
   }
   .mobile-overlay {
     position: fixed;
@@ -325,7 +325,7 @@
     left: 0;
     overflow: auto;
     width: 300px;
-    background: #61b3de;
+    background: #f44e34;
     color: #ffffff;
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
@@ -337,7 +337,7 @@
   }
   .mobile-menu a:hover,
   .mobile-menu a.current {
-    background: #4ca9da;
+    background: #f3391c;
     color: #ffffff;
   }
   .mobile-menu > * ul {
@@ -447,3 +447,4 @@
     zoom: 1 !important;
   }
 }
+/*# sourceMappingURL=sourcemap/nav.css.map */
