@@ -13,17 +13,20 @@
 }
 
 @media only screen and (max-width : @responsive-size-tablet){
+    body{
+        padding-top : @top-block-height + 10;
+    }
 
     .mobile-bar{
         display  : block;
         position : fixed;
         left     : 0;
-        top      : 0;
         right    : 0;
         z-index  : 100;
         .box-shadow(0 0 7px @gray-dark);
 
         &.top{
+            top         : 0;
             height      : @top-block-height;
             line-height : @top-block-height;
             color       : @top-block-color;
@@ -31,6 +34,7 @@
         }
 
         &.bottom{
+            bottom      : 0;
             height      : @bottom-block-height;
             line-height : @bottom-block-height;
             color       : @bottom-block-color;

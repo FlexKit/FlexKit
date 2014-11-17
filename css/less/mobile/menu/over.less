@@ -109,12 +109,12 @@
         .transform(translateX(100%));
     }
 
-    &.open{
-        //        opacity : 1;
+    [data-menu-open="left"] &, [data-menu-open="right"] &{
         .transform(translateX(0));
+    }
 
-        &.top, &.bottom{ .transform(translateY(0)); }
-        &.right{ .transform(translateX(0)); }
+    [data-menu-open="top"] &, [data-menu-open="bottom"] &{
+        .transform(translateY(0));
     }
 }
 
