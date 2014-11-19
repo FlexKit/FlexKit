@@ -371,9 +371,6 @@ th {
 }
 body {
   -webkit-font-smoothing: subpixel-antialiased !important;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: visible;
-  -ms-backface-visibility: hidden;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
@@ -1591,4 +1588,3 @@ button:focus,
 .icon-toaster:before {
   content: "\e0f3";
 }
-/*# sourceMappingURL=sourcemap/reset.css.map */

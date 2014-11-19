@@ -623,7 +623,6 @@
 [class*="-column_"] {
   font-size: 0 !important;
   width: 100%;
-  overflow: hidden;
 }
 [class*=" column_"] > *,
 [class^="column_"] > *,
