@@ -1,99 +1,112 @@
+// Example code for dropdown menu
+// <span class="menu-btn _BUTTON POSITION_" data-menu-position="top|right|left|bottom">_SAMPLE TEXT_</span>
+// _BUTTON POSITION_ - left|right
+
+// Example code for sub main menu
+//{ifpages}
+//  <span class="btn icon icon-list3 sub-menu-btn d-hide"></span> - button for sub menu
+//{/ifpages}
+
+@mobile-bar-zindex : 100;
+
+@top-block        : true;
 @top-block-height : @button-height-large;
 @top-block-bg     : @primary-bg;
 @top-block-color  : @primary-color;
-@top-block-zindex : 100;
 
+@bottom-block        : false;
 @bottom-block-height : @button-height-large;
 @bottom-block-bg     : @primary-bg;
 @bottom-block-color  : @primary-color;
-@bottom-block-zindex : 100;
 
-.mobile-bar{
-    display : none;
-}
-
-@media only screen and (max-width : @responsive-size-tablet){
-    body{
+body{
+    & when (@top-block = true){
         padding-top : @top-block-height + 10;
     }
+    & when (@bottom-block = true){
+        padding-bottom : @bottom-block-height + 10;
+    }
+    &[data-menu-open]{
+        overflow : hidden;
+    }
+}
 
-    .mobile-bar{
-        display  : block;
-        position : fixed;
-        left     : 0;
-        right    : 0;
-        z-index  : 100;
-        .box-shadow(0 0 7px @gray-dark);
+.mobile-bar{
+    position : fixed;
+    left     : 0;
+    right    : 0;
+    z-index  : @mobile-bar-zindex;
+    .box-shadow(0 0 7px @gray-dark);
 
-        &.top{
-            top         : 0;
-            height      : @top-block-height;
-            line-height : @top-block-height;
-            color       : @top-block-color;
-            background  : @top-block-bg;
-        }
-
-        &.bottom{
-            bottom      : 0;
-            height      : @bottom-block-height;
-            line-height : @bottom-block-height;
-            color       : @bottom-block-color;
-            background  : @bottom-block-bg;
-        }
+    &.top when (@top-block = true){
+        top         : 0;
+        height      : @top-block-height;
+        line-height : @top-block-height;
+        color       : @top-block-color;
+        background  : @top-block-bg;
     }
 
-    .mobile-overlay{
-        position   : fixed;
-        top        : 0;
-        right      : 0;
-        bottom     : 0;
-        left       : 0;
-        z-index    : 98;
-        margin     : 0;
-        background : rgba(0, 0, 0, 0.5);
-        display    : none;
+    &.bottom when (@bottom-block = true){
+        bottom      : 0;
+        height      : @bottom-block-height;
+        line-height : @bottom-block-height;
+        color       : @bottom-block-color;
+        background  : @bottom-block-bg;
+    }
+}
 
-        &.open{
-            display : block;
-        }
+.mobile-overlay{
+    position   : fixed;
+    top        : 0;
+    right      : 0;
+    bottom     : 0;
+    left       : 0;
+    z-index    : 98;
+    margin     : 0;
+    background : rgba(0, 0, 0, 0.5);
+    display    : none;
+
+    &.open{
+        display : block;
+    }
+}
+
+.menu-btn{
+    cursor         : pointer;
+    background     : transparent;
+    padding        : 0;
+    text-transform : uppercase;
+    .user-select();
+
+    &:before{
+        content    : '';
+        margin-top : (@top-block-height - 20px) / 2;
+        height     : 20px;
+        width      : 15px;
+        .transition();
+        .gradient-vertical(#fff 0%, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
     }
 
-    .menu-btn{
-        cursor         : pointer;
-        background     : transparent;
-        padding        : 0;
-        text-transform : uppercase;
+    &.left{
+        float : left;
 
         &:before{
-            content    : '';
-            margin-top : (@top-block-height - 20px) / 2;
-            height     : 20px;
-            width      : 15px;
-            .transition();
-            .gradient-vertical(#fff 0%, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
-        }
-
-        &.left{
             float : left;
-
-            &:before{
-                float : left;
-            }
-        }
-        &.right{
-            float      : right;
-            text-align : right;
-
-            &:before{
-                float : right;
-            }
         }
     }
+    &.right{
+        float      : right;
+        text-align : right;
 
-    & when (@mobile-menu-over = true){
-        @import "menu/over";
+        &:before{
+            float : right;
+        }
     }
-    & when (@mobile-dropdown = true){
-        @import "menu/dropdown";
-    }
+}
+
+& when (@mobile-menu-over = true){
+    @import "menu/over";
+}
+& when (@mobile-dropdown = true){
+    @import "menu/dropdown";
 }
