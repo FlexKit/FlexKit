@@ -19,15 +19,22 @@
 @bottom-block-bg     : @primary-bg;
 @bottom-block-color  : @primary-color;
 
-body{
-    & when (@top-block = true){
-        padding-top : @top-block-height + 10;
+@media only screen and (min-width : (@responsive-size-tablet + 1)){
+    .mobile-bar, .mobile-menu{
+        display : none;
     }
-    & when (@bottom-block = true){
-        padding-bottom : @bottom-block-height + 10;
-    }
-    &[data-menu-open]{
-        overflow : hidden;
+}
+@media only screen and (max-width : @responsive-size-tablet){
+    body{
+        & when (@top-block = true){
+            padding-top : @top-block-height + 10;
+        }
+        & when (@bottom-block = true){
+            padding-bottom : @bottom-block-height + 10;
+        }
+        &[data-menu-open]{
+            overflow : hidden;
+        }
     }
 }
 
