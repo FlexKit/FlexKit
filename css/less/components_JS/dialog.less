@@ -7,7 +7,7 @@
     background-color : @dialog-bg;
     max-width        : 90%;
     color            : inherit;
-    .box-shadow(4px 4px 4px @gray-dark);
+    .box-shadow(4px 4px 4px @gray-darker);
 
     .ui-effects-wrapper &{
         max-width : none;
@@ -38,9 +38,9 @@
         position   : absolute;
         top        : 0;
         bottom     : 0;
-        right      : @padding-large-vertical;
+        right      : 0;
         margin     : auto;
-        padding    : 0;
+        padding    : @padding-large-vertical;
         background : transparent;
         .link-color(@dialog-header-color; @brand-error);
         .box-sizing(content-box);

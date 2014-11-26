@@ -48,8 +48,8 @@ footer {
 #go-top:active,
 #go-top.active {
   color: #ffffff;
-  border-color: #61b3de;
-  background-color: #61b3de;
+  border-color: #f44e34;
+  background-color: #f44e34;
 }
 form {
   *zoom: 1;
@@ -140,10 +140,10 @@ input {
 select:focus,
 textarea:focus,
 input:focus {
-  border-color: #61b3de;
-  -webkit-box-shadow: 0 0 5px #61b3de;
-  -moz-box-shadow: 0 0 5px #61b3de;
-  box-shadow: 0 0 5px #61b3de;
+  border-color: #f44e34;
+  -webkit-box-shadow: 0 0 5px #f44e34;
+  -moz-box-shadow: 0 0 5px #f44e34;
+  box-shadow: 0 0 5px #f44e34;
 }
 select.success,
 textarea.success,
@@ -264,7 +264,7 @@ textarea {
 .labeled select:focus ~ label,
 .labeled input:focus ~ .label,
 .labeled select:focus ~ .label {
-  background: #61b3de;
+  background: #f44e34;
 }
 .labeled.icon input:focus ~ [class*="icon-"],
 .labeled.icon select:focus ~ [class*="icon-"],
@@ -367,10 +367,10 @@ label[for*="chr-"] {
   background: #bbbbbb;
 }
 .filed-upgrade:checked ~ .checkbox_radio {
-  border-color: #61b3de;
+  border-color: #f44e34;
 }
 .filed-upgrade:checked ~ .checkbox_radio:before {
-  background: #61b3de;
+  background: #f44e34;
 }
 .filed-upgrade:disabled ~ .checkbox_radio {
   background: #eeeeee !important;
@@ -446,7 +446,7 @@ label[for*="chr-"] {
   width: 70%;
 }
 #search-form [type="text"] {
-  border-color: #61b3de;
+  border-color: #f44e34;
 }
 #search-form [type="submit"] {
   width: 100%;
@@ -481,7 +481,7 @@ label[for*="chr-"] {
   border: 1px solid #bbbbbb;
 }
 .img_gallery a img:hover {
-  border-color: #61b3de;
+  border-color: #f44e34;
 }
 .img_gallery .image_caption {
   position: absolute;
@@ -559,15 +559,15 @@ label[for*="chr-"] {
   font-size: 10px;
 }
 .cycle-slideshow .cycle-pager > *:hover {
-  background: #379fd5;
+  background: #e82a0d;
 }
 .cycle-slideshow .cycle-pager > *.cycle-pager-active {
   cursor: default;
   color: #ffffff;
-  background: #61b3de;
+  background: #f44e34;
 }
 .cycle-slideshow .action-button {
-  background: #61b3de;
+  background: #f44e34;
   color: #ffffff;
   position: absolute;
   top: 50%;
@@ -590,7 +590,7 @@ label[for*="chr-"] {
   font-size: 18px;
 }
 .cycle-slideshow .action-button:hover {
-  background: #379fd5;
+  background: #e82a0d;
   color: #ffffff;
 }
 .cycle-slideshow .action-button:before {
@@ -615,6 +615,7 @@ label[for*="chr-"] {
   right: 10px;
 }
 .directupload-wrapper {
+  font-size: 14px;
   display: inline-block;
   vertical-align: top;
 }
@@ -706,3 +707,4 @@ html.mobile.loaded:after {
     margin-left: 0;
   }
 }
+/*# sourceMappingURL=sourcemap/style.css.map */

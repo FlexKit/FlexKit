@@ -1,104 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-        <title>{$page:title}</title>
-        <meta name="keywords" content="{$meta:keywords}">
-        <meta name="description" content="{$meta:description}">
-
-        <!-- Mobile Specific Metas -->
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="480">
-        <meta http-equiv="cleartype" content="on">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-        <!-- Add to homescreen for Chrome on Android -->
-        <meta name="mobile-web-app-capable" content="yes">
-
-        <!-- Add to homescreen for Safari on iOS -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="{$page:title}">
-
-        <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="144x144" href="images/touch/144x144.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/touch/114x114.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/touch/72x72.png">
-        <link rel="apple-touch-icon" href="images/touch/57x57.png">
-
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
-        <meta name="msapplication-TileImage" content="images/touch/144x144.png">
-        <meta name="msapplication-TileColor" content="#3372DF">
-
-        <!-- Generic Icon -->
-        <link rel="icon" href="images/favicon.ico">
-        <!--[if IE]>
-        <link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
-
-        <!-- Fonts -->
-        <link href='//fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic%7CArchivo+Narrow:400,700' rel='stylesheet' type='text/css' media="screen">
-
-        <!-- CSS -->
-        {concatcss}
-        <link href="css/reset.css" rel="stylesheet" media="screen">
-        <link href="css/content.css" rel="stylesheet" media="screen">
-        <link href="css/nav.css" rel="stylesheet" media="screen">
-        <link href="css/style.css" rel="stylesheet" media="screen">
-        <!-- Shopping css -->
-        <link href="css/store.css" rel="stylesheet" media="screen">
-        <!-- Additional css -->
-        <link href="css/flexkit.css" rel="stylesheet" media="screen">
-        <link href="css/animation.css" rel="stylesheet" media="screen">
-        {/concatcss}
-
-        <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
-        <!--[if lt IE 9]>
-        <script src="js/system/ie-pack.min.js"></script><![endif]-->
-
+        <!-- Include head template -->
+        {$template:_head}
     </head>
-    <body class="{$mobile:device}">
-
-        <!-- Top bar for mobile, with button show/hide menu -->
-        <div class="top-block clearfix d-hide">
-            <label data-menu="#main-menu .main_menu" data-menu-position="left" class="menu-btn fl-left icon-list2 btn large">Menu</label>
-            
-        </div>
+    <body>
 
         <!-- Container -->
         <div id="container" class="container">
 
-            <!-- Header -->
-            <header class="grid_12 mb20px" role="banner">
-                <div class="logo h1 grid_5 alpha t-hide m-hide suffix_7">
-                    <a href="{$website:url}" title="{$page:h1}">
-                        <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">{$plugin:widcard:BizOrgName:notag}
-                    </a>
-                </div>
-            </header>
+            <!-- Include header template -->
+            {$template:_header}
 
-            <div class="brand-box grid_12">
-
-                <!-- Main Menu -->
-                <nav id="main-menu" class="grid_9 alpha" role="navigation">
-                    {$menu:main:main menu}
-                </nav>
-
-                <!-- Search -->
-                <div class="grid_3 omega">{$search:form}</div>
-            </div>
-            
-            <h1 class="grid_12 h2 page-header">{$page:h1}</h1>
+            <h1 class="grid_12 light" role="heading">{$page:h1}</h1>
 
             <!-- Content box -->
-            <div id="content" class="grid_12">
+            <main id="content" class="grid_12" role="main">
                 <!-- Table products to order -->
                 <table id="checkoutitemlist" class="checkout-cart-table mb30px">
                     <thead class="t-hide m-hide">
                         <tr>
-                            <th class="product-info" colspan="2">Product</th>
-                            <!--th class="description">Description</th-->
+                            <th class="product-info">Product</th>
+                            <th></th>
                             <th class="product-unit-price">Unit price</th>
                             <th class="product-qty">Qty</th>
                             <th class="product-total">Total</th>
@@ -109,15 +32,9 @@
                     {toastercart}
                         <tr>
                             <td class="product-img"> {$cartitem:photo} </td>
-                            <td class="product-info">
-                                {$cartitem:name}
-                                
-                                <p class="itemID">
-                                    <span>Item ID: </span>{$cartitem:sku}
-                                </p>
-                                <div class="options-list">
-                                    {$cartitem:options}
-                                </div>
+                            <td class="product-info">{$cartitem:name}
+                                <p class="itemID"><span>Item ID: </span>{$cartitem:sku}</p>
+                                {$cartitem:options}
                             </td>
                             <td class="product-unit-price">{$cartitem:price:unit}</td>
                             <td class="product-qty">{$cartitem:qty}</td>
@@ -129,66 +46,33 @@
                 </table>
                 <!-- end table products to order -->
                 <div class="grid_9 alpha">
-                    <!-- Checkout widget -->
-                    {$store:checkout}
-                    <!-- Select the required payment gateways-->
-                    
-                    {paymentgateways}
-                        {$plugin:authorize:creditcard}
-                        {$quote:form:firstname:lastname:company:email*:address1:address2:country:city:zip:phone:disclaimer}
-                    {/paymentgateways}
+                <!-- Checkout widget -->
+                {$store:checkout}
+                <!-- Select the required payment gateways-->
+                {paymentgateways}
+                    {$plugin:authorize:button}
+                    {$plugin:paypal:button}
+                    {$plugin:paybox}
+                    {$plugin:authorize:creditcard}
+                    {$plugin:paypal:creditcard}
+                    {$plugin:eway:creditcard}
+                    {$plugin:elavon:creditcard}
+                    {$plugin:securepay:creditcard}
+                {/paymentgateways}
                 </div>
                 <div id="checkoutsummary" class="grid_3 checkoutsummary omega">
                     {$store:cartsummary}
                     {$store:buyersummary}
+                    <h3 class="checkout-widget-title">{$header:contactinf}</h3>
+                    {$content:contact_inf}
                 </div>
-            </div>
+                <!-- end checkout widget -->
+            </main>
+
         </div>
+
         <!-- Footer -->
-        <footer class="mt30px" itemscope itemtype="http://schema.org/LocalBusiness" role="contentinfo">
-
-            <!-- Container -->
-            <div class="container">
-                <!-- Static menu -->
-                <div class="grid_5 mb10px alpha">{$menu:flat}</div>
-
-                <!-- News-list -->
-                {device:desktop}
-                <ul class="grid_7 t-hide omega news-list list-unstyled cycle-slideshow"
-                        data-cycle-slides=".news-item"
-                        data-cycle-fx="scrollHorz"
-                        data-cycle-max-z="10"
-                        data-cycle-pause-on-hover="true">
-                    {newslist:footer}
-                    <li class="news-item slide">
-                        <div class="news-date">{$news:date: d M}</div>
-                        <a class="h3 news-title" href="{$news:url}">{$news:title}</a>
-                        <p class="news-description">{$news:teaser}</p>
-                    </li>
-                    {/newslist}
-                </ul>
-                {/device}
-
-                <!-- Address -->
-                <address class="grid_12 t-grid_6 m-grid_4 mt10px text-center" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                    <span itemprop="name">{$plugin:widcard:BizOrgName:notag}</span> |
-                    <span itemprop="streetAddress">{$plugin:widcard:BizAddress1:notag}</span>
-                    <span itemprop="addressLocality">{$plugin:widcard:BizCity:notag}</span>,
-                    <span itemprop="postalCode">{$plugin:widcard:BizZip:notag}</span>
-                    <span itemprop="addressRegion">{$plugin:widcard:BizState:notag}</span>
-                    <meta itemprop="addressCountry" content="EN" />
-                </address>
-
-                <!-- Footer info -->
-                <div class="grid_12 t-grid_6 m-grid_4 text-center">{$content:footer-info:static}</div>
-
-            </div>
-
-        </footer>
-
-        <!-- SCRIPTS ZONE -->
-        <script src="js/plugin/jquery.cycle2.min.js"></script>
-        <script src="js/scripts.min.js"></script>
-        <script src="js/system/flexkit.min.js"></script>
+        <!-- Include Footer template -->
+        {$template:_footer}
     </body>
 </html>

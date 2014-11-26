@@ -362,18 +362,15 @@ th {
   box-sizing: border-box;
 }
 ::-moz-selection {
-  background: #61b3de;
+  background: #f44e34;
   color: #ffffff;
 }
 ::selection {
-  background: #61b3de;
+  background: #f44e34;
   color: #ffffff;
 }
 body {
   -webkit-font-smoothing: subpixel-antialiased !important;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: visible;
-  -ms-backface-visibility: hidden;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
@@ -738,7 +735,7 @@ button:focus,
 @font-face {
   font-family: "flexkit-icons";
   src: url("../fonts/icons/flexkit-icons.eot");
-  src: url("../fonts/icons/flexkit-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/flexkit-icons.svg#flexkit-icons") format("svg"), url("../fonts/icons/flexkit-icons.woff") format("woff"), url("../fonts/icons/flexkit-icons.ttf") format("truetype");
+  src: url("../fonts/icons/flexkit-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/flexkit-icons.woff") format("woff"), url("../fonts/icons/flexkit-icons.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -1592,3 +1589,4 @@ button:focus,
 .icon-toaster:before {
   content: "\e0f3";
 }
+/*# sourceMappingURL=sourcemap/reset.css.map */

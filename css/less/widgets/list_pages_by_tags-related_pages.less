@@ -1,8 +1,14 @@
 // Featured Areas & Featured Pages & Related Pages
 //==================================================
+.featureditem, .relatedpages{
+    .inline-block-wrap(top);
+
+    li{
+        .grid-elements(3; @grid-margin-width; true);
+    }
+}
 .featureapage, .featureditem li, .relatedpages li{
     & when (@widget-FA-FP-RP = true){
-        .grid-elements(3; @grid-margin-width; true);
         margin-bottom : 30px;
 
         a{ }
@@ -67,8 +73,6 @@
 // Featured Pages
 //==================================================
 .featureapage when (@widget-FP = true) and (@widget-FA-FP-RP = true){
-    float : left;
-    .grid-elements(3; @grid-margin-width);
 
     a{ }
 

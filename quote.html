@@ -25,7 +25,7 @@
         <!-- end of the header -->
 
         <!-- Main Column -->
-        <section id="content" class="grid_12 form">
+        <main id="content" class="grid_12 form">
 
             {$quote:address:billing}
             {$quote:address:shipping}
@@ -60,18 +60,19 @@
                 </tr>
                 {/toasterquote}
             </table>
-                <div id="quote-summary">
-                    <h3 class="quote-widget-title">Summary</h3>
-                    <div id="cart-summary">
-                        <div><span>Subtotal:</span>{$quote:total:sub}</div>
-                        <div><span>Total Tax:</span>{$quote:total:tax}</div>
-                        <div><span>Shipping:</span>{$quote:shipping}</div>
-                        <div><span>Discount:</span>{$quote:discount}</div>
-                        <div class="cart-total"><span>Total:</span>{$quote:total}</div>
-                        <div class="cart-total"><span>Efective tax:</span>{$quote:total:taxdiscount}</div>
-                    </div>
+
+            <div id="quote-summary">
+                <h3 class="quote-widget-title">Summary</h3>
+                <div id="cart-summary">
+                    <div><span>Subtotal:</span>{$quote:total:sub}</div>
+                    <div><span>Total Tax:</span>{$quote:total:tax}</div>
+                    <div><span>Shipping:</span>{$quote:shipping}</div>
+                    <div><span>Discount:</span>{$quote:discount}</div>
+                    <div class="cart-total"><span>Total:</span>{$quote:total}</div>
+                    <div class="cart-total"><span>Efective tax:</span>{$quote:total:taxdiscount}</div>
                 </div>
-        </section>
+            </div>
+        </main>
 
         </div>
         {adminonly}

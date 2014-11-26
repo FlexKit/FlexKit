@@ -35,6 +35,12 @@ table{
         border : 1px solid @table-border-color;
     }
 
+    &.condensed{
+        th, td{
+            padding : .25em .75em;
+        }
+    }
+
     // BORDERED VERSION
     //==================================================
     &.table-bordered when (@table-bordered = true) and (@table-styles = true){

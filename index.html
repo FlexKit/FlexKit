@@ -13,7 +13,8 @@
             <header class="grid_12" role="banner">
                 <h1 class="logo grid_8 alpha">
                     <a href="{$website:url}" title="{$page:h1}">
-                        <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
+                        <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}" width="75" height="85">
+                        {$plugin:widcard:BizOrgName:notag}
                     </a>
                 </h1>
                 <div class="grid_4 alpha omega mt10px">
@@ -25,11 +26,8 @@
                 </div>
             </header>
 
-            <!-- Include mobile bar template -->
-            {$template:_mobile bar}
-
             <!-- Main Menu -->
-            <nav id="main-menu" class="grid_12 mt15px mb20px" role="navigation">{$menu:main:_main menu}</nav>
+            <nav id="main-menu" class="grid_12 mt15px mb20px d-visible" role="navigation">{$menu:main:_main menu}</nav>
 
             <!--Slider -->
             {device:desktop}
@@ -44,7 +42,7 @@
             </div>
 
             <!-- Content box -->
-            <section id="content" class="grid_9" role="main">
+            <main id="content" class="grid_9" role="main">
                 <h2>{$header:content1}</h2>
                 <!-- news list -->
                 <div class="carousel">
@@ -53,18 +51,17 @@
                 <h2>{$header:content2}</h2>
                 {$content:content21}
                 {$content:content22}
-            </section>
+            </main>
 
             <!-- Right box -->
             <aside id="right" class="grid_3" role="complementary">
-                {repeat:rightAside:key}
+                {repeat:Aside right blocks:key}
                 <div class="aside-box">
                     <h3>{$header:right_key}</h3>
                     {$content:right_key}
                 </div>
                 {/repeat}
             </aside>
-
         </div>
 
         <!-- Footer -->

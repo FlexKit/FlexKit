@@ -1,5 +1,5 @@
 // Example code for dropdown menu
-// <span class="dropdown-btn" data-menu="_SELECTOR_" data-menu-position="top|right|center|left|bottom">_SAMPLE TEXT_</span>
+// <span class="dropdown-btn" data-menu="_SELECTOR_" data-menu-position="top|right|center|left|bottom|centered">_SAMPLE TEXT_</span>
 
 @dropdown-bg                : @primary-bg;
 @dropdown-color             : @primary-color;
@@ -15,7 +15,7 @@
     background : @dropdown-bg !important;
     color      : @dropdown-color !important;
     position   : fixed;
-    z-index    : @top-block-zindex - 1;
+    z-index    : @mobile-bar-zindex - 1;
     width      : @dropdown-width;
     max-width  : 90%;
     max-height : 70%;
@@ -27,6 +27,15 @@
 
     &.open{
         display : block;
+    }
+
+    &.centered{
+        top    : 50%;
+//        bottom : 0;
+        left   : 0;
+        right  : 0;
+        margin : auto !important;
+        .transform(translateY(-50%));
     }
 
     &.center{

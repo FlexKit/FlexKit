@@ -102,9 +102,9 @@
   text-align: center;
   padding: 8px 12px;
   border: 1px solid;
-  color: #315a6f;
-  border-color: #b0d9ef;
-  background-color: #dff0f8;
+  color: #7a271a;
+  border-color: #faa79a;
+  background-color: #fddcd6;
 }
 .smoke-base .dialog.success {
   color: #486a00;
@@ -157,20 +157,20 @@
   margin-top: 2px;
   margin-bottom: 0;
   color: #ffffff;
-  background: #61b3de;
+  background: #f44e34;
   padding: 8px 12px;
   min-height: 0;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-header:hover {
   color: #ffffff;
-  background: #4ca9da;
+  background: #f3391c;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-header a {
   color: inherit;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-header.ui-accordion-header-active {
   color: #ffffff;
-  background: #379fd5;
+  background: #e82a0d;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-icons .ui-accordion-header-icon {
   display: inline-block;
@@ -186,7 +186,7 @@
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-content {
   background: #ffffff;
-  border: 1px solid #379fd5;
+  border: 1px solid #e82a0d;
   border-top: none;
   margin-top: 0;
   margin-bottom: 0;
@@ -236,11 +236,11 @@
   position: relative;
   padding-bottom: 1px;
   margin-bottom: -1px;
-  border-color: #61b3de;
+  border-color: #f44e34;
 }
 .ui-tabs .ui-tabs-nav li.ui-tabs-active a {
   cursor: default;
-  color: #61b3de;
+  color: #f44e34;
 }
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
   display: block;
@@ -250,7 +250,7 @@
 }
 .ui-tabs .ui-tabs-panel {
   display: block;
-  border: 1px solid #61b3de;
+  border: 1px solid #f44e34;
   overflow: hidden;
   background: transparent;
   padding: 8px 12px;
@@ -274,10 +274,10 @@
   clear: none;
 }
 .ui-tabs.blocks {
-  border: 3px solid #61b3de;
+  border: 3px solid #f44e34;
 }
 .ui-tabs.blocks .ui-tabs-nav {
-  border-bottom: 3px solid #61b3de;
+  border-bottom: 3px solid #f44e34;
 }
 .ui-tabs.blocks .ui-tabs-nav li {
   margin: 0;
@@ -285,18 +285,18 @@
   border: none;
 }
 .ui-tabs.blocks .ui-tabs-nav li + li {
-  border-left: 3px solid #61b3de;
+  border-left: 3px solid #f44e34;
 }
 .ui-tabs.blocks .ui-tabs-nav li:hover a {
-  background: #7fc1e4;
+  background: #f66c56;
   color: #fff;
 }
 .ui-tabs.blocks .ui-tabs-nav .ui-tabs-active .ui-tabs-anchor {
-  background: #61b3de;
+  background: #f44e34;
   color: #fff;
 }
 .ui-tabs.blocks .ui-tabs-nav .ui-tabs-anchor {
-  color: #61b3de;
+  color: #f44e34;
 }
 .ui-tabs.blocks .ui-tabs-panel {
   border: none;
@@ -310,30 +310,30 @@
   border: none;
 }
 .ui-tabs.blocks.vertical .ui-tabs-nav li + li {
-  border-top: 3px solid #61b3de;
+  border-top: 3px solid #f44e34;
 }
 .ui-tabs.blocks.vertical .ui-tabs-panel {
-  border-left: 3px solid #61b3de;
+  border-left: 3px solid #f44e34;
 }
 .ui-dialog {
   position: absolute;
   padding: 0;
   border-width: 0;
   border-style: solid;
-  border-color: #4ca9da;
+  border-color: #f3391c;
   background-color: #ffffff;
   max-width: 90%;
   color: inherit;
-  -webkit-box-shadow: 4px 4px 4px #555555;
-  -moz-box-shadow: 4px 4px 4px #555555;
-  box-shadow: 4px 4px 4px #555555;
+  -webkit-box-shadow: 4px 4px 4px #222222;
+  -moz-box-shadow: 4px 4px 4px #222222;
+  box-shadow: 4px 4px 4px #222222;
 }
 .ui-effects-wrapper .ui-dialog {
   max-width: none;
 }
 .ui-dialog .ui-dialog-titlebar {
   font-size: 1.25em;
-  background: #61b3de;
+  background: #f44e34;
   color: #ffffff;
   padding: 10px 16px;
   position: relative;
@@ -350,9 +350,9 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 10px;
+  right: 0;
   margin: auto;
-  padding: 0;
+  padding: 10px;
   background: transparent;
   color: #ffffff;
   -webkit-box-sizing: content-box;
@@ -580,7 +580,7 @@
   border: none;
 }
 .ui-datepicker .ui-datepicker-calendar tbody td a:hover {
-  background: #dff0f8;
+  background: #fddcd6;
 }
 .ui-datepicker .ui-datepicker-calendar tbody td.ui-datepicker-current-day a {
   color: #555555;
@@ -588,7 +588,7 @@
 }
 .ui-datepicker .ui-datepicker-calendar tbody td.ui-datepicker-today a {
   color: #ffffff;
-  background: #61b3de;
+  background: #f44e34;
 }
 .ui-autocomplete {
   padding: 0;
@@ -615,7 +615,7 @@
 .ui-autocomplete .ui-menu-item a:hover,
 .ui-autocomplete .ui-menu-item a.ui-state-focus {
   color: #ffffff;
-  background: #61b3de;
+  background: #f44e34;
 }
 .tooltip {
   cursor: help;
@@ -744,7 +744,7 @@
   position: absolute;
   z-index: 2;
   cursor: pointer;
-  background: #315a6f;
+  background: #7a271a;
   width: 1.4em;
   height: 1.4em;
   -webkit-border-radius: 2px;
@@ -757,7 +757,7 @@
   z-index: 1;
   display: block;
   border: 0;
-  background: #61b3de;
+  background: #f44e34;
 }
 .ui-slider .ui-slider-range.ui-slider-range-min {
   left: 0;
@@ -848,7 +848,7 @@
 }
 .ui-progressbar .ui-progressbar-value {
   height: 100%;
-  background: #61b3de;
+  background: #f44e34;
 }
 .ui-progressbar.success .ui-progressbar-value {
   background: #8fd400;
@@ -931,9 +931,9 @@
   color: #888888;
 }
 .paginator .page.selected {
-  background: #61b3de;
+  background: #f44e34;
   color: #ffffff;
-  border-color: #61b3de;
+  border-color: #f44e34;
 }
 .paginator :first-child,
 .paginator :last-child {
@@ -1005,3 +1005,4 @@
   min-height: 0 !important;
   bottom: auto;
 }
+/*# sourceMappingURL=sourcemap/flexkit.css.map */

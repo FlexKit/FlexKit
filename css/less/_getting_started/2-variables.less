@@ -1,13 +1,15 @@
+// ### Variables ###
+
 //TODO create print style  http://habrahabr.ru/post/160997/
 
 // Activate elements
 //==================================================
 @import "1-activate_elements";
 
-//Theme name
+// [Theme name]
 @theme-name : THEME-NAME; //Enter theme name
 
-// Responsive
+// [Responsive]
 //==================================================
 @responsive-size-big-screen : 1280px;
 @responsive-size-desktop    : 1024px;
@@ -15,7 +17,7 @@
 @responsive-size-mobile     : 480px;
 @responsive-size-phone      : 320px;
 
-// Fonts
+// [Fonts]
 //==================================================
 @font-family-text     : Helvetica, "Helvetica Neue", Arial, sans-serif;
 @font-family-headings : "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
@@ -26,7 +28,7 @@
 @font-size-small      : 0.85em;
 @font-size-mini       : 0.75em;
 
-// Icons size
+// [Icons size]
 //==================================================
 @icon-size-larger : 24px;
 @icon-size-large  : 19px;
@@ -35,7 +37,7 @@
 
 @social-icon-size : 1.5em; //Enter in ems
 
-// Grid Base
+// [Grid system]
 //==================================================
 //Width for container
 @grid-container-width : 960px;
@@ -48,7 +50,7 @@
 // Margin, to be divided by two and applied to the left and right of all columns
 @grid-margin-width    : 2%;
 
-// Column Base
+// [Column system]
 //==================================================
 // Number of columns in the column system
 @columns           : @grid-columns;
@@ -58,6 +60,7 @@
 // Margin, to be divided by two and applied to the left and right of all columns
 @column-margin-width : @grid-margin-width;
 
+// [Colors]
 //Grays
 //==================================================
 @gray-darker  : lighten(#000, 13.5%); // #222
@@ -68,7 +71,7 @@
 
 // Brand Color
 //==================================================
-@brand-primary : #61b3de;
+@brand-primary : #f44e34;
 @brand-success : #8fd400;
 @brand-info    : #00a1f1;
 @brand-warning : #ffbb00;
@@ -79,7 +82,7 @@
 @brand-seosamba   : #83b421;
 @brand-seotoaster : #6464fd;
 
-// Social Color http://brandcolors.net/
+// [Social Color] http://brandcolors.net/
 //==================================================
 @facebook  : #3b5998;
 @twitter   : #55acee;
@@ -113,7 +116,7 @@
 //the color of the text relative to the main site colors
 @primary-color : #FFF;
 
-// Scaffolding
+// [Scaffolding]
 //==================================================
 @body-bg                  : #FFF;
 @text-color               : @gray-dark;
@@ -155,21 +158,20 @@
 @footer-color             : @text-color;
 @footer-heading-color     : @heading-color;
 
-// Links
+// [Links]
 //==================================================
-@link-color         : #199bef;
+@link-color         : @brand-primary; //#199bef;
 @link-color-hover   : darken(@link-color, 20%);
 @link-color-active  : @link-color-hover;
-// look typography.less line 16
 @link-color-visited : @link-color;
 
-// Heading
+// [Heading]
 //==================================================
 @heading-color    : @gray-darker;
 @heading-weight   : bold;
 @subheading-color : @gray;
 
-// Indents
+// [Indents]
 //==================================================
 @padding-larger-vertical   : 12px;
 @padding-larger-horizontal : 18px;
@@ -191,12 +193,12 @@
 @border-radius-large       : 0.75em;
 @border-radius-larger      : 1.25em;
 
-// HR tag
+// [HR tag]
 //==================================================
 @hr-size  : 1px;
 @hr-color : @gray-light;
 
-// Form states and alerts
+// [Form states and alerts]
 // IS USED BY DEFAULT for: alerts, message, table coloring, datepicker, progressbar, range
 //==================================================
 @state-border-radius  : 0;
@@ -221,14 +223,14 @@
 @state-error-color    : mix(@brand-error, #000, 50%);
 @state-error-border   : mix(@brand-error, #FFF, 50%);
 
-// Tables
+// [Tables]
 //==================================================
 @table-bg           : transparent;// overall background-color
 @table-row-bg       : @gray-lighter;// is used in .table-striped
 @table-row-bg-hover : @table-row-bg;// for hover
 @table-border-color : darken(@gray-light, 5%);// table and cell border
 
-// Buttons
+// [Buttons]
 //==================================================
 @button-line-height    : 1.25;
 @button-border-width   : 0;
@@ -262,7 +264,7 @@
 @button-info-color     : #FFF;
 @button-info-border    : softlight(@brand-info, #000);
 
-// Forms
+// [Forms]
 //==================================================
 @input-color              : darken(@text-color, 15%);
 
@@ -282,14 +284,14 @@
 
 @checkbox-radio-width     : 16px;
 
-// Slide Show
+// [Slide Show]
 //==================================================
 @slider-height         : 350px;
 @slider-button-size    : 18px;
 // color headings in slide description
 @slider-heading-color  : inherit;
 
-// Thumbnails
+// [Thumbnails]
 //==================================================
 @thumbnail-bg              : transparent;
 @thumbnail-padding         : 3px;
@@ -306,7 +308,7 @@
 @thumbnail-caption-color   : @primary-color;
 @thumbnail-caption-opacity : 0.8;
 
-// Breadcrumbs
+// [Breadcrumbs]
 //==================================================
 @breadcrumbs-color            : @text-color;
 @breadcrumbs-link-color       : @link-color;
@@ -324,7 +326,7 @@
 // Progressbar     http://jqueryui.com/progressbar/
 //==================================================
 
-// JQuery Modules Accordion = http://jqueryui.com/accordion/
+// [JQuery Modules Accordion = http://jqueryui.com/accordion/]
 //=============================================================
 @accordion-header-bg            : @primary-bg;
 @accordion-header-color         : @primary-color;
@@ -339,7 +341,7 @@
 @accordion-content-border-width : 1px;
 @accordion-content-border-color : @accordion-header-bg-active;
 
-// JQuery Modules Tabs = http://jqueryui.com/tabs/
+// [JQuery Modules Tabs = http://jqueryui.com/tabs/]
 //=============================================================
 @tabs-nav-bg               : transparent;
 @tabs-nav-li-bg            : transparent;
@@ -356,7 +358,7 @@
 
 @tabs-container-bg         : transparent;
 
-// JQuery Modules Dialog = http://jqueryui.com/dialog/
+// [JQuery Modules Dialog = http://jqueryui.com/dialog/]
 //=============================================================
 @dialog-bg           : #fff;
 @dialog-border-color : darken(@primary-bg, 5%);
@@ -367,7 +369,7 @@
 
 @dialog-content-bg   : transparent;
 
-// JQuery Modules Datepicker = http://jqueryui.com/datepicker/
+// [JQuery Modules Datepicker = http://jqueryui.com/datepicker/]
 //==================================================
 @datepicker-bg                : #fff;
 @datepicker-border-color      : #DDD;
@@ -398,14 +400,14 @@
 @datepicker-current-day-bg    : @gray-light;
 @datepicker-current-day-color : @text-color;
 
-// JQuery Modules Autocomplete = http://jqueryui.com/autocomplete/
+// [JQuery Modules Autocomplete = http://jqueryui.com/autocomplete/]
 //=============================================================
 @autocomplete-bg               : @input-bg;
 @autocomplete-color            : @text-color;
 @autocomplete-item-bg-hover    : @primary-bg;
 @autocomplete-item-color-hover : @primary-color;
 
-// JQuery Modules Tooltip = http://jqueryui.com/tooltip/
+// [JQuery Modules Tooltip = http://jqueryui.com/tooltip/]
 //=============================================================
 @tooltip-bg           : #000;
 @tooltip-color        : #fff;
@@ -415,17 +417,17 @@
 // and need to change the value in the function functionPack => showTooltip (), variable arrowWidth
 @tooltip-arrow-width  : 7px;
 
-// JQuery Modules Slider (range) = http://jqueryui.com/slider/
+// [JQuery Modules Slider (range) = http://jqueryui.com/slider/]
 //=============================================================
 @range-bg    : #f5f5f5;
 @range-value : @brand-primary;
 
-// JQuery Modules Progressbar = http://jqueryui.com/progressbar/
+// [JQuery Modules Progressbar = http://jqueryui.com/progressbar/]
 //=============================================================
 @progressbar-bg    : #f5f5f5;
 @progressbar-value : @brand-primary;
 
-// ScrollBars = http://codemug.com/html/custom-scrollbars-using-css/
+// [ScrollBars = http://codemug.com/html/custom-scrollbars-using-css/]
 //=============================================================
 @scrollbar-size             : 10px;
 @scrollbar-bg               : @gray-light;
