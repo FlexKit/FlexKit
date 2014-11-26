@@ -13,7 +13,7 @@
             {$template:_header}
 
             <!-- Content box -->
-            <div id="content" class="grid_12 product">
+            <div id="content" class="grid_12 product" itemscope="" itemtype="http://schema.org/Product">
                 <div class="grid_5 alpha">
                     {$product:editproduct}
                     <a class="_lbox product-image" href="{$product:photourl:original}">
@@ -41,7 +41,7 @@
                                 <li><span class="title">MPN code:</span> {$product:mpn}</li>
                                 <li><span class="title">Product tags:</span> {$product:tags}</li>
                             </ul>
-                            <p class="product-description full">{$product:description:full}</p>
+                            <p class="product-description full" itemprop="description">{$product:description:full}</p>
                         </div>
                         <div id="product-tab2" class="product-options">
                             {$product:options}
