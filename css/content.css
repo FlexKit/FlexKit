@@ -1227,6 +1227,9 @@ a.inherit-color:hover {
 .gl-change .generator-links:before {
   font-size: 11px !important;
 }
+.gl-change .generator-links .hide-text {
+  font-size: 0 !important;
+}
 .gl-change .generator-links:hover,
 .gl-change .generator-links:active,
 .gl-change .generator-links.active {
@@ -3081,4 +3084,3 @@ hr.dotted {
 .panel.collapse .collapse-btn:before {
   font-size: 19px;
 }
-/*# sourceMappingURL=sourcemap/content.css.map */
