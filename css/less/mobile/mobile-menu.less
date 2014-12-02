@@ -114,6 +114,8 @@
 & when (@mobile-menu-over = true){
     @import "menu/over";
 }
-& when (@mobile-dropdown = true){
-    @import "menu/dropdown";
+@media only screen and (max-width : @responsive-size-tablet){
+    & when (@mobile-dropdown = true){
+        @import "menu/dropdown";
+    }
 }
