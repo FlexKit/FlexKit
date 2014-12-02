@@ -753,68 +753,76 @@ button:focus,
   box-sizing: content-box;
 }
 .icon12 {
+  width: 12px !important;
+  height: 12px !important;
+  line-height: 12px !important;
   font-size: 0 !important;
 }
 .icon12:before {
   font-size: 12px !important;
-  width: 12px !important;
-  height: 12px !important;
 }
 .icon14 {
+  width: 14px !important;
+  height: 14px !important;
+  line-height: 14px !important;
   font-size: 0 !important;
 }
 .icon14:before {
   font-size: 14px !important;
-  width: 14px !important;
-  height: 14px !important;
 }
 .icon16 {
+  width: 16px !important;
+  height: 16px !important;
+  line-height: 16px !important;
   font-size: 0 !important;
 }
 .icon16:before {
   font-size: 16px !important;
-  width: 16px !important;
-  height: 16px !important;
 }
 .icon18 {
+  width: 18px !important;
+  height: 18px !important;
+  line-height: 18px !important;
   font-size: 0 !important;
 }
 .icon18:before {
   font-size: 18px !important;
-  width: 18px !important;
-  height: 18px !important;
 }
 .icon24 {
+  width: 24px !important;
+  height: 24px !important;
+  line-height: 24px !important;
   font-size: 0 !important;
 }
 .icon24:before {
   font-size: 24px !important;
-  width: 24px !important;
-  height: 24px !important;
 }
 .icon32 {
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
   font-size: 0 !important;
 }
 .icon32:before {
   font-size: 32px !important;
-  width: 32px !important;
-  height: 32px !important;
 }
 .icon48 {
+  width: 48px !important;
+  height: 48px !important;
+  line-height: 48px !important;
   font-size: 0 !important;
 }
 .icon48:before {
   font-size: 48px !important;
-  width: 48px !important;
-  height: 48px !important;
 }
 .icon64 {
+  width: 64px !important;
+  height: 64px !important;
+  line-height: 64px !important;
   font-size: 0 !important;
 }
 .icon64:before {
   font-size: 64px !important;
-  width: 64px !important;
-  height: 64px !important;
 }
 [class*="icon-"],
 [class^=" icon-"] {
@@ -1588,4 +1596,3 @@ button:focus,
 .icon-toaster:before {
   content: "\e0f3";
 }
-/*# sourceMappingURL=sourcemap/reset.css.map */

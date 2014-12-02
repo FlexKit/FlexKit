@@ -177,7 +177,6 @@
   vertical-align: middle;
   margin-left: -6px;
   margin-right: 6px;
-  font-size: 0;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-icons .ui-accordion-header-icon:before {
   font-size: 16px;
@@ -510,7 +509,6 @@
   color: #555555;
   padding: 8px;
   text-decoration: none;
-  font-size: 0;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -892,7 +890,6 @@
 }
 [id*="-filelist"] .ui-widget .ui-state-highlight .ui-icon,
 [id*="-filelist"] .ui-widget .ui-state-error .ui-icon {
-  font-size: 0;
   float: right;
   margin-top: 2px;
   color: #00a1f1;
@@ -1005,4 +1002,3 @@
   min-height: 0 !important;
   bottom: auto;
 }
-/*# sourceMappingURL=sourcemap/flexkit.css.map */
