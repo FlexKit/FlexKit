@@ -291,19 +291,19 @@
         width       : @size;
         height      : @size;
         line-height : @size;
+
+        & when not(isem(@size)) and not(ispercentage(@size)){
+            font-size : 0;
+        }
     }
-    .hide-text();
 
     &:before{
         font-size : @size;
+
         & when (@parent = false){
             width  : @size;
             height : @size;
         }
-    }
-
-    .hide-text() when not(isem(@size)) and not(ispercentage(@size)){
-        font-size : 0;
     }
 }
 
@@ -368,7 +368,7 @@
 
 // Flexbox Layout http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 //==================================================
-.flexbox(@direction; @wrap; @align) {
+.flexbox(@direction : column; @wrap : nowrap; @align : stretch) {
     & when (@webkit = true){ display : -webkit-box; }
     & when (@moz = true){ display : -moz-box; }
     & when (@ie = true){ display : -ms-flexbox; }
@@ -383,9 +383,9 @@
 // @direction = row, row-reverse, column, column-reverse
 .flex-direction(@direction : column) {
     & when (@webkit = true) and (@direction = row), (@direction = column){ -webkit-box-direction : normal; }
-    & when (@webkit = true) and not (@direction = row), not (@direction = column){ -webkit-box-direction : reverse; }
+    & when (@webkit = true) and not (@direction = row) and not (@direction = column){ -webkit-box-direction : reverse; }
     & when (@moz = true) and (@direction = row), (@direction = column){ -moz-box-direction : normal; }
-    & when (@moz = true) and not (@direction = row), not (@direction = column){ -moz-box-direction : reverse; }
+    & when (@moz = true) and not (@direction = row) and not (@direction = column){ -moz-box-direction : reverse; }
 
     & when (@webkit = true) and (@direction = row){ -webkit-box-orient : horizontal; }
     & when (@webkit = true) and (@direction = column){ -webkit-box-orient : vertical; }
@@ -398,7 +398,7 @@
 }
 
 // @wrap = nowrap, wrap, wrap-reverse
-.flex-wrap(@wrap : wrap) {
+.flex-wrap(@wrap : nowrap) {
     & when (@webkit = true){ -webkit-flex-wrap : @wrap; }
     & when (@ie = true){ -ms-flex-wrap : @wrap; }
     flex-wrap : @wrap;
