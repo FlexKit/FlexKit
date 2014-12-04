@@ -52,6 +52,8 @@ footer {
   background-color: #f44e34;
 }
 form {
+  display: block;
+  clear: both;
   *zoom: 1;
 }
 form:after,
@@ -229,8 +231,9 @@ textarea {
   min-height: 5em;
 }
 .labeled {
-  display: block;
   position: relative;
+  display: block;
+  clear: both;
   *zoom: 1;
 }
 .labeled:after,

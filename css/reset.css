@@ -552,6 +552,8 @@ button:focus,
 .relatedpages,
 .listxrss,
 .related-products {
+  display: block;
+  clear: both;
   *zoom: 1;
 }
 .main_menu:after,
