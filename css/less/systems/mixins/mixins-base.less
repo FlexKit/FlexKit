@@ -4,11 +4,7 @@
     @font-face{
         font-family : "@{fontname}";
         src         : url("@{fontfile}.eot");
-        src         : url("@{fontfile}.eot?#iefix") format("embedded-opentype"),
-                      url("@{fontfile}.woff") format("woff"),
-//                      url("@{fontfile}.otf") format("opentype"),
-//                      url("@{fontfile}.svg#@{fontname}") format("svg"),
-                      url("@{fontfile}.ttf") format("truetype");
+        src         : url("@{fontfile}.eot?#iefix") format("embedded-opentype"), url("@{fontfile}.woff") format("woff"), //                      url("@{fontfile}.otf") format("opentype"), //                      url("@{fontfile}.svg#@{fontname}") format("svg"), url("@{fontfile}.ttf") format("truetype");
         font-weight : @fontweight;
         font-style  : @fontstyle;
     }
@@ -16,7 +12,7 @@
 
 // Column-grid system
 //==================================================
-.column() when (@column-system = true) {
+.column() when (@column-system = true){
     & when (@responsive = true){
         @responsive-size-tablet-over : (@responsive-size-tablet + 1);
         @media only screen and (min-width : @responsive-size-tablet-over){
@@ -65,7 +61,7 @@
 
 // Grid system
 //==================================================
-.grid() when (@grid-system = true) {
+.grid() when (@grid-system = true){
     & when (@responsive = true){
         @responsive-size-tablet-over : (@responsive-size-tablet + 1);
         @media only screen and (min-width : @responsive-size-tablet-over){
@@ -355,7 +351,9 @@
 // ClearFix
 //==================================================
 .clearfix() {
-    *zoom : 1;
+    display : block;
+    clear   : both;
+    *zoom   : 1;
 
     &:after, &:before{
         content : "";
