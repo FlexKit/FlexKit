@@ -4,6 +4,7 @@ hr{
     border-top  : @hr-size solid @hr-color;
     line-height : 0;
     margin      : 1em 0;
+    background  : inherit;
 
     &.small when (unit(@hr-size) > 1){
         border-top-width : 1px;
@@ -27,14 +28,9 @@ hr{
         max-width   : 94%;
         margin      : -(@hr-size / 2) 3% 0;
         padding     : 0px .75em;
+        background  : inherit;
         .text-overflow();
         .inline-block();
-        & when (@content-bg = transparent){
-            background : @body-bg;
-        }
-        & when not (@content-bg = transparent){
-            background : @content-bg;
-        }
     }
 
     &.left when (@separator-left = true) and (@separator-style = true) { text-align : left; }

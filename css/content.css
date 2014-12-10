@@ -2770,6 +2770,7 @@ hr {
   border-top: 1px solid #bbbbbb;
   line-height: 0;
   margin: 1em 0;
+  background: inherit;
 }
 hr.large {
   border-top-width: 2px;
@@ -2786,12 +2787,12 @@ hr:before {
   max-width: 94%;
   margin: -0.5px 3% 0;
   padding: 0px .75em;
+  background: inherit;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
   vertical-align: middle;
-  background: #ffffff;
 }
 hr.left {
   text-align: left;
