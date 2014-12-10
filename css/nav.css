@@ -412,15 +412,15 @@ aside .relatedpages li p {
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
-[data-menu-open="left"] .mobile-menu,
-[data-menu-open="right"] .mobile-menu {
+[data-menu-open="left"] .mobile-menu.left,
+[data-menu-open="right"] .mobile-menu.right {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
 }
-[data-menu-open="top"] .mobile-menu,
-[data-menu-open="bottom"] .mobile-menu {
+[data-menu-open="top"] .mobile-menu.top,
+[data-menu-open="bottom"] .mobile-menu.bottom {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
