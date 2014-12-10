@@ -143,33 +143,33 @@
   width: 150px;
   overflow: hidden;
 }
-.sidebar .listpages li,
-.sidebar .listcategories li,
-.sidebar .featureditem li,
-.sidebar .featureapage,
-.sidebar .relatedpages li {
+aside .listpages li,
+aside .listcategories li,
+aside .featureditem li,
+aside .featureapage,
+aside .relatedpages li {
   width: 100%;
   margin: 0 0 2em;
 }
-.sidebar .listpages li .page-teaser-image,
-.sidebar .listcategories li .page-teaser-image,
-.sidebar .featureditem li .page-teaser-image,
-.sidebar .featureapage .page-teaser-image,
-.sidebar .relatedpages li .page-teaser-image {
+aside .listpages li .page-teaser-image,
+aside .listcategories li .page-teaser-image,
+aside .featureditem li .page-teaser-image,
+aside .featureapage .page-teaser-image,
+aside .relatedpages li .page-teaser-image {
   width: 100%;
   float: none;
   margin: 0 0 0.5em;
 }
-.sidebar .listpages li span,
-.sidebar .listcategories li span,
-.sidebar .featureditem li span,
-.sidebar .featureapage span,
-.sidebar .relatedpages li span,
-.sidebar .listpages li p,
-.sidebar .listcategories li p,
-.sidebar .featureditem li p,
-.sidebar .featureapage p,
-.sidebar .relatedpages li p {
+aside .listpages li span,
+aside .listcategories li span,
+aside .featureditem li span,
+aside .featureapage span,
+aside .relatedpages li span,
+aside .listpages li p,
+aside .listcategories li p,
+aside .featureditem li p,
+aside .featureapage p,
+aside .relatedpages li p {
   font-size: 0.85em;
   line-height: 1.25;
 }

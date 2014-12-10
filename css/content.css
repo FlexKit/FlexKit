@@ -4,8 +4,6 @@
   margin-right: auto;
   width: 95%;
   max-width: 960px;
-  display: block;
-  clear: both;
   *zoom: 1;
 }
 .container:after,
@@ -937,9 +935,14 @@
     width: 25%;
   }
 }
-.clearfix {
+.clear {
   display: block;
   clear: both;
+  overflow: hidden;
+  visibility: hidden;
+  height: 0;
+}
+.clearfix {
   *zoom: 1;
 }
 .clearfix:after,
@@ -1759,8 +1762,6 @@ h6,
 p {
   margin-top: 0;
   margin-bottom: 15px;
-  display: block;
-  clear: both;
   *zoom: 1;
 }
 p:after,
@@ -2126,8 +2127,6 @@ ul.list-testimonials li cite:before {
 }
 ul.list-tags {
   margin-bottom: 0;
-  display: block;
-  clear: both;
   *zoom: 1;
 }
 ul.list-tags:after,
@@ -2992,8 +2991,6 @@ hr.dotted {
 .panel .panel-footer {
   margin: 0;
   padding: 8px 12px;
-  display: block;
-  clear: both;
   *zoom: 1;
 }
 .panel .panel-header:after,

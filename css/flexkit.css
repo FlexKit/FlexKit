@@ -194,8 +194,6 @@
 }
 .ui-tabs {
   position: relative;
-  display: block;
-  clear: both;
   *zoom: 1;
 }
 .ui-tabs:after,
