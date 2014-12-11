@@ -1762,23 +1762,6 @@ h6,
 p {
   margin-top: 0;
   margin-bottom: 15px;
-  *zoom: 1;
-}
-p:after,
-p:before {
-  content: "";
-  display: table;
-}
-p:after {
-  clear: both;
-}
-p:after,
-p:before {
-  content: "";
-  display: table;
-}
-p:after {
-  clear: both;
 }
 p img {
   margin: 0;
