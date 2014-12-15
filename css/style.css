@@ -566,7 +566,7 @@ label[for*="chr-"] {
   color: #ffffff;
   background: #f44e34;
 }
-.cycle-slideshow .action-button {
+.cycle-slideshow [class*="cycle-"].action-button {
   background: #f44e34;
   color: #ffffff;
   position: absolute;
@@ -586,26 +586,26 @@ label[for*="chr-"] {
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.cycle-slideshow .action-button:before {
+.cycle-slideshow [class*="cycle-"].action-button:before {
   font-size: 18px;
 }
-.cycle-slideshow .action-button:hover {
+.cycle-slideshow [class*="cycle-"].action-button:hover {
   background: #e82a0d;
   color: #ffffff;
 }
-.cycle-slideshow .action-button:before {
+.cycle-slideshow [class*="cycle-"].action-button:before {
   font-family: 'flexkit-icons';
 }
-.cycle-slideshow .action-button.cycle-prev {
+.cycle-slideshow [class*="cycle-"].action-button.cycle-prev {
   left: -54px;
 }
-.cycle-slideshow .action-button.cycle-prev:before {
+.cycle-slideshow [class*="cycle-"].action-button.cycle-prev:before {
   content: "\e0c5";
 }
-.cycle-slideshow .action-button.cycle-next {
+.cycle-slideshow [class*="cycle-"].action-button.cycle-next {
   right: -54px;
 }
-.cycle-slideshow .action-button.cycle-next:before {
+.cycle-slideshow [class*="cycle-"].action-button.cycle-next:before {
   content: "\e0c6";
 }
 .cycle-slideshow:hover .action-button.cycle-prev {
