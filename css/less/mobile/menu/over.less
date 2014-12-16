@@ -1,4 +1,4 @@
-@menu-height                       : @button-height-large;
+@menu-height                       : @button-height-base;
 
 @menu-bg                           : @primary-bg;
 @menu-color                        : @primary-color;
@@ -40,6 +40,9 @@
     .transition(all; 0.3s);
 
     a{
+        padding-top    : 0;
+        padding-bottom : 0;
+
         &:hover, &.current{
             background : @menu-bg-li-hover;
             color      : @menu-color-li-hover;
@@ -139,14 +142,5 @@
                 margin-left  : 13px;
             }
         }
-    }
-}
-
-.sub-menu-btn{
-    color : @primary-color;
-    .rgba(#000, .1);
-
-    &:hover, &.active{
-        .rgba(#000, .2);
     }
 }
