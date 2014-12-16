@@ -16,9 +16,12 @@ header .logo img {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-#content {
+main {
   background: #ffffff;
   color: #555555;
+}
+article {
+  margin-bottom: 30px;
 }
 .page404 {
   padding: 1em 0 3em;

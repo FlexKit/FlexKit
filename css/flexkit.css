@@ -944,9 +944,23 @@
 }
 .responsive-video {
   position: relative;
-  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
+}
+.responsive-video._16x9 {
+  padding-bottom: 56.25%;
+}
+.responsive-video._9x16 {
+  padding-bottom: 177.77777778%;
+}
+.responsive-video._4x3 {
+  padding-bottom: 75%;
+}
+.responsive-video._3x4 {
+  padding-bottom: 133.33333333%;
+}
+.responsive-video._1x1 {
+  padding-bottom: 100%;
 }
 .responsive-video iframe,
 .responsive-video object,
