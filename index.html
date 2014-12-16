@@ -31,37 +31,32 @@
 
             <!--Slider -->
             {device:desktop}
-            <div class="grid_12 t-hide m-hide">
+            <div class="grid_12 t-hide m-hide mb30px">
                 {$imgrotator:Slider:1:0.7:940:350:scrollHorz:1:1:1:1}
             </div>
             {/device}
 
-            <div class="grid_12 mt30px mb20px">
-                <h2 class="text-center light mb20px">{$header:top}</h2>
-                {$featuredonly:top}
-            </div>
-
             <!-- Content box -->
             <main id="content" class="grid_9" role="main">
-                <h2>{$header:content1}</h2>
-                <!-- news list -->
-                <div class="carousel">
-                    {$newslist:_news list}
-                </div>
-                <h2>{$header:content2}</h2>
-                {$content:content21}
-                {$content:content22}
+                {repeat:Article blocks:key:3}
+                <article>
+                    <h2>{$header:content_key}</h2>
+                    {$content:content_key1}
+                    {$content:content_key2}
+                </article>
+                {/repeat}
             </main>
 
             <!-- Right box -->
-            <aside id="right" class="grid_3" role="complementary">
-                {repeat:Aside right blocks:key}
+            <aside class="grid_3" role="complementary">
+                {repeat:Aside blocks:key:3}
                 <div class="aside-box">
                     <h3>{$header:right_key}</h3>
                     {$content:right_key}
                 </div>
                 {/repeat}
             </aside>
+
         </div>
 
         <!-- Footer -->

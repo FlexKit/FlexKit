@@ -12,22 +12,22 @@
             <!-- Include header template -->
             {$template:_header}
 
-            <h1 class="grid_12 light" role="heading">{$page:h1}</h1>
+            <h1 class="grid_12" role="heading">{$page:h1}</h1>
 
             <!-- Content box -->
             <main id="content" class="grid_6 push_3" role="main">
-                {repeat:article:key}
+                {repeat:Article blocks:key:3}
                 <article>
                     <h2>{$header:content_key}</h2>
-                    {$content:content_key-1}
-                    {$content:content_key-2}
+                    {$content:content_key1}
+                    {$content:content_key2}
                 </article>
                 {/repeat}
             </main>
 
             <!-- Left box -->
-            <aside id="left" class="grid_3 pull_6" role="complementary">
-                {repeat:Aside left blocks:key}
+            <aside class="grid_3 pull_6" role="complementary">
+                {repeat:Aside left blocks:key:3}
                 <div class="aside-box">
                     <h3>{$header:left_key}</h3>
                     {$content:left_key}
@@ -36,8 +36,8 @@
             </aside>
 
             <!-- Right box -->
-            <aside id="right" class="grid_3" role="complementary">
-                {repeat:Aside right blocks:key}
+            <aside class="grid_3" role="complementary">
+                {repeat:Aside right blocks:key:3}
                 <div class="aside-box">
                     <h3>{$header:right_key}</h3>
                     {$content:right_key}
