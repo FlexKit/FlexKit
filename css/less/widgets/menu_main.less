@@ -1,12 +1,12 @@
-#main-menu when (@widget-menu-main = true){
-    background : @nav-bg;
-}
 .main_menu when (@widget-menu-main = true){
     position    : relative;
     z-index     : 110;
-    background  : @nav-bg;
-    color       : @nav-color;
-    line-height : @nav-height;
+    & when not (@nav-bg = transparent){
+        background : @nav-bg;
+    }
+    & when not (@nav-color = @link-color){
+        color : @nav-color;
+    }
 
     li{
         float    : left;
@@ -19,19 +19,25 @@
 
     a{
         display   : block;
-        padding   : 0 @padding-base-horizontal;
-        color     : inherit;
+        padding   : @padding-base-vertical @padding-base-horizontal;
+        & when not (@nav-color = @link-color){
+            color : inherit;
+        }
         font-size : 1.15em;
 
         &:hover{
-            background : @nav-bg-li-hover;
+            & when not (@nav-bg = @nav-bg-li-hover){
+                background : @nav-bg-li-hover;
+            }
             & when not (@nav-color = @nav-color-li-hover){
                 color : @nav-color-li-hover;
             }
         }
 
         &.current{
-            background : @nav-bg-li-current;
+            & when not (@nav-bg = @nav-bg-li-current){
+                background : @nav-bg-li-current;
+            }
             & when not (@nav-color = @nav-color-li-current){
                 color : @nav-color-li-current;
             }
@@ -44,7 +50,9 @@
         display    : none;
         width      : 300px;
         background : @nav-drop-down-list-bg;
-        color      : @nav-drop-down-list-color;
+        & when not (@nav-drop-down-list-color = @link-color){
+            color : @nav-drop-down-list-color;
+        }
         .box-shadow(0 3px 5px @gray-dark);
 
         &.open{
@@ -57,15 +65,19 @@
             & a{
 
                 &:hover{
-                    background : @nav-drop-down-list-bg-hover;
-                    & when not (@nav-drop-down-list-color = @nav-drop-down-list-color-hover){
+                    & when not (@nav-drop-down-list-bg = @nav-drop-down-list-bg-hover){
+                        background : @nav-drop-down-list-bg-hover;
+                    }
+                    & when not (@nav-drop-down-list-color = @nav-drop-down-list-color-hover) and not (@nav-drop-down-list-color = @link-color){
                         color : @nav-drop-down-list-color-hover;
                     }
                 }
 
                 &.current{
-                    background : @nav-drop-down-list-bg-current;
-                    & when not (@nav-drop-down-list-color = @nav-drop-down-list-color-current){
+                    & when not (@nav-drop-down-list-bg = @nav-drop-down-list-bg-current){
+                        background : @nav-drop-down-list-bg-current;
+                    }
+                    & when not (@nav-drop-down-list-color = @nav-drop-down-list-color-current) and not (@nav-drop-down-list-color = @link-color){
                         color : @nav-drop-down-list-color-current;
                     }
                 }
