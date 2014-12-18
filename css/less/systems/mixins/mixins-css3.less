@@ -222,6 +222,16 @@
     .transform(translate3d(@x, @y, @z));
 }
 
+// Perspective
+//=================================================
+.perspective(@perspective){
+    & when (@webkit = true) { -webkit-perspective : @perspective; }
+    & when (@moz = true) { -moz-perspective : @perspective; }
+    & when (@ie = true) { -ms-perspective : @perspective; }
+    & when (@opera = true) { -o-perspective : @perspective; }
+    & when (@w3c = true) { perspective : @perspective; }
+}
+
 // RGBA (Support with ie8)
 //==================================================
 .rgba(@color; @opacity) {
