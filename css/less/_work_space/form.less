@@ -30,6 +30,10 @@ form{
         }
     }
 
+    p{
+        .clearfix();
+    }
+
     // -- Recaptcha & Captcha style
     .captcha{
 
@@ -80,6 +84,11 @@ form{
 label{
     display       : block;
     margin-bottom : 0.25em;
+
+    .label-inline &{
+        margin-bottom : 0;
+        line-height   : unit(@button-line-height * 2, em);
+    }
 }
 
 .required:after{
