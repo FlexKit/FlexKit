@@ -7,7 +7,7 @@
     <body>
 
         <!-- Container -->
-        <div id="container" class="container">
+        <main class="container">
 
             <!-- Header -->
             <header class="grid_12" role="banner">
@@ -37,27 +37,27 @@
             {/device}
 
             <!-- Content box -->
-            <main id="content" class="grid_9" role="main">
+            <article id="content" class="grid_9" role="main">
                 {repeat:Article blocks:key:3}
-                <article>
+                <section>
                     <h2>{$header:content_key}</h2>
                     {$content:content_key1}
                     {$content:content_key2}
-                </article>
+                </section>
                 {/repeat}
-            </main>
+            </article>
 
             <!-- Right box -->
             <aside class="grid_3" role="complementary">
                 {repeat:Aside blocks:key:3}
-                <div class="aside-box">
+                <section class="aside-box">
                     <h3>{$header:right_key}</h3>
                     {$content:right_key}
-                </div>
+                </section>
                 {/repeat}
             </aside>
 
-        </div>
+        </main>
 
         <!-- Footer -->
         <!-- Include Footer template -->

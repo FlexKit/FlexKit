@@ -7,7 +7,7 @@
     <body>
 
         <!-- Container -->
-        <div id="container" class="container">
+        <main class="container">
 
             <!-- Include header template -->
             {$template:_header}
@@ -15,7 +15,7 @@
             <h1 class="grid_12" role="heading">{$page:h1}</h1>
 
             <!-- Content box -->
-            <main id="content" class="grid_12 contact" role="main">
+            <article class="grid_12 contact" role="main">
                 {$plugin:gmaps:bizlocation:1200:300}
                 <div class="grid_8 alpha mt30px">
                     <h2>{$header:contact1}</h2>
@@ -31,9 +31,9 @@
                     <h3>{$header:contact3}</h3>
                     {$content:contact2}
                 </div>
-            </main>
+            </article>
 
-        </div>
+        </main>
 
         <!-- Footer -->
         <!-- Include Footer template -->

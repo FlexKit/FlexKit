@@ -16,11 +16,11 @@ header .logo img {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-main {
+article {
   background: #ffffff;
   color: #555555;
 }
-article {
+article section {
   margin-bottom: 30px;
 }
 .page404 {

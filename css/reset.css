@@ -603,6 +603,7 @@ button:focus,
 ::i-block-chrome,
 .related-products {
   display: table;
+  width: 100%;
 }
 .static_menu,
 .static_menu li,

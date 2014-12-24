@@ -7,22 +7,23 @@
     <body>
 
         <!-- Container -->
-        <div id="container" class="container">
+        <main class="container">
 
             <!-- Include header template -->
             {$template:_header}
 
             <!-- Content box -->
-            <div id="content" class="grid_12 product" itemscope="" itemtype="http://schema.org/Product">
-                <div class="grid_5 alpha">
+            <article class="clearfix product" itemscope="" itemtype="http://schema.org/Product">
+                <section class="grid_5">
                     {$product:editproduct}
                     <a class="_lbox product-image" href="{$product:photourl:original}">
                         <img itemprop="image" src="{$product:photourl:medium}" alt="{$product:name}"/>
                     </a>
                     <span>{$header:product-gallery:static}</span>
-                    {$content:product-gallery}>
-                </div>
-                <div class="grid_7 omega" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    {$content:product-gallery}
+                    {$quote:form}
+                </section>
+                <section class="grid_7" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     <div class="grid_12 mb15px alpha omega">
                         <p class="product-price h1 alpha grid_5 t-grid_2 mb0px" itemprop="price">{$product:price}</p>
                         <input id="productquantity" class="grid_2 larger t-alpha m-alpha t-grid_3 m-grid_1" type="text" name="productquantity-{$product:id}" value="1"/>
@@ -63,9 +64,9 @@
                             {$content:tab3:static}
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </section>
+            </article>
+        </main>
 
         <!-- Footer -->
         <!-- Include Footer template -->
