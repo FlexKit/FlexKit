@@ -4,7 +4,8 @@ hr{
     border-top  : @hr-size solid @hr-color;
     line-height : 0;
     margin      : 1em 0;
-    background  : inherit;
+    background  : @content-bg;
+    color       : @hr-color;
 
     &.small when (unit(@hr-size) > 1){
         border-top-width : 1px;
@@ -21,13 +22,13 @@ hr{
     // With text
     &:before{
         content     : attr(title);
-        top         : -0.55em;
+        top         : -0.6em;
         position    : relative;
-        line-height : 1.1em;
-        color       : @hr-color;
+        line-height : 1.2em;
+        color       : inherit;
         max-width   : 94%;
         margin      : -(@hr-size / 2) 3% 0;
-        padding     : 0px .75em;
+        padding     : 0 .75em;
         background  : inherit;
         .text-overflow();
         .inline-block();
