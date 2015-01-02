@@ -172,81 +172,6 @@ textarea{
     min-height : 5em;
 }
 
-.labeled when (@form-labeled = true){
-    display  : block;
-    position : relative;
-    .clearfix();
-
-    label, .label{
-        margin-top    : 0;
-        margin-bottom : 0;
-        height        : unit(@button-line-height * 2, em);
-        line-height   : unit(@button-line-height * 2, em);
-        background    : @input-border-color;
-        text-align    : center;
-        color         : #fff;
-        .transition(all; 0.3s);
-    }
-
-    input:focus, select:focus{
-        .box-shadow(none; @input-shadow-focus) !important;
-
-        & ~ label, & ~ .label{
-            background : @input-border-color-focus;
-        }
-    }
-
-    &.icon when (@form-labeled-icon = true){
-        input, select, textarea{
-
-            &:focus ~ [class*="icon-"]{
-                .opacity(1);
-            }
-        }
-
-        [class*="icon-"]{
-            position  : absolute;
-            margin    : auto;
-            top       : 0;
-            bottom    : 0;
-            z-index   : 2;
-            height    : 1em;
-            font-size : 1.25em;
-            .opacity();
-
-            &:before{
-                vertical-align : top;
-            }
-        }
-
-        &.right{
-            [class*="icon-"]{
-                right : .375em;
-            }
-
-            input, textarea{
-                padding-right : 2em;
-            }
-        }
-
-        &.left{
-            [class*="icon-"]{
-                left : .375em
-            }
-            input, textarea{
-                padding-left : 2em;
-            }
-        }
-
-        &.top{
-            [class*="icon-"]{
-                margin : 0;
-                top    : .375em;
-            }
-        }
-    }
-}
-
 .forgot-password, #remember-password{
     float      : left;
     margin-top : -(@button-height-base - @padding-base-vertical);
@@ -262,3 +187,11 @@ textarea{
 // Form builder elements Styles
 //==================================================
 @import "../widgets/form_builder";
+
+// Form labeled elements Styles
+//==================================================
+@import "../feature/form/labeled";
+
+// Form labeled elements Styles
+//==================================================
+@import "../feature/form/input-label";

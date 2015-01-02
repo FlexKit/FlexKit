@@ -1,0 +1,27 @@
+.input-label when (@form-input-label = true){
+    position : relative;
+
+    label{
+        position    : absolute;
+        top         : 0;
+        left        : .5em;
+        z-index     : 1;
+        line-height : unit(@button-line-height * 2, em);
+        .transition(all; .2s);
+    }
+
+    input{
+        border-width : 0 0 1px;
+        .box-shadow(none);
+
+        &:focus, &:valid{
+
+            & + label{
+                color       : @gray-light;
+                top         : -10px;
+                font-size   : @font-size-small;
+                line-height : 1em;
+            }
+        }
+    }
+}
