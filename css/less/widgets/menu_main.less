@@ -68,7 +68,8 @@
                     & when not (@nav-drop-down-list-bg = @nav-drop-down-list-bg-hover){
                         background : @nav-drop-down-list-bg-hover;
                     }
-                    & when not (@nav-drop-down-list-color = @nav-drop-down-list-color-hover) and not (@nav-drop-down-list-color = @link-color){
+                    & when not (@nav-color-li-hover = @nav-drop-down-list-color-hover)
+                       and not (@nav-drop-down-list-color = @link-color){
                         color : @nav-drop-down-list-color-hover;
                     }
                 }
@@ -77,7 +78,9 @@
                     & when not (@nav-drop-down-list-bg = @nav-drop-down-list-bg-current){
                         background : @nav-drop-down-list-bg-current;
                     }
-                    & when not (@nav-drop-down-list-color = @nav-drop-down-list-color-current) and not (@nav-drop-down-list-color = @link-color){
+                    & when not (@nav-color-li-current = @nav-drop-down-list-color-current)
+                       and not (@nav-drop-down-list-bg-hover = @nav-drop-down-list-color-current)
+                       and not (@nav-drop-down-list-color = @link-color){
                         color : @nav-drop-down-list-color-current;
                     }
                 }

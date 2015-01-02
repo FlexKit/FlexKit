@@ -2,7 +2,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  background-color: #f44e34;
+  background-color: #c2d2da;
   color: #ffffff;
   padding: 5px;
 }
@@ -77,8 +77,8 @@
 }
 .product .tcart-add {
   color: #ffffff;
-  border-color: #f44e34;
-  background-color: #f44e34;
+  border-color: #c2d2da;
+  background-color: #c2d2da;
   padding: 8px 8px 8px 33px;
   background-image: url("../images/cart.gif");
   background-position: 5px 50%;
@@ -92,8 +92,8 @@
 .product .tcart-add:active,
 .product .tcart-add.active {
   color: #ffffff;
-  border-color: #e82a0d;
-  background-color: #e82a0d;
+  border-color: #a2bbc7;
+  background-color: #a2bbc7;
 }
 .product .starrating {
   float: right;
