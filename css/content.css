@@ -668,17 +668,17 @@
 [class*=" column_"] > .larger,
 [class^="column_"] > .larger,
 [class*="-column_"] > .larger {
-  font-size: 21px !important;
+  font-size: 21em !important;
 }
 [class*=" column_"] > .large,
 [class^="column_"] > .large,
 [class*="-column_"] > .large {
-  font-size: 17.5px !important;
+  font-size: 17.5em !important;
 }
 [class*=" column_"] > .small,
 [class^="column_"] > .small,
 [class*="-column_"] > .small {
-  font-size: 11.9px !important;
+  font-size: 11.9em !important;
 }
 @media only screen and (min-width: 801px) {
   .column_1 > * {

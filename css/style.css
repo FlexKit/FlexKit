@@ -130,17 +130,12 @@ label {
   margin-bottom: 0;
   line-height: 2.5em;
 }
-.required:after {
+label.required:after {
   color: #f65314;
   content: ' *';
 }
 .notvalid {
   color: #f65314 !important;
-}
-.notvalid:before {
-  font-family: 'flexkit-icons';
-  content: "\f06a";
-  margin-right: 5px;
 }
 select,
 textarea,
