@@ -1,63 +1,65 @@
-// Some styles for jquery UI
-.ui-state-error{
-    background-color : @state-error-bg;
-    border-color     : @state-error-border;
-    color            : @state-error-color;
+& when (@componentsJS = true){
+    // Some styles for jquery UI
+    .ui-state-error{
+        background-color : @state-error-bg;
+        border-color     : @state-error-border;
+        color            : @state-error-color;
+    }
+    .ui-state-highlight{
+        background-color : @state-info-bg;
+        border-color     : @state-info-border;
+        color            : @state-info-color;
+    }
+
+    // Carousel Styles
+    //==================================================
+    @import "../components_JS/carousel";
+
+    // Alert Styles => http://smoke-js.com/
+    //==================================================
+    @import "../components_JS/alert";
+
+    // Modules Accordion Styles
+    //==================================================
+    @import "../components_JS/accordion";
+
+    // Modules Tabs Styles
+    //==================================================
+    @import "../components_JS/tabs";
+
+    // Modules Dialog Styles
+    //==================================================
+    @import "../components_JS/dialog";
+
+    // Modules Datepicker Styles
+    //==================================================
+    @import "../components_JS/datepicker";
+
+    // Modules Datepicker Styles
+    //==================================================
+    @import "../components_JS/autocomplete";
+
+    // Modules Toltips Styles
+    //==================================================
+    @import "../components_JS/tooltips";
+
+    // Modules Slider (range) Styles
+    //==================================================
+    @import "../components_JS/range";
+
+    // Modules Progressbar Styles
+    //==================================================
+    @import "../components_JS/progressbar";
+
+    // Pagination Styles
+    //==================================================
+    @import "../components_JS/paginator";
+
+    // Effects Jquery UI Styles
+    //==================================================
+    @import "../components_JS/effects-jqueryui";
+
+    // Modules Chosen Styles
+    //==================================================
+    @import "../components_JS/chosen";
 }
-.ui-state-highlight{
-    background-color : @state-info-bg;
-    border-color     : @state-info-border;
-    color            : @state-info-color;
-}
-
-// Carousel Styles
-//==================================================
-@import "../components_JS/carousel";
-
-// Alert Styles => http://smoke-js.com/
-//==================================================
-@import "../components_JS/alert";
-
-// Modules Accordion Styles
-//==================================================
-@import "../components_JS/accordion";
-
-// Modules Tabs Styles
-//==================================================
-@import "../components_JS/tabs";
-
-// Modules Dialog Styles
-//==================================================
-@import "../components_JS/dialog";
-
-// Modules Datepicker Styles
-//==================================================
-@import "../components_JS/datepicker";
-
-// Modules Datepicker Styles
-//==================================================
-@import "../components_JS/autocomplete";
-
-// Modules Toltips Styles
-//==================================================
-@import "../components_JS/tooltips";
-
-// Modules Slider (range) Styles
-//==================================================
-@import "../components_JS/range";
-
-// Modules Progressbar Styles
-//==================================================
-@import "../components_JS/progressbar";
-
-// Pagination Styles
-//==================================================
-@import "../components_JS/paginator";
-
-// Effects Jquery UI Styles
-//==================================================
-@import "../components_JS/effects-jqueryui";
-
-// Modules Chosen Styles
-//==================================================
-@import "../components_JS/chosen";

@@ -97,7 +97,7 @@
 
 // -- Box Sizing
 .box-sizing(@box-sizing:border-box) {
-    & when (@webkit = true) { -webkit-box-sizing : @box-sizing; }
+//    & when (@webkit = true) { -webkit-box-sizing : @box-sizing; }
     & when (@moz = true) { -moz-box-sizing : @box-sizing; }
 //    & when (@ie = true) { -ms-box-sizing : @box-sizing; }
 //    & when (@opera = true) { -o-box-sizing : @box-sizing; }
@@ -142,7 +142,7 @@
 }
 // -- Border Radius
 .border-radius(@radius, @important : false) when not (@radius = 0), (@important = true){
-    & when (@webkit = true) { -webkit-border-radius : @radius; }
+//    & when (@webkit = true) { -webkit-border-radius : @radius; }
 //    & when (@moz = true) { -moz-border-radius : @radius; }
 //    & when (@ie = true) { -ms-border-radius : @radius; }
 //    & when (@opera = true) { -o-border-radius : @radius; }
@@ -153,8 +153,8 @@
 
 // -- Box Shadow
 .box-shadow(@shadow; @shadow-switcher : true) when (@shadow-switcher = true){
-    & when (@webkit = true) { -webkit-box-shadow : @shadow; }
-    & when (@moz = true) { -moz-box-shadow : @shadow; }
+//    & when (@webkit = true) { -webkit-box-shadow : @shadow; }
+//    & when (@moz = true) { -moz-box-shadow : @shadow; }
 //    & when (@ie = true) { -ms-box-shadow : @shadow; }
 //    & when (@opera = true) { -o-box-shadow : @shadow; }
     & when (@w3c = true) { box-shadow : @shadow; }
@@ -171,8 +171,8 @@
 // -- Backface Visibility
 .backface-visibility(@visibility) {
     & when (@webkit = true) { -webkit-backface-visibility : @visibility; }
-    & when (@moz = true) { -moz-backface-visibility : @visibility; }
-    & when (@ie = true) { -ms-backface-visibility : @visibility; }
+//    & when (@moz = true) { -moz-backface-visibility : @visibility; }
+//    & when (@ie = true) { -ms-backface-visibility : @visibility; }
     & when (@opera = true) { -o-backface-visibility : @visibility; }
     & when (@w3c = true) { backface-visibility : @visibility; }
 }
@@ -181,7 +181,7 @@
 //==================================================
 .transition(@property:all; @time:0.5s; @timing-function: ease) {
     & when (@webkit = true) { -webkit-transition : @property @time @timing-function; }
-    & when (@moz = true) { -moz-transition : @property @time @timing-function; }
+//    & when (@moz = true) { -moz-transition : @property @time @timing-function; }
 //    & when (@ie = true) { -ms-transition : @property @time @timing-function; }
     & when (@opera = true) { -o-transition : @property @time @timing-function; }
     & when (@w3c = true) { transition : @property @time @timing-function; }
@@ -189,7 +189,7 @@
 
 .transform(@transform) {
     & when (@webkit = true) { -webkit-transform : @transform; }
-    & when (@moz = true) { -moz-transform : @transform; }
+//    & when (@moz = true) { -moz-transform : @transform; }
     & when (@ie = true) { -ms-transform : @transform; }
     & when (@opera = true) { -o-transform : @transform; }
     & when (@w3c = true) { transform : @transform; }

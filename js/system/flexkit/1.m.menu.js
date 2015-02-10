@@ -1,74 +1,58 @@
-if(document.querySelectorAll('.menu-btn').length){
-    var menuOverlay = document.createElement("div");
-    menuOverlay.className = "mobile-overlay menu-overlay";
-    document.body.appendChild(menuOverlay);
-}
-if(document.querySelectorAll('.dropdown-btn').length){
-    var dropdownOverlay = document.createElement("div");
-    dropdownOverlay.className = "mobile-overlay dropdown-overlay";
-    document.body.appendChild(dropdownOverlay);
-}
-
 $('.dropdown-btn').each(function(){
     var menu = $(this).data('menu'),
-        position = $(this).data('menu-position'),
-        height = $(this).data('menu-height');
-    $(menu).addClass('dropdown-menu '+position).height(height);
+        height = $(this).data('menu-height'),
+        position = $(this).data('menu-position');
+    $(menu).addClass('dropdown-menu ' + position).height(height);
 });
 
-$('.mobile-overlay').on('mousedown touchstart', function(){
-    $('body').removeAttr('data-menu-open');
-    $('.menu-btn, .dropdown-btn').removeClass('active');
-    $('.dropdown-menu, .mobile-overlay').removeClass('open');
+tapButton('menu-btn', showMenu);
+tapButton('dropdown-btn', showDropdown);
+tapButton('sub-menu-btn', function(e){
+    event.stopPropagation();
+    event.preventDefault();
+    $(this).toggleClass('active').nextAll('ul').toggleClass('open');
 });
 
-if(!jQuery().hammer){
-    $('.menu-btn').on('click', function(){
-        showMenu($(this))
-    });
-    $('.dropdown-btn').on('click', function(){
-        showDropdown($(this))
-    });
-    $('.sub-menu-btn').on('click', function(){
-        $(this).toggleClass('active').nextAll('ul').toggleClass('open');
-    });
-}else{
-    $('.menu-btn').hammer().on('tap', function(){
-        event.preventDefault();
-        showMenu($(this))
-    });
-    $('.dropdown-btn').hammer().on('tap', function(){
-        event.preventDefault();
-        showDropdown($(this))
-    });
-    $('.sub-menu-btn').hammer().on('tap', function(){
-        event.preventDefault();
-        $(this).toggleClass('active').nextAll('ul').toggleClass('open');
-    });
-}
+var body = document.body;
+$(body).on(events[0], hideMenu);
 
-function showMenu($this){
-    var menuPosition = $this.data('menu-position');
-    $('.mobile-overlay, .dropdown-menu').removeClass('open');
-    if(!$this.hasClass('active')){
-        $('.menu-btn, .dropdown-btn').removeClass('active');
-        $('body').attr('data-menu-open', menuPosition);
-        $('.menu-overlay').addClass('open');
-    }else{
-        $('body').removeAttr('data-menu-open');
-    }
-    $this.toggleClass('active');
-}
-
-function showDropdown($this){
-    var menu = $this.data('menu');
-    $('.mobile-overlay').removeClass('open');
-    $('body').removeAttr('data-menu-open');
-    if(!$this.hasClass('active')){
-        $('.menu-btn, .dropdown-btn').removeClass('active');
+function hideMenu(e){
+    if(e.target.hasAttribute('data-menu-open') || e.target.hasAttribute('data-dropdown-open')){
         $('.dropdown-menu').removeClass('open');
-        $('.dropdown-overlay').addClass('open');
+        $('.dropdown-btn').removeClass('active');
+        $('.menu-btn').removeClass('active');
+        $(body).removeAttr('data-menu-open').removeAttr('data-dropdown-open');
     }
-    $this.toggleClass('active');
-    $(menu).toggleClass('open');
+}
+
+function showMenu(e){
+    //    even.stopPropagation();
+    e.preventDefault();
+    var menuPosition = $(this).data('menu-position');
+    $(body).attr('data-menu-open', menuPosition);
+    $(this).addClass('active');
+}
+
+function showDropdown(e){
+    //    ev.stopPropagation();
+    e.preventDefault();
+    var menu = $(this).data('menu');
+    $(menu).addClass('open');
+    $(body).attr('data-dropdown-open', '');
+    $(this).addClass('active');
+}
+
+function tapButton(selector, fun){
+    var listItems = document.getElementsByClassName(selector);
+    if(!window.Hammer){
+        for(var i = 0; i < listItems.length; i++){
+            listItems[i].addEventListener('click', fun, false);
+        }
+    }else{
+        Hammer.each(listItems, function(item){
+            var touchControl = new Hammer(item);
+            touchControl.on("tap", fun);
+
+        });
+    }
 }

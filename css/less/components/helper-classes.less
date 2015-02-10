@@ -34,25 +34,26 @@
         color : darken(@brand-info, 15%);
     }
 }
-.seosamba-color{
+
+.seosamba-color when (@seotoaster = true){
     color : @brand-seosamba;
 
     a&:hover{
         color : darken(@brand-seosamba, 15%);
     }
 }
-.seotoaster-color{
+.seotoaster-color when (@seotoaster = true){
     color : @brand-seotoaster;
 
     a&:hover{
         color : darken(@brand-seotoaster, 15%);
     }
 }
-.seosamba-bg{
+.seosamba-bg when (@seotoaster = true){
     color            : #fff;
     background-color : @brand-seosamba;
 }
-.seotoaster-bg{
+.seotoaster-bg when (@seotoaster = true){
     color            : #fff;
     background-color : @brand-seotoaster;
 }

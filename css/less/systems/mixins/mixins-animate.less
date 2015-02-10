@@ -50,12 +50,20 @@
     & when (@w3c = true){ animation-iteration-count : infinite; }
 }
 
-.animation(@name) { //The animation-name property specifies a name for the @keyframes animation. Value: keyframename/none.
+.animation-name(@name) { //The animation-name property specifies a name for the @keyframes animation. Value: keyframename/none.
     & when (@webkit = true){ -webkit-animation-name : @name; }
     & when (@moz = true){ -moz-animation-name : @name; }
     & when (@ie = true){ -ms-animation-name : @name; }
     & when (@opera = true){ -o-animation-name : @name; }
     & when (@w3c = true){ animation-name : @name; }
+}
+
+.animation(@value) { //The animation property specifies a name for the @keyframes animation. Value: keyframename/none.
+    & when (@webkit = true){ -webkit-animation : @value; }
+    & when (@moz = true){ -moz-animation : @value; }
+    & when (@ie = true){ -ms-animation : @value; }
+    & when (@opera = true){ -o-animation : @value; }
+    & when (@w3c = true){ animation : @value; }
 }
 
 //    Animate.css - http://daneden.me/animate

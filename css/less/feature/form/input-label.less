@@ -2,6 +2,7 @@
     position : relative;
 
     label{
+        color       : @input-color-placeholder;
         position    : absolute;
         top         : 0;
         left        : .5em;
@@ -12,15 +13,44 @@
 
     input{
         border-width : 0 0 1px;
-        .box-shadow(none);
+        .box-shadow(none) !important;
 
         &:focus, &:valid{
 
             & + label{
-                color       : @gray-light;
-                top         : -10px;
+                color       : @brand-primary;
+                top         : -.9em;
                 font-size   : @font-size-small;
                 line-height : 1em;
+            }
+        }
+
+        &.success when (@form-color-success = true) and (@form-colors = true){
+            &:focus, &:valid{
+                & + label{
+                    color : @brand-success;
+                }
+            }
+        }
+        &.warning when (@form-color-warning = true) and (@form-colors = true){
+            &:focus, &:valid{
+                & + label{
+                    color : @brand-warning;
+                }
+            }
+        }
+        &.error when (@form-color-error = true) and (@form-colors = true){
+            &:focus, &:valid{
+                & + label{
+                    color : @brand-error;
+                }
+            }
+        }
+        &.info when (@form-color-info = true) and (@form-colors = true){
+            &:focus, &:valid{
+                & + label{
+                    color : @brand-info;
+                }
             }
         }
     }

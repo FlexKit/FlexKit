@@ -38,7 +38,7 @@
 
             <!-- Content box -->
             <article id="content" class="grid_9" role="main">
-                {repeat:Article blocks:key:3}
+                {repeat:Section box:key:3}
                 <section>
                     <h2>{$header:content_key}</h2>
                     {$content:content_key1}
@@ -49,7 +49,7 @@
 
             <!-- Right box -->
             <aside class="grid_3" role="complementary">
-                {repeat:Aside blocks:key:3}
+                {repeat:Aside right box:key:3}
                 <section class="aside-box">
                     <h3>{$header:right_key}</h3>
                     {$content:right_key}
@@ -57,10 +57,15 @@
                 {/repeat}
             </aside>
 
+            <!-- Footer -->
+            <!-- Include Footer template -->
+            {$template:_footer}
         </main>
 
-        <!-- Footer -->
-        <!-- Include Footer template -->
-        {$template:_footer}
+        <!-- Include mobile elements template -->
+        {$template:_mobile elements}
+
+        <!-- Include scripts template -->
+        {$template:_scripts}
     </body>
 </html>

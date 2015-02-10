@@ -9,7 +9,6 @@
         width : @grid-container-width;
     }
     & when (@responsive = true) and not (@grid-container-width = 100%){
-        width     : 95%;
         max-width : @grid-container-width;
     }
     .clearfix();
@@ -17,7 +16,7 @@
 
 // GRID CSS
 //==================================================
-[class*=" grid_"], [class^="grid_"], [class*="-grid_"]{
+[class*=" grid_"], [class^="grid_"], [class*="-grid_"], [class*="_grid_"]{
     & when (@grid-system = true){
         display      : inline;
         float        : left;
@@ -31,7 +30,7 @@
 
 // COLUMN LIST CSS
 //==================================================
-[class*=" column_"], [class^="column_"], [class*="-column_"]{
+[class*=" column_"], [class^="column_"], [class*="-column_"], [class*="_column_"]{
     & when (@column-system = true){
         font-size : 0 !important;
         width     : 100%;
@@ -41,7 +40,7 @@
             float          : none !important;
             display        : inline-block;
             vertical-align : top;
-            width          : 100% - @column-margin-width;
+            width          : 100% - @column-margin-width !important;
             margin-left    : (@column-margin-width / 2) !important;
             margin-right   : (@column-margin-width / 2) !important;
             margin-bottom  : @column-margin-width;
@@ -61,7 +60,7 @@
 
         &.full-width when (@column-system-fullWidth = true){
             & > *{
-                width        : 100%;
+                width        : 100% !important;
                 margin-right : @column-margin-width !important;
                 margin-left  : 0 !important;
             }
@@ -69,23 +68,29 @@
 
         &.margin-none when (@column-system-marginNone = true){
             & > *{
-                width        : 100%;
+                width        : 100% !important;
                 margin-left  : 0 !important;
                 margin-right : 0 !important;
             }
         }
 
+        &.one-line{
+            & > *{
+                margin-bottom : 0;
+            }
+        }
+
         & > .generator-links{ display : block; }
 
-        & > .larger{
+        &.larger > *, & > .larger{
             font-size : @font-size-base * @font-size-larger !important;
         }
 
-        & > .large{
+        &.large > *, & > .large{
             font-size : @font-size-base * @font-size-large !important;
         }
 
-        & > .small{
+        &.small > *, & > .small{
             font-size : @font-size-base * @font-size-small !important;
         }
     }

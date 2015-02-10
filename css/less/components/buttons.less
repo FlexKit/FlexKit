@@ -5,7 +5,7 @@
     .user-select();
     .box-shadow(none; @input-shadow-focus);
 
-    &[disabled]{
+    &[disabled], &.disabled{
         border-color     : @gray-light !important;
         color            : @gray-light !important;
         background-color : @gray-lighter !important;
@@ -17,6 +17,12 @@
     &:before{
         font-size    : @button-icon-size;
         margin-right : 5px;
+    }
+
+    &.social when (@social-button = true){
+        &:before{
+            font-size : @social-icon-size;
+        }
     }
 
     &[class*="grid_"], [class*="column_"] > &{
@@ -70,6 +76,18 @@
         border-color     : @button-inverse-border;
     }
 
+    // Transparent button appears as transparent => fade
+    &.transparent when (@button-color-transparent = true) and (@button-colors = true){
+        color            : inherit;
+        background-color : transparent;
+        border           : none;
+
+        &:hover{
+            color : #fff;
+            .rgba(#000; .1);
+        }
+    }
+
     // Block button
     // --------------------------------------------------
     &.block when (@button-type-block = true) and (@button-types = true){
@@ -105,10 +123,9 @@
     &.link when (@button-type-link = true) and (@button-types = true){
         text-decoration  : underline;
         background-color : transparent !important;
-        .activate-border() when (@button-border-width > 0){
+        & when (@button-border-width > 0){
             border : none;
         }
-        .activate-border();
         .link-color();
         .box-shadow(none; @button-box-shadow);
 
@@ -151,7 +168,8 @@
 
     &.outline-bg when (@button-type-outline = true) and (@button-types = true){
         & when (@button-border-width = 0) and (@button-border-width < 2){
-            border : @button-border-outline solid;
+            line-height : unit(@button-line-height * 2, em) - unit(@button-border-outline / @font-size-base, em);
+            border      : unit(@button-border-outline / @font-size-base, em) solid;
         }
         .box-shadow(none; @button-box-shadow);
         .button-color(@brand-primary; transparent; @brand-primary; @button-primary-color; @button-primary-bg; @button-primary-bg);
@@ -189,6 +207,17 @@
         &.inverse when (@button-color-inverse = true) and (@button-colors = true){
             color        : @button-inverse-bg;
             border-color : @button-inverse-border;
+        }
+    }
+
+    &.caption when (@button-type-caption = true) and (@button-types = true){
+        padding-top    : .5em;
+        padding-bottom : .5em;
+        line-height    : unit(@button-line-height, em);
+
+        &:before{
+            display : block;
+            margin  : 0;
         }
     }
 

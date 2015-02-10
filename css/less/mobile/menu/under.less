@@ -1,0 +1,77 @@
+.mobile-menu{
+}
+
+.menu-btn{
+
+    &.left{
+        &:before{
+        }
+
+        &.active{
+            &:before{
+            }
+        }
+    }
+
+    &.right{
+
+        &:before{
+        }
+
+        &.active{
+            &:before{
+            }
+        }
+    }
+
+    &.active{
+
+        &:after{
+        }
+
+    }
+}
+
+main{
+    position   : relative;
+    z-index    : 1;
+    background : @body-bg;
+    .transition(all; 0.3s);
+    .box-shadow(0 0 15px fade(#000, 90%));
+}
+
+body{
+
+    &[data-menu-open]{
+        main, .mobile-bar{
+            .transition(all; 0.75s);
+        }
+        main{
+            overflow : hidden;
+        }
+    }
+
+    &[data-menu-open="left"]{
+        main, .mobile-bar{
+            .transform(translateX(@menu-width));
+        }
+    }
+
+    &[data-menu-open="right"]{
+        main, .mobile-bar{
+            .transform(translateX(-@menu-width));
+        }
+    }
+
+    &[data-menu-open="top"]{
+        main, .mobile-bar{
+            .transform(translateY(@menu-height));
+        }
+    }
+
+    &[data-menu-open="bottom"]{
+        main, .mobile-bar{
+            .transform(translateY(-@menu-height));
+        }
+    }
+}

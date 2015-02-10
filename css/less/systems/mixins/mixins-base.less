@@ -1,6 +1,6 @@
 // Font-face
 //==================================================
-.font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) {
+.font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) when (@ie = true) {
     @font-face{
         font-family : "@{fontname}";
         src         : url("@{fontfile}.eot");
@@ -13,11 +13,23 @@
         font-style  : @fontstyle;
     }
 }
+.font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) when not (@ie = true) {
+    @font-face{
+        font-family : "@{fontname}";
+        src         : url("@{fontfile}.woff") format("woff"),
+                      url("@{fontfile}.ttf") format("truetype");
+        font-weight : @fontweight;
+        font-style  : @fontstyle;
+    }
+}
 
 // Column-grid system
 //==================================================
 .column() when (@column-system = true){
     & when (@responsive = true){
+        & when (@column-global-classes = true){
+            .column-list(@prefix: _);
+        }
         @responsive-size-tablet-over : (@responsive-size-tablet + 1);
         @media only screen and (min-width : @responsive-size-tablet-over){
             .column-list();
@@ -38,14 +50,14 @@
 }
 .column-list(@column : @columns; @prefix : ~''; @num-column : 1; @type : false) when (@column >= @num-column) and (@type = false){
     .@{prefix}column_@{num-column} > *{
-        width : round((100% / @num-column) - @column-margin-width, 3);
+        width : round((100% / @num-column) - @column-margin-width, 3) !important;
     }
     .column-list(@column; @prefix; @num-column + 1; false);
 }
 .column-list(@column : @columns; @prefix : ~''; @num-column : 1; @type : full-width) when (@column >= @num-column) and (@type = full-width) and  (@column-system-fullWidth = true){
     .full-width{
         &.@{prefix}column_@{num-column} > *{
-            width : round((100% / @num-column) - @column-margin-width + (@column-margin-width / @num-column), 3);
+            width : round((100% / @num-column) - @column-margin-width + (@column-margin-width / @num-column), 3) !important;
             @num : ~'@{num-column}n';
             &:nth-child(@{num}){
                 margin-right : 0 !important;
@@ -57,7 +69,7 @@
 .column-list(@column : @columns; @prefix : ~''; @num-column : 1; @type : margin-none) when (@column >= @num-column) and (@type = margin-none) and (@column-system-marginNone = true){
     .margin-none{
         &.@{prefix}column_@{num-column} > *{
-            width : round(100% / @num-column, 3);
+            width : round(100% / @num-column, 3) !important;
         }
     }
     .column-list(@column; @prefix; @num-column + 1; margin-none);
@@ -67,6 +79,9 @@
 //==================================================
 .grid() when (@grid-system = true){
     & when (@responsive = true){
+        & when (@grid-global-classes = true){
+            .grid-list(@prefix: _);
+        }
         @responsive-size-tablet-over : (@responsive-size-tablet + 1);
         @media only screen and (min-width : @responsive-size-tablet-over){
             .grid-list();
@@ -203,6 +218,7 @@
     text-overflow : ellipsis;
     white-space   : nowrap;
 }
+
 // Opacity
 //==================================================
 .opacity(@opacity: 0.5) {
@@ -300,9 +316,14 @@
     &:before{
         font-size : @size;
 
-        & when (@parent = false){
+        & when (@parent = false) and  not(isem(@size)){
             width  : @size;
             height : @size;
+        }
+
+        & when (isem(@size)){
+            width  : 1em;
+            height : 1em;
         }
     }
 }
@@ -355,7 +376,9 @@
 // ClearFix
 //==================================================
 .clearfix() {
-    *zoom : 1;
+    & when (@ie7 = true) and (@ie = true){
+        *zoom : 1;
+    }
 
     &:after, &:before{
         content : "";
@@ -368,7 +391,7 @@
 
 // Flexbox Layout http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 //==================================================
-.flexbox(@direction : column; @wrap : nowrap; @align : stretch) {
+.flexbox(@direction : false; @wrap : nowrap; @align : stretch) {
     & when (@webkit = true){ display : -webkit-box; }
     & when (@moz = true){ display : -moz-box; }
     & when (@ie = true){ display : -ms-flexbox; }
@@ -381,7 +404,7 @@
 }
 
 // @direction = row, row-reverse, column, column-reverse
-.flex-direction(@direction : column) {
+.flex-direction(@direction : column) when not (@direction = false) {
     & when (@webkit = true) and (@direction = row), (@direction = column){ -webkit-box-direction : normal; }
     & when (@webkit = true) and not (@direction = row) and not (@direction = column){ -webkit-box-direction : reverse; }
     & when (@moz = true) and (@direction = row), (@direction = column){ -moz-box-direction : normal; }

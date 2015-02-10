@@ -1,107 +1,25 @@
-@menu-height                       : @button-height-base;
-
-@menu-bg                           : @primary-bg;
-@menu-color                        : @primary-color;
-
-@menu-bg-li-hover                  : darken(@menu-bg, 5%);
-@menu-bg-li-current                : @menu-bg-li-hover;
-
-@menu-color-li-hover               : @menu-color;
-@menu-color-li-current             : @menu-color-li-hover;
-
-@menu-drop-down-list-bg            : #fff;
-@menu-drop-down-list-bg-hover      : darken(@menu-drop-down-list-bg, 5%);
-@menu-drop-down-list-bg-current    : @menu-drop-down-list-bg-hover;
-
-@menu-drop-down-list-color         : @text-color;
-@menu-drop-down-list-color-hover   : @menu-drop-down-list-color;
-@menu-drop-down-list-color-current : @menu-drop-down-list-color;
-
 .mobile-menu{
-    // reset style for menu
-    float       : none;
-    max-width   : none;
-    height      : auto;
-    text-align  : left;
-    margin      : 0 !important;
-    //style menu mobile
-    line-height : @menu-height;
-    position    : fixed;
-    z-index     : @mobile-bar-zindex - 1;
-    top         : @top-block-height;
-    bottom      : 0;
-    left        : 0;
-    overflow    : auto;
-    width       : 300px;
-    //    opacity     : 0;
-    background  : @menu-bg;
-    color       : @menu-color;
-    .transform(translateX(-100%));
+    z-index : @mobile-bar-zindex + 2;
     .transition(all; 0.3s);
 
-    a{
-        padding-top    : 0;
-        padding-bottom : 0;
-
-        &:hover, &.current{
-            background : @menu-bg-li-hover;
-            color      : @menu-color-li-hover;
-        }
-    }
-
-    & > * ul{
-        width      : auto;
-        position   : static;
-        display    : none !important;
-        background : @menu-drop-down-list-bg;
-        color      : @menu-drop-down-list-color;
-        .box-shadow(none);
-
-        a{
-            &:hover, &.current{
-                background : @menu-drop-down-list-bg-hover;
-                color      : @menu-drop-down-list-color-hover;
-            }
-        }
-
-        &.open{
-            display : block !important;
-        }
-    }
-
-    li{
-        float         : none;
-        display       : block;
-        border        : none;
-        border-bottom : 1px solid rgba(0, 0, 0, .1);
-
-        li{
-            border     : none;
-            border-top : 1px solid rgba(0, 0, 0, .1);
-        }
-    }
-
-    &.top, &.bottom{
-        right  : 0;
-        width  : auto;
-        height : auto;
-    }
-
     &.top{
-        bottom : auto;
         .transform(translateY(-100%));
     }
 
     &.bottom{
-        top    : auto;
-        bottom : @top-block-height;
         .transform(translateY(100%));
     }
 
+    &.left{
+        .transform(translateX(-100%));
+    }
+
     &.right{
-        right : 0;
-        left  : auto;
         .transform(translateX(100%));
+    }
+
+    [data-menu-open] &{
+        .box-shadow(0 0 30px @gray-dark);
     }
 
     [data-menu-open="left"] &.left, [data-menu-open="right"] &.right{
@@ -115,32 +33,60 @@
 
 .menu-btn{
 
+    &.active{
+        .rgba(#000; .05);
+    }
+
+    &:before{
+        width : @top-block-height / 3.5;
+    }
+
     &.left{
+        padding-left : 0;
+
         &:before{
-            margin-left  : 0px;
-            margin-right : 5px;
         }
 
         &.active{
             &:before{
-                margin-left  : -8px;
-                margin-right : 13px;
+                margin-left  : -(@top-block-height / 5);
+                margin-right : (@top-block-height / 10) + (@top-block-height / 5);
             }
         }
     }
 
     &.right{
+        padding-right : 0;
 
         &:before{
-            margin-right : 0px;
-            margin-left  : 5px;
         }
 
         &.active{
             &:before{
-                margin-right : -8px;
-                margin-left  : 13px;
+                margin-right : -(@top-block-height / 5);
+                margin-left  : (@top-block-height / 10) + (@top-block-height / 5);
             }
+        }
+    }
+}
+
+body{
+
+    &[data-menu-open]{
+        main{
+//            overflow : hidden;
+
+//            &:after{
+//                content  : '';
+//                position : fixed;
+//                top      : 0;
+//                left     : 0;
+//                right    : 0;
+//                bottom   : 0;
+//                z-index  : @mobile-bar-zindex - 1;
+//                .rgba(#000; .25);
+//                .transition(all; 0.75s);
+//            }
         }
     }
 }

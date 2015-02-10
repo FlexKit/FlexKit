@@ -35,13 +35,14 @@ form{
     }
 
     // -- Recaptcha & Captcha style
-    .captcha{
+    .captcha when (@seotoaster = true){
 
         .captcha_image{
-            width      : 65% !important;
-            height     : auto !important;
-            float      : left;
-            text-align : center;
+            width         : 65% !important;
+            height        : auto !important;
+            float         : left;
+            text-align    : center;
+            padding-right : 10px;
 
             aside &{
                 width : 100% !important;
@@ -96,7 +97,6 @@ label{
     }
 }
 
-
 .notvalid{
     color : @brand-error !important;
 }
@@ -119,29 +119,35 @@ select, textarea, input{
         .box-shadow(0 0 @input-shadow-size @input-border-color-focus; @input-shadow-focus);
     }
 
-    &.success, &.warning, &.error{
-        & when (@colors = true){
+    &.success, &.warning, &.error, &.info{
+        & when (@form-colors = true){
             color : @input-color;
         }
     }
-    &.success when (@color-success = true) and (@colors = true){
+    &.success when (@form-color-success = true) and (@form-colors = true){
         border-color : @brand-success;
         &:focus{
             .box-shadow(0 0 @input-shadow-size @brand-success; @input-shadow-focus);
         }
     }
-    &.warning when (@color-warning = true) and (@colors = true){
+    &.warning when (@form-color-warning = true) and (@form-colors = true){
         border-color : @brand-warning;
         &:focus{
             .box-shadow(0 0 @input-shadow-size @brand-warning; @input-shadow-focus);
         }
     }
     &.error, &.notvalid{
-        & when (@color-error = true) and (@colors = true){
+        & when (@form-color-error = true) and (@form-colors = true){
             border-color : @brand-error;
             &:focus{
                 .box-shadow(0 0 @input-shadow-size @brand-error; @input-shadow-focus);
             }
+        }
+    }
+    &.info when (@form-color-info = true) and (@form-colors = true){
+        border-color : @brand-info;
+        &:focus{
+            .box-shadow(0 0 @input-shadow-size @brand-info; @input-shadow-focus);
         }
     }
 
@@ -168,9 +174,11 @@ textarea{
     min-height : 5em;
 }
 
-.forgot-password, #remember-password{
-    float      : left;
-    margin-top : -(@button-height-base - @padding-base-vertical);
+& when (@seotoaster = true){
+    .forgot-password, #remember-password{
+        float      : left;
+        margin-top : -(@button-height-base - @padding-base-vertical);
+    }
 }
 
 // -- Checkbox & Radio field style

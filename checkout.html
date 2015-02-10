@@ -7,7 +7,7 @@
     <body>
 
         <!-- Container -->
-        <div id="container" class="container">
+        <main class="container">
 
             <!-- Include header template -->
             {$template:_header}
@@ -15,7 +15,7 @@
             <h1 class="grid_12" role="heading">{$page:h1}</h1>
 
             <!-- Content box -->
-            <main id="content" class="grid_12" role="main">
+            <article id="content" class="grid_12" role="main">
                 <!-- Table products to order -->
                 <table id="checkoutitemlist" class="checkout-cart-table mb30px">
                     <thead class="t-hide m-hide">
@@ -66,12 +66,17 @@
                     {$content:contact_inf}
                 </div>
                 <!-- end checkout widget -->
-            </main>
+            </article>
 
-        </div>
+            <!-- Footer -->
+            <!-- Include Footer template -->
+            {$template:_footer}
+        </main>
 
-        <!-- Footer -->
-        <!-- Include Footer template -->
-        {$template:_footer}
+        <!-- Include mobile elements template -->
+        {$template:_mobile elements}
+
+        <!-- Include scripts template -->
+        {$template:_scripts}
     </body>
 </html>

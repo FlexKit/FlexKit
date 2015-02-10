@@ -83,7 +83,6 @@
   background-image: url("../images/cart.gif");
   background-position: 5px 50%;
   background-repeat: no-repeat;
-  -webkit-border-radius: 10px;
   border-radius: 10px;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -115,7 +114,6 @@
   color: #fff;
   padding: 5px 10px;
   font-size: 1.5em;
-  -webkit-border-radius: 50px !important;
   border-radius: 50px !important;
   -webkit-background-clip: padding-box !important;
   background-clip: padding-box !important;
@@ -271,7 +269,6 @@
 #checkout-widget .checkout-button span {
   display: inline-block;
   vertical-align: middle;
-  -webkit-border-radius: 50px;
   border-radius: 50px;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -311,7 +308,6 @@
 #checkout-widget select {
   float: left;
   width: 65%;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -323,7 +319,6 @@
 #checkout-widget fieldset {
   background: none;
   float: left;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 48.5%;
@@ -347,7 +342,6 @@
 #checkout-landing-forms > div,
 #checkout-pickup-form > div {
   float: left;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 50%;
@@ -445,7 +439,6 @@ ul.shipping-methods li {
   background: #d5d5d5;
   display: inline-block;
   vertical-align: middle;
-  -webkit-border-radius: 5px;
   border-radius: 5px;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -455,8 +448,6 @@ ul.shipping-methods li {
 }
 ul.shipping-methods li:hover {
   background: #eeeeee;
-  -webkit-box-shadow: 0px 0px 2px #aaaaaa;
-  -moz-box-shadow: 0px 0px 2px #aaaaaa;
   box-shadow: 0px 0px 2px #aaaaaa;
 }
 ul.shipping-methods li label {
@@ -606,8 +597,6 @@ ul.shipping-methods li p {
   margin-left: 2px;
 }
 #shippingNotes.notvalid {
-  -webkit-box-shadow: 0 0 1px 1px #ff0000;
-  -moz-box-shadow: 0 0 1px 1px #ff0000;
   box-shadow: 0 0 1px 1px #ff0000;
 }
 .toaster-quote fieldset {

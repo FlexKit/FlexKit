@@ -7,6 +7,7 @@
 *{
     -webkit-touch-callout       : none; //если надо, то запрещаем выделение текста
     -webkit-tap-highlight-color : rgba(0, 0, 0, 0); //убираем фон подсветки ссылок и кнопок
+    -webkit-tap-highlight-color : transparent; //убираем фон подсветки ссылок и кнопок
     -webkit-text-size-adjust    : none; //фиксим баг в IOS cо шкалированием в landscape
 
     &, &:before, &:after{
@@ -22,14 +23,13 @@
     color      : @text-select-color;
 }
 
+html, body{
+    height : 100%;
+}
 body{
-    //-webkit-font-smoothing      : antialiased; // Fix for webkit rendering
-    -webkit-font-smoothing      : subpixel-antialiased !important;
-//    -webkit-backface-visibility : hidden;
-//    -moz-backface-visibility    : visible;
-//    -ms-backface-visibility     : hidden;
-    -ms-touch-action            : manipulation;
-    touch-action                : manipulation;
+    -webkit-font-smoothing : subpixel-antialiased !important;
+    -ms-touch-action       : manipulation;
+    touch-action           : manipulation;
 }
 blockquote, q{
     quotes : none;
@@ -94,14 +94,18 @@ img{
 
 //// Reset Form
 ////==================================================
+dl, dt, dd{
+    margin : 0;
+}
 input, select, textarea, button{
     max-width   : 100%;
     width       : 100%;
     font-family : inherit;
+    font-weight : normal;
     .placeholder();
 }
-//
-//// Reset width of input images, buttons, radios, checkboxes
+
+// Reset width of input images, buttons, radios, checkboxes
 button,
 [type="file"],
 [type="image"],
@@ -161,112 +165,147 @@ button, [type="button"], [type="reset"], [type="submit"]{
     cursor : default;
 }
 
-// Reset for all navigation items, related-products
-//==================================================
-.main_menu, .listpages, .listcategories, .featureditem, .featureapage, .search-results, .relatedpages, .listxrss, .related-products{
-    .clearfix();
-}
-
-//fix for Safari 3
-& when (@webkit = true){
-    ::i-block-chrome, .main_menu,
-    ::i-block-chrome, .listpages,
-    ::i-block-chrome, .listcategories,
-    ::i-block-chrome, .featureditem,
-    ::i-block-chrome, .search-results,
-    ::i-block-chrome, .relatedpages,
-    ::i-block-chrome, .listxrss,
-    ::i-block-chrome, .related-products{
-        display : table;
-        width   : 100%;
+& when (@seotoaster = true){
+    // Reset for all navigation items, related-products
+    //==================================================
+    .main_menu, .listpages, .listcategories, .featureditem, .featureapage, .search-results, .relatedpages, .listxrss, .related-products{
+        .clearfix();
     }
-}
 
-//fix for Opera
-& when (@opera = true){
-    noindex:-o-prefocus, .main_menu,
-    noindex:-o-prefocus, .listpages,
-    noindex:-o-prefocus, .listcategories,
-    noindex:-o-prefocus, .featureditem,
-    noindex:-o-prefocus, .search-results,
-    noindex:-o-prefocus, .relatedpages,
-    noindex:-o-prefocus, .listxrss,
-    noindex:-o-prefocus, .related-products{
-        word-spacing : -0.3em;
-        li{
-            word-spacing : normal;
+    //fix for Safari 3
+    & when (@webkit = true){
+        ::i-block-chrome, .main_menu,
+        ::i-block-chrome, .listpages,
+        ::i-block-chrome, .listcategories,
+        ::i-block-chrome, .featureditem,
+        ::i-block-chrome, .search-results,
+        ::i-block-chrome, .relatedpages,
+        ::i-block-chrome, .listxrss,
+        ::i-block-chrome, .related-products{
+            display : table;
+            width   : 100%;
         }
     }
+
+    //fix for Opera
+    & when (@opera = true){
+        noindex:-o-prefocus, .main_menu,
+        noindex:-o-prefocus, .listpages,
+        noindex:-o-prefocus, .listcategories,
+        noindex:-o-prefocus, .featureditem,
+        noindex:-o-prefocus, .search-results,
+        noindex:-o-prefocus, .relatedpages,
+        noindex:-o-prefocus, .listxrss,
+        noindex:-o-prefocus, .related-products{
+            word-spacing : -0.3em;
+            li{
+                word-spacing : normal;
+            }
+        }
+    }
+
+    .static_menu, .static_menu li,
+    .main_menu, .main_menu li, .main_menu ul, .main_menu ul li,
+    .sitemap, .sitemap li,
+    .listpages, .listpages li,
+    .listcategories, .listcategories li,
+    .featureditem, .featureditem li,
+    .featureapage,
+    .relatedpages, .relatedpages li,
+    .listxrss, .listxrss li,
+    .search-results, .search-results li,
+    .img_gallery, .img_gallery li,
+    .related-products, .related-products li{
+        margin          : 0;
+        padding         : 0;
+        list-style-type : none;
+    }
+    .listpages,
+    .listcategories,
+    .featureditem,
+    .featureapage,
+    .search-results,
+    .relatedpages,
+    .listxrss,
+    .related-products{
+        li{
+            position : relative;
+        }
+
+        a{
+            display : block;
+        }
+
+        .page-teaser-image{
+        }
+
+        img{
+            width : 100%;
+        }
+
+        .page-title{
+            margin      : 0 0 0.25em;
+            font-size   : @font-size-large;
+            font-family : @font-family-headings;
+        }
+    }
+    .listpages span,
+    .listcategories span,
+    .featureditem span,
+    .featureapage p,
+    .search-results span,
+    .relatedpages span,
+    .listxrss p,
+    .related-products .product-description{
+        display  : block;
+        overflow : hidden;
+        margin   : 0;
+
+        &:empty{
+            display : none;
+        }
+    }
+
+    .reset-style{
+        .reset-style;
+    }
+}
+& when not (@seotoaster = true){
+    // Reset for all navigation items, related-products
+    //==================================================
+    .main_menu{
+        .clearfix();
+    }
+
+    //fix for Safari 3
+    & when (@webkit = true){
+        ::i-block-chrome, .main_menu{
+            display : table;
+            width   : 100%;
+        }
+    }
+
+    //fix for Opera
+    & when (@opera = true){
+        noindex:-o-prefocus, .main_menu{
+            word-spacing : -0.3em;
+            li{
+                word-spacing : normal;
+            }
+        }
+    }
+
+    .static_menu, .static_menu li,
+    .main_menu, .main_menu li, .main_menu ul, .main_menu ul li,
+    .img_gallery, .img_gallery li{
+        margin          : 0;
+        padding         : 0;
+        list-style-type : none;
+    }
 }
 
-.static_menu, .static_menu li,
-.main_menu, .main_menu li, .main_menu ul, .main_menu ul li,
-.sitemap, .sitemap li,
-.listpages, .listpages li,
-.listcategories, .listcategories li,
-.featureditem, .featureditem li,
-.featureapage,
-.relatedpages, .relatedpages li,
-.listxrss, .listxrss li,
-.search-results, .search-results li,
-.img_gallery, .img_gallery li,
-.related-products, .related-products li{
-    margin          : 0;
-    padding         : 0;
-    list-style-type : none;
-}
-.listpages,
-.listcategories,
-.featureditem,
-.featureapage,
-.search-results,
-.relatedpages,
-.listxrss,
-.related-products{
-    li{
-        position : relative;
-    }
-
-    a{
-        display : block;
-    }
-
-    .page-teaser-image{
-    }
-
-    img{
-        width : 100%;
-    }
-
-    .page-title{
-        margin      : 0 0 0.25em;
-        font-size   : @font-size-large;
-        font-family : @font-family-headings;
-    }
-}
-.listpages span,
-.listcategories span,
-.featureditem span,
-.featureapage p,
-.search-results span,
-.relatedpages span,
-.listxrss p,
-.related-products .product-description{
-    display  : block;
-    overflow : hidden;
-    margin   : 0;
-
-    &:empty{
-        display : none;
-    }
-}
-
-.reset-style{
-    .reset-style;
-}
-
-.disable-hover{
-    pointer-events : none;
+.disable-hover, .disable-hover *{
+    pointer-events : none !important;
 }
 
 //  Fonts

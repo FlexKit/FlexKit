@@ -1,9 +1,11 @@
 // ### Activate components ###
+@seotoaster : true;
 
 // [Mobile menu]
 @mobile-menu     : true;
     // Attention! Type menu for mobile can be only one
     @mobile-menu-over  : true;
+    @mobile-menu-under : false;
 @mobile-dropdown : true;
 
 // [Social elements]
@@ -41,11 +43,12 @@
         @form-labeled-social-instagram : @social-instagram;
 @form-input-label  : true;
 
-// FIELD SIZE
-@field-sizes  : @sizes;
-    @field-size-larger : @size-larger;
-    @field-size-large  : @size-large;
-    @field-size-small  : @size-small;
+// BUTTON COLOR
+@form-colors : @colors;
+    @form-color-success : @color-success;
+    @form-color-warning : @color-warning;
+    @form-color-error   : @color-error;
+    @form-color-info    : @color-info;
 
 // BUTTON TYPE
 @button-types : true; // .link, .btn-set, .icon, alternate styles(3d button, )
@@ -54,21 +57,17 @@
     @button-type-outline : true;
     @button-type-block   : true;
     @button-type-group   : true;
+    @button-type-caption : true;
     @button-type-3d      : false;
 
 // BUTTON COLOR
 @button-colors : @colors;
     @button-color-success : @color-success;
-    @button-color-warning : @color-warning;
-    @button-color-error   : @color-error;
-    @button-color-info    : @color-info;
-    @button-color-inverse : @color-inverse;
-
-// BUTTON SIZE
-@button-sizes  : @sizes;
-    @button-size-larger : @size-larger;
-    @button-size-large  : @size-large;
-    @button-size-small  : @size-small;
+    @button-color-warning     : @color-warning;
+    @button-color-error       : @color-error;
+    @button-color-info        : @color-info;
+    @button-color-inverse     : @color-inverse;
+    @button-color-transparent : true;
 
 // Style for Button
 @button-transition  : true;
@@ -154,6 +153,7 @@
         @message-color-error   : @color-error;
         @message-color-info    : @color-info;
         @message-color-gray    : true;
+    @message-right : true;
 
 // [Callout]
 @callouts : true;
@@ -173,6 +173,8 @@
 @news-list-timeLine         : false;
 @widget-menu-main-fullWidth : false;
 @text-with-middle-line      : false;
+@responsive-video           : true;
+@responsive-image           : true;
 
 // [Activate effects styles]
 @grayscale : false;

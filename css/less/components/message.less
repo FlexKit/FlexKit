@@ -7,6 +7,13 @@
     color            : @state-primary-color;
     border-left      : 3px solid @state-primary-border;
     .border-radius(@state-border-radius);
+    .clearfix();
+
+    &.right when (@message-right = true){
+        text-align   : right;
+        border-left  : none;
+        border-right : 3px solid @state-primary-border;
+    }
 
     a{
         .opacity(0.75);

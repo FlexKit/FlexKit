@@ -352,12 +352,12 @@ th {
 * {
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: none;
 }
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -368,6 +368,10 @@ th {
 ::selection {
   background: #c2d2da;
   color: #ffffff;
+}
+html,
+body {
+  height: 100%;
 }
 body {
   -webkit-font-smoothing: subpixel-antialiased !important;
@@ -450,6 +454,11 @@ img {
   cursor: text;
   padding: 2px 6px;
 }
+dl,
+dt,
+dd {
+  margin: 0;
+}
 input,
 select,
 textarea,
@@ -457,6 +466,7 @@ button {
   max-width: 100%;
   width: 100%;
   font-family: inherit;
+  font-weight: normal;
 }
 input::-webkit-input-placeholder,
 select::-webkit-input-placeholder,
@@ -513,8 +523,6 @@ textarea {
 }
 [type="checkbox"]:focus,
 [type="radio"]:focus {
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
   box-shadow: none !important;
 }
 select[multiple],
@@ -536,23 +544,10 @@ button:focus,
 [type="button"]:focus,
 [type="reset"]:focus,
 [type="submit"]:focus {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
 }
 [disabled] {
   cursor: default;
-}
-.main_menu,
-.listpages,
-.listcategories,
-.featureditem,
-.featureapage,
-.search-results,
-.relatedpages,
-.listxrss,
-.related-products {
-  *zoom: 1;
 }
 .main_menu:after,
 .listpages:after,
@@ -712,25 +707,20 @@ button:focus,
   position: static;
   padding: 0;
   vertical-align: baseline;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
-  -webkit-border-radius: 0;
   border-radius: 0;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   -webkit-transition: none 0.5s ease;
-  -moz-transition: none 0.5s ease;
   transition: none 0.5s ease;
 }
 .reset-style:hover,
 .reset-style:focus {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
 }
-.disable-hover {
-  pointer-events: none;
+.disable-hover,
+.disable-hover * {
+  pointer-events: none !important;
 }
 @font-face {
   font-family: "flexkit-icons";
@@ -749,7 +739,6 @@ button:focus,
 .icon64 {
   display: inline-block;
   vertical-align: middle;
-  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }

@@ -194,7 +194,6 @@
 }
 .ui-tabs {
   position: relative;
-  *zoom: 1;
 }
 .ui-tabs:after,
 .ui-tabs:before {
@@ -323,8 +322,6 @@
   background-color: #ffffff;
   max-width: 90%;
   color: inherit;
-  -webkit-box-shadow: 4px 4px 4px #222222;
-  -moz-box-shadow: 4px 4px 4px #222222;
   box-shadow: 4px 4px 4px #222222;
 }
 .ui-effects-wrapper .ui-dialog {
@@ -354,7 +351,6 @@
   padding: 10px;
   background: transparent;
   color: #ffffff;
-  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   width: 16px;
@@ -509,7 +505,6 @@
   color: #555555;
   padding: 8px;
   text-decoration: none;
-  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
@@ -734,8 +729,6 @@
   position: relative;
   text-align: left;
   background: #f5f5f5;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 .ui-slider .ui-slider-handle {
@@ -745,7 +738,6 @@
   background: #61696d;
   width: 1.4em;
   height: 1.4em;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -823,8 +815,6 @@
   line-height: 1.25em;
   overflow: hidden;
   color: #fff;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 .ui-progressbar.label[aria-valuenow]:before {
@@ -977,7 +967,6 @@
   overflow: hidden;
   padding: 0;
   display: block;
-  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
