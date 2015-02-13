@@ -14,12 +14,12 @@
         text-align : center;
         position   : relative;
 
-        >a{
-            position   : absolute;
-            top        : 0;
-            background : @datepicker-arrow-bg;
-            color      : @datepicker-arrow-color;
-            padding    : (@datepicker-header-height - @datepicker-arrow-size) / 2;
+        > a{
+            position        : absolute;
+            top             : 0;
+            background      : @datepicker-arrow-bg;
+            color           : @datepicker-arrow-color;
+            padding         : (@datepicker-header-height - @datepicker-arrow-size) / 2;
             text-decoration : none;
             .icon-size(@datepicker-arrow-size);
             .box-sizing(content-box);
@@ -45,7 +45,7 @@
             }
         }
 
-        >.ui-datepicker-title{
+        > .ui-datepicker-title{
             line-height : @datepicker-header-height;
             margin      : 0 @datepicker-header-height;
             font-weight : normal;
@@ -55,7 +55,7 @@
                 height : auto;
                 float  : left;
 
-                &+select{
+                & + select{
                     margin-left : 2%;
                 }
             }
@@ -77,7 +77,7 @@
             width          : @datepicker-week-box-size;
             vertical-align : middle;
 
-            &.ui-datepicker-week-end>*{
+            &.ui-datepicker-week-end > *{
                 color : @datepicker-week-end-color;
             }
         }
@@ -98,18 +98,28 @@
                 font-size    : @datepicker-day-font-size;
                 border-right : 1px solid @datepicker-border-color;
                 border-top   : 1px solid @datepicker-border-color;
+                line-height : @datepicker-week-box-size;
 
+                a, span{
+                    display : block;
+                }
                 a{
-                    padding     : 0 !important;
-                    line-height : @datepicker-week-box-size;
-                    display     : block;
-                    color       : @text-color;
-                    background  : @datepicker-day-bg;
-                    border      : none;
+                    padding    : 0 !important;
+                    color      : @text-color;
+                    background : @datepicker-day-bg;
+                    border     : none;
                     .border-radius(0);
 
                     &:hover{
                         background : @state-primary-bg;
+                    }
+                }
+
+                &.ui-state-disabled{
+                    color : @gray-lighter;
+
+                    & > *{
+                        color : inherit;
                     }
                 }
 
