@@ -563,17 +563,26 @@
   font-size: 0.75em;
   border-right: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
+  line-height: 30px;
+}
+.ui-datepicker .ui-datepicker-calendar tbody td a,
+.ui-datepicker .ui-datepicker-calendar tbody td span {
+  display: block;
 }
 .ui-datepicker .ui-datepicker-calendar tbody td a {
   padding: 0 !important;
-  line-height: 30px;
-  display: block;
   color: #555555;
   background: transparent;
   border: none;
 }
 .ui-datepicker .ui-datepicker-calendar tbody td a:hover {
   background: #f3f6f8;
+}
+.ui-datepicker .ui-datepicker-calendar tbody td.ui-state-disabled {
+  color: #eeeeee;
+}
+.ui-datepicker .ui-datepicker-calendar tbody td.ui-state-disabled > * {
+  color: inherit;
 }
 .ui-datepicker .ui-datepicker-calendar tbody td.ui-datepicker-current-day a {
   color: #555555;

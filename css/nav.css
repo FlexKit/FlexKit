@@ -228,7 +228,7 @@ aside .relatedpages li p {
 .breadcrumbs a:hover {
   color: #83a3b3;
 }
-@media only screen and (min-width: 801px) {
+@media (min-width: 801px) {
   .mobile-bar,
   .mobile-menu {
     display: none;
@@ -266,6 +266,11 @@ aside .relatedpages li p {
   right: 0;
   z-index: 100;
   box-shadow: 0 0 7px #555555;
+}
+@media only print {
+  .mobile-bar {
+    display: none;
+  }
 }
 .mobile-bar .btn {
   line-height: inherit;

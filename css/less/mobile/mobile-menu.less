@@ -27,7 +27,7 @@
 @menu-height      : 300px;
 // Used for top and bottom menu
 
-@media only screen and (min-width : (@responsive-size-tablet + 1)){
+@media (min-width : (@responsive-size-tablet + 1)){
     .mobile-bar, .mobile-menu{
         display : none;
     }
@@ -67,6 +67,12 @@
     right    : 0;
     z-index  : @mobile-bar-zindex;
     .box-shadow(0 0 7px @gray-dark);
+
+    @media only print{
+        &{
+            display : none;
+        }
+    }
 
     .btn{
         line-height : inherit;
