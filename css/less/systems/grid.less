@@ -1,24 +1,23 @@
 .container{
     position : relative;
-
-    & when not (@grid-container-width = 100%){
+    & when not(@grid-container-width = 100%){
         margin-left  : auto;
         margin-right : auto;
     }
-    & when (@responsive = false) and not (@grid-container-width = 100%){
+    & when (@responsive = false) and not(@grid-container-width = 100%){
         width : @grid-container-width;
     }
-    & when (@responsive = true) and not (@grid-container-width = 100%){
+    & when (@responsive = true) and not(@grid-container-width = 100%){
         max-width : @grid-container-width;
     }
-    .clearfix();
+    .clearfix-mixin();
 }
 
 // GRID CSS
 //==================================================
 [class*=" grid_"], [class^="grid_"], [class*="-grid_"], [class*="_grid_"]{
     & when (@grid-system = true){
-        display      : inline;
+        //        display      : inline;
         float        : left;
         position     : relative;
         width        : 100% - @grid-margin-width;
@@ -96,15 +95,3 @@
     }
 }
 .column();
-
-.clear{
-    display    : block;
-    clear      : both;
-    overflow   : hidden;
-    visibility : hidden;
-    height     : 0;
-}
-
-.clearfix{
-    .clearfix();
-}

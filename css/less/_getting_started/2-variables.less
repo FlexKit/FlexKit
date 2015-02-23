@@ -1,7 +1,5 @@
 // ### Variables ###
 
-//TODO create print style  http://habrahabr.ru/post/160997/
-
 // Activate elements
 //==================================================
 @import "1-activate_elements";
@@ -22,6 +20,7 @@
 //==================================================
 @font-family-text     : Helvetica, "Helvetica Neue", Arial, sans-serif;
 @font-family-headings : "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+@font-family-icons    : 'flexkit-icons';
 
 @font-size-larger     : 1.5em;
 @font-size-large      : 1.25em;
@@ -31,6 +30,8 @@
 
 // [Icons size]
 //==================================================
+@icon-prefix : icon;
+
 @icon-size-larger : 24px;
 @icon-size-large  : 19px;
 @icon-size-base   : 16px;
@@ -54,9 +55,9 @@
 // [Column system]
 //==================================================
 // Number of columns in the column system
-@columns           : @grid-columns;
-@columns-tablet    : @grid-columns-tablet;
-@columns-mobile    : @grid-columns-mobile;
+@columns           : 6;
+@columns-tablet    : 6;
+@columns-mobile    : 4;
 
 // Margin, to be divided by two and applied to the left and right of all columns
 @column-margin-width : @grid-margin-width;

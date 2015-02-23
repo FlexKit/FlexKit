@@ -11,7 +11,7 @@
     & when (@moz = true) { background-image : @backgroundMoz; }
     & when (@ie = true) { background-image : @backgroundMs; }
     & when (@opera = true) { background-image : @backgroundOpera; }
-    & when (@w3c = true) { background-image : @backgroundW3C; }
+    background-image : @backgroundW3C;
 }
 .gradient-horizontal(...) {
     @backgroundWebkit: e(`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-webkit-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-webkit-radial-gradient").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d.toString().replace(/\[/g,"").replace(/\]/g,"");}())`);
@@ -32,7 +32,7 @@
     // IE10+
     & when (@ie = true) { background-image : -ms-linear-gradient(left, @backgroundW3C); }
     // ie 8
-    & when (@ie8 = true) and (@ie = true) and not (@PIE = true) {
+    & when (@ie8 = true) and (@ie = true) and not(@PIE = true) {
         @color-one       : e(`(function(){var a, b; a = "@{backgroundW3C}", b = a.indexOf(' '); return a.substring(0, b);}())`);
         @color-two       : e(`(function(){var a, b, c; a = "@{backgroundW3C}", b = a.lastIndexOf(',') + 2, c = a.lastIndexOf(' '); return a.substring(b, c);}())`);
         filter : e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@color-one,@color-two));
@@ -40,7 +40,7 @@
     // Opera11.10+
     & when (@opera = true) { background-image : -o-linear-gradient(left, @backgroundOpera); }
     // W3C
-    & when (@w3c = true) { background-image : linear-gradient(to right, @backgroundW3C); }
+    background-image : linear-gradient(to right, @backgroundW3C);
 }
 
 .gradient-vertical(...) {
@@ -62,7 +62,7 @@
     // IE10+
     & when (@ie = true) { background-image : -ms-linear-gradient(top, @backgroundW3C); }
     // ie8
-    & when (@ie8 = true) and (@ie = true) and not (@PIE = true) {
+    & when (@ie8 = true) and (@ie = true) and not(@PIE = true) {
         @color-one       : e(`(function(){var a, b; a = "@{backgroundW3C}", b = a.indexOf(' '); return a.substring(0, b);}())`);
         @color-two       : e(`(function(){var a, b, c; a = "@{backgroundW3C}", b = a.lastIndexOf(',') + 2, c = a.lastIndexOf(' '); return a.substring(b, c);}())`);
         filter : e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@color-one,@color-two));
@@ -70,16 +70,12 @@
     // Opera11.10+
     & when (@opera = true) { background-image : -o-linear-gradient(top, @backgroundOpera); }
     // W3C
-    & when (@w3c = true) { background-image : linear-gradient(top, @backgroundW3C); }
+    background-image : linear-gradient(top, @backgroundW3C);
 }
 
 // -- Background size
 .background-size(@background-size) {
-    & when (@webkit = true) { -webkit-background-size : @background-size; }
-//    & when (@moz = true) { -moz-background-size : @background-size; }
-//    & when (@ie = true) { -ms-background-size : @background-size; }
-//    & when (@opera = true) { -o-background-size : @background-size; }
-    & when (@w3c = true) { background-size : @background-size; }
+    .prefixer(background-size; @background-size);
 }
 .background-size-filter(@image-path) {
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{image-path}', sizingMethod='scale');
@@ -88,77 +84,40 @@
 
 // -- Background clip
 .background-clip(@background-clip : padding-box) {
-    & when (@webkit = true) { -webkit-background-clip : @background-clip; }
-//    & when (@moz = true) { -moz-background-size : @background-clip; }
-//    & when (@ie = true) { -ms-background-size : @background-clip; }
-//    & when (@opera = true) { -o-background-size : @background-clip; }
-    & when (@w3c = true) { background-clip : @background-clip; }
+    .prefixer(background-clip; @background-clip);
 }
 
 // -- Box Sizing
 .box-sizing(@box-sizing:border-box) {
-//    & when (@webkit = true) { -webkit-box-sizing : @box-sizing; }
-    & when (@moz = true) { -moz-box-sizing : @box-sizing; }
-//    & when (@ie = true) { -ms-box-sizing : @box-sizing; }
-//    & when (@opera = true) { -o-box-sizing : @box-sizing; }
-    & when (@w3c = true) { box-sizing : @box-sizing; }
+    .prefixer(box-sizing; @box-sizing);
 }
 
 // -- Content Columns
 .content-columns(@columns){
-    & when (@webkit = true) { -webkit-columns : @columns; }
-    & when (@moz = true) { -moz-columns : @columns; }
-//    & when (@ie = true) { -ms-columns : @columns; }
-//    & when (@opera = true) { -o-columns : @columns; }
-    & when (@w3c = true) { columns : @columns; }
+    .prefixer(columns; @columns; webkit moz);
 }
 .column-count(@count) {
-    & when (@webkit = true) { -webkit-column-count : @count; }
-    & when (@moz = true) { -moz-column-count : @count; }
-//    & when (@ie = true) { -ms-column-count : @count; }
-//    & when (@opera = true) { -o-column-count : @count; }
-    & when (@w3c = true) { column-count : @count; }
+    .prefixer(column-count; @count; webkit moz);
 }
 .column-gap(@gap) {
-    & when (@webkit = true) { -webkit-column-gap : @gap; }
-    & when (@moz = true) { -moz-column-gap : @gap; }
-//    & when (@ie = true) { -ms-column-gap : @gap; }
-//    & when (@opera = true) { -o-column-gap : @gap; }
-    & when (@w3c = true) { column-gap : @gap; }
+    .prefixer(column-gap; @gap; webkit moz);
 }
 .column-width(@width) {
-    & when (@webkit = true) { -webkit-column-width : @width; }
-    & when (@moz = true) { -moz-column-width : @width; }
-//    & when (@ie = true) { -ms-column-width : @width; }
-//    & when (@opera = true) { -o-column-width : @width; }
-    & when (@w3c = true) { column-width : @width; }
+    .prefixer(column-width; @width; webkit moz);
 }
 .column-rule(@rule) {
-    & when (@webkit = true) { -webkit-column-rule : @rule; }
-    & when (@moz = true) { -moz-column-rule : @rule; }
-//    & when (@ie = true) { -ms-column-rule : @rule; }
-//    & when (@opera = true) { -o-column-rule : @rule; }
-    & when (@w3c = true) { column-rule : @rule; }
+    .prefixer(column-rule; @rule; webkit moz);
 }
 // -- Border Radius
-.border-radius(@radius, @important : false) when not (@radius = 0), (@important = true){
-//    & when (@webkit = true) { -webkit-border-radius : @radius; }
-//    & when (@moz = true) { -moz-border-radius : @radius; }
-//    & when (@ie = true) { -ms-border-radius : @radius; }
-//    & when (@opera = true) { -o-border-radius : @radius; }
-    & when (@w3c = true) { border-radius : @radius; }
-    .background-clip();
+.border-radius(@radius, @important : false) when not(@radius = 0), (@important = true){
+    .prefixer(border-radius; @radius);
     .pie();
 }
 
 // -- Box Shadow
 .box-shadow(@shadow; @shadow-switcher : true) when (@shadow-switcher = true){
-//    & when (@webkit = true) { -webkit-box-shadow : @shadow; }
-//    & when (@moz = true) { -moz-box-shadow : @shadow; }
-//    & when (@ie = true) { -ms-box-shadow : @shadow; }
-//    & when (@opera = true) { -o-box-shadow : @shadow; }
-    & when (@w3c = true) { box-shadow : @shadow; }
-//    & when (@ie = true) and (@ie8 = true), (@ie7 = true) and not (@activate-pie = true){
+    .prefixer(box-shadow; @shadow);
+//    & when (@ie = true) and (@ie8 = true), (@ie7 = true) and not(@activate-pie = true){
 //        @offX      : extract(@shadow, 1);
 //        @offY      : extract(@shadow, 2);
 //        @n         : length(@shadow);
@@ -170,37 +129,21 @@
 
 // -- Backface Visibility
 .backface-visibility(@visibility) {
-    & when (@webkit = true) { -webkit-backface-visibility : @visibility; }
-//    & when (@moz = true) { -moz-backface-visibility : @visibility; }
-//    & when (@ie = true) { -ms-backface-visibility : @visibility; }
-    & when (@opera = true) { -o-backface-visibility : @visibility; }
-    & when (@w3c = true) { backface-visibility : @visibility; }
+    .prefixer(backface-visibility; @visibility; webkit);
 }
 
 // Transformations
 //==================================================
 .transition(@property:all; @time:0.5s; @timing-function: ease) {
-    & when (@webkit = true) { -webkit-transition : @property @time @timing-function; }
-//    & when (@moz = true) { -moz-transition : @property @time @timing-function; }
-//    & when (@ie = true) { -ms-transition : @property @time @timing-function; }
-    & when (@opera = true) { -o-transition : @property @time @timing-function; }
-    & when (@w3c = true) { transition : @property @time @timing-function; }
+    .prefixer(transition; @arguments; webkit);
 }
 
 .transform(@transform) {
-    & when (@webkit = true) { -webkit-transform : @transform; }
-//    & when (@moz = true) { -moz-transform : @transform; }
-    & when (@ie = true) { -ms-transform : @transform; }
-    & when (@opera = true) { -o-transform : @transform; }
-    & when (@w3c = true) { transform : @transform; }
+    .prefixer(transform; @transform; webkit ms);
 }
 
 .transform-origin(@transform-origin) {
-    & when (@webkit = true) { -webkit-transform-origin : @transform-origin; }
-    & when (@moz = true) { -moz-transform-origin : @transform-origin; }
-    & when (@ie = true) { -ms-transform-origin : @transform-origin; }
-    & when (@opera = true) { -o-transform-origin : @transform-origin; }
-    & when (@w3c = true) { transform-origin : @transform-origin; }
+    .prefixer(transform-origin; @transform-origin; webkit ms);
 }
 
 .rotate(...) {
@@ -225,11 +168,7 @@
 // Perspective
 //=================================================
 .perspective(@perspective){
-    & when (@webkit = true) { -webkit-perspective : @perspective; }
-    & when (@moz = true) { -moz-perspective : @perspective; }
-    & when (@ie = true) { -ms-perspective : @perspective; }
-    & when (@opera = true) { -o-perspective : @perspective; }
-    & when (@w3c = true) { perspective : @perspective; }
+    .prefixer(perspective; @perspective; webkit);
 }
 
 // RGBA (Support with ie8)
@@ -250,25 +189,18 @@
     & when (@webkit = true) {
         &::-webkit-input-placeholder{ color : @color; }
     }
-    // Safari and Chrome
     & when (@moz = true) {
-        // Firefox 4-18
-        &:-moz-placeholder{ color : @color; }
-        // Firefox 19+
         &::-moz-placeholder{ color : @color; }
     }
     & when (@ie = true) {
         &:-ms-input-placeholder{ color : @color; }
     }
+    &:placeholder{ color : @color; }
 }
 
 // User select
 // For selecting text on the page
 //==================================================
 .user-select(@select:none) {
-    & when (@webkit = true) { -webkit-user-select : @select; -khtml-user-select : @select; }
-    & when (@moz = true) { -moz-user-select : @select; }
-    & when (@ie = true) { -ms-user-select : @select; }
-//    & when (@opera = true) { -o-user-select : @select; }
-    & when (@w3c = true) { user-select : @select; }
+    .prefixer(user-select; @select; webkit moz ms);
 }

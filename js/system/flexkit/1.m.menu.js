@@ -1,8 +1,12 @@
 $('.dropdown-btn').each(function(){
     var menu = $(this).data('menu'),
         height = $(this).data('menu-height'),
-        position = $(this).data('menu-position');
-    $(menu).addClass('dropdown-menu ' + position).height(height);
+        position = $(this).data('menu-position'),
+        type = $(this).data('menu-type'); // mobile or empty
+    if(type !== 'mobile'){
+        $(menu).addClass('dropdown-menu');
+    }
+    $(menu).addClass(position).height(height);
 });
 
 tapButton('menu-btn', showMenu);
@@ -18,9 +22,8 @@ $(body).on(events[0], hideMenu);
 
 function hideMenu(e){
     if(e.target.hasAttribute('data-menu-open') || e.target.hasAttribute('data-dropdown-open')){
-        $('.dropdown-menu').removeClass('open');
-        $('.dropdown-btn').removeClass('active');
-        $('.menu-btn').removeClass('active');
+        $('.dropdown-menu, .dropdown-menu-mobile').removeClass('open');
+        $('.dropdown-btn, .menu-btn').removeClass('active');
         $(body).removeAttr('data-menu-open').removeAttr('data-dropdown-open');
     }
 }
@@ -46,7 +49,11 @@ function tapButton(selector, fun){
     var listItems = document.getElementsByClassName(selector);
     if(!window.Hammer){
         for(var i = 0; i < listItems.length; i++){
-            listItems[i].addEventListener('click', fun, false);
+            if (window.addEventListener) {
+                listItems[i].addEventListener('click', fun, false);
+            } else if (window.attachEvent) {
+                listItems[i].attachEvent('click', fun, false);
+            }
         }
     }else{
         Hammer.each(listItems, function(item){

@@ -12,7 +12,6 @@
   position: relative;
   max-width: 100%;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -195,12 +194,9 @@
 .ui-tabs {
   position: relative;
 }
-.ui-tabs:after,
-.ui-tabs:before {
+.ui-tabs:after {
   content: "";
   display: table;
-}
-.ui-tabs:after {
   clear: both;
 }
 .ui-tabs .ui-tabs-nav {
@@ -351,7 +347,6 @@
   padding: 10px;
   background: transparent;
   color: #ffffff;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   width: 16px;
   height: 16px;
@@ -505,7 +500,6 @@
   color: #555555;
   padding: 8px;
   text-decoration: none;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 .ui-datepicker .ui-datepicker-header > a:before {
@@ -748,8 +742,6 @@
   width: 1.4em;
   height: 1.4em;
   border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
 }
 .ui-slider .ui-slider-range {
   position: absolute;
@@ -941,60 +933,44 @@
 .chosen-select-deselect {
   width: 100%;
 }
-.responsive-video {
+.responsive-ratio {
   position: relative;
   height: 0;
   overflow: hidden;
+  padding: 0;
+  display: block;
+  box-sizing: content-box;
 }
-.responsive-video._16x9 {
+.responsive-ratio:before {
+  display: block;
+  content: " ";
+}
+._16x9.responsive-ratio:before {
   padding-bottom: 56.25%;
 }
-.responsive-video._9x16 {
+._9x16.responsive-ratio:before {
   padding-bottom: 177.77777778%;
 }
-.responsive-video._4x3 {
+._4x3.responsive-ratio:before {
   padding-bottom: 75%;
 }
-.responsive-video._3x4 {
+._3x4.responsive-ratio:before {
   padding-bottom: 133.33333333%;
 }
-.responsive-video._1x1 {
+._1x1.responsive-ratio:before {
   padding-bottom: 100%;
 }
-.responsive-video iframe,
-.responsive-video object,
-.responsive-video embed {
+.responsive-ratio iframe,
+.responsive-ratio object,
+.responsive-ratio embed,
+.responsive-ratio video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.responsive-image {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  padding: 0;
-  display: block;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-.responsive-image._16x9 {
-  padding-bottom: 56.25%;
-}
-.responsive-image._9x16 {
-  padding-bottom: 177.77777778%;
-}
-.responsive-image._4x3 {
-  padding-bottom: 75%;
-}
-.responsive-image._3x4 {
-  padding-bottom: 133.33333333%;
-}
-.responsive-image._1x1 {
-  padding-bottom: 100%;
-}
-.responsive-image img {
+.responsive-ratio img {
   position: absolute !important;
   top: 0;
   left: 0;
@@ -1006,11 +982,11 @@
   width: auto;
   height: auto;
 }
-.responsive-image.bottom img {
+.responsive-ratio.bottom img {
   min-height: 0 !important;
   top: auto;
 }
-.responsive-image.top img {
+.responsive-ratio.top img {
   min-height: 0 !important;
   bottom: auto;
 }

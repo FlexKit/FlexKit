@@ -23,14 +23,6 @@
     color      : @text-select-color;
 }
 
-html, body{
-    height : 100%;
-}
-body{
-    -webkit-font-smoothing : subpixel-antialiased !important;
-    -ms-touch-action       : manipulation;
-    touch-action           : manipulation;
-}
 blockquote, q{
     quotes : none;
 }
@@ -169,7 +161,7 @@ button, [type="button"], [type="reset"], [type="submit"]{
     // Reset for all navigation items, related-products
     //==================================================
     .main_menu, .listpages, .listcategories, .featureditem, .featureapage, .search-results, .relatedpages, .listxrss, .related-products{
-        .clearfix();
+        .clearfix-mixin();
     }
 
     //fix for Safari 3
@@ -270,11 +262,11 @@ button, [type="button"], [type="reset"], [type="submit"]{
         .reset-style;
     }
 }
-& when not (@seotoaster = true){
+& when not(@seotoaster = true){
     // Reset for all navigation items, related-products
     //==================================================
     .main_menu{
-        .clearfix();
+        .clearfix-mixin();
     }
 
     //fix for Safari 3
@@ -304,16 +296,18 @@ button, [type="button"], [type="reset"], [type="submit"]{
     }
 }
 
-.disable-hover, .disable-hover *{
-    pointer-events : none !important;
+.clear{
+    display    : block;
+    clear      : both;
+    overflow   : hidden;
+    visibility : hidden;
+    height     : 0;
 }
 
-//  Fonts
-//==================================================
-@import "components/fonts";
+.clearfix{
+    .clearfix-mixin();
+}
 
-//  Toaster ICON
-//==================================================
-& when (@flexkit-icons = true){
-    @import "components/flexkit-icons";
+.disable-hover, .disable-hover *{
+    pointer-events : none !important;
 }

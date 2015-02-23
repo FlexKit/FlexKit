@@ -27,6 +27,7 @@
             span{ display : none; }
 
             &.ui-datepicker-prev{
+                &:extend([class*="@{icon-prefix}-"]:before);
                 left : 0;
 
                 span{ }
@@ -98,7 +99,7 @@
                 font-size    : @datepicker-day-font-size;
                 border-right : 1px solid @datepicker-border-color;
                 border-top   : 1px solid @datepicker-border-color;
-                line-height : @datepicker-week-box-size;
+                line-height  : @datepicker-week-box-size;
 
                 a, span{
                     display : block;

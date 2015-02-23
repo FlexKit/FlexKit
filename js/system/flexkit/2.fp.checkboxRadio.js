@@ -1,5 +1,5 @@
 function _checkboxRadio(){
-    if(!$('.ie8').length){
+//    if(!$('.ie8').length){
         $('input:checkbox, input:radio').not('.processed, .icon, .hidden').each(function(){
 
             var id = $(this).prop('id'), labelClass;
@@ -38,7 +38,7 @@ function _checkboxRadio(){
                 $(this).after($span);
             }
         });
-    }
+//    }
 }
 _checkboxRadio();
 

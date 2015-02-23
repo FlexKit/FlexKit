@@ -97,34 +97,34 @@ a{
         :checked ~ input, input:focus{ border-color : @gplus; }
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @gplus; }
-            & ~ [class*="icon-"]{ color : @gplus; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @gplus; }
         }
     }
     &.twitter when (@form-labeled-social-twitter = true) and (@form-labeled-social = true){
         :checked ~ input, input:focus{ border-color : @twitter; }
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @twitter; }
-            & ~ [class*="icon-"]{ color : @twitter; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @twitter; }
         }
     }
     &.facebook when (@form-labeled-social-facebook = true) and (@form-labeled-social = true){
         :checked ~ input, input:focus{ border-color : @facebook; }
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @facebook; }
-            & ~ [class*="icon-"]{ color : @facebook; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @facebook; }
         }
     }
     &.linkedin when (@form-labeled-social-linkedin = true) and (@form-labeled-social = true){
         :checked ~ input, input:focus{ border-color : @linkedin; }
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @linkedin; }
-            & ~ [class*="icon-"]{ color : @linkedin; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @linkedin; }
         }
     }
     &.youtube when (@form-labeled-social-youtube = true) and (@form-labeled-social = true){
         :checked ~ input, input:focus{ border-color : @youtube; }
         *:checked, *:focus{
-            & ~ [class*="icon-"]{ color : @youtube; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @youtube; }
             & ~ label, & ~ .label{ background : @youtube; }
         }
     }
@@ -132,42 +132,42 @@ a{
         :checked ~ input, input:focus{ border-color : @rss; }
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @rss; }
-            & ~ [class*="icon-"]{ color : @rss; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @rss; }
         }
     }
     &.skype when (@form-labeled-social-skype = true) and (@form-labeled-social = true){
         :checked ~ input, input:focus{ border-color : @skype; }
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @skype; }
-            & ~ [class*="icon-"]{ color : @skype; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @skype; }
         }
     }
     &.flicker when (@form-labeled-social-flicker = true) and (@form-labeled-social = true){
         :checked ~ input, input:focus{ border-color : @flicker; }
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @flicker; }
-            & ~ [class*="icon-"]{ color : @flicker; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @flicker; }
         }
     }
     &.pinterest when (@form-labeled-social-pinterest = true) and (@form-labeled-social = true){
         :checked ~ input, input:focus{ border-color : @pinterest; }
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @pinterest; }
-            & ~ [class*="icon-"]{ color : @pinterest; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @pinterest; }
         }
     }
     &.vkontakte when (@form-labeled-social-vkontakte = true) and (@form-labeled-social = true){
         :checked ~ input, input:focus{ border-color : @vkontakte; }
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @vkontakte; }
-            & ~ [class*="icon-"]{ color : @vkontakte; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @vkontakte; }
         }
     }
     &.instagram when (@form-labeled-social-instagram = true) and (@form-labeled-social = true){
         :checked ~ input, input:focus{ border-color : @instagram; }
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @instagram; }
-            & ~ [class*="icon-"]{ color : @instagram; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @instagram; }
         }
     }
 }

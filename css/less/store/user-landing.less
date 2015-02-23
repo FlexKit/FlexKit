@@ -1,0 +1,152 @@
+/*======= Table =======*/
+#orders-table{
+    border : none;
+    th{
+        border-top : none;
+    }
+    td{
+        i{
+            color : #999;
+        }
+        &.shipping-data p{ margin : 0; }
+    }
+}
+/* Profile header */
+#profile .profile-picture img{
+    border  : 1px solid #c4c4c4;
+    padding : 2px;
+}
+#profile h2.client-name, #profile h4{
+    margin      : 0;
+    font-weight : normal;
+}
+#profile .profile-header p.title{
+    background     : #ddd;
+    padding        : 3px;
+    color          : #444;
+    border         : 1px solid #c4c4c4;
+    border-bottom  : none;
+    margin         : 0;
+    text-transform : uppercase;
+    font-weight    : bold;
+}
+#profile .profile-header ul.stats{
+    margin     : 0;
+    padding    : 5px;
+    background : #fff;
+    border     : 1px solid #c4c4c4;
+}
+#profile .profile-header ul.stats li{
+    list-style     : none;
+    text-align     : center;
+    vertical-align : middle;
+    padding        : 10px 0;
+    margin         : 1%;
+    border-radius  : 4px;
+    color          : #f5f5f5;
+    font-weight    : bold;
+    font-variant   : small-caps;
+    cursor         : pointer;
+}
+#profile .profile-header ul.stats li.total{
+    background-color : #87ceeb;
+}
+#profile .profile-header ul.stats li.new{
+    background-color : #32cd32;
+}
+#profile .profile-header ul.stats li.completed{
+    background-color : #666666;
+}
+#profile .profile-header ul.stats li.pending{
+    background-color : #ff7f50;
+}
+#profile .profile-header ul.stats li.shipped{
+    background-color : #9FC569;
+}
+#profile .profile-header ul.stats li.delivered{
+    background-color : #32cd32;
+}
+
+/* Profile address */
+#profile #profile-address-list > div{
+    float          : none;
+    width          : 32%;
+    margin         : 5px 0.4%;
+    display        : inline-block;
+    vertical-align : top;
+    text-align     : left;
+}
+* + html #profile #profile-address-list > div{
+    display : inline;
+}
+#profile #profile-address-list div.adr{
+    padding            : 5px;
+    border-radius      : 3px;
+    border             : 1px solid #ccc;
+    box-shadow         : 1px 1px 2px #DDDDDD inset;
+    -ms-box-shadow     : 1px 1px 2px #DDDDDD inset;
+    -moz-box-shadow    : 1px 1px 2px #DDDDDD inset;
+    -webkit-box-shadow : 1px 1px 2px #DDDDDD inset;
+}
+#profile div.adr a.delete-lnk{
+    position : absolute;
+    top      : 2px;
+    right    : 2px;
+}
+
+#users-tabs ul.user-stats{
+    margin    : 20px 0;
+    padding   : 0;
+}
+#user-orders-table a{
+    color : #5ebddd !important;
+}
+#users-tabs ul.user-stats li{
+    .button();
+    //.button-size-small();
+}
+#users-tabs .user-orders-range{
+    float       : left;
+    margin      : 20px 0;
+    white-space : nowrap;
+}
+#users-tabs .user-orders-range label{
+    display : inline-block;
+    width   : auto;
+}
+#users-tabs .user-orders-range input{
+    padding    : 6px 5px 6px 20px;
+    background : url(images/datepicker-icon.gif) 5px 7px no-repeat;
+    margin     : 0 10px;
+    width      : 105px;
+}
+
+#user-edit-account{
+    padding-top : 20px;
+}
+#user-edit-account p{
+    margin     : 0 0 10px;
+    min-height : 40px;
+    float      : left;
+    width      : 35%;
+}
+#user-edit-account p label{
+    margin      : 0; padding : 0 0px 5px;
+    font-weight : bold;
+    font-size   : 13px;
+}
+#user-edit-account p input[type="text"],
+#user-edit-account p input[type="password"]{
+    width : 100%;
+}
+
+#user-edit-account .user-current-email{
+    font-size : 14px;
+}
+#user-orders-table_paginate{
+    margin-top : @padding-large-horizontal;
+    a, span{
+        .button();
+        //.button-size-small();
+    }
+}

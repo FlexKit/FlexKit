@@ -6,13 +6,13 @@ blockquote{
     position  : relative;
 
     &:before, &:after{
-        position    : absolute;
         color       : @gray-light;
-        font-size   : 2em;
-        & when (@flexkit-icons = true){
-            font-family : 'flexkit-icons';
-        }
+        position    : absolute;
         line-height : 1em;
+        .font-size(@font-size-large * 2);
+        & when (@flexkit-icons = true){
+            &:extend([class*="@{icon-prefix}-"]:before);
+        }
     }
 
     &:after{
@@ -22,8 +22,7 @@ blockquote{
             content : "\201c";
         }
         & when (@flexkit-icons = true){
-            content : "\e074";
-            //content : "\e076"; // variant 2
+            &:extend(.@{icon-prefix}-quote2:before);
         }
     }
 
@@ -34,8 +33,7 @@ blockquote{
             content : "\201e";
         }
         & when (@flexkit-icons = true){
-            content : "\e073";
-            //content : "\e075"; // variant 2
+            &:extend(.@{icon-prefix}-quote:before);
         }
     }
 
@@ -60,9 +58,10 @@ blockquote{
     &.onequote when (@blockquote-onequote = true) and (@blockquote-types = true){
         padding-left  : 2em;
         padding-right : 2em;
+
         &:before{
-            top       : -0.45em;
-            font-size : 5em;
+            top : -0.45em;
+            .font-size(@font-size-large * 5);
             .opacity(0.2);
         }
         &:after{
@@ -106,7 +105,7 @@ blockquote{
         }
 
         &.right when (@blockquote-cloud-right = true) and (@blockquote-types = true){
-            zoom: 1;
+            zoom : 1;
 
             &:after{
                 left  : auto;
@@ -120,7 +119,7 @@ blockquote{
         }
 
         &.left when (@blockquote-cloud-left = true) and (@blockquote-types = true){
-            zoom: 1;
+            zoom : 1;
 
             &:after{
                 left               : @indent;

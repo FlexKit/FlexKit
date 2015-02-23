@@ -88,7 +88,7 @@
 
     &.top when (@top-block = true){
         top         : 0;
-        height      : @top-block-height;
+        //        height        : @top-block-height;
         line-height : @top-block-height;
         color       : @top-block-color;
         background  : @top-block-bg;
@@ -102,7 +102,7 @@
 
     &.bottom when (@bottom-block = true){
         bottom      : 0;
-        height      : @bottom-block-height;
+        //        height      : @bottom-block-height;
         line-height : @bottom-block-height;
         color       : @bottom-block-color;
         background  : @bottom-block-bg;
@@ -196,7 +196,12 @@
         border-bottom : 1px solid @gray-lighter;
 
         &:hover{
-            background : transparent;
+            & when not(@nav-bg = @nav-bg-li-hover){
+                background : transparent;
+            }
+            & when not(@nav-color = @nav-color-li-hover){
+                color : inherit;
+            }
 
             ul{
                 display : none;
@@ -282,13 +287,14 @@
     }
 
     &:hover, &.active{
+        .rgba(#000, .2);
     }
 }
 @media only screen and (max-width : @responsive-size-tablet){
     & when (@mobile-menu-over = true){
         @import "menu/over";
     }
-    & when (@mobile-menu-under = true) and not (@mobile-menu-over = true){
+    & when (@mobile-menu-under = true) and not(@mobile-menu-over = true){
         @import "menu/under";
     }
 }

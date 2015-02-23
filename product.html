@@ -24,13 +24,13 @@
                     {$quote:form}
                 </section>
                 <section class="grid_7" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                    <div class="grid_12 mb15px alpha omega">
-                        <p class="product-price h1 alpha grid_5 t-grid_2 mb0px" itemprop="price">{$product:price}</p>
-                        <input id="productquantity" class="grid_2 larger t-alpha m-alpha t-grid_3 m-grid_1" type="text" name="productquantity-{$product:id}" value="1"/>
-                        <div class="grid_5 t-grid_3 m-grid_3 t-omega m-omega omega text-center">{$store:addtocart:{$product:id}}</div>
+                    <div class="mb15px clearfix">
+                        <p class="product-price h1 grid_5 alpha mb0px" itemprop="price">{$product:price}</p>
+                        <input id="productquantity" class="grid_2" type="text" name="productquantity-{$product:id}" value="1"/>
+                        <a class="tcart-add grid_5 omega" href="javascript:;" data-pid="{$product:id}">Add to cart</a>
                     </div>
-                    <div class="tabs grid_12">
-                        <ul class="list-unstyled list-inline">
+                    <div class="tabs">
+                        <ul>
                             <li class="mini"><a href="#product-tab1">{$header:product-tab1:static}</a></li>
                             <li class="mini"><a href="#product-tab2">{$header:product-tab2:static}</a></li>
                         </ul>
@@ -48,8 +48,8 @@
                             {$product:options}
                         </div>
                     </div>
-                    <div class="tabs grid_12 mt30px alpha omega">
-                        <ul class="list-unstyled list-inline">
+                    <div class="tabs mt30px">
+                        <ul>
                             <li><a href="#tabs-1">{$header:tab1:static}</a></li>
                             <li><a href="#tabs-2">{$header:tab2:static}</a></li>
                             <li><a href="#tabs-3">{$header:tab3:static}</a></li>

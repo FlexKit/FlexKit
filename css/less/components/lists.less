@@ -94,7 +94,7 @@ ul{
                 color       : inherit;
                 margin-left : -1em;
                 & when (@flexkit-icons = true){
-                    font-family : 'flexkit-icons';
+                    font-family : @font-family-icons;
                     content     : '\e0c3';
                 }
                 & when (@flexkit-icons = false){
@@ -241,7 +241,7 @@ ul{
 
     &.list-tags when (@list-tags = true) and (@lists-classes = true){
         margin-bottom : 0;
-        .clearfix();
+        .clearfix-mixin();
 
         & > li{
             float       : left;
