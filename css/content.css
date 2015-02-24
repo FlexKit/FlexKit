@@ -3705,6 +3705,18 @@ button.active,
   border-color: #7495a6;
   background-color: #a2bbc7;
 }
+.btn:active,
+button:active,
+[type="submit"]:active,
+[type="button"]:active,
+[type="reset"]:active,
+.btn.active,
+button.active,
+[type="submit"].active,
+[type="button"].active,
+[type="reset"].active {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) inset;
+}
 .btn[disabled],
 button[disabled],
 [type="submit"][disabled],
@@ -3749,18 +3761,6 @@ button[class*="grid_"],
 [class*="column_"] > [type="reset"] {
   padding-left: 0 !important;
   padding-right: 0 !important;
-}
-.btn:active,
-button:active,
-[type="submit"]:active,
-[type="button"]:active,
-[type="reset"]:active,
-.btn.active,
-button.active,
-[type="submit"].active,
-[type="button"].active,
-[type="reset"].active {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) inset;
 }
 .btn.inverse:hover,
 .btn.inverse:active {

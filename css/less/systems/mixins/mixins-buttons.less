@@ -28,6 +28,10 @@
     & when (@button-transition = false){
         .transition(none);
     }
+
+    &:active, &.active{
+        .box-shadow(2px 2px 4px rgba(0, 0, 0, .3) inset; @button-box-shadow);
+    }
 }
 
 // Button size
