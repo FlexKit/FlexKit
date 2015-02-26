@@ -3897,8 +3897,7 @@ button[class*="grid_"],
   color: #494949;
 }
 .btn.outline-bg {
-  line-height: 2.42857143em;
-  border: 0.07142857em solid;
+  border: 1px solid;
   box-shadow: none;
   color: #c2d2da;
   border-color: #c2d2da;
