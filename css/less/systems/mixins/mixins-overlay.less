@@ -1,14 +1,22 @@
 // Overlay mixins with dotted
 //===================================================
+.overlay() {
+    content  : '';
+    position : absolute;
+    top      : 0;
+    left     : 0;
+    right    : 0;
+    bottom   : 0;
+    z-index  : 1;
+}
 .overlay-dotted() {
     &:after{
-        content    : '';
-        position   : absolute;
-        top        : 0;
-        left       : 0;
-        right      : 0;
-        bottom     : 0;
-        z-index    : 1;
+        .overlay();
         background : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB9JREFUeNpiZmBg6AZiDiBWZ4YyQMCOCcYA4kMAAQYAHyYCCUdxidgAAAAASUVORK5CYII=");
+    }
+}
+.overlay-dotted2() {
+    &:after{
+        background : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAMUlEQVQY02NgYGBgBmJPIC6HYk+oGAbwAOIGNOyCTWE5FoXlFCnEZrUrNoVEe2awAwAQuA4CzdgWnwAAAABJRU5ErkJggg==");
     }
 }
