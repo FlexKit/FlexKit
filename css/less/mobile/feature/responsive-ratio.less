@@ -6,11 +6,10 @@
 
 .responsive-ratio when (@responsive-video = true){
     position : relative;
-    height   : 0;
     overflow : hidden;
     padding  : 0;
     display  : block;
-    .box-sizing(content-box);
+    height   : auto !important;
 
     &:before{
         display : block;
@@ -36,7 +35,7 @@
     }
 
     & when (@responsive-image = true){
-        img{
+        & > img{
             position   : absolute !important;
             top        : 0;
             left       : 0;
@@ -49,14 +48,22 @@
             height     : auto;
         }
 
-        &.bottom img{
+        &.bottom>img{
             min-height : 0 !important;
             top        : auto;
         }
 
-        &.top img{
+        &.top>img{
             min-height : 0 !important;
             bottom     : auto;
+        }
+
+        ._lbox, .gall{
+            img when (@seotoaster){
+                &:extend(.responsive-ratio>img);
+                &:extend(.responsive-ratio.top>img);
+                &:extend(.responsive-ratio.bottom>img);
+            }
         }
     }
 }
