@@ -14,7 +14,7 @@ tapButton('dropdown-btn', showDropdown);
 tapButton('sub-menu-btn', function(e){
     event.stopPropagation();
     event.preventDefault();
-    $(this).toggleClass('active').nextAll('ul').toggleClass('open');
+    $(e.target).toggleClass('active').nextAll('ul').toggleClass('open');
 });
 
 var body = document.body;
@@ -43,7 +43,7 @@ function showDropdown(e){
     var menu = e.target.getAttribute('data-menu');
     $(menu).addClass('open');
     body.setAttribute('data-dropdown-open', '');
-    $(this).addClass('active');
+    $(e.target).addClass('active');
 }
 
 function tapButton(selector, fun){

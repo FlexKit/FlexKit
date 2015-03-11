@@ -12,7 +12,7 @@
         loadScript(websiteUrl+"/themes/"+themeName+"/js/plugin/jquery.chosen.min.js");
     }
 
-    if(!jQuery().hammer && device.type){
+    if(!window.Hammer && device.type){
         loadScript(websiteUrl+"/themes/"+themeName+"/js/plugin/hammer.min.js");
     }
 })();
