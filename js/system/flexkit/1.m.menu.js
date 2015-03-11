@@ -24,24 +24,25 @@ function hideMenu(e){
     if(e.target.hasAttribute('data-menu-open') || e.target.hasAttribute('data-dropdown-open')){
         $('.dropdown-menu, .dropdown-menu-mobile').removeClass('open');
         $('.dropdown-btn, .menu-btn').removeClass('active');
-        $(body).removeAttr('data-menu-open').removeAttr('data-dropdown-open');
+        body.removeAttribute('data-menu-open');
+        body.removeAttribute('data-dropdown-open');
     }
 }
 
 function showMenu(e){
     //    even.stopPropagation();
     e.preventDefault();
-    var menuPosition = $(this).data('menu-position');
-    $(body).attr('data-menu-open', menuPosition);
-    $(this).addClass('active');
+    var menuPosition = e.target.getAttribute('data-menu-position');
+    body.setAttribute('data-menu-open', menuPosition);
+    $(e.target).addClass('active');
 }
 
 function showDropdown(e){
     //    ev.stopPropagation();
     e.preventDefault();
-    var menu = $(this).data('menu');
+    var menu = e.target.getAttribute('data-menu');
     $(menu).addClass('open');
-    $(body).attr('data-dropdown-open', '');
+    body.setAttribute('data-dropdown-open', '');
     $(this).addClass('active');
 }
 
