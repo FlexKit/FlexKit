@@ -12,15 +12,18 @@
 a{
     color           : @link-color;
     text-decoration : none;
-}
-a:visited{
-    //color : @link-color-visited;
-}
-a:hover{
-    color : @link-color-hover
-}
-a:active{
-    color : @link-color-active;
+
+    &:visited when not(@link-color-visited = none){
+        color : @link-color-visited;
+    }
+
+    &:hover{
+        color : @link-color-hover
+    }
+
+    &:active{
+        color : @link-color-active;
+    }
 }
 
 // Heading
