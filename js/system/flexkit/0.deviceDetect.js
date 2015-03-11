@@ -34,6 +34,7 @@
 
     // Main functions
     // --------------
+    device.type = false;
 
     device.ios = function () {
         return device.iphone() || device.ipod() || device.ipad();
