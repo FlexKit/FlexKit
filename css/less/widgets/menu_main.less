@@ -35,7 +35,7 @@
 
         &.current{
             & when (@nav-bg-li-hover = @nav-bg-li-current){
-                &:extend(.main_menu li:hover);
+                &:extend(.main_menu > li:hover);
             }
 
             & when not(@nav-bg-li-hover = @nav-bg-li-current){
