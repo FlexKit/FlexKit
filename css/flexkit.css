@@ -47,7 +47,7 @@
   font-size: 14px;
 }
 .carousel .carousel-btn:before {
-  font-family: 'flexkit-icons';
+  font-family: flexkit-icons;
   font-size: 3em;
   line-height: 1;
   height: 1em;
@@ -359,6 +359,9 @@
 .ui-dialog .ui-dialog-titlebar-close:before {
   font-size: 16px;
 }
+.ui-dialog .ui-dialog-titlebar-close:before {
+  content: "\e0a2";
+}
 .ui-dialog .ui-dialog-titlebar-close .ui-button-text {
   display: none;
 }
@@ -513,8 +516,14 @@
 .ui-datepicker .ui-datepicker-header > a.ui-datepicker-prev {
   left: 0;
 }
+.ui-datepicker .ui-datepicker-header > a.ui-datepicker-prev:before {
+  content: "\e0b4";
+}
 .ui-datepicker .ui-datepicker-header > a.ui-datepicker-next {
   right: 0;
+}
+.ui-datepicker .ui-datepicker-header > a.ui-datepicker-next:before {
+  content: "\e0b2";
 }
 .ui-datepicker .ui-datepicker-header > a:hover {
   background: #afafaf;
@@ -935,11 +944,10 @@
 }
 .responsive-ratio {
   position: relative;
-  height: 0;
   overflow: hidden;
   padding: 0;
   display: block;
-  box-sizing: content-box;
+  height: auto !important;
 }
 .responsive-ratio:before {
   display: block;
@@ -970,7 +978,9 @@
   width: 100%;
   height: 100%;
 }
-.responsive-ratio img {
+.responsive-ratio > img,
+.responsive-ratio ._lbox img,
+.responsive-ratio .gall img {
   position: absolute !important;
   top: 0;
   left: 0;
@@ -982,11 +992,15 @@
   width: auto;
   height: auto;
 }
-.responsive-ratio.bottom img {
+.responsive-ratio.bottom > img,
+.responsive-ratio ._lbox img,
+.responsive-ratio .gall img {
   min-height: 0 !important;
   top: auto;
 }
-.responsive-ratio.top img {
+.responsive-ratio.top > img,
+.responsive-ratio ._lbox img,
+.responsive-ratio .gall img {
   min-height: 0 !important;
   bottom: auto;
 }

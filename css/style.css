@@ -622,7 +622,7 @@ label[for*="chr-"] {
   color: #ffffff;
 }
 .cycle-slideshow [class*="cycle-"].action-button:before {
-  font-family: 'flexkit-icons';
+  font-family: flexkit-icons;
 }
 .cycle-slideshow [class*="cycle-"].action-button.cycle-prev {
   left: -54px;

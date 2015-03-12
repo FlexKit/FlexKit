@@ -24,7 +24,8 @@
   float: left;
   position: relative;
 }
-.main_menu > li:hover {
+.main_menu > li:hover,
+.main_menu a.current {
   background: #a2bbc7;
 }
 .main_menu > li:hover ul {
@@ -216,6 +217,9 @@ aside .relatedpages li p {
 .news-item .news-tags a:before {
   color: #888888;
   margin-right: 0.5em;
+}
+.news-item .newslog-tag-filter:before {
+  content: "\e02f";
 }
 .search-results li {
   margin-bottom: 30px;

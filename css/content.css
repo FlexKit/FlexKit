@@ -99,10 +99,9 @@
 [data-icon]:before,
 .ui-datepicker-prev:before,
 .ui-datepicker-next:before,
-.newslog-tag-filter:before,
-blockquote:before,
-blockquote:after {
-  font-family: 'flexkit-icons';
+.ui-dialog-titlebar-close:before,
+.newslog-tag-filter:before {
+  font-family: flexkit-icons;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -259,8 +258,7 @@ blockquote:after {
 .icon-folder4:before {
   content: "\e02e";
 }
-.icon-tag:before,
-.newslog-tag-filter:before {
+.icon-tag:before {
   content: "\e02f";
 }
 .icon-tag2:before {
@@ -605,8 +603,7 @@ blockquote:after {
 .icon-expand:before {
   content: "\e0a1";
 }
-.icon-cancel:before,
-.ui-dialog-titlebar-close:before {
+.icon-cancel:before {
   content: "\e0a2";
 }
 .icon-checkmark:before {
@@ -663,15 +660,13 @@ blockquote:after {
 .icon-arrow-up:before {
   content: "\e0b1";
 }
-.icon-arrow-right:before,
-.ui-datepicker-next:before {
+.icon-arrow-right:before {
   content: "\e0b2";
 }
 .icon-arrow-down:before {
   content: "\e0b3";
 }
-.icon-arrow-left:before,
-.ui-datepicker-prev:before {
+.icon-arrow-left:before {
   content: "\e0b4";
 }
 .icon-arrow-up2:before {
@@ -2474,7 +2469,7 @@ a.inherit-color:hover {
   display: none !important;
 }
 .gl-change .generator-links:before {
-  font-family: 'flexkit-icons';
+  font-family: flexkit-icons;
   content: "\e008";
 }
 .gl-change .generator-links + .generator-links {
@@ -3079,6 +3074,7 @@ blockquote:after {
   position: absolute;
   line-height: 1em;
   font-size: 2.5rem;
+  font-family: 'flexkit-icons';
 }
 blockquote:before .ie8,
 blockquote:after .ie8 {
@@ -3087,16 +3083,24 @@ blockquote:after .ie8 {
 blockquote:after {
   right: 0;
   bottom: -0.25em;
+  content: "\e074";
 }
 blockquote:before {
   left: 0;
   top: -0.25em;
+  content: "\e073";
 }
 blockquote p {
   margin-bottom: 0;
 }
 blockquote p + p {
   margin-top: 15px;
+}
+blockquote .v2:after {
+  content: "\e076";
+}
+blockquote .v2:before {
+  content: "\e075";
 }
 blockquote.noquotes {
   border-left: 2px solid #bbbbbb;
@@ -3279,7 +3283,7 @@ ul.list-arrow > li:before {
   float: left;
   color: inherit;
   margin-left: -1em;
-  font-family: 'flexkit-icons';
+  font-family: flexkit-icons;
   content: '\e0c3';
 }
 ul.list-arrow > li:hover:before {

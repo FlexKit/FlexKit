@@ -11,7 +11,7 @@ blockquote{
         line-height : 1em;
         .font-size(@font-size-large * 2);
         & when (@flexkit-icons = true){
-            &:extend([class*="@{icon-prefix}-"]:before);
+            font-family : 'flexkit-icons';
         }
     }
 
@@ -22,7 +22,7 @@ blockquote{
             content : "\201c";
         }
         & when (@flexkit-icons = true){
-            &:extend(.@{icon-prefix}-quote2:before);
+            content : "\e074";
         }
     }
 
@@ -33,7 +33,7 @@ blockquote{
             content : "\201e";
         }
         & when (@flexkit-icons = true){
-            &:extend(.@{icon-prefix}-quote:before);
+            content : "\e073";
         }
     }
 
@@ -44,6 +44,17 @@ blockquote{
             margin-top : 15px;
         }
 
+    }
+
+    .v2 when (@flexkit-icons = true){
+
+        &:after{
+            content : "\e076";
+        }
+
+        &:before{
+            content : "\e075";
+        }
     }
 
     &.noquotes when (@blockquote-noquotes = true) and (@blockquote-types = true){
@@ -74,7 +85,6 @@ blockquote{
         background-color : @gray-lighter;
         .border-radius(5px);
         .arrow-border(bottom-right; center; @gray-lighter);
-
         @indent: 100px;
         @border-width: 1px;
 

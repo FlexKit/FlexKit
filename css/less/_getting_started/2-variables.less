@@ -4,9 +4,9 @@
 //==================================================
 @import "1-activate_elements";
 
-// [Theme name]
-@theme-name  : THEME-NAME; //Enter theme name
-@website-url : WEBSITE-URL; //Enter website url
+// [Theme settings]
+@website-url : WEBSITE-URL; //? Enter website url
+@theme-name  : THEME-NAME; //? Enter theme name
 
 // [Responsive]
 //==================================================
@@ -20,18 +20,22 @@
 //==================================================
 @font-family-text     : Helvetica, "Helvetica Neue", Arial, sans-serif;
 @font-family-headings : "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
-@font-family-icons    : 'flexkit-icons';
 
+// [Fonts size]
+//==================================================
 @font-size-larger     : 1.5em;
 @font-size-large      : 1.25em;
 @font-size-base       : 14px;
 @font-size-small      : 0.85em;
 @font-size-mini       : 0.75em;
 
+// [Icons font]
+//==================================================
+@font-family-icons : flexkit-icons;
+@icon-prefix       : icon;
+
 // [Icons size]
 //==================================================
-@icon-prefix : icon;
-
 @icon-size-larger : 24px;
 @icon-size-large  : 19px;
 @icon-size-base   : 16px;
@@ -160,10 +164,10 @@
 
 // [Links]
 //==================================================
-@link-color         : @brand-primary; //#199bef;
+@link-color         : @brand-primary; // #199bef
 @link-color-hover   : darken(@link-color, 20%);
 @link-color-active  : @link-color-hover;
-@link-color-visited : @link-color;
+@link-color-visited : none;
 
 // [Heading]
 //==================================================
@@ -426,13 +430,6 @@
 //=============================================================
 @progressbar-bg    : #f5f5f5;
 @progressbar-value : @brand-primary;
-
-// [ScrollBars = http://codemug.com/html/custom-scrollbars-using-css/]
-//=============================================================
-@scrollbar-size             : 10px;
-@scrollbar-bg               : @gray-light;
-@scrollbar-slider-button-bg : darken(@scrollbar-bg, 10%);
-@scrollbar-resize-color     : darken(@scrollbar-bg, 10%);
 
 // Mixin
 //==================================================

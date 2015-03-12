@@ -27,14 +27,21 @@
             span{ display : none; }
 
             &.ui-datepicker-prev{
-                &:extend([class*="@{icon-prefix}-"]:before);
                 left : 0;
+
+                &:before{
+                    content : "\e0b4";
+                }
 
                 span{ }
             }
 
             &.ui-datepicker-next{
                 right : 0;
+
+                &:before{
+                    content : "\e0b2";
+                }
 
                 span{ }
             }
