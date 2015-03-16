@@ -1,6 +1,7 @@
 .rss{ color : @rss; }
 .skype{ color : @skype; }
 .gplus{ color : @gplus; }
+.vimeo{ color : @vimeo; }
 .twitter{ color : @twitter; }
 .youtube{ color : @youtube; }
 .flicker{ color : @flicker; }
@@ -49,6 +50,9 @@ a{
         &.instagram when (@social-instagram = true){
             color : darken(@instagram, 10%);
         }
+        &.vimeo when (@social-vimeo = true){
+            color : darken(@vimeo, 10%);
+        }
     }
 }
 
@@ -87,6 +91,9 @@ a{
     }
     &.instagram when (@social-instagram = true){
         .button-color(#fff; @instagram; @instagram);
+    }
+    &.vimeo when (@social-vimeo = true){
+        .button-color(#fff; @vimeo; @vimeo);
     }
 }
 
@@ -168,6 +175,13 @@ a{
         *:checked, *:focus{
             & ~ label, & ~ .label{ background : @instagram; }
             & ~ [class*="@{icon-prefix}-"]{ color : @instagram; }
+        }
+    }
+    &.vimeo when (@form-labeled-social-vimeo = true) and (@form-labeled-social = true){
+        :checked ~ input, input:focus{ border-color : @vimeo; }
+        *:checked, *:focus{
+            & ~ label, & ~ .label{ background : @vimeo; }
+            & ~ [class*="@{icon-prefix}-"]{ color : @vimeo; }
         }
     }
 }

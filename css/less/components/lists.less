@@ -108,6 +108,28 @@ ul{
         }
     }
 
+    &.list-checkmark when (@list-checkmark = true) and (@lists-classes = true){
+        zoom : 1;
+
+        & > li{
+            padding-left : 1.5em;
+
+            &:before{
+                float       : left;
+                color       : inherit;
+                margin-left : -1.5em;
+                margin-top  : .35em;
+                font-family : @font-family-icons;
+                font-size   : .75em;
+                content     : '\e0a3';
+            }
+
+            &:hover{
+                &:before{ color : @brand-primary; }
+            }
+        }
+    }
+
     &.list-count-sign when (@list-count-sign = true) and (@lists-classes = true){
         counter-reset : list;
 
