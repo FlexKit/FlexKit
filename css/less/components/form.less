@@ -86,6 +86,10 @@ label{
     display       : block;
     margin-bottom : 0.25em;
 
+    &[for]{
+        cursor : pointer;
+    }
+
     .label-inline &{
         margin-bottom : 0;
         line-height   : unit(@button-line-height * 2, em);
@@ -115,7 +119,12 @@ select, textarea, input{
 
     //&:focus:not([type="submit"]):not([type="button"]){
     &:focus{
-        border-color : @input-border-color-focus;
+        & when not(@input-bg-focus = @input-bg){
+            background : @input-bg-focus;
+        }
+        & when not(@input-border-color-focus = @input-border-color){
+            border-color : @input-border-color-focus;
+        }
         .box-shadow(0 0 @input-shadow-size @input-border-color-focus; @input-shadow-focus);
     }
 
