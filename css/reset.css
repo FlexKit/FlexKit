@@ -149,7 +149,7 @@ input::-moz-focus-inner {
 input {
   line-height: normal;
 }
-* input[type="checkbox"],
+input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
@@ -248,13 +248,8 @@ img {
   max-width: 100%;
   height: auto;
 }
-.fb-like-box > span,
-.fb-like-box iframe {
-  position: relative !important;
-  width: 100% !important;
-}
-.mobile iframe {
-  width: 100%;
+iframe {
+  max-width: 100%;
 }
 .gall {
   display: inline-block;
@@ -275,6 +270,9 @@ img {
   direction: rtl;
   unicode-bidi: bidi-override;
 }
+.tpopup {
+  position: relative;
+}
 [contenteditable="true"] {
   display: inline-block;
   vertical-align: middle;
@@ -294,8 +292,6 @@ textarea,
 button {
   max-width: 100%;
   width: 100%;
-  font-family: inherit;
-  font-weight: normal;
 }
 input::-webkit-input-placeholder,
 select::-webkit-input-placeholder,

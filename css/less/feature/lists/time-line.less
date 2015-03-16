@@ -2,6 +2,9 @@
 @time-item-width    : 45%;
 @bullet-radius-size : 10px;
 .time-line when (@time-line = true){
+    position : relative;
+    .clearfix();
+
     &:before{
         content    : '';
         position   : absolute;

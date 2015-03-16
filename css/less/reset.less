@@ -46,16 +46,8 @@ img{
     max-width : 100%;
     height    : auto;
 }
-
-.fb-like-box{
-    & > span, iframe{
-        position : relative !important;
-        width    : 100% !important;
-        //        height   : auto !important;
-    }
-}
-.mobile iframe{
-    width : 100%;
+iframe{
+    max-width : 100%;
 }
 .gall{
     .inline-block;
@@ -63,7 +55,10 @@ img{
 .gmaps{
     color     : #000;
     max-width : 100%;
-    img{ max-width : none; }
+
+    img{
+        max-width : none;
+    }
 }
 
 .ltr{
@@ -74,6 +69,10 @@ img{
 .rtl{
     direction    : rtl;
     unicode-bidi : bidi-override;
+}
+
+.tpopup{
+    position : relative;
 }
 
 [contenteditable="true"]{
@@ -90,10 +89,8 @@ dl, dt, dd{
     margin : 0;
 }
 input, select, textarea, button{
-    max-width   : 100%;
-    width       : 100%;
-    font-family : inherit;
-    font-weight : normal;
+    max-width : 100%;
+    width     : 100%;
     .placeholder();
 }
 

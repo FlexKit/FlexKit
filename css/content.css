@@ -2150,8 +2150,9 @@
   }
 }
 .centered {
-  margin-left: auto;
-  margin-right: auto;
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .text-left {
   text-align: left;
@@ -2480,8 +2481,8 @@ a.inherit-color:hover {
 }
 .gl-change a.icon + .generator-links:before {
   content: "\e095";
-  border-left: 2px solid #FFF;
-  border-top: 2px solid #FFF;
+  border-left: 2px solid #fff;
+  border-top: 2px solid #fff;
   margin: 0 0 -2px -15px;
   vertical-align: bottom;
 }
@@ -2593,6 +2594,9 @@ a.inherit-color:hover {
 }
 .gplus {
   color: #dd4b39;
+}
+.vimeo {
+  color: #1ab7ea;
 }
 .twitter {
   color: #55acee;
@@ -3289,6 +3293,24 @@ ul.list-arrow > li:before {
 ul.list-arrow > li:hover:before {
   color: #c2d2da;
 }
+ul.list-checkmark {
+  zoom: 1;
+}
+ul.list-checkmark > li {
+  padding-left: 1.5em;
+}
+ul.list-checkmark > li:before {
+  float: left;
+  color: inherit;
+  margin-left: -1.5em;
+  margin-top: .35em;
+  font-family: flexkit-icons;
+  font-size: .75em;
+  content: '\e0a3';
+}
+ul.list-checkmark > li:hover:before {
+  color: #c2d2da;
+}
 ul.list-count-sign {
   counter-reset: list;
 }
@@ -3671,7 +3693,6 @@ button,
 [type="reset"] {
   text-align: center;
   cursor: pointer;
-  position: relative;
   text-decoration: none;
   height: auto;
   line-height: 2.5em;

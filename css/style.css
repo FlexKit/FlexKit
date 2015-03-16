@@ -109,6 +109,9 @@ label {
   display: block;
   margin-bottom: 0.25em;
 }
+label[for] {
+  cursor: pointer;
+}
 .label-inline label {
   margin-bottom: 0;
   line-height: 2.5em;

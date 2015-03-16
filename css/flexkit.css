@@ -503,6 +503,7 @@
   color: #555555;
   padding: 8px;
   text-decoration: none;
+  line-height: 0;
   box-sizing: content-box;
 }
 .ui-datepicker .ui-datepicker-header > a:before {
