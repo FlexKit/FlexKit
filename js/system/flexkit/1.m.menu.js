@@ -22,6 +22,8 @@ $(body).on(events[0], hideMenu);
 
 function hideMenu(e){
     if(e.target.hasAttribute('data-menu-open') || e.target.hasAttribute('data-dropdown-open')){
+        e.preventDefault();
+        e.stopPropagation();
         $('.dropdown-menu, .dropdown-menu-mobile').removeClass('open');
         $('.dropdown-btn, .menu-btn').removeClass('active');
         body.removeAttribute('data-menu-open');
