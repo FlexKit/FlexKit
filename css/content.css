@@ -4064,6 +4064,10 @@ hr:before {
   display: inline-block;
   vertical-align: middle;
 }
+hr[class*="icon-"]:before,
+hr[class^=" icon-"]:before {
+  top: -0.5em;
+}
 hr.left {
   text-align: left;
 }

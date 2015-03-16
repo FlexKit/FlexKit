@@ -34,6 +34,12 @@ hr{
         .inline-block();
     }
 
+    &[class*="icon-"], &[class^=" icon-"]{
+        &:before{
+            top : -0.5em;
+        }
+    }
+
     &.left when (@separator-left = true) and (@separator-style = true) { text-align : left; }
     &.right when (@separator-right = true) and (@separator-style = true){ text-align : right; }
     &.center when (@separator-center = true) and (@separator-style = true){ text-align : center; }
