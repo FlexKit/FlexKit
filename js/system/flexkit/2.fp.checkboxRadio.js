@@ -44,12 +44,12 @@ _checkboxRadio();
 
 //$(function(){
 //    $('body').on('DOMNodeInserted', function(event) {
-//        if (event.type == 'DOMNodeInserted') {
-//            _checkboxRadio()
+//        if (event.type === 'DOMNodeInserted') {
+//            _checkboxRadio();
 //        } else {
 //        }
 //    });
-//})
+//});
 //
 //$(document).ajaxStop(function(){
 //    _checkboxRadio();

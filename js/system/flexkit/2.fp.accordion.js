@@ -12,7 +12,7 @@ function _accordion(){
             $this.accordion( "option", "icons", false );
         }
         if(dataIcon !== false && typeof dataIcon !== 'undefined'){
-            var iconClass = dataIcon.split(/\s*,\s*/);;
+            var iconClass = dataIcon.split(/\s*,\s*/);
             $this.accordion( "option", "icons", { "header": iconClass[0], "activeHeader": iconClass[1] } );
         }
     }).find('.ui-accordion-header a').click(function(){
