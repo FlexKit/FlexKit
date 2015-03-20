@@ -31,6 +31,9 @@
 .main_menu > li:hover ul {
   display: block;
 }
+.main_menu > li > a {
+  float: left;
+}
 .main_menu a {
   display: block;
   padding: 8px 12px;
@@ -388,6 +391,7 @@ aside .relatedpages li p {
   padding-left: 24px;
 }
 .mobile-menu ul.open,
+.main_menu ul.open,
 .dropdown-menu ul.open,
 [data-dropdown-open] .dropdown-menu-mobile ul.open {
   display: block !important;
@@ -577,13 +581,12 @@ aside .relatedpages li p {
   background: #ffffff !important;
   color: #555555 !important;
   position: fixed;
-  z-index: 102;
+  z-index: 102 !important;
   width: 250px;
   max-width: 90%;
   max-height: 70%;
   display: none;
   margin: 0 !important;
-  padding: 8px 12px;
   overflow: auto;
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
 }

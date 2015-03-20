@@ -8,6 +8,7 @@
         width : @grid-container-width;
     }
     & when (@responsive = true) and not(@grid-container-width = 100%){
+        width     : 95%;
         max-width : @grid-container-width;
     }
     .clearfix-mixin();
@@ -81,15 +82,15 @@
         & > .generator-links{ display : block; }
 
         &.larger > *, & > .larger{
-            font-size : @font-size-base * @font-size-larger !important;
+            font-size : unit(@font-size-base * @font-size-larger, px) !important;
         }
 
         &.large > *, & > .large{
-            font-size : @font-size-base * @font-size-large !important;
+            font-size : unit(@font-size-base * @font-size-large, px) !important;
         }
 
         &.small > *, & > .small{
-            font-size : @font-size-base * @font-size-small !important;
+            font-size : unit(@font-size-base * @font-size-small, px) !important;
         }
     }
 }

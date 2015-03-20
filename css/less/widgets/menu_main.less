@@ -24,6 +24,10 @@
                 display : block;
             }
         }
+
+        & > a when (@responsive){
+            float : left;
+        }
     }
 
     a{
@@ -59,6 +63,8 @@
             color : @nav-drop-down-list-color;
         }
         .box-shadow(0 3px 5px @gray-dark);
+
+        &.open:extend(.mobile-menu ul.open){}
 
         li{
             float : none;
