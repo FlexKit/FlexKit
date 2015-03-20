@@ -5,9 +5,22 @@ $('.dropdown-btn').each(function(){
         type = $(this).data('menu-type'); // mobile or empty
     if(type !== 'mobile'){
         $(menu).addClass('dropdown-menu');
+    }else{
+        dropdownInit(menu);
+        window.addEventListener('resize', function(){
+            dropdownInit(menu);
+        }, false);
     }
     $(menu).addClass(position).height(height);
 });
+
+function dropdownInit(menu){
+    if(window.innerWidth <= 800){
+        $(menu).addClass('dropdown-menu');
+    }else{
+        $(menu).removeClass('dropdown-menu');
+    }
+}
 
 tapButton('menu-btn', showMenu);
 tapButton('dropdown-btn', showDropdown);
