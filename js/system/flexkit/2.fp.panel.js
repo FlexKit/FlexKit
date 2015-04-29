@@ -1,15 +1,15 @@
 var $header = $('.panel.collapse').find('.panel-header');
-if($('.panel-content:hidden').lenght){
+if($('.panel-content:hidden').lenght) {
     $header.prepend('<i class="icon-plus collapse-btn"></i>');
-}else{
+} else {
     $header.prepend('<i class="icon-minus collapse-btn"></i>');
 }
-$(document).on('click', '.collapse-btn', function(){
+$(document).on('click', '.collapse-btn', function() {
     $btn = $(this);
-    $(this).closest('.panel-header').nextAll('.panel-content, .panel-footer').slideToggle(function(){
-        if($(this).is(':hidden')){
+    $(this).closest('.panel-header').nextAll('.panel-content, .panel-footer').slideToggle(function() {
+        if($(this).is(':hidden')) {
             $btn.addClass('icon-plus').removeClass('icon-minus');
-        }else{
+        } else {
             $btn.addClass('icon-minus').removeClass('icon-plus');
         }
     });

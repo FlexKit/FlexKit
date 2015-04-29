@@ -1,7 +1,7 @@
-function _range(){
+function _range() {
     var $range = $(".range");
     $range.slider();
-    $range.each(function(){
+    $range.each(function() {
 
         var step = $(this).data('range-step'),
             type = $(this).data('range-type'),// min, max or true
@@ -12,28 +12,28 @@ function _range(){
             orientation = $(this).data('range-orientation');
 
 
-        if(typeof step !== 'undefined'){
+        if(typeof step !== 'undefined') {
             $(this).slider("option", "step", step);
         }
-        if(typeof type !== 'undefined'){
+        if(typeof type !== 'undefined') {
             $(this).slider("option", "range", type);
         }
-        if(typeof value !== 'undefined'){
+        if(typeof value !== 'undefined') {
             $(this).slider("option", "value", value);
         }
-        if(typeof values !== 'undefined'){
+        if(typeof values !== 'undefined') {
             $(this).slider("option", {
                 range  : true,
                 values : values.split(/\s*,\s*/)
             });
         }
-        if(typeof minValue !== 'undefined'){
+        if(typeof minValue !== 'undefined') {
             $(this).slider("option", "min", minValue);
         }
-        if(typeof maxValue !== 'undefined'){
+        if(typeof maxValue !== 'undefined') {
             $(this).slider("option", "max", maxValue);
         }
-        if(typeof orientation !== 'undefined'){
+        if(typeof orientation !== 'undefined') {
             $(this).slider("option", "orientation", orientation);
         }
     });
