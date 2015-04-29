@@ -1,4 +1,4 @@
-function _tabs(){
+function _tabs() {
     $(".tabs").tabs();
 }
 _tabs();
