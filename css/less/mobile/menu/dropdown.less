@@ -22,19 +22,93 @@ body{
         }
     }
 }
-
-.dropdown-menu, [data-dropdown-open] .dropdown-menu-mobile{
+.dropdown-menu{
     background : @dropdown-bg !important;
     color      : @dropdown-color !important;
-    position   : fixed;
+    position   : absolute;
     z-index    : @mobile-bar-zindex + 2 !important;
     width      : @dropdown-width;
-    max-width  : 90%;
-    max-height : 70%;
     display    : none;
     margin     : 0 !important;
     overflow   : auto;
     .box-shadow(0 2px 30px fade(#000, 30%));
+
+    &.top, &.bottom{
+        &-right{
+            right : 0;
+            left  : auto;
+        }
+
+        &-left{
+            left  : 0;
+            right : auto;
+        }
+    }
+
+    &.top{
+        &, &-left, &-right{
+            top    : auto;
+            bottom : 100%;
+        }
+    }
+
+    &.bottom{
+        &, &-left, &-right{
+            top    : 100%;
+            bottom : auto;
+        }
+    }
+
+    &.left, &.right{
+        &-top{
+            top    : 0;
+            bottom : auto;
+        }
+
+        &-bottom{
+            top    : auto;
+            bottom : 0;
+        }
+    }
+
+    &.left{
+        &, &-top, &-bottom{
+            left  : auto;
+            right : 100%;
+        }
+    }
+
+    &.right{
+        &, &-top, &-bottom{
+            left  : 100%;
+            right : auto;
+        }
+    }
+
+    //    nav{
+    //        a{
+    //            display : block;
+    //            padding : @padding-base-vertical @padding-base-horizontal;
+    //            .link-color(@gray);
+    //
+    //            &:hover{
+    //                background : @gray-lighter;
+    //            }
+    //
+    //            & + a{
+    //                border-top : 1px solid @gray-lighter;
+    //            }
+    //        }
+    //    }
+
+    ul:extend(.mobile-menu ul all){ }
+    li:extend(.mobile-menu li all){ }
+}
+[data-dropdown-open] .dropdown-menu-mobile{
+    &:extend(.dropdown-menu);
+    position   : fixed;
+    max-width  : 90%;
+    max-height : 70%;
 
     &.open{
         display : block;
@@ -75,25 +149,6 @@ body{
         left  : @dropdown-margin-horizontal;
         right : auto;
     }
-
-//    nav{
-//        a{
-//            display : block;
-//            padding : @padding-base-vertical @padding-base-horizontal;
-//            .link-color(@gray);
-//
-//            &:hover{
-//                background : @gray-lighter;
-//            }
-//
-//            & + a{
-//                border-top : 1px solid @gray-lighter;
-//            }
-//        }
-//    }
-
-    ul:extend(.mobile-menu ul all){}
-    li:extend(.mobile-menu li all){}
 }
 
 .dropdown-btn{

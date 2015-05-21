@@ -209,66 +209,62 @@
 //==================================================
 @state-border-radius  : 0;
 
-@state-primary-bg     : mix(@brand-primary, #FFF, 20%);
-@state-primary-color  : mix(@brand-primary, #000, 50%);
-@state-primary-border : mix(@brand-primary, #FFF, 50%);
+@state-primary-bg     : screen(@brand-primary, @gray-light);
+@state-primary-color  : multiply(@brand-primary, @gray);
+@state-primary-border : screen(@brand-primary, @gray-dark);
 
-@state-success-bg     : mix(@brand-success, #FFF, 20%);
-@state-success-color  : mix(@brand-success, #000, 50%);
-@state-success-border : mix(@brand-success, #FFF, 50%);
+@state-success-bg     : screen(@brand-success, @gray-light);
+@state-success-color  : multiply(@brand-success, @gray);
+@state-success-border : screen(@brand-success, @gray-dark);
 
-@state-info-bg        : mix(@brand-info, #FFF, 20%);
-@state-info-color     : mix(@brand-info, #000, 50%);
-@state-info-border    : mix(@brand-info, #FFF, 50%);
+@state-info-bg        : screen(@brand-info, @gray-light);
+@state-info-color     : multiply(@brand-info, @gray);
+@state-info-border    : screen(@brand-info, @gray-dark);
 
-@state-warning-bg     : mix(@brand-warning, #FFF, 20%);
-@state-warning-color  : mix(@brand-warning, #000, 50%);
-@state-warning-border : mix(@brand-warning, #FFF, 50%);
+@state-warning-bg     : screen(@brand-warning, @gray-light);
+@state-warning-color  : multiply(@brand-warning, @gray);
+@state-warning-border : screen(@brand-warning, @gray-dark);
 
-@state-error-bg       : mix(@brand-error, #FFF, 20%);
-@state-error-color    : mix(@brand-error, #000, 50%);
-@state-error-border   : mix(@brand-error, #FFF, 50%);
+@state-error-bg       : screen(@brand-error, @gray-light);
+@state-error-color    : multiply(@brand-error, @gray);
+@state-error-border   : screen(@brand-error, @gray-dark);
 
 // [Tables]
 //==================================================
 @table-bg           : transparent;// overall background-color
-@table-row-bg       : @gray-lighter;// is used in .table-striped
-@table-row-bg-hover : @table-row-bg;// for hover
-@table-border-color : darken(@gray-light, 5%);// table and cell border
+@table-row-bg       : lighten(@gray-lighter, 3%);// is used in .table-striped
+@table-row-bg-hover : darken(@table-row-bg, 5%);// for hover
+@table-border-color : @gray-light;// table and cell border
+@table-thead-bg     : darken(@gray-lighter, 3%);// thead background-color
+@table-tfoot-bg     : darken(@gray-lighter, 10%);// tfoot background-color
 
 // [Buttons]
 //==================================================
-@button-line-height    : 1.25;
-@button-border-width   : 0;
-@button-border-outline : 1px;
+@button-line-height    : 1.15;
+@button-border-width   : 0; // in ems
+@button-border-outline : .1em; // in ems
 
 @button-icon-size      : 1.25em; //Enter in ems
 
 @button-border-radius  : 0; //Enter in ems
 
-@button-inverse-bg     : @gray-lighter;
+@button-inverse-bg     : darken(@gray-lighter, 10%);
 @button-inverse-color  : @gray;
-@button-inverse-border : @button-inverse-bg;
 
 @button-primary-bg     : @primary-bg;
 @button-primary-color  : @primary-color;
-@button-primary-border : softlight(@primary-bg, #000);
 
 @button-success-bg     : @brand-success;
 @button-success-color  : #FFF;
-@button-success-border : softlight(@brand-success, #000);
 
 @button-warning-bg     : @brand-warning;
 @button-warning-color  : #FFF;
-@button-warning-border : softlight(@brand-warning, #000);
 
 @button-error-bg       : @brand-error;
 @button-error-color    : #FFF;
-@button-error-border   : softlight(@brand-error, #000);
 
 @button-info-bg        : @brand-info;
 @button-info-color     : #FFF;
-@button-info-border    : softlight(@brand-info, #000);
 
 // [Forms]
 //==================================================
@@ -278,13 +274,16 @@
 @input-bg-focus           : @input-bg;
 @input-bg-disabled        : @gray-lighter;
 
-@input-border-width       : 1px;
+@input-padding            : .5em; // in ems
+
+@input-border-width       : .1em; // in ems
 @input-border-color       : @gray-light;
 //border color and shadow in focus
 @input-border-color-focus : @primary-bg;
 @input-border-radius      : 0;
 //Do you need a shadow on focus? (true / false)
 @input-shadow-focus       : true;
+@input-inner-shadow       : false;
 @input-shadow-size        : 5px;
 
 @input-color-placeholder  : #CCC;
@@ -363,7 +362,7 @@
 @tabs-nav-li-color-active  : @brand-primary;
 @tabs-nav-li-border-active : @brand-primary;
 
-@tabs-container-bg         : transparent;
+@tabs-container-bg         : #fff;
 
 // [JQuery Modules Dialog = http://jqueryui.com/dialog/]
 //=============================================================
@@ -411,8 +410,8 @@
 //=============================================================
 @autocomplete-bg               : @input-bg;
 @autocomplete-color            : @text-color;
-@autocomplete-item-bg-hover    : @primary-bg;
-@autocomplete-item-color-hover : @primary-color;
+@autocomplete-item-bg-hover    : @gray-lighter;
+@autocomplete-item-color-hover : @gray-darker;
 
 // [JQuery Modules Tooltip = http://jqueryui.com/tooltip/]
 //=============================================================

@@ -1,0 +1,112 @@
+// DataTable
+//==================================================
+.dataTables_wrapper {
+    width : 100%;
+
+    .dataTables_filter {
+        //margin-bottom : 12px;
+
+        label {
+            width : 30%;
+
+            input {
+                width : 75%;
+            }
+        }
+    }
+
+    .dataTable {
+    }
+
+    .sorting, .sorting_asc, .sorting_desc {
+        cursor      : pointer;
+        position      : relative;
+        padding-right : 16px;
+
+        &:after {
+            &:extend(.toaster-icon);
+            content : "\e0cd";
+            font-size   : 16px;
+            height    : 16px;
+            position  : absolute;
+            top       : 0;
+            bottom    : 0;
+            right     : 0;
+            margin    : auto;
+        }
+    }
+
+    .sorting:after {
+    }
+    .sorting_asc:after {
+        content : "\e0cc";
+    }
+    .sorting_desc:after {
+        content : "\e0cb";
+    }
+
+    .dataTables_empty {
+        text-align : center;
+    }
+}
+
+.dataTables_paginate {
+    margin-top : 1em;
+    float      : right;
+    font-size  : 12px;
+
+    .paginate_button{
+        background : @gray-lighter;
+        margin     : 0 .25em;
+        padding    : .25em .75em;
+        min-width  : 2em;
+        .inline-block();
+        text-align : center;
+        color      : @gray-darker;
+
+        &:hover{
+            background : darken(@gray-lighter, 3%);
+        }
+
+        &.disabled, &.current{
+            cursor     : default;
+            color      : darken(@gray-lighter, 5%);
+            background : lighten(@gray-lighter, 3%);
+        }
+
+        &.current{
+            font-weight : bold;
+            background  : saturate(screen(@brand-primary, @gray), 10%);
+            color       : #fff;
+        }
+
+        &.first, &.last{
+            font-weight : bold;
+
+            &:before, &:after{
+                &:extend(.toaster-icon);
+                font-size   : 15px;
+                font-weight : bold;
+            }
+        }
+
+        &.previous, &.next{
+
+            &:before, &:after{
+                &:extend(.toaster-icon);
+            }
+        }
+
+        &.first, &.previous{
+            &:before{
+                content : "\e0c2";
+            }
+        }
+
+        &.last, &.next{
+            &:after{
+                content : "\e0c3";
+            }
+        }
+    }
+}

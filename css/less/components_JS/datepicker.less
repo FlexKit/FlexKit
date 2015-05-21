@@ -1,12 +1,13 @@
-.ui-datepicker when (@componentsJS-datepicker = true){
-    z-index    : 100 !important;
+.ui-datepicker when (@componentsJS-datepicker = true) {
+    z-index    : 110 !important;
     display    : none;
     padding    : 0;
     width      : @datepicker-width;
     border     : 1px solid @datepicker-border-color;
     background : @datepicker-bg;
+    .box-shadow(3px 3px 10px fade(#000, 50%));
 
-    .ui-datepicker-header{
+    .ui-datepicker-header {
         background : @datepicker-header-bg;
         color      : @datepicker-header-color;
         font-size  : @datepicker-header-size;
@@ -14,7 +15,7 @@
         text-align : center;
         position   : relative;
 
-        > a{
+        > a {
             position        : absolute;
             top             : 0;
             background      : @datepicker-arrow-bg;
@@ -25,75 +26,84 @@
             .icon-size(@datepicker-arrow-size);
             .box-sizing(content-box);
 
-            span{ display : none; }
+            span {
+                display : none;
+            }
 
-            &.ui-datepicker-prev{
+            &.ui-datepicker-prev {
                 left : 0;
 
-                &:before{
+                &:before {
                     content : "\e0b4";
                 }
 
-                span{ }
+                span {
+                }
             }
 
-            &.ui-datepicker-next{
+            &.ui-datepicker-next {
                 right : 0;
 
-                &:before{
+                &:before {
                     content : "\e0b2";
                 }
 
-                span{ }
+                span {
+                }
             }
 
-            &:hover{
+            &:hover {
                 background : darken(@datepicker-arrow-bg, 5%);
 
-                span{ }
+                span {
+                }
             }
         }
 
-        > .ui-datepicker-title{
+        > .ui-datepicker-title {
             line-height : @datepicker-header-height;
             margin      : 0 @datepicker-header-height;
             font-weight : normal;
 
-            select{
-                width  : 49%;
-                height : auto;
-                float  : left;
+            select {
+                width   : 49%;
+                height  : auto;
+                float   : left;
+                padding : .1em;
 
-                & + select{
+                & + select {
                     margin-left : 2%;
                 }
             }
 
-            .ui-datepicker-month{ }
+            .ui-datepicker-month {
+            }
 
-            .ui-datepicker-year{ }
+            .ui-datepicker-year {
+            }
         }
     }
 
     //Table
-    .ui-datepicker-calendar{
+    .ui-datepicker-calendar {
         width  : 100%;
         border : none;
 
-        td, th{
+        td, th {
             padding        : 0;
             text-align     : center;
             width          : @datepicker-week-box-size;
             vertical-align : middle;
 
-            &.ui-datepicker-week-end > *{
+            &.ui-datepicker-week-end > * {
                 color : @datepicker-week-end-color;
             }
         }
 
-        thead{
-            tr{ }
-            th{
+        thead {
+            tr {
+            }
+            th {
                 line-height : @datepicker-week-box-size;
                 background  : @datepicker-week-bg;
                 color       : @datepicker-week-color;
@@ -101,43 +111,44 @@
             }
         }
 
-        tbody{
-            tr{ }
-            td{
+        tbody {
+            tr {
+            }
+            td {
                 font-size    : @datepicker-day-font-size;
                 border-right : 1px solid @datepicker-border-color;
                 border-top   : 1px solid @datepicker-border-color;
                 line-height  : @datepicker-week-box-size;
 
-                a, span{
+                a, span {
                     display : block;
                 }
-                a{
+                a {
                     padding    : 0 !important;
                     color      : @text-color;
                     background : @datepicker-day-bg;
                     border     : none;
                     .border-radius(0);
 
-                    &:hover{
+                    &:hover {
                         background : @state-primary-bg;
                     }
                 }
 
-                &.ui-state-disabled{
+                &.ui-state-disabled {
                     color : @gray-lighter;
 
-                    & > *{
+                    & > * {
                         color : inherit;
                     }
                 }
 
-                &.ui-datepicker-current-day a{
+                &.ui-datepicker-current-day a {
                     color      : @datepicker-current-day-color;
                     background : @datepicker-current-day-bg;
                 }
 
-                &.ui-datepicker-today a{
+                &.ui-datepicker-today a {
                     color      : @datepicker-today-color;
                     background : @datepicker-today-bg;
                 }

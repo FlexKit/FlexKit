@@ -6,8 +6,16 @@ table{
 
     th, td{
         padding        : .5em .75em;
-        border-top     : 1px solid @table-border-color;
+        border-bottom  : 1px solid @table-border-color;
         vertical-align : middle;
+    }
+
+    tr{
+        &:first-child{
+            & > *{
+                 border-top : 1px solid @table-border-color;
+             }
+        }
     }
 
     th{
@@ -17,13 +25,23 @@ table{
 
     td{
         &:first-child{
-            vertical-align : top;
         }
+    }
+
+    thead{
+        background : @table-thead-bg;
     }
 
     // Account for multiple tbody instances
     tbody + tbody{
         border-top : 2px solid @table-border-color;
+    }
+
+    tfoot{
+        background : @table-tfoot-bg;
+
+        td, th{
+        }
     }
 
     // Nesting
@@ -37,23 +55,29 @@ table{
 
     &.condensed{
         th, td{
-            padding : .25em .75em;
+            padding : .25em .5em;
+        }
+    }
+
+    tr.disabled{
+        color : @gray-light;
+    }
+
+    // NONE BORDERED VERSION
+    //==================================================
+    &.table-border_none when (@table-styles = true){
+        th, td{
+            border : none;
         }
     }
 
     // BORDERED VERSION
     //==================================================
     &.table-bordered when (@table-bordered = true) and (@table-styles = true){
-        border-top      : 1px solid @table-border-color;
-        border-bottom   : 1px solid @table-border-color;
-        border-collapse : separate; // Done so we can round those corners!
+        zoom : 1;
 
-        tr > th,
-        tr > td{
-            border-right : 1px solid @table-border-color;
-            &:first-child{
-                border-left : 1px solid @table-border-color;
-            }
+        th, td{
+            border : 1px solid @table-border-color;
         }
     }
 
@@ -63,10 +87,7 @@ table{
     &.table-striped when (@table-striped = true) and (@table-styles = true){
         zoom : 1;
 
-        tr > td{
-            border-top : 0;
-        }
-        & > tr:nth-child(even), tbody tr:nth-child(odd){
+        & > tr:nth-child(odd), tbody tr:nth-child(even){
             background-color : @table-row-bg;
         }
     }
@@ -83,30 +104,42 @@ table{
             }
         }
 
-        tr:hover{
-            background-color : @table-row-bg-hover !important;
+        tr{
+            &:hover{
+                background-color : @table-row-bg-hover !important;
+            }
 
             &.primary when (@colors = true){
+                &:hover{
                 background-color : darken(@state-primary-bg, 5%) !important;
                 border-color     : darken(@state-primary-border, 5%) !important;
             }
+            }
             &.success when (@color-success = true) and (@colors = true){
+                &:hover{
                 background-color : darken(@state-success-bg, 5%) !important;
                 border-color     : darken(@state-success-border, 5%) !important;
             }
+            }
             &.error when (@color-error = true) and (@colors = true){
+                &:hover{
                 background-color : darken(@state-error-bg, 5%) !important;
                 border-color     : darken(@state-error-border, 5%) !important;
             }
+            }
             &.warning when (@color-warning = true) and (@colors = true){
+                &:hover{
                 background-color : darken(@state-warning-bg, 5%) !important;
                 border-color     : darken(@state-warning-border, 5%) !important;
             }
+            }
             &.info when (@color-info = true) and (@colors = true){
+                &:hover{
                 background-color : darken(@state-info-bg, 5%) !important;
                 border-color     : darken(@state-info-border, 5%) !important;
             }
         }
+    }
     }
 
     //  Table responsive
@@ -155,7 +188,7 @@ table{
 // TABLE BACKGROUNDS
 // -----------------
 // Exact selectors below required to override .table-striped
-tr, td{
+tr, th, td{
     &.primary when (@colors = true){
         color            : @state-primary-color;
         background-color : @state-primary-bg !important;

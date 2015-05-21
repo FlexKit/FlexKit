@@ -1,5 +1,4 @@
 // ### Activate components ###
-@seotoaster : true;
 
 // [Mobile menu]
 @mobile-menu     : true;
@@ -112,6 +111,14 @@
     @list-tags         : true;
     @list-checkmark    : true;
 
+// [Tooltips Native (css only)]
+@tooltips-native : true;
+    @tooltip-native-colors : @colors;
+        @tooltip-native-color-success : @color-success;
+        @tooltip-native-color-warning : @color-warning;
+        @tooltip-native-color-error   : @color-error;
+        @tooltip-native-color-info    : @color-info;
+
 // [Badges]
 @badges : true;
     @badge-colors : @colors;
@@ -122,7 +129,8 @@
         @badge-inverse : @color-inverse;
 
     @badges-type : true;
-        @badge-square        : true;
+        @badge-circle        : true;
+        @badge-rounded       : true;
         @badge-leaflet-right : true;
         @badge-leaflet-left  : true;
 
@@ -169,6 +177,7 @@
 
 // [Style for Checkbox and Radio]
 @checkbox-radio-style : true;
+    @checkbox-radio-style-native : true;
     @switcher-style              : true;
     @checkbox-checkmark-style    : false;
     @checkbox-checkmark-windows8 : false;

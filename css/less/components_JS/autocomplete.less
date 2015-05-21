@@ -14,16 +14,17 @@
 
     .ui-menu-item{
         margin : 0;
+        cursor : pointer;
 
         a{
             display : block;
             color   : inherit;
             padding : @padding-mini-vertical;
+        }
 
-            &:hover, &.ui-state-focus{
-                color      : @autocomplete-item-color-hover;
-                background : @autocomplete-item-bg-hover;
-            }
+        &:hover, &.ui-state-focus{
+            color      : @autocomplete-item-color-hover;
+            background : @autocomplete-item-bg-hover;
         }
     }
 }

@@ -8,14 +8,14 @@
 // ------------------------------------------
 .@{chosen-prefix}-container when (@componentsJS-chosen = true){
     position         : relative;
-    padding          : @padding-small-vertical @padding-small-horizontal;
-    width            : 100%;
-    min-height       : @button-height-base;
+    padding          : @input-padding / 2;
+    width            : 100% !important;
+    min-height       : unit(@button-line-height * 2, em);
     border-width     : @input-border-width;
     border-style     : solid;
     border-color     : @input-border-color;
     background-color : @input-bg;
-    line-height      : @button-height-base - @input-border-width * 2 - @padding-small-vertical * 2;
+    line-height      : unit(@button-line-height * 2, em) - @input-padding;
     .inline-block();
     .border-radius(@input-border-radius);
     .transition(all; 0.3s);
@@ -41,7 +41,7 @@
         .text-overflow;
 
         &:before{
-            content     : '\e0b7';
+            content : '\e0b7';
         }
     }
 
@@ -163,7 +163,7 @@
         font-size : @font-size-small;
         .clearfix-mixin();
 
-        &>*{
+        & > *{
             float : left;
         }
 
@@ -171,13 +171,19 @@
             background  : @gray-lighter;
             color       : @gray-dark;
             padding     : 0 @padding-mini-horizontal;
-            margin      : 1px;
-            height      : @button-height-small - @input-border-width;
-            line-height : @button-height-small - @input-border-width;
+            margin      : @input-border-width;
+            min-height  : unit(@button-line-height * 2, em) * @font-size-small - (@input-border-width * 2);
+            line-height : unit(@button-line-height * 2, em) * @font-size-small - (@input-border-width * 2);
         }
 
         .search-field{
-            font-size : @font-size-base;
+            //            font-size : @font-size-base;
+
+            &:first-child{
+                input{
+                    width : auto !important;
+                }
+            }
 
             input{
                 border  : none;
@@ -235,7 +241,7 @@
             margin-top   : (@button-height-small - @input-border-width - 10px) / 2;
         }
 
-        .@{chosen-prefix}-choices>*{
+        .@{chosen-prefix}-choices > *{
             float : right;
         }
 

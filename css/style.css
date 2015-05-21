@@ -71,52 +71,29 @@ form p:after {
   display: table;
   clear: both;
 }
-form .captcha .captcha_image {
-  width: 65% !important;
-  height: auto !important;
-  float: left;
-  text-align: center;
-  padding-right: 10px;
-}
-aside form .captcha .captcha_image {
-  width: 100% !important;
-}
-form .captcha label,
-form .captcha input {
-  float: left;
-  width: 35%;
-  font-weight: normal;
-  font-size: 0.85em;
-}
-aside form .captcha label,
-aside form .captcha input {
-  width: 100%;
-}
-form .captcha .recaptcha_links {
-  clear: both;
-  font-size: 0.85em;
-  padding-top: 1em;
-}
-form .captcha .recaptcha_links a + a {
-  border-left: 1px solid #888888;
-  padding-left: 1em;
-  margin-left: 1em;
-}
 form [type="submit"] {
   float: right;
 }
-label {
+label,
+.label {
   display: block;
   margin-bottom: 0.25em;
 }
-label[for] {
+label[for],
+.label[for] {
   cursor: pointer;
 }
-.label-inline label {
+label[class*="grid_"],
+.label[class*="grid_"] {
   margin-bottom: 0;
-  line-height: 2.5em;
 }
-label.required:after {
+.label-inline label,
+.label-inline .label {
+  margin-bottom: 0;
+  line-height: 2.3em;
+}
+label.required:after,
+.label.required:after {
   color: #f65314;
   content: ' *';
 }
@@ -126,14 +103,15 @@ label.required:after {
 select,
 textarea,
 input {
-  padding: .5em;
-  border-width: 1px;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  padding: 0.5em;
+  border-width: 0.1em;
   border-style: solid;
   border-color: #bbbbbb;
   background-color: #ffffff;
   color: #2f2f2f;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease webkit false;
+  transition: all 0.3s ease webkit false;
 }
 select:focus,
 textarea:focus,
@@ -223,137 +201,115 @@ input.noedit:focus {
 }
 input,
 select {
-  height: 2.5em;
-  line-height: 1.5em;
+  height: 2.3em;
+  line-height: 1.3em;
+  padding: 0.3em 0.5em;
 }
 textarea {
   min-height: 5em;
 }
-.forgot-password,
-#remember-password {
-  float: left;
-  margin-top: -27px;
-}
-label[for*="chr-"] {
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.checkbox_radio-wrap {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  line-height: 0;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-}
-.filed-upgrade {
-  height: auto;
-  position: absolute;
-  z-index: -10;
-  -webkit-transition: none 0.5s ease;
-  transition: none 0.5s ease;
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
-.filed-upgrade ~ .checkbox_radio {
-  display: inline-block;
-  box-sizing: content-box;
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
   font-size: 16px;
   height: 1em;
   width: 1em;
-  line-height: 0;
-  background-color: #ffffff;
-  vertical-align: middle;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #bbbbbb;
+  background: #ffffff;
+  border: 0.1em solid #bbbbbb;
+  color: transparent;
   cursor: pointer;
+  display: inline-block;
+  outline: none;
 }
-.filed-upgrade ~ .checkbox_radio:before {
-  width: 0.75em;
-  height: 0.75em;
-  margin: 0.125em;
-  content: '';
-  display: block;
+input[type="checkbox"]:before,
+input[type="radio"]:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 0.625em;
+  height: 0.625em;
 }
-.filed-upgrade:hover ~ .checkbox_radio:before {
+input[type="checkbox"]:hover:before,
+input[type="radio"]:hover:before {
   background: #eeeeee;
 }
-.filed-upgrade:checked ~ .checkbox_radio {
-  border-color: #c2d2da;
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  border-color: #8fd400;
 }
-.filed-upgrade:checked ~ .checkbox_radio:before {
-  background: #c2d2da;
+input[type="checkbox"]:checked:before,
+input[type="radio"]:checked:before {
+  background: #8fd400;
 }
-.filed-upgrade:disabled ~ .checkbox_radio {
-  background: #eeeeee !important;
-  border-color: #d5d5d5 !important;
-}
-.filed-upgrade:disabled:checked ~ .checkbox_radio:before {
+input[type="checkbox"]:disabled:checked:before,
+input[type="radio"]:disabled:checked:before {
   color: #a2a2a2 !important;
   background: #a2a2a2 !important;
 }
-.radio-upgrade ~ .checkbox_radio {
-  border-radius: 10em;
+input[type="radio"] {
+  border-radius: 1em;
 }
-.radio-upgrade ~ .checkbox_radio:before {
-  border-radius: 10em;
+input[type="radio"]:before {
+  border-radius: 1em;
 }
-.checkbox-upgrade.switcher ~ .checkbox_radio {
+input[type="checkbox"].switcher {
   overflow: hidden;
   position: relative;
   width: 4em;
   height: 1.25em;
   line-height: 1.25em;
 }
-.checkbox-upgrade.switcher ~ .checkbox_radio:before,
-.checkbox-upgrade.switcher ~ .checkbox_radio:after {
+input[type="checkbox"].switcher:before {
+  font-size: 0.857rem;
+  line-height: 20px;
+  content: 'OFF';
+  background: none;
+  color: #f65314;
   position: static;
   font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.857rem;
   font-weight: bold;
   width: 50%;
-  background: transparent;
   text-align: center;
   float: left;
-  margin: 0;
+  margin-left: 50%;
 }
-.checkbox-upgrade.switcher ~ .checkbox_radio:before .ie8,
-.checkbox-upgrade.switcher ~ .checkbox_radio:after .ie8 {
+input[type="checkbox"].switcher:before .ie8 {
   font-size: 12px;
 }
-.checkbox-upgrade.switcher ~ .checkbox_radio:before {
-  content: "ON" !important;
-  color: #8fd400;
+input[type="checkbox"].switcher:disabled:before {
+  color: #a2a2a2 !important;
+  background: none !important;
 }
-.checkbox-upgrade.switcher ~ .checkbox_radio:after {
-  content: "OFF" !important;
-  color: #f65314;
+input[type="checkbox"].switcher:disabled:after {
+  background: #a2a2a2 !important;
 }
-.checkbox-upgrade.switcher ~ .checkbox_radio span {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+input[type="checkbox"].switcher:after {
+  content: '';
+  background: #f65314;
+  -webkit-transition: all 0.3s ease webkit false;
+  transition: all 0.3s ease webkit false;
   box-sizing: border-box;
   background: #bbbbbb;
   position: absolute;
   border: 1px solid #ffffff;
-  z-index: 5;
+  z-index: 1;
   left: 0;
   top: 0;
   bottom: 0;
   width: 50%;
 }
-.checkbox-upgrade.switcher:checked ~ .checkbox_radio {
-  border-color: #8fd400;
+input[type="checkbox"].switcher:checked:before {
+  content: 'ON';
+  margin-left: 0;
+  color: #8fd400;
 }
-.checkbox-upgrade.switcher:checked ~ .checkbox_radio span {
+input[type="checkbox"].switcher:checked:after {
   left: 50%;
   background: #8fd400;
 }
@@ -375,7 +331,6 @@ label[for*="chr-"] {
   margin: 0;
 }
 .labeled {
-  display: block;
   position: relative;
 }
 .labeled:after {
@@ -387,13 +342,13 @@ label[for*="chr-"] {
 .labeled .label {
   margin-top: 0;
   margin-bottom: 0;
-  height: 2.5em;
-  line-height: 2.5em;
+  height: 2.3em;
+  line-height: 2.3em;
   background: #bbbbbb;
   text-align: center;
   color: #fff;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease webkit false;
+  transition: all 0.3s ease webkit false;
 }
 .labeled input:focus,
 .labeled select:focus {
@@ -452,9 +407,9 @@ label[for*="chr-"] {
   top: 0;
   left: .5em;
   z-index: 1;
-  line-height: 2.5em;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  line-height: 2.3em;
+  -webkit-transition: all 0.2s ease webkit false;
+  transition: all 0.2s ease webkit false;
 }
 .input-label input {
   border-width: 0 0 1px;
@@ -504,8 +459,8 @@ label[for*="chr-"] {
   text-align: center;
   padding: 3px;
   background: transparent;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease webkit false;
+  transition: all 0.3s ease webkit false;
   border: 1px solid #bbbbbb;
 }
 .img_gallery a img:hover {
@@ -614,8 +569,8 @@ label[for*="chr-"] {
   height: 18px;
   line-height: 18px;
   font-size: 0;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease webkit false;
+  transition: all 0.5s ease webkit false;
 }
 .cycle-slideshow [class*="cycle-"].action-button:before {
   font-size: 18px;

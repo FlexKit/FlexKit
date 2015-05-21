@@ -11,45 +11,50 @@
     }
 
     .dialog{
-        overflow         : auto;
-        position         : fixed;
-        z-index          : 1001;
-        width            : 100%;
-        max-width        : @grid-container-width * 0.75;
-        max-height       : 100%;
-        top              : 25%;
-        left             : 0;
-        right            : 0;
-        margin           : 0 auto;
-        text-align       : center;
-        padding          : @padding-base-vertical @padding-base-horizontal;
-        border           : 1px solid;
-        color            : @state-primary-color;
-        border-color     : @state-primary-border;
-        background-color : @state-primary-bg;
-        .border-radius(@state-border-radius);
+        position   : fixed;
+        z-index    : 1001;
+        width      : 100%;
+        height     : 100%;
+        top        : 0;
+        left       : 0;
+        text-align : center;
 
         // Alternate styles
         // -------------------------
+        &.primary{
+            .dialog-inner{
+                color            : @state-primary-color;
+                border-color     : @state-primary-border;
+                background-color : @state-primary-bg;
+            }
+        }
         &.success when (@alert-color-success = true) and (@alert-colors = true){
-            color            : @state-success-color;
-            border-color     : @state-success-border;
-            background-color : @state-success-bg;
+            .dialog-inner{
+                color            : @state-success-color;
+                border-color     : @state-success-border;
+                background-color : @state-success-bg;
+            }
         }
         &.warning when (@alert-color-warning = true) and (@alert-colors = true){
-            color            : @state-warning-color;
-            border-color     : @state-warning-border;
-            background-color : @state-warning-bg;
+            .dialog-inner{
+                color            : @state-warning-color;
+                border-color     : @state-warning-border;
+                background-color : @state-warning-bg;
+            }
         }
         &.error when (@alert-color-error = true) and (@alert-colors = true){
-            color            : @state-error-color;
-            border-color     : @state-error-border;
-            background-color : @state-error-bg;
+            .dialog-inner{
+                color            : @state-error-color;
+                border-color     : @state-error-border;
+                background-color : @state-error-bg;
+            }
         }
         &.info when (@alert-color-info = true) and (@alert-colors = true){
-            color            : @state-info-color;
-            border-color     : @state-info-border;
-            background-color : @state-info-bg;
+            .dialog-inner{
+                color            : @state-info-color;
+                border-color     : @state-info-border;
+                background-color : @state-info-bg;
+            }
         }
 
         li{
@@ -63,23 +68,39 @@
     }
 
     .dialog-inner{
-        font-size : @font-size-large;
-        padding   : @padding-larger-vertical @padding-larger-horizontal;
+        overflow         : auto;
+        margin-top       : 15%;
+        max-width        : @grid-container-width * 0.75;
+        max-height       : 70%;
+        font-size        : @font-size-large;
+        padding          : 1em 2em;
+        border           : 1px solid @gray;
+        background-color : #fff;
+        .inline-block();
+        .border-radius(@state-border-radius);
+        .box-shadow(3px 3px 10px fade(#000, 50%));
     }
 
     .dialog-buttons{
         margin-top : 1em;
 
         button{
-            color            : @state-success-color;
-            border-color     : @state-success-border;
-            background-color : @state-success-bg;
-            .border-radius(@button-border-radius);
+            &:extend(.btn);
+            &:extend(.btn.success);
+            font-size : @font-size-small;
+
+            &:hover{
+                &:extend(.btn.success:hover);
+            }
 
             &.cancel{
-                color            : @state-error-color;
-                border-color     : @state-error-border;
-                background-color : @state-error-bg;
+                margin-right : .5em;
+                &:extend(.btn.outline);
+                &:extend(.btn.outline.error);
+
+                &:hover{
+                    &:extend(.btn.outline.error:hover);
+                }
             }
         }
     }

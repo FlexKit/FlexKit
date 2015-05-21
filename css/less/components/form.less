@@ -82,12 +82,16 @@ form{
     }
 }
 
-label{
+label, .label{
     display       : block;
     margin-bottom : 0.25em;
 
     &[for]{
         cursor : pointer;
+    }
+
+    &[class*="grid_"]{
+        margin-bottom : 0;
     }
 
     .label-inline &{
@@ -106,13 +110,15 @@ label{
 }
 
 select, textarea, input{
-    padding          : .5em;
+    font-family      : @font-family-text;
+    padding          : @input-padding;
     border-width     : @input-border-width;
     border-style     : solid;
     border-color     : @input-border-color;
     background-color : @input-bg;
     color            : @input-color;
     .border-radius(@input-border-radius);
+    .box-shadow(1px 1px 3px @gray-light inset, @input-inner-shadow);
     & when (@button-transition = true){
         .transition(all; 0.3s);
     }
@@ -171,6 +177,9 @@ select, textarea, input{
 input, select{
     height      : unit(@button-line-height * 2, em);
     line-height : unit(@button-line-height * 2, em) - 1;
+    & when (@input-border-width > 0) {
+        padding : (@input-padding - @input-border-width * 2) .5em;
+    }
 }
 
 //select{

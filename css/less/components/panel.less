@@ -1,7 +1,8 @@
 .panel when (@panels = true){
     color         : inherit;
-    border        : 1px solid @state-primary-border;
+    border        : 1px solid @gray-light;
     margin-bottom : 2em;
+    padding       : 0;
 
     .panel-header, .panel-content, .panel-footer{
         margin  : 0;
@@ -11,13 +12,16 @@
 
     .panel-header{
         display       : block;
-        background    : @state-primary-bg;
-        color         : @state-primary-color;
+        background    : @gray-lighter;
+        color         : @gray-darker;
         border-bottom : inherit;
         font-size     : @font-size-large;
+        font-family   : @font-family-headings;
     }
 
     .panel-content{
+        background : #fff;
+        overflow   : auto;
     }
 
     .panel-footer{
@@ -27,6 +31,15 @@
     }
 
     // Alternate colors
+    &.primary {
+        border-color : @state-primary-border;
+
+        .panel-header {
+            background : @state-primary-bg;
+            color      : @state-primary-color;
+        }
+    }
+
     &.success when (@panel-success) and (@panel-colors){
         border-color : @state-success-border;
 
@@ -60,19 +73,10 @@
         }
     }
 
-    &.gray when (@panel-gray) and (@panel-colors){
-        border-color : @gray-light;
-
-        .panel-header{
-            background : @gray-lighter;
-            color      : @gray-darker;
-        }
-    }
-
     &.collapse when (@panel-collapse) and (@panel-types){
         .panel-header{
             position      : relative;
-            padding-right : @padding-base-horizontal + @icon-size-large;
+            padding-right : @padding-base-horizontal + @icon-size-base;
         }
 
         .collapse-btn{
@@ -82,7 +86,8 @@
             bottom   : 0;
             margin   : auto;
             cursor   : pointer;
-            .icon-size(@icon-size-large; true)
+            color    : fade(#000, 30%);
+            .icon-size(@icon-size-base; true)
         }
     }
 }

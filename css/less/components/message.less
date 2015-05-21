@@ -1,13 +1,32 @@
 // Message styles
 // -------------------------
 .message when (@messages = true){
-    display          : block;
-    padding          : @padding-base-vertical @padding-base-horizontal;
+    position         : relative;
+    padding          : .5em .75em;
     background-color : @state-primary-bg;
     color            : @state-primary-color;
     border-left      : 3px solid @state-primary-border;
     .border-radius(@state-border-radius);
     .clearfix-mixin();
+
+    &:empty{
+        display : none;
+    }
+
+    &.notification{
+        .box-shadow(-3px 3px 10px fade(#000, 50%));
+    }
+
+    .btn-close{
+        font-size : @font-size-small;
+        position  : absolute;
+        top       : @padding-base-vertical;
+        right     : @padding-base-vertical;
+
+        &:before{
+            content : "\e0a2";
+        }
+    }
 
     &.right when (@message-right = true){
         text-align   : right;

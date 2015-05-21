@@ -9,8 +9,15 @@
     white-space : nowrap;
     text-align  : center;
     .inline-block(baseline);
-    .border-radius(1em);
     .box-sizing(content-box);
+
+    &.block{
+        display : block;
+    }
+
+    &:empty{
+        display : none;
+    }
 
     &.success, &.info, &.error, &.warning{
         & when (@badge-colors){
@@ -33,9 +40,22 @@
         background : @primary-color;
         color      : @primary-bg;
     }
+    &.black when (@badge-colors) {
+        background : #000;
+        color      : #fff;
+    }
 
-    &.square when (@badge-square) and (@badges-type = true){
-        .border-radius(0, true);
+    &.outline{
+        background : transparent;
+        color      : inherit;
+        border     : 1px solid @gray;
+    }
+
+    &.circle when (@badge-circle) and (@badges-type = true){
+        .border-radius(1em);
+    }
+    &.rounded when (@badge-rounded) and (@badges-type = true){
+        .border-radius(.5em);
     }
     &.leaflet-right when (@badge-leaflet-right) and (@badges-type = true){
         .border-radius(@border-radius-large 0);
