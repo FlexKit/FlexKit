@@ -1,4 +1,4 @@
-.checkboxRadioStyle() when (@checkbox-radio-style = true){
+.checkboxRadioStyle() when (@checkbox-radio-style = true) and not(@checkbox-radio-style-native) {
     label[for*="chr-"]{
         cursor : pointer;
         .user-select();
@@ -156,7 +156,7 @@
                     background : @input-border-color;
                     position   : absolute;
                     border     : 1px solid @input-bg;
-                    z-index    : 5;
+                    z-index    : 1;
                     left       : 0;
                     top        : 0;
                     bottom     : 0;
@@ -172,6 +172,173 @@
                         left       : 50%;
                         background : @brand-success;
                     }
+                }
+            }
+        }
+    }
+}
+
+.checkboxRadioStyle() when (@checkbox-radio-style) and (@checkbox-radio-style-native) {
+    input[type="checkbox"],
+    input[type="radio"]{
+        -webkit-appearance : none;
+        appearance         : none;
+        position           : relative;
+        font-size          : @checkbox-radio-width;
+        height             : 1em;
+        width              : 1em;
+        background         : @input-bg;
+        border             : @input-border-width solid @gray-light;
+        color              : transparent;
+        cursor             : pointer;
+        display            : inline-block;
+        outline            : none;
+
+        &:before when not(@checkbox-checkmark-style){
+            content  : "";
+            position : absolute;
+            left     : 0;
+            right    : 0;
+            top      : 0;
+            bottom   : 0;
+            margin   : auto;
+            width    : 0.625em;
+            height   : 0.625em;
+        }
+
+        &:hover when not(@checkbox-checkmark-style){
+            &:before{
+                background : @gray-lighter;
+            }
+        }
+
+        &:checked{
+            border-color : @brand-success;
+
+            &:before when not(@checkbox-checkmark-style){
+                background : @brand-success;
+            }
+        }
+
+        &:disabled{
+
+            &:checked{
+                &:before{
+                    color      : darken(@input-bg-disabled, 30%) !important;
+                    background : darken(@input-bg-disabled, 30%) !important;
+                }
+            }
+        }
+    }
+
+    input[type="radio"]{
+        .border-radius(1em);
+
+        &:before{
+            .border-radius(1em);
+            & when (@checkbox-checkmark-style){
+                content  : "";
+                position : absolute;
+                left     : 0;
+                right    : 0;
+                top      : 0;
+                bottom   : 0;
+                margin   : auto;
+                width    : 0.625em;
+                height   : 0.625em;
+            }
+        }
+
+        &:hover when (@checkbox-checkmark-style){
+            &:before{
+                background : @gray-lighter;
+            }
+        }
+
+        &:checked when (@checkbox-checkmark-style){
+            &:before{
+                background : @brand-success;
+            }
+        }
+    }
+
+    input[type="checkbox"]{
+
+        &:before when (@checkbox-checkmark-style){
+            &:extend(.toaster-icon);
+            position  : absolute;
+            left      : 0;
+            bottom    : 0;
+            content   : "\e0a5";
+            font-size : 1.5em;
+        }
+
+        &:hover when (@checkbox-checkmark-style){
+            color : @gray-lighter;
+        }
+
+        &:checked when (@checkbox-checkmark-style){
+            color : @brand-success;
+        }
+
+        &.switcher{
+            overflow    : hidden;
+            position    : relative;
+            width       : 4em;
+            height      : 1.25em;
+            line-height : 1.25em;
+
+            &:before{
+                .font-size(@font-size-mini * (@checkbox-radio-width / @font-size-base));
+                line-height : @checkbox-radio-width * 1.25em;
+                content     : 'OFF';
+                background  : none;
+                color       : @brand-error;
+                position    : static;
+                font-family : @font-family-text;
+                font-weight : bold;
+                width       : 50%;
+                text-align  : center;
+                float       : left;
+                margin-left : 50%;
+            }
+
+            &:disabled{
+                &:before{
+                    color      : darken(@input-bg-disabled, 30%) !important;
+                    background : none !important;
+                }
+                &:after{
+                    background : darken(@input-bg-disabled, 30%) !important;
+                }
+            }
+
+            &:after{
+                content    : '';
+                background : @brand-error;
+                .transition(all, 0.3s);
+                .box-sizing();
+                background : @input-border-color;
+                position   : absolute;
+                border     : 1px solid @input-bg;
+                z-index    : 1;
+                left       : 0;
+                top        : 0;
+                bottom     : 0;
+                width      : 50%;
+            }
+
+            &:checked{
+
+                &:before{
+                    content     : 'ON';
+                    margin-left : 0;
+                    color       : @brand-success;
+                }
+
+                &:after{
+                    left       : 50%;
+                    background : @brand-success;
                 }
             }
         }

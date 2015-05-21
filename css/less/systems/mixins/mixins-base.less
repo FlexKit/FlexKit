@@ -4,14 +4,30 @@
     @rules;
     @value;
     @prefixes : '';
+    @onlyPrefix : false
+){
+    @supportWebkit : ~`(function(){var a = "@{prefixes}"; if(@{webkit} && (a.indexOf('webkit') != -1)){ return 'webkit';}}())`;
+    @supportMoz : ~`(function(){var a = "@{prefixes}"; if(@{moz} && (a.indexOf('moz') != -1)){ return 'moz';}}())`;
+    @supportIe : ~`(function(){var a = "@{prefixes}"; if(@{ie} && (a.indexOf('ms') != -1)){ return 'ms';}}())`;
+    @prefixesCurrent : @supportWebkit @supportMoz @supportIe;
+
+    .prefixer-checked(@rules; @value; @prefixesCurrent; @onlyPrefix : @onlyPrefix);
+}
+.prefixer-checked(
+    @rules;
+    @value;
+    @prefixes : '';
     @length : length(@prefixes);
-    @prefix : extract(@prefixes, @length)
+    @prefix : extract(@prefixes, @length);
+    @onlyPrefix : false
 ) when (@length >= 0){
-    .prefixer(@rules; @value; @prefixes; @length - 1);
+    .prefixer-checked(@rules; @value; @prefixes; @length - 1; @onlyPrefix : @onlyPrefix);
     & when (@prefix = webkit), (@prefix = moz), (@prefix = ms), (@prefix = o){
         -@{prefix}-@{rules} : @value;
     }
-    @{rules} : @value;
+    & when (@onlyPrefix = false){
+        @{rules} : @value;
+    }
 }
 
 // Font-face
@@ -251,10 +267,6 @@
 .inline-block(@valign : middle) {
     display        : inline-block;
     vertical-align : @valign;
-    & when (@ie7) and (@ie){
-        *zoom    : 1; // Fix for IE7
-        *display : inline; // Fix for IE7
-    }
 }
 
 // Hide text
@@ -398,11 +410,6 @@
 // ClearFix
 //==================================================
 .clearfix-mixin() {
-//    display : block;
-    & when (@ie7) and (@ie){
-        *zoom : 1;
-    }
-
     &:after{
         content : "";
         display : table;

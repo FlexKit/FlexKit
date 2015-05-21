@@ -1,24 +1,26 @@
 .button(
     @color        : @button-primary-color;
     @background   : @button-primary-bg;
-    @border       : @button-primary-border;
+    @border       : softlight(@background, #000);
     @border-width : @button-border-width;
     @radius       : @button-border-radius
 ) {
     text-align      : center;
     cursor          : pointer;
     text-decoration : none;
-    height          : auto;
-    line-height     : unit(@button-line-height * 2, em);
+    height          : unit(@button-line-height * 2, em);
     padding         : 0 1em;
+    font-family     : @font-family-text;
     .inline-block();
     .button-color(@color; @background; @border);
     .border-radius(@radius);
     & when (@border-width > 0){
         border-width : @border-width;
         border-style : solid;
+        line-height  : unit(@button-line-height * 2, em) - (abs(@button-border-width - @input-border-width) * 2);
     }
     & when (@border-width = 0), (@border-width = none){
+        line-height : unit(@button-line-height * 2, em);
         border : none;
     }
     & when (@button-transition = true){
@@ -48,7 +50,7 @@
 .button-color(
     @color;
     @background;
-    @border;
+    @border      : softlight(extract(@background, 1), #000);
     @color2      : extract(@color, 1);
     @background2 : darken(extract(@background, 1), 10%);
     @border2     : darken(extract(@border, 1), 10%)
@@ -83,7 +85,7 @@
 //==================================================
 .button-3d(@border) {
     margin-top : -0.55em;
-    @border2 : darken(@border, 7%);
+    @border2 : fade(#000, 50%);
     .box-shadow(~'0 0.3em 0 0 @{border}, 0 0.3em 0 0.15em @{border2}');
 
     &:active{
