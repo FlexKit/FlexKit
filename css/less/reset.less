@@ -14,10 +14,12 @@
         .box-sizing();
     }
 }
+
 ::-moz-selection{
     background : @text-select-bg;
     color      : @text-select-color;
 }
+
 ::selection{
     background : @text-select-bg;
     color      : @text-select-color;
@@ -26,6 +28,7 @@
 blockquote, q{
     quotes : none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after{
     content : '';
@@ -37,6 +40,7 @@ table{
     border-collapse : collapse;
     //    word-break      : break-all
 }
+
 a:focus, [type="checkbox"]:focus, [type="radio"]:focus, *:focus{
     outline : none;
 }
@@ -46,12 +50,17 @@ img{
     max-width : 100%;
     height    : auto;
 }
+
 iframe{
+    border    : none;
+    width     : 100%;
     max-width : 100%;
 }
+
 .gall{
     .inline-block;
 }
+
 .gmaps{
     color     : #000;
     max-width : 100%;
@@ -88,6 +97,7 @@ iframe{
 dl, dt, dd{
     margin : 0;
 }
+
 input, select, textarea, button{
     max-width : 100%;
     width     : 100%;
@@ -105,10 +115,12 @@ button,
 [type="checkbox"]{
     width : auto; // Override of generic input selector
 }
+
 [type="file"]{
     border  : none;
     padding : 0;
 }
+
 [type="color"]{
     padding : 0;
 }
@@ -173,23 +185,6 @@ button, [type="button"], [type="reset"], [type="submit"]{
         ::i-block-chrome, .related-products{
             display : table;
             width   : 100%;
-        }
-    }
-
-    //fix for Opera
-    & when (@opera = true){
-        noindex:-o-prefocus, .main_menu,
-        noindex:-o-prefocus, .listpages,
-        noindex:-o-prefocus, .listcategories,
-        noindex:-o-prefocus, .featureditem,
-        noindex:-o-prefocus, .search-results,
-        noindex:-o-prefocus, .relatedpages,
-        noindex:-o-prefocus, .listxrss,
-        noindex:-o-prefocus, .related-products{
-            word-spacing : -0.3em;
-            li{
-                word-spacing : normal;
-            }
         }
     }
 
@@ -259,6 +254,7 @@ button, [type="button"], [type="reset"], [type="submit"]{
         .reset-style;
     }
 }
+
 & when not(@seotoaster = true){
     // Reset for all navigation items, related-products
     //==================================================
@@ -271,16 +267,6 @@ button, [type="button"], [type="reset"], [type="submit"]{
         ::i-block-chrome, .main_menu{
             display : table;
             width   : 100%;
-        }
-    }
-
-    //fix for Opera
-    & when (@opera = true){
-        noindex:-o-prefocus, .main_menu{
-            word-spacing : -0.3em;
-            li{
-                word-spacing : normal;
-            }
         }
     }
 
@@ -307,4 +293,20 @@ button, [type="button"], [type="reset"], [type="submit"]{
 
 .disable-hover, .disable-hover *{
     pointer-events : none !important;
+}
+
+.ui-widget-overlay, .overlay {
+    position   : fixed;
+    top        : 0;
+    left       : 0;
+    bottom     : 0;
+    right      : 0;
+    z-index    : 99;
+    background : fade(#000, 50%);
+}
+
+.ui-widget {
+    & ~ .overlay {
+        z-index : 999;
+    }
 }
