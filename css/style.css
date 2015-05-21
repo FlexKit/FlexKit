@@ -110,8 +110,8 @@ input {
   border-color: #bbbbbb;
   background-color: #ffffff;
   color: #2f2f2f;
-  -webkit-transition: all 0.3s ease webkit false;
-  transition: all 0.3s ease webkit false;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 select:focus,
 textarea:focus,
@@ -292,8 +292,8 @@ input[type="checkbox"].switcher:disabled:after {
 input[type="checkbox"].switcher:after {
   content: '';
   background: #f65314;
-  -webkit-transition: all 0.3s ease webkit false;
-  transition: all 0.3s ease webkit false;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   box-sizing: border-box;
   background: #bbbbbb;
   position: absolute;
@@ -347,8 +347,8 @@ input[type="checkbox"].switcher:checked:after {
   background: #bbbbbb;
   text-align: center;
   color: #fff;
-  -webkit-transition: all 0.3s ease webkit false;
-  transition: all 0.3s ease webkit false;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .labeled input:focus,
 .labeled select:focus {
@@ -408,8 +408,8 @@ input[type="checkbox"].switcher:checked:after {
   left: .5em;
   z-index: 1;
   line-height: 2.3em;
-  -webkit-transition: all 0.2s ease webkit false;
-  transition: all 0.2s ease webkit false;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .input-label input {
   border-width: 0 0 1px;
@@ -459,8 +459,8 @@ input[type="checkbox"].switcher:checked:after {
   text-align: center;
   padding: 3px;
   background: transparent;
-  -webkit-transition: all 0.3s ease webkit false;
-  transition: all 0.3s ease webkit false;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   border: 1px solid #bbbbbb;
 }
 .img_gallery a img:hover {
@@ -569,8 +569,8 @@ input[type="checkbox"].switcher:checked:after {
   height: 18px;
   line-height: 18px;
   font-size: 0;
-  -webkit-transition: all 0.5s ease webkit false;
-  transition: all 0.5s ease webkit false;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .cycle-slideshow [class*="cycle-"].action-button:before {
   font-size: 18px;

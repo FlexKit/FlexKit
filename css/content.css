@@ -3306,8 +3306,8 @@ ul.list-count-sign > li:before {
   margin-left: -3em;
   margin-right: 1em;
   color: #fff;
-  -webkit-transition: background-color 0.5s ease webkit false;
-  transition: background-color 0.5s ease webkit false;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
   border-radius: 10em;
 }
 ul.list-count-sign > li:hover:before {
@@ -3332,8 +3332,8 @@ ul.list-icon-sign > li:before {
   background-color: #eeeeee;
   margin-left: -3em;
   margin-right: 1em;
-  -webkit-transition: background-color 0.5s ease webkit false;
-  transition: background-color 0.5s ease webkit false;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
   border-radius: 10em;
 }
 ul.list-icon-sign > li:hover:before {
@@ -3757,8 +3757,8 @@ img.img-thumbnail {
   text-align: center;
   padding: 3px;
   background: transparent;
-  -webkit-transition: all 0.3s ease webkit false;
-  transition: all 0.3s ease webkit false;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   border: 1px solid #bbbbbb;
 }
 .img-thumbnail img:hover,
@@ -3799,8 +3799,8 @@ button,
   background-color: #c2d2da;
   line-height: 2.3em;
   border: none;
-  -webkit-transition: background 0.3s ease webkit false;
-  transition: background 0.3s ease webkit false;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
