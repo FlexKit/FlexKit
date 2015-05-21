@@ -16,9 +16,9 @@ $('.dropdown-btn').each(function(){
 
 function dropdownInit(menu){
     if(window.innerWidth <= 800){
-        $(menu).addClass('dropdown-menu');
+        $(menu).addClass('dropdown-menu-mobile');
     }else{
-        $(menu).removeClass('dropdown-menu');
+        $(menu).removeClass('dropdown-menu-mobile');
     }
 }
 
@@ -32,6 +32,22 @@ tapButton('sub-menu-btn', function(e){
 
 var body = document.body;
 $(body).on(events[0], hideMenu);
+
+//$(document).on(events[0], function (e) {
+//    var dropdownEl = $('.dropdown-menu, .dropdown-menu-mobile, .dropdown-btn');
+//    var container = $('.dropdown-menu, .dropdown-menu-mobile');
+//    if (!dropdownEl.is(e.target) && dropdownEl.has(e.target).length === 0){
+//        hideMenu();
+//        container.hide();
+//    }
+//});
+
+//$(document).on('click', function (e) {
+//    var container = $('.dropdown-menu');
+//    if (container.has(e.target).length === 0){
+//        $('.dropdown-menu').hide();
+//    }
+//});
 
 function hideMenu(e){
     if(e.target.hasAttribute('data-menu-open') || e.target.hasAttribute('data-dropdown-open')){
@@ -55,7 +71,7 @@ function showMenu(e){
 function showDropdown(e){
     //    ev.stopPropagation();
     e.preventDefault();
-    var menu = e.target.getAttribute('data-menu');
+    var menu = e.target.getAttribute('data-menu') || e.target.nextElementSibling;
     $(menu).addClass('open');
     body.setAttribute('data-dropdown-open', '');
     $(e.target).addClass('active');

@@ -2,13 +2,15 @@ function _checkboxRadio(){
 //    if(!$('.ie8').length){
         $('input:checkbox, input:radio').not('.processed, .icon, .hidden').each(function(){
 
-            var id = $(this).prop('id'), labelClass;
+        var id = $(this).prop('id'), labelClass = '';
             if(!id){
                 id = 'chr-'+Math.floor((Math.random()*100000)+1);
                 $(this).prop('id', id);
             }
 
+        if($(this).data('clone-classes') === 'true') {
             labelClass = $(this).prop('class') || '';
+        }
 
             $(this).addClass('processed');
 

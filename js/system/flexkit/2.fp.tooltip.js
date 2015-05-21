@@ -32,7 +32,7 @@ function _tooltip(){
             });
         showTooltip($this, tooltipPosition);
     });
-}
+
 function showTooltip(el, position){
     var my = '', at = '', arrowWidth = 10;
     switch(position){
@@ -71,5 +71,6 @@ function showTooltip(el, position){
             }
         }
     });
+}
 }
 _tooltip();
