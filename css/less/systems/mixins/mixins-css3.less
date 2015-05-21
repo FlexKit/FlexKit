@@ -127,7 +127,7 @@
 // Transformations
 //==================================================
 .transition(@property:all; @time:0.5s; @timing-function: ease; @support : webkit; @only : false) {
-    .prefixer(transition; @arguments; @support; @onlyPrefix : @only);
+    .prefixer(transition; @property @time @timing-function; @support; @onlyPrefix : @only);
 }
 
 .transform(@transform; @support : webkit ms; @only : false) {
