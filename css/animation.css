@@ -6916,8 +6916,6 @@
   animation-name: floating;
   -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
 }
 @-webkit-keyframes tossing {
   0% {
@@ -6958,8 +6956,6 @@
   animation-name: tossing;
   -webkit-animation-duration: 2.5s;
   animation-duration: 2.5s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
 }
 @-webkit-keyframes pullUp {
   0% {
