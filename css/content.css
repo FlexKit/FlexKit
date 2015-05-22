@@ -2172,13 +2172,13 @@
   text-align: justify;
 }
 .align-top {
-  vertical-align: top;
+  vertical-align: top !important;
 }
 .align-middle {
-  vertical-align: middle;
+  vertical-align: middle !important;
 }
 .align-bottom {
-  vertical-align: bottom;
+  vertical-align: bottom !important;
 }
 .ws-nowrap {
   white-space: nowrap !important;
