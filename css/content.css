@@ -4254,17 +4254,11 @@ hr.dotted {
   border-radius: 0 0.75em;
 }
 .message {
-  display: block;
   position: relative;
   padding: .5em .75em;
   background-color: #eff3f5;
   color: #687075;
   border-left: 3px solid #d6e1e6;
-}
-.message:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 .message:empty {
   display: none;

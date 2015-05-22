@@ -1,14 +1,12 @@
 // Message styles
 // -------------------------
 .message when (@messages = true){
-    display          : block;
     position         : relative;
     padding          : .5em .75em;
     background-color : @state-primary-bg;
     color            : @state-primary-color;
     border-left      : 3px solid @state-primary-border;
     .border-radius(@state-border-radius);
-    .clearfix-mixin();
 
     &:empty{
         display : none;
