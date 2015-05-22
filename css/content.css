@@ -3789,7 +3789,8 @@ button,
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-  height: 2.3em;
+  height: auto;
+  line-height: 2.3em;
   padding: 0 1em;
   font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
   display: inline-block;
@@ -3797,7 +3798,6 @@ button,
   color: #ffffff;
   border-color: #94adba;
   background-color: #c2d2da;
-  line-height: 2.3em;
   border: none;
   -webkit-transition: background 0.3s ease;
   transition: background 0.3s ease;
@@ -4018,8 +4018,8 @@ button[class*="grid_"],
   color: #494949;
 }
 .btn.outline {
-  border: 0.1em solid;
-  line-height: 2.1em;
+  border: 1px solid;
+  line-height: 0.3em;
   box-shadow: none;
   color: #c2d2da;
   border-color: #c2d2da;

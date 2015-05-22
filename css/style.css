@@ -104,8 +104,8 @@ select,
 textarea,
 input {
   font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
-  padding: 0.5em;
-  border-width: 0.1em;
+  padding: .5em;
+  border-width: 1px;
   border-style: solid;
   border-color: #bbbbbb;
   background-color: #ffffff;
@@ -203,7 +203,6 @@ input,
 select {
   height: 2.3em;
   line-height: 1.3em;
-  padding: 0.3em 0.5em;
 }
 textarea {
   min-height: 5em;
@@ -217,7 +216,7 @@ input[type="radio"] {
   height: 1em;
   width: 1em;
   background: #ffffff;
-  border: 0.1em solid #bbbbbb;
+  border: 1px solid #bbbbbb;
   color: transparent;
   cursor: pointer;
   display: inline-block;

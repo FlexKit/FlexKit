@@ -111,7 +111,7 @@ label, .label{
 
 select, textarea, input{
     font-family      : @font-family-text;
-    padding          : @input-padding;
+    padding          : .5em;
     border-width     : @input-border-width;
     border-style     : solid;
     border-color     : @input-border-color;
@@ -177,9 +177,6 @@ select, textarea, input{
 input, select{
     height      : unit(@button-line-height * 2, em);
     line-height : unit(@button-line-height * 2, em) - 1;
-    & when (@input-border-width > 0) {
-        padding : (@input-padding - @input-border-width * 2) .5em;
-    }
 }
 
 //select{
