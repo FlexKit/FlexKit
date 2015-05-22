@@ -4254,6 +4254,7 @@ hr.dotted {
   border-radius: 0 0.75em;
 }
 .message {
+  display: block;
   position: relative;
   padding: .5em .75em;
   background-color: #eff3f5;
