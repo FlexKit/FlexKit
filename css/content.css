@@ -4108,7 +4108,6 @@ button[class*="grid_"],
 }
 .btn.outline {
   border: 1px solid;
-  line-height: 0.3em;
   box-shadow: none;
   color: #c2d2da;
   border-color: #c2d2da;
