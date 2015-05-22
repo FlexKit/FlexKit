@@ -380,13 +380,35 @@ button:focus,
 [disabled] {
   cursor: default;
 }
-.main_menu:after {
+.main_menu:after,
+.listpages:after,
+.listcategories:after,
+.featureditem:after,
+.featureapage:after,
+.search-results:after,
+.relatedpages:after,
+.listxrss:after,
+.related-products:after {
   content: "";
   display: table;
   clear: both;
 }
 ::i-block-chrome,
-.main_menu {
+.main_menu,
+::i-block-chrome,
+.listpages,
+::i-block-chrome,
+.listcategories,
+::i-block-chrome,
+.featureditem,
+::i-block-chrome,
+.search-results,
+::i-block-chrome,
+.relatedpages,
+::i-block-chrome,
+.listxrss,
+::i-block-chrome,
+.related-products {
   display: table;
   width: 100%;
 }
@@ -396,11 +418,112 @@ button:focus,
 .main_menu li,
 .main_menu ul,
 .main_menu ul li,
+.sitemap,
+.sitemap li,
+.listpages,
+.listpages li,
+.listcategories,
+.listcategories li,
+.featureditem,
+.featureditem li,
+.featureapage,
+.relatedpages,
+.relatedpages li,
+.listxrss,
+.listxrss li,
+.search-results,
+.search-results li,
 .img_gallery,
-.img_gallery li {
+.img_gallery li,
+.related-products,
+.related-products li {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+.listpages li,
+.listcategories li,
+.featureditem li,
+.featureapage li,
+.search-results li,
+.relatedpages li,
+.listxrss li,
+.related-products li {
+  position: relative;
+}
+.listpages a,
+.listcategories a,
+.featureditem a,
+.featureapage a,
+.search-results a,
+.relatedpages a,
+.listxrss a,
+.related-products a {
+  display: block;
+}
+.listpages img,
+.listcategories img,
+.featureditem img,
+.featureapage img,
+.search-results img,
+.relatedpages img,
+.listxrss img,
+.related-products img {
+  width: 100%;
+}
+.listpages .page-title,
+.listcategories .page-title,
+.featureditem .page-title,
+.featureapage .page-title,
+.search-results .page-title,
+.relatedpages .page-title,
+.listxrss .page-title,
+.related-products .page-title {
+  margin: 0 0 0.25em;
+  font-size: 1.25em;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+}
+.listpages span,
+.listcategories span,
+.featureditem span,
+.featureapage p,
+.search-results span,
+.relatedpages span,
+.listxrss p,
+.related-products .product-description {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+}
+.listpages span:empty,
+.listcategories span:empty,
+.featureditem span:empty,
+.featureapage p:empty,
+.search-results span:empty,
+.relatedpages span:empty,
+.listxrss p:empty,
+.related-products .product-description:empty {
+  display: none;
+}
+.reset-style {
+  float: none;
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: 0 none;
+  color: inherit;
+  font-family: inherit;
+  font-size: medium;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+  position: static;
+  vertical-align: baseline;
+  box-shadow: none;
+  border-radius: 0;
+  -webkit-transition: none 0.5s ease;
+  transition: none 0.5s ease;
 }
 .clear {
   display: block;

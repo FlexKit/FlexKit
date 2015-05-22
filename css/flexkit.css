@@ -1304,7 +1304,9 @@ a[class*="tooltip-native"] {
   width: 100%;
   height: 100%;
 }
-.responsive-ratio > img {
+.responsive-ratio > img,
+.responsive-ratio ._lbox img,
+.responsive-ratio .gall img {
   position: absolute !important;
   top: 0;
   left: 0;
@@ -1316,11 +1318,15 @@ a[class*="tooltip-native"] {
   width: auto;
   height: auto;
 }
-.responsive-ratio.bottom > img {
+.responsive-ratio.bottom > img,
+.responsive-ratio ._lbox img,
+.responsive-ratio .gall img {
   min-height: 0 !important;
   top: auto;
 }
-.responsive-ratio.top > img {
+.responsive-ratio.top > img,
+.responsive-ratio ._lbox img,
+.responsive-ratio .gall img {
   min-height: 0 !important;
   bottom: auto;
 }

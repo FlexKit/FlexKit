@@ -2469,6 +2469,75 @@ a.inherit-color:hover {
   float: none;
   display: table-cell;
 }
+.gl-change {
+  font-size: 0;
+}
+.gl-change a,
+.gl-change :before {
+  font-size: 14px;
+}
+.gl-change .generator-links {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: content-box;
+  width: 11px !important;
+  height: 11px !important;
+  line-height: 11px !important;
+  font-size: 0 !important;
+  color: #ffffff;
+  border-color: #0066e4;
+  background-color: #00a1f1;
+  padding: 4px !important;
+  position: relative;
+}
+.gl-change .generator-links:before {
+  font-size: 11px !important;
+}
+.gl-change .generator-links:hover,
+.gl-change .generator-links:active,
+.gl-change .generator-links.active {
+  color: #ffffff;
+  border-color: #004fb1;
+  background-color: #007fbe;
+}
+.gl-change .generator-links img {
+  display: none !important;
+}
+.gl-change .generator-links:before {
+  font-family: flexkit-icons;
+  content: "\e008";
+}
+.gl-change .generator-links + .generator-links {
+  margin-left: 1px;
+}
+.gl-change .generator-links + .generator-links:before {
+  content: "\e095";
+}
+.gl-change a.icon + .generator-links:before {
+  content: "\e095";
+  border-left: 2px solid #fff;
+  border-top: 2px solid #fff;
+  margin: 0 0 -2px -15px;
+  vertical-align: bottom;
+}
+.gl-change .btn ~ .generator-links {
+  vertical-align: top;
+}
+.gl-change .btn + .generator-links + .generator-links ~ .generator-links {
+  top: 19px;
+  left: -40px;
+}
+.gl-change.color .generator-links {
+  padding: 4px;
+}
+.gl-change.color .generator-links:before {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+.gl-change.color .generator-links:before {
+  content: "\e00a";
+}
 .relative {
   position: relative;
 }
@@ -2854,6 +2923,26 @@ a.error:hover {
 }
 a.info:hover {
   color: #006ea4;
+}
+.seosamba-color {
+  color: #83b421;
+}
+a.seosamba-color:hover {
+  color: #547315;
+}
+.seotoaster-color {
+  color: #6464fd;
+}
+a.seotoaster-color:hover {
+  color: #1818fc;
+}
+.seosamba-bg {
+  color: #fff;
+  background-color: #83b421;
+}
+.seotoaster-bg {
+  color: #fff;
+  background-color: #6464fd;
 }
 .primary-bg {
   background-color: #c2d2da;

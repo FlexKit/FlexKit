@@ -1,3 +1,19 @@
+.listpages,
+.listcategories,
+.featureditem,
+.relatedpages,
+.related-products {
+  font-size: 0;
+}
+.listpages li,
+.listcategories li,
+.featureditem li,
+.relatedpages li,
+.related-products li {
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+}
 .main_menu {
   position: relative;
   z-index: 110;
