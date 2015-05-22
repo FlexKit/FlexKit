@@ -171,88 +171,30 @@
 & when (@animate-puffOut){
     @-webkit-keyframes puffOut{
         0%{
-            opacity : 0;
-            .transform-origin(50% 50%);
-            .scale(2, 2);
-        }
-        100%{
             opacity : 1;
             .transform-origin(50% 50%);
             .scale(1, 1);
+        }
+        100%{
+            opacity : 0;
+            .transform-origin(50% 50%);
+            .scale(2, 2);
         }
     }
     @keyframes puffOut{
         0%{
-            opacity : 0;
-            .transform-origin(50% 50%);
-            .scale(2, 2);
-        }
-        100%{
             opacity : 1;
             .transform-origin(50% 50%);
             .scale(1, 1);
+        }
+        100%{
+            opacity : 0;
+            .transform-origin(50% 50%);
+            .scale(2, 2);
         }
     }
     .puffOut{
         .animation-name(puffOut);
-    }
-}
-& when (@animate-vanishIn){
-    @-webkit-keyframes vanishIn{
-        0%{
-            opacity : 0;
-            .transform-origin(50% 50%);
-            .scale(2, 2);
-        }
-        100%{
-            opacity : 1;
-            .transform-origin(50% 50%);
-            .scale(1, 1);
-        }
-    }
-    @keyframes vanishIn{
-        0%{
-            opacity : 0;
-            .transform-origin(50% 50%);
-            .scale(2, 2);
-        }
-        100%{
-            opacity : 1;
-            .transform-origin(50% 50%);
-            .scale(1, 1);
-        }
-    }
-    .vanishIn{
-        .animation-name(vanishIn);
-    }
-}
-& when (@animate-vanishOut){
-    @-webkit-keyframes vanishOut{
-        0%{
-            opacity : 1;
-            .transform-origin(50% 50%);
-            .scale(1, 1);
-        }
-        100%{
-            opacity : 0;
-            .transform-origin(50% 50%);
-            .scale(2, 2);
-        }
-    }
-    @keyframes vanishOut{
-        0%{
-            opacity : 1;
-            .transform-origin(50% 50%);
-            .scale(1, 1);
-        }
-        100%{
-            opacity : 0;
-            .transform-origin(50% 50%);
-            .scale(2, 2);
-        }
-    }
-    .vanishOut{
-        .animation-name(vanishOut);
     }
 }
 
@@ -949,7 +891,6 @@
             .transform(translateY(0));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateY(100%));
         }
@@ -960,7 +901,6 @@
             .transform(translateY(0));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateY(100%));
         }
@@ -976,7 +916,6 @@
             .transform(translateY(0));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateY(-100%));
         }
@@ -987,7 +926,6 @@
             .transform(translateY(0));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateY(-100%));
         }
@@ -1003,7 +941,6 @@
             .transform(translateX(0));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateX(-100%));
         }
@@ -1014,7 +951,6 @@
             .transform(translateX(0));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateX(-100%));
         }
@@ -1030,7 +966,6 @@
             .transform(translateX(0));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateX(100%));
         }
@@ -1041,7 +976,6 @@
             .transform(translateX(0));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateX(100%));
         }
@@ -1057,7 +991,6 @@
             .transform(translateY(100%));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateY(0));
         }
@@ -1068,7 +1001,6 @@
             .transform(translateY(100%));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateY(0));
         }
@@ -1084,7 +1016,6 @@
             .transform(translateY(-100%));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateY(0));
         }
@@ -1095,7 +1026,6 @@
             .transform(translateY(-100%));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateY(0));
         }
@@ -1111,7 +1041,6 @@
             .transform(translateX(-100%));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateX(0));
         }
@@ -1122,7 +1051,6 @@
             .transform(translateX(-100%));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateX(0));
         }
@@ -1138,7 +1066,6 @@
             .transform(translateX(100%));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateX(0));
         }
@@ -1149,7 +1076,6 @@
             .transform(translateX(100%));
         }
         100%{
-            opacity : 0;
             .transform-origin(0 0);
             .transform(translateX(0));
         }
