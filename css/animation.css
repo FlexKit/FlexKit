@@ -1,4 +1,8 @@
+.scroll-effect {
+  visibility: hidden;
+}
 .animated {
+  visibility: visible;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
