@@ -15,16 +15,19 @@ ul, ol{
         }
     }
 }
+
 ul{
     list-style-type : disc;
 
     ul{ list-style-type : circle; }
 }
+
 ol{
     list-style-type : decimal;
 
     ol{ list-style-type : lower-latin; }
 }
+
 dl{
     dt{ font-weight : bold; }
 
@@ -45,12 +48,14 @@ dl{
         dd{ margin-left : 37%; }
     }
 }
+
 [class*=" list-"], [class^="list-"]{
     & when (@lists-classes = true){
         list-style-type : none;
         padding-left    : 0;
     }
 }
+
 ul{
     &.list-unstyled when (@list-unstyled = true) and (@lists-classes = true){
         zoom : 1;

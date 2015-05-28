@@ -173,6 +173,7 @@
             a{
                 padding-top    : 0;
                 padding-bottom : 0;
+                overflow       : hidden;
 
                 &:hover, &.current{
                     background : @gray-lighter;
@@ -223,18 +224,18 @@
         //    text-transform : uppercase;
         .user-select();
 
-        &:before{
-            content    : '';
-            height     : @top-block-height / 3;
-            width      : @top-block-height / 3;
-            margin-top : @top-block-height / 3;
-            .transition();
-            .gradient-vertical(#fff 0%, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
-
-            .mobile-bar.bottom &{
-                margin-top : (@bottom-block-height - @top-block-height / 3) / 2;
-            }
-        }
+//        &:before{
+//            content    : '';
+//            height     : @top-block-height / 3;
+//            width      : @top-block-height / 3;
+//            margin-top : @top-block-height / 3;
+//            .transition();
+//            .gradient-vertical(#fff 0%, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
+//
+//            .mobile-bar.bottom &{
+//                margin-top : (@bottom-block-height - @top-block-height / 3) / 2;
+//            }
+//        }
 
         &.left{
             float : left;

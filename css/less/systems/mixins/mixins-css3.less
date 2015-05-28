@@ -109,13 +109,6 @@
 // -- Box Shadow
 .box-shadow(@shadow; @shadow-switcher : true) when (@shadow-switcher = true){
     .prefixer(box-shadow; @shadow);
-//    & when (@ie = true) and (@ie8 = true), (@ie7 = true) and not(@activate-pie = true){
-//        @offX      : extract(@shadow, 1);
-//        @offY      : extract(@shadow, 2);
-//        @n         : length(@shadow);
-//        @color     : extract(@shadow, @n);
-//        filter : e(%("progid:DXImageTransform.Microsoft.dropshadow(offX='%d', offY='%d', color='%d'))",@offX,@offY,@color));
-//    }
     .pie();
 }
 
