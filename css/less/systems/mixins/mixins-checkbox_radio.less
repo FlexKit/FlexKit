@@ -265,7 +265,12 @@
     input[type="checkbox"]{
 
         &:before when (@checkbox-checkmark-style){
-            &:extend(.toaster-icon);
+            & when (@seotoaster){
+                .flexkit-icon()
+            }
+            & when not(@seotoaster){
+                &:extend(.flexkit-icon);
+            }
             position  : absolute;
             left      : 0;
             bottom    : 0;

@@ -1,33 +1,30 @@
-ul, ol {
+ul, ol{
     margin-bottom : 1.5em;
     padding-left  : 2.5em;
     .clearfix-mixin();
 
-    ol, ul {
-        margin    : 0.3em 0 1em;
+    ol, ul{
+        margin : 0.3em 0 1em;
     }
 
-    li {
+    li{
         margin-bottom : 0.3em;
         .clearfix-mixin();
 
-        li {
+        li{
         }
     }
 }
-
 ul{
     list-style-type : disc;
 
     ul{ list-style-type : circle; }
 }
-
 ol{
     list-style-type : decimal;
 
     ol{ list-style-type : lower-latin; }
 }
-
 dl{
     dt{ font-weight : bold; }
 
@@ -48,19 +45,18 @@ dl{
         dd{ margin-left : 37%; }
     }
 }
-
 [class*=" list-"], [class^="list-"]{
     & when (@lists-classes = true){
         list-style-type : none;
         padding-left    : 0;
     }
 }
-
 ul{
     &.list-unstyled when (@list-unstyled = true) and (@lists-classes = true){
         zoom : 1;
     }
-    &.list-striped when (@lists-classes = true){
+
+    &.list-striped when (@list-striped = true) and (@lists-classes = true){
         & > li{
             margin  : 0;
             padding : 10px;
@@ -70,6 +66,7 @@ ul{
             }
         }
     }
+
     &.list-inline when (@list-inline = true) and (@lists-classes = true){
         zoom : 1;
 
@@ -82,7 +79,7 @@ ul{
     &.list-bordered when (@list-bordered = true) and (@lists-classes = true){
         zoom : 1;
 
-        & > li {
+        & > li{
             border-bottom  : 1px solid @hr-color;
             margin         : 0;
             padding-top    : @padding-base-vertical;
@@ -91,7 +88,7 @@ ul{
             footer &{ border-color : inherit; }
         }
 
-        &.dashed > li {
+        &.dashed > li{
             border-bottom-style : dashed;
         }
     }
@@ -175,13 +172,11 @@ ul{
     }
 
     &.list-icon-sign when (@list-icon-sign = true) and (@lists-classes = true){
-        counter-reset : list;
 
         & > li{
             margin-bottom : 0.5em;
             padding-left  : 3em;
             line-height   : 2em;
-            display       : list-item;
 
             &:before{
                 .inline-block();
@@ -316,7 +311,7 @@ ul{
         }
     }
 
-    &.list-icon-line{
+    &.list-icon-line when (@list-icon-line = true) and (@lists-classes = true){
         @icon-size : @icon-size-large;
         @icon-box  : @icon-size * 1.75;
         @size-line : 2px;
@@ -349,68 +344,18 @@ ul{
         }
     }
 
-    &.list-trees{
-        ul{
-            margin : 0;
-        }
-
-        li{
-            padding : 0 0 0 24px;
-
-            a{
-                .link-color(@gray-dark);
-
-                &:hover{
-                    text-decoration : underline;
-                }
-            }
-
-            &:before{
-                &:extend(.toaster-icon);
-                margin    : 2px 0 0 -21px;
-                float     : left;
-                font-size : 16px;
-                color     : @gray-light;
-            }
-
-            &.folder{
-                &:before{
-                    content : "\e023";
-                }
-                &.active{
-                    & > a{
-                        font-weight : bold;
-                    }
-                }
-                &.expand-open{
-                    &:before{
-                        color   : @gray;
-                        content : "\e02d";
-                    }
-                }
-                &.expand-closed{
-                    .folder-container{
-                        display : none;
-                    }
-                }
-            }
-
-        }
-    }
-
-    &.list-step{
+    &.list-step when (@list-step = true) and (@lists-classes = true){
         text-align    : center;
-        margin-bottom : 2em;
 
         .step-item{
             display        : inline-block;
             vertical-align : middle;
             line-height    : 3em;
             position       : relative;
-            background     : #5bb75b;
+            background     : @state-success-bg;
             color          : #fff;
             padding        : 0 1em;
-            border-color   : #5bb75b;
+            border-color   : @state-success-bg;
             cursor         : pointer;
 
             & + .step-item{
@@ -439,22 +384,20 @@ ul{
                 border-bottom-color : transparent !important;
             }
             &.active{
-                background   : #39a124;
-                border-color : #39a124;
+                background   : @brand-success;
+                border-color : @brand-success;
             }
             &.active ~ .step-item{
-                color        : #777;
                 background   : #ddd;
                 border-color : #ddd;
             }
             &.error{
-                color        : #fff !important;
-                background   : #fd6a5f !important;
-                border-color : #fd6a5f !important;
+                background   : @state-error-bg !important;
+                border-color : @state-error-bg !important;
             }
             &.active.error{
-                background   : #f14b32 !important;
-                border-color : #f14b32 !important;
+                background   : @brand-error !important;
+                border-color : @brand-error !important;
             }
             &:first-child:before, &:last-child:after{
                 content : none;
@@ -462,19 +405,19 @@ ul{
         }
 
         .step-title{
-            font-size : 1.15em;
+            font-size   : 1.15em;
+            line-height : normal;
         }
         .step-count{
-            color          : #fff;
             border         : 2px solid #fff;
             border-radius  : 2em;
             width          : 1.15em;
             height         : 1.15em;
             line-height    : 1.15em;
-            display        : inline-block;
-            vertical-align : middle;
             font-size      : 1.5em;
-            margin-right   : 0.5em;
+            margin-right   : 0.25em;
+            .inline-block();
+            .box-sizing(content-box);
         }
     }
 }

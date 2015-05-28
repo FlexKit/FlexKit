@@ -314,7 +314,7 @@ input[type="checkbox"].switcher:before {
   float: left;
   margin-left: 50%;
 }
-input[type="checkbox"].switcher:before .ie8 {
+.ie8 input[type="checkbox"].switcher:before {
   font-size: 12px;
 }
 input[type="checkbox"].switcher:disabled:before {

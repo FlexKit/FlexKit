@@ -85,21 +85,31 @@
         margin-top : 1em;
 
         button{
-            &:extend(.btn);
-            &:extend(.btn.success);
             font-size : @font-size-small;
+            & when (@seotoaster){
+                .button-color(@button-success-color; @button-success-bg);
+            }
+            & when not(@seotoaster){
+                &:extend(.btn);
+                &:extend(.btn.success);
 
-            &:hover{
-                &:extend(.btn.success:hover);
+                &:hover{
+                    &:extend(.btn.success:hover);
+                }
             }
 
             &.cancel{
                 margin-right : .5em;
-                &:extend(.btn.outline);
-                &:extend(.btn.outline.error);
+                & when (@seotoaster){
+                    .button-color(@button-error-color; @button-error-bg);
+                }
+                & when not(@seotoaster){
+                    &:extend(.btn.outline);
+                    &:extend(.btn.outline.error);
 
-                &:hover{
-                    &:extend(.btn.outline.error:hover);
+                    &:hover{
+                        &:extend(.btn.outline.error:hover);
+                    }
                 }
             }
         }

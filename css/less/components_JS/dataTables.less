@@ -1,32 +1,37 @@
 // DataTable
 //==================================================
-.dataTables_wrapper {
+.dataTables_wrapper{
     width : 100%;
 
-    .dataTables_filter {
+    .dataTables_filter{
         //margin-bottom : 12px;
 
-        label {
+        label{
             width : 30%;
 
-            input {
+            input{
                 width : 75%;
             }
         }
     }
 
-    .dataTable {
+    .dataTable{
     }
 
-    .sorting, .sorting_asc, .sorting_desc {
-        cursor      : pointer;
+    .sorting, .sorting_asc, .sorting_desc{
+        cursor        : pointer;
         position      : relative;
         padding-right : 16px;
 
-        &:after {
-            &:extend(.toaster-icon);
-            content : "\e0cd";
-            font-size   : 16px;
+        &:after{
+            & when (@seotoaster){
+                .flexkit-icon()
+            }
+            & when not(@seotoaster){
+                &:extend(.flexkit-icon);
+            }
+            content   : "\e0cd";
+            font-size : 16px;
             height    : 16px;
             position  : absolute;
             top       : 0;
@@ -36,21 +41,20 @@
         }
     }
 
-    .sorting:after {
+    .sorting:after{
     }
-    .sorting_asc:after {
+    .sorting_asc:after{
         content : "\e0cc";
     }
-    .sorting_desc:after {
+    .sorting_desc:after{
         content : "\e0cb";
     }
 
-    .dataTables_empty {
+    .dataTables_empty{
         text-align : center;
     }
 }
-
-.dataTables_paginate {
+.dataTables_paginate{
     margin-top : 1em;
     float      : right;
     font-size  : 12px;
@@ -80,11 +84,21 @@
             color       : #fff;
         }
 
+        & when (@seotoaster){
+            &.first, &.last, &.previous, &.next{
+                &:before, &:after{
+                    .flexkit-icon()
+                }
+            }
+        }
+
         &.first, &.last{
             font-weight : bold;
 
             &:before, &:after{
-                &:extend(.toaster-icon);
+                & when not(@seotoaster){
+                    &:extend(.flexkit-icon);
+                }
                 font-size   : 15px;
                 font-weight : bold;
             }
@@ -93,7 +107,9 @@
         &.previous, &.next{
 
             &:before, &:after{
-                &:extend(.toaster-icon);
+                & when not(@seotoaster){
+                    &:extend(.flexkit-icon);
+                }
             }
         }
 

@@ -1,3 +1,19 @@
+.flexkit-icon(){
+    font-family             : @font-family-icons;
+    speak                   : none;
+    font-style              : normal;
+    font-weight             : normal;
+    text-transform          : none;
+    line-height             : 1;
+    position                : relative;
+    text-align              : center;
+    .inline-block();
+
+    // Better Font Rendering
+    -webkit-font-smoothing  : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+}
+
 // Vendor prefixes
 //==================================================
 .prefixer(
@@ -356,7 +372,7 @@
 // Font size
 //==================================================
 .font-size(@size; @index : round(unit(@size), 3)) when not(ispixel(@size)){
-    .ie8 when (@ie8){
+    .ie8 & when (@ie8){
         font-size   : round(unit(@font-size-base * @index, px), 0);
     }
     font-size   : unit(@index, rem);

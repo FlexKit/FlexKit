@@ -146,9 +146,29 @@
 }
 .smoke-base .dialog-buttons button {
   font-size: 0.85em;
+  color: #ffffff;
+  border-color: #50b000;
+  background-color: #8fd400;
+}
+.smoke-base .dialog-buttons button:hover,
+.smoke-base .dialog-buttons button:active,
+.smoke-base .dialog-buttons button.active {
+  color: #ffffff;
+  border-color: #397d00;
+  background-color: #6da100;
 }
 .smoke-base .dialog-buttons button.cancel {
   margin-right: .5em;
+  color: #ffffff;
+  border-color: #ed1b02;
+  background-color: #f65314;
+}
+.smoke-base .dialog-buttons button.cancel:hover,
+.smoke-base .dialog-buttons button.cancel:active,
+.smoke-base .dialog-buttons button.cancel.active {
+  color: #ffffff;
+  border-color: #bb1501;
+  background-color: #cf3f08;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-header {
   display: block;
@@ -1202,6 +1222,18 @@ a[class*="tooltip-native"] {
 .dataTables_wrapper .sorting:after,
 .dataTables_wrapper .sorting_asc:after,
 .dataTables_wrapper .sorting_desc:after {
+  font-family: flexkit-icons;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   content: "\e0cd";
   font-size: 16px;
   height: 16px;
@@ -1248,6 +1280,27 @@ a[class*="tooltip-native"] {
   font-weight: bold;
   background: #e0ebf0;
   color: #fff;
+}
+.dataTables_paginate .paginate_button.first:before,
+.dataTables_paginate .paginate_button.last:before,
+.dataTables_paginate .paginate_button.previous:before,
+.dataTables_paginate .paginate_button.next:before,
+.dataTables_paginate .paginate_button.first:after,
+.dataTables_paginate .paginate_button.last:after,
+.dataTables_paginate .paginate_button.previous:after,
+.dataTables_paginate .paginate_button.next:after {
+  font-family: flexkit-icons;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .dataTables_paginate .paginate_button.first,
 .dataTables_paginate .paginate_button.last {
@@ -1319,14 +1372,14 @@ a[class*="tooltip-native"] {
   height: auto;
 }
 .responsive-ratio.bottom > img,
-.responsive-ratio ._lbox img,
-.responsive-ratio .gall img {
+.responsive-ratio.bottom ._lbox img,
+.responsive-ratio.bottom .gall img {
   min-height: 0 !important;
   top: auto;
 }
 .responsive-ratio.top > img,
-.responsive-ratio ._lbox img,
-.responsive-ratio .gall img {
+.responsive-ratio.top ._lbox img,
+.responsive-ratio.top .gall img {
   min-height: 0 !important;
   bottom: auto;
 }

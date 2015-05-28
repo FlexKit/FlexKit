@@ -15,6 +15,9 @@
     .inline-block();
     .button-color(@color; @background; @border);
     .border-radius(@radius);
+    .user-select();
+    .box-shadow(none; @input-shadow-focus);
+    .box-shadow(none; @input-inner-shadow);
     & when (@border-width > 0){
         border-width : @border-width;
         border-style : solid;
@@ -77,19 +80,6 @@
         & when (length(@background) = 2){
             background-color : extract(@background, 2);
         }
-    }
-}
-
-// 3D-Button
-//==================================================
-.button-3d(@border) {
-    margin-top : -0.55em;
-    @border2 : fade(#000, 50%);
-    .box-shadow(~'0 0.3em 0 0 @{border}, 0 0.3em 0 0.15em @{border2}');
-
-    &:active{
-        top : 0.25em;
-        .box-shadow(0 0 0 0.15em @border2);
     }
 }
 
