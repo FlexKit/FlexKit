@@ -1,11 +1,7 @@
 // Featured Areas & Featured Pages & Related Pages
 //==================================================
-.featureditem, .relatedpages{
-    .inline-block-wrap(top);
-}
-
 .featureapage, .featureditem li, .relatedpages li{
-    & when (@widget-FA-FP-RP = true){
+    & when (@widget-FA-FP-RP){
         margin-bottom : 30px;
         .grid-elements(3; @grid-margin-width; true);
 
@@ -40,7 +36,7 @@
 
 // Featured Areas
 //==================================================
-.featureditem when (@widget-FA = true) and (@widget-FA-FP-RP = true){
+.featureditem when (@widget-FA) and (@widget-FA-FP-RP){
 
     li{ }
 
@@ -70,7 +66,7 @@
 
 // Featured Pages
 //==================================================
-.featureapage when (@widget-FP = true) and (@widget-FA-FP-RP = true){
+.featureapage when (@widget-FP) and (@widget-FA-FP-RP){
     float : left;
 
     a{ }
@@ -98,7 +94,7 @@
 
 // Related Pages
 //==================================================
-.relatedpages when (@widget-RP = true) and (@widget-FA-FP-RP = true){
+.relatedpages when (@widget-RP) and (@widget-FA-FP-RP){
     li{ }
 
     a{ }

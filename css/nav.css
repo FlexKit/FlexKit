@@ -68,16 +68,6 @@
 .static_menu li + li {
   border-left: 1px solid #888888;
 }
-.featureditem,
-.relatedpages {
-  font-size: 0;
-}
-.featureditem >*,
-.relatedpages >* {
-  font-size: 14px;
-  display: inline-block;
-  vertical-align: top;
-}
 .featureapage,
 .featureditem li,
 .relatedpages li {

@@ -1,6 +1,6 @@
 // Nav lists style
 //==================================================
-& when (@seotoaster = true){
+& when (@seotoaster), (@widget-LP-LC) and (@widget-FA-FP-RP){
     .listpages, .listcategories, .featureditem, .relatedpages, .related-products{
         .inline-block-wrap(top; li);
     }
@@ -14,69 +14,71 @@
 //==================================================
 @import "../widgets/menu_static";
 
-// List pages by tags and Related pages
-//==================================================
-@import "../widgets/list_pages_by_tags-related_pages";
+& when (@seotoaster){
+    // List pages by tags and Related pages
+    //==================================================
+    @import "../widgets/list_pages_by_tags-related_pages";
 
-// List Pages & List Categories
-//==================================================
-@import "../widgets/list_pages-list_categories";
+    // List Pages & List Categories
+    //==================================================
+    @import "../widgets/list_pages-list_categories";
 
-// Style for all navigation items in sidebar
-//==================================================
-aside when (@widget-lists-sidebar = true){
+    // Style for all navigation items in sidebar
+    //==================================================
+    aside when (@widget-lists-sidebar), (@widget-LP-LC) and (@widget-FA-FP-RP){
 
-    .listpages, .listcategories, .featureditem, .featureapage, .relatedpages{ }
+        .listpages, .listcategories, .featureditem, .featureapage, .relatedpages{ }
 
-    .listpages li, .listcategories li, .featureditem li, .featureapage, .relatedpages li{
-        &{
-            width  : 100%;
-            margin : 0 0 2em;
-
-            .page-teaser-image{
+        .listpages li, .listcategories li, .featureditem li, .featureapage, .relatedpages li{
+            &{
                 width  : 100%;
-                float  : none;
-                margin : 0 0 0.5em;
+                margin : 0 0 2em;
 
-                img{ }
-            }
-            .page-title{ }
+                .page-teaser-image{
+                    width  : 100%;
+                    float  : none;
+                    margin : 0 0 0.5em;
 
-            span, p{
-                font-size   : @font-size-small;
-                line-height : 1.25;
-            }
-        }
+                    img{ }
+                }
+                .page-title{ }
 
-        &:hover{
-            a{ }
-
-            .page-teaser-image{
-                img{ }
+                span, p{
+                    font-size   : @font-size-small;
+                    line-height : 1.25;
+                }
             }
 
-            .page-title{ }
+            &:hover{
+                a{ }
 
-            span{ }
+                .page-teaser-image{
+                    img{ }
+                }
+
+                .page-title{ }
+
+                span{ }
+            }
         }
     }
+
+    // SiteMap
+    //==================================================
+    @import "../widgets/sitemap";
+
+    // RSS feed
+    //==================================================
+    @import "../widgets/rss";
+
+    // News List
+    //==================================================
+    @import "../widgets/news_list";
+
+    // Search Results
+    //==================================================
+    @import "../widgets/search_results";
 }
-
-// SiteMap
-//==================================================
-@import "../widgets/sitemap";
-
-// RSS feed
-//==================================================
-@import "../widgets/rss";
-
-// News List
-//==================================================
-@import "../widgets/news_list";
-
-// Search Results
-//==================================================
-@import "../widgets/search_results";
 
 // Breadcrumbs
 //==================================================

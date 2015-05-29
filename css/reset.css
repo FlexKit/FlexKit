@@ -5,12 +5,12 @@ html {
   line-height: 1.42857143;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: subpixel-antialiased !important;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
   color: #555555;
 }
 article,

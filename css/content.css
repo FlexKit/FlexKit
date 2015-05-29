@@ -4263,13 +4263,13 @@ hr.dotted {
   background-color: #eeeeee;
 }
 .message[class*=icon-] {
-  padding-left: 48px;
+  padding-left: 3em;
 }
 .message[class*=icon-]:before {
   position: absolute;
-  top: 8px;
-  left: 12px;
-  font-size: 24px;
+  top: .225em;
+  left: .4em;
+  font-size: 1.75em;
 }
 .callout {
   margin-bottom: 20px;

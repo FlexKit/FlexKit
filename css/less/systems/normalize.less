@@ -9,6 +9,7 @@ html{
     line-height              : @line-height;
     -ms-text-size-adjust     : 100%; // *2*
     -webkit-text-size-adjust : 100%; // *2*
+    .prefixer(touch-action; manipulation; ms);
     & when not(@text-weight = normal){
         font-weight : @text-weight;
     }
@@ -19,7 +20,6 @@ html{
 body{
     margin                 : 0;
     -webkit-font-smoothing : subpixel-antialiased !important;
-    .prefixer(touch-action; manipulation; ms);
     & when not(@body-bg = #fff){
         background : @body-bg;
     }
