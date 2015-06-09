@@ -85,24 +85,24 @@
 }
 
 // -- Content Columns
-.content-columns(@columns){
-    .prefixer(columns; @columns; webkit moz);
+.content-columns(@columns; @support : webkit moz){
+    .prefixer(columns; @columns; @support);
 }
-.column-count(@count) {
-    .prefixer(column-count; @count; webkit moz);
+.column-count(@coun; @support : webkit mozt) {
+    .prefixer(column-count; @count; @support);
 }
-.column-gap(@gap) {
-    .prefixer(column-gap; @gap; webkit moz);
+.column-gap(@gap; @support : webkit moz) {
+    .prefixer(column-gap; @gap; @support);
 }
-.column-width(@width) {
-    .prefixer(column-width; @width; webkit moz);
+.column-width(@width; @support : webkit moz) {
+    .prefixer(column-width; @width; @support);
 }
-.column-rule(@rule) {
-    .prefixer(column-rule; @rule; webkit moz);
+.column-rule(@rule; @support : webkit moz) {
+    .prefixer(column-rule; @rule; @support);
 }
 // -- Border Radius
-.border-radius(@radius; @important : false) when not(@radius = 0), (@important = true){
-    .prefixer(border-radius; @radius);
+.border-radius(@radius; @important : false; @support : '') when not(@radius = 0), (@important = true){
+    .prefixer(border-radius; @radius; @support);
     .pie();
 }
 
@@ -158,8 +158,14 @@
 
 // Perspective
 //=================================================
-.perspective(@perspective){
-    .prefixer(perspective; @perspective; webkit);
+.perspective(@perspective; @support : webkit){
+    .prefixer(perspective; @perspective; @support);
+}
+
+// Appearance
+//=================================================
+.appearance(@appearance : none; @support : webkit moz){
+    .prefixer(appearance; @appearance; @support);
 }
 
 // RGBA (Support with ie8)
