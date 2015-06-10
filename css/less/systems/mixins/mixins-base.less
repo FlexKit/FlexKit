@@ -41,14 +41,14 @@
     & when (@prefix = webkit), (@prefix = moz), (@prefix = ms), (@prefix = o){
         -@{prefix}-@{rule} : @value;
     }
-    & when (@onlyPrefix = false){
+    & when not(@onlyPrefix){
         @{rule} : @value;
     }
 }
 
 // Font-face
 //==================================================
-.font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) when (@ie = true) {
+.font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) when (@ie) {
     @font-face{
         font-family : "@{fontname}";
         src         : url("@{fontfile}.eot");
@@ -61,7 +61,7 @@
         font-style  : @fontstyle;
     }
 }
-.font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) when not(@ie = true) {
+.font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) when not(@ie) {
     @font-face{
         font-family : "@{fontname}";
         src         : url("@{fontfile}.woff") format("woff"),
@@ -73,9 +73,9 @@
 
 // Column-grid system
 //==================================================
-.column() when (@column-system = true){
-    & when (@responsive = true){
-        & when (@column-global-classes = true){
+.column() when (@column-system){
+    & when (@responsive){
+        & when (@column-global-classes){
             .column-list(@prefix: _);
         }
         @media only screen and (min-width : (@responsive-size-tablet + 1)){
@@ -98,7 +98,7 @@
         width : round((100% / @column) - @column-margin-width, 3) !important;
     }
 }
-.column-list(@column : @columns; @prefix : ~''; @type : full-width) when (@column > 0) and (@type = full-width) and  (@column-system-fullWidth = true){
+.column-list(@column : @columns; @prefix : ~''; @type : full-width) when (@column > 0) and (@type = full-width) and  (@column-system-fullWidth){
     .column-list(@column - 1; @prefix; full-width);
     .full-width{
         &.@{prefix}column_@{column} > *{
@@ -110,7 +110,7 @@
         }
     }
 }
-.column-list(@column : @columns; @prefix : ~''; @type : margin-none) when (@column > 0) and (@type = margin-none) and (@column-system-marginNone = true){
+.column-list(@column : @columns; @prefix : ~''; @type : margin-none) when (@column > 0) and (@type = margin-none) and (@column-system-marginNone){
     .column-list(@column - 1; @prefix; margin-none);
     .margin-none{
         &.@{prefix}column_@{column} > *{
@@ -448,7 +448,7 @@
 }
 
 // @direction = row, row-reverse, column, column-reverse
-.flex-direction(@direction : column) when not(@direction = false) {
+.flex-direction(@direction : column) {
     & when (@webkit) and (@direction = row), (@direction = column){ -webkit-box-direction : normal; }
     & when (@webkit) and not(@direction = row) and not(@direction = column){ -webkit-box-direction : reverse; }
 //    & when (@moz) and (@direction = row), (@direction = column){ -moz-box-direction : normal; }

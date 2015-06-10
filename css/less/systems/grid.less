@@ -4,10 +4,10 @@
         margin-left  : auto;
         margin-right : auto;
     }
-    & when (@responsive = false) and not(@grid-container-width = 100%){
+    & when not(@responsive) and not(@grid-container-width = 100%){
         width : @grid-container-width;
     }
-    & when (@responsive = true) and not(@grid-container-width = 100%){
+    & when (@responsive) and not(@grid-container-width = 100%){
         width     : 95%;
         max-width : @grid-container-width;
     }
@@ -17,7 +17,7 @@
 // GRID CSS
 //==================================================
 [class*=" grid_"], [class^="grid_"], [class*="-grid_"], [class*="_grid_"]{
-    & when (@grid-system = true){
+    & when (@grid-system){
         float        : left;
         position     : relative;
         width        : 100% - @grid-margin-width;
@@ -30,21 +30,21 @@
 // COLUMN LIST CSS
 //==================================================
 [class*=" column_"], [class^="column_"], [class*="-column_"], [class*="_column_"]{
-    & when (@column-system = true){
+    & when (@column-system){
         font-size : 0 !important;
 
         & > *{
-            font-size      : @font-size-base;
-            float          : none !important;
+            font-size    : @font-size-base;
+            float        : none !important;
             .inline-block(top);
-            width          : 100% - @column-margin-width !important;
-            margin-left    : (@column-margin-width / 2) !important;
-            margin-right   : (@column-margin-width / 2) !important;
+            width        : 100% - @column-margin-width !important;
+            margin-left  : (@column-margin-width / 2) !important;
+            margin-right : (@column-margin-width / 2) !important;
         }
 
         &.mb{
             & > *{
-                margin-bottom  : @column-margin-width;
+                margin-bottom : @column-margin-width;
             }
         }
 
@@ -60,7 +60,7 @@
             }
         }
 
-        &.full-width when (@column-system-fullWidth = true){
+        &.full-width when (@column-system-fullWidth){
             & > *{
                 width        : 100% !important;
                 margin-right : @column-margin-width !important;
@@ -68,7 +68,7 @@
             }
         }
 
-        &.margin-none when (@column-system-marginNone = true){
+        &.margin-none when (@column-system-marginNone){
             & > *{
                 width        : 100% !important;
                 margin-left  : 0 !important;

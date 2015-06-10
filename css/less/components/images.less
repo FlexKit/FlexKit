@@ -9,27 +9,27 @@ img[style*="float: right"], img[style*="float:right"]{
     margin-left : 15px;
 }
 
-.img-thumbnail when (@image-thumbnail = true) and (@images-style = true){
+.img-thumbnail when (@image-thumbnail) and (@images-style){
     & img, img&{
         .thumbnail-state();
     }
 }
-.img-circle when (@image-circle = true) and (@images-style = true){
+.img-circle when (@image-circle) and (@images-style){
     & img, img&{
         .border-radius(50em);
     }
 }
-.img-rounded when (@image-rounded = true) and (@images-style = true){
+.img-rounded when (@image-rounded) and (@images-style){
     & img, img&{
         .border-radius(@border-radius-base);
     }
 }
-.img-leaflet-right when (@image-leaflet-right = true) and (@images-style = true){
+.img-leaflet-right when (@image-leaflet-right) and (@images-style){
     & img, img&{
         .border-radius(50% 0);
     }
 }
-.img-leaflet-left when (@image-leaflet-left = true) and (@images-style = true){
+.img-leaflet-left when (@image-leaflet-left) and (@images-style){
     & img, img&{
         .border-radius(0 50%);
     }

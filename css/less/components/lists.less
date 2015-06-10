@@ -50,18 +50,18 @@ dl{
 }
 
 [class*=" list-"], [class^="list-"]{
-    & when (@lists-classes = true){
+    & when (@lists-classes){
         list-style-type : none;
         padding-left    : 0;
     }
 }
 
 ul{
-    &.list-unstyled when (@list-unstyled = true) and (@lists-classes = true){
+    &.list-unstyled when (@list-unstyled) and (@lists-classes) and (@seotoaster){
         zoom : 1;
     }
 
-    &.list-striped when (@list-striped = true) and (@lists-classes = true){
+    &.list-striped when (@list-striped) and (@lists-classes){
         & > li{
             margin  : 0;
             padding : 10px;
@@ -72,8 +72,10 @@ ul{
         }
     }
 
-    &.list-inline when (@list-inline = true) and (@lists-classes = true){
-        zoom : 1;
+    &.list-inline when (@list-inline) and (@lists-classes){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         & > li{
             .inline-block(top);
@@ -81,8 +83,10 @@ ul{
         }
     }
 
-    &.list-bordered when (@list-bordered = true) and (@lists-classes = true){
-        zoom : 1;
+    &.list-bordered when (@list-bordered) and (@lists-classes){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         & > li{
             border-bottom  : 1px solid @hr-color;
@@ -98,8 +102,10 @@ ul{
         }
     }
 
-    &.list-arrow when (@list-arrow = true) and (@lists-classes = true){
-        zoom : 1;
+    &.list-arrow when (@list-arrow) and (@lists-classes){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         & > li{
             padding-left : 1em;
@@ -108,11 +114,11 @@ ul{
                 float       : left;
                 color       : inherit;
                 margin-left : -1em;
-                & when (@flexkit-icons = true){
+                & when (@flexkit-icons){
                     font-family : @font-family-icons;
                     content     : '\e0c3';
                 }
-                & when (@flexkit-icons = false){
+                & when not(@flexkit-icons){
                     content : '>';
                 }
             }
@@ -123,8 +129,10 @@ ul{
         }
     }
 
-    &.list-checkmark when (@list-checkmark = true) and (@lists-classes = true){
-        zoom : 1;
+    &.list-checkmark when (@list-checkmark) and (@lists-classes){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         & > li{
             padding-left : 1.5em;
@@ -145,7 +153,7 @@ ul{
         }
     }
 
-    &.list-count-sign when (@list-count-sign = true) and (@lists-classes = true){
+    &.list-count-sign when (@list-count-sign) and (@lists-classes){
         counter-reset : list;
 
         & > li{
@@ -176,7 +184,7 @@ ul{
         }
     }
 
-    &.list-icon-sign when (@list-icon-sign = true) and (@lists-classes = true){
+    &.list-icon-sign when (@list-icon-sign) and (@lists-classes){
 
         & > li{
             margin-bottom : 0.5em;
@@ -205,8 +213,10 @@ ul{
         }
     }
 
-    &.list-bullet when (@list-bullet = true) and (@lists-classes = true){
-        zoom : 1;
+    &.list-bullet when (@list-bullet) and (@lists-classes){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         & > li{
             padding-left : 1em;
@@ -225,8 +235,10 @@ ul{
         }
     }
 
-    &.list-testimonials when (@list-testimonials = true) and (@lists-classes = true){
-        zoom : 1;
+    &.list-testimonials when (@list-testimonials) and (@lists-classes){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         li{
             position  : relative;
@@ -274,7 +286,7 @@ ul{
         }
     }
 
-    &.list-tags when (@list-tags = true) and (@lists-classes = true){
+    &.list-tags when (@list-tags) and (@lists-classes){
         margin-bottom : 0;
         .clearfix-mixin();
 
@@ -316,7 +328,7 @@ ul{
         }
     }
 
-    &.list-icon-line when (@list-icon-line = true) and (@lists-classes = true){
+    &.list-icon-line when (@list-icon-line) and (@lists-classes){
         @icon-size : @icon-size-large;
         @icon-box  : @icon-size * 1.75;
         @size-line : 2px;
@@ -349,7 +361,7 @@ ul{
         }
     }
 
-    &.list-step when (@list-step = true) and (@lists-classes = true){
+    &.list-step when (@list-step) and (@lists-classes){
         text-align    : center;
 
         .step-item{

@@ -1,6 +1,6 @@
 // Message styles
 // -------------------------
-.message when (@messages = true){
+.message when (@messages){
     position         : relative;
     padding          : .5em .75em;
     background-color : @state-primary-bg;
@@ -26,7 +26,7 @@
         }
     }
 
-    &.right when (@message-right = true){
+    &.right when (@message-right){
         text-align   : right;
         border-left  : none;
         border-right : 3px solid @state-primary-border;
@@ -46,27 +46,27 @@
 
     // Alternate styles
     // -------------------------
-    &.success when (@message-color-success = true) and (@message-colors = true){
+    &.success when (@message-color-success) and (@message-colors){
         color            : @state-success-color;
         border-color     : @state-success-border;
         background-color : @state-success-bg;
     }
-    &.warning when (@message-color-warning = true) and (@message-colors = true){
+    &.warning when (@message-color-warning) and (@message-colors){
         color            : @state-warning-color;
         border-color     : @state-warning-border;
         background-color : @state-warning-bg;
     }
-    &.error when (@message-color-error = true) and (@message-colors = true){
+    &.error when (@message-color-error) and (@message-colors){
         color            : @state-error-color;
         border-color     : @state-error-border;
         background-color : @state-error-bg;
     }
-    &.info when (@message-color-info = true) and (@message-colors = true){
+    &.info when (@message-color-info) and (@message-colors){
         color            : @state-info-color;
         border-color     : @state-info-border;
         background-color : @state-info-bg;
     }
-    &.gray when (@message-color-gray = true) and (@message-colors = true){
+    &.gray when (@message-color-gray) and (@message-colors){
         color            : @gray-darker;
         border-color     : @gray-light;
         background-color : @gray-lighter;

@@ -1,6 +1,6 @@
 @progressbar-size : 1.25em;
 
-.ui-progressbar when (@componentsJS-progressbar = true){
+.ui-progressbar when (@componentsJS-progressbar){
     position    : relative;
     height      : @progressbar-size;
     background  : @progressbar-bg;
@@ -37,29 +37,29 @@
 
     // Alternate progressbar
     // --------------------------------------------------
-    &.success when (@progressbar-color-success = true) and (@progressbar-colors = true){
+    &.success when (@progressbar-color-success) and (@progressbar-colors){
         .ui-progressbar-value{
             background : @brand-success;
         }
     }
-    &.warning when (@progressbar-color-warning = true) and (@progressbar-colors = true){
+    &.warning when (@progressbar-color-warning) and (@progressbar-colors){
         .ui-progressbar-value{
             background : @brand-warning;
         }
     }
-    &.error when (@progressbar-color-error = true) and (@progressbar-colors = true){
+    &.error when (@progressbar-color-error) and (@progressbar-colors){
         .ui-progressbar-value{
             background : @brand-error;
         }
     }
-    &.info when (@progressbar-color-info = true) and (@progressbar-colors = true){
+    &.info when (@progressbar-color-info) and (@progressbar-colors){
         .ui-progressbar-value{
             background : @brand-info;
         }
     }
 }
 
-[id*="-filelist"] when (@componentsJS-progressbar = true){
+[id*="-filelist"] when (@componentsJS-progressbar){
     .ui-widget{
         .ui-state-highlight, .ui-state-error{
             overflow      : hidden;

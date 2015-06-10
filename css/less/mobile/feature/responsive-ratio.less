@@ -4,7 +4,7 @@
 @ratio-3x4: (4%/3%*100%);
 @ratio-1x1: (100%);
 
-.responsive-ratio when (@responsive-video = true){
+.responsive-ratio when (@responsive-video){
     position : relative;
     overflow : hidden;
     padding  : 0;
@@ -24,7 +24,7 @@
         ._1x1&{ padding-bottom : @ratio-1x1; }
     }
 
-    & when (@responsive-video = true){
+    & when (@responsive-video){
         iframe, object, embed, video{
             position : absolute;
             top      : 0;
@@ -34,7 +34,7 @@
         }
     }
 
-    & when (@responsive-image = true){
+    & when (@responsive-image){
         & > img{
             position   : absolute !important;
             top        : 0;

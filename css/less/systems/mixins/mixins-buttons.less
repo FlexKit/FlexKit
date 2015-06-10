@@ -25,10 +25,10 @@
     & when (@border-width = 0), (@border-width = none){
         border : none;
     }
-    & when (@button-transition = true){
+    & when (@button-transition){
         .transition(background; 0.3s);
     }
-    & when (@button-transition = false){
+    & when not(@button-transition){
         .transition(none);
     }
 

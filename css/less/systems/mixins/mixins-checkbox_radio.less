@@ -1,4 +1,4 @@
-.checkboxRadioStyle() when (@checkbox-radio-style = true) and not(@checkbox-radio-style-native) {
+.checkboxRadioStyle() when (@checkbox-radio-style) and not(@checkbox-radio-style-native) {
     .filed-upgrade{
         height   : auto;
         position : absolute;
@@ -121,7 +121,7 @@
                 }
             }
 
-            &.switcher when (@switcher-style = true){
+            &.switcher when (@switcher-style){
                 & ~ .checkbox_radio{
                     overflow    : hidden;
                     position    : relative;
@@ -295,7 +295,7 @@
             color : @brand-success;
         }
 
-        &.switcher when (@switcher-style = true){
+        &.switcher when (@switcher-style){
             overflow    : hidden;
             position    : relative;
             width       : 4em;

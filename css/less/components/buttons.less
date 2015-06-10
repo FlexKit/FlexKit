@@ -37,7 +37,7 @@
         margin-right : 5px;
     }
 
-    &.social when (@social-button = true){
+    &.social when (@social-button){
         &:before{
             font-size : @social-icon-size;
         }
@@ -51,7 +51,7 @@
     // Alternate buttons
     // --------------------------------------------------
     // Inverse button appears as gray => primary
-    &.inverse when (@button-color-inverse = true) and (@button-colors = true){
+    &.inverse when (@button-color-inverse) and (@button-colors){
         &:hover, &:active{
             color            : @button-primary-color;
             background-color : darken(@button-primary-bg, 10%);
@@ -62,34 +62,34 @@
     }
 
     // Warning appears as orange
-    &.warning when (@button-color-warning = true) and (@button-colors = true){
+    &.warning when (@button-color-warning) and (@button-colors){
         .button-color(@button-warning-color; @button-warning-bg);
     }
 
     // Danger and red appear as red
-    &.error when (@button-color-error = true) and (@button-colors = true){
+    &.error when (@button-color-error) and (@button-colors){
         .button-color(@button-error-color; @button-error-bg);
     }
 
     // Success appears as green
-    &.success when (@button-color-success = true) and (@button-colors = true){
+    &.success when (@button-color-success) and (@button-colors){
         .button-color(@button-success-color; @button-success-bg);
     }
 
     // Info appears as blue
-    &.info when (@button-color-info = true) and (@button-colors = true){
+    &.info when (@button-color-info) and (@button-colors){
         .button-color(@button-info-color; @button-info-bg);
     }
 
     // Inverse button appears as gray => primary
-    &.inverse when (@button-color-inverse = true) and (@button-colors = true){
+    &.inverse when (@button-color-inverse) and (@button-colors){
         color            : @button-inverse-color;
         background-color : @button-inverse-bg;
         border-color     : softlight(@button-inverse-bg, #000);
     }
 
     // Transparent button appears as transparent => fade
-    &.transparent when (@button-color-transparent = true) and (@button-colors = true){
+    &.transparent when (@button-color-transparent) and (@button-colors){
         color            : inherit;
         background-color : transparent;
         border           : none;
@@ -101,7 +101,7 @@
 
     // Block button
     // --------------------------------------------------
-    &.block when (@button-type-block = true) and (@button-types = true){
+    &.block when (@button-type-block) and (@button-types){
         float         : none;
         padding-left  : 0;
         padding-right : 0;
@@ -115,7 +115,7 @@
 
     // Button with icon
     // --------------------------------------------------
-    &.icon when (@flexkit-icons = true) and (@button-type-icon = true) and (@button-types = true){
+    &.icon when (@flexkit-icons) and (@button-type-icon) and (@button-types){
         overflow    : hidden;
         width       : unit(@button-line-height * 2, em);
         padding     : 0;
@@ -131,7 +131,7 @@
 
     // Button link
     // --------------------------------------------------
-    &.link when (@button-type-link = true) and (@button-types = true){
+    &.link when (@button-type-link) and (@button-types){
         text-decoration  : underline;
         background-color : transparent !important;
         & when (@button-border-width > 0){
@@ -151,33 +151,33 @@
         // Alternate buttons
         // --------------------------------------------------
         // Warning appears as orange
-        &.warning when (@button-color-warning = true) and (@button-colors = true){
+        &.warning when (@button-color-warning) and (@button-colors){
             .link-color(@brand-warning);
         }
 
         // Danger and error appear as red
-        &.error when (@button-color-error = true) and (@button-colors = true){
+        &.error when (@button-color-error) and (@button-colors){
             //            .link-color(@brand-error);
             .link-color(@brand-error);
         }
 
         // Success appears as green
-        &.success when (@button-color-success = true) and (@button-colors = true){
+        &.success when (@button-color-success) and (@button-colors){
             .link-color(@brand-success);
         }
 
         // Info appears as blue
-        &.info when (@button-color-info = true) and (@button-colors = true){
+        &.info when (@button-color-info) and (@button-colors){
             .link-color(@brand-info);
         }
 
         //Inverse color
-        &.inverse when (@button-color-inverse = true) and (@button-colors = true){
+        &.inverse when (@button-color-inverse) and (@button-colors){
             color : darken(@text-color, 5%);
         }
     }
 
-    &.outline when (@button-type-outline = true) and (@button-types = true){
+    &.outline when (@button-type-outline) and (@button-types){
         & when not(@button-border-width = @button-border-outline){
             border : @button-border-outline solid;
         }
@@ -187,40 +187,40 @@
         // Alternate buttons
         // --------------------------------------------------
         // Inverse button appears as gray => primary
-        &.inverse when (@button-color-inverse = true) and (@button-colors = true){
+        &.inverse when (@button-color-inverse) and (@button-colors){
             &:hover, &:active{
                 color        : @button-primary-color;
                 border-color : @button-primary-bg;
             }
         }
         // Warning appears as orange
-        &.warning when (@button-color-warning = true) and (@button-colors = true){
+        &.warning when (@button-color-warning) and (@button-colors){
             .button-color(@brand-warning; transparent; @brand-warning; @button-warning-color; @button-warning-bg; @button-warning-bg);
         }
 
         // Danger and error appear as red
-        &.error when (@button-color-error = true) and (@button-colors = true){
+        &.error when (@button-color-error) and (@button-colors){
             .button-color(@brand-error; transparent; @brand-error; @button-error-color; @button-error-bg; @button-error-bg);
         }
 
         // Success appears as green
-        &.success when (@button-color-success = true) and (@button-colors = true){
+        &.success when (@button-color-success) and (@button-colors){
             .button-color(@brand-success; transparent; @brand-success; @button-success-color; @button-success-bg; @button-success-bg);
         }
 
         // Info appears as blue
-        &.info when (@button-color-info = true) and (@button-colors = true){
+        &.info when (@button-color-info) and (@button-colors){
             .button-color(@brand-info; transparent; @brand-info; @button-info-color; @button-info-bg; @button-info-bg);
         }
 
         //Inverse color
-        &.inverse when (@button-color-inverse = true) and (@button-colors = true){
+        &.inverse when (@button-color-inverse) and (@button-colors){
             color        : @button-inverse-bg;
             border-color : softlight(@button-inverse-bg, #000);
         }
     }
 
-    &.caption when (@button-type-caption = true) and (@button-types = true){
+    &.caption when (@button-type-caption) and (@button-types){
         padding-top    : .5em;
         padding-bottom : .5em;
         line-height    : unit(@button-line-height, em);
@@ -244,7 +244,7 @@
 // Button group
 // --------------------------------------------------
 [class*="ui-buttonset"], .btn-group{
-    & when (@button-type-group = true) and (@button-types = true){
+    & when (@button-type-group) and (@button-types){
         overflow : hidden;
         .inline-block();
 

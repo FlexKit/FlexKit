@@ -1,4 +1,4 @@
-.labeled when (@form-labeled = true){
+.labeled when (@form-labeled){
     position : relative;
     .clearfix-mixin();
 
@@ -21,7 +21,7 @@
         }
     }
 
-    &.icon when (@form-labeled-icon = true){
+    &.icon when (@form-labeled-icon){
         input, select, textarea{
 
             &:focus ~ [class*="@{icon-prefix}-"]{

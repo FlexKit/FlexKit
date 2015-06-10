@@ -10,18 +10,18 @@
     .shade(@type; @color; @depth; @x; @y; @long; @fade; (lightness(@color)/@depth)/2; (alpha(@color)/@depth));
 }
 
-.shade(@type; @color; @depth; @x; @y; @long; @fade; @darken; @opacify) when (@long = true) {
+.shade(@type; @color; @depth; @x; @y; @long; @fade; @darken; @opacify) when (@long) {
     .shade(@type; @color; @depth; @x; @y; @fade; 0; @opacify);
 }
-.shade(@type; @color; @depth; @x; @y; @long; @fade; @darken; @opacify) when (@long = false) {
+.shade(@type; @color; @depth; @x; @y; @long; @fade; @darken; @opacify) when not(@long) {
     .shade(@type; @color; @depth; @x; @y; @fade; @darken; @opacify);
 }
 
 
-.shade(@type; @color; @depth; @x; @y; @long; @darken; @opacify) when (@fade = true) {
+.shade(@type; @color; @depth; @x; @y; @long; @darken; @opacify) when (@fade) {
     .shade(@type; @color; @depth; @x; @y; @darken; @opacify);
 }
-.shade(@type; @color; @depth; @x; @y; @long; @darken; @opacify) when (@fade = false) {
+.shade(@type; @color; @depth; @x; @y; @long; @darken; @opacify) when not(@fade) {
     .shade(@type; @color; @depth; @x; @y; @darken; 0);
 }
 

@@ -40,13 +40,15 @@ hr{
         }
     }
 
-    &.left when (@separator-left = true) and (@separator-style = true) { text-align : left; }
-    &.right when (@separator-right = true) and (@separator-style = true){ text-align : right; }
-    &.center when (@separator-center = true) and (@separator-style = true){ text-align : center; }
+    &.left when (@separator-left) and (@separator-style) { text-align : left; }
+    &.right when (@separator-right) and (@separator-style){ text-align : right; }
+    &.center when (@separator-center) and (@separator-style){ text-align : center; }
 
     // Separator circle
-    &.circle when (@separator-circle = true) and (@separator-style = true){
-        zoom : 1;
+    &.circle when (@separator-circle) and (@separator-style){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         &:before{
             padding    : .35em .75em;

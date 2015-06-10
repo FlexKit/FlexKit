@@ -5,7 +5,7 @@
 // Reset & Basics
 //==================================================
 html, body{
-    //    height : 100%;
+//    height : 100%;
 }
 
 *{
@@ -60,7 +60,7 @@ iframe{
     max-width : 100%;
 }
 
-.gall{
+.gall when (@seotoaster){
     .inline-block;
 }
 
@@ -83,7 +83,7 @@ iframe{
     unicode-bidi : bidi-override;
 }
 
-.tpopup{
+.tpopup when (@seotoaster){
     position : relative;
 }
 
@@ -169,7 +169,7 @@ button, [type="button"], [type="reset"], [type="submit"]{
     cursor : default;
 }
 
-& when (@seotoaster = true){
+& when (@seotoaster){
     // Reset for all navigation items, related-products
     //==================================================
     .main_menu, .listpages, .listcategories, .featureditem, .featureapage, .search-results, .relatedpages, .listxrss, .related-products{
@@ -177,7 +177,7 @@ button, [type="button"], [type="reset"], [type="submit"]{
     }
 
     //fix for Safari 3
-    & when (@webkit = true){
+    & when (@webkit){
         ::i-block-chrome, .main_menu,
         ::i-block-chrome, .listpages,
         ::i-block-chrome, .listcategories,
@@ -258,7 +258,7 @@ button, [type="button"], [type="reset"], [type="submit"]{
     }
 }
 
-& when not(@seotoaster = true){
+& when not(@seotoaster){
     // Reset for all navigation items, related-products
     //==================================================
     .main_menu{
@@ -266,7 +266,7 @@ button, [type="button"], [type="reset"], [type="submit"]{
     }
 
     //fix for Safari 3
-    & when (@webkit = true){
+    & when (@webkit){
         ::i-block-chrome, .main_menu{
             display : table;
             width   : 100%;
@@ -298,7 +298,7 @@ button, [type="button"], [type="reset"], [type="submit"]{
     pointer-events : none !important;
 }
 
-.ui-widget-overlay, .overlay {
+.ui-widget-overlay, .overlay{
     position   : fixed;
     top        : 0;
     left       : 0;
@@ -308,8 +308,8 @@ button, [type="button"], [type="reset"], [type="submit"]{
     background : fade(#000, 50%);
 }
 
-.ui-widget {
-    & ~ .overlay {
+.ui-widget{
+    & ~ .overlay{
         z-index : 999;
     }
 }

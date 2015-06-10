@@ -1,4 +1,4 @@
-.smoke-base when (@componentsJS-alert = true){
+.smoke-base when (@componentsJS-alert){
 
     .smokebg{
         position : fixed;
@@ -28,28 +28,28 @@
                 background-color : @state-primary-bg;
             }
         }
-        &.success when (@alert-color-success = true) and (@alert-colors = true){
+        &.success when (@alert-color-success) and (@alert-colors){
             .dialog-inner{
                 color            : @state-success-color;
                 border-color     : @state-success-border;
                 background-color : @state-success-bg;
             }
         }
-        &.warning when (@alert-color-warning = true) and (@alert-colors = true){
+        &.warning when (@alert-color-warning) and (@alert-colors){
             .dialog-inner{
                 color            : @state-warning-color;
                 border-color     : @state-warning-border;
                 background-color : @state-warning-bg;
             }
         }
-        &.error when (@alert-color-error = true) and (@alert-colors = true){
+        &.error when (@alert-color-error) and (@alert-colors){
             .dialog-inner{
                 color            : @state-error-color;
                 border-color     : @state-error-border;
                 background-color : @state-error-bg;
             }
         }
-        &.info when (@alert-color-info = true) and (@alert-colors = true){
+        &.info when (@alert-color-info) and (@alert-colors){
             .dialog-inner{
                 color            : @state-info-color;
                 border-color     : @state-info-border;

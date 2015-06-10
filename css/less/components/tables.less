@@ -13,8 +13,8 @@ table{
     tr{
         &:first-child{
             & > *{
-                 border-top : 1px solid @table-border-color;
-             }
+                border-top : 1px solid @table-border-color;
+            }
         }
     }
 
@@ -65,7 +65,11 @@ table{
 
     // NONE BORDERED VERSION
     //==================================================
-    &.table-border_none when (@table-styles = true){
+    &.table-border_none when (@table-styles){
+        & when (@seotoaster){
+            zoom : 1;
+        }
+
         th, td{
             border : none;
         }
@@ -73,8 +77,10 @@ table{
 
     // BORDERED VERSION
     //==================================================
-    &.table-bordered when (@table-bordered = true) and (@table-styles = true){
-        zoom : 1;
+    &.table-bordered when (@table-bordered) and (@table-styles){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         th, td{
             border : 1px solid @table-border-color;
@@ -84,8 +90,10 @@ table{
     // ZEBRA-STRIPING
     //==================================================
     // Default zebra-stripe styles (alternating gray and transparent backgrounds)
-    &.table-striped when (@table-striped = true) and (@table-styles = true){
-        zoom : 1;
+    &.table-striped when (@table-striped) and (@table-styles){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         & > tr:nth-child(odd), tbody tr:nth-child(even){
             background-color : @table-row-bg;
@@ -95,8 +103,10 @@ table{
     // HOVER EFFECT
     //==================================================
     // Placed here since it has to come after the potential zebra striping
-    &.table-hover when (@table-hover = true) and (@table-styles = true){
-        zoom : 1;
+    &.table-hover when (@table-hover) and (@table-styles){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         thead, tfoot{
             tr:hover{
@@ -109,43 +119,45 @@ table{
                 background-color : @table-row-bg-hover !important;
             }
 
-            &.primary when (@colors = true){
+            &.primary when (@colors){
                 &:hover{
-                background-color : darken(@state-primary-bg, 5%) !important;
-                border-color     : darken(@state-primary-border, 5%) !important;
+                    background-color : darken(@state-primary-bg, 5%) !important;
+                    border-color     : darken(@state-primary-border, 5%) !important;
+                }
             }
-            }
-            &.success when (@color-success = true) and (@colors = true){
+            &.success when (@color-success) and (@colors){
                 &:hover{
-                background-color : darken(@state-success-bg, 5%) !important;
-                border-color     : darken(@state-success-border, 5%) !important;
+                    background-color : darken(@state-success-bg, 5%) !important;
+                    border-color     : darken(@state-success-border, 5%) !important;
+                }
             }
-            }
-            &.error when (@color-error = true) and (@colors = true){
+            &.error when (@color-error) and (@colors){
                 &:hover{
-                background-color : darken(@state-error-bg, 5%) !important;
-                border-color     : darken(@state-error-border, 5%) !important;
+                    background-color : darken(@state-error-bg, 5%) !important;
+                    border-color     : darken(@state-error-border, 5%) !important;
+                }
             }
-            }
-            &.warning when (@color-warning = true) and (@colors = true){
+            &.warning when (@color-warning) and (@colors){
                 &:hover{
-                background-color : darken(@state-warning-bg, 5%) !important;
-                border-color     : darken(@state-warning-border, 5%) !important;
+                    background-color : darken(@state-warning-bg, 5%) !important;
+                    border-color     : darken(@state-warning-border, 5%) !important;
+                }
             }
-            }
-            &.info when (@color-info = true) and (@colors = true){
+            &.info when (@color-info) and (@colors){
                 &:hover{
-                background-color : darken(@state-info-bg, 5%) !important;
-                border-color     : darken(@state-info-border, 5%) !important;
+                    background-color : darken(@state-info-bg, 5%) !important;
+                    border-color     : darken(@state-info-border, 5%) !important;
+                }
             }
         }
-    }
     }
 
     //  Table responsive
     //==================================================
-    &.responsive when (@responsive = true){
-        zoom : 1;
+    &.responsive when (@responsive){
+        & when (@seotoaster){
+            zoom : 1;
+        }
 
         .table-head{
             display : none;
@@ -184,50 +196,49 @@ table{
         }
     }
 }
-
 // TABLE BACKGROUNDS
 // -----------------
 // Exact selectors below required to override .table-striped
 tr, th, td{
-    &.primary when (@colors = true){
+    &.primary when (@colors){
         color            : @state-primary-color;
         background-color : @state-primary-bg !important;
     }
-    &.success when (@color-success = true) and (@colors = true){
+    &.success when (@color-success) and (@colors){
         color            : @state-success-color;
         background-color : @state-success-bg !important;
     }
-    &.error when (@color-error = true) and (@colors = true){
+    &.error when (@color-error) and (@colors){
         color            : @state-error-color;
         background-color : @state-error-bg !important;
     }
-    &.warning when (@color-warning = true) and (@colors = true){
+    &.warning when (@color-warning) and (@colors){
         color            : @state-warning-color;
         background-color : @state-warning-bg !important;
     }
-    &.info when (@color-info = true) and (@colors = true){
+    &.info when (@color-info) and (@colors){
         color            : @state-info-color;
         background-color : @state-info-bg !important;
     }
 }
 tr{
-    &.primary td when (@colors = true){
+    &.primary td when (@colors){
         border-color  : @state-primary-border !important;
         border-bottom : 1px solid @state-primary-border !important;
     }
-    &.success td when (@color-success = true) and (@colors = true){
+    &.success td when (@color-success) and (@colors){
         border-color  : @state-success-border !important;
         border-bottom : 1px solid @state-success-border !important;
     }
-    &.error td when (@color-error = true) and (@colors = true){
+    &.error td when (@color-error) and (@colors){
         border-color  : @state-error-border !important;
         border-bottom : 1px solid @state-error-border !important;
     }
-    &.warning td when (@color-warning = true) and (@colors = true){
+    &.warning td when (@color-warning) and (@colors){
         border-color  : @state-warning-border !important;
         border-bottom : 1px solid @state-warning-border !important;
     }
-    &.info td when (@color-info = true) and (@colors = true){
+    &.info td when (@color-info) and (@colors){
         border-color  : @state-info-border !important;
         border-bottom : 1px solid @state-info-border !important;
     }

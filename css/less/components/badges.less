@@ -1,4 +1,4 @@
-.badge when (@badges = true){
+.badge when (@badges){
     background  : @primary-bg;
     color       : @primary-color;
     min-width   : 1em;
@@ -6,7 +6,7 @@
     font-size   : @font-size-small;
     font-weight : bold;
     line-height : 1em;
-    white-space : nowrap;
+//    white-space : nowrap;
     text-align  : center;
     .inline-block(baseline);
     .box-sizing(content-box);
@@ -40,7 +40,7 @@
         background : @primary-color;
         color      : @primary-bg;
     }
-    &.black when (@badge-colors) {
+    &.black when (@badge-colors){
         background : #000;
         color      : #fff;
     }
@@ -51,16 +51,16 @@
         border     : 1px solid @gray;
     }
 
-    &.circle when (@badge-circle) and (@badges-type = true){
+    &.circle when (@badge-circle) and (@badges-type){
         .border-radius(1em);
     }
-    &.rounded when (@badge-rounded) and (@badges-type = true){
+    &.rounded when (@badge-rounded) and (@badges-type){
         .border-radius(.5em);
     }
-    &.leaflet-right when (@badge-leaflet-right) and (@badges-type = true){
+    &.leaflet-right when (@badge-leaflet-right) and (@badges-type){
         .border-radius(@border-radius-large 0);
     }
-    &.leaflet-left when (@badge-leaflet-left) and (@badges-type = true){
+    &.leaflet-left when (@badge-leaflet-left) and (@badges-type){
         .border-radius(0 @border-radius-large);
     }
 }

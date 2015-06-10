@@ -1,4 +1,4 @@
-.input-label when (@form-input-label = true){
+.input-label when (@form-input-label){
     position : relative;
 
     label{
@@ -25,28 +25,28 @@
             }
         }
 
-        &.success when (@form-color-success = true) and (@form-colors = true){
+        &.success when (@form-color-success) and (@form-colors){
             &:focus, &:valid{
                 & + label{
                     color : @brand-success;
                 }
             }
         }
-        &.warning when (@form-color-warning = true) and (@form-colors = true){
+        &.warning when (@form-color-warning) and (@form-colors){
             &:focus, &:valid{
                 & + label{
                     color : @brand-warning;
                 }
             }
         }
-        &.error when (@form-color-error = true) and (@form-colors = true){
+        &.error when (@form-color-error) and (@form-colors){
             &:focus, &:valid{
                 & + label{
                     color : @brand-error;
                 }
             }
         }
-        &.info when (@form-color-info = true) and (@form-colors = true){
+        &.info when (@form-color-info) and (@form-colors){
             &:focus, &:valid{
                 & + label{
                     color : @brand-info;

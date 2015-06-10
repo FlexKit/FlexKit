@@ -1,7 +1,7 @@
 @range-size        : 1em;
 @range-handle-size : 1.4em;
 
-.ui-slider when (@componentsJS-range = true){
+.ui-slider when (@componentsJS-range){
     position   : relative;
     text-align : left;
     background : @range-bg;
@@ -45,7 +45,7 @@
 
     // Alternate slider / range
     //========================================
-    &.success when (@range-color-success = true) and (@range-colors = true){
+    &.success when (@range-color-success) and (@range-colors){
         .ui-slider-handle{
             background : mix(@brand-success, #000);
         }
@@ -54,7 +54,7 @@
             background : @brand-success;
         }
     }
-    &.warning when (@range-color-warning = true) and (@range-colors = true){
+    &.warning when (@range-color-warning) and (@range-colors){
         .ui-slider-handle{
             background : mix(@brand-warning, #000);
         }
@@ -63,7 +63,7 @@
             background : @brand-warning;
         }
     }
-    &.error when (@range-color-error = true) and (@range-colors = true){
+    &.error when (@range-color-error) and (@range-colors){
         .ui-slider-handle{
             background : mix(@brand-error, #000);
         }
@@ -72,7 +72,7 @@
             background : @brand-error;
         }
     }
-    &.info when (@range-color-info = true) and (@range-colors = true){
+    &.info when (@range-color-info) and (@range-colors){
         .ui-slider-handle{
             background : mix(@brand-info, #000);
         }
@@ -83,7 +83,7 @@
     }
 }
 
-.ui-slider-horizontal when (@range-type-horizontal = true) and (@componentsJS-range = true){
+.ui-slider-horizontal when (@range-type-horizontal) and (@componentsJS-range){
     height : @range-size;
 
     .ui-slider-handle{
@@ -97,7 +97,7 @@
     }
 }
 
-.ui-slider-vertical when (@range-type-vertical = true) and (@componentsJS-range = true){
+.ui-slider-vertical when (@range-type-vertical) and (@componentsJS-range){
     width  : @range-size;
     height : 150px;
 

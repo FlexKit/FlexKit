@@ -1,12 +1,14 @@
 @chosen-prefix : chosen; // new version
 //@chosen-prefix : chzn; // old version
 
+@input-padding : .5em;
+
 .@{chosen-prefix}-select{ width : 100%; }
 .@{chosen-prefix}-select-deselect{ width : 100%; }
 
 // Base
 // ------------------------------------------
-.@{chosen-prefix}-container when (@componentsJS-chosen = true){
+.@{chosen-prefix}-container when (@componentsJS-chosen){
     position         : relative;
     padding          : @input-padding / 2;
     width            : 100% !important;

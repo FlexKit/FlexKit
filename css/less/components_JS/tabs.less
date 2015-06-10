@@ -1,4 +1,4 @@
-.ui-tabs when (@componentsJS-tabs = true) {
+.ui-tabs when (@componentsJS-tabs) {
     position : relative; // position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed")
     .clearfix-mixin();
 
@@ -142,7 +142,7 @@
     @tabs-color : @brand-primary;
     @tabs-border-color : @tabs-nav-li-border-active;
 
-    &.blocks when (@tabs-type-blocks = true) and (@tabs-type = true){
+    &.blocks when (@tabs-type-blocks) and (@tabs-type){
         border : 3px solid @tabs-border-color;
 
         & > .ui-tabs-nav{

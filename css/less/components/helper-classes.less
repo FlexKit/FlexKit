@@ -1,33 +1,33 @@
 // Default color
-.primary when (@colors = true){
+.primary when (@colors){
     color : @primary-bg;
 
     a&:hover{
         color : darken(@primary-bg, 15%);
     }
 }
-.success when (@color-success = true) and (@colors = true){
+.success when (@color-success) and (@colors){
     color : @brand-success;
 
     a&:hover{
         color : darken(@brand-success, 15%);
     }
 }
-.warning when (@color-warning = true) and (@colors = true){
+.warning when (@color-warning) and (@colors){
     color : @brand-warning;
 
     a&:hover{
         color : darken(@brand-warning, 15%);
     }
 }
-.error when (@color-error = true) and (@colors = true){
+.error when (@color-error) and (@colors){
     color : @brand-error;
 
     a&:hover{
         color : darken(@brand-error, 15%);
     }
 }
-.info when (@color-info = true) and (@colors = true){
+.info when (@color-info) and (@colors){
     color : @brand-info;
 
     a&:hover{
@@ -36,56 +36,56 @@
 }
 
 // Company brand colors
-.seosamba-color when (@seotoaster = true){
+.seosamba-color when (@seotoaster){
     color : @brand-seosamba;
 
     a&:hover{
         color : darken(@brand-seosamba, 15%);
     }
 }
-.seotoaster-color when (@seotoaster = true){
+.seotoaster-color when (@seotoaster){
     color : @brand-seotoaster;
 
     a&:hover{
         color : darken(@brand-seotoaster, 15%);
     }
 }
-.seosamba-bg when (@seotoaster = true){
+.seosamba-bg when (@seotoaster){
     color            : #fff;
     background-color : @brand-seosamba;
 }
-.seotoaster-bg when (@seotoaster = true){
+.seotoaster-bg when (@seotoaster){
     color            : #fff;
     background-color : @brand-seotoaster;
 }
 
 // Default backgound color
-.primary-bg when (@colors = true){
+.primary-bg when (@colors){
     background-color : @primary-bg;
     color            : @primary-color;
 }
-.success-bg when (@color-success = true) and (@colors = true){
+.success-bg when (@color-success) and (@colors){
     background-color : @brand-success;
     color            : #fff;
 }
-.warning-bg when (@color-warning = true) and (@colors = true){
+.warning-bg when (@color-warning) and (@colors){
     background-color : @brand-warning;
     color            : #fff;
 }
-.error-bg when (@color-error = true) and (@colors = true){
+.error-bg when (@color-error) and (@colors){
     background-color : @brand-error;
     color            : #fff;
 }
-.info-bg when (@color-info = true) and (@colors = true){
+.info-bg when (@color-info) and (@colors){
     background-color : @brand-info;
     color            : #fff;
 }
 
 // Sizes
-.larger when (@size-larger = true) and (@sizes = true){ font-size : @font-size-larger; }
-.large when (@size-large = true) and (@sizes = true){ font-size : @font-size-large; }
-.small when (@size-small = true) and (@sizes = true){ font-size : @font-size-small; }
-.mini when (@size-small = true) and (@sizes = true){ font-size : @font-size-mini; }
+.larger when (@size-larger) and (@sizes){ font-size : @font-size-larger; }
+.large when (@size-large) and (@sizes){ font-size : @font-size-large; }
+.small when (@size-small) and (@sizes){ font-size : @font-size-small; }
+.mini when (@size-small) and (@sizes){ font-size : @font-size-mini; }
 
 .uppercase{ text-transform: uppercase; }
 .lowecase{ text-transform: lowercase; }

@@ -2458,7 +2458,7 @@ a.inherit-color:hover {
   background-color: #bbbbbb;
 }
 .gray-lighter-bg {
-  color: #888888;
+  color: #555555;
   background-color: #eeeeee;
 }
 .white-bg {
@@ -3585,11 +3585,11 @@ table {
 table th,
 table td {
   padding: .5em .75em;
-  border-bottom: 1px solid #bbbbbb;
+  border-bottom: 1px solid #dddddd;
   vertical-align: middle;
 }
 table tr:first-child > * {
-  border-top: 1px solid #bbbbbb;
+  border-top: 1px solid #dddddd;
 }
 table th {
   border-top: 0;
@@ -3599,7 +3599,7 @@ table thead {
   background: #e7e7e7;
 }
 table tbody + tbody {
-  border-top: 2px solid #bbbbbb;
+  border-top: 2px solid #dddddd;
 }
 table tfoot {
   background: #d5d5d5;
@@ -3608,7 +3608,7 @@ table table {
   background-color: #fff;
 }
 table.table-outline {
-  border: 1px solid #bbbbbb;
+  border: 1px solid #dddddd;
 }
 table.condensed th,
 table.condensed td {
@@ -3616,6 +3616,9 @@ table.condensed td {
 }
 table tr.disabled {
   color: #bbbbbb;
+}
+table.table-border_none {
+  zoom: 1;
 }
 table.table-border_none th,
 table.table-border_none td {
@@ -3626,7 +3629,7 @@ table.table-bordered {
 }
 table.table-bordered th,
 table.table-bordered td {
-  border: 1px solid #bbbbbb;
+  border: 1px solid #dddddd;
 }
 table.table-striped {
   zoom: 1;
@@ -3681,7 +3684,7 @@ table.responsive .table-head {
   }
   table.responsive tr {
     display: block;
-    border: 1px solid #bbbbbb;
+    border: 1px solid #dddddd;
   }
   table.responsive tr + tr {
     margin-top: 1.5em;
@@ -4192,7 +4195,6 @@ hr.dotted {
   font-size: 0.85em;
   font-weight: bold;
   line-height: 1em;
-  white-space: nowrap;
   text-align: center;
   display: inline-block;
   vertical-align: baseline;

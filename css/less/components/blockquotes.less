@@ -10,7 +10,7 @@ blockquote{
         position    : absolute;
         line-height : 1em;
         .font-size(@font-size-large * 2);
-        & when (@flexkit-icons = true){
+        & when (@flexkit-icons){
             font-family : 'flexkit-icons';
         }
     }
@@ -18,10 +18,10 @@ blockquote{
     &:after{
         right  : 0;
         bottom : -0.25em;
-        & when (@flexkit-icons = false){
+        & when not(@flexkit-icons){
             content : "\201c";
         }
-        & when (@flexkit-icons = true){
+        & when (@flexkit-icons){
             content : "\e074";
         }
     }
@@ -29,10 +29,10 @@ blockquote{
     &:before{
         left : 0;
         top  : -0.25em;
-        & when (@flexkit-icons = false){
+        & when not(@flexkit-icons){
             content : "\201e";
         }
-        & when (@flexkit-icons = true){
+        & when (@flexkit-icons){
             content : "\e073";
         }
     }
@@ -46,7 +46,7 @@ blockquote{
 
     }
 
-    .v2 when (@flexkit-icons = true){
+    .v2 when (@flexkit-icons){
 
         &:after{
             content : "\e076";
@@ -57,7 +57,7 @@ blockquote{
         }
     }
 
-    &.noquotes when (@blockquote-noquotes = true) and (@blockquote-types = true){
+    &.noquotes when (@blockquote-noquotes) and (@blockquote-types){
         border-left : 2px solid @gray-light;
         padding     : .5em 1em;
 
@@ -66,7 +66,7 @@ blockquote{
         }
     }
 
-    &.onequote when (@blockquote-onequote = true) and (@blockquote-types = true){
+    &.onequote when (@blockquote-onequote) and (@blockquote-types){
         padding-left  : 2em;
         padding-right : 2em;
 
@@ -80,7 +80,7 @@ blockquote{
         }
     }
 
-    &.cloud when (@blockquote-cloud = true) and (@blockquote-types = true){
+    &.cloud when (@blockquote-cloud) and (@blockquote-types){
         padding          : 1em;
         background-color : @gray-lighter;
         .border-radius(5px);
@@ -93,7 +93,7 @@ blockquote{
             content : '';
         }
 
-        &.border when (@blockquote-cloud-border = true) and (@blockquote-types = true){
+        &.border when (@blockquote-cloud-border) and (@blockquote-types){
             @border-width: 1px;
             background-color : @body-bg;
             padding          : 1em;
@@ -115,8 +115,10 @@ blockquote{
             }
         }
 
-        &.right when (@blockquote-cloud-right = true) and (@blockquote-types = true){
-            zoom : 1;
+        &.right when (@blockquote-cloud-right) and (@blockquote-types){
+            & when (@seotoaster){
+                zoom : 1;
+            }
 
             &:after{
                 left  : auto;
@@ -129,8 +131,10 @@ blockquote{
             }
         }
 
-        &.left when (@blockquote-cloud-left = true) and (@blockquote-types = true){
-            zoom : 1;
+        &.left when (@blockquote-cloud-left) and (@blockquote-types){
+            & when (@seotoaster){
+                zoom : 1;
+            }
 
             &:after{
                 left               : @indent;
