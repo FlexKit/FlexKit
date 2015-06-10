@@ -14,5 +14,5 @@ if(!device.type) {
     });
 }
 $(document).on('click', '#go-top', function(e) {
-    $("html, body").animate({scrollTop : 0}, 1000);
+    $("html, body").animate({ scrollTop : 0 }, 1000);
 });
