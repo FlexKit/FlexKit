@@ -20,7 +20,6 @@
 
         & ~ .checkbox_radio{
             .inline-block;
-            .box-sizing(content-box);
             position    : relative;
             font-size   : @checkbox-radio-width;
             height      : 1em;
@@ -161,7 +160,6 @@
                         content    : '';
                         background : @brand-error;
                         .transition(all, 0.3s);
-                        .box-sizing();
                         background : @input-border-color;
                         position   : absolute;
                         border     : 1px solid @input-bg;
@@ -345,7 +343,6 @@
                 content    : '';
                 background : @brand-error;
                 .transition(all, 0.3s);
-                .box-sizing();
                 background : @input-border-color;
                 position   : absolute;
                 border     : 1px solid @input-bg;

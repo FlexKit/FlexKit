@@ -14,30 +14,20 @@ function _checkboxRadio() {
 
         $(this).addClass('processed');
 
-        if($(this).is(':radio')) {
-            $(this).addClass('radio-upgrade filed-upgrade');
-        } else {
-            $(this).addClass('checkbox-upgrade filed-upgrade');
-        }
+        $(this).addClass('filed-upgrade');
 
         if(!$(this).closest('.btn-group').length) {
+            var $label = $('<label/>', {
+                class : 'checkbox_radio ' + labelClass,
+                for   : id
+            });
+
             var $parent = $(this).parent('label');
-            var $span = $('<span class="checkbox_radio"></span>');
-
-            if($(this).hasClass('switcher')) {
-                $span.append('<span></span>');
-            }
-
-            if($parent.length) {
+            if($parent.length){
                 $parent.prop('for', id);
-                $span.addClass(labelClass);
-            } else {
-                var $label = $('<label></label>');
-                $label.addClass('checkbox_radio-wrap pointer ' + labelClass).prop('for', id);
-                $(this).wrap($label);
             }
 
-            $(this).after($span);
+            $(this).after($label);
         }
     });
     //    }
