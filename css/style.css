@@ -243,25 +243,6 @@ textarea {
   float: left;
   margin-top: -27px;
 }
-label[for*="chr-"] {
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.checkbox_radio-wrap {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  line-height: 0;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-}
 .filed-upgrade {
   height: auto;
   position: absolute;
@@ -274,6 +255,10 @@ label[for*="chr-"] {
 .filed-upgrade ~ .checkbox_radio {
   display: inline-block;
   vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   position: relative;
   font-size: 16px;
   height: 1em;
@@ -282,7 +267,6 @@ label[for*="chr-"] {
   background: #ffffff;
   border: 1px solid #bbbbbb;
   color: transparent;
-  cursor: pointer;
 }
 .filed-upgrade ~ .checkbox_radio:before {
   content: "";

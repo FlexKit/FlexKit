@@ -17,7 +17,7 @@
 // Vendor prefixes
 //==================================================
 .prefixer(
-    @rules;
+    @rule;
     @value;
     @prefixes : '';
     @onlyPrefix : false
@@ -27,22 +27,22 @@
     @supportIe : ~`(function(){var a = "@{prefixes}"; if(@{ie} && (a.indexOf('ms') != -1)){ return 'ms';}}())`;
     @prefixesCurrent : @supportWebkit @supportMoz @supportIe;
 
-    .prefixer-checked(@rules; @value; @prefixesCurrent; @onlyPrefix : @onlyPrefix);
+    .prefixer-checked(@rule; @value; @prefixesCurrent; @onlyPrefix : @onlyPrefix);
 }
 .prefixer-checked(
-    @rules;
+    @rule;
     @value;
     @prefixes : '';
     @length : length(@prefixes);
     @prefix : extract(@prefixes, @length);
     @onlyPrefix : false
 ) when (@length >= 0){
-    .prefixer-checked(@rules; @value; @prefixes; @length - 1; @onlyPrefix : @onlyPrefix);
+    .prefixer-checked(@rule; @value; @prefixes; @length - 1; @onlyPrefix : @onlyPrefix);
     & when (@prefix = webkit), (@prefix = moz), (@prefix = ms), (@prefix = o){
-        -@{prefix}-@{rules} : @value;
+        -@{prefix}-@{rule} : @value;
     }
     & when (@onlyPrefix = false){
-        @{rules} : @value;
+        @{rule} : @value;
     }
 }
 
