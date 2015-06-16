@@ -135,7 +135,6 @@ select,
 textarea,
 input {
   font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
-  padding: .5em;
   border-width: 1px;
   border-style: solid;
   border-color: #bbbbbb;
@@ -232,10 +231,12 @@ input.noedit:focus {
 }
 input,
 select {
+  padding: 0 .5em;
   height: 2.3em;
   line-height: 1.3em;
 }
 textarea {
+  padding: .5em;
   min-height: 5em;
 }
 .forgot-password,
