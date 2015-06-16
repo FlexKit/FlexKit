@@ -13,10 +13,10 @@ if(device.type) {
     window.onload = hideLoading;
 }
 
-function showLoading() {
+function showLoading(e) {
     $('html').removeClass('loaded');
 }
-function hideLoading() {
-    event.preventDefault();
+function hideLoading(e) {
+    e.preventDefault();
     $('html').addClass('loaded');
 }

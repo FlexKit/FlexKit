@@ -25,8 +25,8 @@ function dropdownInit(menu){
 tapButton('menu-btn', showMenu);
 tapButton('dropdown-btn', showDropdown);
 tapButton('sub-menu-btn', function(e){
-    event.stopPropagation();
-    event.preventDefault();
+    e.stopPropagation();
+    e.preventDefault();
     $(e.target).toggleClass('active').nextAll('ul').toggleClass('open');
 });
 
