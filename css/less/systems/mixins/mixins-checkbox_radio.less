@@ -14,6 +14,7 @@
             height      : 1em;
             width       : 1em;
             line-height : 0;
+            margin      : 0;
             background  : @input-bg;
             border      : @input-border-width solid @input-border-color;
             color       : transparent;
@@ -98,7 +99,7 @@
 
                 &:before{
                     & when (@seotoaster){
-                        .flexkit-icon()
+                        .flexkit-icon();
                     }
                     & when not(@seotoaster){
                         &:extend(.flexkit-icon);
@@ -231,7 +232,7 @@
         }
 
         &:disabled{
-             &:checked{
+            &:checked{
                 &:before{
                     color      : darken(@input-bg-disabled, 30%) !important;
                     background : darken(@input-bg-disabled, 30%) !important;
@@ -275,7 +276,7 @@
 
         &:before when (@checkbox-checkmark-style){
             & when (@seotoaster){
-                .flexkit-icon()
+                .flexkit-icon();
             }
             & when not(@seotoaster){
                 &:extend(.flexkit-icon);

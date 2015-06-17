@@ -1,5 +1,5 @@
-// support for IE touch events
 var events = (device.type && 'ontouchstart' in window) ? ['touchstart', 'touchmove touchend touchcancel'] : ['mousedown', 'mousemove mouseup'];
+// support for IE touch events
 if(window.navigator.pointerEnabled) {
     events = ['pointerdown', 'pointermove pointerup pointercancel lostpointercapture'];
 } else if(window.navigator.msPointerEnabled) {

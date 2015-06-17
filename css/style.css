@@ -265,6 +265,7 @@ textarea {
   height: 1em;
   width: 1em;
   line-height: 0;
+  margin: 0;
   background: #ffffff;
   border: 1px solid #bbbbbb;
   color: transparent;
