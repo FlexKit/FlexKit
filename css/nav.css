@@ -171,8 +171,7 @@ aside .relatedpages li p {
   float: left;
   margin-right: 2%;
 }
-#left .listxrss a ~ a,
-#right .listxrss a ~ a {
+aside .listxrss a ~ a {
   float: none;
   display: inline-block;
   vertical-align: middle;
@@ -183,8 +182,7 @@ aside .relatedpages li p {
   color: #7c7c7c;
   margin-bottom: 1em;
 }
-#left .listxrss p,
-#right .listxrss p {
+aside .listxrss p {
   font-size: 0.85em;
 }
 .news-item .newslog-admin-actions {
@@ -471,6 +469,7 @@ aside .relatedpages li p {
 @media only screen and (max-width: 800px) {
   .mobile-menu {
     z-index: 102;
+    will-change: auto;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }

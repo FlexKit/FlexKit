@@ -3453,6 +3453,7 @@ ul.list-count-sign > li:before {
   margin-left: -3em;
   margin-right: 1em;
   color: #fff;
+  will-change: auto;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
   border-radius: 10em;
@@ -3475,6 +3476,7 @@ ul.list-icon-sign > li:before {
   background-color: #eeeeee;
   margin-left: -3em;
   margin-right: 1em;
+  will-change: auto;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
   border-radius: 10em;
@@ -3881,6 +3883,7 @@ img.img-thumbnail {
   text-align: center;
   padding: 3px;
   background: transparent;
+  will-change: auto;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border: 1px solid #bbbbbb;
@@ -3928,6 +3931,7 @@ button,
   user-select: none;
   box-shadow: none;
   border: none;
+  will-change: auto;
   -webkit-transition: background 0.3s ease;
   transition: background 0.3s ease;
 }

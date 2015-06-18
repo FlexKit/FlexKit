@@ -1088,7 +1088,7 @@ a[class*="tooltip-native"] {
   top: 0;
   bottom: 0;
   right: 0;
-  text-shadow: 0px 0px 3px #555;
+  text-shadow: 0 0 3px #555;
 }
 .ui-progressbar.label[aria-valuenow="0"]:before {
   content: attr(data-progressbar-start);
