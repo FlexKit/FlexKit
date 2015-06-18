@@ -78,6 +78,9 @@
         & when (@column-global-classes){
             .column-list(@prefix: _);
         }
+        @media only screen and (min-width : (@responsive-size-big-screen)){
+            .column-list(@columns-big-screen; b-);
+        }
         @media only screen and (min-width : (@responsive-size-tablet + 1)){
             .column-list();
         }
@@ -125,6 +128,9 @@
     & when (@responsive){
         & when (@grid-global-classes){
             .grid-list(@prefix: _);
+        }
+        @media only screen and (min-width : (@responsive-size-big-screen)){
+            .column-list(@grid-columns-big-screen; b-);
         }
         @media only screen and (min-width : (@responsive-size-tablet + 1)){
             .grid-list();
