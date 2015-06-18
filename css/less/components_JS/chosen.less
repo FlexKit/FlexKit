@@ -13,6 +13,7 @@
     padding          : @input-padding / 2;
     width            : 100% !important;
     min-height       : unit(@button-line-height * 2, em);
+    color            : @input-color;
     border-width     : @input-border-width;
     border-style     : solid;
     border-color     : @input-border-color;
@@ -30,7 +31,6 @@
         margin      : 0;
         font-size   : 1em;
         line-height : @line-height;
-        color       : @input-color;
     }
 
     &.@{chosen-prefix}-container-single{ }
@@ -174,8 +174,8 @@
             color       : @gray-dark;
             padding     : 0 @padding-mini-horizontal;
             margin      : @input-border-width;
-            min-height  : unit(@button-line-height * 2, em) * @font-size-small - (@input-border-width * 2);
-            line-height : unit(@button-line-height * 2, em) * @font-size-small - (@input-border-width * 2);
+            min-height  : unit(@button-line-height * 2, em) * @font-size-small;
+            line-height : unit(@button-line-height * 2, em) * @font-size-small;
         }
 
         .search-field{
@@ -188,9 +188,10 @@
             }
 
             input{
-                border  : none;
-                height  : auto;
-                padding : (@padding-mini-vertical + @input-border-width) @padding-mini-horizontal;
+                background : transparent !important;
+                border     : none;
+                height     : auto;
+                padding    : (@padding-mini-vertical + @input-border-width) @padding-mini-horizontal;
             }
         }
     }
@@ -224,6 +225,18 @@
             font-size      : 16px;
             margin-left    : -24px;
             position       : relative;
+        }
+    }
+
+    &.chosen-disabled{
+        .search-choice{
+            border-color : darken(@input-bg-disabled, 10%);
+            background   : @input-bg-disabled;
+            color        : darken(@input-bg-disabled, 30%);
+        }
+        .search-choice-close{
+            cursor : default;
+            color  : darken(@input-bg-disabled, 30%);
         }
     }
 

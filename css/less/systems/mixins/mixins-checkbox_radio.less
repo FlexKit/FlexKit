@@ -34,7 +34,10 @@
 
         &:hover{
             & ~ .checkbox_radio{
-                &:before{
+                &:before when (@checkbox-checkmark-style){
+                    color : @gray-lighter;
+                }
+                &:before when not(@checkbox-checkmark-style){
                     background : @gray-lighter;
                 }
             }

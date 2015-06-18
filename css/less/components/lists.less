@@ -392,6 +392,7 @@ ul{
                 border-color : inherit;
             }
             &:before{
+                z-index           : 1;
                 left              : -1.5em;
                 border-left-color : transparent !important;
             }
@@ -407,6 +408,11 @@ ul{
             &.active ~ .step-item{
                 background   : #ddd;
                 border-color : #ddd;
+
+                &:hover{
+                    background   : darken(#ddd, 5%);
+                    border-color : darken(#ddd, 5%);
+                }
             }
             &.error{
                 background   : @state-error-bg !important;
@@ -424,17 +430,27 @@ ul{
         .step-title{
             font-size   : 1.15em;
             line-height : normal;
-        }
-        .step-count{
-            border         : 2px solid #fff;
-            border-radius  : 2em;
-            width          : 1.15em;
-            height         : 1.15em;
-            line-height    : 1.15em;
-            font-size      : 1.5em;
-            margin-right   : 0.25em;
-            .inline-block();
-            .box-sizing(content-box);
+
+            &:before{
+                content       : attr(data-count);
+                border        : 2px solid #fff;
+                border-radius : 2em;
+                width         : 1.15em;
+                height        : 1.15em;
+                line-height   : 1.15em;
+                font-size     : 1.25em;
+                margin-right  : 0.25em;
+                .inline-block();
+                .box-sizing(content-box);
+            }
+
+            &:after{
+                &:extend(ul.list-step .step-item:before);
+                z-index            : 0;
+                left               : -1.75em;
+                border-right-width : .25em;
+                border-left-color  : transparent !important;
+            }
         }
     }
 }
