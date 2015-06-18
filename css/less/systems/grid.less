@@ -3,13 +3,29 @@
     & when not(@grid-container-width = 100%){
         margin-left  : auto;
         margin-right : auto;
-    }
-    & when not(@responsive) and not(@grid-container-width = 100%){
-        width : @grid-container-width;
-    }
-    & when (@responsive) and not(@grid-container-width = 100%){
-        width     : 95%;
-        max-width : @grid-container-width;
+
+        & when not(@responsive) and not(@adaptive){
+            width : @grid-container-width;
+        }
+        & when (@responsive){
+            width     : 95%;
+            max-width : @grid-container-width;
+        }
+        & when (@adaptive) and not(@responsive){
+            width     : 95%;
+            max-width : @grid-container-width;
+
+            @media only screen and (max-width : @grid-container-width){
+                &{
+                    max-width : @responsive-size-tablet;
+                }
+            }
+            @media only screen and (max-width : @responsive-size-tablet){
+                &{
+                    max-width : @responsive-size-mobile;
+                }
+            }
+        }
     }
     .clearfix-mixin();
 }
