@@ -1,6 +1,6 @@
 function _checkboxRadio() {
     //    if(!$('.ie8').length){
-    $('input:checkbox, input:radio').not('.processed, .icon, .hidden').each(function() {
+    $('input:checkbox, input:radio').not('.filed-upgrade, .icon, .hidden').each(function() {
 
         var id = $(this).prop('id'), labelClass = '';
         if(!id) {
@@ -8,11 +8,9 @@ function _checkboxRadio() {
             $(this).prop('id', id);
         }
 
-        if($(this).data('clone-classes') === 'true') {
+        if($(this).data('clone-classes')) {
             labelClass = $(this).prop('class') || '';
         }
-
-        $(this).addClass('processed');
 
         $(this).addClass('filed-upgrade');
 

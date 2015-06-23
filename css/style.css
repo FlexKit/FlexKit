@@ -292,13 +292,15 @@ textarea {
 .filed-upgrade:checked ~ .checkbox_radio:before {
   background: #8fd400;
 }
+.filed-upgrade:disabled ~ .checkbox_radio {
+  background: #eeeeee !important;
+  border-color: #d5d5d5 !important;
+  color: transparent;
+}
 .filed-upgrade:disabled:checked ~ .checkbox_radio:before {
-  color: #a2a2a2 !important;
   background: #a2a2a2 !important;
 }
-.filed-upgrade[type="radio"] ~ .checkbox_radio {
-  border-radius: 10em;
-}
+.filed-upgrade[type="radio"] ~ .checkbox_radio,
 .filed-upgrade[type="radio"] ~ .checkbox_radio:before {
   border-radius: 10em;
 }

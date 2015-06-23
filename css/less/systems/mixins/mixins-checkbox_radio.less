@@ -34,7 +34,7 @@
 
         &:hover{
             & ~ .checkbox_radio{
-                &:before when (@checkbox-checkmark-style){
+                & when (@checkbox-checkmark-style){
                     color : @gray-lighter;
                 }
                 &:before when not(@checkbox-checkmark-style){
@@ -54,10 +54,15 @@
         }
 
         &:disabled{
+            & ~ .checkbox_radio{
+                background   : @input-bg-disabled !important;
+                border-color : darken(@input-bg-disabled, 10%) !important;
+                color        : transparent;
+            }
+
             &:checked{
                 & ~ .checkbox_radio{
-                    &:before{
-                        color      : darken(@input-bg-disabled, 30%) !important;
+                    &:before when not(@checkbox-checkmark-style){
                         background : darken(@input-bg-disabled, 30%) !important;
                     }
                 }
@@ -69,7 +74,9 @@
                 .border-radius(10em);
 
                 &:before{
-                    .border-radius(10em);
+                    & when not(@checkbox-checkmark-style){
+                        &:extend(.filed-upgrade[type=radio]~.checkbox_radio);
+                    }
                     & when (@checkbox-checkmark-style){
                         content  : "";
                         position : absolute;
@@ -80,18 +87,31 @@
                         margin   : auto;
                         width    : 0.625em;
                         height   : 0.625em;
+                        .border-radius(10em);
                     }
                 }
+            }
 
-                &:hover when (@checkbox-checkmark-style){
+            &:hover when (@checkbox-checkmark-style){
+                & ~ .checkbox_radio{
                     &:before{
                         background : @gray-lighter;
                     }
                 }
+            }
 
-                &:checked when (@checkbox-checkmark-style){
+            &:checked when (@checkbox-checkmark-style){
+                & ~ .checkbox_radio{
                     &:before{
                         background : @brand-success;
+                    }
+                }
+
+                &:disabled{
+                    & ~ .checkbox_radio{
+                        &:before when (@checkbox-checkmark-style){
+                            background : darken(@input-bg-disabled, 30%) !important;
+                        }
                     }
                 }
             }
@@ -113,15 +133,18 @@
                     content   : "\e0a5";
                     font-size : 1.5em;
                 }
-
-                &:hover{
-                    color : @gray-lighter;
-                }
             }
 
             &:checked when (@checkbox-checkmark-style){
                 & ~ .checkbox_radio{
                     color : @brand-success;
+                }
+                &:disabled{
+                    & ~ .checkbox_radio{
+                        & when (@checkbox-checkmark-style){
+                            color : darken(@input-bg-disabled, 30%) !important;
+                        }
+                    }
                 }
             }
 
