@@ -25,7 +25,11 @@ function dropdownInit(menu){
 tapButton('menu-btn', showMenu);
 tapButton('dropdown-btn', showDropdown);
 tapButton('sub-menu-btn', function(e){
-    e.stopPropagation();
+    if(!window.Hammer) {
+        e.stopPropagation();
+    }else{
+        e.srcEvent.stopPropagation();
+    }
     e.preventDefault();
     $(e.target).toggleClass('active').nextAll('ul').toggleClass('open');
 });
@@ -61,7 +65,11 @@ function hideMenu(e){
 }
 
 function showMenu(e){
-    //    even.stopPropagation();
+    if(!window.Hammer) {
+        e.stopPropagation();
+    }else{
+        e.srcEvent.stopPropagation();
+    }
     e.preventDefault();
     var menuPosition = e.target.getAttribute('data-menu-position');
     body.setAttribute('data-menu-open', menuPosition);
@@ -69,7 +77,11 @@ function showMenu(e){
 }
 
 function showDropdown(e){
-    //    ev.stopPropagation();
+    if(!window.Hammer) {
+        e.stopPropagation();
+    }else{
+        e.srcEvent.stopPropagation();
+    }
     e.preventDefault();
     var menu = e.target.getAttribute('data-menu') || e.target.nextElementSibling;
     $(menu).addClass('open');
@@ -89,9 +101,8 @@ function tapButton(selector, fun){
         }
     }else{
         Hammer.each(listItems, function(item){
-            var touchControl = new Hammer(item);
+            var touchControl = new Hammer(item, {domEvents: true});
             touchControl.on("tap", fun);
-
         });
     }
 }
