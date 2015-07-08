@@ -24,19 +24,19 @@
                         <i class="icon-calendar2 icon16"></i>
                         {$news:date: M d, Y}
                     </time>
-                    <a class="page-teaser-image text-center grid_2 alpha" href="{$news:url}">
+                    <a class="news-teaser-image text-center grid_2 alpha" href="{$news:url}">
                         <img src="{$news:preview}" alt="{$news:title}"/>
                     </a>
-                    <a class="page-title large grid_10 omega" href="{$news:url}">{$news:title}</a>
-                    <p class="news-item-description grid_10 omega small mb10px">{$news:teaser}</p>
-                    <p class="news-item-tags small cl-both text-right">{$news:tags}</p>
+                    <a class="news-title large grid_10 omega" href="{$news:url}">{$news:title}</a>
+                    <p class="news-description grid_10 omega small mb10px">{$news:teaser}</p>
+                    <p class="news-tags small cl-both text-right">{$news:tags}</p>
                 </section>
             {/newslist}
             </article>
 
             <!-- Right box -->
             <aside class="grid_3" role="complementary">
-                {repeat:Aside right box:key:3}
+                {repeat:Aside right box:key:1}
                 <section class="aside-box">
                     <h3>{$header:right_key}</h3>
                     {$content:right_key}
