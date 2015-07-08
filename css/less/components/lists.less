@@ -64,7 +64,7 @@ ul{
     &.list-striped when (@list-striped) and (@lists-classes){
         & > li{
             margin  : 0;
-            padding : 10px;
+            padding : .75em;
 
             &:nth-child(odd){
                 background : @gray-lighter;
@@ -446,9 +446,10 @@ ul{
 
             &:after{
                 &:extend(ul.list-step .step-item:before);
+                font-size          : 0.9em;
                 z-index            : 0;
                 left               : -1.75em;
-                border-right-width : .25em;
+                border-right-width : .3em;
                 border-left-color  : transparent !important;
             }
         }

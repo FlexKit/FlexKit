@@ -175,9 +175,9 @@
 
 .prefix(@grid : @grid-columns; @prefix : ~''; @num-column) when (@grid > @num-column) and  (@grid-system-prefix-suffix){
     .@{prefix}prefix_@{num-column}{
-        margin-left : round(percentage(@num-column / @grid) + @grid-margin-width / 2, 2) !important;
+        margin-left : round(percentage(@num-column / @grid) + @grid-margin-width / 2, 3) !important;
         &.alpha when (@grid-system-alpha-omega){
-            margin-left : round(percentage(@num-column / @grid), 2) !important;
+            margin-left : round(percentage(@num-column / @grid), 3) !important;
         }
     }
     .prefix(@grid; @prefix; @num-column + 1);
@@ -185,9 +185,9 @@
 
 .suffix(@grid : @grid-columns; @prefix : ~''; @num-column) when (@grid > @num-column) and  (@grid-system-prefix-suffix){
     .@{prefix}suffix_@{num-column}{
-        margin-right : round(percentage(@num-column / @grid) + @grid-margin-width / 2, 2) !important;
+        margin-right : round(percentage(@num-column / @grid) + @grid-margin-width / 2, 3) !important;
         &.omega when (@grid-system-alpha-omega){
-            margin-right : round(percentage(@num-column / @grid), 2) !important;
+            margin-right : round(percentage(@num-column / @grid), 3) !important;
         }
     }
     .suffix(@grid; @prefix; @num-column + 1);
@@ -263,6 +263,15 @@
     overflow      : hidden;
     text-overflow : ellipsis;
     white-space   : nowrap;
+}
+
+// Hyphens text
+// hyphens: none | manual | auto
+.hyphens(@type: auto){
+    -webkit-hyphens: @type;
+    -moz-hyphens   : @type;
+    -ms-hyphens    : @type;
+    hyphens        : @type;
 }
 
 // Opacity
@@ -425,8 +434,7 @@
 // Resize anything
 //==================================================
 .resize(@direction:none) {
-    resize   : @direction; // Options: horizontal, vertical, both, none
-    overflow : auto; // Safari fix
+    resize : @direction; // Options: horizontal, vertical, both, none
 }
 
 // ClearFix

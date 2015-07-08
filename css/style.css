@@ -313,7 +313,7 @@ textarea {
 }
 .filed-upgrade[type="checkbox"].switcher ~ .checkbox_radio:before {
   font-size: 0.857rem;
-  line-height: 20px;
+  line-height: inherit;
   content: 'OFF';
   background: none;
   color: #f65314;

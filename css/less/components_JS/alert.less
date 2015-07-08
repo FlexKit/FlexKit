@@ -78,14 +78,14 @@
         background-color : #fff;
         .inline-block();
         .border-radius(@state-border-radius);
-        .box-shadow(3px 3px 10px fade(#000, 50%));
+        .box-shadow(3px 3px 25px fade(#000, 25%));
     }
 
     .dialog-buttons{
         margin-top : 1em;
 
         button{
-            font-size : @font-size-small;
+            font-size : 12px;
             & when (@seotoaster){
                 .button-color(@button-success-color; @button-success-bg);
             }

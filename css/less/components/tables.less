@@ -51,6 +51,10 @@ table{
 
     &.table-outline{
         border : 1px solid @table-border-color;
+
+        th:last-child, td:last-child{
+            border-right : 1px solid @table-border-color;
+        }
     }
 
     &.condensed{
@@ -122,31 +126,31 @@ table{
             &.primary when (@colors){
                 &:hover{
                     background-color : darken(@state-primary-bg, 5%) !important;
-                    border-color     : darken(@state-primary-border, 5%) !important;
+//                    border-color     : darken(@state-primary-border, 5%) !important;
                 }
             }
             &.success when (@color-success) and (@colors){
                 &:hover{
                     background-color : darken(@state-success-bg, 5%) !important;
-                    border-color     : darken(@state-success-border, 5%) !important;
+//                    border-color     : darken(@state-success-border, 5%) !important;
                 }
             }
             &.error when (@color-error) and (@colors){
                 &:hover{
                     background-color : darken(@state-error-bg, 5%) !important;
-                    border-color     : darken(@state-error-border, 5%) !important;
+//                    border-color     : darken(@state-error-border, 5%) !important;
                 }
             }
             &.warning when (@color-warning) and (@colors){
                 &:hover{
                     background-color : darken(@state-warning-bg, 5%) !important;
-                    border-color     : darken(@state-warning-border, 5%) !important;
+//                    border-color     : darken(@state-warning-border, 5%) !important;
                 }
             }
             &.info when (@color-info) and (@colors){
                 &:hover{
                     background-color : darken(@state-info-bg, 5%) !important;
-                    border-color     : darken(@state-info-border, 5%) !important;
+//                    border-color     : darken(@state-info-border, 5%) !important;
                 }
             }
         }
@@ -224,23 +228,23 @@ tr, th, td{
 }
 tr{
     &.primary td when (@colors){
-        border-color  : @state-primary-border !important;
-        border-bottom : 1px solid @state-primary-border !important;
+//        border-color  : @state-primary-border !important;
+//        border-bottom : 1px solid @state-primary-border !important;
     }
     &.success td when (@color-success) and (@colors){
-        border-color  : @state-success-border !important;
-        border-bottom : 1px solid @state-success-border !important;
+//        border-color  : @state-success-border !important;
+//        border-bottom : 1px solid @state-success-border !important;
     }
     &.error td when (@color-error) and (@colors){
-        border-color  : @state-error-border !important;
-        border-bottom : 1px solid @state-error-border !important;
+//        border-color  : @state-error-border !important;
+//        border-bottom : 1px solid @state-error-border !important;
     }
     &.warning td when (@color-warning) and (@colors){
-        border-color  : @state-warning-border !important;
-        border-bottom : 1px solid @state-warning-border !important;
+//        border-color  : @state-warning-border !important;
+//        border-bottom : 1px solid @state-warning-border !important;
     }
     &.info td when (@color-info) and (@colors){
-        border-color  : @state-info-border !important;
-        border-bottom : 1px solid @state-info-border !important;
+//        border-color  : @state-info-border !important;
+//        border-bottom : 1px solid @state-info-border !important;
     }
 }

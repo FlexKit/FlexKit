@@ -139,13 +139,13 @@
   background-color: #fff;
   display: inline-block;
   vertical-align: middle;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.25);
 }
 .smoke-base .dialog-buttons {
   margin-top: 1em;
 }
 .smoke-base .dialog-buttons button {
-  font-size: 0.85em;
+  font-size: 12px;
   color: #ffffff;
   border-color: #50b000;
   background-color: #8fd400;
@@ -176,27 +176,27 @@
   cursor: pointer;
   margin-top: 2px;
   margin-bottom: 0;
-  color: #ffffff;
-  background: #c2d2da;
-  padding: 8px 12px;
+  color: #555555;
+  background: #eeeeee;
+  padding: .5em .75em;
   min-height: 0;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-header:hover {
-  color: #ffffff;
-  background: #b2c6d0;
+  color: #555555;
+  background: #e7e7e7;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-header a {
   color: inherit;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-header.ui-accordion-header-active {
-  color: #ffffff;
-  background: #a2bbc7;
+  color: #555555;
+  background: #e2e2e2;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-icons .ui-accordion-header-icon {
   display: inline-block;
   vertical-align: middle;
-  margin-left: -6px;
-  margin-right: 6px;
+  margin-left: -0.25em;
+  margin-right: .25em;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-icons .ui-accordion-header-icon:before {
   font-size: 16px;
@@ -205,11 +205,11 @@
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-content {
   background: #ffffff;
-  border: 1px solid #a2bbc7;
+  border: 1px solid #e2e2e2;
   border-top: none;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 8px 12px;
+  padding: .75em;
   overflow: auto;
 }
 .ui-tabs {
@@ -236,7 +236,7 @@
   position: relative;
   float: left;
   margin: 2px -1px 0 0;
-  background: transparent;
+  background: #fafafa;
   white-space: nowrap;
   list-style: none;
   color: #888888;
@@ -275,7 +275,7 @@
 }
 .ui-tabs .ui-tabs-nav li:hover {
   cursor: pointer;
-  background: transparent;
+  background: #fafafa;
   border-color: #888888;
   color: #888888;
 }
@@ -302,7 +302,6 @@
 .ui-tabs .ui-tabs-panel {
   position: relative;
   z-index: 0;
-  display: block;
   border: 1px solid #c2d2da;
   overflow: hidden;
   background: #ffffff;
@@ -1214,6 +1213,7 @@ a[class*="tooltip-native"] {
   cursor: pointer;
   position: relative;
   padding-right: 16px;
+  border-left: 1px solid #dddddd;
 }
 .dataTables_wrapper .sorting:after,
 .dataTables_wrapper .sorting_asc:after,
