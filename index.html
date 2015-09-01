@@ -1,71 +1,106 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Include head template -->
-        {$template:_head}
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+        <title>_SAMPLE WEBSITE TITLE_</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="FlexKit">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="480">
+        <!--[if IE]><meta http-equiv="cleartype" content="on"><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="_SAMPLE WEBSITE TITLE_">
+
+        <!-- Favicons -->
+        <!-- Favicon Generator => http://realfavicongenerator.net/ -->
+        <!-- iOS -->
+        <link rel="apple-touch-icon" sizes="57x57" href="images/touch/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/touch/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/touch/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/touch/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/touch/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/touch/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/touch/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/touch/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/touch/apple-touch-icon-180x180.png">
+
+        <!-- Win8 -->
+        <meta name="application-name" content=""/>
+        <meta name="msapplication-tooltip" content=""/>
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="images/touch/mstile-144x144.png">
+        <meta name="msapplication-square70x70logo" content="images/touch/mstile-70x70.png"/>
+        <meta name="msapplication-square150x150logo" content="images/touch/mstile-150x150.png"/>
+        <meta name="msapplication-square310x310logo" content="images/touch/mstile-310x310.png"/>
+        <meta name="msapplication-wide310x150logo" content="images/touch/mstile-310x150.png"/>
+
+        <!-- Desktop and Android -->
+        <link rel="icon" type="image/png" href="images/favicon/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="images/favicon/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" href="images/favicon/favicon.ico">
+        <!--[if IE]><link rel="shortcut icon" href="images/favicon/favicon.ico"><![endif]-->
+
+        <!-- WEB FONTS -->
+        <!-- Change the symbol '|' to '%7C' and add 'media="all"' for the W3C validator-->
+
+        <!-- CSS -->
+        <link href="css/reset.css" rel="stylesheet" media="all">
+        <link href="css/flexkit.css" rel="stylesheet" media="all">
+        <link href="css/animation.css" rel="stylesheet" media="all">
+
+        <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
+        <!--[if lte IE 8]><script src="js/system/ie-pack.min.js"></script><![endif]-->
     </head>
     <body>
 
         <!-- Container -->
-        <main class="container">
-
+        <main>
             <!-- Header -->
-            <header class="grid_12" role="banner">
-                <h1 class="logo grid_8 alpha" itemscope itemtype="http://schema.org/Organization">
-                    <a href="{$website:url}" title="{$plugin:widcard:BizOrgName:notag}" itemprop="url">
-                        <img itemprop="logo" src="{$plugin:widcard:bizLogo:url}" alt="{$page:h1}" width="75" height="85">
-                        <span itemprop="name">{$plugin:widcard:BizOrgName:notag}</span>
+            <header role="banner">
+                <h1 class="logo" itemscope itemtype="http://schema.org/Organization">
+                    <a href="#" title="" itemprop="url">
+                        <img itemprop="logo" src="images/logo.png" alt="" width="75" height="85">
+                        <span itemprop="name">_SAMPLE WEBSITE NAME_</span>
                     </a>
                 </h1>
-                <div class="grid_4 alpha omega mt10px">
-                    <p class="text-right">
-                        <!-- Include Social links template -->
-                        {$template:_social links}
-                    </p>
-                    {$search:form}
-                </div>
             </header>
 
             <!-- Main Menu -->
-            <nav id="main-menu" class="grid_12 mt15px mb20px d-visible" role="navigation">{$menu:main:_main menu}</nav>
-
-            <!--Slider -->
-            {device:desktop}
-            <div class="grid_12 t-hide m-hide mb30px">
-                {$imgrotator:Slider:1:7:940:350:scrollHorz:1:1:1:1}
-            </div>
-            {/device}
+            <nav id="main-menu" role="navigation">_SAMPLE MENU_</nav>
 
             <!-- Content box -->
-            <article id="content" class="grid_9" role="main">
-                {repeat:Section box:key:1}
-                <section>
-                    <h2>{$header:content_key}</h2>
-                    {$content:content_key1}
-                    {$content:content_key2}
-                </section>
-                {/repeat}
+            <article role="main">
+                _SAMPLE CONTENT_
             </article>
 
             <!-- Right box -->
-            <aside class="grid_3" role="complementary">
-                {repeat:Aside right box:key:1}
-                <section class="aside-box">
-                    <h3>{$header:right_key}</h3>
-                    {$content:right_key}
-                </section>
-                {/repeat}
+            <aside role="complementary">
+                _SAMPLE ASIDE_
             </aside>
 
             <!-- Footer -->
-            <!-- Include Footer template -->
-            {$template:_footer}
+            <footer itemscope itemtype="http://schema.org/LocalBusiness" role="contentinfo">
+                _SAMPLE FOOTER_
+            </footer>
         </main>
 
-        <!-- Include mobile elements template -->
-        {$template:_mobile elements}
-
-        <!-- Include scripts template -->
-        {$template:_scripts}
+        <!-- SCRIPTS ZONE -->
+        <script src="js/system/flexkit.min.js"></script>
+        <script src="js/scripts.min.js"></script>
     </body>
 </html>
