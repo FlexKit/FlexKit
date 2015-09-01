@@ -240,6 +240,9 @@ textarea {
   padding: .5em;
   min-height: 5em;
 }
+textarea.resize {
+  resize: vertical;
+}
 .forgot-password,
 .retrieveFormBlock > form + a {
   float: left;

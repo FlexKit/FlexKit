@@ -2382,6 +2382,9 @@
 .wrap {
   overflow: hidden !important;
 }
+.overflow-none {
+  overflow: visible !important;
+}
 .show {
   display: block !important;
 }
@@ -2542,8 +2545,14 @@ a.inherit-color:hover {
 .h-auto {
   height: auto !important;
 }
+.maxH-none {
+  max-height: none !important;
+}
 .w-auto {
   width: auto !important;
+}
+.maxW-none {
+  max-width: none !important;
 }
 .gray-darker-bg {
   color: #fff;

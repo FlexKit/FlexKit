@@ -86,10 +86,10 @@
 
         button{
             font-size : 12px;
-            & when (@seotoaster){
+            & when (@concatCSS){
                 .button-color(@button-success-color; @button-success-bg);
             }
-            & when not(@seotoaster){
+            & when not(@concatCSS){
                 &:extend(.btn);
                 &:extend(.btn.success);
 
@@ -100,10 +100,10 @@
 
             &.cancel{
                 margin-right : .5em;
-                & when (@seotoaster){
+                & when (@concatCSS){
                     .button-color(@button-error-color; @button-error-bg);
                 }
-                & when not(@seotoaster){
+                & when not(@concatCSS){
                     &:extend(.btn.outline);
                     &:extend(.btn.outline.error);
 

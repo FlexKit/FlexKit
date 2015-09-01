@@ -4,13 +4,15 @@
     width : 100%;
 
     .dataTables_filter{
-        //margin-bottom : 12px;
+        padding    : 5px;
+        text-align : right;
+        font-size  : @font-size-small;
 
         label{
-            width : 30%;
 
             input{
-                width : 75%;
+                margin-left : 5px;
+                width       : 250px;
             }
         }
     }
@@ -25,10 +27,10 @@
         border-left   : 1px solid @table-border-color;
 
         &:after{
-            & when (@seotoaster){
+            & when (@concatCSS){
                 .flexkit-icon()
             }
-            & when not(@seotoaster){
+            & when not(@concatCSS){
                 &:extend(.flexkit-icon);
             }
             content   : "\e0cd";
@@ -86,7 +88,7 @@
             color       : #fff;
         }
 
-        & when (@seotoaster){
+        & when (@concatCSS){
             &.first, &.last, &.previous, &.next{
                 &:before, &:after{
                     .flexkit-icon()
@@ -98,7 +100,7 @@
             font-weight : bold;
 
             &:before, &:after{
-                & when not(@seotoaster){
+                & when not(@concatCSS){
                     &:extend(.flexkit-icon);
                 }
                 font-size   : 15px;
@@ -109,7 +111,7 @@
         &.previous, &.next{
 
             &:before, &:after{
-                & when not(@seotoaster){
+                & when not(@concatCSS){
                     &:extend(.flexkit-icon);
                 }
             }
