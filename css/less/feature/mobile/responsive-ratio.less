@@ -53,30 +53,12 @@
                 min-height : 0 !important;
                 top        : auto;
             }
-
-            ._lbox, .gall{
-                & img when (@seotoaster){
-                    &:extend(.responsive-ratio.bottom>img);
-                }
-            }
         }
 
         &.top{
             & > img{
                 min-height : 0 !important;
                 bottom     : auto;
-            }
-
-            ._lbox, .gall{
-                & img when (@seotoaster){
-                    &:extend(.responsive-ratio.top>img);
-                }
-            }
-        }
-
-        ._lbox, .gall{
-            & img when (@seotoaster){
-                &:extend(.responsive-ratio>img);
             }
         }
     }

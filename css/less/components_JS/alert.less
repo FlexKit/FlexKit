@@ -86,30 +86,20 @@
 
         button{
             font-size : 12px;
-            & when (@concatCSS){
-                .button-color(@button-success-color; @button-success-bg);
-            }
-            & when not(@concatCSS){
-                &:extend(.btn);
-                &:extend(.btn.success);
+            &:extend(.btn);
+            &:extend(.btn.success);
 
-                &:hover{
-                    &:extend(.btn.success:hover);
-                }
+            &:hover{
+                &:extend(.btn.success:hover);
             }
 
             &.cancel{
                 margin-right : .5em;
-                & when (@concatCSS){
-                    .button-color(@button-error-color; @button-error-bg);
-                }
-                & when not(@concatCSS){
-                    &:extend(.btn.outline);
-                    &:extend(.btn.outline.error);
+                &:extend(.btn.outline);
+                &:extend(.btn.outline.error);
 
-                    &:hover{
-                        &:extend(.btn.outline.error:hover);
-                    }
+                &:hover{
+                    &:extend(.btn.outline.error:hover);
                 }
             }
         }

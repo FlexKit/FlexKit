@@ -35,7 +35,7 @@ form{
     }
 
     // -- Recaptcha & Captcha style
-    .captcha when (@seotoaster){
+    .captcha when (@form-captcha){
 
         .captcha_image{
             width         : 65% !important;
@@ -194,23 +194,8 @@ textarea{
     }
 }
 
-& when (@seotoaster){
-    .forgot-password, .retrieveFormBlock > form + a{
-        float      : left;
-        margin-top : -(@button-height-base - @padding-base-vertical);
-    }
-}
-
 // -- Checkbox & Radio field style
 .checkboxRadioStyle();
-
-// Search Form Styles
-//==================================================
-@import "../widgets/search_form";
-
-// Form builder elements Styles
-//==================================================
-@import "../widgets/form_builder";
 
 // Form labeled elements Styles
 //==================================================

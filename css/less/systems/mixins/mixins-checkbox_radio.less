@@ -121,12 +121,7 @@
             & ~ .checkbox_radio when (@checkbox-checkmark-style){
 
                 &:before{
-                    & when (@concatCSS){
-                        .flexkit-icon();
-                    }
-                    & when not(@concatCSS){
-                        &:extend(.flexkit-icon);
-                    }
+                    &:extend(.flexkit-icon);
                     position  : absolute;
                     left      : 0;
                     bottom    : 0;
@@ -301,12 +296,7 @@
     [type="checkbox"]{
 
         &:before when (@checkbox-checkmark-style){
-            & when (@concatCSS){
-                .flexkit-icon();
-            }
-            & when not(@concatCSS){
-                &:extend(.flexkit-icon);
-            }
+            &:extend(.flexkit-icon);
             position  : absolute;
             left      : 0;
             bottom    : 0;

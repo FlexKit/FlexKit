@@ -27,12 +27,7 @@
         border-left   : 1px solid @table-border-color;
 
         &:after{
-            & when (@concatCSS){
-                .flexkit-icon()
-            }
-            & when not(@concatCSS){
-                &:extend(.flexkit-icon);
-            }
+            &:extend(.flexkit-icon);
             content   : "\e0cd";
             font-size : 16px;
             height    : 16px;
@@ -88,21 +83,11 @@
             color       : #fff;
         }
 
-        & when (@concatCSS){
-            &.first, &.last, &.previous, &.next{
-                &:before, &:after{
-                    .flexkit-icon()
-                }
-            }
-        }
-
         &.first, &.last{
             font-weight : bold;
 
             &:before, &:after{
-                & when not(@concatCSS){
-                    &:extend(.flexkit-icon);
-                }
+                &:extend(.flexkit-icon);
                 font-size   : 15px;
                 font-weight : bold;
             }
@@ -111,9 +96,7 @@
         &.previous, &.next{
 
             &:before, &:after{
-                & when not(@concatCSS){
-                    &:extend(.flexkit-icon);
-                }
+                &:extend(.flexkit-icon);
             }
         }
 

@@ -70,10 +70,6 @@ table{
     // NONE BORDERED VERSION
     //==================================================
     &.table-border_none when (@table-styles){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         th, td{
             border : none;
         }
@@ -82,10 +78,6 @@ table{
     // BORDERED VERSION
     //==================================================
     &.table-bordered when (@table-bordered) and (@table-styles){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         th, td{
             border : 1px solid @table-border-color;
         }
@@ -95,10 +87,6 @@ table{
     //==================================================
     // Default zebra-stripe styles (alternating gray and transparent backgrounds)
     &.table-striped when (@table-striped) and (@table-styles){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         & > tr:nth-child(odd), tbody tr:nth-child(even){
             background-color : @table-row-bg;
         }
@@ -108,10 +96,6 @@ table{
     //==================================================
     // Placed here since it has to come after the potential zebra striping
     &.table-hover when (@table-hover) and (@table-styles){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         thead, tfoot{
             tr:hover{
                 background : inherit !important;
@@ -159,10 +143,6 @@ table{
     //  Table responsive
     //==================================================
     &.responsive when (@responsive){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         .table-head{
             display : none;
         }

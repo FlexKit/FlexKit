@@ -1,28 +1,4 @@
-.rotator when (@widget-rotator){
-    position   : relative;
-    overflow   : hidden;
-    background : #fff;
-
-    // -- Description
-    .slide-description{
-        padding : @padding-large-vertical @padding-large-horizontal;
-        color   : #FFF;
-        .rgba(#000; 0.5);
-    }
-
-    img{
-        width : 100%;
-
-        & ~ .slide-description{
-            position : absolute;
-            right    : 0;
-            bottom   : 0;
-            left     : 0;
-        }
-    }
-}
-
-.cycle-slideshow when (@widget-rotator){
+.cycle-slideshow when (@widget-cycleSlider){
 
     .slide{
         position   : absolute;

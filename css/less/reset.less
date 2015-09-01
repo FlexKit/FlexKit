@@ -60,10 +60,6 @@ iframe{
     max-width : 100%;
 }
 
-.gall when (@seotoaster){
-    .inline-block;
-}
-
 .gmaps{
     color     : #000;
     max-width : 100%;
@@ -81,10 +77,6 @@ iframe{
 .rtl{
     direction    : rtl;
     unicode-bidi : bidi-override;
-}
-
-.tpopup when (@seotoaster){
-    position : relative;
 }
 
 [contenteditable="true"]{
@@ -169,117 +161,26 @@ button, [type="button"], [type="reset"], [type="submit"]{
     cursor : default;
 }
 
-& when (@seotoaster){
-    // Reset for all navigation items, related-products
-    //==================================================
-    .main_menu, .listpages, .listcategories, .featureditem, .featureapage, .search-results, .relatedpages, .listxrss, .related-products{
-        .clearfix-mixin();
-    }
+// Reset for all navigation items, related-products
+//==================================================
+.main_menu{
+    .clearfix-mixin();
+}
 
-    //fix for Safari 3
-    & when (@webkit){
-        ::i-block-chrome, .main_menu,
-        ::i-block-chrome, .listpages,
-        ::i-block-chrome, .listcategories,
-        ::i-block-chrome, .featureditem,
-        ::i-block-chrome, .search-results,
-        ::i-block-chrome, .relatedpages,
-        ::i-block-chrome, .listxrss,
-        ::i-block-chrome, .related-products{
-            display : table;
-            width   : 100%;
-        }
-    }
-
-    .static_menu, .static_menu li,
-    .main_menu, .main_menu li, .main_menu ul, .main_menu ul li,
-    .sitemap, .sitemap li,
-    .listpages, .listpages li,
-    .listcategories, .listcategories li,
-    .featureditem, .featureditem li,
-    .featureapage,
-    .relatedpages, .relatedpages li,
-    .listxrss, .listxrss li,
-    .search-results, .search-results li,
-    .img_gallery, .img_gallery li,
-    .related-products, .related-products li{
-        margin          : 0;
-        padding         : 0;
-        list-style-type : none;
-    }
-    .listpages,
-    .listcategories,
-    .featureditem,
-    .featureapage,
-    .search-results,
-    .relatedpages,
-    .listxrss,
-    .related-products{
-        li{
-            position : relative;
-        }
-
-        a{
-            display : block;
-        }
-
-        .page-teaser-image{
-        }
-
-        img{
-            width : 100%;
-        }
-
-        .page-title{
-            margin      : 0 0 0.25em;
-            font-size   : @font-size-large;
-            font-family : @font-family-headings;
-        }
-    }
-    .listpages span,
-    .listcategories span,
-    .featureditem span,
-    .featureapage p,
-    .search-results span,
-    .relatedpages span,
-    .listxrss p,
-    .related-products .product-description{
-        display  : block;
-        overflow : hidden;
-        margin   : 0;
-
-        &:empty{
-            display : none;
-        }
-    }
-
-    .reset-style{
-        .reset-style;
+//fix for Safari 3
+& when (@webkit){
+    ::i-block-chrome, .main_menu{
+        display : table;
+        width   : 100%;
     }
 }
 
-& when not(@seotoaster){
-    // Reset for all navigation items, related-products
-    //==================================================
-    .main_menu{
-        .clearfix-mixin();
-    }
-
-    //fix for Safari 3
-    & when (@webkit){
-        ::i-block-chrome, .main_menu{
-            display : table;
-            width   : 100%;
-        }
-    }
-
-    .static_menu, .static_menu li,
-    .main_menu, .main_menu li, .main_menu ul, .main_menu ul li,
-    .img_gallery, .img_gallery li{
-        margin          : 0;
-        padding         : 0;
-        list-style-type : none;
-    }
+.static_menu, .static_menu li,
+.main_menu, .main_menu li, .main_menu ul, .main_menu ul li,
+.img_gallery, .img_gallery li{
+    margin          : 0;
+    padding         : 0;
+    list-style-type : none;
 }
 
 .clear{

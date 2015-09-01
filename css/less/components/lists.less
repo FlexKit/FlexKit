@@ -57,8 +57,7 @@ dl{
 }
 
 ul{
-    &.list-unstyled when (@list-unstyled) and (@lists-classes) and (@seotoaster){
-        zoom : 1;
+    &.list-unstyled when (@list-unstyled) and (@lists-classes){
     }
 
     &.list-striped when (@list-striped) and (@lists-classes){
@@ -73,10 +72,6 @@ ul{
     }
 
     &.list-inline when (@list-inline) and (@lists-classes){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         & > li{
             .inline-block(top);
             margin : 0 0.5em;
@@ -84,10 +79,6 @@ ul{
     }
 
     &.list-bordered when (@list-bordered) and (@lists-classes){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         & > li{
             border-bottom  : 1px solid @hr-color;
             margin         : 0;
@@ -103,10 +94,6 @@ ul{
     }
 
     &.list-arrow when (@list-arrow) and (@lists-classes){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         & > li{
             padding-left : 1em;
 
@@ -130,10 +117,6 @@ ul{
     }
 
     &.list-checkmark when (@list-checkmark) and (@lists-classes){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         & > li{
             padding-left : 1.5em;
 
@@ -214,10 +197,6 @@ ul{
     }
 
     &.list-bullet when (@list-bullet) and (@lists-classes){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         & > li{
             padding-left : 1em;
 
@@ -236,10 +215,6 @@ ul{
     }
 
     &.list-testimonials when (@list-testimonials) and (@lists-classes){
-        & when (@seotoaster){
-            zoom : 1;
-        }
-
         li{
             position  : relative;
             margin    : 0 0 3.5em;
