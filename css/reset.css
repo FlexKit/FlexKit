@@ -198,11 +198,11 @@ th {
   box-sizing: border-box;
 }
 ::-moz-selection {
-  background: #c2d2da;
+  background: #786271;
   color: #ffffff;
 }
 ::selection {
-  background: #c2d2da;
+  background: #786271;
   color: #ffffff;
 }
 blockquote,
