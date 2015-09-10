@@ -5109,11 +5109,11 @@ header .logo img {
   margin: 0;
   box-shadow: none;
 }
-article {
+section {
   background: #ffffff;
   color: #555555;
 }
-article section {
+section article {
   margin-bottom: 30px;
 }
 .page404 {
