@@ -202,3 +202,11 @@
 .user-select(@select:none) {
     .prefixer(user-select; @select; webkit moz ms);
 }
+
+// Calc()
+//==================================================
+.calc(@rule; @calculation) {
+    @{rule}: -webkit-calc(@calculation);
+    @{rule}: -moz-calc(@calculation);
+    @{rule}: calc(@calculation);
+}
