@@ -18,25 +18,16 @@ html, body{
     }
 }
 
-::-moz-selection{
-    background : @text-select-bg;
-    color      : @text-select-color;
-}
-
-::selection{
-    background : @text-select-bg;
-    color      : @text-select-color;
-}
+.selection();
 
 blockquote, q{
     quotes : none;
+
+    &:before, &:after{
+        content : none;
+    }
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after{
-    content : '';
-    content : none;
-}
 em{ font-style : italic; }
 table{
     border-spacing  : 0;
@@ -127,7 +118,6 @@ textarea{
 }
 
 [type="checkbox"], [type="radio"]{
-    padding : 0;
     border  : none;
     height  : auto;
 
@@ -149,34 +139,22 @@ select optgroup{
     font-family : inherit;
 }
 
-button, [type="button"], [type="reset"], [type="submit"]{
-    -webkit-appearance : button;
-
-    &:focus{
-        .box-shadow(none; @input-shadow-focus);
-    }
-}
-
-[disabled]{
-    cursor : default;
-}
-
 // Reset for all navigation items, related-products
 //==================================================
-.main_menu{
+.main_menu when (@menu-main){
     .clearfix-mixin();
 }
 
 //fix for Safari 3
-& when (@webkit){
+& when (@webkit) and (@menu-main){
     ::i-block-chrome, .main_menu{
         display : table;
         width   : 100%;
     }
 }
 
-.static_menu, .static_menu li,
 .main_menu, .main_menu li, .main_menu ul, .main_menu ul li,
+.static_menu, .static_menu li,
 .img_gallery, .img_gallery li{
     margin          : 0;
     padding         : 0;

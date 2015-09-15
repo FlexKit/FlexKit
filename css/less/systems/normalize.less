@@ -252,10 +252,14 @@ select{
 
 button,
 html input[type="button"], // *1*
-input[type="reset"],
-input[type="submit"]{
+[type="reset"],
+[type="submit"]{
     -webkit-appearance : button; // *2*
     cursor             : pointer; // *3*
+
+    &:focus{
+        .box-shadow(none; @input-shadow-focus);
+    }
 }
 
 // Re-set default cursor for disabled elements.
@@ -288,7 +292,7 @@ input{
 
 input[type="checkbox"],
 input[type="radio"]{
-    box-sizing : border-box; // *1*
+    .box-sizing(border-box); // *1*
     padding    : 0; // *2*
 }
 
