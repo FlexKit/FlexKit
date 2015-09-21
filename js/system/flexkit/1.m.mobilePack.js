@@ -9,14 +9,27 @@ if(device.type) {
 }
 
 if(device.type) {
+    if(!document.getElementById('loader')) {
+        var preLoad, horz, vert;
+        preLoad = document.createElement('div');
+        preLoad.id = 'loader';
+        horz = document.createElement('span');
+        horz.className = 'horz';
+        preLoad.appendChild(horz);
+        vert = document.createElement('span');
+        vert.className = 'vert';
+        preLoad.appendChild(vert);
+        document.body.appendChild(preLoad);
+    }
+
     window.onbeforeunload = showLoading;
     window.onload = hideLoading;
 }
 
 function showLoading(e) {
-    $('html').removeClass('loaded');
+    $('#loader').removeClass('hidden');
 }
 function hideLoading(e) {
     e.preventDefault();
-    $('html').addClass('loaded');
+    $('#loader').addClass('hidden');
 }

@@ -517,3 +517,18 @@
     & when (@ie){ -ms-flex-item-align : @align; }
     align-self : @align;
 }
+
+// Selection
+//==================================================
+.selection(@color : @text-select-color; @bg-color : @text-select-bg; @el : '') {
+    @{el}::-moz-selection{
+        & when(@moz){
+            background : @bg-color;
+            color      : @color;
+        }
+    }
+    @{el}::selection{
+        background : @bg-color;
+        color      : @color;
+    }
+}

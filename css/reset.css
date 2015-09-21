@@ -131,10 +131,16 @@ select {
 }
 button,
 html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+}
+button:focus,
+html input[type="button"]:focus,
+[type="reset"]:focus,
+[type="submit"]:focus {
+  box-shadow: none;
 }
 button[disabled],
 html input[disabled] {
@@ -197,11 +203,11 @@ th {
 *:after {
   box-sizing: border-box;
 }
-::-moz-selection {
+''::-moz-selection {
   background: #786271;
   color: #ffffff;
 }
-::selection {
+''::selection {
   background: #786271;
   color: #ffffff;
 }
@@ -210,10 +216,9 @@ q {
   quotes: none;
 }
 blockquote:before,
-blockquote:after,
 q:before,
+blockquote:after,
 q:after {
-  content: '';
   content: none;
 }
 em {
@@ -334,7 +339,6 @@ textarea {
 }
 [type="checkbox"],
 [type="radio"] {
-  padding: 0;
   border: none;
   height: auto;
 }
@@ -351,21 +355,6 @@ select optgroup {
   font-size: inherit;
   font-family: inherit;
 }
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-button:focus,
-[type="button"]:focus,
-[type="reset"]:focus,
-[type="submit"]:focus {
-  box-shadow: none;
-}
-[disabled] {
-  cursor: default;
-}
 .main_menu:after {
   content: "";
   display: table;
@@ -376,12 +365,12 @@ button:focus,
   display: table;
   width: 100%;
 }
-.static_menu,
-.static_menu li,
 .main_menu,
 .main_menu li,
 .main_menu ul,
 .main_menu ul li,
+.static_menu,
+.static_menu li,
 .img_gallery,
 .img_gallery li {
   margin: 0;
