@@ -5778,6 +5778,7 @@ textarea.resize {
   font-size: 1.5em;
   text-align: center;
   color: #555555;
+  font-family: "Courier New", Courier, monospace;
 }
 #loader span:before,
 #loader span:after {
