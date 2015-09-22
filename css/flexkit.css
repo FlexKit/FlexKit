@@ -5746,6 +5746,9 @@ textarea.resize {
     margin-left: 0;
   }
 }
+.desktop #loader {
+  display: none;
+}
 #loader {
   position: fixed;
   top: 0;
