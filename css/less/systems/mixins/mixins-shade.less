@@ -18,10 +18,10 @@
 }
 
 
-.shade(@type; @color; @depth; @x; @y; @long; @darken; @opacify) when (@fade) {
+.shade(@type; @color; @depth; @x; @y; @fade; @darken; @opacify) when (@fade) {
     .shade(@type; @color; @depth; @x; @y; @darken; @opacify);
 }
-.shade(@type; @color; @depth; @x; @y; @long; @darken; @opacify) when not(@fade) {
+.shade(@type; @color; @depth; @x; @y; @fade; @darken; @opacify) when not(@fade) {
     .shade(@type; @color; @depth; @x; @y; @darken; 0);
 }
 
