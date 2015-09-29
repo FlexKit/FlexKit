@@ -3829,10 +3829,6 @@ img.img-leaflet-left {
   cursor: not-allowed !important;
   box-shadow: none !important;
 }
-.btn:before {
-  font-size: 1.25em;
-  margin-right: 5px;
-}
 .btn[class*="grid_"],
 [class*="column_"] > .btn {
   padding-left: 0 !important;
@@ -3928,6 +3924,10 @@ img.img-leaflet-left {
 }
 .btn.block + .block {
   margin-top: 0.5em;
+}
+.btn:before {
+  font-size: 1.25em;
+  margin-right: 5px;
 }
 .btn.icon {
   overflow: hidden;

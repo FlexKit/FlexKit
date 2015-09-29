@@ -1,6 +1,11 @@
 // Button with icon
 // --------------------------------------------------
 & when (@flexkit-icons) and (@button-type-icon) and (@button-types){
+    &:before{
+        font-size    : @button-icon-size;
+        margin-right : 5px;
+    }
+
     &.icon{
         overflow    : hidden;
         padding     : 0;
