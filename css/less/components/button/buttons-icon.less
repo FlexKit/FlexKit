@@ -15,7 +15,7 @@
         }
     }
 
-    & when (@button-type-icon-responsive){
+    & when (@button-type-icon-responsive) and (@responsive), (@adaptive){
         &.t-icon{
             @media only screen and (max-width : @responsive-size-tablet){
                 .icon;
