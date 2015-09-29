@@ -203,11 +203,11 @@ th {
 *:after {
   box-sizing: border-box;
 }
-''::-moz-selection {
+::-moz-selection {
   background: #786271;
   color: #FFF;
 }
-''::selection {
+::selection {
   background: #786271;
   color: #FFF;
 }
