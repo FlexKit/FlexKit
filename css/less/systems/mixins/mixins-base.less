@@ -520,7 +520,7 @@
 
 // Selection
 //==================================================
-.selection(@color : @text-select-color; @bg-color : @text-select-bg; @el : '') {
+.selection(@color : @text-select-color; @bg-color : @text-select-bg; @el : ~'') {
     @{el}::-moz-selection{
         & when(@moz){
             background : @bg-color;
