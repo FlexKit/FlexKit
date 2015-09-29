@@ -1,0 +1,13 @@
+// Button caption
+// --------------------------------------------------
+&.caption when (@button-type-caption) and (@button-types){
+    padding-top    : .5em;
+    padding-bottom : .5em;
+    line-height    : unit(@button-line-height, em);
+
+    &:before{
+        font-size : 32px;
+        display   : block;
+        margin    : 0 0 .1em;
+    }
+}

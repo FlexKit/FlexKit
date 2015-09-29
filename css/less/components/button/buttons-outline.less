@@ -1,0 +1,44 @@
+// Button outline
+// --------------------------------------------------
+&.outline when (@button-type-outline) and (@button-types){
+    & when not(@button-border-width = @button-border-outline){
+        border : @button-border-outline solid;
+    }
+    .box-shadow(none; @button-box-shadow);
+    .button-color(@brand-primary; transparent; @brand-primary; @button-primary-color; @button-primary-bg; @button-primary-bg);
+
+    // Alternate buttons
+    // --------------------------------------------------
+    // Inverse button appears as gray => primary
+    &.inverse when (@button-color-inverse) and (@button-colors){
+        &:hover, &:active{
+            color        : @button-primary-color;
+            border-color : @button-primary-bg;
+        }
+    }
+    // Warning appears as orange
+    &.warning when (@button-color-warning) and (@button-colors){
+        .button-color(@brand-warning; transparent; @brand-warning; @button-warning-color; @button-warning-bg; @button-warning-bg);
+    }
+
+    // Danger and error appear as red
+    &.error when (@button-color-error) and (@button-colors){
+        .button-color(@brand-error; transparent; @brand-error; @button-error-color; @button-error-bg; @button-error-bg);
+    }
+
+    // Success appears as green
+    &.success when (@button-color-success) and (@button-colors){
+        .button-color(@brand-success; transparent; @brand-success; @button-success-color; @button-success-bg; @button-success-bg);
+    }
+
+    // Info appears as blue
+    &.info when (@button-color-info) and (@button-colors){
+        .button-color(@brand-info; transparent; @brand-info; @button-info-color; @button-info-bg; @button-info-bg);
+    }
+
+    //Inverse color
+    &.inverse when (@button-color-inverse) and (@button-colors){
+        color        : @button-inverse-bg;
+        border-color : softlight(@button-inverse-bg, #000);
+    }
+}
