@@ -3833,13 +3833,19 @@ img.img-leaflet-left {
   font-size: 1.25em;
   margin-right: 5px;
 }
-.btn.social:before {
-  font-size: 1.5em;
-}
 .btn[class*="grid_"],
 [class*="column_"] > .btn {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+.btn.rounded {
+  border-radius: 0.25em;
+}
+.btn.circle {
+  border-radius: 10em;
+}
+.btn.social:before {
+  font-size: 1.5em;
 }
 .btn.inverse:hover,
 .btn.inverse:active {
@@ -4089,12 +4095,6 @@ img.img-leaflet-left {
   font-size: 32px;
   display: block;
   margin: 0 0 .1em;
-}
-.btn.rounded {
-  border-radius: 0.25em;
-}
-.btn.circle {
-  border-radius: 10em;
 }
 [class*="ui-buttonset"],
 .btn-group {
