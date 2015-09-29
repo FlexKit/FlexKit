@@ -4096,27 +4096,17 @@ img.img-leaflet-left {
   display: block;
   margin: 0 0 .1em;
 }
-[class*="ui-buttonset"],
 .btn-group {
   overflow: hidden;
   display: inline-block;
   vertical-align: middle;
 }
-[class*="ui-buttonset"] .ui-button,
-.btn-group .ui-button,
-[class*="ui-buttonset"] .btn,
 .btn-group .btn {
   float: left;
 }
-[class*="ui-buttonset"] .ui-button ~ .btn,
-.btn-group .ui-button ~ .btn,
-[class*="ui-buttonset"] .btn ~ .btn,
 .btn-group .btn ~ .btn {
   margin-left: 1px;
 }
-[class*="ui-buttonset"] input:checked + .ui-button,
-.btn-group input:checked + .ui-button,
-[class*="ui-buttonset"] input:checked + .btn,
 .btn-group input:checked + .btn {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) inset;
   opacity: 0.5;
