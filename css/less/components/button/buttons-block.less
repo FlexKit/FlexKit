@@ -1,0 +1,13 @@
+// Block button
+// --------------------------------------------------
+&.block when (@button-type-block) and (@button-types){
+    float         : none;
+    padding-left  : 0;
+    padding-right : 0;
+    width         : 100%;
+
+    // Vertically space out multiple block buttons
+    & + .block{
+        margin-top : 0.5em;
+    }
+}

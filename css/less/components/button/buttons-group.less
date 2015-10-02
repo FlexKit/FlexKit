@@ -1,0 +1,28 @@
+// Button group
+// --------------------------------------------------
+.btn-group when (@button-type-group) and (@button-types){
+    overflow : hidden;
+    .inline-block();
+
+    .btn{
+        float : left;
+
+        & ~ .btn{
+            margin-left : 1px;
+        }
+    }
+
+    [type="radio"], [type="checkbox"]{
+        & + .btn{
+        }
+
+    }
+
+    input:checked{
+        & + .btn{
+            .box-shadow(2px 2px 4px rgba(0, 0, 0, .3) inset; @button-box-shadow);
+            .opacity(.5);
+        }
+
+    }
+}

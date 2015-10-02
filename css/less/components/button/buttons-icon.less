@@ -1,0 +1,36 @@
+// Button with icon
+// --------------------------------------------------
+& when (@flexkit-icons) and (@button-type-icon) and (@button-types){
+    &:before{
+        font-size    : @button-icon-size;
+        margin-right : 5px;
+    }
+
+    &.icon{
+        overflow    : hidden;
+        padding     : 0;
+        white-space : nowrap;
+        width       : unit(@button-line-height * 2, em);
+
+        &:before{
+            width       : 100%;
+            float       : left;
+            margin      : 0;
+            line-height : inherit;
+        }
+    }
+
+    & when (@button-type-icon-responsive) and (@responsive), (@adaptive){
+        &.t-icon{
+            @media only screen and (max-width : @responsive-size-tablet){
+                .icon;
+            }
+        }
+
+        &.m-icon{
+            @media only screen and (max-width : @responsive-size-mobile){
+                .icon;
+            }
+        }
+    }
+}

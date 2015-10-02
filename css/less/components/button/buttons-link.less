@@ -1,0 +1,46 @@
+// Button link
+// --------------------------------------------------
+&.link when (@button-type-link) and (@button-types){
+    text-decoration  : underline;
+    background-color : transparent !important;
+    & when (@button-border-width > 0){
+        border : none;
+    }
+    .link-color();
+    .box-shadow(none; @button-box-shadow);
+
+    &:hover{
+        text-decoration : none;
+    }
+
+    &.disabled, &[disabled]{
+        color : lighten(@text-color, 10%) !important;
+    }
+
+    // Alternate buttons
+    // --------------------------------------------------
+    // Warning appears as orange
+    &.warning when (@button-color-warning) and (@button-colors){
+        .link-color(@brand-warning);
+    }
+
+    // Danger and error appear as red
+    &.error when (@button-color-error) and (@button-colors){
+        .link-color(@brand-error);
+    }
+
+    // Success appears as green
+    &.success when (@button-color-success) and (@button-colors){
+        .link-color(@brand-success);
+    }
+
+    // Info appears as blue
+    &.info when (@button-color-info) and (@button-colors){
+        .link-color(@brand-info);
+    }
+
+    //Inverse color
+    &.inverse when (@button-color-inverse) and (@button-colors){
+        color : darken(@text-color, 5%);
+    }
+}

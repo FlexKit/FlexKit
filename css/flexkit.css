@@ -3829,17 +3829,19 @@ img.img-leaflet-left {
   cursor: not-allowed !important;
   box-shadow: none !important;
 }
-.btn:before {
-  font-size: 1.25em;
-  margin-right: 5px;
-}
-.btn.social:before {
-  font-size: 1.5em;
-}
 .btn[class*="grid_"],
 [class*="column_"] > .btn {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+.btn.rounded {
+  border-radius: 0.25em;
+}
+.btn.circle {
+  border-radius: 10em;
+}
+.btn.social:before {
+  font-size: 1.5em;
 }
 .btn.inverse:hover,
 .btn.inverse:active {
@@ -3923,17 +3925,49 @@ img.img-leaflet-left {
 .btn.block + .block {
   margin-top: 0.5em;
 }
+.btn:before {
+  font-size: 1.25em;
+  margin-right: 5px;
+}
 .btn.icon {
   overflow: hidden;
-  width: 2.3em;
   padding: 0;
   white-space: nowrap;
+  width: 2.3em;
 }
 .btn.icon:before {
   width: 100%;
   float: left;
   margin: 0;
   line-height: inherit;
+}
+@media only screen and (max-width: 800px) {
+  .btn.t-icon {
+    overflow: hidden;
+    padding: 0;
+    white-space: nowrap;
+    width: 2.3em;
+  }
+  .btn.t-icon:before {
+    width: 100%;
+    float: left;
+    margin: 0;
+    line-height: inherit;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .btn.m-icon {
+    overflow: hidden;
+    padding: 0;
+    white-space: nowrap;
+    width: 2.3em;
+  }
+  .btn.m-icon:before {
+    width: 100%;
+    float: left;
+    margin: 0;
+    line-height: inherit;
+  }
 }
 .btn.link {
   text-decoration: underline;
@@ -4062,33 +4096,17 @@ img.img-leaflet-left {
   display: block;
   margin: 0 0 .1em;
 }
-.btn.rounded {
-  border-radius: 0.25em;
-}
-.btn.circle {
-  border-radius: 10em;
-}
-[class*="ui-buttonset"],
 .btn-group {
   overflow: hidden;
   display: inline-block;
   vertical-align: middle;
 }
-[class*="ui-buttonset"] .ui-button,
-.btn-group .ui-button,
-[class*="ui-buttonset"] .btn,
 .btn-group .btn {
   float: left;
 }
-[class*="ui-buttonset"] .ui-button ~ .btn,
-.btn-group .ui-button ~ .btn,
-[class*="ui-buttonset"] .btn ~ .btn,
 .btn-group .btn ~ .btn {
   margin-left: 1px;
 }
-[class*="ui-buttonset"] input:checked + .ui-button,
-.btn-group input:checked + .ui-button,
-[class*="ui-buttonset"] input:checked + .btn,
 .btn-group input:checked + .btn {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) inset;
   opacity: 0.5;
@@ -5115,16 +5133,6 @@ section {
 }
 section article {
   margin-bottom: 30px;
-}
-.page404 {
-  padding: 1em 0 3em;
-  color: #555555;
-}
-.page404 .first {
-  text-align: center;
-  font-size: 17em;
-  line-height: 1;
-  border-right: 1px solid #bbbbbb;
 }
 aside .aside-box {
   margin-bottom: 30px;
