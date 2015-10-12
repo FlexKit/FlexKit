@@ -4728,6 +4728,11 @@ a.tooltip {
   z-index: 100;
   box-shadow: 0 0 7px #555555;
 }
+.mobile-bar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 @media only print {
   .mobile-bar {
     display: none;
