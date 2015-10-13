@@ -52,22 +52,23 @@ function dialogInit(option) {
         classes = option.classes || '',
         buttons = option.buttons || [],
         autoOpen = option.autoOpen !== undefined ? option.autoOpen : true,
-   draggable = option.draggable !== undefined ? option.draggable : false,
+        draggable = option.draggable !== undefined ? option.draggable : false,
         resizable = option.resizable !== undefined ? option.resizable : false;
-    $(el).each(function() {
+
+    $(el).each(function(){
         var $this = $(this),
             data = $this.data();
 
         $this.dialog({
             autoOpen    : data.dialogAutoopen || autoOpen,
             modal       : true,
-            show     : {
+            show        : {
                 effect : data.dialogEffect || effect
             },
-            hide     : {
+            hide        : {
                 effect : data.dialogEffect || effect
             },
-            title       : data.dialogTitle || title,
+            //title       : data.dialogTitle || title,
             width       : data.dialogWidth || width,
             height      : data.dialogHeight || height,
             buttons     : buttons,
@@ -75,9 +76,12 @@ function dialogInit(option) {
             draggable   : data.dialogDraggable || draggable,
             maxHeight   : ($(window).height() - $(window).height() * 0.1),
             dialogClass : data.dialogClasses || classes,
-            open        : function(event, ui) {
+            open        : function(event, ui){
                 eval('(' + (data.dialogFunc || func) + ')');
+            }
+        });
+        if(data.dialogTitle || title){
+            $(el).dialog('option', 'title', data.dialogTitle || title)
         }
-    });
     });
 }
