@@ -4014,6 +4014,7 @@ img.img-leaflet-left {
 }
 .btn.outline,
 .smoke-base .dialog-buttons button.cancel {
+  line-height: calc(2.3em - 2px);
   border: 1px solid;
   box-shadow: none;
   color: #786271;
