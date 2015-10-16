@@ -2,7 +2,10 @@
 // --------------------------------------------------
 &.outline when (@button-type-outline) and (@button-types){
     & when not(@button-border-width = @button-border-outline){
-        line-height: calc(unit(@button-line-height * 2, em) ~'-' @button-border-outline * 2);
+        @calcParam  : unit(@button-line-height * 2, em);
+        @calcParam2 : @button-border-outline * 2;
+
+        line-height: ~'calc(@{calcParam} - @{calcParam2})';
         border : @button-border-outline solid;
     }
     .box-shadow(none; @button-box-shadow);
