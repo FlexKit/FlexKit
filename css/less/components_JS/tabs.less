@@ -128,11 +128,15 @@
                 float        : none;
                 display      : block;
                 margin       : 0 -1px -1px 2px;
-                border-width : 1px 0 1px 1px;
+                border-width : 1px;
 
                 &.ui-tabs-active, &:hover{
-                    margin-left       : 0;
-                    border-left-width : 3px;
+                    margin-left        : 0;
+                    border-left-width  : 3px;
+                }
+
+                &.ui-tabs-active{
+                    border-right-color : @tabs-container-bg;
                 }
             }
         }

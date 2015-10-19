@@ -6270,12 +6270,15 @@ textarea.resize {
   float: none;
   display: block;
   margin: 0 -1px -1px 2px;
-  border-width: 1px 0 1px 1px;
+  border-width: 1px;
 }
 .ui-tabs.vertical > .ui-tabs-nav li.ui-tabs-active,
 .ui-tabs.vertical > .ui-tabs-nav li:hover {
   margin-left: 0;
   border-left-width: 3px;
+}
+.ui-tabs.vertical > .ui-tabs-nav li.ui-tabs-active {
+  border-right-color: #fff;
 }
 .ui-tabs.vertical > .ui-tabs-panel {
   clear: none;
