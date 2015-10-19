@@ -4448,20 +4448,21 @@ a[class*="tooltip-native"],
 a.tooltip {
   cursor: pointer;
 }
+[class*="tooltip-native"]:hover[class*="--arrow"]:before,
+[class*="tooltip-native"][class*="--show"][class*="--arrow"]:before,
+[class*="tooltip-native"]:hover:after,
+[class*="tooltip-native"][class*="--show"]:after {
+  display: block;
+}
 [class*="tooltip-native"][class*="--arrow"]:before,
 [class*="tooltip-native"]:after {
   content: '';
   position: absolute;
   margin: auto;
   display: none;
-}
-[class*="tooltip-native"]:hover {
+  bottom: 100%;
   opacity: 1 !important;
   filter: alpha(opacity=100) !important;
-}
-[class*="tooltip-native"]:hover[class*="--arrow"]:before,
-[class*="tooltip-native"]:hover:after {
-  display: block;
 }
 [class*="tooltip-native"]:after {
   content: attr(title);
@@ -4484,48 +4485,36 @@ a.tooltip {
   white-space: normal;
   width: 300px;
 }
-[class*="tooltip-native"][class*="--arrow"]:before {
+[class*="tooltip-native"][class*="--arrow"][class*="--top"]:before,
+[class*="tooltip-native"][class*="--arrow"][class*="--bottom"]:before,
+[class*="tooltip-native"][class*="--arrow"][class*="--left"]:before,
+[class*="tooltip-native"][class*="--arrow"][class*="--right"]:before {
   width: 0;
   height: 0;
   border-width: 7px;
   border-style: solid;
-  border-color: transparent;
   z-index: 10000;
+  border-color: #000;
 }
-[class*="tooltip-native"][class*="--arrow"]:before,
+[class*="tooltip-native"][class*="--top"][class*="--arrow"]:before,
 [class*="tooltip-native"][class*="--bottom"][class*="--arrow"]:before,
-[class*="tooltip-native"]:after,
+[class*="tooltip-native"][class*="--top"]:after,
 [class*="tooltip-native"][class*="--bottom"]:after {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-[class*="tooltip-native"][class*="--left"][class*="--arrow"]:before,
-[class*="tooltip-native"][class*="--right"][class*="--arrow"]:before,
-[class*="tooltip-native"][class*="--left"]:after,
-[class*="tooltip-native"][class*="--right"]:after {
-  left: auto;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+[class*="tooltip-native"][class*="--top"][class*="--arrow"]:before,
+[class*="tooltip-native"][class*="--bottom"][class*="--arrow"]:before {
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
 }
-[class*="tooltip-native"][class*="--arrow"]:before,
-[class*="tooltip-native"]:after {
-  bottom: 100%;
+[class*="tooltip-native"][class*="--top"][class*="--arrow"]:before {
+  border-bottom-width: 0;
 }
-[class*="tooltip-native"][class*="--arrow"]:before {
-  border-top-color: #000;
-  border-bottom: none;
-}
-[class*="tooltip-native"]:after {
+[class*="tooltip-native"][class*="--top"]:after {
   margin-bottom: 7px;
-}
-[class*="tooltip-native"][class*="--bottom"]:after,
-[class*="tooltip-native"][class*="--left"]:after,
-[class*="tooltip-native"][class*="--right"]:after {
-  border-top-color: transparent;
 }
 [class*="tooltip-native"][class*="--bottom"][class*="--arrow"]:before,
 [class*="tooltip-native"][class*="--bottom"]:after {
@@ -4533,20 +4522,33 @@ a.tooltip {
   bottom: auto;
 }
 [class*="tooltip-native"][class*="--bottom"][class*="--arrow"]:before {
-  border-bottom-color: #000;
-  border-top: none;
+  border-top-width: 0;
 }
 [class*="tooltip-native"][class*="--bottom"]:after {
   margin-top: 7px;
 }
 [class*="tooltip-native"][class*="--left"][class*="--arrow"]:before,
+[class*="tooltip-native"][class*="--right"][class*="--arrow"]:before,
+[class*="tooltip-native"][class*="--left"]:after,
+[class*="tooltip-native"][class*="--right"]:after {
+  left: auto;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+[class*="tooltip-native"][class*="--left"][class*="--arrow"]:before,
+[class*="tooltip-native"][class*="--right"][class*="--arrow"]:before {
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+[class*="tooltip-native"][class*="--left"][class*="--arrow"]:before,
 [class*="tooltip-native"][class*="--left"]:after {
   right: 100%;
-  bottom: auto;
 }
 [class*="tooltip-native"][class*="--left"][class*="--arrow"]:before {
-  border-left-color: #000;
-  border-right: none;
+  border-right-width: 0;
 }
 [class*="tooltip-native"][class*="--left"]:after {
   margin-right: 7px;
@@ -4554,11 +4556,9 @@ a.tooltip {
 [class*="tooltip-native"][class*="--right"][class*="--arrow"]:before,
 [class*="tooltip-native"][class*="--right"]:after {
   left: 100%;
-  bottom: auto;
 }
 [class*="tooltip-native"][class*="--right"][class*="--arrow"]:before {
-  border-right-color: #000;
-  border-left: none;
+  border-left-width: 0;
 }
 [class*="tooltip-native"][class*="--right"]:after {
   margin-left: 7px;
@@ -4568,64 +4568,28 @@ a.tooltip {
   color: #1c5a30;
 }
 [class*="tooltip-native"][class*="--success"][class*="--arrow"]:before {
-  border-top-color: #c9e8d3;
-}
-[class*="tooltip-native"][class*="--success"][class*="--bottom"][class*="--arrow"]:before {
-  border-bottom-color: #c9e8d3;
-}
-[class*="tooltip-native"][class*="--success"][class*="--left"][class*="--arrow"]:before {
-  border-left-color: #c9e8d3;
-}
-[class*="tooltip-native"][class*="--success"][class*="--right"][class*="--arrow"]:before {
-  border-right-color: #c9e8d3;
+  border-color: #c9e8d3;
 }
 [class*="tooltip-native"][class*="--warning"]:after {
   background: #feedbd;
   color: #866503;
 }
 [class*="tooltip-native"][class*="--warning"][class*="--arrow"]:before {
-  border-top-color: #feedbd;
-}
-[class*="tooltip-native"][class*="--warning"][class*="--bottom"][class*="--arrow"]:before {
-  border-bottom-color: #feedbd;
-}
-[class*="tooltip-native"][class*="--warning"][class*="--left"][class*="--arrow"]:before {
-  border-left-color: #feedbd;
-}
-[class*="tooltip-native"][class*="--warning"][class*="--right"][class*="--arrow"]:before {
-  border-right-color: #feedbd;
+  border-color: #feedbd;
 }
 [class*="tooltip-native"][class*="--error"]:after {
   background: #f9cdc9;
   color: #7d241c;
 }
 [class*="tooltip-native"][class*="--error"][class*="--arrow"]:before {
-  border-top-color: #f9cdc9;
-}
-[class*="tooltip-native"][class*="--error"][class*="--bottom"][class*="--arrow"]:before {
-  border-bottom-color: #f9cdc9;
-}
-[class*="tooltip-native"][class*="--error"][class*="--left"][class*="--arrow"]:before {
-  border-left-color: #f9cdc9;
-}
-[class*="tooltip-native"][class*="--error"][class*="--right"][class*="--arrow"]:before {
-  border-right-color: #f9cdc9;
+  border-color: #f9cdc9;
 }
 [class*="tooltip-native"][class*="--info"]:after {
   background: #cddffc;
   color: #234783;
 }
 [class*="tooltip-native"][class*="--info"][class*="--arrow"]:before {
-  border-top-color: #cddffc;
-}
-[class*="tooltip-native"][class*="--info"][class*="--bottom"][class*="--arrow"]:before {
-  border-bottom-color: #cddffc;
-}
-[class*="tooltip-native"][class*="--info"][class*="--left"][class*="--arrow"]:before {
-  border-left-color: #cddffc;
-}
-[class*="tooltip-native"][class*="--info"][class*="--right"][class*="--arrow"]:before {
-  border-right-color: #cddffc;
+  border-color: #cddffc;
 }
 .main_menu {
   position: relative;
