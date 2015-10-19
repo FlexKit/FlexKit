@@ -6,29 +6,30 @@
         cursor : pointer;
     }
 
-    &[class*="--arrow"]:before, &:after{
-        content  : '';
-        position : absolute;
-        margin   : auto;
-        display  : none;
-    }
-    &:hover{
-        .opacity(1) !important;
-
+    &:hover, &[class*="--show"]{
         &[class*="--arrow"]:before, &:after{
             display : block;
         }
     }
 
+    &[class*="--arrow"]:before, &:after{
+        content  : '';
+        position : absolute;
+        margin   : auto;
+        display  : none;
+        bottom   : 100%;
+        .opacity(1) !important;
+    }
+
     &:after{
-        content     : attr(title);
-        z-index     : 9999;
-        font-size   : @font-size-base * @font-size-small;
-        line-height : @line-height;
-        padding     : @padding-small-vertical @padding-small-horizontal;
-        max-width   : @tooltip-width;
-        background  : @tooltip-bg;
-        color       : @tooltip-color;
+        content       : attr(title);
+        z-index       : 9999;
+        font-size     : @font-size-base * @font-size-small;
+        line-height   : @line-height;
+        padding       : @padding-small-vertical @padding-small-horizontal;
+        max-width     : @tooltip-width;
+        background    : @tooltip-bg;
+        color         : @tooltip-color;
         & when (@tooltip-border-width > 0){
             border : @tooltip-border-width solid @tooltip-border-color;
         }
@@ -38,11 +39,7 @@
         text-overflow : ellipsis;
     }
 
-//    &[class*="--oneLine"]:after{
-//        white-space : nowrap;
-//        max-width   : none;
-//    }
-
+    // Type style
     &[class*="--autoWidth"]:after{
         max-width : none;
     }
@@ -52,59 +49,50 @@
         width       : @tooltip-width;
     }
 
-    &[class*="--arrow"]:before{
-        width        : 0;
-        height       : 0;
-        border-width : @tooltip-arrow-width;
-        border-style : solid;
-        border-color : transparent;
-        z-index      : 10000;
+    // Arrow style
+    &[class*="--arrow"]{
+        &[class*="--top"]:before,
+        &[class*="--bottom"]:before,
+        &[class*="--left"]:before,
+        &[class*="--right"]:before{
+            width        : 0;
+            height       : 0;
+            border-width : @tooltip-arrow-width;
+            border-style : solid;
+            z-index      : 10000;
+            & when (@tooltip-border-width = 0){
+                border-color : @tooltip-bg;
+            }
+            & when (@tooltip-border-width > 0){
+                border-color : @tooltip-border-color;
+            }
+        }
     }
 
-    &, &[class*="--bottom"]{
+    // Position style
+    &[class*="--top"], &[class*="--bottom"]{
 
         &[class*="--arrow"]:before, &:after{
             left : 50%;
             .transform(translateX(-50%));
         }
-    }
 
-    &[class*="--left"], &[class*="--right"]{
-
-        &[class*="--arrow"]:before, &:after{
-            left : auto;
-            top  : 50%;
-            .transform(translateY(-50%));
+        &[class*="--arrow"]:before{
+            border-left-color  : transparent !important;
+            border-right-color : transparent !important;
         }
     }
 
-    //    &[class*="--top"]{
-
-    &[class*="--arrow"]:before, &:after{
-        bottom : 100%;
-    }
-
-    &[class*="--arrow"]:before{
-        & when (@tooltip-border-width = 0){
-            border-top-color : @tooltip-bg;
+    &[class*="--top"]{
+        &[class*="--arrow"]:before{
+            border-bottom-width : 0;
         }
-        & when (@tooltip-border-width > 0){
-            border-top-color : @tooltip-border-color;
-        }
-        border-bottom : none;
-    }
-    &:after{
-        margin-bottom : @tooltip-arrow-width;
-    }
-    //    }
 
-    &[class*="--bottom"],
-    &[class*="--left"],
-    &[class*="--right"]{
         &:after{
-            border-top-color : transparent;
+            margin-bottom : @tooltip-arrow-width;
         }
     }
+
     &[class*="--bottom"]{
 
         &[class*="--arrow"]:before, &:after{
@@ -113,35 +101,39 @@
         }
 
         &[class*="--arrow"]:before{
-            & when (@tooltip-border-width = 0){
-                border-bottom-color : @tooltip-bg;
-            }
-            & when (@tooltip-border-width > 0){
-                border-bottom-color : @tooltip-border-color;
-            }
-            border-top : none;
+            border-top-width : 0;
         }
+
         &:after{
             margin-top : @tooltip-arrow-width;
+        }
+    }
+
+    &[class*="--left"], &[class*="--right"]{
+
+        &[class*="--arrow"]:before, &:after{
+            left   : auto;
+            top    : 50%;
+            bottom : auto;
+            .transform(translateY(-50%));
+        }
+
+        &[class*="--arrow"]:before{
+            border-top-color    : transparent !important;
+            border-bottom-color : transparent !important;
         }
     }
 
     &[class*="--left"]{
 
         &[class*="--arrow"]:before, &:after{
-            right  : 100%;
-            bottom : auto;
+            right : 100%;
         }
 
         &[class*="--arrow"]:before{
-            & when (@tooltip-border-width = 0){
-                border-left-color : @tooltip-bg;
-            }
-            & when (@tooltip-border-width > 0){
-                border-left-color : @tooltip-border-color;
-            }
-            border-right : none;
+            border-right-width : 0;
         }
+
         &:after{
             margin-right : @tooltip-arrow-width;
         }
@@ -150,24 +142,19 @@
     &[class*="--right"]{
 
         &[class*="--arrow"]:before, &:after{
-            left   : 100%;
-            bottom : auto;
+            left : 100%;
         }
 
         &[class*="--arrow"]:before{
-            & when (@tooltip-border-width = 0){
-                border-right-color : @tooltip-bg;
-            }
-            & when (@tooltip-border-width > 0){
-                border-right-color : @tooltip-border-color;
-            }
-            border-left : none;
+            border-left-width : 0;
         }
+
         &:after{
             margin-left : @tooltip-arrow-width;
         }
     }
 
+    // Colors style
     &[class*="--success"] when (@tooltip-color-success) and (@tooltip-colors){
         &:after{
             background : @state-success-bg;
@@ -176,45 +163,13 @@
                 border-color : @state-success-border;
             }
         }
-        //        &[class*="--top"]{
+
         &[class*="--arrow"]:before{
             & when (@tooltip-border-width = 0){
-                border-top-color : @state-success-bg;
+                border-color : @state-success-bg;
             }
             & when (@tooltip-border-width > 0){
-                border-top-color : @state-success-border;
-            }
-        }
-        //        }
-        &[class*="--bottom"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-bottom-color : @state-success-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-bottom-color : @state-success-border;
-                }
-            }
-        }
-
-        &[class*="--left"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-left-color : @state-success-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-left-color : @state-success-border;
-                }
-            }
-        }
-        &[class*="--right"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-right-color : @state-success-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-right-color : @state-success-border;
-                }
+                border-color : @state-success-border;
             }
         }
     }
@@ -227,45 +182,13 @@
                 border-color : @state-warning-border;
             }
         }
-        //        &[class*="--top"]{
+
         &[class*="--arrow"]:before{
             & when (@tooltip-border-width = 0){
-                border-top-color : @state-warning-bg;
+                border-color : @state-warning-bg;
             }
             & when (@tooltip-border-width > 0){
-                border-top-color : @state-warning-border;
-            }
-        }
-        //        }
-        &[class*="--bottom"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-bottom-color : @state-warning-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-bottom-color : @state-warning-border;
-                }
-            }
-        }
-
-        &[class*="--left"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-left-color : @state-warning-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-left-color : @state-warning-border;
-                }
-            }
-        }
-        &[class*="--right"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-right-color : @state-warning-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-right-color : @state-warning-border;
-                }
+                border-color : @state-warning-border;
             }
         }
     }
@@ -279,44 +202,12 @@
             }
         }
 
-        //        &[class*="--top"]{
         &[class*="--arrow"]:before{
             & when (@tooltip-border-width = 0){
-                border-top-color : @state-error-bg;
+                border-color : @state-error-bg;
             }
             & when (@tooltip-border-width > 0){
-                border-top-color : @state-error-border;
-            }
-        }
-        //        }
-        &[class*="--bottom"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-bottom-color : @state-error-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-bottom-color : @state-error-border;
-                }
-            }
-        }
-        &[class*="--left"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-left-color : @state-error-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-left-color : @state-error-border;
-                }
-            }
-        }
-        &[class*="--right"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-right-color : @state-error-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-right-color : @state-error-border;
-                }
+                border-color : @state-error-border;
             }
         }
     }
@@ -330,44 +221,12 @@
             }
         }
 
-        //        &[class*="--top"]{
         &[class*="--arrow"]:before{
             & when (@tooltip-border-width = 0){
-                border-top-color : @state-info-bg;
+                border-color : @state-info-bg;
             }
             & when (@tooltip-border-width > 0){
-                border-top-color : @state-info-border;
-            }
-        }
-        //        }
-        &[class*="--bottom"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-bottom-color : @state-info-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-bottom-color : @state-info-border;
-                }
-            }
-        }
-        &[class*="--left"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-left-color : @state-info-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-left-color : @state-info-border;
-                }
-            }
-        }
-        &[class*="--right"]{
-            &[class*="--arrow"]:before{
-                & when (@tooltip-border-width = 0){
-                    border-right-color : @state-info-bg;
-                }
-                & when (@tooltip-border-width > 0){
-                    border-right-color : @state-info-border;
-                }
+                border-color : @state-info-border;
             }
         }
     }
