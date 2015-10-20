@@ -7033,6 +7033,15 @@ textarea.resize {
   width: auto;
   height: auto;
 }
+.responsive-ratio > img._9x16,
+.responsive-ratio > img._3x4,
+.responsive-ratio > img._1x1 {
+  max-width: none;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  -ms-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+}
 .responsive-ratio.bottom > img {
   min-height: 0 !important;
   top: auto;
