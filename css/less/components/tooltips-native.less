@@ -1,3 +1,4 @@
+@tooltip-zIndex : 10;
 [class*="tooltip-native"] when (@tooltips-native){
     position : relative;
     cursor   : help;
@@ -23,7 +24,7 @@
 
     &:after{
         content       : attr(title);
-        z-index       : 9999;
+        z-index       : @tooltip-zIndex - 1;
         font-size     : @font-size-base * @font-size-small;
         line-height   : @line-height;
         padding       : @padding-small-vertical @padding-small-horizontal;
@@ -59,7 +60,7 @@
             height       : 0;
             border-width : @tooltip-arrow-width;
             border-style : solid;
-            z-index      : 10000;
+            z-index      : @tooltip-zIndex;
             & when (@tooltip-border-width = 0){
                 border-color : @tooltip-bg;
             }
