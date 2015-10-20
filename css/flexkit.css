@@ -6970,9 +6970,9 @@ textarea.resize {
   width: auto;
   height: auto;
 }
-.responsive-ratio > img._9x16,
-.responsive-ratio > img._3x4,
-.responsive-ratio > img._1x1 {
+._9x16.responsive-ratio > img,
+._3x4.responsive-ratio > img,
+._1x1.responsive-ratio > img {
   max-width: none;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
