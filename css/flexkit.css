@@ -3354,7 +3354,6 @@ ul.list-count-sign > li:before {
   margin-left: -3em;
   margin-right: 1em;
   color: #fff;
-  will-change: auto;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
   border-radius: 10em;
@@ -3377,7 +3376,6 @@ ul.list-icon-sign > li:before {
   background-color: #eeeeee;
   margin-left: -3em;
   margin-right: 1em;
-  will-change: auto;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
   border-radius: 10em;
@@ -3742,7 +3740,6 @@ img.img-thumbnail {
   text-align: center;
   padding: 3px;
   background: transparent;
-  will-change: auto;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border: 1px solid #bbbbbb;
@@ -3787,7 +3784,6 @@ img.img-leaflet-left {
   user-select: none;
   box-shadow: none;
   border: none;
-  will-change: auto;
   -webkit-transition: background 0.3s ease;
   transition: background 0.3s ease;
 }
@@ -4855,7 +4851,6 @@ a.tooltip {
 @media only screen and (max-width: 800px) {
   .mobile-menu {
     z-index: 102;
-    will-change: auto;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
@@ -5172,7 +5167,6 @@ input {
   border-color: #bbbbbb;
   background-color: #fff;
   color: #2f2f2f;
-  will-change: auto;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -5279,7 +5273,6 @@ textarea.resize {
   height: auto;
   position: absolute;
   z-index: -10;
-  will-change: auto;
   -webkit-transition: none 0.5s ease;
   transition: none 0.5s ease;
   opacity: 0;
@@ -5360,7 +5353,6 @@ textarea.resize {
 .filed-upgrade[type="checkbox"].switcher ~ .checkbox_radio:after {
   content: '';
   background: #EA4335;
-  will-change: auto;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   background: #bbbbbb;
@@ -5405,7 +5397,6 @@ textarea.resize {
   background: #bbbbbb;
   text-align: center;
   color: #fff;
-  will-change: auto;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -5465,7 +5456,6 @@ textarea.resize {
   left: .5em;
   z-index: 1;
   line-height: 2.3em;
-  will-change: auto;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
@@ -5517,7 +5507,6 @@ textarea.resize {
   text-align: center;
   padding: 3px;
   background: transparent;
-  will-change: auto;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border: 1px solid #bbbbbb;
@@ -5603,7 +5592,6 @@ textarea.resize {
   height: 18px;
   line-height: 18px;
   font-size: 0;
-  will-change: auto;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
