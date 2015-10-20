@@ -3564,7 +3564,7 @@ ul.list-step .step-title {
   font-size: 1.15em;
   line-height: normal;
 }
-ul.list-step .step-title:before {
+ul.list-step .step-title[data-count]:before {
   content: attr(data-count);
   border: 2px solid #fff;
   border-radius: 2em;
@@ -6012,7 +6012,7 @@ textarea.resize {
 .smoke-base .dialog-buttons button.cancel {
   margin-right: .5em;
 }
-.ui-accordion:not(#cpanelul) .ui-accordion-header {
+.ui-accordion .ui-accordion-header {
   display: block;
   position: relative;
   cursor: pointer;
@@ -6023,34 +6023,34 @@ textarea.resize {
   padding: .5em .75em;
   min-height: 0;
 }
-.ui-accordion:not(#cpanelul) .ui-accordion-header:hover {
+.ui-accordion .ui-accordion-header:hover {
   color: #555555;
   background: #e7e7e7;
 }
-.ui-accordion:not(#cpanelul) .ui-accordion-header a {
+.ui-accordion .ui-accordion-header a {
   color: inherit;
 }
-.ui-accordion:not(#cpanelul) .ui-accordion-header.ui-accordion-header-active {
+.ui-accordion .ui-accordion-header.ui-accordion-header-active {
   color: #555555;
   background: #e2e2e2;
 }
-.ui-accordion:not(#cpanelul) .ui-accordion-header.icon-right:before {
+.ui-accordion .ui-accordion-header.icon-right:before {
   color: #34A859;
   float: right;
   line-height: inherit;
 }
-.ui-accordion:not(#cpanelul) .ui-accordion-icons .ui-accordion-header-icon {
+.ui-accordion .ui-accordion-icons .ui-accordion-header-icon {
   display: inline-block;
   vertical-align: middle;
   margin-left: -0.25em;
   margin-right: .25em;
 }
-.ui-accordion:not(#cpanelul) .ui-accordion-icons .ui-accordion-header-icon:before {
+.ui-accordion .ui-accordion-icons .ui-accordion-header-icon:before {
   font-size: 16px;
   width: 16px;
   height: 16px;
 }
-.ui-accordion:not(#cpanelul) .ui-accordion-content {
+.ui-accordion .ui-accordion-content {
   background: #fff;
   border: 1px solid #e2e2e2;
   border-top: none;
