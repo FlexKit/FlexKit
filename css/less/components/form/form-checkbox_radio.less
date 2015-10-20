@@ -1,4 +1,4 @@
-.checkboxRadioStyle() when (@checkbox-radio-style) and not(@checkbox-radio-style-native) {
+& when (@checkbox-radio-style) and not(@checkbox-radio-style-native) {
     .filed-upgrade{
         height   : auto;
         position : absolute;
@@ -29,6 +29,12 @@
                 margin   : auto;
                 width    : 0.625em;
                 height   : 0.625em;
+            }
+        }
+
+        &.error{
+            & ~ .checkbox_radio{
+                border-color : @brand-error;
             }
         }
 
@@ -211,7 +217,7 @@
     }
 }
 
-.checkboxRadioStyle() when (@checkbox-radio-style) and (@checkbox-radio-style-native) {
+& when (@checkbox-radio-style) and (@checkbox-radio-style-native) {
     input[type="checkbox"],
     input[type="radio"]{
         .appearance(none; webkit);
@@ -236,6 +242,10 @@
             margin   : auto;
             width    : 0.625em;
             height   : 0.625em;
+        }
+
+        &.error{
+            border-color : @brand-error;
         }
 
         &:hover when not(@checkbox-checkmark-style){

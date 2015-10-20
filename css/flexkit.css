@@ -5358,6 +5358,9 @@ textarea.resize {
   width: 0.625em;
   height: 0.625em;
 }
+.filed-upgrade.error ~ .checkbox_radio {
+  border-color: #EA4335;
+}
 .filed-upgrade:hover ~ .checkbox_radio:before {
   background: #eeeeee;
 }
