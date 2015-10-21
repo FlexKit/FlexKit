@@ -86,12 +86,12 @@ blockquote{
         .border-radius(5px);
         .arrow-border(bottom-right; center; @gray-lighter);
 
-        @indent: 100px;
-        @border-width: 1px;
-
         &:before{
             content : '';
         }
+
+        @indent: 100px;
+        @border-width: 1px;
 
         &.border when (@blockquote-cloud-border) and (@blockquote-types){
             @border-width: 1px;
@@ -121,25 +121,28 @@ blockquote{
                 right : @indent;
             }
 
-            &:before{
-                left  : auto;
-                right : @indent + @border-width;
+            &.border when (@blockquote-cloud-border) and (@blockquote-types){
+                &:before{
+                    left  : auto;
+                    right : @indent + @border-width;
+                }
             }
         }
 
         &.left when (@blockquote-cloud-left) and (@blockquote-types){
             &:after{
-                left               : @indent;
-                right              : auto;
-                border-right-color : transparent;
-                border-left-color  : @gray-lighter;
+                left                : @indent;
+                right               : auto;
+                border-right-color  : transparent !important;
+                border-left-color   : @gray-lighter !important;
             }
-
-            &:before{
-                left               : @indent + @border-width;
-                right              : auto;
-                border-right-color : transparent;
-                border-left-color  : @body-bg;
+            &.border when (@blockquote-cloud-border) and (@blockquote-types){
+                &:before{
+                    left               : @indent + @border-width;
+                    right              : auto;
+                    border-right-color : transparent;
+                    border-left-color  : @body-bg;
+                }
             }
         }
     }

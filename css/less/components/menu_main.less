@@ -64,7 +64,9 @@
         }
         .box-shadow(0 3px 5px @gray-dark);
 
-        &.open:extend(.mobile-menu ul.open){}
+        & when (@mobile-menu){
+            &.open:extend(.mobile-menu ul.open){ }
+        }
 
         li{
             float : none;

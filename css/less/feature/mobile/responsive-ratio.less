@@ -4,7 +4,7 @@
 @ratio-3x4: (4%/3%*100%);
 @ratio-1x1: (100%);
 
-.responsive-ratio when (@responsive-video){
+.responsive-ratio when (@responsive-ratio){
     position : relative;
     overflow : hidden;
     padding  : 0;
@@ -46,6 +46,14 @@
             min-width  : 100% !important;
             width      : auto;
             height     : auto;
+
+            ._9x16&,
+            ._3x4&,
+            ._1x1&{
+                max-width : none;
+                left      : 50%;
+                .translate(-50%; 0)
+            }
         }
 
         &.bottom{

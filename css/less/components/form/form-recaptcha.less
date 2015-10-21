@@ -1,0 +1,37 @@
+.captcha when (@form-captcha){
+
+    .captcha_image{
+        width         : 65% !important;
+        height        : auto !important;
+        float         : left;
+        text-align    : center;
+        padding-right : 10px;
+
+        aside &{
+            width : 100% !important;
+        }
+    }
+
+    label, input{
+        float       : left;
+        width       : 35%;
+        font-weight : normal;
+        font-size   : @font-size-small;
+
+        aside &{
+            width : 100%;
+        }
+    }
+
+    .recaptcha_links{
+        clear       : both;
+        font-size   : @font-size-small;
+        padding-top : 1em;
+
+        a + a{
+            border-left  : 1px solid @gray;
+            padding-left : 1em;
+            margin-left  : 1em;
+        }
+    }
+}
