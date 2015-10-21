@@ -3165,16 +3165,14 @@ blockquote.cloud {
 blockquote.cloud:after {
   content: '';
   position: absolute;
-  border-width: 10px;
-  border-style: solid;
-  border-color: transparent;
+  border: 10px solid #eeeeee;
   margin: auto;
   width: 0;
   height: 0;
-  border-top-color: #eeeeee;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
   top: 100%;
   bottom: auto;
-  border-right-color: #eeeeee;
   left: 0;
   right: 0;
 }
@@ -3204,17 +3202,17 @@ blockquote.cloud.right:after {
   left: auto;
   right: 100px;
 }
-blockquote.cloud.right:before {
+blockquote.cloud.right.border:before {
   left: auto;
   right: 101px;
 }
 blockquote.cloud.left:after {
   left: 100px;
   right: auto;
-  border-right-color: transparent;
-  border-left-color: #eeeeee;
+  border-right-color: transparent !important;
+  border-left-color: #eeeeee !important;
 }
-blockquote.cloud.left:before {
+blockquote.cloud.left.border:before {
   left: 101px;
   right: auto;
   border-right-color: transparent;
