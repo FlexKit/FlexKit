@@ -27,7 +27,7 @@
 // Used for top and bottom menu
 @menu-height      : 300px;
 
-& when (@responsive){
+& when (@responsive), (@adaptive){
     @media (min-width : (@responsive-size-tablet + 1)){
         .mobile-bar, .mobile-menu{
             display : none;

@@ -1,34 +1,49 @@
 .container{
     position : relative;
-    & when not(@grid-container-width = 100%){
+    & when not(@grid-container-width = 100%) and not(@adaptive){
         margin-left  : auto;
         margin-right : auto;
 
-        & when not(@responsive) and not(@adaptive){
+        & when not(@responsive){
             width : @grid-container-width;
         }
         & when (@responsive){
             width     : 95%;
             max-width : @grid-container-width;
         }
-        & when (@adaptive) and not(@responsive){
-            width     : 95%;
-            max-width : @grid-container-width;
+    }
+    & when (@adaptive){
+        margin-left  : auto;
+        margin-right : auto;
 
-            @media only screen and (max-width : @grid-container-width){
+        & when not(@grid-container-width > @responsive-size-big-screen) and not(@grid-container-width > @responsive-size-desktop){
+            max-width : @responsive-size-big-screen;
+        }
+        & when (@grid-container-width > @responsive-size-big-screen), (@grid-container-width > @responsive-size-desktop){
+            max-width : @grid-container-width;
+        }
+
+        & when (@grid-container-width > @responsive-size-desktop){
+            @media only screen and (max-width : @responsive-size-big-screen){
                 &{
-                    max-width : @responsive-size-tablet;
+                    max-width : @responsive-size-desktop;
                 }
             }
-            @media only screen and (max-width : @responsive-size-tablet){
-                &{
-                    max-width : @responsive-size-mobile;
-                }
+        }
+        @media only screen and (max-width : @responsive-size-desktop){
+            &{
+                max-width : @responsive-size-tablet;
+            }
+        }
+        @media only screen and (max-width : @responsive-size-tablet){
+            &{
+                max-width : @responsive-size-mobile;
             }
         }
     }
     .clearfix-mixin();
 }
+
 
 // GRID CSS
 //==================================================
@@ -98,7 +113,9 @@
             }
         }
 
-        & > .generator-links{ display : block; }
+        & > .generator-links{
+            display : block;
+        }
 
         &.larger > *, & > .larger{
             font-size : unit(@font-size-base * @font-size-larger, px) !important;

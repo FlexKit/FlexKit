@@ -74,15 +74,15 @@
 // Column-grid system
 //==================================================
 .column() when (@column-system){
-    & when (@responsive){
+    & when (@responsive), (@adaptive){
         & when (@column-global-classes){
             .column-list(@prefix: _);
         }
-        @media only screen and (min-width : (@responsive-size-big-screen)){
-            .column-list(@columns-big-screen; b-);
-        }
         @media only screen and (min-width : (@responsive-size-tablet + 1)){
             .column-list();
+        }
+        @media only screen and (min-width : (@responsive-size-big-screen)){
+            .column-list(@columns-big-screen; b-);
         }
         @media only screen and (max-width : @responsive-size-tablet) and (min-width : (@responsive-size-mobile + 1)){
             .column-list(@columns-tablet; t-);
@@ -91,7 +91,7 @@
             .column-list(@columns-mobile; m-);
         }
     }
-    & when not(@responsive){
+    & when not(@responsive) and not(@adaptive){
         .column-list();
     }
 }
@@ -125,15 +125,15 @@
 // Grid system
 //==================================================
 .grid() when (@grid-system){
-    & when (@responsive){
+    & when (@responsive), (@adaptive){
         & when (@grid-global-classes){
             .grid-list(@prefix: _);
         }
-        @media only screen and (min-width : (@responsive-size-big-screen)){
-            .column-list(@grid-columns-big-screen; b-);
-        }
         @media only screen and (min-width : (@responsive-size-tablet + 1)){
             .grid-list();
+        }
+        @media only screen and (min-width : (@responsive-size-big-screen)){
+            .grid-list(@grid-columns-big-screen; b-);
         }
         @media only screen and (max-width : @responsive-size-tablet) and (min-width : (@responsive-size-mobile + 1)){
             .grid-list(@grid-columns-tablet, t-);
@@ -142,7 +142,7 @@
             .grid-list(@grid-columns-mobile, m-);
         }
     }
-    & when not(@responsive){
+    & when not(@responsive) and not(@adaptive){
         .grid-list();
     }
 }
