@@ -7,7 +7,7 @@
 @dropdown-margin-vertical   : 5px;
 @dropdown-margin-horizontal : 5px;
 
-body when (@responsive){
+body when (@responsive), (@adaptive){
     &[data-dropdown-open]:extend(body[data-menu-open]){
 
         &:after:extend(body[data-menu-open]:after){
@@ -121,7 +121,7 @@ body when (@responsive){
 //        }
 //    }
 
-    & when (@responsive){
+    & when (@responsive), (@adaptive){
         ul:extend(.mobile-menu ul all){ }
         li:extend(.mobile-menu li all){ }
     }
