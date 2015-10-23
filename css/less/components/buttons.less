@@ -7,7 +7,9 @@
         border-color     : @gray-light !important;
         color            : @gray-light !important;
         background-color : @gray-lighter !important;
-        cursor           : default !important;
+        & when (@ie) and (@ie8){
+            cursor : default !important;
+        }
         cursor           : not-allowed !important;
         .box-shadow(~'none !important', @button-box-shadow);
     }

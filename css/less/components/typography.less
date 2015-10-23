@@ -10,7 +10,7 @@
 // Links
 //==================================================
 a{
-    color           : @link-color;
+    color : @link-color;
 
     &:visited when not(@link-color-visited = none){
         color : @link-color-visited;
@@ -37,10 +37,14 @@ h1, h2, h3, h4, h5, h6,
 
     &:first-child{ margin-top : 0; }
 
-    .slide .slide-description &{ color : @slider-heading-color; }
+    & when (@widget-cycleSlider){
+        .slide .slide-description &{ color : @slider-heading-color; }
+    }
 
-    footer &{
-        color : @footer-heading-color;
+    & when not(@footer-heading-color = @heading-color){
+        footer &{
+            color : @footer-heading-color;
+        }
     }
 
     &:empty{
@@ -62,8 +66,6 @@ h6, .h6{ font-size : 0.75em; }
 p{
     margin-top    : 0;
     margin-bottom : 15px;
-
-    img{ margin : 0; }
 }
 
 address{

@@ -97,10 +97,9 @@
 [class*="icon-"]:before,
 [class^=" icon-"]:before,
 [data-icon]:before,
-.ui-datepicker-prev:before,
-.ui-datepicker-next:before,
-.ui-dialog-titlebar-close:before,
-.newslog-tag-filter:before,
+.ui-dialog .ui-dialog-titlebar-close:before,
+.ui-datepicker .ui-datepicker-header > a.ui-datepicker-prev:before,
+.ui-datepicker .ui-datepicker-header > a.ui-datepicker-next:before,
 .dataTables_wrapper .sorting:after,
 .dataTables_wrapper .sorting_asc:after,
 .dataTables_wrapper .sorting_desc:after,
@@ -2588,15 +2587,6 @@ a.inherit-color:hover {
 .white-bg {
   background: #fff;
 }
-.fade25 {
-  background: rgba(0, 0, 0, 0.25);
-}
-.fade50 {
-  background: rgba(0, 0, 0, 0.5);
-}
-.fade75 {
-  background: rgba(0, 0, 0, 0.75);
-}
 .gray-darker {
   color: #222222;
 }
@@ -3031,20 +3021,6 @@ h6:first-child,
 .slide .slide-description .h6 {
   color: inherit;
 }
-footer h1,
-footer h2,
-footer h3,
-footer h4,
-footer h5,
-footer h6,
-footer .h1,
-footer .h2,
-footer .h3,
-footer .h4,
-footer .h5,
-footer .h6 {
-  color: #222222;
-}
 h1:empty,
 h2:empty,
 h3:empty,
@@ -3090,9 +3066,6 @@ h6,
 p {
   margin-top: 0;
   margin-bottom: 15px;
-}
-p img {
-  margin: 0;
 }
 address {
   margin-bottom: 20px;
@@ -3800,7 +3773,6 @@ img.img-leaflet-left {
   border-color: #bbbbbb !important;
   color: #bbbbbb !important;
   background-color: #eeeeee !important;
-  cursor: default !important;
   cursor: not-allowed !important;
   box-shadow: none !important;
 }
@@ -4149,6 +4121,7 @@ hr.dotted {
   font-size: 0.85em;
   font-weight: bold;
   line-height: 1em;
+  white-space: nowrap;
   text-align: center;
   display: inline-block;
   vertical-align: baseline;
@@ -4276,10 +4249,8 @@ hr.dotted {
 .callout {
   margin-bottom: 20px;
   padding: 8px 12px;
-  border-width: 1px 1px 1px 4px;
-  border-style: solid;
-  border-color: #ddd;
-  border-left-color: #F79D84;
+  border: 1px solid #ddd;
+  border-left: 4px solid #F79D84;
   color: inherit;
   border-radius: 3px;
 }
@@ -4609,19 +4580,9 @@ a.tooltip {
 .static_menu li {
   float: left;
   padding: 0 8px;
-  line-height: 1;
 }
 .static_menu li + li {
   border-left: 1px solid #888888;
-}
-.breadcrumbs {
-  color: #555555;
-}
-.breadcrumbs a {
-  color: #07A0C3;
-}
-.breadcrumbs a:hover {
-  color: #034f61;
 }
 @media (min-width: 801px) {
   .mobile-bar,
@@ -5038,15 +4999,7 @@ header {
   color: #555555;
 }
 header .logo {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-header .logo a {
   text-decoration: none;
-}
-header .logo img {
-  margin: 0;
-  box-shadow: none;
 }
 section {
   background: #FFF;
@@ -5055,7 +5008,7 @@ section {
 section article {
   margin-bottom: 30px;
 }
-aside .aside-box {
+aside section {
   margin-bottom: 30px;
 }
 footer {
@@ -5063,18 +5016,6 @@ footer {
   background: transparent;
   color: #555555;
   font-size: 0.85em;
-}
-#go-top {
-  color: #fff;
-  border-color: rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 0, 0, 0.5);
-}
-#go-top:hover,
-#go-top:active,
-#go-top.active {
-  color: #FFF;
-  border-color: #F79D84;
-  background-color: #F79D84;
 }
 form:after {
   content: "";
@@ -5492,14 +5433,12 @@ textarea.resize {
   font-size: 0;
 }
 .img_gallery li {
-  font-size: 14px;
-  display: inline-block;
-  vertical-align: middle;
-}
-.img_gallery li {
+  font-size: 1rem;
   position: relative;
   margin: 5px;
   text-align: center;
+  display: inline-block;
+  vertical-align: middle;
 }
 .img_gallery a img {
   position: relative;
@@ -5643,11 +5582,6 @@ textarea.resize {
   .d-visible,
   .t-visible {
     display: none !important;
-  }
-}
-@media only screen and (max-width: 800px) {
-  #slider .description-slider {
-    display: none;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -5851,19 +5785,12 @@ textarea.resize {
     font-style: italic;
     text-decoration: underline;
   }
-  a.btn:after,
-  a.page-title:after {
+  a.btn:after {
     margin: 0;
     display: block;
   }
-  a.page-teaser-image:after,
-  .page-teaser-image a:after,
-  .gmaps a:after,
-  a._lbox:after {
-    display: none;
-  }
   a[href*=".html"]:after {
-    content: "(WEBSITE-URL" attr(href) ")";
+    content: "(" attr(href) ")";
   }
   a[href^="http"]:after,
   a[href^="//"]:after {
@@ -6022,7 +5949,6 @@ textarea.resize {
   color: #555555;
   background: #eeeeee;
   padding: .5em .75em;
-  min-height: 0;
 }
 .ui-accordion .ui-accordion-header:hover {
   color: #555555;

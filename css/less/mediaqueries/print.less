@@ -26,21 +26,15 @@ a{
         text-decoration : underline;
     }
 
-    &.btn, &.page-title{
+    &.btn{
         &:after{
             margin  : 0;
             display : block;
         }
     }
 
-    &.page-teaser-image, .page-teaser-image &, .gmaps &, &._lbox{
-        &:after{
-            display : none;
-        }
-    }
-
     &[href*=".html"]:after{
-        content : "(@{website-url}" attr(href) ")";
+        content : "(" attr(href) ")";
     }
 
     &[href^="http"]:after, &[href^="//"]:after{
