@@ -1,13 +1,11 @@
 // Message styles
 // -------------------------
 .callout when (@callouts){
-    margin-bottom     : 20px;
-    padding           : @padding-base-vertical @padding-base-horizontal;
-    border-width      : 1px 1px 1px 4px;
-    border-style      : solid;
-    border-color      : #ddd;
-    border-left-color : @brand-primary;
-    color             : inherit;
+    margin-bottom : 20px;
+    padding       : @padding-base-vertical @padding-base-horizontal;
+    border        : 1px solid #ddd;
+    border-left   : 4px solid @brand-primary;
+    color         : inherit;
     .border-radius(3px);
 
     .callout-header{

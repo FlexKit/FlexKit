@@ -10,20 +10,10 @@ header{
 
     // -- LOGO Style
     .logo{
-        margin-top    : 0;
-        margin-bottom : 0;
+        text-decoration : none;
 
-        a{
-            text-decoration : none;
-        }
-        img{
-            margin : 0;
-            .box-shadow(none);
-        }
+        img{ }
     }
-
-    // -- NAV in HEADER Style
-    nav{ }
 }
 
 // -- NAV Style
@@ -43,7 +33,7 @@ section{
 //	SIDEBAR Style
 //==================================================
 aside{
-    .aside-box{
+    section{
         margin-bottom : 30px;
     }
 }
@@ -55,14 +45,4 @@ footer{
     background : @footer-bg;
     color      : @footer-color;
     font-size  : @font-size-small;
-
-    p{ }
-
-    .footer-box{ }
-}
-
-//	Button to scroll top
-//==================================================
-#go-top{
-    .button-color(#fff; fade(#000, 50%); fade(#000, 50%); @primary-color; @primary-bg; @primary-bg);
 }

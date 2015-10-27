@@ -21,7 +21,7 @@
         }
     }
 
-    &.icon when (@form-labeled-icon){
+    &.icon when (@form-labeled-icon) and (@flexkit-icons){
         input, select, textarea{
 
             &:focus ~ [class*="@{icon-prefix}-"]{

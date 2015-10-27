@@ -1,11 +1,17 @@
 .breadcrumbs when (@breadcrumbs){
-    color : @breadcrumbs-color;
+    & when not(@breadcrumbs-color = @text-color){
+        color : @breadcrumbs-color;
+    }
 
     a{
-        color : @breadcrumbs-link-color;
+        & when not(@breadcrumbs-link-color = @link-color){
+            color : @breadcrumbs-link-color;
+        }
 
         &:hover{
-            color : @breadcrumbs-link-color-hover;
+            & when not(@breadcrumbs-link-color-hover = @link-color-hover){
+                color : @breadcrumbs-link-color-hover;
+            }
         }
     }
 }
