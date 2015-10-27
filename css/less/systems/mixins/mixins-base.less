@@ -74,20 +74,39 @@
 // Column-grid system
 //==================================================
 .column() when (@column-system){
-    & when (@responsive), (@adaptive){
+    & when (@responsive){
         & when (@column-global-classes){
             .column-list(@prefix: _);
         }
         @media only screen and (min-width : (@responsive-size-tablet + 1)){
             .column-list();
         }
-        @media only screen and (min-width : (@responsive-size-big-screen)){
-            .column-list(@columns-big-screen; b-);
+        & when (@columns-big-screen > 0) and (isnumber(@columns-big-screen)){
+            @media only screen and (min-width : (@responsive-size-big-screen)){
+                .column-list(@columns-big-screen; b-);
+            }
         }
         @media only screen and (max-width : @responsive-size-tablet) and (min-width : (@responsive-size-mobile + 1)){
             .column-list(@columns-tablet; t-);
         }
         @media only screen and (max-width : @responsive-size-mobile){
+            .column-list(@columns-mobile; m-);
+        }
+    }
+    & when (@adaptive){
+        & when (@column-global-classes){
+            .column-list(@prefix: _);
+        }
+        @media only screen and (min-width : (@responsive-size-big-screen + 1)){
+            .column-list(@columns-big-screen; b-);
+        }
+        @media only screen and (max-width : @responsive-size-big-screen){
+            .column-list();
+        }
+        @media only screen and (max-width : @responsive-size-desktop){
+            .column-list(@columns-tablet; t-);
+        }
+        @media only screen and (max-width : @responsive-size-tablet){
             .column-list(@columns-mobile; m-);
         }
     }
@@ -125,20 +144,46 @@
 // Grid system
 //==================================================
 .grid() when (@grid-system){
-    & when (@responsive), (@adaptive){
+    & when (@responsive){
         & when (@grid-global-classes){
             .grid-list(@prefix: _);
         }
         @media only screen and (min-width : (@responsive-size-tablet + 1)){
             .grid-list();
         }
-        @media only screen and (min-width : (@responsive-size-big-screen)){
-            .grid-list(@grid-columns-big-screen; b-);
+        & when (@grid-columns-big-screen > 0) and (isnumber(@grid-columns-big-screen)){
+            @media only screen and (min-width : (@responsive-size-big-screen)){
+                .grid-list(@grid-columns-big-screen; b-);
+            }
         }
         @media only screen and (max-width : @responsive-size-tablet) and (min-width : (@responsive-size-mobile + 1)){
             .grid-list(@grid-columns-tablet, t-);
         }
         @media only screen and (max-width : @responsive-size-mobile){
+            .grid-list(@grid-columns-mobile, m-);
+        }
+    }
+    & when (@adaptive){
+        & when (@grid-global-classes){
+            .grid-list(@prefix: _);
+        }
+        & when (@grid-columns-big-screen > 0) and (isnumber(@grid-columns-big-screen)){
+            @media only screen and (min-width : (@responsive-size-big-screen + 1)){
+                .grid-list(@grid-columns-big-screen; b-);
+            }
+            @media only screen and (max-width : @responsive-size-big-screen){
+                .grid-list();
+            }
+        }
+        & when (@grid-columns-big-screen = 0), not(isnumber(@grid-columns-big-screen)){
+            @media only screen and (min-width : (@responsive-size-tablet + 1)){
+                .grid-list();
+            }
+        }
+        @media only screen and (max-width : @responsive-size-desktop){
+            .grid-list(@grid-columns-tablet, t-);
+        }
+        @media only screen and (max-width : @responsive-size-tablet){
             .grid-list(@grid-columns-mobile, m-);
         }
     }

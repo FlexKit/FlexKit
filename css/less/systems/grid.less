@@ -23,7 +23,7 @@
             max-width : @grid-container-width;
         }
 
-        & when (@grid-container-width > @responsive-size-desktop){
+        & when (@grid-container-width > @responsive-size-desktop), (@grid-container-width = 100%){
             @media only screen and (max-width : @responsive-size-big-screen){
                 &{
                     max-width : @responsive-size-desktop;
@@ -43,7 +43,6 @@
     }
     .clearfix-mixin();
 }
-
 
 // GRID CSS
 //==================================================
@@ -111,10 +110,6 @@
             & > *{
                 margin-bottom : 0;
             }
-        }
-
-        & > .generator-links{
-            display : block;
         }
 
         &.larger > *, & > .larger{

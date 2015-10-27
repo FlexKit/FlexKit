@@ -1858,12 +1858,6 @@
 [class*="_column_"].one-line > * {
   margin-bottom: 0;
 }
-[class*=" column_"] > .generator-links,
-[class^="column_"] > .generator-links,
-[class*="-column_"] > .generator-links,
-[class*="_column_"] > .generator-links {
-  display: block;
-}
 [class*=" column_"].larger > *,
 [class^="column_"].larger > *,
 [class*="-column_"].larger > *,
