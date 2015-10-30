@@ -2,7 +2,7 @@
 //   Created by Ilya Pestov - @ilya_pestov https://github.com/Pestov/Shade
 // ==========================================================================
 
-.shade(@type; @color: #3498db; @depth: 20; @angle: 135deg; @long: true; @fade: false) {
+.shade(@type; @color: @brand-primary; @depth: 20; @angle: 135deg; @long: true; @fade: false) {
     @ang: (@angle - 90deg);
     @x: 1.5px * cos(@ang);
     @y: 1.5px * sin(@ang);
