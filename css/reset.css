@@ -204,11 +204,11 @@ th {
   box-sizing: border-box;
 }
 ::-moz-selection {
-  background: #F79D84;
+  background: #50514f;
   color: #FFF;
 }
 ::selection {
-  background: #F79D84;
+  background: #50514f;
   color: #FFF;
 }
 blockquote,
