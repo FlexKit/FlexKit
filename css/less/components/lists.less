@@ -78,21 +78,6 @@ ul{
         }
     }
 
-    &.list-bordered when (@list-bordered) and (@lists-classes){
-        & > li{
-            border-bottom  : 1px solid @hr-color;
-            margin         : 0;
-            padding-top    : @padding-base-vertical;
-            padding-bottom : @padding-base-vertical;
-
-            footer &{ border-color : inherit; }
-        }
-
-        &.dashed > li{
-            border-bottom-style : dashed;
-        }
-    }
-
     &.list-arrow when (@list-arrow) and (@lists-classes){
         & > li{
             padding-left : 1em;
@@ -211,6 +196,23 @@ ul{
             &:hover{
                 &:before{ }
             }
+        }
+    }
+
+    &.list-bordered when (@list-bordered) and (@lists-classes){
+        & > li{
+            border-bottom  : 1px solid @hr-color;
+            margin         : 0;
+            padding-top    : @padding-base-vertical;
+            padding-bottom : @padding-base-vertical;
+
+            footer &{
+                border-color : inherit;
+            }
+        }
+
+        &.dashed > li{
+            border-bottom-style : dashed;
         }
     }
 
@@ -337,7 +339,7 @@ ul{
     }
 
     &.list-step when (@list-step) and (@lists-classes){
-        text-align    : center;
+        text-align : center;
 
         .step-item{
             display        : inline-block;
