@@ -405,17 +405,27 @@
 //==================================================
 .icon-size(@size; @parent : false) when (@size > 0){
     & when (@parent){
-        width       : @size;
-        height      : @size;
-        line-height : @size;
 
         & when not(isem(@size)) and not(ispercentage(@size)){
+            width       : @size;
+            height      : @size;
+            line-height : @size;
             font-size : 0;
+        }
+
+        & when (isem(@size)){
+            font-size   : @size;
+            width       : 1em;
+            height      : 1em;
+            line-height : 1em;
+            text-align  : center;
         }
     }
 
     &:before{
-        font-size : @size;
+        & when not(isem(@size)) and not(ispercentage(@size)){
+            font-size : @size;
+        }
 
         & when not(@parent) and not(isem(@size)){
             width  : @size;
@@ -423,8 +433,9 @@
         }
 
         & when (isem(@size)){
-            width  : 1em;
-            height : 1em;
+            width   : 1em;
+            height  : 1em;
+            display : block;
         }
     }
 }
