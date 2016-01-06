@@ -65,7 +65,7 @@
     @font-face {
         font-family : "@{fontname}";
         src         : url("@{fontfile}.woff") format("woff"),
-        url("@{fontfile}.ttf") format("truetype");
+                      url("@{fontfile}.ttf") format("truetype");
         font-weight : @fontweight;
         font-style  : @fontstyle;
     }
@@ -258,58 +258,30 @@
     .margin-list(@value - @step; @position; @step);
 
     @name : e(`(function() { var a = "@{value}"; return a.replace('%', '').replace('.', '-')}())`);
-    .m@{name} when (@position = all) {
-        margin : @value !important;
-    }
-    .mt@{name} when (@position = top) {
-        margin-top : @value !important;
-    }
-    .ml@{name} when (@position = left) {
-        margin-left : @value !important;
-    }
-    .mr@{name} when (@position = right) {
-        margin-right : @value !important;
-    }
-    .mb@{name} when (@position = bottom) {
-        margin-bottom : @value !important;
-    }
+    .m@{name} when (@position = all) { margin : @value !important; }
+    .mt@{name} when (@position = top) { margin-top : @value !important; }
+    .ml@{name} when (@position = left) { margin-left : @value !important; }
+    .mr@{name} when (@position = right) { margin-right : @value !important; }
+    .mb@{name} when (@position = bottom) { margin-bottom : @value !important; }
 }
 .padding-list(@value; @position:all; @step:5) when (@value >= 0) and not(@value = none) {
     .padding-list(@value - @step; @position; @step);
 
     @name : e(`(function() { var a = "@{value}"; return a.replace('%', '').replace('.', '-')}())`);
-    .p@{name} when (@position = all) {
-        padding : @value !important;
-    }
-    .pt@{name} when (@position = top) {
-        padding-top : @value !important;
-    }
-    .pl@{name} when (@position = left) {
-        padding-left : @value !important;
-    }
-    .pr@{name} when (@position = right) {
-        padding-right : @value !important;
-    }
-    .pb@{name} when (@position = bottom) {
-        padding-bottom : @value !important;
-    }
+    .p@{name} when (@position = all) { padding : @value !important; }
+    .pt@{name} when (@position = top) { padding-top : @value !important; }
+    .pl@{name} when (@position = left) { padding-left : @value !important; }
+    .pr@{name} when (@position = right) { padding-right : @value !important; }
+    .pb@{name} when (@position = bottom) { padding-bottom : @value !important; }
 }
 .position-list(@value; @position; @step:5) when (@value >= 0) and not(@value = none) {
     .position-list(@value - @step; @position; @step);
 
     @name : e(`(function() { var a = "@{value}"; return a.replace('%', '').replace('.', '-')}())`);
-    .t@{name} when (@position = top) {
-        top : @value !important;
-    }
-    .l@{name} when (@position = left) {
-        left : @value !important;
-    }
-    .r@{name} when (@position = right) {
-        right : @value !important;
-    }
-    .b@{name} when (@position = bottom) {
-        bottom : @value !important;
-    }
+    .t@{name} when (@position = top) { top : @value !important; }
+    .l@{name} when (@position = left) { left : @value !important; }
+    .r@{name} when (@position = right) { right : @value !important; }
+    .b@{name} when (@position = bottom) { bottom : @value !important; }
 }
 
 // Width - Height
@@ -318,17 +290,13 @@
     .width-list(@width - @step; @step);
 
     @name : e(`(function() { var a = "@{width}"; return a.replace('%', '')}())`);
-    .w@{name} {
-        width : @width !important;
-    }
+    .w@{name} { width : @width !important; }
 }
 .height-list(@height; @step:5) when (@height >= 0) and not(@height = none) {
     .height-list(@height - @step; @step);
 
     @name : e(`(function() { var a = "@{height}"; return a.replace('%', '')}())`);
-    .h@{name} {
-        height : @height !important;
-    }
+    .h@{name} { height : @height !important; }
 }
 
 // Text overflow
@@ -387,7 +355,6 @@
         behavior : url('/themes/@{theme-name}/js/system/PIE.php');
     }
 }
-
 
 // -- Grid Elements
 .grid-elements(@num-column; @margin : @grid-margin-width; @full: false; @tablet-column : 2; @mobile-column : 1; @print-column : 0; @style-switch : true) when (@num-column > 0) {
@@ -536,16 +503,10 @@
 // Flexbox Layout http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 //==================================================
 .flexbox(@direction : false; @wrap : nowrap; @align : stretch) {
-    & when (@webkit) {
-        display : -webkit-box;
-    }
-    & when (@webkit) {
-        display : -webkit-flex;
-    }
-    //    & when (@moz) { display : -moz-box; }
-    & when (@ie) {
-        display : -ms-flexbox;
-    }
+    & when (@webkit) { display : -webkit-box; }
+    & when (@webkit) { display : -webkit-flex; }
+//    & when (@moz) { display : -moz-box; }
+    & when (@ie) { display : -ms-flexbox; }
     display : flex;
 
     .flex-direction(@direction);
@@ -554,98 +515,60 @@
 }
 // @direction = row, row-reverse, column, column-reverse
 .flex-direction(@direction : column) {
-    & when (@webkit) and (@direction = row), (@direction = column) {
-        -webkit-box-direction : normal;
-    }
-    & when (@webkit) and not(@direction = row) and not(@direction = column) {
-        -webkit-box-direction : reverse;
-    }
-    //    & when (@moz) and (@direction = row), (@direction = column) { -moz-box-direction : normal; }
-    //    & when (@moz) and not(@direction = row) and not(@direction = column) { -moz-box-direction : reverse; }
+    & when (@webkit) and (@direction = row), (@direction = column) { -webkit-box-direction : normal; }
+    & when (@webkit) and not(@direction = row) and not(@direction = column) { -webkit-box-direction : reverse; }
+//    & when (@moz) and (@direction = row), (@direction = column) { -moz-box-direction : normal; }
+//    & when (@moz) and not(@direction = row) and not(@direction = column) { -moz-box-direction : reverse; }
 
-    & when (@webkit) and (@direction = row) {
-        -webkit-box-orient : horizontal;
-    }
-    & when (@webkit) and (@direction = column) {
-        -webkit-box-orient : vertical;
-    }
-    //    & when (@moz) and (@direction = row) { -moz-box-orient : horizontal; }
-    //    & when (@moz) and (@direction = column) { -moz-box-orient : vertical; }
+    & when (@webkit) and (@direction = row) { -webkit-box-orient : horizontal; }
+    & when (@webkit) and (@direction = column) { -webkit-box-orient : vertical; }
+//    & when (@moz) and (@direction = row) { -moz-box-orient : horizontal; }
+//    & when (@moz) and (@direction = column) { -moz-box-orient : vertical; }
 
-    & when (@webkit) {
-        -webkit-flex-direction : @direction;
-    }
-    & when (@ie) {
-        -ms-flex-direction : @direction;
-    }
+    & when (@webkit) { -webkit-flex-direction : @direction; }
+    & when (@ie) { -ms-flex-direction : @direction; }
     flex-direction : @direction;
 }
 // @wrap = nowrap, wrap, wrap-reverse
 .flex-wrap(@wrap : nowrap) {
-    & when (@webkit) {
-        -webkit-flex-wrap : @wrap;
-    }
-    & when (@ie) {
-        -ms-flex-wrap : @wrap;
-    }
+    & when (@webkit) { -webkit-flex-wrap : @wrap; }
+    & when (@ie) { -ms-flex-wrap : @wrap; }
     flex-wrap : @wrap;
 }
 // @align = flex-start, flex-end, center, baseline, stretch
 .flex-align(@align : stretch) {
     @alignOld : replace(~'@{align}', 'flex-', '');
-    & when (@webkit) {
-        -webkit-box-align : @alignOld;
-    }
-    & when (@webkit) {
-        -webkit-align-items : @align;
-    }
-    //    & when (@moz) { -moz-box-align : @alignOld; }
-    & when (@ie) {
-        -ms-flex-align : @alignOld;
-    }
+    & when (@webkit) { -webkit-box-align : @alignOld; }
+    & when (@webkit) { -webkit-align-items : @align; }
+//    & when (@moz) { -moz-box-align : @alignOld; }
+    & when (@ie) { -ms-flex-align : @alignOld; }
     align-items : @align;
 }
 .flex-box-order(@order) {
-    & when (@webkit) {
-        -webkit-box-ordinal-group : @order + 1;
-    }
-    //    & when (@moz) { -moz-box-ordinal-group : @order + 1; }
-    & when (@webkit) {
-        -webkit-order : @order;
-    }
-    & when (@ie) {
-        -ms-flex-order : @order;
-    }
+    & when (@webkit) { -webkit-box-ordinal-group : @order + 1; }
+//    & when (@moz) { -moz-box-ordinal-group : @order + 1; }
+    & when (@webkit) { -webkit-order : @order; }
+    & when (@ie) { -ms-flex-order : @order; }
     order : @order;
 }
 .flex-box-size(@size : 1) {
-    & when (@webkit) {
-        -webkit-box-flex : @size;
-    }
-    //    & when (@moz) { -moz-box-flex : @size; }
-    & when (@webkit) {
-        -webkit-flex : @size 1 auto;
-    }
-    & when (@ie) {
-        -ms-flex : @size 1 auto;
-    }
+    & when (@webkit) { -webkit-box-flex : @size; }
+//    & when (@moz) { -moz-box-flex : @size; }
+    & when (@webkit) { -webkit-flex : @size 1 auto; }
+    & when (@ie) { -ms-flex : @size 1 auto; }
     flex : @size 1 auto;
 }
 // @align = auto, flex-start, flex-end, center, baseline, stretch
 .flex-box-align(@align : auto) {
-    & when (@webkit) {
-        -webkit-align-self : @align;
-    }
-    & when (@ie) {
-        -ms-flex-item-align : @align;
-    }
+    & when (@webkit) { -webkit-align-self : @align; }
+    & when (@ie) { -ms-flex-item-align : @align; }
     align-self : @align;
 }
 
 // Selection
 //==================================================
 .selection(@color : @text-select-color; @bg-color : @text-select-bg; @el : ~'') {
-    @{el}::-moz-selection {
+    @{el}::-moz-selection{
         & when (@moz) {
             background : @bg-color;
             color      : @color;
