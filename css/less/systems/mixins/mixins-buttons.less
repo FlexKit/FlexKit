@@ -18,21 +18,21 @@
     .user-select();
     .box-shadow(none; @input-shadow-focus);
     .box-shadow(none; @input-inner-shadow);
-    & when (@border-width > 0){
+    & when (@border-width > 0) {
         border-width : @border-width;
         border-style : solid;
     }
-    & when (@border-width = 0), (@border-width = none){
+    & when (@border-width = 0), (@border-width = none) {
         border : none;
     }
-    & when (@button-transition){
+    & when (@button-transition) {
         .transition(background; 0.3s);
     }
-    & when not(@button-transition){
+    & when not(@button-transition) {
         .transition(none);
     }
 
-    &:active, &.active{
+    &:active, &.active {
         .box-shadow(2px 2px 4px rgba(0, 0, 0, .3) inset; @button-box-shadow);
     }
 }
@@ -44,11 +44,10 @@
 .link-color(@color : @link-color; @color-hover : darken(@color, 30%)) {
     color : @color;
 
-    &:hover{
+    &:hover {
         color : @color-hover;
     }
 }
-
 .button-color(
     @color;
     @background;
@@ -61,23 +60,23 @@
     border-color     : extract(@border, 1);
     background-color : extract(@background, 1);
 
-    &:hover, &:active, &.active{
-        & when (length(@color) = 1){
+    &:hover, &:active, &.active {
+        & when (length(@color) = 1) {
             color : @color2;
         }
-        & when (length(@color) = 2){
+        & when (length(@color) = 2) {
             color : extract(@color, 2);
         }
-        & when (length(@border) = 1){
+        & when (length(@border) = 1) {
             border-color : @border2;
         }
-        & when (length(@border) = 2){
+        & when (length(@border) = 2) {
             border-color : extract(@border, 2);
         }
-        & when (length(@background) = 1){
+        & when (length(@background) = 1) {
             background-color : @background2;
         }
-        & when (length(@background) = 2){
+        & when (length(@background) = 2) {
             background-color : extract(@background, 2);
         }
     }

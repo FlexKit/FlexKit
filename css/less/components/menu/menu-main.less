@@ -1,58 +1,58 @@
-.main_menu when (@menu-main){
+.main_menu when (@menu-main) {
     position : relative;
     z-index  : 110;
-    & when not(@nav-bg = transparent){
+    & when not(@nav-bg = transparent) {
         background : @nav-bg;
     }
-    & when not(@nav-color = @link-color){
+    & when not(@nav-color = @link-color) {
         color : @nav-color;
     }
 
-    & > li{
+    & > li {
         float    : left;
         position : relative;
 
-        &:hover{
-            & when not(@nav-bg = @nav-bg-li-hover){
+        &:hover {
+            & when not(@nav-bg = @nav-bg-li-hover) {
                 background : @nav-bg-li-hover;
             }
-            & when not(@nav-color = @nav-color-li-hover){
+            & when not(@nav-color = @nav-color-li-hover) {
                 color : @nav-color-li-hover;
             }
 
-            ul{
+            ul {
                 display : block;
             }
         }
 
-        & > a when (@responsive), (@adaptive){
+        & > a when (@responsive), (@adaptive) {
             float : left;
         }
     }
 
-    a{
+    a {
         display         : block;
         padding         : @padding-base-vertical @padding-base-horizontal;
         text-decoration : none;
-        & when not(@nav-color = @link-color){
+        & when not(@nav-color = @link-color) {
             color : inherit;
         }
 
-        &.current{
-            & when (@nav-bg-li-hover = @nav-bg-li-current){
+        &.current {
+            & when (@nav-bg-li-hover = @nav-bg-li-current) {
                 &:extend(.main_menu > li:hover);
             }
 
-            & when not(@nav-bg-li-hover = @nav-bg-li-current){
+            & when not(@nav-bg-li-hover = @nav-bg-li-current) {
                 background : @nav-bg-li-current;
             }
-            & when not(@nav-color-li-hover = @nav-color-li-current){
+            & when not(@nav-color-li-hover = @nav-color-li-current) {
                 color : @nav-color-li-current;
             }
         }
     }
 
-    ul{
+    ul {
         position   : absolute;
         left       : 0;
         top        : 100%;
@@ -60,41 +60,42 @@
         display    : none;
         width      : 300px;
         background : @nav-drop-down-list-bg;
-        & when not(@nav-drop-down-list-color = @nav-color){
+        & when not(@nav-drop-down-list-color = @nav-color) {
             color : @nav-drop-down-list-color;
         }
         .box-shadow(0 3px 5px @gray-dark);
 
-        & when (@mobile-menu){
-            &.open:extend(.mobile-menu ul.open){ }
+        & when (@mobile-menu) {
+            &.open:extend(.mobile-menu ul.open) {
+            }
         }
 
-        li{
+        li {
             float : none;
 
-            &:hover{
+            &:hover {
                 & when not(@nav-drop-down-list-bg-hover = @nav-bg-li-hover)
-                   and not(@nav-drop-down-list-bg-hover = @nav-drop-down-list-bg){
+                   and not(@nav-drop-down-list-bg-hover = @nav-drop-down-list-bg) {
                     background : @nav-drop-down-list-bg-hover;
                 }
                 & when not(@nav-drop-down-list-color-hover = @nav-drop-down-list-color)
-                   and not(@nav-drop-down-list-color-hover = @nav-color-li-hover){
+                   and not(@nav-drop-down-list-color-hover = @nav-color-li-hover) {
                     color : @nav-drop-down-list-color-hover;
                 }
             }
 
-            a{
-                &.current{
-                    & when (@nav-drop-down-list-color-hover = @nav-drop-down-list-color-current){
+            a {
+                &.current {
+                    & when (@nav-drop-down-list-color-hover = @nav-drop-down-list-color-current) {
                         &:extend(.main_menu ul li:hover);
                     }
 
                     & when not(@nav-drop-down-list-bg-current = @nav-drop-down-list-bg)
-                       and not(@nav-drop-down-list-bg-current = @nav-drop-down-list-bg-hover){
+                       and not(@nav-drop-down-list-bg-current = @nav-drop-down-list-bg-hover) {
                         background : @nav-drop-down-list-bg-current;
                     }
                     & when not(@nav-drop-down-list-color-current = @nav-drop-down-list-color)
-                       and not(@nav-drop-down-list-color-current = @nav-drop-down-list-color-hover){
+                       and not(@nav-drop-down-list-color-current = @nav-drop-down-list-color-hover) {
                         color : @nav-drop-down-list-color-current;
                     }
                 }

@@ -16,41 +16,41 @@ a{
         color : inherit;
     }
 
-    &:hover{
-        &.rss when (@social-rss){
+    &:hover {
+        &.rss when (@social-rss) {
             color : darken(@rss, 10%);
         }
-        &.gplus when (@social-gplus){
+        &.gplus when (@social-gplus) {
             color : darken(@gplus, 10%);
         }
-        &.twitter when (@social-twitter){
+        &.twitter when (@social-twitter) {
             color : darken(@twitter, 10%);
         }
-        &.youtube when (@social-youtube){
+        &.youtube when (@social-youtube) {
             color : darken(@youtube, 10%);
         }
-        &.linkedin when (@social-linkedin){
+        &.linkedin when (@social-linkedin) {
             color : darken(@linkedin, 10%);
         }
-        &.facebook when (@social-facebook){
+        &.facebook when (@social-facebook) {
             color : darken(@facebook, 10%);
         }
-        &.skype when (@social-skype){
+        &.skype when (@social-skype) {
             color : darken(@skype, 10%);
         }
-        &.flicker when (@social-flicker){
+        &.flicker when (@social-flicker) {
             color : darken(@flicker, 10%);
         }
-        &.pinterest when (@social-pinterest){
+        &.pinterest when (@social-pinterest) {
             color : darken(@pinterest, 10%);
         }
-        &.vkontakte when (@social-vkontakte){
+        &.vkontakte when (@social-vkontakte) {
             color : darken(@vkontakte, 10%);
         }
-        &.instagram when (@social-instagram){
+        &.instagram when (@social-instagram) {
             color : darken(@instagram, 10%);
         }
-        &.vimeo when (@social-vimeo){
+        &.vimeo when (@social-vimeo) {
             color : darken(@vimeo, 10%);
         }
     }
@@ -58,130 +58,202 @@ a{
 
 // Social Buttons
 //==================================================
-.btn when (@social-button){
-    &.rss when (@social-rss){
+.btn when (@social-button) {
+    &.rss when (@social-rss) {
         .button-color(#fff; @rss; @rss);
     }
-    &.gplus when (@social-gplus){
+    &.gplus when (@social-gplus) {
         .button-color(#fff; @gplus; @gplus);
     }
-    &.twitter when (@social-twitter){
+    &.twitter when (@social-twitter) {
         .button-color(#fff; @twitter; @twitter);
     }
-    &.youtube when (@social-youtube){
+    &.youtube when (@social-youtube) {
         .button-color(#fff; @youtube; @youtube);
     }
-    &.linkedin when (@social-linkedin){
+    &.linkedin when (@social-linkedin) {
         .button-color(#fff; @linkedin; @linkedin);
     }
-    &.facebook when (@social-facebook){
+    &.facebook when (@social-facebook) {
         .button-color(#fff; @facebook; @facebook);
     }
-    &.skype when (@social-skype){
+    &.skype when (@social-skype) {
         .button-color(#fff; @skype; @skype);
     }
-    &.flicker when (@social-flicker){
+    &.flicker when (@social-flicker) {
         .button-color(#fff; @flicker; @flicker);
     }
-    &.pinterest when (@social-pinterest){
+    &.pinterest when (@social-pinterest) {
         .button-color(#fff; @pinterest; @pinterest);
     }
-    &.vkontakte when (@social-vkontakte){
+    &.vkontakte when (@social-vkontakte) {
         .button-color(#fff; @vkontakte; @vkontakte);
     }
-    &.instagram when (@social-instagram){
+    &.instagram when (@social-instagram) {
         .button-color(#fff; @instagram; @instagram);
     }
-    &.vimeo when (@social-vimeo){
+    &.vimeo when (@social-vimeo) {
         .button-color(#fff; @vimeo; @vimeo);
     }
 }
 
-.labeled when (@form-labeled){
+.labeled when (@form-labeled) {
 
     // Social Filed
-    &.gplus when (@form-labeled-social-gplus) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @gplus; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @gplus; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @gplus; }
+    &.gplus when (@form-labeled-social-gplus) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @gplus;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @gplus;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @gplus;
+            }
         }
     }
-    &.twitter when (@form-labeled-social-twitter) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @twitter; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @twitter; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @twitter; }
+    &.twitter when (@form-labeled-social-twitter) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @twitter;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @twitter;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @twitter;
+            }
         }
     }
-    &.facebook when (@form-labeled-social-facebook) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @facebook; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @facebook; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @facebook; }
+    &.facebook when (@form-labeled-social-facebook) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @facebook;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @facebook;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @facebook;
+            }
         }
     }
-    &.linkedin when (@form-labeled-social-linkedin) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @linkedin; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @linkedin; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @linkedin; }
+    &.linkedin when (@form-labeled-social-linkedin) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @linkedin;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @linkedin;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @linkedin;
+            }
         }
     }
-    &.youtube when (@form-labeled-social-youtube) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @youtube; }
-        *:checked, *:focus{
-            & ~ [class*="@{icon-prefix}-"]{ color : @youtube; }
-            & ~ label, & ~ .label{ background : @youtube; }
+    &.youtube when (@form-labeled-social-youtube) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @youtube;
+        }
+        *:checked, *:focus {
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @youtube;
+            }
+            & ~ label, & ~ .label {
+                background : @youtube;
+            }
         }
     }
-    &.rss when (@form-labeled-social-rss) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @rss; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @rss; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @rss; }
+    &.rss when (@form-labeled-social-rss) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @rss;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @rss;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @rss;
+            }
         }
     }
-    &.skype when (@form-labeled-social-skype) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @skype; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @skype; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @skype; }
+    &.skype when (@form-labeled-social-skype) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @skype;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @skype;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @skype;
+            }
         }
     }
-    &.flicker when (@form-labeled-social-flicker) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @flicker; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @flicker; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @flicker; }
+    &.flicker when (@form-labeled-social-flicker) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @flicker;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @flicker;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @flicker;
+            }
         }
     }
-    &.pinterest when (@form-labeled-social-pinterest) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @pinterest; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @pinterest; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @pinterest; }
+    &.pinterest when (@form-labeled-social-pinterest) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @pinterest;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @pinterest;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @pinterest;
+            }
         }
     }
-    &.vkontakte when (@form-labeled-social-vkontakte) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @vkontakte; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @vkontakte; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @vkontakte; }
+    &.vkontakte when (@form-labeled-social-vkontakte) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @vkontakte;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @vkontakte;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @vkontakte;
+            }
         }
     }
-    &.instagram when (@form-labeled-social-instagram) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @instagram; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @instagram; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @instagram; }
+    &.instagram when (@form-labeled-social-instagram) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @instagram;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @instagram;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @instagram;
+            }
         }
     }
-    &.vimeo when (@form-labeled-social-vimeo) and (@form-labeled-social){
-        :checked ~ input, input:focus{ border-color : @vimeo; }
-        *:checked, *:focus{
-            & ~ label, & ~ .label{ background : @vimeo; }
-            & ~ [class*="@{icon-prefix}-"]{ color : @vimeo; }
+    &.vimeo when (@form-labeled-social-vimeo) and (@form-labeled-social) {
+        :checked ~ input, input:focus {
+            border-color : @vimeo;
+        }
+        *:checked, *:focus {
+            & ~ label, & ~ .label {
+                background : @vimeo;
+            }
+            & ~ [class*="@{icon-prefix}-"] {
+                color : @vimeo;
+            }
         }
     }
 }

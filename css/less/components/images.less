@@ -1,33 +1,32 @@
-img[style*="float: left"], img[style*="float:left"]{
+img[style*="float: left"], img[style*="float:left"] {
     margin-right : 15px;
 }
-
-img[style*="float: right"], img[style*="float:right"]{
+img[style*="float: right"], img[style*="float:right"] {
     margin-left : 15px;
 }
 
-.img-thumbnail when (@image-thumbnail) and (@images-style){
-    & img, img&{
+.img-thumbnail when (@image-thumbnail) and (@images-style) {
+    & img, img& {
         .thumbnail-state();
     }
 }
-.img-circle when (@image-circle) and (@images-style){
-    & img, img&{
+.img-circle when (@image-circle) and (@images-style) {
+    & img, img& {
         .border-radius(50em);
     }
 }
-.img-rounded when (@image-rounded) and (@images-style){
-    & img, img&{
+.img-rounded when (@image-rounded) and (@images-style) {
+    & img, img& {
         .border-radius(@border-radius-base);
     }
 }
-.img-leaflet-right when (@image-leaflet-right) and (@images-style){
-    & img, img&{
+.img-leaflet-right when (@image-leaflet-right) and (@images-style) {
+    & img, img& {
         .border-radius(50% 0);
     }
 }
-.img-leaflet-left when (@image-leaflet-left) and (@images-style){
-    & img, img&{
+.img-leaflet-left when (@image-leaflet-left) and (@images-style) {
+    & img, img& {
         .border-radius(0 50%);
     }
 }

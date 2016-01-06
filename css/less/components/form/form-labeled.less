@@ -1,8 +1,8 @@
-.labeled when (@form-labeled){
+.labeled when (@form-labeled) {
     position : relative;
     .clearfix-mixin();
 
-    label, .label{
+    label, .label {
         margin-top    : 0;
         margin-bottom : 0;
         height        : unit(@button-line-height * 2, em);
@@ -13,23 +13,23 @@
         .transition(all; 0.3s);
     }
 
-    input:focus, select:focus{
+    input:focus, select:focus {
         .box-shadow(none; @input-shadow-focus) !important;
 
-        & ~ label, & ~ .label{
+        & ~ label, & ~ .label {
             background : @input-border-color-focus;
         }
     }
 
-    &.icon when (@form-labeled-icon) and (@flexkit-icons){
-        input, select, textarea{
+    &.icon when (@form-labeled-icon) and (@flexkit-icons) {
+        input, select, textarea {
 
-            &:focus ~ [class*="@{icon-prefix}-"]{
+            &:focus ~ [class*="@{icon-prefix}-"] {
                 .opacity(1);
             }
         }
 
-        [class*="@{icon-prefix}-"]{
+        [class*="@{icon-prefix}-"] {
             position  : absolute;
             margin    : auto;
             top       : 0;
@@ -39,32 +39,32 @@
             font-size : 1.25em;
             .opacity();
 
-            &:before{
+            &::before {
                 vertical-align : top;
             }
         }
 
-        &.right{
-            [class*="@{icon-prefix}-"]{
+        &.right {
+            [class*="@{icon-prefix}-"] {
                 right : .375em;
             }
 
-            input, textarea{
+            input, textarea {
                 padding-right : 2em;
             }
         }
 
-        &.left{
-            [class*="@{icon-prefix}-"]{
+        &.left {
+            [class*="@{icon-prefix}-"] {
                 left : .375em
             }
-            input, textarea{
+            input, textarea {
                 padding-left : 2em;
             }
         }
 
-        &.top{
-            [class*="@{icon-prefix}-"]{
+        &.top {
+            [class*="@{icon-prefix}-"] {
                 margin : 0;
                 top    : .375em;
             }

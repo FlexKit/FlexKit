@@ -1,111 +1,117 @@
-ul, ol{
+ul, ol {
     margin-bottom : 1.5em;
     padding-left  : 2.5em;
     .clearfix-mixin();
 
-    ol, ul{
+    ol, ul {
         margin : 0.3em 0 1em;
     }
 
-    li{
+    li {
         margin-bottom : 0.3em;
         .clearfix-mixin();
-
-        li{
-        }
     }
 }
-
-ul{
+ul {
     list-style-type : disc;
 
-    ul{ list-style-type : circle; }
+    ul {
+        list-style-type : circle;
+    }
 }
-
-ol{
+ol {
     list-style-type : decimal;
 
-    ol{ list-style-type : lower-latin; }
+    ol {
+        list-style-type : lower-latin;
+    }
 }
-
-dl{
-    dt{ font-weight : bold; }
-
-    dd{
-        margin-bottom : 0.75em;
-
-        & + dd{ margin-top : -0.5em; }
+dl {
+    dt {
+        font-weight : bold;
     }
 
-    &.horizontal{
-        dt{
+    dd {
+        margin-bottom : 0.75em;
+
+        & + dd {
+            margin-top : -0.5em;
+        }
+    }
+
+    &.horizontal {
+        dt {
             float      : left;
             clear      : left;
             width      : 35%;
             text-align : right;
         }
 
-        dd{ margin-left : 37%; }
+        dd {
+            margin-left : 37%;
+        }
     }
 }
 
-[class*=" list-"], [class^="list-"]{
-    & when (@lists-classes){
+[class*=" list-"], [class^="list-"] {
+    & when (@lists-classes) {
         list-style-type : none;
         padding-left    : 0;
     }
 }
 
-ul{
-    &.list-unstyled when (@list-unstyled) and (@lists-classes){
+ul {
+    &.list-unstyled when (@list-unstyled) and (@lists-classes) {
     }
 
-    &.list-striped when (@list-striped) and (@lists-classes){
-        & > li{
+    &.list-striped when (@list-striped) and (@lists-classes) {
+        & > li {
             margin  : 0;
             padding : .75em;
 
-            &:nth-child(odd){
+            &:nth-child(odd) {
                 background : @gray-lighter;
             }
         }
     }
 
-    &.list-inline when (@list-inline) and (@lists-classes){
-        & > li{
+    &.list-inline when (@list-inline) and (@lists-classes) {
+        & > li {
             .inline-block(top);
             margin : 0 0.5em;
         }
     }
 
-    &.list-arrow when (@list-arrow) and (@lists-classes){
-        & > li{
+    &.list-arrow when (@list-arrow) and (@lists-classes) {
+        & > li {
             padding-left : 1em;
 
-            &:before{
+            &::before {
                 float       : left;
                 color       : inherit;
                 margin-left : -1em;
-                & when (@flexkit-icons){
+                & when (@flexkit-icons) {
                     font-family : @font-family-icons;
                     content     : '\e0c3';
                 }
-                & when not(@flexkit-icons){
+                & when not(@flexkit-icons) {
                     content : '>';
                 }
             }
 
-            &:hover{
-                &:before{ color : @brand-primary; }
+            &:hover {
+                &::before {
+                    color : @brand-primary;
+                }
             }
         }
     }
 
-    &.list-checkmark when (@list-checkmark) and (@lists-classes){
-        & > li{
+    &.list-checkmark when (@list-checkmark) and (@lists-classes) {
+        & > li {
             padding-left : 1.5em;
 
-            &:before{
+            &::before {
                 float       : left;
                 color       : inherit;
                 margin-left : -1.5em;
@@ -115,21 +121,23 @@ ul{
                 content     : '\e0a3';
             }
 
-            &:hover{
-                &:before{ color : @brand-primary; }
+            &:hover {
+                &::before {
+                    color : @brand-primary;
+                }
             }
         }
     }
 
-    &.list-count-sign when (@list-count-sign) and (@lists-classes){
+    &.list-count-sign when (@list-count-sign) and (@lists-classes) {
         counter-reset : list;
 
-        & > li{
+        & > li {
             margin-bottom : 0.5em;
             padding-left  : 3em;
             line-height   : 2em;
 
-            &:before{
+            &::before {
                 .inline-block();
                 counter-increment : list;
                 content           : counter(list);
@@ -144,22 +152,22 @@ ul{
                 .border-radius(10em);
             }
 
-            &:hover{
-                &:before{
+            &:hover {
+                &::before {
                     background-color : fade(#000, 25%);
                 }
             }
         }
     }
 
-    &.list-icon-sign when (@list-icon-sign) and (@lists-classes){
+    &.list-icon-sign when (@list-icon-sign) and (@lists-classes) {
 
-        & > li{
+        & > li {
             margin-bottom : 0.5em;
             padding-left  : 3em;
             line-height   : 2em;
 
-            &:before{
+            &::before {
                 .inline-block();
                 width            : 2em;
                 height           : 2em;
@@ -172,8 +180,8 @@ ul{
                 .border-radius(10em);
             }
 
-            &:hover{
-                &:before{
+            &:hover {
+                &::before {
                     background : @primary-bg;
                     color      : @primary-color;
                 }
@@ -181,11 +189,11 @@ ul{
         }
     }
 
-    &.list-bullet when (@list-bullet) and (@lists-classes){
-        & > li{
+    &.list-bullet when (@list-bullet) and (@lists-classes) {
+        & > li {
             padding-left : 1em;
 
-            &:before{
+            &::before {
                 content        : '\002022';
                 vertical-align : top;
                 color          : @brand-primary;
@@ -193,46 +201,67 @@ ul{
                 margin-right   : 1em;
             }
 
-            &:hover{
-                &:before{ }
+            &:hover {
+                &::before {
+                }
             }
         }
     }
 
-    &.list-bordered when (@list-bordered) and (@lists-classes){
-        & > li{
+    &.list-bordered when (@list-bordered) and (@lists-classes) {
+        & > li {
             border-bottom  : 1px solid @hr-color;
             margin         : 0;
             padding-top    : @padding-base-vertical;
             padding-bottom : @padding-base-vertical;
 
-            footer &{
+            footer & {
                 border-color : inherit;
             }
         }
 
-        &.dashed > li{
+        &.dashed > li {
             border-bottom-style : dashed;
         }
     }
 
-    &.list-testimonials when (@list-testimonials) and (@lists-classes){
-        li{
+    &.list-separated when (@list-separated) and (@lists-classes) {
+        & > li {
+            margin         : 0;
+            padding-top    : @padding-base-vertical;
+            padding-bottom : @padding-base-vertical;
+
+            & + li {
+                border-top : 1px solid @hr-color;
+            }
+
+            footer & {
+                border-color : inherit;
+            }
+        }
+
+        &.dashed > li {
+            border-top-style : dashed;
+        }
+    }
+
+    &.list-testimonials when (@list-testimonials) and (@lists-classes) {
+        li {
             position  : relative;
             margin    : 0 0 3.5em;
             border    : 1px solid @gray-light;
             padding   : @padding-large-vertical;
             font-size : @font-size-small;
 
-            p{
+            p {
                 margin : 0.5em 0 0;
 
-                &:first-child{
+                &:first-child {
                     margin : 0;
                 }
             }
 
-            cite{
+            cite {
                 position : absolute;
                 left     : 0;
                 right    : 0;
@@ -240,11 +269,11 @@ ul{
                 padding  : 5px 5px 5px 50px;
                 color    : @brand-primary;
 
-                & > *{
+                & > * {
                     color : @text-color;
                 }
 
-                &:after, &:before{
+                &::after, &::before {
                     content      : "";
                     position     : absolute;
                     top          : 0;
@@ -254,7 +283,7 @@ ul{
                     border-color : #fff #fff transparent transparent;
                 }
 
-                &:before{
+                &::before {
                     left         : 10px;
                     border-width : 16px;
                     border-color : @gray-light @gray-light transparent transparent;
@@ -263,11 +292,11 @@ ul{
         }
     }
 
-    &.list-tags when (@list-tags) and (@lists-classes){
+    &.list-tags when (@list-tags) and (@lists-classes) {
         margin-bottom : 0;
         .clearfix-mixin();
 
-        & > li{
+        & > li {
             float       : left;
             margin      : 0.5%;
             padding     : @padding-small-vertical @padding-small-horizontal;
@@ -277,46 +306,46 @@ ul{
             border      : 1px solid darken(@gray-lighter, 10%);
             .text-overflow;
 
-            &.filed{
+            &.filed {
                 padding : 1px;
             }
 
-            & > *{
+            & > * {
                 line-height : normal;
             }
 
-            img{
+            img {
                 width      : auto;
                 max-height : 16px;
             }
 
-            &:hover, &.active, &.tag-current{
+            &:hover, &.active, &.tag-current {
                 background : darken(@gray-lighter, 10%);
             }
 
-            &.disabled{
+            &.disabled {
                 cursor     : default;
                 background : @gray-lighter;
                 color      : darken(@gray-lighter, 10%);
             }
 
-            &.active, &.tag-current{
+            &.active, &.tag-current {
             }
         }
     }
 
-    &.list-icon-line when (@list-icon-line) and (@lists-classes){
+    &.list-icon-line when (@list-icon-line) and (@lists-classes) {
         @icon-size : @icon-size-large;
         @icon-box  : @icon-size * 1.75;
         @size-line : 2px;
 
-        & > li{
+        & > li {
             margin      : 0 0 0 @icon-box * 0.75;
             padding     : 10px 0 15px @icon-box;
             border-left : @size-line solid @gray-lighter;
             position    : relative;
 
-            .bubble{
+            .bubble {
                 position         : absolute;
                 top              : 5px;
                 left             : -(@icon-box * 0.5) - (@size-line / 2);
@@ -329,8 +358,8 @@ ul{
                 .border-radius(10em);
             }
 
-            &:hover{
-                &.bubble{
+            &:hover {
+                &.bubble {
                     border-color : darken(@gray-lighter, 5%);
                 }
             }
@@ -338,10 +367,10 @@ ul{
         }
     }
 
-    &.list-step when (@list-step) and (@lists-classes){
+    &.list-step when (@list-step) and (@lists-classes) {
         text-align : center;
 
-        .step-item{
+        .step-item {
             display        : inline-block;
             vertical-align : middle;
             line-height    : 3em;
@@ -352,11 +381,11 @@ ul{
             border-color   : @state-success-bg;
             cursor         : pointer;
 
-            & + .step-item{
+            & + .step-item {
                 margin-left : 1.5em;
             }
 
-            &:before, &:after{
+            &::before, &::after {
                 content      : '';
                 width        : 0;
                 height       : 0;
@@ -368,47 +397,47 @@ ul{
                 border-width : 1.5em 0 1.5em 1.5em;
                 border-color : inherit;
             }
-            &:before{
+            &::before {
                 z-index           : 1;
                 left              : -1.5em;
                 border-left-color : transparent !important;
             }
-            &:after{
+            &::after {
                 right               : -1.5em;
                 border-top-color    : transparent !important;
                 border-bottom-color : transparent !important;
             }
-            &.active{
+            &.active {
                 background   : @brand-success;
                 border-color : @brand-success;
             }
-            &.active ~ .step-item{
+            &.active ~ .step-item {
                 background   : #ddd;
                 border-color : #ddd;
 
-                &:hover{
+                &:hover {
                     background   : darken(#ddd, 5%);
                     border-color : darken(#ddd, 5%);
                 }
             }
-            &.error{
+            &.error {
                 background   : @state-error-bg !important;
                 border-color : @state-error-bg !important;
             }
-            &.active.error{
+            &.active.error {
                 background   : @brand-error !important;
                 border-color : @brand-error !important;
             }
-            &:first-child:before, &:last-child:after{
+            &:first-child::before, &:last-child::after {
                 content : none;
             }
         }
 
-        .step-title{
+        .step-title {
             font-size   : 1.15em;
             line-height : normal;
 
-            &[data-count]:before{
+            &[data-count]::before {
                 content       : attr(data-count);
                 border        : 2px solid #fff;
                 border-radius : 2em;
@@ -421,13 +450,44 @@ ul{
                 .box-sizing(content-box);
             }
 
-            &:after{
-                &:extend(ul.list-step .step-item:before);
+            &::after {
+                &:extend(ul.list-step .step-item::before);
                 font-size          : 0.9em;
                 z-index            : 0;
                 left               : -1.75em;
                 border-right-width : .3em;
                 border-left-color  : transparent !important;
+            }
+        }
+    }
+
+    &.list-select when (@lists-classes) {
+        border     : 1px solid @input-border-color;
+        min-height : ~'calc(24px + 1em)';
+
+        & > li {
+            padding : .5em;
+            margin  : 0;
+            cursor  : pointer;
+
+            & + li {
+                border-top : 1px solid @gray-light;
+            }
+
+            &.active {
+                background : @gray-lighter;
+
+                &::after {
+                    &:extend(.flexkit-icon);
+                    content   : "\e000";
+                    color     : @brand-success;
+                    font-size : 1.45em;
+                    float     : right;
+                }
+            }
+
+            &:hover {
+                background : @gray-lighter;
             }
         }
     }

@@ -1,4 +1,4 @@
-.badge when (@badges){
+.badge when (@badges) {
     background  : @primary-bg;
     color       : @primary-color;
     min-width   : 1em;
@@ -11,56 +11,56 @@
     .inline-block(baseline);
     .box-sizing(content-box);
 
-    &.block{
+    &.block {
         display : block;
     }
 
-    &:empty{
+    &:empty {
         display : none;
     }
 
-    &.success, &.info, &.error, &.warning{
-        & when (@badge-colors){
+    &.success, &.info, &.error, &.warning {
+        & when (@badge-colors) {
             color : #fff;
         }
     }
-    &.success when (@badge-success) and (@badge-colors){
+    &.success when (@badge-success) and (@badge-colors) {
         background : @brand-success;
     }
-    &.warning when (@badge-warning) and (@badge-colors){
+    &.warning when (@badge-warning) and (@badge-colors) {
         background : @brand-warning;
     }
-    &.error when (@badge-error) and (@badge-colors){
+    &.error when (@badge-error) and (@badge-colors) {
         background : @brand-error;
     }
-    &.info when (@badge-info) and (@badge-colors){
+    &.info when (@badge-info) and (@badge-colors) {
         background : @brand-info;
     }
-    &.inverse when (@badge-inverse) and (@badge-colors){
+    &.inverse when (@badge-inverse) and (@badge-colors) {
         background : @primary-color;
         color      : @primary-bg;
     }
-    &.black when (@badge-colors){
+    &.black when (@badge-colors) {
         background : #000;
         color      : #fff;
     }
 
-    &.outline{
+    &.outline {
         background : transparent;
         color      : inherit;
         border     : 1px solid @gray;
     }
 
-    &.circle when (@badge-circle) and (@badges-type){
+    &.circle when (@badge-circle) and (@badges-type) {
         .border-radius(1em);
     }
-    &.rounded when (@badge-rounded) and (@badges-type){
+    &.rounded when (@badge-rounded) and (@badges-type) {
         .border-radius(.5em);
     }
-    &.leaflet-right when (@badge-leaflet-right) and (@badges-type){
+    &.leaflet-right when (@badge-leaflet-right) and (@badges-type) {
         .border-radius(@border-radius-large 0);
     }
-    &.leaflet-left when (@badge-leaflet-left) and (@badges-type){
+    &.leaflet-left when (@badge-leaflet-left) and (@badges-type) {
         .border-radius(0 @border-radius-large);
     }
 }

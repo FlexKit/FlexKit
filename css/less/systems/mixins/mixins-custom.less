@@ -1,14 +1,14 @@
-.image-grayscale(){
-    img{
+.image-grayscale() {
+    img {
         filter         : url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter     id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); // Firefox 3.5+
-        & when (@ie) and (@ie9){
+        & when (@ie) and (@ie9) {
             filter : gray; // IE6-9
         }
         -webkit-filter : grayscale(1); // Google Chrome, Safari 6+ & Opera 15+
         .transition;
     }
 
-    &:hover img{
+    &:hover img {
         filter         : none;
         -webkit-filter : grayscale(0);
     }
@@ -29,7 +29,6 @@
     @position       : static;
     @padding        : 0;
     @vertical-align : baseline;
-    @box-shadow     : none;
     @box-shadow     : none;
     @border-radius  : 0;
     @transition     : none;
@@ -131,90 +130,90 @@
     @word-spacing          : normal;
     @z-index               : auto;
 ) {
-    animation             : @animation;
-    animation-fill-mode   : @animation-fill-mode;
-    animation-play-state  : @animation-play-state;
-    backface-visibility   : @backface-visibility;
-    background            : @background;
-    background-clip       : @background-clip;
-    background-origin     : @background-origin;
-    background-size       : @background-size;
-    border                : @border;
-    border-collapse       : @border-collapse;
-    border-image          : @border-image;
+    animation            : @animation;
+    animation-fill-mode  : @animation-fill-mode;
+    animation-play-state : @animation-play-state;
+    backface-visibility  : @backface-visibility;
+    background           : @background;
+    background-clip      : @background-clip;
+    background-origin    : @background-origin;
+    background-size      : @background-size;
+    border               : @border;
+    border-collapse      : @border-collapse;
+    border-image         : @border-image;
     .border-radius(@border-radius);
-    border-spacing        : @border-spacing;
-    bottom                : @bottom;
+    border-spacing       : @border-spacing;
+    bottom               : @bottom;
     .box-shadow(@box-shadow);
     .box-sizing(@box-sizing);
-    caption-side          : @caption-side;
-    clear                 : @clear;
-    clip                  : @clip;
-    color                 : @color;
+    caption-side         : @caption-side;
+    clear                : @clear;
+    clip                 : @clip;
+    color                : @color;
     .columns(@columns);
     .column-gap(@column-gap);
     .column-rule(@column-rule);
-    content               : @content;
-    counter-increment     : @counter-increment;
-    counter-reset         : @counter-reset;
-    cursor                : @cursor;
-    direction             : @direction;
-    display               : @display;
-    empty-cells           : @empty-cells;
-    float                 : @float;
-    font                  : @font;
-    font-family           : @font-family;
-    font-size             : @font-size;
-    font-style            : @font-style;
-    font-variant          : @font-variant;
-    font-weight           : @font-weight;
-    height                : @height;
-    hyphens               : @hyphens;
-    left                  : @left;
-    letter-spacing        : @letter-spacing;
-    line-height           : @line-height;
-    list-style            : @list-style;
-    margin                : @margin;
-    max-height            : @max-height;
-    max-width             : @max-width;
-    min-height            : @min-height;
-    min-width             : @min-width;
+    content              : @content;
+    counter-increment    : @counter-increment;
+    counter-reset        : @counter-reset;
+    cursor               : @cursor;
+    direction            : @direction;
+    display              : @display;
+    empty-cells          : @empty-cells;
+    float                : @float;
+    font                 : @font;
+    font-family          : @font-family;
+    font-size            : @font-size;
+    font-style           : @font-style;
+    font-variant         : @font-variant;
+    font-weight          : @font-weight;
+    height               : @height;
+    hyphens              : @hyphens;
+    left                 : @left;
+    letter-spacing       : @letter-spacing;
+    line-height          : @line-height;
+    list-style           : @list-style;
+    margin               : @margin;
+    max-height           : @max-height;
+    max-width            : @max-width;
+    min-height           : @min-height;
+    min-width            : @min-width;
     .opacity(@opacity);
-    outline               : @outline;
-    overflow              : @overflow;
-    padding               : @padding;
-    page-break-after      : @page-break-after;
-    page-break-before     : @page-break-before;
-    page-break-inside     : @page-break-inside;
-    perspective           : @perspective;
-    perspective-origin    : @perspective-origin;
-    position              : @position;
-    quotes                : @quotes;
-    right                 : @right;
-    table-layout          : @table-layout;
-    text-align            : @text-align;
-    text-decoration       : @text-decoration;
-    text-indent           : @text-indent;
-    text-shadow           : @text-shadow;
-    text-transform        : @text-transform;
-    top                   : @top;
+    outline              : @outline;
+    overflow             : @overflow;
+    padding              : @padding;
+    page-break-after     : @page-break-after;
+    page-break-before    : @page-break-before;
+    page-break-inside    : @page-break-inside;
+    perspective          : @perspective;
+    perspective-origin   : @perspective-origin;
+    position             : @position;
+    quotes               : @quotes;
+    right                : @right;
+    table-layout         : @table-layout;
+    text-align           : @text-align;
+    text-decoration      : @text-decoration;
+    text-indent          : @text-indent;
+    text-shadow          : @text-shadow;
+    text-transform       : @text-transform;
+    top                  : @top;
     .transform(@transform);
-    transform-style       : @transform-style;
+    transform-style      : @transform-style;
     .transition(@transition);
-    unicode-bidi          : @unicode-bidi;
-    vertical-align        : @vertical-align;
-    visibility            : @visibility;
-    white-space           : @white-space;
-    width                 : @width;
-    word-spacing          : @word-spacing;
-    z-index               : @z-index;
+    unicode-bidi         : @unicode-bidi;
+    vertical-align       : @vertical-align;
+    visibility           : @visibility;
+    white-space          : @white-space;
+    width                : @width;
+    word-spacing         : @word-spacing;
+    z-index              : @z-index;
 }
 
 // Arrow
 .arrow-border(@side : bottom; @position : center; @color : @brand-primary; @size : 10px; @indent:0) {
     position : relative;
 
-    &:after{
+    &::after {
         content  : '';
         position : absolute;
         border   : @size solid @color;
@@ -222,70 +221,70 @@
         width    : 0;
         height   : 0;
 
-        & when (@side = top){
+        & when (@side = top) {
             border-left-color : transparent !important;
         }
-        & when (@side = bottom){
+        & when (@side = bottom) {
             border-right-color : transparent !important;
         }
-        & when (@side = right){
+        & when (@side = right) {
             border-top-color : transparent !important;
             left             : 100%;
             right            : auto;
         }
-        & when (@side = left){
+        & when (@side = left) {
             border-bottom-color : transparent !important;
             right               : 100%;
             left                : auto;
         }
 
-        & when (@side = top-left), (@side = left){
+        & when (@side = top-left), (@side = left) {
             border-top-color   : transparent !important;
             border-right-color : transparent !important;
         }
-        & when (@side = top-right), (@side = bottom){
+        & when (@side = top-right), (@side = bottom) {
             border-top-color  : transparent !important;
             border-left-color : transparent !important;
         }
-        & when (@side = bottom-left), (@side = top){
+        & when (@side = bottom-left), (@side = top) {
             border-bottom-color : transparent !important;
             border-right-color  : transparent !important;
         }
-        & when (@side = bottom-right), (@side = right){
+        & when (@side = bottom-right), (@side = right) {
             border-bottom-color : transparent !important;
             border-left-color   : transparent !important;
         }
 
-        & when (@side = top), (@side = top-right), (@side = top-left){
+        & when (@side = top), (@side = top-right), (@side = top-left) {
             bottom : 100%;
             top    : auto;
         }
-        & when (@side = bottom), (@side = bottom-left), (@side = bottom-right){
+        & when (@side = bottom), (@side = bottom-left), (@side = bottom-right) {
             top    : 100%;
             bottom : auto;
         }
 
-        & when (@position = center) and (@side = left), (@side = right){
+        & when (@position = center) and (@side = left), (@side = right) {
             bottom : 0;
             top    : 0;
         }
-        & when (@position = center) and (@side = top), (@side = bottom), (@side = top-right), (@side = top-left), (@side = bottom-right), (@side = bottom-left){
+        & when (@position = center) and (@side = top), (@side = bottom), (@side = top-right), (@side = top-left), (@side = bottom-right), (@side = bottom-left) {
             left  : 0;
             right : 0;
         }
-        & when (@position = left){
+        & when (@position = left) {
             right : auto;
             left  : 0 + @indent;
         }
-        & when (@position = right){
+        & when (@position = right) {
             left  : auto;
             right : 0 + @indent;
         }
-        & when (@position = top){
+        & when (@position = top) {
             bottom : auto;
             top    : 0 + @indent;
         }
-        & when (@position = bottom){
+        & when (@position = bottom) {
             top    : auto;
             bottom : 0 + @indent;
         }

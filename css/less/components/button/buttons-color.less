@@ -1,50 +1,44 @@
 // Alternate buttons
 // --------------------------------------------------
 // Inverse button appears as gray => primary
-&.inverse when (@button-color-inverse) and (@button-colors){
-    &:hover, &:active{
+&.inverse when (@button-color-inverse) and (@button-colors) {
+    &:hover, &:active {
         color            : @button-primary-color;
         background-color : darken(@button-primary-bg, 10%);
-        & when (@button-border-width > 0){
+        & when (@button-border-width > 0) {
             border-color : darken(softlight(@button-primary-bg, #000), 10%);
         }
     }
 }
-
 // Warning appears as orange
-&.warning when (@button-color-warning) and (@button-colors){
+&.warning when (@button-color-warning) and (@button-colors) {
     .button-color(@button-warning-color; @button-warning-bg);
 }
-
 // Danger and red appear as red
-&.error when (@button-color-error) and (@button-colors){
+&.error when (@button-color-error) and (@button-colors) {
     .button-color(@button-error-color; @button-error-bg);
 }
-
 // Success appears as green
-&.success when (@button-color-success) and (@button-colors){
+&.success when (@button-color-success) and (@button-colors) {
     .button-color(@button-success-color; @button-success-bg);
 }
-
 // Info appears as blue
-&.info when (@button-color-info) and (@button-colors){
+&.info when (@button-color-info) and (@button-colors) {
     .button-color(@button-info-color; @button-info-bg);
 }
-
 // Inverse button appears as gray => primary
-&.inverse when (@button-color-inverse) and (@button-colors){
+&.inverse when (@button-color-inverse) and (@button-colors) {
     color            : @button-inverse-color;
     background-color : @button-inverse-bg;
     border-color     : softlight(@button-inverse-bg, #000);
 }
-
 // Transparent button appears as transparent => fade
-&.transparent when (@button-color-transparent) and (@button-colors){
+&.transparent when (@button-color-transparent) and (@button-colors) {
     color            : inherit;
     background-color : transparent;
     border           : none;
 
     &:hover, &:active, &.active {
-        .rgba(#000; .1);
+        .rgba(#000; 10%);
     }
 }

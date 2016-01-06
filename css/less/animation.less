@@ -2,18 +2,18 @@
 
 // Animation
 //==================================================
-.scroll-effect{
+.scroll-effect {
     visibility : hidden;
 }
-.animated{
+.animated {
     visibility : visible;
     .animated();
 
-    &.repeat{
+    &.repeat {
         .animation-iteration-count(infinite);
     }
 
-    &.hinge{
+    &.hinge {
         .animation-duration(2s);
     }
 }
@@ -32,28 +32,28 @@
 
 // Other
 //=============================================
-& when (@animate-rotate){
-    @-webkit-keyframes rotate{
-        0%{
+& when (@animate-rotate) {
+    @-webkit-keyframes rotate {
+        0% {
             .transform-origin(center);
             .rotate(-360deg);
         }
-        100%{
+        100% {
             .transform-origin(center);
             .rotate(0);
         }
     }
-    @keyframes rotate{
-        0%{
+    @keyframes rotate {
+        0% {
             .transform-origin(center);
             .rotate(-360deg);
         }
-        100%{
+        100% {
             .transform-origin(center);
             .rotate(0);
         }
     }
-    .rotate{
+    .rotate {
         .animation-name(rotate)
     }
 }

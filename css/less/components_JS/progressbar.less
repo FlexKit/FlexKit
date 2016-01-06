@@ -1,6 +1,6 @@
 @progressbar-size : 1.25em;
 
-.ui-progressbar when (@componentsJS-progressbar){
+.ui-progressbar when (@componentsJS-progressbar) {
     position    : relative;
     height      : @progressbar-size;
     background  : @progressbar-bg;
@@ -10,7 +10,7 @@
     color       : #fff;
     .box-shadow(inset 0 1px 2px rgba(0, 0, 0, .2));
 
-    &[aria-valuenow]:before{
+    &[aria-valuenow]:before {
         content     : attr(aria-valuenow)'%';
         position    : absolute;
         left        : 0;
@@ -19,39 +19,39 @@
         right       : 0;
         text-shadow : 0 0 3px #555;
     }
-    &[aria-valuenow="0"]:before{
+    &[aria-valuenow="0"]::before {
         content     : attr(data-progressbar-start);
         color       : @gray-light;
         text-shadow : none;
     }
-    &[aria-valuenow="100"]:before{
+    &[aria-valuenow="100"]::before {
         content : attr(data-progressbar-finish);
     }
 
-    .ui-progressbar-value{
+    .ui-progressbar-value {
         height     : 100%;
         background : @progressbar-value;
     }
 
     // Alternate progressbar
     // --------------------------------------------------
-    &.success when (@progressbar-color-success) and (@progressbar-colors){
-        .ui-progressbar-value{
+    &.success when (@progressbar-color-success) and (@progressbar-colors) {
+        .ui-progressbar-value {
             background : @brand-success;
         }
     }
-    &.warning when (@progressbar-color-warning) and (@progressbar-colors){
-        .ui-progressbar-value{
+    &.warning when (@progressbar-color-warning) and (@progressbar-colors) {
+        .ui-progressbar-value {
             background : @brand-warning;
         }
     }
-    &.error when (@progressbar-color-error) and (@progressbar-colors){
-        .ui-progressbar-value{
+    &.error when (@progressbar-color-error) and (@progressbar-colors) {
+        .ui-progressbar-value {
             background : @brand-error;
         }
     }
-    &.info when (@progressbar-color-info) and (@progressbar-colors){
-        .ui-progressbar-value{
+    &.info when (@progressbar-color-info) and (@progressbar-colors) {
+        .ui-progressbar-value {
             background : @brand-info;
         }
     }

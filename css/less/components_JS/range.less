@@ -1,14 +1,13 @@
 @range-size        : 1em;
 @range-handle-size : 1.4em;
 
-.ui-slider when (@componentsJS-range){
+.ui-slider when (@componentsJS-range) {
     position   : relative;
     text-align : left;
     background : @range-bg;
     .box-shadow(inset 0 1px 2px rgba(0, 0, 0, .2));
-    //    border     : 1px solid @range-border-color;
 
-    .ui-slider-handle{
+    .ui-slider-handle {
         position   : absolute;
         z-index    : 2;
         cursor     : pointer;
@@ -18,95 +17,95 @@
         .border-radius(2px);
     }
 
-    .ui-slider-range{
+    .ui-slider-range {
         position   : absolute;
         z-index    : 1;
         display    : block;
         border     : 0;
         background : @range-value;
 
-        &.ui-slider-range-min{
+        &.ui-slider-range-min {
             left   : 0;
             bottom : 0;
         }
 
-        &.ui-slider-range-max{
+        &.ui-slider-range-max {
             right : 0;
             top   : 0;
         }
     }
 
     // For IE8 - See #6727
-    &.ui-state-disabled{
-        .ui-slider-handle, .ui-slider-range{
+    &.ui-state-disabled {
+        .ui-slider-handle, .ui-slider-range {
             filter : inherit;
         }
     }
 
     // Alternate slider / range
     //========================================
-    &.success when (@range-color-success) and (@range-colors){
-        .ui-slider-handle{
+    &.success when (@range-color-success) and (@range-colors) {
+        .ui-slider-handle {
             background : mix(@brand-success, #000);
         }
 
-        .ui-slider-range{
+        .ui-slider-range {
             background : @brand-success;
         }
     }
-    &.warning when (@range-color-warning) and (@range-colors){
-        .ui-slider-handle{
+    &.warning when (@range-color-warning) and (@range-colors) {
+        .ui-slider-handle {
             background : mix(@brand-warning, #000);
         }
 
-        .ui-slider-range{
+        .ui-slider-range {
             background : @brand-warning;
         }
     }
-    &.error when (@range-color-error) and (@range-colors){
-        .ui-slider-handle{
+    &.error when (@range-color-error) and (@range-colors) {
+        .ui-slider-handle {
             background : mix(@brand-error, #000);
         }
 
-        .ui-slider-range{
+        .ui-slider-range {
             background : @brand-error;
         }
     }
-    &.info when (@range-color-info) and (@range-colors){
-        .ui-slider-handle{
+    &.info when (@range-color-info) and (@range-colors) {
+        .ui-slider-handle {
             background : mix(@brand-info, #000);
         }
 
-        .ui-slider-range{
+        .ui-slider-range {
             background : @brand-info;
         }
     }
 }
 
-.ui-slider-horizontal when (@range-type-horizontal) and (@componentsJS-range){
+.ui-slider-horizontal when (@range-type-horizontal) and (@componentsJS-range) {
     height : @range-size;
 
-    .ui-slider-handle{
+    .ui-slider-handle {
         top         : -0.2em !important;
         margin-left : -(@range-handle-size / 2);
     }
 
-    .ui-slider-range{
+    .ui-slider-range {
         top    : 0;
         height : 100%;
     }
 }
 
-.ui-slider-vertical when (@range-type-vertical) and (@componentsJS-range){
+.ui-slider-vertical when (@range-type-vertical) and (@componentsJS-range) {
     width  : @range-size;
     height : 150px;
 
-    .ui-slider-handle{
+    .ui-slider-handle {
         left          : -0.2em !important;
         margin-bottom : -(@range-handle-size / 2);
     }
 
-    .ui-slider-range{
+    .ui-slider-range {
         width : 100% !important;
     }
 }

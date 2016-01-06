@@ -1,0 +1,19 @@
+.static_menu when (@menu-static) {
+    overflow : hidden;
+
+    li {
+        float   : left;
+        padding : 0 @padding-small-horizontal;
+
+        & + li {
+            border-left : 1px solid @gray;
+        }
+
+        a {
+            &.current {
+            }
+            span {
+            }
+        }
+    }
+}

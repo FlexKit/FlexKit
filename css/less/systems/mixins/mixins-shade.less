@@ -10,6 +10,7 @@
     .shade(@type; @color; @depth; @x; @y; @long; @fade; (lightness(@color)/@depth)/2; (alpha(@color)/@depth));
 }
 
+
 .shade(@type; @color; @depth; @x; @y; @long; @fade; @darken; @opacify) when (@long) {
     .shade(@type; @color; @depth; @x; @y; @fade; 0; @opacify);
 }
@@ -25,6 +26,7 @@
     .shade(@type; @color; @depth; @x; @y; @darken; 0);
 }
 
+
 .shade(@type; @color; @depth; @x; @y; @darken; @opacify) {
     @hue: hue(@color);
     @sat: saturation(@color);
@@ -32,12 +34,12 @@
     .shade-recursive(@type; 1; @depth; @x; @y; @darken; @opacify; @hue; @sat; @lightness);
 }
 
-.shade-recursive(@type; @i; @depth; @x; @y; @darken; @opacify; @hue; @sat; @lightness) when (floor(@i) =< @depth) and (@type = text) {
-   text-shadow+: (@i * @x) (@i * @y) 0 hsla(@hue, @sat, (@lightness - (@i * @darken)), (1 - (@i * @opacify)));
-   .shade-recursive(@type; @i + 1; @depth; @x; @y; @darken; @opacify; @hue; @sat; @lightness);
-} 
 
+.shade-recursive(@type; @i; @depth; @x; @y; @darken; @opacify; @hue; @sat; @lightness) when (floor(@i) =< @depth) and (@type = text) {
+    text-shadow+ : (@i * @x) (@i * @y) 0 hsla(@hue, @sat, (@lightness - (@i * @darken)), (1 - (@i * @opacify)));
+    .shade-recursive(@type; @i + 1; @depth; @x; @y; @darken; @opacify; @hue; @sat; @lightness);
+}
 .shade-recursive(@type; @i; @depth; @x; @y; @darken; @opacify; @hue; @sat; @lightness) when (floor(@i) =< @depth) and (@type = box) {
-   box-shadow+: (@i * @x) (@i * @y) 0 hsla(@hue, @sat, (@lightness - (@i * @darken)), (1 - (@i * @opacify)));
-   .shade-recursive(@type; @i + 1; @depth; @x; @y; @darken; @opacify; @hue; @sat; @lightness);
+    box-shadow+ : (@i * @x) (@i * @y) 0 hsla(@hue, @sat, (@lightness - (@i * @darken)), (1 - (@i * @opacify)));
+    .shade-recursive(@type; @i + 1; @depth; @x; @y; @darken; @opacify; @hue; @sat; @lightness);
 }

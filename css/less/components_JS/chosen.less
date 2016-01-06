@@ -3,61 +3,62 @@
 
 @input-padding : .5em;
 
-.@{chosen-prefix}-select{ width : 100%; }
-.@{chosen-prefix}-select-deselect{ width : 100%; }
+.@{chosen-prefix}-select { width : 100%; }
+.@{chosen-prefix}-select-deselect { width : 100%; }
 
 // Base
 // ------------------------------------------
-.@{chosen-prefix}-container when (@componentsJS-chosen){
+.@{chosen-prefix}-container when (@componentsJS-chosen) {
     position         : relative;
     padding          : @input-padding / 2;
     width            : 100% !important;
     min-height       : unit(@button-line-height * 2, em);
     color            : @input-color;
-    border-width     : @input-border-width;
-    border-style     : solid;
-    border-color     : @input-border-color;
+    border           : @input-border-width solid @input-border-color;
     background-color : @input-bg;
     line-height      : unit(@button-line-height * 2, em) - @input-padding;
     .inline-block();
     .border-radius(@input-border-radius);
     .transition(all; 0.3s);
 
-    &.@{chosen-prefix}-container-active{
+    &.@{chosen-prefix}-container-active {
         border-color : @input-border-color-focus;
     }
 
-    *{
+    * {
         margin      : 0;
         font-size   : 1em;
         line-height : @line-height;
     }
 
-    &.@{chosen-prefix}-container-single{ }
+    &.@{chosen-prefix}-container-single {
+    }
 
-    &.@{chosen-prefix}-container-multi{ cursor : text; }
+    &.@{chosen-prefix}-container-multi {
+        cursor : text;
+    }
 
-    .@{chosen-prefix}-single{
+    .@{chosen-prefix}-single {
         line-height : @button-height-base - @input-border-width * 2 - @padding-small-vertical * 2;
         display     : block;
         .text-overflow;
 
-        &:before{
+        &::before {
             content : '\e0b7';
         }
     }
 
-    input{
+    input {
         .box-shadow(none);
     }
 
-    ul{
+    ul {
         margin     : 0;
         padding    : 0;
         list-style : none;
     }
 
-    .@{chosen-prefix}-drop{
+    .@{chosen-prefix}-drop {
         background-color : @input-bg;
         border-style     : solid;
         border-width     : @input-border-width;
@@ -68,20 +69,20 @@
         left             : -2000px;
         z-index          : 500;
 
-        .@{chosen-prefix}-with-drop&{
+        .@{chosen-prefix}-with-drop& {
             left  : -@input-border-width;
             right : -@input-border-width;
         }
     }
 
-    .@{chosen-prefix}-search{
+    .@{chosen-prefix}-search {
         padding : @padding-base-vertical;
 
-        input{
+        input {
             padding-right : 30px;
         }
 
-        &:after{
+        &::after {
             color          : @gray-light;
             vertical-align : middle;
             font-family    : @font-family-icons;
@@ -91,8 +92,8 @@
         }
     }
 
-    .disabled-result, .result-selected, .@{chosen-prefix}-single{
-        &:before{
+    .disabled-result, .result-selected, .@{chosen-prefix}-single {
+        &::before {
             float       : right;
             font-family : @font-family-icons;
             font-size   : 16px;
@@ -100,78 +101,81 @@
         }
     }
 
-    .@{chosen-prefix}-results{
+    .@{chosen-prefix}-results {
         max-height : 300px;
         overflow   : auto;
 
-        li{
+        li {
             color   : @text-color;
             cursor  : pointer;
             padding : @padding-small-vertical @padding-small-horizontal;
 
-            &:hover, &.highlighted{
+            &:hover, &.highlighted {
                 background : @gray-lighter;
                 color      : @gray-dark;
             }
 
-            &.group-result{
+            &.group-result {
                 font-style : italic;
                 color      : @gray-light;
                 background : transparent;
                 padding    : @padding-small-vertical @padding-small-horizontal;
                 cursor     : default;
 
-                &:before{
+                &::before {
                     font-family : @font-family-icons;
                     content     : ' \e0c1';
                 }
             }
 
-            &.active-result{
+            &.active-result {
 
-                em{ text-decoration : underline; }
+                em {
+                    text-decoration : underline;
+                }
 
-                &:hover{ }
+                &:hover {
+                }
             }
 
-            &.result-selected{
+            &.result-selected {
                 background : @gray-lighter;
                 color      : @gray-light;
 
-                &:before{
+                &::before {
                     color   : @brand-success;
                     content : '\e0a5';
                 }
             }
 
-            &.disabled-result{
+            &.disabled-result {
                 background : transparent;
                 color      : @gray-light;
 
-                &:before{
+                &::before {
                     color   : @brand-error;
                     content : '\e0a9';
                 }
             }
 
-            &.no-results{
+            &.no-results {
                 padding : @padding-base-vertical @padding-base-horizontal;
                 .text-overflow;
             }
         }
     }
 
-    .@{chosen-prefix}-choices{
+    .@{chosen-prefix}-choices {
         font-size  : @font-size-small;
         max-height : 200px;
         overflow   : auto;
         .clearfix-mixin();
 
-        & > *{
+        & > * {
             float : left;
         }
 
-        .search-choice{
+        .search-choice {
             background  : @gray-lighter;
             color       : @gray-dark;
             padding     : 0 @padding-mini-horizontal;
@@ -180,16 +184,15 @@
             line-height : unit(@button-line-height * 2, em) * @font-size-small;
         }
 
-        .search-field{
-            //            font-size : @font-size-base;
+        .search-field {
 
-            &:first-child{
-                input{
+            &:first-child {
+                input {
                     width : auto !important;
                 }
             }
 
-            input{
+            input {
                 background : transparent !important;
                 border     : none;
                 height     : auto;
@@ -198,28 +201,28 @@
         }
     }
 
-    .search-choice-close{
+    .search-choice-close {
         margin-left : 5px;
         color       : @brand-error;
         .icon-size(10px);
 
-        &:before{
+        &::before {
             font-family : @font-family-icons;
             content     : '\e0a2';
         }
-        &:hover{
+        &:hover {
             color : darken(@brand-error, 10%);
         }
     }
 
-    .@{chosen-prefix}-search{
+    .@{chosen-prefix}-search {
         padding : @padding-base-vertical;
 
-        input{
+        input {
             padding-right : 30px;
         }
 
-        &:after{
+        &::after {
             color          : @gray-light;
             vertical-align : middle;
             font-family    : @font-family-icons;
@@ -230,45 +233,45 @@
         }
     }
 
-    &.chosen-disabled{
-        .search-choice{
+    &.chosen-disabled {
+        .search-choice {
             border-color : darken(@input-bg-disabled, 10%);
             background   : @input-bg-disabled;
             color        : darken(@input-bg-disabled, 30%);
         }
-        .search-choice-close{
+        .search-choice-close {
             cursor : default;
             color  : darken(@input-bg-disabled, 30%);
         }
     }
 
-    &.@{chosen-prefix}-rtl{
+    &.@{chosen-prefix}-rtl {
         direction : rtl;
 
-        .disabled-result, .result-selected, .@{chosen-prefix}-single{
-            &:before{
+        .disabled-result, .result-selected, .@{chosen-prefix}-single {
+            &::before {
                 float : left;
             }
         }
 
-        .search-choice-close{
+        .search-choice-close {
             float        : left;
             margin-left  : 0;
             margin-right : 5px;
             margin-top   : (@button-height-small - @input-border-width - 10px) / 2;
         }
 
-        .@{chosen-prefix}-choices > *{
+        .@{chosen-prefix}-choices > * {
             float : right;
         }
 
-        .@{chosen-prefix}-search{
-            input{
+        .@{chosen-prefix}-search {
+            input {
                 padding-left  : 30px;
                 padding-right : @padding-base-vertical;
             }
 
-            &:after{
+            &::after {
                 margin-left  : 0;
                 margin-right : -24px;
             }

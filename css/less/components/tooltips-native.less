@@ -1,19 +1,19 @@
 @tooltip-zIndex : 10;
-[class*="tooltip-native"] when (@tooltips-native){
+[class*="tooltip-native"] when (@tooltips-native) {
     position : relative;
     cursor   : help;
 
-    a&{
+    a& {
         cursor : pointer;
     }
 
-    &:hover, &[class*="--show"]{
-        &[class*="--arrow"]:before, &:after{
+    &:hover, &[class*="--show"] {
+        &[class*="--arrow"]::before, &::after {
             display : block;
         }
     }
 
-    &[class*="--arrow"]:before, &:after{
+    &[class*="--arrow"]::before, &::after {
         content  : '';
         position : absolute;
         margin   : auto;
@@ -22,7 +22,7 @@
         .opacity(1) !important;
     }
 
-    &:after{
+    &::after {
         content       : attr(title);
         z-index       : @tooltip-zIndex - 1;
         font-size     : @font-size-base * @font-size-small;
@@ -31,7 +31,7 @@
         max-width     : @tooltip-width;
         background    : @tooltip-bg;
         color         : @tooltip-color;
-        & when (@tooltip-border-width > 0){
+        & when (@tooltip-border-width > 0) {
             border : @tooltip-border-width solid @tooltip-border-color;
         }
         .box-shadow(3px 3px 7px fade(#000, 30%));
@@ -41,192 +41,192 @@
     }
 
     // Type style
-    &[class*="--autoWidth"]:after{
+    &[class*="--autoWidth"]::after {
         max-width : none;
     }
 
-    &[class*="--fulltext"]:after{
+    &[class*="--fulltext"]::after {
         white-space : normal;
         width       : @tooltip-width;
     }
 
     // Arrow style
-    &[class*="--arrow"]{
-        &[class*="--top"]:before,
-        &[class*="--bottom"]:before,
-        &[class*="--left"]:before,
-        &[class*="--right"]:before{
+    &[class*="--arrow"] {
+        &[class*="--top"]::before,
+        &[class*="--bottom"]::before,
+        &[class*="--left"]::before,
+        &[class*="--right"]::before {
             width        : 0;
             height       : 0;
             border-width : @tooltip-arrow-width;
             border-style : solid;
             z-index      : @tooltip-zIndex;
-            & when (@tooltip-border-width = 0){
+            & when (@tooltip-border-width = 0) {
                 border-color : @tooltip-bg;
             }
-            & when (@tooltip-border-width > 0){
+            & when (@tooltip-border-width > 0) {
                 border-color : @tooltip-border-color;
             }
         }
     }
 
     // Position style
-    &[class*="--top"], &[class*="--bottom"]{
+    &[class*="--top"], &[class*="--bottom"] {
 
-        &[class*="--arrow"]:before, &:after{
+        &[class*="--arrow"]::before, &::after {
             left : 50%;
             .transform(translateX(-50%));
         }
 
-        &[class*="--arrow"]:before{
+        &[class*="--arrow"]::before {
             border-left-color  : transparent !important;
             border-right-color : transparent !important;
         }
     }
 
-    &[class*="--top"]{
-        &[class*="--arrow"]:before{
+    &[class*="--top"] {
+        &[class*="--arrow"]::before {
             border-bottom-width : 0;
         }
 
-        &:after{
+        &::after {
             margin-bottom : @tooltip-arrow-width;
         }
     }
 
-    &[class*="--bottom"]{
+    &[class*="--bottom"] {
 
-        &[class*="--arrow"]:before, &:after{
+        &[class*="--arrow"]::before, &::after {
             top    : 100%;
             bottom : auto;
         }
 
-        &[class*="--arrow"]:before{
+        &[class*="--arrow"]::before {
             border-top-width : 0;
         }
 
-        &:after{
+        &::after {
             margin-top : @tooltip-arrow-width;
         }
     }
 
-    &[class*="--left"], &[class*="--right"]{
+    &[class*="--left"], &[class*="--right"] {
 
-        &[class*="--arrow"]:before, &:after{
+        &[class*="--arrow"]::before, &::after {
             left   : auto;
             top    : 50%;
             bottom : auto;
             .transform(translateY(-50%));
         }
 
-        &[class*="--arrow"]:before{
+        &[class*="--arrow"]::before {
             border-top-color    : transparent !important;
             border-bottom-color : transparent !important;
         }
     }
 
-    &[class*="--left"]{
+    &[class*="--left"] {
 
-        &[class*="--arrow"]:before, &:after{
+        &[class*="--arrow"]::before, &::after {
             right : 100%;
         }
 
-        &[class*="--arrow"]:before{
+        &[class*="--arrow"]::before {
             border-right-width : 0;
         }
 
-        &:after{
+        &::after {
             margin-right : @tooltip-arrow-width;
         }
     }
 
-    &[class*="--right"]{
+    &[class*="--right"] {
 
-        &[class*="--arrow"]:before, &:after{
+        &[class*="--arrow"]::before, &::after {
             left : 100%;
         }
 
-        &[class*="--arrow"]:before{
+        &[class*="--arrow"]::before {
             border-left-width : 0;
         }
 
-        &:after{
+        &::after {
             margin-left : @tooltip-arrow-width;
         }
     }
 
     // Colors style
-    &[class*="--success"] when (@tooltip-color-success) and (@tooltip-colors){
-        &:after{
+    &[class*="--success"] when (@tooltip-color-success) and (@tooltip-colors) {
+        &::after {
             background : @state-success-bg;
             color      : @state-success-color;
-            & when (@tooltip-border-width > 0){
+            & when (@tooltip-border-width > 0) {
                 border-color : @state-success-border;
             }
         }
 
-        &[class*="--arrow"]:before{
-            & when (@tooltip-border-width = 0){
+        &[class*="--arrow"]::before {
+            & when (@tooltip-border-width = 0) {
                 border-color : @state-success-bg;
             }
-            & when (@tooltip-border-width > 0){
+            & when (@tooltip-border-width > 0) {
                 border-color : @state-success-border;
             }
         }
     }
 
-    &[class*="--warning"] when (@tooltip-color-warning) and (@tooltip-colors){
-        &:after{
+    &[class*="--warning"] when (@tooltip-color-warning) and (@tooltip-colors) {
+        &::after {
             background : @state-warning-bg;
             color      : @state-warning-color;
-            & when (@tooltip-border-width > 0){
+            & when (@tooltip-border-width > 0) {
                 border-color : @state-warning-border;
             }
         }
 
-        &[class*="--arrow"]:before{
-            & when (@tooltip-border-width = 0){
+        &[class*="--arrow"]::before {
+            & when (@tooltip-border-width = 0) {
                 border-color : @state-warning-bg;
             }
-            & when (@tooltip-border-width > 0){
+            & when (@tooltip-border-width > 0) {
                 border-color : @state-warning-border;
             }
         }
     }
 
-    &[class*="--error"] when (@tooltip-color-error) and (@tooltip-colors){
-        &:after{
+    &[class*="--error"] when (@tooltip-color-error) and (@tooltip-colors) {
+        &::after {
             background : @state-error-bg;
             color      : @state-error-color;
-            & when (@tooltip-border-width > 0){
+            & when (@tooltip-border-width > 0) {
                 border-color : @state-error-border;
             }
         }
 
-        &[class*="--arrow"]:before{
-            & when (@tooltip-border-width = 0){
+        &[class*="--arrow"]::before {
+            & when (@tooltip-border-width = 0) {
                 border-color : @state-error-bg;
             }
-            & when (@tooltip-border-width > 0){
+            & when (@tooltip-border-width > 0) {
                 border-color : @state-error-border;
             }
         }
     }
 
-    &[class*="--info"] when (@tooltip-color-info) and (@tooltip-colors){
-        &:after{
+    &[class*="--info"] when (@tooltip-color-info) and (@tooltip-colors) {
+        &::after {
             background : @state-info-bg;
             color      : @state-info-color;
-            & when (@tooltip-border-width > 0){
+            & when (@tooltip-border-width > 0) {
                 border-color : @state-info-border;
             }
         }
 
-        &[class*="--arrow"]:before{
-            & when (@tooltip-border-width = 0){
+        &[class*="--arrow"]::before {
+            & when (@tooltip-border-width = 0) {
                 border-color : @state-info-bg;
             }
-            & when (@tooltip-border-width > 0){
+            & when (@tooltip-border-width > 0) {
                 border-color : @state-info-border;
             }
         }

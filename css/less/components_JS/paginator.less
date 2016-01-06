@@ -1,38 +1,38 @@
-.paginator when (@componentsJS-pagination){
+.paginator when (@componentsJS-pagination) {
     color       : @gray-light;
     font-size   : @font-size-small;
     cursor      : default;
     line-height : 1;
     .inline-block();
 
-    *{
+    * {
         .inline-block;
         border  : 1px solid @gray-light;
         padding : @padding-small-vertical @padding-small-horizontal;
         margin  : 0 0.1em;
 
-        &:empty{
+        &:empty {
             display : none;
         }
     }
 
-    .page{
+    .page {
         cursor       : pointer;
         border-color : @gray-light;
 
-        &:hover{
+        &:hover {
             background : @gray-light;
             color      : @gray;
         }
 
-        &.selected{
+        &.selected {
             background   : @primary-bg;
             color        : @primary-color;
             border-color : @primary-bg;
         }
     }
 
-    :first-child, :last-child{
+    :first-child, :last-child {
         font-weight : bold;
     }
 }

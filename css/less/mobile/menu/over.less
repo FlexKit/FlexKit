@@ -1,68 +1,68 @@
-.mobile-menu{
+.mobile-menu {
     z-index : @mobile-bar-zindex + 2;
     .transition(all; 0.3s);
 
-    &.top{
+    &.top {
         .transform(translateY(-100%));
     }
 
-    &.bottom{
+    &.bottom {
         .transform(translateY(100%));
     }
 
-    &.left{
+    &.left {
         .transform(translateX(-100%));
     }
 
-    &.right{
+    &.right {
         .transform(translateX(100%));
     }
 
-    [data-menu-open] &{
+    [data-menu-open] & {
         .box-shadow(0 0 30px @gray-dark);
     }
 
-    [data-menu-open="left"] &.left, [data-menu-open="right"] &.right{
+    [data-menu-open="left"] &.left, [data-menu-open="right"] &.right {
         .transform(translateX(0));
     }
 
-    [data-menu-open="top"] &.top, [data-menu-open="bottom"] &.bottom{
+    [data-menu-open="top"] &.top, [data-menu-open="bottom"] &.bottom {
         .transform(translateY(0));
     }
 }
 
-.menu-btn{
+.menu-btn {
 
-    &.active{
-        .rgba(#000; .05);
+    &.active {
+        .rgba(#000; 5%);
     }
 
-    &:before{
+    &::before {
         width : @top-block-height / 3.5;
     }
 
-    &.left{
+    &.left {
         padding-left : 0;
 
-        &:before{
+        &::before {
         }
 
-        &.active{
-            &:before{
+        &.active {
+            &::before {
                 margin-left  : -(@top-block-height / 5);
                 margin-right : (@top-block-height / 10) + (@top-block-height / 5);
             }
         }
     }
 
-    &.right{
+    &.right {
         padding-right : 0;
 
-        &:before{
+        &::before {
         }
 
-        &.active{
-            &:before{
+        &.active {
+            &::before {
                 margin-right : -(@top-block-height / 5);
                 margin-left  : (@top-block-height / 10) + (@top-block-height / 5);
             }
@@ -70,10 +70,10 @@
     }
 }
 
-body{
+body {
 
-    &[data-menu-open]{
-        main{
+    &[data-menu-open] {
+        main {
 //            overflow : hidden;
 
 //            &:after{
@@ -84,7 +84,7 @@ body{
 //                right    : 0;
 //                bottom   : 0;
 //                z-index  : @mobile-bar-zindex - 1;
-//                .rgba(#000; .25);
+//                .rgba(#000; 25%);
 //                .transition(all; 0.75s);
 //            }
         }

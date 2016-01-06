@@ -1,36 +1,36 @@
-.tooltip{
-    & when (@componentsJS-tooltips) and (@tooltips-native){
+.tooltip {
+    & when (@componentsJS-tooltips) and (@tooltips-native) {
         &:extend([class*="tooltip-native"]);
 
-        a&{
+        a& {
             &:extend(a[class*="tooltip-native"]);
         }
     }
 
-    & when not(@tooltips-native){
+    & when not(@tooltips-native) {
         cursor : help;
 
-        a&{
+        a& {
             cursor : pointer;
         }
     }
 }
-.ui-tooltip when (@componentsJS-tooltips){
+.ui-tooltip when (@componentsJS-tooltips) {
     position   : absolute;
     z-index    : 9999;
     padding    : @padding-small-vertical @padding-small-horizontal;
     max-width  : @tooltip-width;
     background : @tooltip-bg;
     color      : @tooltip-color;
-    & when (@tooltip-border-width > 0){
+    & when (@tooltip-border-width > 0) {
         border : @tooltip-border-width solid @tooltip-border-color;
     }
 
-    .ui-tooltip-content{
+    .ui-tooltip-content {
         font-size : .85em;
     }
 
-    .arrow{
+    .arrow {
         position     : absolute;
         width        : 0;
         height       : 0;
@@ -39,7 +39,7 @@
         border-color : transparent;
         margin       : auto;
 
-        &:after when (@tooltip-border-width > 0){
+        &::after when (@tooltip-border-width > 0) {
             content      : '';
             border-width : inherit;
             border-style : solid;
@@ -49,193 +49,193 @@
             z-index      : -1;
         }
 
-        &.top{
+        &.top {
             left                : 0;
             right               : 0;
             bottom              : 100%;
             border-top-width    : 0;
             border-bottom-color : @tooltip-border-color;
 
-            &:after when (@tooltip-border-width > 0){
+            &::after when (@tooltip-border-width > 0) {
                 margin-top : -@tooltip-border-width;
             }
         }
 
-        &.bottom{
+        &.bottom {
             left                : 0;
             right               : 0;
             top                 : 100%;
             border-bottom-width : 0;
             border-top-color    : @tooltip-border-color;
 
-            &:after when (@tooltip-border-width > 0){
+            &::after when (@tooltip-border-width > 0) {
                 margin-top : -@tooltip-arrow-width + 1;
             }
         }
 
-        &.left{
+        &.left {
             top                : 0;
             bottom             : 0;
             right              : 100%;
             border-left-width  : 0;
             border-right-color : @tooltip-border-color;
 
-            &:after when (@tooltip-border-width > 0){
+            &::after when (@tooltip-border-width > 0) {
                 margin-left : -@tooltip-border-width;
             }
         }
 
-        &.right{
+        &.right {
             top                : 0;
             bottom             : 0;
             left               : 100%;
             border-right-width : 0;
             border-left-color  : @tooltip-border-color;
 
-            &:after when (@tooltip-border-width > 0){
+            &::after when (@tooltip-border-width > 0) {
                 margin-left : -@tooltip-arrow-width + 1;
             }
         }
     }
 
-    &.success when (@tooltip-color-success) and (@tooltip-colors){
+    &.success when (@tooltip-color-success) and (@tooltip-colors) {
         background : @state-success-bg;
         color      : @state-success-color;
-        & when (@tooltip-border-width > 0){
+        & when (@tooltip-border-width > 0) {
             border-color : @state-success-border;
         }
 
-        .arrow{
-            &.left{
+        .arrow {
+            &.left {
                 border-right-color : @state-success-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-right-color : @state-success-border;
                 }
             }
-            &.right{
+            &.right {
                 border-left-color : @state-success-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-left-color : @state-success-border;
                 }
             }
-            &.top{
+            &.top {
                 border-bottom-color : @state-success-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-bottom-color : @state-success-border;
                 }
             }
-            &.bottom{
+            &.bottom {
                 border-top-color : @state-success-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-top-color : @state-success-border;
                 }
             }
         }
     }
-    &.warning when (@tooltip-color-warning) and (@tooltip-colors){
+    &.warning when (@tooltip-color-warning) and (@tooltip-colors) {
         background : @state-warning-bg;
         color      : @state-warning-color;
-        & when (@tooltip-border-width > 0){
+        & when (@tooltip-border-width > 0) {
             border-color : @state-warning-border;
         }
 
-        .arrow{
-            &.left{
+        .arrow {
+            &.left {
                 border-right-color : @state-warning-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-right-color : @state-warning-border;
                 }
             }
-            &.right{
+            &.right {
                 border-left-color : @state-warning-bg;
-                &:after when (@tooltip-border-width > 0){
+                &:after when (@tooltip-border-width > 0) {
                     border-left-color : @state-warning-border;
                 }
             }
-            &.top{
+            &.top {
                 border-bottom-color : @state-warning-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-bottom-color : @state-warning-border;
                 }
             }
-            &.bottom{
+            &.bottom {
                 border-top-color : @state-warning-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-top-color : @state-warning-border;
                 }
             }
         }
     }
-    &.error when (@tooltip-color-error) and (@tooltip-colors){
+    &.error when (@tooltip-color-error) and (@tooltip-colors) {
         background : @state-error-bg;
         color      : @state-error-color;
-        & when (@tooltip-border-width > 0){
+        & when (@tooltip-border-width > 0) {
             border-color : @state-error-border;
         }
 
-        .arrow{
-            &.left{
+        .arrow {
+            &.left {
                 border-right-color : @state-error-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-right-color : @state-error-border;
                 }
             }
-            &.right{
+            &.right {
                 border-left-color : @state-error-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-left-color : @state-error-border;
                 }
             }
-            &.top{
+            &.top {
                 border-bottom-color : @state-error-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-bottom-color : @state-error-border;
                 }
             }
-            &.bottom{
+            &.bottom {
                 border-top-color : @state-error-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-top-color : @state-error-border;
                 }
             }
         }
     }
-    &.info when (@tooltip-color-info) and (@tooltip-colors){
+    &.info when (@tooltip-color-info) and (@tooltip-colors) {
         background : @state-info-bg;
         color      : @state-info-color;
-        & when (@tooltip-border-width > 0){
+        & when (@tooltip-border-width > 0) {
             border-color : @state-info-border;
         }
 
-        .arrow{
-            &.left{
+        .arrow {
+            &.left {
                 border-right-color : @state-info-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-right-color : @state-info-border;
                 }
             }
-            &.right{
+            &.right {
                 border-left-color : @state-info-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-left-color : @state-info-border;
                 }
             }
-            &.top{
+            &.top {
                 border-bottom-color : @state-info-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-bottom-color : @state-info-border;
                 }
             }
-            &.bottom{
+            &.bottom {
                 border-top-color : @state-info-bg;
-                &:after when (@tooltip-border-width > 0){
+                &::after when (@tooltip-border-width > 0) {
                     border-top-color : @state-info-border;
                 }
             }
         }
     }
 
-    & when not(@componentsJS-tooltips){
+    & when not(@componentsJS-tooltips) {
         display : none;
     }
 }
