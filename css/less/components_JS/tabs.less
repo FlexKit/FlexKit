@@ -10,7 +10,7 @@
 //        cursor : pointer;
 //    }
 
-    .ui-tabs-nav{
+    .ui-tabs-nav {
         .clearfix-mixin();
         position   : relative;
         z-index    : 1;
@@ -19,7 +19,7 @@
         padding    : 0;
 
         // Style li
-        li{
+        li {
             position     : relative;
             float        : left;
             margin       : 2px -1px 0 0;
@@ -30,12 +30,12 @@
             border       : 1px solid @tabs-nav-li-border;
             border-width : 1px 1px 0;
 
-            a{
+            a {
                 color           : inherit;
                 text-decoration : none;
             }
 
-            ul{
+            ul {
                 display  : none;
                 position : absolute;
                 top      : 100%;
@@ -46,42 +46,42 @@
                 border   : 1px solid @tabs-nav-li-border;
                 .box-shadow(0px 1px 3px @gray-light);
 
-                li{
+                li {
                     margin       : -1px !important;
                     float        : none;
                     border-width : 1px;
                     z-index      : 0;
 
-                    &.ui-tabs-active, &:hover{
+                    &.ui-tabs-active, &:hover {
                         z-index      : 1;
                         border-width : 1px 3px 1px 1px;
                     }
 
-                    & + li{
+                    & + li {
                     }
                 }
             }
 
-            &.ui-tabs-active, &:hover{
+            &.ui-tabs-active, &:hover {
                 margin-top       : 0;
                 border-top-width : 3px;
             }
 
-            &:hover{
+            &:hover {
                 cursor       : pointer;
                 background   : @tabs-nav-li-bg-hover;
                 border-color : @tabs-nav-li-border-hover;
                 color        : @tabs-nav-li-color-hover;
 
-                ul{
+                ul {
                     display : block;
                 }
 
-                a{
+                a {
                 }
             }
 
-            &.ui-tabs-active{
+            &.ui-tabs-active {
                 font-weight    : bold;
                 background     : @tabs-nav-li-bg-active;
                 position       : relative;
@@ -90,59 +90,59 @@
                 border-color   : @tabs-nav-li-border-active;
                 color          : @tabs-nav-li-color-active;
 
-                a{
+                a {
                     cursor : default;
                 }
             }
 
-            &.ui-tabs-loading, &.ui-state-disabled{
+            &.ui-tabs-loading, &.ui-state-disabled {
 
-                a{
+                a {
                 }
             }
         }
 
         // Style a in li
-        .ui-tabs-anchor{
+        .ui-tabs-anchor {
             display         : block;
             padding         : @padding-base-vertical @padding-large-horizontal;
             text-decoration : none;
         }
     }
 
-    .ui-tabs-panel{
+    .ui-tabs-panel {
         position   : relative;
         z-index    : 0;
-//        display    : block;
+        //        display    : block;
         border     : 1px solid @tabs-nav-li-border-active;
         overflow   : hidden;
         background : @tabs-container-bg;
         padding    : @padding-base-vertical @padding-base-horizontal;
     }
 
-    &.vertical{
-        & > .ui-tabs-nav{
+    &.vertical {
+        & > .ui-tabs-nav {
             float : left;
             width : 25%;
 
-            li{
+            li {
                 float        : none;
                 display      : block;
                 margin       : 0 -1px -1px 2px;
                 border-width : 1px;
 
-                &.ui-tabs-active, &:hover{
-                    margin-left        : 0;
-                    border-left-width  : 3px;
+                &.ui-tabs-active, &:hover {
+                    margin-left       : 0;
+                    border-left-width : 3px;
                 }
 
-                &.ui-tabs-active{
+                &.ui-tabs-active {
                     border-right-color : @tabs-container-bg;
                 }
             }
         }
 
-        & > .ui-tabs-panel{
+        & > .ui-tabs-panel {
             clear : none;
         }
     }
@@ -152,27 +152,27 @@
     @tabs-color : @brand-primary;
     @tabs-border-color : @tabs-nav-li-border-active;
 
-    &.blocks when (@tabs-type-blocks) and (@tabs-type){
+    &.blocks when (@tabs-type-blocks) and (@tabs-type) {
         border : 3px solid @tabs-border-color;
 
-        & > .ui-tabs-nav{
+        & > .ui-tabs-nav {
             border-bottom : 3px solid @brand-primary;
 
-            li{
+            li {
                 margin  : 0;
                 padding : 0;
                 border  : none;
                 color   : @tabs-color;
 
-                & + li{
+                & + li {
                     border-left : 3px solid @brand-primary;
                 }
 
-                &:hover{
+                &:hover {
                     background : lighten(@tabs-bg, 7%);
                     color      : #fff;
 
-                    .ui-tabs-anchor{
+                    .ui-tabs-anchor {
                     }
                 }
             }
@@ -181,37 +181,37 @@
                 background : @tabs-bg;
                 color      : #fff;
 
-                .ui-tabs-anchor{
+                .ui-tabs-anchor {
                 }
             }
 
-            .ui-tabs-anchor{
+            .ui-tabs-anchor {
             }
         }
 
-        & > .ui-tabs-panel{
+        & > .ui-tabs-panel {
             border : none;
         }
 
-        &.vertical{
-            & > .ui-tabs-nav{
+        &.vertical {
+            & > .ui-tabs-nav {
                 margin-right : -3px;
                 border       : none;
                 border-right : inherit;
 
-                li{
+                li {
                     border : none;
 
-                    & + li{
+                    & + li {
                         border-top : 3px solid @brand-primary;
                     }
 
-                    &.ui-tabs-active, &:hover{
+                    &.ui-tabs-active, &:hover {
                     }
                 }
             }
 
-            & > .ui-tabs-panel{
+            & > .ui-tabs-panel {
                 border-left : 3px solid @brand-primary;
             }
         }

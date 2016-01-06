@@ -1,22 +1,27 @@
 @responsive-size-tablet-over : (@responsive-size-tablet + 1);
-@media only screen and (min-width : @responsive-size-tablet-over){
-    .d-hide, .t-visible, .m-visible{ display : none !important; }
+@media only screen and (min-width : @responsive-size-tablet-over) {
+    .d-hide, .t-visible, .m-visible {
+        display : none !important;
+    }
 }
 @responsive-size-mobile-over : (@responsive-size-mobile + 1);
-@media only screen and (min-width : @responsive-size-mobile-over) and (max-width : @responsive-size-tablet){
-    .t-hide, .d-visible, .m-visible{ display : none !important; }
+@media only screen and (min-width : @responsive-size-mobile-over) and (max-width : @responsive-size-tablet) {
+    .t-hide, .d-visible, .m-visible {
+        display : none !important;
+    }
 }
-@media only screen and (max-width : @responsive-size-mobile){
-    .m-hide, .d-visible, .t-visible{ display : none !important; }
+@media only screen and (max-width : @responsive-size-mobile) {
+    .m-hide, .d-visible, .t-visible {
+        display : none !important;
+    }
 }
-
 //================================================\\
 //************** Divece orientation **************\\
 //================================================\\
-@media only screen and (orientation : portrait){
+@media only screen and (orientation : portrait) {
 }
 
-@media only screen and (orientation : landscape){
+@media only screen and (orientation : landscape) {
 }
 
 //================================================\\
@@ -25,31 +30,30 @@
 
 //***** Bigger than Desktop site size *****\\
 @responsive-size-desktop-above : (@responsive-size-desktop + 1);
-@media only screen and (min-width : @responsive-size-desktop-above){
+@media only screen and (min-width : @responsive-size-desktop-above) {
 }
 
 //***** Tablet Portrait *****\\
-@media only screen and (max-width : @responsive-size-desktop){
+@media only screen and (max-width : @responsive-size-desktop) {
 }
 
 //***** All Mobile Sizes *****\\
-@media only screen and (max-width : @responsive-size-tablet){
+@media only screen and (max-width : @responsive-size-tablet) {
 }
 
 //***** Just Mobile Landscape *****\\
-@media only screen and (max-width : @responsive-size-tablet) and (orientation : landscape){
+@media only screen and (max-width : @responsive-size-tablet) and (orientation : landscape) {
 }
 
 //***** Just Mobile Portrait *****\\
-@media only screen and (max-width : @responsive-size-mobile){
+@media only screen and (max-width : @responsive-size-mobile) {
 
-    .captcha{
-        &, img{
+    .captcha {
+        &, img {
             width : 100%;
         }
     }
-
-    form [type="submit"], form [type="button"]{
+    form [type="submit"], form [type="button"] {
         width        : 100%;
         margin-right : 0;
         margin-left  : 0;
@@ -57,19 +61,19 @@
 }
 
 //***** Just Small Phone *****\\
-@media only screen and (max-width : @responsive-size-phone){
+@media only screen and (max-width : @responsive-size-phone) {
 }
 
 //================================================\\
 //************** Divece pixel ratio **************\\
 //================================================\\
-@media screen and (-webkit-min-device-pixel-ratio : 1.3){
+@media screen and (-webkit-min-device-pixel-ratio : 1.3) {
 }
 
-@media screen and (-webkit-min-device-pixel-ratio : 1.5){
+@media screen and (-webkit-min-device-pixel-ratio : 1.5) {
 }
 
-@media screen and (-webkit-min-device-pixel-ratio : 2){
+@media screen and (-webkit-min-device-pixel-ratio : 2) {
 }
 
 @import "../mobile/loader";

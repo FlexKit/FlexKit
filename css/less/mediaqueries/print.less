@@ -1,24 +1,23 @@
 .print-hide,
-header, footer, nav, aside{
+header, footer, nav, aside {
     display : none !important;
 }
-
-.print-visible{
+.print-visible {
     display : block !important;
 }
-
-.print-visible-inline{
+.print-visible-inline {
     display : inline !important;
 }
-
 .print-page-break-inside,
-img, table{ page-break-inside : avoid; }
-
+img, table {
+    page-break-inside : avoid;
+}
 .print-page-break,
-article + article{ page-break-before : always; }
-
-a{
-    &:after{
+article + article {
+    page-break-before : always;
+}
+a {
+    &::after {
         color           : @gray;
         margin          : 0 0 0 .5em;
         font-size       : @font-size-base;
@@ -26,18 +25,18 @@ a{
         text-decoration : underline;
     }
 
-    &.btn{
-        &:after{
+    &.btn {
+        &::after {
             margin  : 0;
             display : block;
         }
     }
 
-    &[href*=".html"]:after{
+    &[href*=".html"]::after {
         content : "(" attr(href) ")";
     }
 
-    &[href^="http"]:after, &[href^="//"]:after{
+    &[href^="http"]::after, &[href^="//"]::after {
         content : "(" attr(href) ")";
     }
 }

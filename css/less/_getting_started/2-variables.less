@@ -81,11 +81,6 @@
 @brand-warning : #ffc159; // #ffd17b | #FADA32 | #ffbb00
 @brand-error   : #f25f5c; // #ff7b7b | #E7343A | #f65314
 
-// Corporate Color
-//==================================================
-@brand-seosamba   : #83b421;
-@brand-seotoaster : #6464fd;
-
 // [Social Color] http://brandcolors.net/
 //==================================================
 @facebook  : #3b5998;
@@ -272,17 +267,16 @@
 @input-bg-focus           : @input-bg;
 @input-bg-disabled        : @gray-lighter;
 
-@input-border-width       : 1px;
-@input-border-color       : @gray-light;
-//border color and shadow in focus
-@input-border-color-focus : @primary-bg;
-@input-border-radius      : 0;
-//Do you need a shadow on focus? (true / false)
-@input-shadow-focus       : true;
-@input-inner-shadow       : false;
-@input-shadow-size        : 5px;
+@input-border-width          : 1px;
+@input-border-color          : @gray-light;//border color and shadow in focus
+@input-border-color-focus    : @primary-bg;
+@input-border-color-disabled : darken(@input-bg-disabled, 7%);
+@input-border-radius         : 0;
+@input-shadow-focus          : true;//Do you need a shadow on focus? (true / false)
+@input-inner-shadow          : false;
+@input-shadow-size           : 5px;
 
-@input-color-placeholder  : #CCC;
+@input-color-placeholder  : darken(@input-bg, 10%);
 
 @checkbox-radio-width     : 16px;
 
@@ -308,7 +302,7 @@
 
 @thumbnail-caption-bg      : @primary-bg;
 @thumbnail-caption-color   : @primary-color;
-@thumbnail-caption-opacity : 0.8;
+@thumbnail-caption-opacity : 80%;
 
 // [Breadcrumbs]
 //==================================================

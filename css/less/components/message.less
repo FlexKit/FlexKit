@@ -1,81 +1,81 @@
 // Message styles
 // -------------------------
-.message when (@messages){
+.message when (@messages) {
     position         : relative;
     padding          : .5em .75em;
     background-color : @state-primary-bg;
     color            : @state-primary-color;
     border-left      : 3px solid @state-primary-border;
 
-    &:empty{
+    &:empty {
         display : none;
     }
 
-    &.notification{
+    &.notification {
         .box-shadow(-3px 3px 15px fade(#000, 25%));
     }
 
-    .btn-close{
+    .btn-close {
         font-size : @font-size-small;
         position  : absolute;
         top       : @padding-base-vertical;
         right     : @padding-base-vertical;
 
-        &:before{
+        &:before {
             content : "\e0a2";
         }
     }
 
-    &.right when (@message-right){
+    &.right when (@message-right) {
         text-align   : right;
         border-left  : none;
         border-right : 3px solid @state-primary-border;
     }
 
-    a{
+    a {
         .opacity(0.75);
 
-        &:hover{
+        &:hover {
             .opacity(1);
         }
     }
 
-    hr{
+    hr {
         border-color : inherit;
     }
 
     // Alternate styles
     // -------------------------
-    &.success when (@message-color-success) and (@message-colors){
+    &.success when (@message-color-success) and (@message-colors) {
         color            : @state-success-color;
         border-color     : @state-success-border;
         background-color : @state-success-bg;
     }
-    &.warning when (@message-color-warning) and (@message-colors){
+    &.warning when (@message-color-warning) and (@message-colors) {
         color            : @state-warning-color;
         border-color     : @state-warning-border;
         background-color : @state-warning-bg;
     }
-    &.error when (@message-color-error) and (@message-colors){
+    &.error when (@message-color-error) and (@message-colors) {
         color            : @state-error-color;
         border-color     : @state-error-border;
         background-color : @state-error-bg;
     }
-    &.info when (@message-color-info) and (@message-colors){
+    &.info when (@message-color-info) and (@message-colors) {
         color            : @state-info-color;
         border-color     : @state-info-border;
         background-color : @state-info-bg;
     }
-    &.gray when (@message-color-gray) and (@message-colors){
+    &.gray when (@message-color-gray) and (@message-colors) {
         color            : @gray-darker;
         border-color     : @gray-light;
         background-color : @gray-lighter;
     }
 
-    &[class*=icon-]{
+    &[class*=icon-] {
         padding-left : 3em;
 
-        &:before{
+        &::before {
             position  : absolute;
             top       : .225em;
             left      : .4em;

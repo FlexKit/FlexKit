@@ -1,4 +1,4 @@
-hr{
+hr {
     clear       : both;
     border      : none;
     border-top  : @hr-size solid @hr-color;
@@ -7,20 +7,20 @@ hr{
     background  : @content-bg;
     color       : @hr-color;
 
-    &.small when (unit(@hr-size) > 1){
+    &.small when (unit(@hr-size) > 1) {
         border-top-width : 1px;
     }
 
-    &.large{
+    &.large {
         border-top-width : @hr-size * 2;
     }
 
-    &.larger{
+    &.larger {
         border-top-width : @hr-size * 3;
     }
 
     // With text
-    &:before{
+    &::before {
         content     : attr(title);
         top         : -0.6em;
         position    : relative;
@@ -34,19 +34,25 @@ hr{
         .inline-block();
     }
 
-    &[class*="icon-"], &[class^=" icon-"]{
-        &:before{
+    &[class*="icon-"], &[class^=" icon-"] {
+        &::before {
             top : -0.5em;
         }
     }
 
-    &.left when (@separator-left) and (@separator-style) { text-align : left; }
-    &.right when (@separator-right) and (@separator-style){ text-align : right; }
-    &.center when (@separator-center) and (@separator-style){ text-align : center; }
+    &.left when (@separator-left) and (@separator-style) {
+        text-align : left;
+    }
+    &.right when (@separator-right) and (@separator-style) {
+        text-align : right;
+    }
+    &.center when (@separator-center) and (@separator-style) {
+        text-align : center;
+    }
 
     // Separator circle
-    &.circle when (@separator-circle) and (@separator-style){
-        &:before{
+    &.circle when (@separator-circle) and (@separator-style) {
+        &::before {
             padding    : .35em .75em;
             background : @hr-color;
             color      : #fff;
@@ -55,11 +61,11 @@ hr{
         }
     }
 
-    &.dashed{
+    &.dashed {
         border-top-style : dashed;
     }
 
-    &.dotted{
+    &.dotted {
         border-top-style : dotted;
     }
 }

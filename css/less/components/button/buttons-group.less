@@ -1,23 +1,36 @@
 // Button group
 // --------------------------------------------------
-.btn-group when (@button-type-group) and (@button-types){
+.btn-group when (@button-type-group) and (@button-types) {
     overflow : hidden;
     .inline-block();
 
-    .btn{
+    .btn {
         float : left;
 
-        & ~ .btn{
+        & when (@button-border-radius > 0) {
+            .border-radius(0);
+
+            &:first-child {
+                .border-radius(@button-border-radius 0 0 @button-border-radius);
+            }
+
+            &:last-child {
+                .border-radius(0 @button-border-radius @button-border-radius 0);
+            }
+        }
+
+        & ~ .btn {
             margin-left : 1px;
         }
     }
 
-    [type="radio"], [type="checkbox"]{
-        & + .btn{ }
+    [type="radio"], [type="checkbox"] {
+        & + .btn {
+        }
     }
 
-    input:checked{
-        & + .btn{
+    input:checked {
+        & + .btn {
             .box-shadow(2px 2px 4px rgba(0, 0, 0, .3) inset; @button-box-shadow);
             .opacity(.5);
         }

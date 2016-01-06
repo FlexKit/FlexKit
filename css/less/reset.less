@@ -1,76 +1,73 @@
 @import "_getting_started/2-variables";
-
 @import "systems/normalize";
 
 // Reset & Basics
 //==================================================
-html, body{
-//    height : 100%;
+html, body {
+    //    height : 100%;
 }
-
-*{
+* {
     -webkit-touch-callout       : none; //если надо, то запрещаем выделение текста
     -webkit-tap-highlight-color : rgba(0, 0, 0, 0); //убираем фон подсветки ссылок и кнопок
     -webkit-tap-highlight-color : transparent; //убираем фон подсветки ссылок и кнопок
 
-    &, &:before, &:after{
+    &, &::before, &::after {
         .box-sizing();
     }
 }
 
 .selection();
 
-blockquote, q{
+blockquote, q {
     quotes : none;
 
-    &:before, &:after{
+    &:before, &:after {
         content : none;
     }
 }
-
-em{ font-style : italic; }
-table{
+em {
+    font-style : italic;
+}
+table {
     border-spacing  : 0;
     border-collapse : collapse;
     //    word-break      : break-all
 }
-
-a:focus, [type="checkbox"]:focus, [type="radio"]:focus, *:focus{
+a:focus, [type="checkbox"]:focus, [type="radio"]:focus, *:focus {
     outline : none;
 }
-a, [type="submit"], [type="button"], button, [type="checkbox"], [type="radio"]{ cursor : pointer; }
-img, [type="checkbox"], [type="radio"]{ vertical-align : middle; }
-img{
+a, [type="submit"], [type="button"], button, [type="checkbox"], [type="radio"] {
+    cursor : pointer;
+}
+img, [type="checkbox"], [type="radio"] {
+    vertical-align : middle;
+}
+img {
     max-width : 100%;
     height    : auto;
 }
-
-iframe{
+iframe {
     border    : none;
     width     : 100%;
     max-width : 100%;
 }
-
-.gmaps{
+.gmaps {
     color     : #000;
     max-width : 100%;
 
-    img{
+    img {
         max-width : none;
     }
 }
-
-.ltr{
+.ltr {
     direction    : ltr;
     unicode-bidi : bidi-override;
 }
-
-.rtl{
+.rtl {
     direction    : rtl;
     unicode-bidi : bidi-override;
 }
-
-[contenteditable="true"]{
+[contenteditable="true"] {
     .inline-block();
     background : @input-bg;
     border     : @input-border-width solid @input-border-color;
@@ -80,16 +77,14 @@ iframe{
 
 //// Reset Form
 ////==================================================
-dl, dt, dd{
+dl, dt, dd {
     margin : 0;
 }
-
-input, select, textarea, button{
+input, select, textarea, button {
     max-width : 100%;
     width     : 100%;
     .placeholder();
 }
-
 // Reset width of input images, buttons, radios, checkboxes
 button,
 [type="file"],
@@ -98,42 +93,36 @@ button,
 [type="reset"],
 [type="button"],
 [type="radio"],
-[type="checkbox"]{
+[type="checkbox"] {
     width : auto; // Override of generic input selector
 }
-
-[type="file"]{
+[type="file"] {
     border  : none;
     padding : 0;
 }
-
-[type="color"]{
+[type="color"] {
     padding : 0;
 }
-
-textarea{
+textarea {
     vertical-align : top;
     line-height    : normal;
     .resize();
 }
+[type="checkbox"], [type="radio"] {
+    border : none;
+    height : auto;
 
-[type="checkbox"], [type="radio"]{
-    border  : none;
-    height  : auto;
-
-    &:focus{
+    &:focus {
         .box-shadow(none; @input-shadow-focus) !important;
     }
 }
-
 // Make multiple select elements height not fixed
 select[multiple],
-select[size]{
+select[size] {
     height : auto;
 }
-
 // Fix optgroup Firefox bug per https://github.com/twitter/bootstrap/issues/7611
-select optgroup{
+select optgroup {
     font-style  : inherit;
     font-size   : inherit;
     font-family : inherit;
@@ -141,43 +130,38 @@ select optgroup{
 
 // Reset for all navigation items, related-products
 //==================================================
-.main_menu when (@menu-main){
+.main_menu when (@menu-main) {
     .clearfix-mixin();
 }
-
 //fix for Safari 3
-& when (@webkit) and (@menu-main){
-    ::i-block-chrome, .main_menu{
+& when (@webkit) and (@menu-main) {
+    ::i-block-chrome, .main_menu {
         display : table;
         width   : 100%;
     }
 }
-
 .main_menu, .main_menu li, .main_menu ul, .main_menu ul li,
 .static_menu, .static_menu li,
-.img_gallery, .img_gallery li{
+.img_gallery, .img_gallery li {
     margin          : 0;
     padding         : 0;
     list-style-type : none;
 }
 
-.clear{
+.clear {
     display    : block;
     clear      : both;
     overflow   : hidden;
     visibility : hidden;
     height     : 0;
 }
-
-.clearfix{
+.clearfix {
     .clearfix-mixin();
 }
-
-.disable-hover, .disable-hover *{
+.disable-hover, .disable-hover * {
     pointer-events : none !important;
 }
-
-.ui-widget-overlay, .overlay{
+.ui-widget-overlay, .overlay {
     position   : fixed;
     top        : 0;
     left       : 0;
@@ -186,9 +170,8 @@ select optgroup{
     z-index    : 99;
     background : fade(#000, 50%);
 }
-
-.ui-widget{
-    & ~ .overlay{
+.ui-widget {
+    & ~ .overlay {
         z-index : 999;
     }
 }

@@ -14,12 +14,12 @@
     background : @background;
     .transition(all; 0.3s);
     .border-radius(@radius);
-    & when (@border-width > 0){
+    & when (@border-width > 0) {
         border : @border-width solid @border-color;
     }
 
-    &:hover{
-        & when (@border-width > 0){
+    &:hover {
+        & when (@border-width > 0) {
             border-color : @thumbnail-color-hover;
         }
         .box-shadow(0 0 3px @thumbnail-color-hover; @thumbnail-shadow-hover);

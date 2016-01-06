@@ -7,22 +7,22 @@
 @dropdown-margin-vertical   : 5px;
 @dropdown-margin-horizontal : 5px;
 
-body when (@responsive), (@adaptive){
-    &[data-dropdown-open]:extend(body[data-menu-open]){
+body when (@responsive), (@adaptive) {
+    &[data-dropdown-open]:extend(body[data-menu-open]) {
 
-        &:after:extend(body[data-menu-open]:after){
+        &::after:extend(body[data-menu-open]::after) {
         }
     }
 }
 
-@media only screen and (max-width : @responsive-size-tablet){
-    &{
-        .dropdown-menu-mobile{
+@media only screen and (max-width : @responsive-size-tablet) {
+    & {
+        .dropdown-menu-mobile {
             display : none;
         }
     }
 }
-.dropdown-menu{
+.dropdown-menu {
     background : @dropdown-bg !important;
     color      : @dropdown-color !important;
     position   : absolute;
@@ -33,72 +33,72 @@ body when (@responsive), (@adaptive){
     overflow   : auto;
     .box-shadow(0 2px 30px fade(#000, 30%));
 
-    &.top, &.bottom{
-        &-right{
+    &.top, &.bottom {
+        &-right {
             right : 0;
             left  : auto;
         }
 
-        &-left{
+        &-left {
             left  : 0;
             right : auto;
         }
     }
 
-    &.top{
-        &, &-left, &-right{
+    &.top {
+        &, &-left, &-right {
             top    : auto;
             bottom : 100%;
 
-            &.inner{
+            &.inner {
                 top    : 0;
                 bottom : auto;
             }
         }
     }
 
-    &.bottom{
-        &, &-left, &-right{
+    &.bottom {
+        &, &-left, &-right {
             top    : 100%;
             bottom : auto;
 
-            &.inner{
+            &.inner {
                 top    : auto;
                 bottom : 0;
             }
         }
     }
 
-    &.left, &.right{
-        &-top{
+    &.left, &.right {
+        &-top {
             top    : 0;
             bottom : auto;
         }
 
-        &-bottom{
+        &-bottom {
             top    : auto;
             bottom : 0;
         }
     }
 
-    &.left{
-        &, &-top, &-bottom{
+    &.left {
+        &, &-top, &-bottom {
             left  : auto;
             right : 100%;
 
-            &.inner{
+            &.inner {
                 left  : 0;
                 right : auto;
             }
         }
     }
 
-    &.right{
-        &, &-top, &-bottom{
+    &.right {
+        &, &-top, &-bottom {
             left  : 100%;
             right : auto;
 
-            &.inner{
+            &.inner {
                 right : 0;
                 left  : auto;
             }
@@ -121,22 +121,24 @@ body when (@responsive), (@adaptive){
 //        }
 //    }
 
-    & when (@responsive), (@adaptive){
-        ul:extend(.mobile-menu ul all){ }
-        li:extend(.mobile-menu li all){ }
+    & when (@responsive), (@adaptive) {
+        ul:extend(.mobile-menu ul all) {
+        }
+        li:extend(.mobile-menu li all) {
+        }
     }
 }
-[data-dropdown-open] .dropdown-menu-mobile{
+[data-dropdown-open] .dropdown-menu-mobile {
     &:extend(.dropdown-menu);
     position   : fixed;
     max-width  : 90%;
     max-height : 70%;
 
-    &.open{
+    &.open {
         display : block;
     }
 
-    &.centered{
+    &.centered {
         top    : 50%;
         left   : 0;
         right  : 0;
@@ -144,7 +146,7 @@ body when (@responsive), (@adaptive){
         .transform(translateY(-50%));
     }
 
-    &.center{
+    &.center {
         top    : 0;
         bottom : 0;
         left   : 0;
@@ -152,31 +154,31 @@ body when (@responsive), (@adaptive){
         margin : auto !important;
     }
 
-    &.top{
+    &.top {
         top    : @dropdown-margin-vertical;
         bottom : auto;
     }
 
-    &.bottom{
+    &.bottom {
         bottom : @dropdown-margin-vertical;
         top    : auto;
     }
 
-    &.right{
+    &.right {
         right : @dropdown-margin-horizontal;
         left  : auto;
     }
 
-    &.left{
+    &.left {
         left  : @dropdown-margin-horizontal;
         right : auto;
     }
 }
 
-.dropdown-btn{
-    &:hover{
+.dropdown-btn {
+    &:hover {
     }
 
-    &.active{
+    &.active {
     }
 }

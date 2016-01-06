@@ -1,7 +1,7 @@
-.input-label when (@form-input-label){
+.input-label when (@form-input-label) {
     position : relative;
 
-    label{
+    label {
         color       : @input-color-placeholder;
         position    : absolute;
         top         : 0;
@@ -11,13 +11,13 @@
         .transition(all; .2s);
     }
 
-    input{
+    input {
         border-width : 0 0 1px;
         .box-shadow(none) !important;
 
-        &:focus, &:valid{
+        &:focus, &:valid {
 
-            & + label{
+            & + label {
                 color       : @brand-primary;
                 top         : -.9em;
                 font-size   : @font-size-small;
@@ -25,30 +25,30 @@
             }
         }
 
-        &.success when (@form-color-success) and (@form-colors){
-            &:focus, &:valid{
-                & + label{
+        &.success when (@form-color-success) and (@form-colors) {
+            &:focus, &:valid {
+                & + label {
                     color : @brand-success;
                 }
             }
         }
-        &.warning when (@form-color-warning) and (@form-colors){
-            &:focus, &:valid{
-                & + label{
+        &.warning when (@form-color-warning) and (@form-colors) {
+            &:focus, &:valid {
+                & + label {
                     color : @brand-warning;
                 }
             }
         }
-        &.error when (@form-color-error) and (@form-colors){
-            &:focus, &:valid{
-                & + label{
+        &.error when (@form-color-error) and (@form-colors) {
+            &:focus, &:valid {
+                & + label {
                     color : @brand-error;
                 }
             }
         }
-        &.info when (@form-color-info) and (@form-colors){
-            &:focus, &:valid{
-                & + label{
+        &.info when (@form-color-info) and (@form-colors) {
+            &:focus, &:valid {
+                & + label {
                     color : @brand-info;
                 }
             }

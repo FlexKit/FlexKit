@@ -1,28 +1,36 @@
-.animation-duration(@duration) { //The animation-duration property defines how many seconds or milliseconds an animation takes to complete one cycle. Value: 1s/2s/3s...
+.animation-duration(@duration) {
+    //The animation-duration property defines how many seconds or milliseconds an animation takes to complete one cycle. Value: 1s/2s/3s...
     .prefixer(animation-duration; @duration; webkit);
 }
-.animation-direction(@direction) { //The animation-direction property defines whether or not the animation should play in reverse on alternate cycles. Value:normal/reverse/alternate.
+.animation-direction(@direction) {
+    //The animation-direction property defines whether or not the animation should play in reverse on alternate cycles. Value:normal/reverse/alternate.
     .prefixer(animation-direction; @direction; webkit);
 }
-.animation-delay(@delay) { //The animation-delay property defines when the animation will start. Value: 1s/2s/3s...
+.animation-delay(@delay) {
+    //The animation-delay property defines when the animation will start. Value: 1s/2s/3s...
     .prefixer(animation-delay; @delay; webkit);
 }
-.animation-timing-function(@timing-function) { //The animation-timing-function specifies the speed curve of the animation. Value: linear/ease/ease-in/ease-out/ease-in-out/cubic-bezier(n,n,n,n).
+.animation-timing-function(@timing-function) {
+    //The animation-timing-function specifies the speed curve of the animation. Value: linear/ease/ease-in/ease-out/ease-in-out/cubic-bezier(n,n,n,n).
     .prefixer(animation-timing-function; @timing-function; webkit);
 }
-.animation-fill-mode(@fill-mode) { //The animation-fill-mode property specifies what values are applied by the animation outside the time it is executing. Value: none/forwards/backwards/both.
+.animation-fill-mode(@fill-mode) {
+    //The animation-fill-mode property specifies what values are applied by the animation outside the time it is executing. Value: none/forwards/backwards/both.
     .prefixer(animation-fill-mode; @fill-mode; webkit);
 }
-.animation-iteration-count(@iteration-count) { //The animation-iteration-count property defines how many times an animation should be played. Value: n/infinite.
+.animation-iteration-count(@iteration-count) {
+    //The animation-iteration-count property defines how many times an animation should be played. Value: n/infinite.
     .prefixer(animation-iteration-count; @iteration-count; webkit);
 }
-.animated() {
-    .animation-duration(1s);
-    .animation-fill-mode(both);
+.animated(@duration : 1s; @fillMode : both) {
+    .animation-duration(@duration);
+    .animation-fill-mode(@fillMode);
 }
-.animation-name(@name) { //The animation-name property specifies a name for the @keyframes animation. Value: keyframename/none.
+.animation-name(@name) {
+    //The animation-name property specifies a name for the @keyframes animation. Value: keyframename/none.
     .prefixer(animation-name; @name; webkit);
 }
-.animation(...) { //The animation property specifies a name for the @keyframes animation. Value: keyframename/none.
+.animation(...) {
+    //The animation property specifies a name for the @keyframes animation. Value: keyframename/none.
     .prefixer(animation; @arguments; webkit);
 }

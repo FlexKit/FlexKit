@@ -1,32 +1,32 @@
 // DataTable
 //==================================================
-.dataTables_wrapper{
+.dataTables_wrapper {
     width : 100%;
 
-    .dataTables_filter{
+    .dataTables_filter {
         padding    : 5px;
         text-align : right;
         font-size  : @font-size-small;
 
-        label{
+        label {
 
-            input{
+            input {
                 margin-left : 5px;
                 width       : 250px;
             }
         }
     }
 
-    .dataTable{
+    .dataTable {
     }
 
-    .sorting, .sorting_asc, .sorting_desc{
+    .sorting, .sorting_asc, .sorting_desc {
         cursor        : pointer;
         position      : relative;
         padding-right : 16px;
         border-left   : 1px solid @table-border-color;
 
-        &:after{
+        &::after {
             &:extend(.flexkit-icon);
             content   : "\e0cd";
             font-size : 16px;
@@ -39,26 +39,26 @@
         }
     }
 
-    .sorting:after{
+    .sorting::after {
     }
-    .sorting_asc:after{
+    .sorting_asc::after {
         content : "\e0cc";
     }
-    .sorting_desc:after{
+    .sorting_desc::after {
         content : "\e0cb";
     }
 
-    .dataTables_empty{
+    .dataTables_empty {
         text-align : center;
     }
 }
 
-.dataTables_paginate{
+.dataTables_paginate {
     margin-top : 1em;
     float      : right;
     font-size  : 12px;
 
-    .paginate_button{
+    .paginate_button {
         background : @gray-lighter;
         margin     : 0 .25em;
         padding    : .25em .75em;
@@ -67,47 +67,47 @@
         text-align : center;
         color      : @gray-darker;
 
-        &:hover{
+        &:hover {
             background : darken(@gray-lighter, 3%);
         }
 
-        &.disabled, &.current{
+        &.disabled, &.current {
             cursor     : default;
             color      : darken(@gray-lighter, 5%);
             background : lighten(@gray-lighter, 3%);
         }
 
-        &.current{
+        &.current {
             font-weight : bold;
             background  : saturate(screen(@brand-primary, @gray), 10%);
             color       : #fff;
         }
 
-        &.first, &.last{
+        &.first, &.last {
             font-weight : bold;
 
-            &:before, &:after{
+            &::before, &::after {
                 &:extend(.flexkit-icon);
                 font-size   : 15px;
                 font-weight : bold;
             }
         }
 
-        &.previous, &.next{
+        &.previous, &.next {
 
-            &:before, &:after{
+            &::before, &::after {
                 &:extend(.flexkit-icon);
             }
         }
 
-        &.first, &.previous{
-            &:before{
+        &.first, &.previous {
+            &::before {
                 content : "\e0c2";
             }
         }
 
-        &.last, &.next{
-            &:after{
+        &.last, &.next {
+            &::after {
                 content : "\e0c3";
             }
         }

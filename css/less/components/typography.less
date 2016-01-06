@@ -9,18 +9,18 @@
 
 // Links
 //==================================================
-a{
+a {
     color : @link-color;
 
-    &:visited when not(@link-color-visited = none){
+    &:visited when not(@link-color-visited = none) {
         color : @link-color-visited;
     }
 
-    &:hover{
+    &:hover {
         color : @link-color-hover
     }
 
-    &:active{
+    &:active {
         color : @link-color-active;
     }
 }
@@ -28,26 +28,30 @@ a{
 // Heading
 //==================================================
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6{
+.h1, .h2, .h3, .h4, .h5, .h6 {
     margin-top    : 1.5em;
     margin-bottom : 0.5em;
     color         : @heading-color;
     font-weight   : @heading-weight;
     font-family   : @font-family-headings;
 
-    &:first-child{ margin-top : 0; }
-
-    & when (@widget-cycleSlider){
-        .slide .slide-description &{ color : @slider-heading-color; }
+    &:first-child {
+        margin-top : 0;
     }
 
-    & when not(@footer-heading-color = @heading-color){
-        footer &{
+    & when (@componentsJS) and (@widget-cycleSlider) {
+        .slide .slide-description & {
+            color : @slider-heading-color;
+        }
+    }
+
+    & when not(@footer-heading-color = @heading-color) {
+        footer & {
             color : @footer-heading-color;
         }
     }
 
-    &:empty{
+    &:empty {
         display : none;
     }
 }
@@ -63,12 +67,12 @@ h6, .h6{ font-size : 0.75em; }
     font-size : @font-size-mini;
 }
 
-p{
+p {
     margin-top    : 0;
     margin-bottom : 15px;
 }
 
-address{
+address {
     margin-bottom : 20px;
     font-style    : normal;
 }

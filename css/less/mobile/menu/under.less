@@ -1,38 +1,38 @@
-.mobile-menu{
+.mobile-menu {
 }
 
-.menu-btn{
+.menu-btn {
 
-    &.left{
-        &:before{
+    &.left {
+        &::before {
         }
 
-        &.active{
-            &:before{
+        &.active {
+            &::before {
             }
         }
     }
 
-    &.right{
+    &.right {
 
-        &:before{
+        &::before {
         }
 
-        &.active{
-            &:before{
+        &.active {
+            &::before {
             }
         }
     }
 
-    &.active{
+    &.active {
 
-        &:after{
+        &::after {
         }
 
     }
 }
 
-main{
+main {
     position   : relative;
     z-index    : 1;
     background : @body-bg;
@@ -40,37 +40,37 @@ main{
     .box-shadow(0 0 15px fade(#000, 90%));
 }
 
-body{
+body {
 
-    &[data-menu-open]{
-        main, .mobile-bar{
+    &[data-menu-open] {
+        main, .mobile-bar {
             .transition(all; 0.75s);
         }
-        main{
+        main {
             overflow : hidden;
         }
     }
 
-    &[data-menu-open="left"]{
-        main, .mobile-bar{
+    &[data-menu-open="left"] {
+        main, .mobile-bar {
             .transform(translateX(@menu-width));
         }
     }
 
-    &[data-menu-open="right"]{
-        main, .mobile-bar{
+    &[data-menu-open="right"] {
+        main, .mobile-bar {
             .transform(translateX(-@menu-width));
         }
     }
 
-    &[data-menu-open="top"]{
-        main, .mobile-bar{
+    &[data-menu-open="top"] {
+        main, .mobile-bar {
             .transform(translateY(@menu-height));
         }
     }
 
-    &[data-menu-open="bottom"]{
-        main, .mobile-bar{
+    &[data-menu-open="bottom"] {
+        main, .mobile-bar {
             .transform(translateY(-@menu-height));
         }
     }

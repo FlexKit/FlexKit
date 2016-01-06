@@ -1,4 +1,4 @@
-.ui-dialog when (@componentsJS-dialog){
+.ui-dialog when (@componentsJS-dialog) {
     position         : absolute;
     z-index          : 100;
     padding          : 0;
@@ -10,11 +10,11 @@
     color            : inherit;
     .box-shadow(4px 4px 4px @gray-darker);
 
-    .ui-effects-wrapper &{
+    .ui-effects-wrapper & {
         max-width : none;
     }
 
-    &.fixed{
+    &.fixed {
         position : fixed !important;
         top      : 50% !important;
         left     : 50% !important;
@@ -22,7 +22,7 @@
     }
 
     // Title bar
-    .ui-dialog-titlebar{
+    .ui-dialog-titlebar {
         font-size   : @font-size-large;
         background  : @dialog-header-bg;
         color       : @dialog-header-color;
@@ -31,18 +31,18 @@
         line-height : @line-height;
     }
 
-    &.ui-draggable{
-        .ui-dialog-titlebar{
+    &.ui-draggable {
+        .ui-dialog-titlebar {
             cursor : move;
         }
     }
 
-    .ui-dialog-title{
+    .ui-dialog-title {
         display      : block;
         margin-right : 10px;
     }
 
-    .ui-dialog-titlebar-close{
+    .ui-dialog-titlebar-close {
         position   : absolute;
         top        : 0;
         bottom     : 0;
@@ -55,108 +55,108 @@
         .box-sizing(content-box);
         .icon-size(@icon-size-base; true);
 
-        &:before{
+        &::before {
             &:extend(.flexkit-icon);
             content : "\e0a2";
         }
 
-        .ui-icon-closethick{
+        .ui-icon-closethick {
         }
 
-        .ui-button-text{
+        .ui-button-text {
             display : none;
         }
     }
 
     // Content
-    .ui-dialog-content{
+    .ui-dialog-content {
         position : relative;
         border   : 0;
         padding  : @padding-large-vertical @padding-large-horizontal;
-        & when not(@dialog-content-bg = transparent){
+        & when not(@dialog-content-bg = transparent) {
             background : @dialog-content-bg;
         }
         overflow : auto;
 
-        &.visible{
+        &.visible {
             overflow : visible;
         }
     }
 
     // Buttons
-    .ui-dialog-buttonpane{
+    .ui-dialog-buttonpane {
         overflow         : hidden;
         text-align       : left;
         border-width     : 1px 0 0 0;
         background-image : none;
         padding          : @padding-base-vertical @padding-large-horizontal;
 
-        .ui-dialog-buttonset{
+        .ui-dialog-buttonset {
             float : right;
         }
 
-        .ui-dialog-buttonpane button{
+        .ui-dialog-buttonpane button {
             margin : .5em .4em .5em 0;
             cursor : pointer;
         }
     }
 
     //For resizable style
-    .ui-resizable-handle{
+    .ui-resizable-handle {
         position  : absolute;
         font-size : 0.1px;
         display   : block;
     }
-    .ui-resizable-n{
+    .ui-resizable-n {
         cursor : n-resize;
         height : 7px;
         width  : 100%;
         top    : -5px;
         left   : 0;
     }
-    .ui-resizable-e{
+    .ui-resizable-e {
         cursor : e-resize;
         width  : 7px;
         right  : -5px;
         top    : 0;
         height : 100%;
     }
-    .ui-resizable-s{
+    .ui-resizable-s {
         cursor : s-resize;
         height : 7px;
         width  : 100%;
         bottom : -5px;
         left   : 0;
     }
-    .ui-resizable-w{
+    .ui-resizable-w {
         cursor : w-resize;
         width  : 7px;
         left   : -5px;
         top    : 0;
         height : 100%;
     }
-    .ui-resizable-se{
+    .ui-resizable-se {
         cursor : se-resize;;
         width  : 12px;
         height : 12px;
         right  : -5px;
         bottom : -5px;
     }
-    .ui-resizable-sw{
+    .ui-resizable-sw {
         cursor : sw-resize;
         width  : 9px;
         height : 9px;
         left   : -5px;
         bottom : -5px;
     }
-    .ui-resizable-ne{
+    .ui-resizable-ne {
         cursor : ne-resize;
         width  : 9px;
         height : 9px;
         right  : -5px;
         top    : -5px;
     }
-    .ui-resizable-nw{
+    .ui-resizable-nw {
         cursor : nw-resize;
         width  : 9px;
         height : 9px;
@@ -166,44 +166,44 @@
 
     // Alternate colors
     // -------------------------
-    &.success, &.warning, &.error, &.info{
-        & when (@dialog-colors){
-            .ui-dialog-titlebar{
+    &.success, &.warning, &.error, &.info {
+        & when (@dialog-colors) {
+            .ui-dialog-titlebar {
                 color : #fff;
             }
         }
     }
-    &.success when (@dialog-color-success) and (@dialog-colors){
+    &.success when (@dialog-color-success) and (@dialog-colors) {
         border-color : @brand-success;
 
-        .ui-dialog-titlebar{
+        .ui-dialog-titlebar {
             background : @brand-success;
         }
     }
-    &.warning when (@dialog-color-warning) and (@dialog-colors){
+    &.warning when (@dialog-color-warning) and (@dialog-colors) {
         border-color : @brand-warning;
 
-        .ui-dialog-titlebar{
+        .ui-dialog-titlebar {
             background : @brand-warning;
         }
     }
-    &.error when (@dialog-color-error) and (@dialog-colors){
+    &.error when (@dialog-color-error) and (@dialog-colors) {
         border-color : @brand-error;
 
-        .ui-dialog-titlebar{
+        .ui-dialog-titlebar {
             background : @brand-error;
 
-            .ui-dialog-titlebar-close{
-                &:hover{
+            .ui-dialog-titlebar-close {
+                &:hover {
                     color : darken(@brand-error, 15%)
                 }
             }
         }
     }
-    &.info when (@dialog-color-info) and (@dialog-colors){
+    &.info when (@dialog-color-info) and (@dialog-colors) {
         border-color : @brand-info;
 
-        .ui-dialog-titlebar{
+        .ui-dialog-titlebar {
             background : @brand-info;
         }
     }

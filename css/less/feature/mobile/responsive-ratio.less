@@ -4,28 +4,28 @@
 @ratio-3x4: (4%/3%*100%);
 @ratio-1x1: (100%);
 
-.responsive-ratio when (@responsive-ratio){
+.responsive-ratio when (@responsive-ratio) {
     position : relative;
     overflow : hidden;
     padding  : 0;
     display  : block;
     height   : auto !important;
 
-    &:before{
+    &::before {
         display : block;
         content : " ";
 
-        ._16x9&{ padding-bottom : @ratio-16x9; }
-        ._9x16&{ padding-bottom : @ratio-9x16; }
+        ._16x9& { padding-bottom : @ratio-16x9; }
+        ._9x16& { padding-bottom : @ratio-9x16; }
 
-        ._4x3&{ padding-bottom : @ratio-4x3; }
-        ._3x4&{ padding-bottom : @ratio-3x4; }
+        ._4x3& { padding-bottom : @ratio-4x3; }
+        ._3x4& { padding-bottom : @ratio-3x4; }
 
-        ._1x1&{ padding-bottom : @ratio-1x1; }
+        ._1x1& { padding-bottom : @ratio-1x1; }
     }
 
-    & when (@responsive-video){
-        iframe, object, embed, video{
+    & when (@responsive-video) {
+        iframe, object, embed, video {
             position : absolute;
             top      : 0;
             left     : 0;
@@ -34,8 +34,8 @@
         }
     }
 
-    & when (@responsive-image){
-        & > img{
+    & when (@responsive-image) {
+        & > img {
             position   : absolute !important;
             top        : 0;
             left       : 0;
@@ -49,22 +49,22 @@
 
             ._9x16&,
             ._3x4&,
-            ._1x1&{
+            ._1x1& {
                 max-width : none;
                 left      : 50%;
                 .translate(-50%; 0)
             }
         }
 
-        &.bottom{
-            & > img{
+        &.bottom {
+            & > img {
                 min-height : 0 !important;
                 top        : auto;
             }
         }
 
-        &.top{
-            & > img{
+        &.top {
+            & > img {
                 min-height : 0 !important;
                 bottom     : auto;
             }

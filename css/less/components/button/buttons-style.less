@@ -1,19 +1,19 @@
 // Buttons style
 // --------------------------------------------------
-& when (@button-styles){
-    &.rounded when (@button-styles-rounded){
+& when (@button-styles) {
+    &.rounded when (@button-styles-rounded) {
         .border-radius(.25em);
     }
 
-    &.circle when (@button-styles-circle){
+    &.circle when (@button-styles-circle) {
         .border-radius(10em);
     }
 }
 
 // Buttons social
 // --------------------------------------------------
-&.social when (@social-button) and (@social-styles){
-    &:before{
+&.social when (@social-button) and (@social-styles) {
+    &::before {
         font-size : @social-icon-size;
     }
 }

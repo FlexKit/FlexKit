@@ -1,16 +1,16 @@
-.smoke-base when (@componentsJS-alert){
+.smoke-base when (@componentsJS-alert) {
 
-    .smokebg{
+    .smokebg {
         position : fixed;
         left     : 0;
         right    : 0;
         top      : 0;
         bottom   : 0;
         z-index  : 1000;
-        .rgba(#fff, 0.5);
+        .rgba(#fff, 50%);
     }
 
-    .dialog{
+    .dialog {
         position   : fixed;
         z-index    : 1001;
         width      : 100%;
@@ -21,53 +21,53 @@
 
         // Alternate styles
         // -------------------------
-        &.primary{
-            .dialog-inner{
+        &.primary {
+            .dialog-inner {
                 color            : @state-primary-color;
                 border-color     : @state-primary-border;
                 background-color : @state-primary-bg;
             }
         }
-        &.success when (@alert-color-success) and (@alert-colors){
-            .dialog-inner{
+        &.success when (@alert-color-success) and (@alert-colors) {
+            .dialog-inner {
                 color            : @state-success-color;
                 border-color     : @state-success-border;
                 background-color : @state-success-bg;
             }
         }
-        &.warning when (@alert-color-warning) and (@alert-colors){
-            .dialog-inner{
+        &.warning when (@alert-color-warning) and (@alert-colors) {
+            .dialog-inner {
                 color            : @state-warning-color;
                 border-color     : @state-warning-border;
                 background-color : @state-warning-bg;
             }
         }
-        &.error when (@alert-color-error) and (@alert-colors){
-            .dialog-inner{
+        &.error when (@alert-color-error) and (@alert-colors) {
+            .dialog-inner {
                 color            : @state-error-color;
                 border-color     : @state-error-border;
                 background-color : @state-error-bg;
             }
         }
-        &.info when (@alert-color-info) and (@alert-colors){
-            .dialog-inner{
+        &.info when (@alert-color-info) and (@alert-colors) {
+            .dialog-inner {
                 color            : @state-info-color;
                 border-color     : @state-info-border;
                 background-color : @state-info-bg;
             }
         }
 
-        li{
+        li {
             margin     : 0;
             list-style : none;
 
-            & + li{
+            & + li {
                 margin-top : 0.5em;
             }
         }
     }
 
-    .dialog-inner{
+    .dialog-inner {
         overflow         : auto;
         margin-top       : 15%;
         max-width        : @grid-container-width * 0.75;
@@ -81,24 +81,24 @@
         .box-shadow(3px 3px 25px fade(#000, 25%));
     }
 
-    .dialog-buttons{
+    .dialog-buttons {
         margin-top : 1em;
 
-        button{
+        button {
             font-size : 12px;
             &:extend(.btn);
             &:extend(.btn.success);
 
-            &:hover{
+            &:hover {
                 &:extend(.btn.success:hover);
             }
 
-            &.cancel{
+            &.cancel {
                 margin-right : .5em;
                 &:extend(.btn.outline);
                 &:extend(.btn.outline.error);
 
-                &:hover{
+                &:hover {
                     &:extend(.btn.outline.error:hover);
                 }
             }
@@ -106,18 +106,18 @@
     }
 
     // Alert type
-    &.smoke-alert{
+    &.smoke-alert {
     }
 
-    &.smoke-confirm{
+    &.smoke-confirm {
     }
 
-    &.smoke-prompt{
+    &.smoke-prompt {
     }
 
-    &.smoke-quiz{
+    &.smoke-quiz {
     }
 
-    &.smoke-signal{
+    &.smoke-signal {
     }
 }

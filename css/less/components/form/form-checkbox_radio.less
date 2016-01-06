@@ -1,25 +1,25 @@
 & when (@checkbox-radio-style) and not(@checkbox-radio-style-native) {
-    .filed-upgrade{
+    .filed-upgrade {
         height   : auto;
         position : absolute;
         z-index  : -10;
         .transition(none);
         .opacity(0);
 
-        & ~ .checkbox_radio{
+        & ~ .checkbox_radio {
             .inline-block();
             .user-select();
             position    : relative;
             font-size   : @checkbox-radio-width;
-            height      : 1em;
-            width       : 1em;
+            height      : ~'calc(1em + @{input-border-width} * 2)';
+            width       : ~'calc(1em + @{input-border-width} * 2)';
             line-height : 0;
             margin      : 0;
             background  : @input-bg;
             border      : @input-border-width solid @input-border-color;
             color       : transparent;
 
-            &:before when not(@checkbox-checkmark-style){
+            &::before when not(@checkbox-checkmark-style) {
                 content  : "";
                 position : absolute;
                 left     : 0;
@@ -32,58 +32,58 @@
             }
         }
 
-        &.error{
-            & ~ .checkbox_radio{
+        &.error {
+            & ~ .checkbox_radio {
                 border-color : @brand-error;
             }
         }
 
-        &:hover{
-            & ~ .checkbox_radio{
-                & when (@checkbox-checkmark-style){
+        &:hover {
+            & ~ .checkbox_radio {
+                & when (@checkbox-checkmark-style) {
                     color : @gray-lighter;
                 }
-                &:before when not(@checkbox-checkmark-style){
-                    background : @gray-lighter;
+                &::before when not(@checkbox-checkmark-style) {
+                    .rgba(#000; 10%);
                 }
             }
         }
 
-        &:checked{
-            & ~ .checkbox_radio{
+        &:checked {
+            & ~ .checkbox_radio {
                 border-color : @brand-success;
 
-                &:before when not(@checkbox-checkmark-style){
+                &::before when not(@checkbox-checkmark-style) {
                     background : @brand-success;
                 }
             }
         }
 
-        &:disabled{
-            & ~ .checkbox_radio{
+        &:disabled {
+            & ~ .checkbox_radio {
                 background   : @input-bg-disabled !important;
                 border-color : darken(@input-bg-disabled, 10%) !important;
                 color        : transparent;
             }
 
-            &:checked{
-                & ~ .checkbox_radio{
-                    &:before when not(@checkbox-checkmark-style){
+            &:checked {
+                & ~ .checkbox_radio {
+                    &::before when not(@checkbox-checkmark-style) {
                         background : darken(@input-bg-disabled, 30%) !important;
                     }
                 }
             }
         }
 
-        &[type="radio"]{
-            & ~ .checkbox_radio{
+        &[type="radio"] {
+            & ~ .checkbox_radio {
                 .border-radius(10em);
 
-                &:before{
-                    & when not(@checkbox-checkmark-style){
+                &::before {
+                    & when not(@checkbox-checkmark-style) {
                         &:extend(.filed-upgrade[type=radio]~.checkbox_radio);
                     }
-                    & when (@checkbox-checkmark-style){
+                    & when (@checkbox-checkmark-style) {
                         content  : "";
                         position : absolute;
                         left     : 0;
@@ -98,24 +98,24 @@
                 }
             }
 
-            &:hover when (@checkbox-checkmark-style){
-                & ~ .checkbox_radio{
-                    &:before{
+            &:hover when (@checkbox-checkmark-style) {
+                & ~ .checkbox_radio {
+                    &::before {
                         background : @gray-lighter;
                     }
                 }
             }
 
-            &:checked when (@checkbox-checkmark-style){
-                & ~ .checkbox_radio{
-                    &:before{
+            &:checked when (@checkbox-checkmark-style) {
+                & ~ .checkbox_radio {
+                    &::before {
                         background : @brand-success;
                     }
                 }
 
-                &:disabled{
-                    & ~ .checkbox_radio{
-                        &:before when (@checkbox-checkmark-style){
+                &:disabled {
+                    & ~ .checkbox_radio {
+                        &::before when (@checkbox-checkmark-style) {
                             background : darken(@input-bg-disabled, 30%) !important;
                         }
                     }
@@ -123,10 +123,10 @@
             }
         }
 
-        &[type="checkbox"]{
-            & ~ .checkbox_radio when (@checkbox-checkmark-style){
+        &[type="checkbox"] {
+            & ~ .checkbox_radio when (@checkbox-checkmark-style) {
 
-                &:before{
+                &::before {
                     &:extend(.flexkit-icon);
                     position  : absolute;
                     left      : 0;
@@ -136,28 +136,28 @@
                 }
             }
 
-            &:checked when (@checkbox-checkmark-style){
-                & ~ .checkbox_radio{
+            &:checked when (@checkbox-checkmark-style) {
+                & ~ .checkbox_radio {
                     color : @brand-success;
                 }
-                &:disabled{
-                    & ~ .checkbox_radio{
-                        & when (@checkbox-checkmark-style){
+                &:disabled {
+                    & ~ .checkbox_radio {
+                        & when (@checkbox-checkmark-style) {
                             color : darken(@input-bg-disabled, 30%) !important;
                         }
                     }
                 }
             }
 
-            &.switcher when (@switcher-style){
-                & ~ .checkbox_radio{
+            &.switcher when (@switcher-style) {
+                & ~ .checkbox_radio {
                     overflow    : hidden;
                     position    : relative;
                     width       : 4em;
-                    height      : 1.25em;
+                    height      : ~'calc(1.25em + @{input-border-width} * 2)';
                     line-height : 1.25em;
 
-                    &:before{
+                    &::before {
                         .font-size(@font-size-mini * (@checkbox-radio-width / @font-size-base));
                         line-height : inherit;
                         content     : 'OFF';
@@ -172,11 +172,11 @@
                         margin-left : 50%;
                     }
 
-                    &:after{
+                    &::after {
                         content    : '';
                         background : @brand-error;
                         .transition(all, 0.3s);
-                        background : @input-border-color;
+                        .rgba(#000; 10%);
                         position   : absolute;
                         border     : 1px solid @input-bg;
                         z-index    : 1;
@@ -187,27 +187,27 @@
                     }
                 }
 
-                &:checked{
-                    & ~ .checkbox_radio{
-                        &:before{
+                &:checked {
+                    & ~ .checkbox_radio {
+                        &::before {
                             content     : 'ON';
                             margin-left : 0;
                             color       : @brand-success;
                         }
-                        &:after{
+                        &::after {
                             left       : 50%;
                             background : @brand-success;
                         }
                     }
                 }
 
-                &:disabled{
-                    & ~ .checkbox_radio{
-                        &:before{
+                &:disabled {
+                    & ~ .checkbox_radio {
+                        &::before {
                             color      : darken(@input-bg-disabled, 30%) !important;
                             background : none !important;
                         }
-                        &:after{
+                        &::after {
                             background : darken(@input-bg-disabled, 30%) !important;
                         }
                     }
@@ -219,12 +219,12 @@
 
 & when (@checkbox-radio-style) and (@checkbox-radio-style-native) {
     input[type="checkbox"],
-    input[type="radio"]{
+    input[type="radio"] {
         .appearance(none; webkit);
         position   : relative;
         font-size  : @checkbox-radio-width;
-        height     : 1em;
-        width      : 1em;
+        height     : ~'calc(1em + @{input-border-width} * 2)';
+        width      : ~'calc(1em + @{input-border-width} * 2)';
         background : @input-bg;
         border     : @input-border-width solid @input-border-color;
         color      : transparent;
@@ -232,7 +232,7 @@
         display    : inline-block;
         outline    : none;
 
-        &:before when not(@checkbox-checkmark-style){
+        &::before when not(@checkbox-checkmark-style) {
             content  : "";
             position : absolute;
             left     : 0;
@@ -244,27 +244,27 @@
             height   : 0.625em;
         }
 
-        &.error{
+        &.error {
             border-color : @brand-error;
         }
 
-        &:hover when not(@checkbox-checkmark-style){
-            &:before{
+        &:hover when not(@checkbox-checkmark-style) {
+            &::before {
                 background : @gray-lighter;
             }
         }
 
-        &:checked{
+        &:checked {
             border-color : @brand-success;
 
-            &:before when not(@checkbox-checkmark-style){
+            &::before when not(@checkbox-checkmark-style) {
                 background : @brand-success;
             }
         }
 
-        &:disabled{
-            &:checked{
-                &:before{
+        &:disabled {
+            &:checked {
+                &::before {
                     color      : darken(@input-bg-disabled, 30%) !important;
                     background : darken(@input-bg-disabled, 30%) !important;
                 }
@@ -272,12 +272,12 @@
         }
     }
 
-    [type="radio"]{
+    [type="radio"] {
         .border-radius(1em);
 
-        &:before{
+        &::before {
             .border-radius(1em);
-            & when (@checkbox-checkmark-style){
+            & when (@checkbox-checkmark-style) {
                 content  : "";
                 position : absolute;
                 left     : 0;
@@ -290,22 +290,22 @@
             }
         }
 
-        &:hover when (@checkbox-checkmark-style){
-            &:before{
+        &:hover when (@checkbox-checkmark-style) {
+            &::before {
                 background : @gray-lighter;
             }
         }
 
-        &:checked when (@checkbox-checkmark-style){
-            &:before{
+        &:checked when (@checkbox-checkmark-style) {
+            &::before {
                 background : @brand-success;
             }
         }
     }
 
-    [type="checkbox"]{
+    [type="checkbox"] {
 
-        &:before when (@checkbox-checkmark-style){
+        &::before when (@checkbox-checkmark-style) {
             &:extend(.flexkit-icon);
             position  : absolute;
             left      : 0;
@@ -314,22 +314,22 @@
             font-size : 1.5em;
         }
 
-        &:hover when (@checkbox-checkmark-style){
+        &:hover when (@checkbox-checkmark-style) {
             color : @gray-lighter;
         }
 
-        &:checked when (@checkbox-checkmark-style){
+        &:checked when (@checkbox-checkmark-style) {
             color : @brand-success;
         }
 
-        &.switcher when (@switcher-style){
+        &.switcher when (@switcher-style) {
             overflow    : hidden;
             position    : relative;
             width       : 4em;
-            height      : 1.25em;
+            height      : ~'calc(1.25em + @{input-border-width} * 2)';
             line-height : 1.25em;
 
-            &:before{
+            &::before {
                 .font-size(@font-size-mini * (@checkbox-radio-width / @font-size-base));
                 line-height : @checkbox-radio-width * 1.25em;
                 content     : 'OFF';
@@ -344,21 +344,21 @@
                 margin-left : 50%;
             }
 
-            &:disabled{
-                &:before{
+            &:disabled {
+                &::before {
                     color      : darken(@input-bg-disabled, 30%) !important;
                     background : none !important;
                 }
-                &:after{
+                &::after {
                     background : darken(@input-bg-disabled, 30%) !important;
                 }
             }
 
-            &:after{
+            &::after {
                 content    : '';
                 background : @brand-error;
                 .transition(all, 0.3s);
-                background : @input-border-color;
+                .rgba(#000; 10%);
                 position   : absolute;
                 border     : 1px solid @input-bg;
                 z-index    : 1;
@@ -368,13 +368,13 @@
                 width      : 50%;
             }
 
-            &:checked{
-                &:before{
+            &:checked {
+                &::before {
                     content     : 'ON';
                     margin-left : 0;
                     color       : @brand-success;
                 }
-                &:after{
+                &::after {
                     left       : 50%;
                     background : @brand-success;
                 }

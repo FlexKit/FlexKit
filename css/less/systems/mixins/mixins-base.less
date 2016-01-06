@@ -1,4 +1,4 @@
-.flexkit-icon(){
+.flexkit-icon() {
     font-family             : @font-family-icons;
     speak                   : none;
     font-style              : normal;
@@ -21,10 +21,10 @@
     @value;
     @prefixes : '';
     @onlyPrefix : false
-){
-    @supportWebkit : ~`(function(){var a = "@{prefixes}"; if(@{webkit} && (a.indexOf('webkit') != -1)){ return 'webkit';}}())`;
-    @supportMoz : ~`(function(){var a = "@{prefixes}"; if(@{moz} && (a.indexOf('moz') != -1)){ return 'moz';}}())`;
-    @supportIe : ~`(function(){var a = "@{prefixes}"; if(@{ie} && (a.indexOf('ms') != -1)){ return 'ms';}}())`;
+) {
+    @supportWebkit : ~`(function() {var a = "@{prefixes}"; if(@{webkit} && (a.indexOf('webkit') != -1)) { return 'webkit';}}())`;
+    @supportMoz : ~`(function() {var a = "@{prefixes}"; if(@{moz} && (a.indexOf('moz') != -1)) { return 'moz';}}())`;
+    @supportIe : ~`(function() {var a = "@{prefixes}"; if(@{ie} && (a.indexOf('ms') != -1)) { return 'ms';}}())`;
     @prefixesCurrent : @supportWebkit @supportMoz @supportIe;
 
     .prefixer-checked(@rule; @value; @prefixesCurrent; @onlyPrefix : @onlyPrefix);
@@ -36,12 +36,12 @@
     @length : length(@prefixes);
     @prefix : extract(@prefixes, @length);
     @onlyPrefix : false
-) when (@length >= 0){
+) when (@length >= 0) {
     .prefixer-checked(@rule; @value; @prefixes; @length - 1; @onlyPrefix : @onlyPrefix);
-    & when (@prefix = webkit), (@prefix = moz), (@prefix = ms), (@prefix = o){
+    & when (@prefix = webkit), (@prefix = moz), (@prefix = ms), (@prefix = o) {
         -@{prefix}-@{rule} : @value;
     }
-    & when not(@onlyPrefix){
+    & when not(@onlyPrefix) {
         @{rule} : @value;
     }
 }
@@ -49,7 +49,7 @@
 // Font-face
 //==================================================
 .font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) when (@ie) {
-    @font-face{
+    @font-face {
         font-family : "@{fontname}";
         src         : url("@{fontfile}.eot");
         src         : url("@{fontfile}.eot?#iefix") format("embedded-opentype"),
@@ -62,7 +62,7 @@
     }
 }
 .font-face(@fontname; @fontfile; @fontweight : normal; @fontstyle: normal) when not(@ie) {
-    @font-face{
+    @font-face {
         font-family : "@{fontname}";
         src         : url("@{fontfile}.woff") format("woff"),
                       url("@{fontfile}.ttf") format("truetype");
@@ -73,69 +73,69 @@
 
 // Column-grid system
 //==================================================
-.column() when (@column-system){
-    & when (@responsive){
-        & when (@column-global-classes){
+.column() when (@column-system) {
+    & when (@responsive) {
+        & when (@column-global-classes) {
             .column-list(@prefix: _);
         }
-        @media only screen and (min-width : (@responsive-size-tablet + 1)){
+        @media only screen and (min-width : (@responsive-size-tablet + 1)) {
             .column-list();
         }
-        & when (@columns-big-screen > 0) and (isnumber(@columns-big-screen)){
-            @media only screen and (min-width : (@responsive-size-big-screen)){
+        & when (@columns-big-screen > 0) and (isnumber(@columns-big-screen)) {
+            @media only screen and (min-width : (@responsive-size-big-screen)) {
                 .column-list(@columns-big-screen; b-);
             }
         }
-        @media only screen and (max-width : @responsive-size-tablet) and (min-width : (@responsive-size-mobile + 1)){
+        @media only screen and (max-width : @responsive-size-tablet) and (min-width : (@responsive-size-mobile + 1)) {
             .column-list(@columns-tablet; t-);
         }
-        @media only screen and (max-width : @responsive-size-mobile){
+        @media only screen and (max-width : @responsive-size-mobile) {
             .column-list(@columns-mobile; m-);
         }
     }
-    & when (@adaptive){
-        & when (@column-global-classes){
+    & when (@adaptive) {
+        & when (@column-global-classes) {
             .column-list(@prefix: _);
         }
-        @media only screen and (min-width : (@responsive-size-big-screen + 1)){
+        @media only screen and (min-width : (@responsive-size-big-screen + 1)) {
             .column-list(@columns-big-screen; b-);
         }
-        @media only screen and (max-width : @responsive-size-big-screen){
+        @media only screen and (max-width : @responsive-size-big-screen) {
             .column-list();
         }
-        @media only screen and (max-width : @responsive-size-desktop){
+        @media only screen and (max-width : @responsive-size-desktop) {
             .column-list(@columns-tablet; t-);
         }
-        @media only screen and (max-width : @responsive-size-tablet){
+        @media only screen and (max-width : @responsive-size-tablet) {
             .column-list(@columns-mobile; m-);
         }
     }
-    & when not(@responsive) and not(@adaptive){
+    & when not(@responsive) and not(@adaptive) {
         .column-list();
     }
 }
-.column-list(@column : @columns; @prefix : ~''; @type : false) when (@column > 0) and (@type = false){
+.column-list(@column : @columns; @prefix : ~''; @type : false) when (@column > 0) and (@type = false) {
     .column-list(@column - 1; @prefix; false);
-    .@{prefix}column_@{column} > *{
+    .@{prefix}column_@{column} > * {
         width : round((100% / @column) - @column-margin-width, 3) !important;
     }
 }
-.column-list(@column : @columns; @prefix : ~''; @type : full-width) when (@column > 0) and (@type = full-width) and  (@column-system-fullWidth){
+.column-list(@column : @columns; @prefix : ~''; @type : full-width) when (@column > 0) and (@type = full-width) and  (@column-system-fullWidth) {
     .column-list(@column - 1; @prefix; full-width);
-    .full-width{
-        &.@{prefix}column_@{column} > *{
+    .full-width {
+        &.@{prefix}column_@{column} > * {
             width : round((100% / @column) - @column-margin-width + (@column-margin-width / @column), 3) !important;
             @num : ~'@{column}n';
-            &:nth-child(@{num}){
+            &:nth-child(@{num}) {
                 margin-right : 0 !important;
             }
         }
     }
 }
-.column-list(@column : @columns; @prefix : ~''; @type : margin-none) when (@column > 0) and (@type = margin-none) and (@column-system-marginNone){
+.column-list(@column : @columns; @prefix : ~''; @type : margin-none) when (@column > 0) and (@type = margin-none) and (@column-system-marginNone) {
     .column-list(@column - 1; @prefix; margin-none);
-    .margin-none{
-        &.@{prefix}column_@{column} > *{
+    .margin-none {
+        &.@{prefix}column_@{column} > * {
             width : round(100% / @column, 3) !important;
         }
     }
@@ -143,73 +143,77 @@
 
 // Grid system
 //==================================================
-.grid() when (@grid-system){
-    & when (@responsive){
-        & when (@grid-global-classes){
+.grid() when (@grid-system) {
+    & when (@responsive) {
+        & when (@grid-global-classes) {
             .grid-list(@prefix: _);
         }
-        @media only screen and (min-width : (@responsive-size-tablet + 1)){
+        @media only screen and (min-width : (@responsive-size-tablet + 1)) {
             .grid-list();
         }
-        & when (@grid-columns-big-screen > 0) and (isnumber(@grid-columns-big-screen)){
-            @media only screen and (min-width : (@responsive-size-big-screen)){
+        & when (@grid-columns-big-screen > 0) and (isnumber(@grid-columns-big-screen)) {
+            @media only screen and (min-width : (@responsive-size-big-screen)) {
                 .grid-list(@grid-columns-big-screen; b-);
             }
         }
-        @media only screen and (max-width : @responsive-size-tablet) and (min-width : (@responsive-size-mobile + 1)){
+        @media only screen and (max-width : @responsive-size-tablet) and (min-width : (@responsive-size-mobile + 1)) {
             .grid-list(@grid-columns-tablet, t-);
         }
-        @media only screen and (max-width : @responsive-size-mobile){
+        @media only screen and (max-width : @responsive-size-mobile) {
             .grid-list(@grid-columns-mobile, m-);
         }
     }
-    & when (@adaptive){
-        & when (@grid-global-classes){
+    & when (@adaptive) {
+        & when (@grid-global-classes) {
             .grid-list(@prefix: _);
         }
-        & when (@grid-columns-big-screen > 0) and (isnumber(@grid-columns-big-screen)){
-            @media only screen and (min-width : (@responsive-size-big-screen + 1)){
+        & when (@grid-columns-big-screen > 0) and (isnumber(@grid-columns-big-screen)) {
+            @media only screen and (min-width : (@responsive-size-big-screen + 1)) {
                 .grid-list(@grid-columns-big-screen; b-);
             }
-            @media only screen and (max-width : @responsive-size-big-screen){
+            @media only screen and (max-width : @responsive-size-big-screen) {
                 .grid-list();
             }
         }
-        & when (@grid-columns-big-screen = 0), not(isnumber(@grid-columns-big-screen)){
-            @media only screen and (min-width : (@responsive-size-tablet + 1)){
+        & when (@grid-columns-big-screen = 0), not(isnumber(@grid-columns-big-screen)) {
+            @media only screen and (min-width : (@responsive-size-tablet + 1)) {
                 .grid-list();
             }
         }
-        @media only screen and (max-width : @responsive-size-desktop){
+        @media only screen and (max-width : @responsive-size-desktop) {
             .grid-list(@grid-columns-tablet, t-);
         }
-        @media only screen and (max-width : @responsive-size-tablet){
+        @media only screen and (max-width : @responsive-size-tablet) {
             .grid-list(@grid-columns-mobile, m-);
         }
     }
-    & when not(@responsive) and not(@adaptive){
+    & when not(@responsive) and not(@adaptive) {
         .grid-list();
     }
 }
-.grid-list(@grid : @grid-columns; @prefix : ~''; @num-column : 1; @switch : true) when (@grid >= @num-column){
-    .@{prefix}grid_@{num-column}{
+.grid-list(@grid : @grid-columns; @prefix : ~''; @num-column : 1; @switch : true) when (@grid >= @num-column) {
+    .@{prefix}grid_@{num-column} {
         width : round(percentage((@num-column / @grid)) - @grid-margin-width, 3);
-        &.@{prefix}alpha, &.@{prefix}omega{
-            & when (@grid-system-alpha-omega){
+        &.@{prefix}alpha, &.@{prefix}omega {
+            & when (@grid-system-alpha-omega) {
                 width : round(percentage(@num-column / @grid) - @grid-margin-width / 2, 3);
             }
         }
-        &.@{prefix}alpha.@{prefix}omega{
-            & when (@grid-system-alpha-omega){
+        &.@{prefix}alpha.@{prefix}omega {
+            & when (@grid-system-alpha-omega) {
                 width : round(percentage(@num-column / @grid), 3);
             }
         }
     }
     .grid-list(@grid; @prefix; @num-column + 1; false);
 
-    & when (@switch){
-        .@{prefix}alpha when (@grid-system-alpha-omega){ margin-left : 0 !important; }
-        .@{prefix}omega when (@grid-system-alpha-omega){ margin-right : 0 !important; }
+    & when (@switch) {
+        .@{prefix}alpha when (@grid-system-alpha-omega) {
+            margin-left : 0 !important;
+        }
+        .@{prefix}omega when (@grid-system-alpha-omega) {
+            margin-right : 0 !important;
+        }
 
         .prefix(@grid; @prefix; @num-column);
         .suffix(@grid; @prefix; @num-column);
@@ -217,88 +221,82 @@
         .pull(@grid; @prefix; @num-column);
     }
 }
-
-.prefix(@grid : @grid-columns; @prefix : ~''; @num-column) when (@grid > @num-column) and  (@grid-system-prefix-suffix){
-    .@{prefix}prefix_@{num-column}{
+.prefix(@grid : @grid-columns; @prefix : ~''; @num-column) when (@grid > @num-column) and  (@grid-system-prefix-suffix) {
+    .@{prefix}prefix_@{num-column} {
         margin-left : round(percentage(@num-column / @grid) + @grid-margin-width / 2, 3) !important;
-        &.alpha when (@grid-system-alpha-omega){
+        &.alpha when (@grid-system-alpha-omega) {
             margin-left : round(percentage(@num-column / @grid), 3) !important;
         }
     }
     .prefix(@grid; @prefix; @num-column + 1);
 }
-
-.suffix(@grid : @grid-columns; @prefix : ~''; @num-column) when (@grid > @num-column) and  (@grid-system-prefix-suffix){
-    .@{prefix}suffix_@{num-column}{
+.suffix(@grid : @grid-columns; @prefix : ~''; @num-column) when (@grid > @num-column) and  (@grid-system-prefix-suffix) {
+    .@{prefix}suffix_@{num-column} {
         margin-right : round(percentage(@num-column / @grid) + @grid-margin-width / 2, 3) !important;
-        &.omega when (@grid-system-alpha-omega){
+        &.omega when (@grid-system-alpha-omega) {
             margin-right : round(percentage(@num-column / @grid), 3) !important;
         }
     }
     .suffix(@grid; @prefix; @num-column + 1);
 }
-
-.pull(@grid : @grid-columns; @prefix : ~''; @num-column) when (@grid > @num-column) and  (@grid-system-push-pull){
-    .@{prefix}pull_@{num-column}{
+.pull(@grid : @grid-columns; @prefix : ~''; @num-column) when (@grid > @num-column) and  (@grid-system-push-pull) {
+    .@{prefix}pull_@{num-column} {
         left : round(percentage(@num-column / @grid) * -1, 2) !important;
     }
     .pull(@grid; @prefix; @num-column + 1);
 }
-
-.push(@grid : @grid-columns, @prefix : ~'', @num-column) when (@grid > @num-column) and  (@grid-system-push-pull){
-    .@{prefix}push_@{num-column}{
+.push(@grid : @grid-columns, @prefix : ~'', @num-column) when (@grid > @num-column) and  (@grid-system-push-pull) {
+    .@{prefix}push_@{num-column} {
         left : round(percentage(@num-column / @grid), 2) !important;
     }
     .push(@grid, @prefix, @num-column + 1);
 }
 
-// Margin - Padding
+// Margin - Padding - Position
 //==================================================
-.margin-list(@value; @position:all; @step:5) when (@value >= 0) and not(@value = none){
+.margin-list(@value; @position:all; @step:5) when (@value >= 0) and not(@value = none) {
     .margin-list(@value - @step; @position; @step);
 
-    @name : e(`(function(){ var a = "@{value}"; return a.replace('%', '').replace('.', '-')}())`);
-    .m@{name} when (@position = all){ margin : @value !important; }
-    .mt@{name} when (@position = top){ margin-top : @value !important; }
-    .ml@{name} when (@position = left){ margin-left : @value !important; }
-    .mr@{name} when (@position = right){ margin-right : @value !important; }
-    .mb@{name} when (@position = bottom){ margin-bottom : @value !important; }
+    @name : e(`(function() { var a = "@{value}"; return a.replace('%', '').replace('.', '-')}())`);
+    .m@{name} when (@position = all) { margin : @value !important; }
+    .mt@{name} when (@position = top) { margin-top : @value !important; }
+    .ml@{name} when (@position = left) { margin-left : @value !important; }
+    .mr@{name} when (@position = right) { margin-right : @value !important; }
+    .mb@{name} when (@position = bottom) { margin-bottom : @value !important; }
 }
-
-.padding-list(@value; @position:all; @step:5) when (@value >= 0) and not(@value = none){
+.padding-list(@value; @position:all; @step:5) when (@value >= 0) and not(@value = none) {
     .padding-list(@value - @step; @position; @step);
 
-    @name : e(`(function(){ var a = "@{value}"; return a.replace('%', '').replace('.', '-')}())`);
-    .p@{name} when (@position = all){ padding : @value !important; }
-    .pt@{name} when (@position = top){ padding-top : @value !important; }
-    .pl@{name} when (@position = left){ padding-left : @value !important; }
-    .pr@{name} when (@position = right){ padding-right : @value !important; }
-    .pb@{name} when (@position = bottom){ padding-bottom : @value !important; }
+    @name : e(`(function() { var a = "@{value}"; return a.replace('%', '').replace('.', '-')}())`);
+    .p@{name} when (@position = all) { padding : @value !important; }
+    .pt@{name} when (@position = top) { padding-top : @value !important; }
+    .pl@{name} when (@position = left) { padding-left : @value !important; }
+    .pr@{name} when (@position = right) { padding-right : @value !important; }
+    .pb@{name} when (@position = bottom) { padding-bottom : @value !important; }
 }
-
-.position-list(@value; @position; @step:5) when (@value >= 0) and not(@value = none){
+.position-list(@value; @position; @step:5) when (@value >= 0) and not(@value = none) {
     .position-list(@value - @step; @position; @step);
 
-    @name : e(`(function(){ var a = "@{value}"; return a.replace('%', '').replace('.', '-')}())`);
-    .t@{name} when (@position = top){ top : @value !important; }
-    .l@{name} when (@position = left){ left : @value !important; }
-    .r@{name} when (@position = right){ right : @value !important; }
-    .b@{name} when (@position = bottom){ bottom : @value !important; }
+    @name : e(`(function() { var a = "@{value}"; return a.replace('%', '').replace('.', '-')}())`);
+    .t@{name} when (@position = top) { top : @value !important; }
+    .l@{name} when (@position = left) { left : @value !important; }
+    .r@{name} when (@position = right) { right : @value !important; }
+    .b@{name} when (@position = bottom) { bottom : @value !important; }
 }
 
 // Width - Height
 //==================================================
-.width-list(@width; @step:5) when (@width >= 0) and not(@width = none){
+.width-list(@width; @step:5) when (@width >= 0) and not(@width = none) {
     .width-list(@width - @step; @step);
 
-    @name : e(`(function(){ var a = "@{width}"; return a.replace('%', '')}())`);
-    .w@{name}{ width : @width !important; }
+    @name : e(`(function() { var a = "@{width}"; return a.replace('%', '')}())`);
+    .w@{name} { width : @width !important; }
 }
-.height-list(@height; @step:5) when (@height >= 0) and not(@height = none){
+.height-list(@height; @step:5) when (@height >= 0) and not(@height = none) {
     .height-list(@height - @step; @step);
 
-    @name : e(`(function(){ var a = "@{height}"; return a.replace('%', '')}())`);
-    .h@{name}{ height : @height !important; }
+    @name : e(`(function() { var a = "@{height}"; return a.replace('%', '')}())`);
+    .h@{name} { height : @height !important; }
 }
 
 // Text overflow
@@ -309,21 +307,20 @@
     text-overflow : ellipsis;
     white-space   : nowrap;
 }
-
 // Hyphens text
 // hyphens: none | manual | auto
-.hyphens(@type: auto){
-    -webkit-hyphens: @type;
-    -moz-hyphens   : @type;
-    -ms-hyphens    : @type;
-    hyphens        : @type;
+.hyphens(@type: auto) {
+    -webkit-hyphens : @type;
+    -moz-hyphens    : @type;
+    -ms-hyphens     : @type;
+    hyphens         : @type;
 }
 
 // Opacity
 //==================================================
 .opacity(@opacity: 0.5) {
     opacity : @opacity;
-    & when (@ie8) and (@ie){
+    & when (@ie8) and (@ie) {
         @opperc : @opacity * 100;
         filter : ~"alpha(opacity=@{opperc})";
     }
@@ -334,12 +331,11 @@
 .inline-block-wrap(@valign : middle; @el : ~'>*'; @font-size : @font-size-base;) {
     font-size : 0;
 
-    @{el}{
+    @{el} {
         font-size : @font-size;
         .inline-block(@valign);
     }
 }
-
 .inline-block(@valign : middle) {
     display        : inline-block;
     vertical-align : @valign;
@@ -354,48 +350,49 @@
 
 // CSS3 support in ie
 //==================================================
-.pie() when (@PIE) and (@ie8){
-    .ie8 &{
+.pie() when (@PIE) and (@ie8) {
+    .ie8 & {
         behavior : url('/themes/@{theme-name}/js/system/PIE.php');
     }
 }
 
 // -- Grid Elements
-.grid-elements(@num-column; @margin : @grid-margin-width; @full: false; @tablet-column : 2; @mobile-column : 1; @print-column : 0; @style-switch : true) when (@num-column > 0){
-    & when (@style-switch) and not(@full){
+.grid-elements(@num-column; @margin : @grid-margin-width; @full: false; @tablet-column : 2; @mobile-column : 1; @print-column : 0; @style-switch : true) when (@num-column > 0) {
+    & when (@style-switch) and not(@full) {
         margin-left  : unit(@margin / 2, ~"%");
         margin-right : unit(@margin / 2, ~"%");
     }
-    & when (@style-switch) and (@full){
+    & when (@style-switch) and (@full) {
         margin-left  : unit(@margin, ~"%");
         margin-right : 0;
     }
-    & when not(@full){
+    & when not(@full) {
         width : (100% / @num-column) - @margin;
     }
-    & when (@full){
+    & when (@full) {
         width : (100% / @num-column) - @margin + (@margin / @num-column);
 
-        &:nth-child(n) when not(@style-switch) and not(@num-column = 1){ margin-left : unit(@margin, ~"%"); }
+        &:nth-child(n) when not(@style-switch) and not(@num-column = 1) {
+            margin-left : unit(@margin, ~"%");
+        }
 
         @num : ~'@{num-column}n + 1';
-        &:nth-child(@{num}) when (@full){
+        &:nth-child(@{num}) when (@full) {
             margin-left : 0;
         }
     }
     .grid-elements-device(@tablet-column; @mobile-column; @print-column; @margin; @full);
 }
-
-.grid-elements-device(@tablet-column : 0; @mobile-column : 0; @print-column : 0; @margin; @full) when (@responsive){
+.grid-elements-device(@tablet-column : 0; @mobile-column : 0; @print-column : 0; @margin; @full) when (@responsive) {
     @responsive-size-mobile-over : (@responsive-size-mobile + 1);
-    @media only screen and (max-width : @responsive-size-tablet) and  (min-width : @responsive-size-mobile-over){
+    @media only screen and (max-width : @responsive-size-tablet) and  (min-width : @responsive-size-mobile-over) {
         .grid-elements(@tablet-column; @margin; @full; 0; 0; 0; false);
     }
-    @media only screen and (max-width : @responsive-size-mobile){
+    @media only screen and (max-width : @responsive-size-mobile) {
         .grid-elements(@mobile-column; @margin; @full; 0; 0; 0; false);
     }
-    & when (@print){
-        @media only print{
+    & when (@print) {
+        @media only print {
             .grid-elements(@print-column; @margin; @full; 0; 0; 0; false);
         }
     }
@@ -403,17 +400,17 @@
 
 // Icon size
 //==================================================
-.icon-size(@size; @parent : false) when (@size > 0){
-    & when (@parent){
+.icon-size(@size; @parent : false) when (@size > 0) {
+    & when (@parent) {
 
-        & when not(isem(@size)) and not(ispercentage(@size)){
+        & when not(isem(@size)) and not(ispercentage(@size)) {
             width       : @size;
             height      : @size;
             line-height : @size;
-            font-size : 0;
+            font-size   : 0;
         }
 
-        & when (isem(@size)){
+        & when (isem(@size)) {
             font-size   : @size;
             width       : 1em;
             height      : 1em;
@@ -422,17 +419,17 @@
         }
     }
 
-    &:before{
-        & when not(isem(@size)) and not(ispercentage(@size)){
+    &::before {
+        & when not(isem(@size)) and not(ispercentage(@size)) {
             font-size : @size;
         }
 
-        & when not(@parent) and not(isem(@size)){
+        & when not(@parent) and not(isem(@size)) {
             width  : @size;
             height : @size;
         }
 
-        & when (isem(@size)){
+        & when (isem(@size)) {
             width   : 1em;
             height  : 1em;
             display : block;
@@ -442,44 +439,44 @@
 
 // Font size
 //==================================================
-.font-size(@size; @index : round(unit(@size), 3)) when not(ispixel(@size)){
-    .ie8 & when (@ie8){
-        font-size   : round(unit(@font-size-base * @index, px), 0);
+.font-size(@size; @index : round(unit(@size), 3)) when not(ispixel(@size)) {
+    .ie8 & when (@ie8) {
+        font-size : round(unit(@font-size-base * @index, px), 0);
     }
-    font-size   : unit(@index, rem);
+    font-size : unit(@index, rem);
 }
 
 // Social Field
 //==================================================
-.social-field(@width : 240px; @size : @button-height-base; @padding : 0) when (@social-fields){
-    .social-field{
-        .labeled{
+.social-field(@width : 240px; @size : @button-height-base; @padding : 0) when (@social-fields) {
+    .social-field {
+        .labeled {
             float  : left;
             margin : 0;
             cursor : pointer;
 
-            & + .labeled{
+            & + .labeled {
                 margin-left : 5px;
             }
 
-            [class*="@{icon-prefix}-"]{
+            [class*="@{icon-prefix}-"] {
                 float       : left;
                 font-size   : 0;
                 width       : @size;
                 height      : @size;
                 line-height : @size;
 
-                &:before{
+                &:before {
                     font-size : @size - @padding * 2;
                 }
             }
 
-            input{
+            input {
                 width       : 0;
                 margin-left : -@padding-base-horizontal * 2;
             }
 
-            :checked ~ input{
+            :checked ~ input {
                 margin-left : 0;
                 width       : @width;
             }
@@ -496,7 +493,7 @@
 // ClearFix
 //==================================================
 .clearfix-mixin() {
-    &:after{
+    &:after {
         content : "";
         display : table;
         clear   : both;
@@ -506,71 +503,65 @@
 // Flexbox Layout http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 //==================================================
 .flexbox(@direction : false; @wrap : nowrap; @align : stretch) {
-    & when (@webkit){ display : -webkit-box; }
-    & when (@webkit){ display : -webkit-flex; }
-//    & when (@moz){ display : -moz-box; }
-    & when (@ie){ display : -ms-flexbox; }
+    & when (@webkit) { display : -webkit-box; }
+    & when (@webkit) { display : -webkit-flex; }
+//    & when (@moz) { display : -moz-box; }
+    & when (@ie) { display : -ms-flexbox; }
     display : flex;
 
     .flex-direction(@direction);
     .flex-wrap(@wrap);
     .flex-align(@align);
 }
-
 // @direction = row, row-reverse, column, column-reverse
 .flex-direction(@direction : column) {
-    & when (@webkit) and (@direction = row), (@direction = column){ -webkit-box-direction : normal; }
-    & when (@webkit) and not(@direction = row) and not(@direction = column){ -webkit-box-direction : reverse; }
-//    & when (@moz) and (@direction = row), (@direction = column){ -moz-box-direction : normal; }
-//    & when (@moz) and not(@direction = row) and not(@direction = column){ -moz-box-direction : reverse; }
+    & when (@webkit) and (@direction = row), (@direction = column) { -webkit-box-direction : normal; }
+    & when (@webkit) and not(@direction = row) and not(@direction = column) { -webkit-box-direction : reverse; }
+//    & when (@moz) and (@direction = row), (@direction = column) { -moz-box-direction : normal; }
+//    & when (@moz) and not(@direction = row) and not(@direction = column) { -moz-box-direction : reverse; }
 
-    & when (@webkit) and (@direction = row){ -webkit-box-orient : horizontal; }
-    & when (@webkit) and (@direction = column){ -webkit-box-orient : vertical; }
-//    & when (@moz) and (@direction = row){ -moz-box-orient : horizontal; }
-//    & when (@moz) and (@direction = column){ -moz-box-orient : vertical; }
+    & when (@webkit) and (@direction = row) { -webkit-box-orient : horizontal; }
+    & when (@webkit) and (@direction = column) { -webkit-box-orient : vertical; }
+//    & when (@moz) and (@direction = row) { -moz-box-orient : horizontal; }
+//    & when (@moz) and (@direction = column) { -moz-box-orient : vertical; }
 
-    & when (@webkit){ -webkit-flex-direction : @direction; }
-    & when (@ie){ -ms-flex-direction : @direction; }
+    & when (@webkit) { -webkit-flex-direction : @direction; }
+    & when (@ie) { -ms-flex-direction : @direction; }
     flex-direction : @direction;
 }
-
 // @wrap = nowrap, wrap, wrap-reverse
 .flex-wrap(@wrap : nowrap) {
-    & when (@webkit){ -webkit-flex-wrap : @wrap; }
-    & when (@ie){ -ms-flex-wrap : @wrap; }
+    & when (@webkit) { -webkit-flex-wrap : @wrap; }
+    & when (@ie) { -ms-flex-wrap : @wrap; }
     flex-wrap : @wrap;
 }
-
 // @align = flex-start, flex-end, center, baseline, stretch
 .flex-align(@align : stretch) {
     @alignOld : replace(~'@{align}', 'flex-', '');
-    & when (@webkit){ -webkit-box-align : @alignOld; }
-    & when (@webkit){ -webkit-align-items : @align; }
-//    & when (@moz){ -moz-box-align : @alignOld; }
-    & when (@ie){ -ms-flex-align : @alignOld; }
+    & when (@webkit) { -webkit-box-align : @alignOld; }
+    & when (@webkit) { -webkit-align-items : @align; }
+//    & when (@moz) { -moz-box-align : @alignOld; }
+    & when (@ie) { -ms-flex-align : @alignOld; }
     align-items : @align;
 }
-
 .flex-box-order(@order) {
-    & when (@webkit){ -webkit-box-ordinal-group : @order + 1; }
-//    & when (@moz){ -moz-box-ordinal-group : @order + 1; }
-    & when (@webkit){ -webkit-order : @order; }
-    & when (@ie){ -ms-flex-order : @order; }
+    & when (@webkit) { -webkit-box-ordinal-group : @order + 1; }
+//    & when (@moz) { -moz-box-ordinal-group : @order + 1; }
+    & when (@webkit) { -webkit-order : @order; }
+    & when (@ie) { -ms-flex-order : @order; }
     order : @order;
 }
-
 .flex-box-size(@size : 1) {
-    & when (@webkit){ -webkit-box-flex : @size; }
-//    & when (@moz){ -moz-box-flex : @size; }
-    & when (@webkit){ -webkit-flex : @size 1 auto; }
-    & when (@ie){ -ms-flex : @size 1 auto; }
+    & when (@webkit) { -webkit-box-flex : @size; }
+//    & when (@moz) { -moz-box-flex : @size; }
+    & when (@webkit) { -webkit-flex : @size 1 auto; }
+    & when (@ie) { -ms-flex : @size 1 auto; }
     flex : @size 1 auto;
 }
-
 // @align = auto, flex-start, flex-end, center, baseline, stretch
 .flex-box-align(@align : auto) {
-    & when (@webkit){ -webkit-align-self : @align; }
-    & when (@ie){ -ms-flex-item-align : @align; }
+    & when (@webkit) { -webkit-align-self : @align; }
+    & when (@ie) { -ms-flex-item-align : @align; }
     align-self : @align;
 }
 
@@ -578,12 +569,12 @@
 //==================================================
 .selection(@color : @text-select-color; @bg-color : @text-select-bg; @el : ~'') {
     @{el}::-moz-selection{
-        & when(@moz){
+        & when (@moz) {
             background : @bg-color;
             color      : @color;
         }
     }
-    @{el}::selection{
+    @{el}::selection {
         background : @bg-color;
         color      : @color;
     }

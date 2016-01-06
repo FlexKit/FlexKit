@@ -1,5 +1,5 @@
-.ui-accordion when (@componentsJS-accordion){
-    .ui-accordion-header{
+.ui-accordion when (@componentsJS-accordion) {
+    .ui-accordion-header {
         display       : block;
         position      : relative;
         cursor        : pointer;
@@ -9,23 +9,23 @@
         background    : @accordion-header-bg;
         padding       : .5em .75em;
 
-        &:hover{
+        &:hover {
             color      : @accordion-header-color-hover;
             background : @accordion-header-bg-hover;
         }
 
-        a{
+        a {
             color           : inherit;
             text-decoration : none;
         }
 
-        &.ui-accordion-header-active{
+        &.ui-accordion-header-active {
             color      : @accordion-header-color-active;
             background : @accordion-header-bg-active;
         }
 
-        &.icon-right{
-            &:before{
+        &.icon-right {
+            &::before {
                 color       : @brand-success;
                 float       : right;
                 line-height : inherit;
@@ -33,8 +33,8 @@
         }
     }
 
-    .ui-accordion-icons{
-        .ui-accordion-header-icon{
+    .ui-accordion-icons {
+        .ui-accordion-header-icon {
             .inline-block;
             margin-left  : -.25em;
             margin-right : .25em;
@@ -42,10 +42,10 @@
         }
     }
 
-    .ui-accordion-noicons{
+    .ui-accordion-noicons {
     }
 
-    .ui-accordion-content{
+    .ui-accordion-content {
         background    : @accordion-content-bg;
         border        : @accordion-content-border-width solid @accordion-content-border-color;
         border-top    : none;

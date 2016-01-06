@@ -27,24 +27,24 @@
 // Used for top and bottom menu
 @menu-height      : 300px;
 
-& when (@responsive), (@adaptive){
-    @media (min-width : (@responsive-size-tablet + 1)){
-        .mobile-bar, .mobile-menu{
+& when (@responsive), (@adaptive) {
+    @media (min-width : (@responsive-size-tablet + 1)) {
+        .mobile-bar, .mobile-menu {
             display : none;
         }
     }
-    @media only screen and (max-width : @responsive-size-tablet){
-        body{
-            & when (@top-block){
+    @media only screen and (max-width : @responsive-size-tablet) {
+        body {
+            & when (@top-block) {
                 padding-top : @top-block-height;
             }
-            & when (@bottom-block){
+            & when (@bottom-block) {
                 padding-bottom : @bottom-block-height;
             }
-            &[data-menu-open]{
+            &[data-menu-open] {
                 overflow : hidden;
 
-                &:after{
+                &::after {
                     content  : '';
                     position : fixed;
                     top      : 0;
@@ -55,14 +55,14 @@
                 }
             }
         }
-        [data-menu-open]{
-            &:after{
-                .rgba(#000; .5);
+        [data-menu-open] {
+            &:after {
+                .rgba(#000; 50%);
             }
         }
     }
 
-    .mobile-bar{
+    .mobile-bar {
         position : fixed;
         left     : 0;
         right    : 0;
@@ -70,54 +70,54 @@
         .box-shadow(0 0 7px @gray-dark);
         .clearfix-mixin();
 
-        @media only print{
-            &{
+        @media only print {
+            & {
                 display : none;
             }
         }
 
-        .btn{
+        .btn {
             line-height : inherit;
 
-            &.btn-caption when (@button-type-caption) and (@button-types){
+            &.btn-caption when (@button-type-caption) and (@button-types) {
                 line-height : (@bottom-block-height / 2) - .5;
 
-                &:before{
+                &::before {
                     line-height : inherit;
                 }
             }
         }
 
-        &.top when (@top-block){
+        &.top when (@top-block) {
             top         : 0;
 //        height        : @top-block-height;
             line-height : @top-block-height;
             color       : @top-block-color;
             background  : @top-block-bg;
 
-            .btn{
-                &.icon when (@flexkit-icons) and (@button-type-icon) and (@button-types){
+            .btn {
+                &.icon when (@flexkit-icons) and (@button-type-icon) and (@button-types) {
                     width : @top-block-height;
                 }
             }
         }
 
-        &.bottom when (@bottom-block){
+        &.bottom when (@bottom-block) {
             bottom      : 0;
             //        height      : @bottom-block-height;
             line-height : @bottom-block-height;
             color       : @bottom-block-color;
             background  : @bottom-block-bg;
 
-            .btn{
-                &.icon when (@flexkit-icons) and (@button-type-icon) and (@button-types){
+            .btn {
+                &.icon when (@flexkit-icons) and (@button-type-icon) and (@button-types) {
                     width : @bottom-block-height;
                 }
             }
         }
     }
 
-    .mobile-menu{
+    .mobile-menu {
         // reset style for menu
         float      : none;
         height     : auto;
@@ -133,20 +133,20 @@
         background : @menu-bg;
         color      : @menu-color;
 
-        &.left, &.right{
+        &.left, &.right {
             top    : 0;
             bottom : 0;
         }
 
-        &.left{
+        &.left {
             left : 0;
         }
 
-        &.right{
+        &.right {
             right : 0;
         }
 
-        &.top, &.bottom{
+        &.top, &.bottom {
             left       : 0;
             right      : 0;
             width      : auto;
@@ -155,15 +155,15 @@
             max-width  : none;
         }
 
-        &.top{
+        &.top {
             top : 0;
         }
 
-        &.bottom{
+        &.bottom {
             bottom : 0;
         }
 
-        ul{
+        ul {
             background  : transparent;
             color       : inherit;
             position    : relative;
@@ -171,54 +171,54 @@
             width       : auto;
             .box-shadow(none);
 
-            a{
+            a {
                 padding-top    : 0;
                 padding-bottom : 0;
                 overflow       : hidden;
 
-                &:hover, &.current{
+                &:hover, &.current {
                     background : @gray-lighter;
                 }
             }
 
-            ul{
-                .rgba(#000; .03);
+            ul {
+                .rgba(#000; 3%);
 
-                a{
+                a {
                     padding-left : @padding-base-horizontal * 2;
                 }
             }
 
-            &.open{
+            &.open {
                 display : block !important;
             }
         }
 
-        li{
+        li {
             float         : none;
             border-bottom : 1px solid @gray-lighter;
 
-            &:hover{
-                & when not(@nav-bg = @nav-bg-li-hover){
+            &:hover {
+                & when not(@nav-bg = @nav-bg-li-hover) {
                     background : transparent;
                 }
-                & when not(@nav-color = @nav-color-li-hover){
+                & when not(@nav-color = @nav-color-li-hover) {
                     color : inherit;
                 }
 
-                ul{
+                ul {
                     display : none;
                 }
             }
 
-            li{
+            li {
                 border     : none;
                 border-top : 1px solid @gray-lighter;
             }
         }
     }
 
-    .menu-btn{
+    .menu-btn {
         cursor     : pointer;
         background : transparent;
         padding    : 0 @padding-base-horizontal;
@@ -238,50 +238,50 @@
 //            }
 //        }
 
-        &.left{
+        &.left {
             float : left;
 
-            &:before{
+            &::before {
                 margin-right : @top-block-height / 10;
                 float        : left;
             }
         }
-        &.right{
+        &.right {
             float      : right;
             text-align : right;
 
-            &:before{
+            &::before {
                 margin-left : @top-block-height / 10;
                 float       : right;
             }
         }
 
-        &.icon{
+        &.icon {
             width       : @top-block-height;
             text-indent : -9999px;
 
-            &:before{
+            &::before {
                 margin-right : 0;
                 margin-left  : 0;
             }
         }
 
-        &:hover, &.active{
-            .rgba(#000, .1);
+        &:hover, &.active {
+            .rgba(#000; 10%);
         }
 
-        &.active{
+        &.active {
         }
     }
 
-    .sub-menu-btn{
+    .sub-menu-btn {
         float      : right;
         width      : unit(@button-line-height * 2, em);
         text-align : center;
         color      : @primary-color;
-        .rgba(#000, .1);
+        .rgba(#000; 10%);
 
-        &:before{
+        &::before {
             content : '';
             height  : 20px;
             width   : 20px;
@@ -289,19 +289,19 @@
             .gradient-vertical(#fff 0%, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
         }
 
-        &:hover, &.active{
-            .rgba(#000, .2);
+        &:hover, &.active {
+            .rgba(#000; 20%);
         }
     }
-    @media only screen and (max-width : @responsive-size-tablet){
-        & when (@mobile-menu-over){
+    @media only screen and (max-width : @responsive-size-tablet) {
+        & when (@mobile-menu-over) {
             @import "menu/over";
         }
-        & when (@mobile-menu-under) and not(@mobile-menu-over){
+        & when (@mobile-menu-under) and not(@mobile-menu-over) {
             @import "menu/under";
         }
     }
 }
-& when (@mobile-dropdown){
+& when (@mobile-dropdown) {
     @import "menu/dropdown";
 }
