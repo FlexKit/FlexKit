@@ -143,9 +143,15 @@
 }
 .translate(@x; @y : @x; @support : webkit ms; @only : false) {
     .transform(translate(@x, @y); @support; @only);
+    & when (ispercentage(@y)) {
+        -webkit-filter : blur(0);
+    }
 }
 .translate3d(@x; @y; @z; @support : webkit ms; @only : false) {
     .transform(translate3d(@x, @y, @z); @support; @only);
+    & when (ispercentage(@y)) {
+        -webkit-filter : blur(0);
+    }
 }
 .skew(@x; @y; @support : webkit ms; @only : false) {
     .transform(skew(@x, @y); @support; @only);
