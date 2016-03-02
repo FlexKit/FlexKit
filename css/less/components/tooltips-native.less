@@ -77,6 +77,16 @@
             left : 50%;
             .transform(translateX(-50%));
         }
+        &[class*="-right"]::after{
+            left : auto;
+            right : 0;
+            .transform(translateX(0));
+        }
+        &[class*="-left"]::after{
+            left : 0;
+            right : auto;
+            .transform(translateX(0));
+        }
 
         &[class*="--arrow"]::before {
             border-left-color  : transparent !important;
