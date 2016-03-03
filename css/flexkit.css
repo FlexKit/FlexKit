@@ -2323,6 +2323,9 @@ ul.list-select > li.active::after,
 .ws-normal {
   white-space: normal !important;
 }
+.ws-pre {
+  white-space: pre-wrap !important;
+}
 .text-light {
   font-weight: 300 !important;
 }
@@ -4467,6 +4470,22 @@ a.tooltip {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+[class*="tooltip-native"][class*="--top"][class*="-right"]::after,
+[class*="tooltip-native"][class*="--bottom"][class*="-right"]::after {
+  left: auto;
+  right: 0;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+[class*="tooltip-native"][class*="--top"][class*="-left"]::after,
+[class*="tooltip-native"][class*="--bottom"][class*="-left"]::after {
+  left: 0;
+  right: auto;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
 }
 [class*="tooltip-native"][class*="--top"][class*="--arrow"]::before,
 [class*="tooltip-native"][class*="--bottom"][class*="--arrow"]::before {
