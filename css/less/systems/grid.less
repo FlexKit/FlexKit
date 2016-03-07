@@ -3,18 +3,21 @@
     & when not(@grid-container-width = 100%) and not(@adaptive) {
         margin-left  : auto;
         margin-right : auto;
+        width : @grid-container-width;
 
-        & when not(@responsive) {
-            width : @grid-container-width;
-        }
-        & when (@responsive) {
-            width     : 95%;
-            max-width : @grid-container-width;
+        & when (@responsive), (@container-responsive) {
+            max-width : @grid-container-maxWidth;
+            & when (@grid-container-minWidth > 0) {
+                min-width : @grid-container-minWidth;
+            }
         }
     }
     & when (@adaptive) {
         margin-left  : auto;
         margin-right : auto;
+        & when (@grid-container-minWidth > 0) {
+            min-width : @grid-container-minWidth;
+        }
 
         & when not(@grid-container-width > @responsive-size-big-screen) and not(@grid-container-width > @responsive-size-desktop) {
             max-width : @responsive-size-big-screen;

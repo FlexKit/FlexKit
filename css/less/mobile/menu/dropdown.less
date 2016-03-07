@@ -33,6 +33,10 @@ body when (@responsive), (@adaptive) {
     overflow   : auto;
     .box-shadow(0 2px 30px fade(#000, 30%));
 
+    &.open {
+        display : block;
+    }
+
     &.top, &.bottom {
         &-right {
             right : 0;

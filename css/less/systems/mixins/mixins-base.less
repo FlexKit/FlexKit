@@ -466,7 +466,7 @@
                 height      : @size;
                 line-height : @size;
 
-                &:before {
+                &::before {
                     font-size : @size - @padding * 2;
                 }
             }
@@ -493,7 +493,7 @@
 // ClearFix
 //==================================================
 .clearfix-mixin() {
-    &:after {
+    &::after {
         content : "";
         display : table;
         clear   : both;
