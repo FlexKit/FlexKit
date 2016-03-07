@@ -869,6 +869,18 @@ ul.list-select > li.active::after,
 .icon-toaster::before {
   content: "\e0f3";
 }
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  max-width: 95%;
+}
+.container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 [class*=" grid_"],
 [class^="grid_"],
 [class*="-grid_"],
@@ -2870,7 +2882,7 @@ a:hover.vkontakte {
   height: 35px;
   line-height: 35px;
 }
-.social-field .labeled [class*="icon-"]:before {
+.social-field .labeled [class*="icon-"]::before {
   font-size: 35px;
 }
 .social-field .labeled input {
@@ -2979,7 +2991,6 @@ h6,
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   color: #222222;
-  font-weight: bold;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 }
 h1:first-child,
@@ -3184,8 +3195,8 @@ ol {
   margin-bottom: 1.5em;
   padding-left: 2.5em;
 }
-ul:after,
-ol:after {
+ul::after,
+ol::after {
   content: "";
   display: table;
   clear: both;
@@ -3200,8 +3211,8 @@ ul li,
 ol li {
   margin-bottom: 0.3em;
 }
-ul li:after,
-ol li:after {
+ul li::after,
+ol li::after {
   content: "";
   display: table;
   clear: both;
@@ -3409,7 +3420,7 @@ ul.list-testimonials li cite::before {
 ul.list-tags {
   margin-bottom: 0;
 }
-ul.list-tags:after {
+ul.list-tags::after {
   content: "";
   display: table;
   clear: both;
@@ -4054,9 +4065,21 @@ img.img-leaflet-left {
   border-color: #28b0ed;
   background-color: #28b0ed;
 }
+.btn.outline.white {
+  color: #fff;
+  border-color: #fff;
+  background-color: transparent;
+}
+.btn.outline.white:hover,
+.btn.outline.white:active,
+.btn.outline.white.active {
+  color: #000;
+  border-color: #fff;
+  background-color: #fff;
+}
 .btn.outline.inverse {
   color: #d5d5d5;
-  border-color: #b2b2b2;
+  border-color: #d5d5d5;
 }
 .btn.caption {
   padding-top: .5em;
@@ -4222,7 +4245,7 @@ hr.dotted {
   top: 8px;
   right: 8px;
 }
-.message .btn-close:before {
+.message .btn-close::before {
   content: "\e0a2";
 }
 .message.right {
@@ -4327,9 +4350,9 @@ hr.dotted {
   margin: 0;
   padding: 8px 12px;
 }
-.panel .panel-header:after,
-.panel .panel-content:after,
-.panel .panel-footer:after {
+.panel .panel-header::after,
+.panel .panel-content::after,
+.panel .panel-footer::after {
   content: "";
   display: table;
   clear: both;
@@ -4652,7 +4675,7 @@ a.tooltip {
     bottom: 0;
     z-index: 101;
   }
-  [data-menu-open]:after {
+  [data-menu-open]::after {
     background: rgba(0, 0, 0, 0.5);
   }
 }
@@ -4661,9 +4684,9 @@ a.tooltip {
   left: 0;
   right: 0;
   z-index: 100;
-  box-shadow: 0 0 7px #555555;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
 }
-.mobile-bar:after {
+.mobile-bar::after {
   content: "";
   display: table;
   clear: both;
@@ -4929,6 +4952,9 @@ a.tooltip {
   overflow: auto;
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
 }
+.dropdown-menu.open {
+  display: block;
+}
 .dropdown-menu.top-right,
 .dropdown-menu.bottom-right {
   right: 0;
@@ -5060,7 +5086,7 @@ footer {
   color: #555555;
   font-size: 0.85em;
 }
-form:after {
+form::after {
   content: "";
   display: table;
   clear: both;
@@ -5078,7 +5104,7 @@ form fieldset.unstyled legend {
 form fieldset legend {
   font-size: 1.25em;
 }
-form p:after {
+form p::after {
   content: "";
   display: table;
   clear: both;
@@ -5369,7 +5395,7 @@ textarea.resize {
 .labeled {
   position: relative;
 }
-.labeled:after {
+.labeled::after {
   content: "";
   display: table;
   clear: both;
@@ -5655,7 +5681,7 @@ textarea.resize {
   background-color: rgba(255, 255, 255, 0.95);
 }
 #loader::before,
-#loader:after {
+#loader::after {
   content: '';
   position: absolute;
   top: 150px;
@@ -5833,9 +5859,7 @@ textarea.resize {
     margin: 0;
     display: block;
   }
-  a[href*=".html"]::after {
-    content: "(" attr(href) ")";
-  }
+  a[href*=".html"]::after,
   a[href^="http"]::after,
   a[href^="//"]::after {
     content: "(" attr(href) ")";
@@ -6034,7 +6058,7 @@ textarea.resize {
 .ui-tabs {
   position: relative;
 }
-.ui-tabs:after {
+.ui-tabs::after {
   content: "";
   display: table;
   clear: both;
@@ -6046,7 +6070,7 @@ textarea.resize {
   margin: 0;
   padding: 0;
 }
-.ui-tabs .ui-tabs-nav:after {
+.ui-tabs .ui-tabs-nav::after {
   content: "";
   display: table;
   clear: both;

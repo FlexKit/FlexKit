@@ -32,8 +32,10 @@ h1, h2, h3, h4, h5, h6,
     margin-top    : 1.5em;
     margin-bottom : 0.5em;
     color         : @heading-color;
-    font-weight   : @heading-weight;
     font-family   : @font-family-headings;
+    & when not(@heading-weight = bold) and not (@heading-weight = 700) {
+        font-weight   : @heading-weight;
+    }
 
     &:first-child {
         margin-top : 0;

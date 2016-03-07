@@ -1,6 +1,7 @@
 // Button outline
 // --------------------------------------------------
 &.outline when (@button-type-outline) and (@button-types) {
+    @outline-hover-fade : 100%;
     & when not(@button-border-width = @button-border-outline) {
         @calcParam  : unit(@button-line-height * 2, em);
         @calcParam2 : @button-border-outline * 2;
@@ -9,7 +10,12 @@
         border      : @button-border-outline solid;
     }
     .box-shadow(none; @button-box-shadow);
-    .button-color(@brand-primary; transparent; @brand-primary; @button-primary-color; @button-primary-bg; @button-primary-bg);
+    & when (@outline-hover-fade < 100) {
+        .button-color(@brand-primary; transparent; @brand-primary; @brand-primary; fade(@button-primary-bg, @outline-hover-fade); @button-primary-bg);
+    }
+    & when (@outline-hover-fade = 100) {
+        .button-color(@brand-primary; transparent; @brand-primary; @button-primary-color; @button-primary-bg; @button-primary-bg);
+    }
 
     // Alternate buttons
     // --------------------------------------------------
@@ -22,27 +28,57 @@
     }
     // Warning appears as orange
     &.warning when (@button-color-warning) and (@button-colors) {
-        .button-color(@brand-warning; transparent; @brand-warning; @button-warning-color; @button-warning-bg; @button-warning-bg);
+        & when (@outline-hover-fade < 100) {
+            .button-color(@brand-warning; transparent; @brand-warning; @brand-warning; fade(@button-warning-bg, @outline-hover-fade); @button-warning-bg);
+        }
+        & when (@outline-hover-fade = 100) {
+            .button-color(@brand-warning; transparent; @brand-warning; @button-warning-color; @button-warning-bg; @button-warning-bg);
+        }
     }
 
     // Danger and error appear as red
     &.error when (@button-color-error) and (@button-colors) {
-        .button-color(@brand-error; transparent; @brand-error; @button-error-color; @button-error-bg; @button-error-bg);
+        & when (@outline-hover-fade < 100) {
+            .button-color(@brand-error; transparent; @brand-error; @brand-error; fade(@button-error-bg, @outline-hover-fade); @button-error-bg);
+        }
+        & when (@outline-hover-fade = 100) {
+            .button-color(@brand-error; transparent; @brand-error; @button-error-color; @button-error-bg; @button-error-bg);
+        }
     }
 
     // Success appears as green
     &.success when (@button-color-success) and (@button-colors) {
-        .button-color(@brand-success; transparent; @brand-success; @button-success-color; @button-success-bg; @button-success-bg);
+        & when (@outline-hover-fade < 100) {
+            .button-color(@brand-success; transparent; @brand-success; @brand-success; fade(@button-success-bg, @outline-hover-fade); @button-success-bg);
+        }
+        & when (@outline-hover-fade = 100) {
+            .button-color(@brand-success; transparent; @brand-success; @button-success-color; @button-success-bg; @button-success-bg);
+        }
     }
 
     // Info appears as blue
     &.info when (@button-color-info) and (@button-colors) {
-        .button-color(@brand-info; transparent; @brand-info; @button-info-color; @button-info-bg; @button-info-bg);
+        & when (@outline-hover-fade < 100) {
+            .button-color(@brand-info; transparent; @brand-info; @brand-info; fade(@button-info-bg, @outline-hover-fade); @button-info-bg);
+        }
+        & when (@outline-hover-fade = 100) {
+            .button-color(@brand-info; transparent; @brand-info; @button-info-color; @button-info-bg; @button-info-bg);
+        }
+    }
+
+    // Info appears as blue
+    &.white when (@button-color-info) and (@button-colors) {
+        & when (@outline-hover-fade < 100) {
+            .button-color(#fff; transparent; #fff; #fff; fade(#fff, @outline-hover-fade); #fff);
+        }
+        & when (@outline-hover-fade = 100) {
+            .button-color(#fff; transparent; #fff; #000; #fff; #fff);
+        }
     }
 
     //Inverse color
     &.inverse when (@button-color-inverse) and (@button-colors) {
         color        : @button-inverse-bg;
-        border-color : softlight(@button-inverse-bg, #000);
+        border-color : fade(@button-inverse-bg, 100%);
     }
 }

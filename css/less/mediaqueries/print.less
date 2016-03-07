@@ -32,11 +32,7 @@ a {
         }
     }
 
-    &[href*=".html"]::after {
-        content : "(" attr(href) ")";
-    }
-
-    &[href^="http"]::after, &[href^="//"]::after {
+    &[href*=".html"]::after, &[href^="http"]::after, &[href^="//"]::after {
         content : "(" attr(href) ")";
     }
 }

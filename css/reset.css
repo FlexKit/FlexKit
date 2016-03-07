@@ -215,10 +215,10 @@ blockquote,
 q {
   quotes: none;
 }
-blockquote:before,
-q:before,
-blockquote:after,
-q:after {
+blockquote::before,
+q::before,
+blockquote::after,
+q::after {
   content: none;
 }
 em {
@@ -355,7 +355,7 @@ select optgroup {
   font-size: inherit;
   font-family: inherit;
 }
-.main_menu:after {
+.main_menu::after {
   content: "";
   display: table;
   clear: both;
@@ -384,7 +384,7 @@ select optgroup {
   visibility: hidden;
   height: 0;
 }
-.clearfix:after {
+.clearfix::after {
   content: "";
   display: table;
   clear: both;
