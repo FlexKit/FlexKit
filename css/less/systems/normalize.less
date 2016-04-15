@@ -323,8 +323,15 @@ input[type="search"]::-webkit-search-decoration {
 // Define consistent border, margin, and padding.
 
 fieldset {
+    min-width : 0;
     border  : 1px solid @gray-lighter;
     padding : @padding-base-vertical @padding-base-horizontal;
+}
+
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
 }
 
 // 1. Correct `color` not being inherited in IE 8/9/10/11.

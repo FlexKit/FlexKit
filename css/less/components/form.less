@@ -31,10 +31,6 @@
             }
         }
 
-        p {
-            .clearfix-mixin();
-        }
-
         // -- Recaptcha & Captcha style
         @import "form/form-recaptcha";
 
@@ -76,9 +72,7 @@
 
     select, textarea, input {
         font-family      : @font-family-text;
-        border-width     : @input-border-width;
-        border-style     : solid;
-        border-color     : @input-border-color;
+        border           : @input-border-width solid @input-border-color;
         background-color : @input-bg;
         color            : @input-color;
         .border-radius(@input-border-radius);
@@ -132,7 +126,7 @@
         &[disabled], [disabled] &, &[disabled]:focus, &.noedit, &.noedit:focus {
             border-color : @input-border-color-disabled !important;
             background   : @input-bg-disabled !important;
-            color        : darken(@input-bg-disabled, 30%) !important;
+            color        : fade(@input-bg-disabled, 75%) !important;
             & when (@ie) and (@ie8) {
                 cursor : default !important;
             }

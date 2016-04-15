@@ -1,0 +1,123 @@
+.ui-timepicker-div {
+    padding   : 10px;
+    font-size : @font-size-small;
+
+    .ui-widget-header {
+        margin-bottom : 8px;
+    }
+
+    dl {
+        text-align : left;
+        .inline-block-wrap(@font-size : @font-size-base * @font-size-small);
+
+        dt {
+            width : 30%;
+        }
+        dd {
+            width  : 70%;
+            margin : 5px 0;
+        }
+    }
+
+    td {
+        font-size : 90%;
+    }
+
+    .ui-tpicker-grid-label {
+        background : none;
+        border     : none;
+        margin     : 0;
+        padding    : 0;
+    }
+
+    .ui-timepicker-rtl {
+        direction : rtl;
+
+        dl {
+            text-align : right;
+            padding    : 0 5px 0 0;
+
+            dt {
+                float : right;
+                clear : right;
+            }
+
+            dd {
+                margin : 0 40% 10px 10px;
+            }
+        }
+    }
+
+    /* Shortened version style */
+    &.ui-timepicker-oneLine {
+        padding-right : 2px;
+
+        .ui_tpicker_time, dt {
+            display : none;
+        }
+
+        .ui_tpicker_time_label {
+            display     : block;
+            padding-top : 2px;
+        }
+
+        dl {
+            text-align : right;
+
+            dd {
+                &, & > div {
+                    display : inline-block;
+                    margin  : 0;
+                }
+
+                &.ui_tpicker_minute, &.ui_tpicker_second {
+                    &:before {
+                        content : ':';
+                        display : inline-block;
+                    }
+                }
+
+                &.ui_tpicker_millisec, &.ui_tpicker_microsec {
+                    &:before {
+                        content : '.';
+                        display : inline-block;
+                    }
+                }
+            }
+        }
+    }
+
+    .ui_tpicker_unit_hide {
+        &, &:before {
+            display : none;
+        }
+    }
+
+    & + .ui-datepicker-buttonpane {
+        font-size : small;
+
+        button {
+            &:extend(.btn);
+            &:extend(.btn.success);
+            float  : left;
+            width  : 48%;
+            margin : 5px 1%;
+
+            &:hover{
+                &:extend(.btn:hover);
+                &:extend(.btn.success:hover);
+            }
+
+            &:first-child{
+                &:extend(.btn.outline);
+                &:extend(.btn.outline.info);
+
+                &:hover{
+                    &:extend(.btn.outline:hover);
+                    &:extend(.btn.outline.info:hover);
+                }
+            }
+        }
+    }
+
+}

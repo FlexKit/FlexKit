@@ -172,8 +172,14 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 fieldset {
+  min-width: 0;
   border: 1px solid #eeeeee;
   padding: 8px 12px;
+}
+@-moz-document url-prefix() {
+  fieldset {
+    display: table-cell;
+  }
 }
 legend {
   border: 0;

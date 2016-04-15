@@ -8,7 +8,7 @@
     background-color : @dialog-bg;
     max-width        : 90%;
     color            : inherit;
-    .box-shadow(4px 4px 4px @gray-darker);
+    .box-shadow(4px 4px 15px fade(#000, 50%));
 
     .ui-effects-wrapper & {
         max-width : none;
@@ -86,7 +86,7 @@
     // Buttons
     .ui-dialog-buttonpane {
         overflow         : hidden;
-        text-align       : left;
+        text-align       : right;
         border-width     : 1px 0 0 0;
         background-image : none;
         padding          : @padding-base-vertical @padding-large-horizontal;

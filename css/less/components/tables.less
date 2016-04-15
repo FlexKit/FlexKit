@@ -87,7 +87,7 @@ table {
     //==================================================
     // Default zebra-stripe styles (alternating gray and transparent backgrounds)
     &.table-striped when (@table-striped) and (@table-styles) {
-        & > tr:nth-child(odd), tbody tr:nth-child(even) {
+        & > tr:nth-child(odd), & > tbody > tr:nth-child(even) {
             background-color : @table-row-bg;
         }
     }

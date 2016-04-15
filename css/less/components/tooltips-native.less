@@ -14,16 +14,17 @@
     }
 
     &[class*="--arrow"]::before, &::after {
-        content  : '';
-        position : absolute;
-        margin   : auto;
-        display  : none;
-        bottom   : 100%;
+        content        : '';
+        position       : absolute;
+        margin         : auto;
+        display        : none;
+        bottom         : 100%;
+        pointer-events : none;
         .opacity(1) !important;
     }
 
     &::after {
-        content       : attr(title);
+        content       : attr(tooltip-title);
         z-index       : @tooltip-zIndex - 1;
         font-size     : @font-size-base * @font-size-small;
         line-height   : @line-height;
@@ -38,6 +39,10 @@
         overflow      : hidden;
         white-space   : nowrap;
         text-overflow : ellipsis;
+    }
+
+    &:not([tooltip-title])::after {
+        content : attr(title);
     }
 
     // Type style
@@ -77,21 +82,22 @@
             left : 50%;
             .transform(translateX(-50%));
         }
-        &[class*="-right"]::after{
-            left : auto;
-            right : 0;
-            .transform(translateX(0));
-        }
-        &[class*="-left"]::after{
-            left : 0;
-            right : auto;
-            .transform(translateX(0));
-        }
 
         &[class*="--arrow"]::before {
             border-left-color  : transparent !important;
             border-right-color : transparent !important;
         }
+    }
+
+    &[class*="--top-right"]::after, &[class*="--bottom-right"]::after {
+        left  : auto;
+        right : 0;
+        .transform(translateX(0));
+    }
+    &[class*="--top-left"]::after, &[class*="--bottom-left"]::after {
+        left  : 0;
+        right : auto;
+        .transform(translateX(0));
     }
 
     &[class*="--top"] {
